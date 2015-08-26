@@ -1,0 +1,5 @@
+luambedtls {
+	global: luaopen_luambedtls;
+	local: *;
+};
+
