@@ -1,0 +1,138 @@
+\hypertarget{version_8h}{\section{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/version.h File Reference}
+\label{version_8h}\index{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/version.\-h@{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/version.\-h}}
+}
+
+
+Run-\/time version information.  
+
+
+{\ttfamily \#include \char`\"{}config.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{version_8h_a5a7d810a2d7cf4dd3ef85fd9fa3175d5}{M\-B\-E\-D\-T\-L\-S\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-M\-A\-J\-O\-R}~2
+\item 
+\hypertarget{version_8h_a64cf9914ef37c1d591dea65bd99e5f6e}{\#define {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-M\-I\-N\-O\-R}~0}\label{version_8h_a64cf9914ef37c1d591dea65bd99e5f6e}
+
+\item 
+\hypertarget{version_8h_aa507dab4f28a259909714c4c50cccfc7}{\#define {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-P\-A\-T\-C\-H}~0}\label{version_8h_aa507dab4f28a259909714c4c50cccfc7}
+
+\item 
+\#define \hyperlink{version_8h_adb4f54ebb33fd1a25e2c4d4480cf4936}{M\-B\-E\-D\-T\-L\-S\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-N\-U\-M\-B\-E\-R}~0x02000000
+\item 
+\hypertarget{version_8h_a1433dae2f973235284ed1b1390e585be}{\#define {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-S\-T\-R\-I\-N\-G}~\char`\"{}2.\-0.\-0\char`\"{}}\label{version_8h_a1433dae2f973235284ed1b1390e585be}
+
+\item 
+\hypertarget{version_8h_aa3672345ea6deef6e023fcecdee97820}{\#define {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-F\-U\-L\-L}~\char`\"{}mbed T\-L\-S 2.\-0.\-0\char`\"{}}\label{version_8h_aa3672345ea6deef6e023fcecdee97820}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \hyperlink{version_8h_a3d780043d5104f5e5863255dd55b3951}{mbedtls\-\_\-version\-\_\-get\-\_\-number} (void)
+\item 
+void \hyperlink{version_8h_af4fd0e3ea2523313ea177477d6c93bdd}{mbedtls\-\_\-version\-\_\-get\-\_\-string} (char $\ast$string)
+\item 
+void \hyperlink{version_8h_a779eef1940de834a3d223a2339c2a9bb}{mbedtls\-\_\-version\-\_\-get\-\_\-string\-\_\-full} (char $\ast$string)
+\item 
+int \hyperlink{version_8h_afe471be7bb2bd441b0c693256ab298ea}{mbedtls\-\_\-version\-\_\-check\-\_\-feature} (const char $\ast$feature)
+\begin{DoxyCompactList}\small\item\em Check if support for a feature was compiled into this mbed T\-L\-S binary. This allows you to see at runtime if the library was for instance compiled with or without Multi-\/threading support. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Run-\/time version information. Copyright (C) 2006-\/2015, A\-R\-M Limited, All Rights Reserved
+
+This file is part of mbed T\-L\-S (\href{https://tls.mbed.org}{\tt https\-://tls.\-mbed.\-org})
+
+This program is free software; you can redistribute it and/or modify it under the terms of the G\-N\-U General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but W\-I\-T\-H\-O\-U\-T A\-N\-Y W\-A\-R\-R\-A\-N\-T\-Y; without even the implied warranty of M\-E\-R\-C\-H\-A\-N\-T\-A\-B\-I\-L\-I\-T\-Y or F\-I\-T\-N\-E\-S\-S F\-O\-R A P\-A\-R\-T\-I\-C\-U\-L\-A\-R P\-U\-R\-P\-O\-S\-E. See the G\-N\-U General Public License for more details.
+
+You should have received a copy of the G\-N\-U General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, M\-A 02110-\/1301 U\-S\-A. 
+
+Definition in file \hyperlink{version_8h_source}{version.\-h}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{version_8h_a5a7d810a2d7cf4dd3ef85fd9fa3175d5}{\index{version.\-h@{version.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-M\-A\-J\-O\-R@{M\-B\-E\-D\-T\-L\-S\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-M\-A\-J\-O\-R}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-M\-A\-J\-O\-R@{M\-B\-E\-D\-T\-L\-S\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-M\-A\-J\-O\-R}!version.h@{version.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-M\-A\-J\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-M\-A\-J\-O\-R~2}}\label{version_8h_a5a7d810a2d7cf4dd3ef85fd9fa3175d5}
+The version number x.\-y.\-z is split into three parts. Major, Minor, Patchlevel 
+
+Definition at line 41 of file version.\-h.
+
+\hypertarget{version_8h_adb4f54ebb33fd1a25e2c4d4480cf4936}{\index{version.\-h@{version.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-N\-U\-M\-B\-E\-R@{M\-B\-E\-D\-T\-L\-S\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-N\-U\-M\-B\-E\-R}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-N\-U\-M\-B\-E\-R@{M\-B\-E\-D\-T\-L\-S\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-N\-U\-M\-B\-E\-R}!version.h@{version.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-N\-U\-M\-B\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-N\-U\-M\-B\-E\-R~0x02000000}}\label{version_8h_adb4f54ebb33fd1a25e2c4d4480cf4936}
+The single version number has the following structure\-: M\-M\-N\-N\-P\-P00 Major version $|$ Minor version $|$ Patch version 
+
+Definition at line 50 of file version.\-h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{version_8h_afe471be7bb2bd441b0c693256ab298ea}{\index{version.\-h@{version.\-h}!mbedtls\-\_\-version\-\_\-check\-\_\-feature@{mbedtls\-\_\-version\-\_\-check\-\_\-feature}}
+\index{mbedtls\-\_\-version\-\_\-check\-\_\-feature@{mbedtls\-\_\-version\-\_\-check\-\_\-feature}!version.h@{version.\-h}}
+\subsubsection[{mbedtls\-\_\-version\-\_\-check\-\_\-feature}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-version\-\_\-check\-\_\-feature (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{feature}
+\end{DoxyParamCaption}
+)}}\label{version_8h_afe471be7bb2bd441b0c693256ab298ea}
+
+
+Check if support for a feature was compiled into this mbed T\-L\-S binary. This allows you to see at runtime if the library was for instance compiled with or without Multi-\/threading support. 
+
+\begin{DoxyNote}{Note}
+only checks against defines in the sections \char`\"{}\-System
+                 support\char`\"{}, \char`\"{}mbed T\-L\-S modules\char`\"{} and \char`\"{}mbed T\-L\-S feature
+                 support\char`\"{} in \hyperlink{config_8h}{config.\-h}
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em feature} & The string for the define to check (e.\-g. \char`\"{}\-M\-B\-E\-D\-T\-L\-S\-\_\-\-A\-E\-S\-\_\-\-C\char`\"{})\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the feature is present, -\/1 if the feature is not present and -\/2 if support for feature checking as a whole was not compiled in. 
+\end{DoxyReturn}
+\hypertarget{version_8h_a3d780043d5104f5e5863255dd55b3951}{\index{version.\-h@{version.\-h}!mbedtls\-\_\-version\-\_\-get\-\_\-number@{mbedtls\-\_\-version\-\_\-get\-\_\-number}}
+\index{mbedtls\-\_\-version\-\_\-get\-\_\-number@{mbedtls\-\_\-version\-\_\-get\-\_\-number}!version.h@{version.\-h}}
+\subsubsection[{mbedtls\-\_\-version\-\_\-get\-\_\-number}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int mbedtls\-\_\-version\-\_\-get\-\_\-number (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{version_8h_a3d780043d5104f5e5863255dd55b3951}
+Get the version number.
+
+\begin{DoxyReturn}{Returns}
+The constructed version number in the format M\-M\-N\-N\-P\-P00 (Major, Minor, Patch). 
+\end{DoxyReturn}
+\hypertarget{version_8h_af4fd0e3ea2523313ea177477d6c93bdd}{\index{version.\-h@{version.\-h}!mbedtls\-\_\-version\-\_\-get\-\_\-string@{mbedtls\-\_\-version\-\_\-get\-\_\-string}}
+\index{mbedtls\-\_\-version\-\_\-get\-\_\-string@{mbedtls\-\_\-version\-\_\-get\-\_\-string}!version.h@{version.\-h}}
+\subsubsection[{mbedtls\-\_\-version\-\_\-get\-\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}void mbedtls\-\_\-version\-\_\-get\-\_\-string (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{string}
+\end{DoxyParamCaption}
+)}}\label{version_8h_af4fd0e3ea2523313ea177477d6c93bdd}
+Get the version string (\char`\"{}x.\-y.\-z\char`\"{}).
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & The string that will receive the value. (Should be at least 9 bytes in size) \\
+\hline
+\end{DoxyParams}
+\hypertarget{version_8h_a779eef1940de834a3d223a2339c2a9bb}{\index{version.\-h@{version.\-h}!mbedtls\-\_\-version\-\_\-get\-\_\-string\-\_\-full@{mbedtls\-\_\-version\-\_\-get\-\_\-string\-\_\-full}}
+\index{mbedtls\-\_\-version\-\_\-get\-\_\-string\-\_\-full@{mbedtls\-\_\-version\-\_\-get\-\_\-string\-\_\-full}!version.h@{version.\-h}}
+\subsubsection[{mbedtls\-\_\-version\-\_\-get\-\_\-string\-\_\-full}]{\setlength{\rightskip}{0pt plus 5cm}void mbedtls\-\_\-version\-\_\-get\-\_\-string\-\_\-full (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{string}
+\end{DoxyParamCaption}
+)}}\label{version_8h_a779eef1940de834a3d223a2339c2a9bb}
+Get the full version string (\char`\"{}mbed T\-L\-S x.\-y.\-z\char`\"{}).
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & The string that will receive the value. The mbed T\-L\-S version string will use 18 bytes A\-T M\-O\-S\-T including a terminating null byte. (So the buffer should be at least 18 bytes to receive this version string). \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,75 @@
+\hypertarget{structmbedtls__ssl__ticket__context}{\section{mbedtls\-\_\-ssl\-\_\-ticket\-\_\-context Struct Reference}
+\label{structmbedtls__ssl__ticket__context}\index{mbedtls\-\_\-ssl\-\_\-ticket\-\_\-context@{mbedtls\-\_\-ssl\-\_\-ticket\-\_\-context}}
+}
+
+
+Context for session ticket handling functions.  
+
+
+
+
+{\ttfamily \#include $<$ssl\-\_\-ticket.\-h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structmbedtls__ssl__ticket__key}{mbedtls\-\_\-ssl\-\_\-ticket\-\_\-key} \hyperlink{structmbedtls__ssl__ticket__context_a92f8b74506a299795117cf0b60504442}{keys} \mbox{[}2\mbox{]}
+\item 
+unsigned char \hyperlink{structmbedtls__ssl__ticket__context_aed5bcb363146b9498dd1345e5c141044}{active}
+\item 
+uint32\-\_\-t \hyperlink{structmbedtls__ssl__ticket__context_ae2548112f1ab8d5ceb7752a205ce358c}{ticket\-\_\-lifetime}
+\item 
+int($\ast$ \hyperlink{structmbedtls__ssl__ticket__context_a08d1247391c2ff04ba9c07c424329b6f}{f\-\_\-rng} )(void $\ast$, unsigned char $\ast$, size\-\_\-t)
+\item 
+void $\ast$ \hyperlink{structmbedtls__ssl__ticket__context_a304d8f181d24a4ddbe5b7f0052229b9c}{p\-\_\-rng}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Context for session ticket handling functions. 
+
+Definition at line 58 of file ssl\-\_\-ticket.\-h.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structmbedtls__ssl__ticket__context_aed5bcb363146b9498dd1345e5c141044}{\index{mbedtls\-\_\-ssl\-\_\-ticket\-\_\-context@{mbedtls\-\_\-ssl\-\_\-ticket\-\_\-context}!active@{active}}
+\index{active@{active}!mbedtls_ssl_ticket_context@{mbedtls\-\_\-ssl\-\_\-ticket\-\_\-context}}
+\subsubsection[{active}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char mbedtls\-\_\-ssl\-\_\-ticket\-\_\-context\-::active}}\label{structmbedtls__ssl__ticket__context_aed5bcb363146b9498dd1345e5c141044}
+index of the currently active key 
+
+Definition at line 61 of file ssl\-\_\-ticket.\-h.
+
+\hypertarget{structmbedtls__ssl__ticket__context_a08d1247391c2ff04ba9c07c424329b6f}{\index{mbedtls\-\_\-ssl\-\_\-ticket\-\_\-context@{mbedtls\-\_\-ssl\-\_\-ticket\-\_\-context}!f\-\_\-rng@{f\-\_\-rng}}
+\index{f\-\_\-rng@{f\-\_\-rng}!mbedtls_ssl_ticket_context@{mbedtls\-\_\-ssl\-\_\-ticket\-\_\-context}}
+\subsubsection[{f\-\_\-rng}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ mbedtls\-\_\-ssl\-\_\-ticket\-\_\-context\-::f\-\_\-rng)(void $\ast$, unsigned char $\ast$, size\-\_\-t)}}\label{structmbedtls__ssl__ticket__context_a08d1247391c2ff04ba9c07c424329b6f}
+Callback for getting (pseudo-\/)random numbers 
+
+Definition at line 66 of file ssl\-\_\-ticket.\-h.
+
+\hypertarget{structmbedtls__ssl__ticket__context_a92f8b74506a299795117cf0b60504442}{\index{mbedtls\-\_\-ssl\-\_\-ticket\-\_\-context@{mbedtls\-\_\-ssl\-\_\-ticket\-\_\-context}!keys@{keys}}
+\index{keys@{keys}!mbedtls_ssl_ticket_context@{mbedtls\-\_\-ssl\-\_\-ticket\-\_\-context}}
+\subsubsection[{keys}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mbedtls\-\_\-ssl\-\_\-ticket\-\_\-key} mbedtls\-\_\-ssl\-\_\-ticket\-\_\-context\-::keys\mbox{[}2\mbox{]}}}\label{structmbedtls__ssl__ticket__context_a92f8b74506a299795117cf0b60504442}
+ticket protection keys 
+
+Definition at line 60 of file ssl\-\_\-ticket.\-h.
+
+\hypertarget{structmbedtls__ssl__ticket__context_a304d8f181d24a4ddbe5b7f0052229b9c}{\index{mbedtls\-\_\-ssl\-\_\-ticket\-\_\-context@{mbedtls\-\_\-ssl\-\_\-ticket\-\_\-context}!p\-\_\-rng@{p\-\_\-rng}}
+\index{p\-\_\-rng@{p\-\_\-rng}!mbedtls_ssl_ticket_context@{mbedtls\-\_\-ssl\-\_\-ticket\-\_\-context}}
+\subsubsection[{p\-\_\-rng}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ mbedtls\-\_\-ssl\-\_\-ticket\-\_\-context\-::p\-\_\-rng}}\label{structmbedtls__ssl__ticket__context_a304d8f181d24a4ddbe5b7f0052229b9c}
+context for the R\-N\-G function 
+
+Definition at line 67 of file ssl\-\_\-ticket.\-h.
+
+\hypertarget{structmbedtls__ssl__ticket__context_ae2548112f1ab8d5ceb7752a205ce358c}{\index{mbedtls\-\_\-ssl\-\_\-ticket\-\_\-context@{mbedtls\-\_\-ssl\-\_\-ticket\-\_\-context}!ticket\-\_\-lifetime@{ticket\-\_\-lifetime}}
+\index{ticket\-\_\-lifetime@{ticket\-\_\-lifetime}!mbedtls_ssl_ticket_context@{mbedtls\-\_\-ssl\-\_\-ticket\-\_\-context}}
+\subsubsection[{ticket\-\_\-lifetime}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t mbedtls\-\_\-ssl\-\_\-ticket\-\_\-context\-::ticket\-\_\-lifetime}}\label{structmbedtls__ssl__ticket__context_ae2548112f1ab8d5ceb7752a205ce358c}
+lifetime of tickets in seconds 
+
+Definition at line 63 of file ssl\-\_\-ticket.\-h.
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/\hyperlink{ssl__ticket_8h}{ssl\-\_\-ticket.\-h}\end{DoxyCompactItemize}

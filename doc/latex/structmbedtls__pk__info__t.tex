@@ -1,0 +1,129 @@
+\hypertarget{structmbedtls__pk__info__t}{\section{mbedtls\-\_\-pk\-\_\-info\-\_\-t Struct Reference}
+\label{structmbedtls__pk__info__t}\index{mbedtls\-\_\-pk\-\_\-info\-\_\-t@{mbedtls\-\_\-pk\-\_\-info\-\_\-t}}
+}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{pk_8h_a3fe41eff5605ae727eb9d28dad297020}{mbedtls\-\_\-pk\-\_\-type\-\_\-t} \hyperlink{structmbedtls__pk__info__t_a1290aa516e4b5889952f56edf331c313}{type}
+\item 
+const char $\ast$ \hyperlink{structmbedtls__pk__info__t_a6390c0e7c7597efec2033fcbea53697c}{name}
+\item 
+size\-\_\-t($\ast$ \hyperlink{structmbedtls__pk__info__t_a6bba14dc93e95a56df97a5c9cfbbc972}{get\-\_\-bitlen} )(const void $\ast$)
+\item 
+int($\ast$ \hyperlink{structmbedtls__pk__info__t_a65e19ae2ef1eea61d69f9c2a6033191a}{can\-\_\-do} )(\hyperlink{pk_8h_a3fe41eff5605ae727eb9d28dad297020}{mbedtls\-\_\-pk\-\_\-type\-\_\-t} \hyperlink{structmbedtls__pk__info__t_a1290aa516e4b5889952f56edf331c313}{type})
+\item 
+int($\ast$ \hyperlink{structmbedtls__pk__info__t_ada03abbe988ff9c566ceec0f5f96e720}{verify\-\_\-func} )(void $\ast$ctx, mbedtls\-\_\-md\-\_\-type\-\_\-t md\-\_\-alg, const unsigned char $\ast$hash, size\-\_\-t hash\-\_\-len, const unsigned char $\ast$sig, size\-\_\-t sig\-\_\-len)
+\item 
+int($\ast$ \hyperlink{structmbedtls__pk__info__t_a84319d0e361748b3603d49ccabc39e54}{sign\-\_\-func} )(void $\ast$ctx, mbedtls\-\_\-md\-\_\-type\-\_\-t md\-\_\-alg, const unsigned char $\ast$hash, size\-\_\-t hash\-\_\-len, unsigned char $\ast$sig, size\-\_\-t $\ast$sig\-\_\-len, int($\ast$f\-\_\-rng)(void $\ast$, unsigned char $\ast$, size\-\_\-t), void $\ast$p\-\_\-rng)
+\item 
+int($\ast$ \hyperlink{structmbedtls__pk__info__t_a8d9dce2cb92def64ed2fb99dfe79c914}{decrypt\-\_\-func} )(void $\ast$ctx, const unsigned char $\ast$input, size\-\_\-t ilen, unsigned char $\ast$output, size\-\_\-t $\ast$olen, size\-\_\-t osize, int($\ast$f\-\_\-rng)(void $\ast$, unsigned char $\ast$, size\-\_\-t), void $\ast$p\-\_\-rng)
+\item 
+int($\ast$ \hyperlink{structmbedtls__pk__info__t_a67f899cad3ca0fde066ad2b95ffcd3c3}{encrypt\-\_\-func} )(void $\ast$ctx, const unsigned char $\ast$input, size\-\_\-t ilen, unsigned char $\ast$output, size\-\_\-t $\ast$olen, size\-\_\-t osize, int($\ast$f\-\_\-rng)(void $\ast$, unsigned char $\ast$, size\-\_\-t), void $\ast$p\-\_\-rng)
+\item 
+int($\ast$ \hyperlink{structmbedtls__pk__info__t_ab3b1ab920fa03e0f4698d45a50978d75}{check\-\_\-pair\-\_\-func} )(const void $\ast$pub, const void $\ast$prv)
+\item 
+void $\ast$($\ast$ \hyperlink{structmbedtls__pk__info__t_a05d4488be20910fb48a835ba9753bbbe}{ctx\-\_\-alloc\-\_\-func} )(void)
+\item 
+void($\ast$ \hyperlink{structmbedtls__pk__info__t_a3e5e57d7c65e78d461d294dbed3dda76}{ctx\-\_\-free\-\_\-func} )(void $\ast$ctx)
+\item 
+void($\ast$ \hyperlink{structmbedtls__pk__info__t_a6e50ba92ec8b18dc5568e125a834a808}{debug\-\_\-func} )(const void $\ast$ctx, \hyperlink{structmbedtls__pk__debug__item}{mbedtls\-\_\-pk\-\_\-debug\-\_\-item} $\ast$items)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 36 of file pk\-\_\-internal.\-h.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structmbedtls__pk__info__t_a65e19ae2ef1eea61d69f9c2a6033191a}{\index{mbedtls\-\_\-pk\-\_\-info\-\_\-t@{mbedtls\-\_\-pk\-\_\-info\-\_\-t}!can\-\_\-do@{can\-\_\-do}}
+\index{can\-\_\-do@{can\-\_\-do}!mbedtls_pk_info_t@{mbedtls\-\_\-pk\-\_\-info\-\_\-t}}
+\subsubsection[{can\-\_\-do}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ mbedtls\-\_\-pk\-\_\-info\-\_\-t\-::can\-\_\-do)({\bf mbedtls\-\_\-pk\-\_\-type\-\_\-t} {\bf type})}}\label{structmbedtls__pk__info__t_a65e19ae2ef1eea61d69f9c2a6033191a}
+Tell if the context implements this type (e.\-g. E\-C\-K\-E\-Y can do E\-C\-D\-S\-A) 
+
+Definition at line 48 of file pk\-\_\-internal.\-h.
+
+\hypertarget{structmbedtls__pk__info__t_ab3b1ab920fa03e0f4698d45a50978d75}{\index{mbedtls\-\_\-pk\-\_\-info\-\_\-t@{mbedtls\-\_\-pk\-\_\-info\-\_\-t}!check\-\_\-pair\-\_\-func@{check\-\_\-pair\-\_\-func}}
+\index{check\-\_\-pair\-\_\-func@{check\-\_\-pair\-\_\-func}!mbedtls_pk_info_t@{mbedtls\-\_\-pk\-\_\-info\-\_\-t}}
+\subsubsection[{check\-\_\-pair\-\_\-func}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ mbedtls\-\_\-pk\-\_\-info\-\_\-t\-::check\-\_\-pair\-\_\-func)(const void $\ast$pub, const void $\ast$prv)}}\label{structmbedtls__pk__info__t_ab3b1ab920fa03e0f4698d45a50978d75}
+Check public-\/private key pair 
+
+Definition at line 75 of file pk\-\_\-internal.\-h.
+
+\hypertarget{structmbedtls__pk__info__t_a05d4488be20910fb48a835ba9753bbbe}{\index{mbedtls\-\_\-pk\-\_\-info\-\_\-t@{mbedtls\-\_\-pk\-\_\-info\-\_\-t}!ctx\-\_\-alloc\-\_\-func@{ctx\-\_\-alloc\-\_\-func}}
+\index{ctx\-\_\-alloc\-\_\-func@{ctx\-\_\-alloc\-\_\-func}!mbedtls_pk_info_t@{mbedtls\-\_\-pk\-\_\-info\-\_\-t}}
+\subsubsection[{ctx\-\_\-alloc\-\_\-func}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$($\ast$ mbedtls\-\_\-pk\-\_\-info\-\_\-t\-::ctx\-\_\-alloc\-\_\-func)(void)}}\label{structmbedtls__pk__info__t_a05d4488be20910fb48a835ba9753bbbe}
+Allocate a new context 
+
+Definition at line 78 of file pk\-\_\-internal.\-h.
+
+\hypertarget{structmbedtls__pk__info__t_a3e5e57d7c65e78d461d294dbed3dda76}{\index{mbedtls\-\_\-pk\-\_\-info\-\_\-t@{mbedtls\-\_\-pk\-\_\-info\-\_\-t}!ctx\-\_\-free\-\_\-func@{ctx\-\_\-free\-\_\-func}}
+\index{ctx\-\_\-free\-\_\-func@{ctx\-\_\-free\-\_\-func}!mbedtls_pk_info_t@{mbedtls\-\_\-pk\-\_\-info\-\_\-t}}
+\subsubsection[{ctx\-\_\-free\-\_\-func}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ mbedtls\-\_\-pk\-\_\-info\-\_\-t\-::ctx\-\_\-free\-\_\-func)(void $\ast$ctx)}}\label{structmbedtls__pk__info__t_a3e5e57d7c65e78d461d294dbed3dda76}
+Free the given context 
+
+Definition at line 81 of file pk\-\_\-internal.\-h.
+
+\hypertarget{structmbedtls__pk__info__t_a6e50ba92ec8b18dc5568e125a834a808}{\index{mbedtls\-\_\-pk\-\_\-info\-\_\-t@{mbedtls\-\_\-pk\-\_\-info\-\_\-t}!debug\-\_\-func@{debug\-\_\-func}}
+\index{debug\-\_\-func@{debug\-\_\-func}!mbedtls_pk_info_t@{mbedtls\-\_\-pk\-\_\-info\-\_\-t}}
+\subsubsection[{debug\-\_\-func}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ mbedtls\-\_\-pk\-\_\-info\-\_\-t\-::debug\-\_\-func)(const void $\ast$ctx, {\bf mbedtls\-\_\-pk\-\_\-debug\-\_\-item} $\ast$items)}}\label{structmbedtls__pk__info__t_a6e50ba92ec8b18dc5568e125a834a808}
+Interface with the debug module 
+
+Definition at line 84 of file pk\-\_\-internal.\-h.
+
+\hypertarget{structmbedtls__pk__info__t_a8d9dce2cb92def64ed2fb99dfe79c914}{\index{mbedtls\-\_\-pk\-\_\-info\-\_\-t@{mbedtls\-\_\-pk\-\_\-info\-\_\-t}!decrypt\-\_\-func@{decrypt\-\_\-func}}
+\index{decrypt\-\_\-func@{decrypt\-\_\-func}!mbedtls_pk_info_t@{mbedtls\-\_\-pk\-\_\-info\-\_\-t}}
+\subsubsection[{decrypt\-\_\-func}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ mbedtls\-\_\-pk\-\_\-info\-\_\-t\-::decrypt\-\_\-func)(void $\ast$ctx, const unsigned char $\ast$input, size\-\_\-t ilen, unsigned char $\ast$output, size\-\_\-t $\ast$olen, size\-\_\-t osize, int($\ast$f\-\_\-rng)(void $\ast$, unsigned char $\ast$, size\-\_\-t), void $\ast$p\-\_\-rng)}}\label{structmbedtls__pk__info__t_a8d9dce2cb92def64ed2fb99dfe79c914}
+Decrypt message 
+
+Definition at line 63 of file pk\-\_\-internal.\-h.
+
+\hypertarget{structmbedtls__pk__info__t_a67f899cad3ca0fde066ad2b95ffcd3c3}{\index{mbedtls\-\_\-pk\-\_\-info\-\_\-t@{mbedtls\-\_\-pk\-\_\-info\-\_\-t}!encrypt\-\_\-func@{encrypt\-\_\-func}}
+\index{encrypt\-\_\-func@{encrypt\-\_\-func}!mbedtls_pk_info_t@{mbedtls\-\_\-pk\-\_\-info\-\_\-t}}
+\subsubsection[{encrypt\-\_\-func}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ mbedtls\-\_\-pk\-\_\-info\-\_\-t\-::encrypt\-\_\-func)(void $\ast$ctx, const unsigned char $\ast$input, size\-\_\-t ilen, unsigned char $\ast$output, size\-\_\-t $\ast$olen, size\-\_\-t osize, int($\ast$f\-\_\-rng)(void $\ast$, unsigned char $\ast$, size\-\_\-t), void $\ast$p\-\_\-rng)}}\label{structmbedtls__pk__info__t_a67f899cad3ca0fde066ad2b95ffcd3c3}
+Encrypt message 
+
+Definition at line 69 of file pk\-\_\-internal.\-h.
+
+\hypertarget{structmbedtls__pk__info__t_a6bba14dc93e95a56df97a5c9cfbbc972}{\index{mbedtls\-\_\-pk\-\_\-info\-\_\-t@{mbedtls\-\_\-pk\-\_\-info\-\_\-t}!get\-\_\-bitlen@{get\-\_\-bitlen}}
+\index{get\-\_\-bitlen@{get\-\_\-bitlen}!mbedtls_pk_info_t@{mbedtls\-\_\-pk\-\_\-info\-\_\-t}}
+\subsubsection[{get\-\_\-bitlen}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t($\ast$ mbedtls\-\_\-pk\-\_\-info\-\_\-t\-::get\-\_\-bitlen)(const void $\ast$)}}\label{structmbedtls__pk__info__t_a6bba14dc93e95a56df97a5c9cfbbc972}
+Get key size in bits 
+
+Definition at line 45 of file pk\-\_\-internal.\-h.
+
+\hypertarget{structmbedtls__pk__info__t_a6390c0e7c7597efec2033fcbea53697c}{\index{mbedtls\-\_\-pk\-\_\-info\-\_\-t@{mbedtls\-\_\-pk\-\_\-info\-\_\-t}!name@{name}}
+\index{name@{name}!mbedtls_pk_info_t@{mbedtls\-\_\-pk\-\_\-info\-\_\-t}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ mbedtls\-\_\-pk\-\_\-info\-\_\-t\-::name}}\label{structmbedtls__pk__info__t_a6390c0e7c7597efec2033fcbea53697c}
+Type name 
+
+Definition at line 42 of file pk\-\_\-internal.\-h.
+
+\hypertarget{structmbedtls__pk__info__t_a84319d0e361748b3603d49ccabc39e54}{\index{mbedtls\-\_\-pk\-\_\-info\-\_\-t@{mbedtls\-\_\-pk\-\_\-info\-\_\-t}!sign\-\_\-func@{sign\-\_\-func}}
+\index{sign\-\_\-func@{sign\-\_\-func}!mbedtls_pk_info_t@{mbedtls\-\_\-pk\-\_\-info\-\_\-t}}
+\subsubsection[{sign\-\_\-func}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ mbedtls\-\_\-pk\-\_\-info\-\_\-t\-::sign\-\_\-func)(void $\ast$ctx, mbedtls\-\_\-md\-\_\-type\-\_\-t md\-\_\-alg, const unsigned char $\ast$hash, size\-\_\-t hash\-\_\-len, unsigned char $\ast$sig, size\-\_\-t $\ast$sig\-\_\-len, int($\ast$f\-\_\-rng)(void $\ast$, unsigned char $\ast$, size\-\_\-t), void $\ast$p\-\_\-rng)}}\label{structmbedtls__pk__info__t_a84319d0e361748b3603d49ccabc39e54}
+Make signature 
+
+Definition at line 56 of file pk\-\_\-internal.\-h.
+
+\hypertarget{structmbedtls__pk__info__t_a1290aa516e4b5889952f56edf331c313}{\index{mbedtls\-\_\-pk\-\_\-info\-\_\-t@{mbedtls\-\_\-pk\-\_\-info\-\_\-t}!type@{type}}
+\index{type@{type}!mbedtls_pk_info_t@{mbedtls\-\_\-pk\-\_\-info\-\_\-t}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mbedtls\-\_\-pk\-\_\-type\-\_\-t} mbedtls\-\_\-pk\-\_\-info\-\_\-t\-::type}}\label{structmbedtls__pk__info__t_a1290aa516e4b5889952f56edf331c313}
+Public key type 
+
+Definition at line 39 of file pk\-\_\-internal.\-h.
+
+\hypertarget{structmbedtls__pk__info__t_ada03abbe988ff9c566ceec0f5f96e720}{\index{mbedtls\-\_\-pk\-\_\-info\-\_\-t@{mbedtls\-\_\-pk\-\_\-info\-\_\-t}!verify\-\_\-func@{verify\-\_\-func}}
+\index{verify\-\_\-func@{verify\-\_\-func}!mbedtls_pk_info_t@{mbedtls\-\_\-pk\-\_\-info\-\_\-t}}
+\subsubsection[{verify\-\_\-func}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ mbedtls\-\_\-pk\-\_\-info\-\_\-t\-::verify\-\_\-func)(void $\ast$ctx, mbedtls\-\_\-md\-\_\-type\-\_\-t md\-\_\-alg, const unsigned char $\ast$hash, size\-\_\-t hash\-\_\-len, const unsigned char $\ast$sig, size\-\_\-t sig\-\_\-len)}}\label{structmbedtls__pk__info__t_ada03abbe988ff9c566ceec0f5f96e720}
+Verify signature 
+
+Definition at line 51 of file pk\-\_\-internal.\-h.
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/pk\-\_\-internal.\-h\end{DoxyCompactItemize}

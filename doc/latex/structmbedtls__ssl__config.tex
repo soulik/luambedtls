@@ -1,0 +1,547 @@
+\hypertarget{structmbedtls__ssl__config}{\section{mbedtls\-\_\-ssl\-\_\-config Struct Reference}
+\label{structmbedtls__ssl__config}\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}}
+}
+
+
+{\ttfamily \#include $<$ssl.\-h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const int $\ast$ \hyperlink{structmbedtls__ssl__config_a15e716727b7dd508dfb96e270f37919f}{ciphersuite\-\_\-list} \mbox{[}4\mbox{]}
+\item 
+void($\ast$ \hyperlink{structmbedtls__ssl__config_acc35711af502ca74adcfd706677110fc}{f\-\_\-dbg} )(void $\ast$, int, const char $\ast$, int, const char $\ast$)
+\item 
+void $\ast$ \hyperlink{structmbedtls__ssl__config_ad591b46fdb117d844c0a5f7366423c48}{p\-\_\-dbg}
+\item 
+int($\ast$ \hyperlink{structmbedtls__ssl__config_a816c169ce1ecc8a17797085f3b3915ee}{f\-\_\-rng} )(void $\ast$, unsigned char $\ast$, size\-\_\-t)
+\item 
+void $\ast$ \hyperlink{structmbedtls__ssl__config_a1eff6c9817251b686e8f518597590476}{p\-\_\-rng}
+\item 
+int($\ast$ \hyperlink{structmbedtls__ssl__config_a8675186fe7701399b2d8c1a0c548ed79}{f\-\_\-get\-\_\-cache} )(void $\ast$, \hyperlink{structmbedtls__ssl__session}{mbedtls\-\_\-ssl\-\_\-session} $\ast$)
+\item 
+int($\ast$ \hyperlink{structmbedtls__ssl__config_a9a46ae5b0da844020d37aa1fcd663e7c}{f\-\_\-set\-\_\-cache} )(void $\ast$, const \hyperlink{structmbedtls__ssl__session}{mbedtls\-\_\-ssl\-\_\-session} $\ast$)
+\item 
+void $\ast$ \hyperlink{structmbedtls__ssl__config_ac5f5d3d7a788e65c722db381c66ecb24}{p\-\_\-cache}
+\item 
+int($\ast$ \hyperlink{structmbedtls__ssl__config_aa649f149ca69b2ce28fa25e31097f80a}{f\-\_\-sni} )(void $\ast$, \hyperlink{structmbedtls__ssl__context}{mbedtls\-\_\-ssl\-\_\-context} $\ast$, const unsigned char $\ast$, size\-\_\-t)
+\item 
+void $\ast$ \hyperlink{structmbedtls__ssl__config_a1ae68f4bd072068c60222866c0ea2f62}{p\-\_\-sni}
+\item 
+int($\ast$ \hyperlink{structmbedtls__ssl__config_adbb2dc3740e0f1d726f8e9ff026b6d11}{f\-\_\-vrfy} )(void $\ast$, \hyperlink{structmbedtls__x509__crt}{mbedtls\-\_\-x509\-\_\-crt} $\ast$, int, uint32\-\_\-t $\ast$)
+\item 
+void $\ast$ \hyperlink{structmbedtls__ssl__config_ac59c71efac4d612c645e703941efae51}{p\-\_\-vrfy}
+\item 
+int($\ast$ \hyperlink{structmbedtls__ssl__config_aa910c0bbe6ec2a3787196faaef2e5ac3}{f\-\_\-psk} )(void $\ast$, \hyperlink{structmbedtls__ssl__context}{mbedtls\-\_\-ssl\-\_\-context} $\ast$, const unsigned char $\ast$, size\-\_\-t)
+\item 
+void $\ast$ \hyperlink{structmbedtls__ssl__config_ad42f2396c9758b6866d61342094a0a7d}{p\-\_\-psk}
+\item 
+int($\ast$ \hyperlink{structmbedtls__ssl__config_a24ad512d14251faef692f9692acab21c}{f\-\_\-cookie\-\_\-write} )(void $\ast$, unsigned char $\ast$$\ast$, unsigned char $\ast$, const unsigned char $\ast$, size\-\_\-t)
+\item 
+int($\ast$ \hyperlink{structmbedtls__ssl__config_a2a992d43e5f3215b07533dd6cacf5de4}{f\-\_\-cookie\-\_\-check} )(void $\ast$, const unsigned char $\ast$, size\-\_\-t, const unsigned char $\ast$, size\-\_\-t)
+\item 
+void $\ast$ \hyperlink{structmbedtls__ssl__config_a227d50ad74b96adcc59a8fdee0f618a4}{p\-\_\-cookie}
+\item 
+int($\ast$ \hyperlink{structmbedtls__ssl__config_aea65bf00504dd75984afa3b91e90b8f0}{f\-\_\-ticket\-\_\-write} )(void $\ast$, const \hyperlink{structmbedtls__ssl__session}{mbedtls\-\_\-ssl\-\_\-session} $\ast$, unsigned char $\ast$, const unsigned char $\ast$, size\-\_\-t $\ast$, uint32\-\_\-t $\ast$)
+\item 
+int($\ast$ \hyperlink{structmbedtls__ssl__config_a8524cfef06d1e707603437926a487089}{f\-\_\-ticket\-\_\-parse} )(void $\ast$, \hyperlink{structmbedtls__ssl__session}{mbedtls\-\_\-ssl\-\_\-session} $\ast$, unsigned char $\ast$, size\-\_\-t)
+\item 
+void $\ast$ \hyperlink{structmbedtls__ssl__config_a0dab7f9f4f2c85644ebe32f8e37984dc}{p\-\_\-ticket}
+\item 
+const \hyperlink{structmbedtls__x509__crt__profile}{mbedtls\-\_\-x509\-\_\-crt\-\_\-profile} $\ast$ \hyperlink{structmbedtls__ssl__config_a72c287eeb318ef4975b28619d0413419}{cert\-\_\-profile}
+\item 
+\hyperlink{structmbedtls__ssl__key__cert}{mbedtls\-\_\-ssl\-\_\-key\-\_\-cert} $\ast$ \hyperlink{structmbedtls__ssl__config_afbcfe1cdb3e42ee1d1e14352cefde29e}{key\-\_\-cert}
+\item 
+\hyperlink{structmbedtls__x509__crt}{mbedtls\-\_\-x509\-\_\-crt} $\ast$ \hyperlink{structmbedtls__ssl__config_a4087cd54ed61e8a5792725e0fcdf1321}{ca\-\_\-chain}
+\item 
+\hyperlink{structmbedtls__x509__crl}{mbedtls\-\_\-x509\-\_\-crl} $\ast$ \hyperlink{structmbedtls__ssl__config_a2ccccedcad4f76e3337a4b530cedc3a2}{ca\-\_\-crl}
+\item 
+const int $\ast$ \hyperlink{structmbedtls__ssl__config_a82552e1dd3c9065ef98e2835fc925653}{sig\-\_\-hashes}
+\item 
+const \hyperlink{ecp_8h_af79e530ea8f8416480f805baa20b1a2d}{mbedtls\-\_\-ecp\-\_\-group\-\_\-id} $\ast$ \hyperlink{structmbedtls__ssl__config_a388e40cfcaadba5c07bf625c7dba18e0}{curve\-\_\-list}
+\item 
+\hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} \hyperlink{structmbedtls__ssl__config_af6043fc1d3fd43d571ec8faa9de3906d}{dhm\-\_\-\-P}
+\item 
+\hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} \hyperlink{structmbedtls__ssl__config_af0d45b3fc7171e48a08d904b7383fbba}{dhm\-\_\-\-G}
+\item 
+unsigned char $\ast$ \hyperlink{structmbedtls__ssl__config_a70636b4747d4b82e28c76c740e891ab3}{psk}
+\item 
+size\-\_\-t \hyperlink{structmbedtls__ssl__config_ad45c9414cf24c068f0cae76dfe793bdf}{psk\-\_\-len}
+\item 
+unsigned char $\ast$ \hyperlink{structmbedtls__ssl__config_a3ed897b829686c76876d5f2bbb43d641}{psk\-\_\-identity}
+\item 
+size\-\_\-t \hyperlink{structmbedtls__ssl__config_a095fcfcae220215168448335c3294f6c}{psk\-\_\-identity\-\_\-len}
+\item 
+const char $\ast$$\ast$ \hyperlink{structmbedtls__ssl__config_abed0cad3facb6f2b84ca53199ac629ab}{alpn\-\_\-list}
+\item 
+uint32\-\_\-t \hyperlink{structmbedtls__ssl__config_a8f32ca22ea20b3848176d78390c13153}{read\-\_\-timeout}
+\item 
+uint32\-\_\-t \hyperlink{structmbedtls__ssl__config_a28320f7be718c8f4197ee146dfdc2447}{hs\-\_\-timeout\-\_\-min}
+\item 
+uint32\-\_\-t \hyperlink{structmbedtls__ssl__config_af44d9c59c9255186e2a00f44e0678fac}{hs\-\_\-timeout\-\_\-max}
+\item 
+int \hyperlink{structmbedtls__ssl__config_a0f2ff6d7f481f9ffaf40025289011a2d}{renego\-\_\-max\-\_\-records}
+\item 
+unsigned char \hyperlink{structmbedtls__ssl__config_ab1e7273cb7a477f5cb303134055555b0}{renego\-\_\-period} \mbox{[}8\mbox{]}
+\item 
+unsigned int \hyperlink{structmbedtls__ssl__config_ab61653cfcc80cc9d0d902705212c6e4e}{badmac\-\_\-limit}
+\item 
+unsigned int \hyperlink{structmbedtls__ssl__config_abba2011a713a2afab2cf724c21f11efb}{dhm\-\_\-min\-\_\-bitlen}
+\item 
+unsigned char \hyperlink{structmbedtls__ssl__config_a10a7ca31f5096d71fc9effbe004d3fd8}{max\-\_\-major\-\_\-ver}
+\item 
+unsigned char \hyperlink{structmbedtls__ssl__config_a5cd10b5cbe18392c64fa6831cb222243}{max\-\_\-minor\-\_\-ver}
+\item 
+unsigned char \hyperlink{structmbedtls__ssl__config_ae349313f286e0e79d21d18fe40fba06f}{min\-\_\-major\-\_\-ver}
+\item 
+unsigned char \hyperlink{structmbedtls__ssl__config_a61579a80f1aa272cc8d9f7c2786b7b30}{min\-\_\-minor\-\_\-ver}
+\item 
+unsigned int \hyperlink{structmbedtls__ssl__config_a7ee72d610d141b932141bf8afb3aec2a}{endpoint}\-: 1
+\item 
+unsigned int \hyperlink{structmbedtls__ssl__config_a63cafd8d131ac7d162406b47bc6565d0}{transport}\-: 1
+\item 
+unsigned int \hyperlink{structmbedtls__ssl__config_a0d3c2ea8eaf59a5acfcdb6b123148c1f}{authmode}\-: 2
+\item 
+unsigned int \hyperlink{structmbedtls__ssl__config_afcd4e0685b3fca3c49043bdd6a84490f}{allow\-\_\-legacy\-\_\-renegotiation}\-: 2
+\item 
+unsigned int \hyperlink{structmbedtls__ssl__config_a7155fd95a3206146ef1374341d008e92}{arc4\-\_\-disabled}\-: 1
+\item 
+unsigned int \hyperlink{structmbedtls__ssl__config_a67e52d2668c7f4bc4f6a872c35a679ab}{mfl\-\_\-code}\-: 3
+\item 
+unsigned int \hyperlink{structmbedtls__ssl__config_a8f9e666cb46e055bed2b799a94a85e3e}{encrypt\-\_\-then\-\_\-mac}\-: 1
+\item 
+unsigned int \hyperlink{structmbedtls__ssl__config_ac6ac2c30ac20fc9033913e0de6ffbe93}{extended\-\_\-ms}\-: 1
+\item 
+unsigned int \hyperlink{structmbedtls__ssl__config_af636d34975cc5ced1aa32cb424a37c67}{anti\-\_\-replay}\-: 1
+\item 
+unsigned int \hyperlink{structmbedtls__ssl__config_a053c327dda99451c6e82cda73e27d322}{cbc\-\_\-record\-\_\-splitting}\-: 1
+\item 
+unsigned int \hyperlink{structmbedtls__ssl__config_a953d3f0bbb40ed6f4020dc3e1a196dfb}{disable\-\_\-renegotiation}\-: 1
+\item 
+unsigned int \hyperlink{structmbedtls__ssl__config_a24bf9d624a2e2432518e9da8ae908db4}{trunc\-\_\-hmac}\-: 1
+\item 
+unsigned int \hyperlink{structmbedtls__ssl__config_a1b988bcd1b38c51cb802bf8af5d05c7b}{session\-\_\-tickets}\-: 1
+\item 
+unsigned int \hyperlink{structmbedtls__ssl__config_a0ca184f6088f938d7240157e8b4bbbab}{fallback}\-: 1
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+S\-S\-L/\-T\-L\-S configuration to be shared between \hyperlink{structmbedtls__ssl__context}{mbedtls\-\_\-ssl\-\_\-context} structures. 
+
+Definition at line 480 of file ssl.\-h.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structmbedtls__ssl__config_afcd4e0685b3fca3c49043bdd6a84490f}{\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}!allow\-\_\-legacy\-\_\-renegotiation@{allow\-\_\-legacy\-\_\-renegotiation}}
+\index{allow\-\_\-legacy\-\_\-renegotiation@{allow\-\_\-legacy\-\_\-renegotiation}!mbedtls_ssl_config@{mbedtls\-\_\-ssl\-\_\-config}}
+\subsubsection[{allow\-\_\-legacy\-\_\-renegotiation}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int mbedtls\-\_\-ssl\-\_\-config\-::allow\-\_\-legacy\-\_\-renegotiation}}\label{structmbedtls__ssl__config_afcd4e0685b3fca3c49043bdd6a84490f}
+M\-B\-E\-D\-T\-L\-S\-\_\-\-L\-E\-G\-A\-C\-Y\-\_\-\-X\-X\-X 
+
+Definition at line 612 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__config_abed0cad3facb6f2b84ca53199ac629ab}{\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}!alpn\-\_\-list@{alpn\-\_\-list}}
+\index{alpn\-\_\-list@{alpn\-\_\-list}!mbedtls_ssl_config@{mbedtls\-\_\-ssl\-\_\-config}}
+\subsubsection[{alpn\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$$\ast$ mbedtls\-\_\-ssl\-\_\-config\-::alpn\-\_\-list}}\label{structmbedtls__ssl__config_abed0cad3facb6f2b84ca53199ac629ab}
+ordered list of protocols 
+
+Definition at line 569 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__config_af636d34975cc5ced1aa32cb424a37c67}{\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}!anti\-\_\-replay@{anti\-\_\-replay}}
+\index{anti\-\_\-replay@{anti\-\_\-replay}!mbedtls_ssl_config@{mbedtls\-\_\-ssl\-\_\-config}}
+\subsubsection[{anti\-\_\-replay}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int mbedtls\-\_\-ssl\-\_\-config\-::anti\-\_\-replay}}\label{structmbedtls__ssl__config_af636d34975cc5ced1aa32cb424a37c67}
+detect and prevent replay? 
+
+Definition at line 626 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__config_a7155fd95a3206146ef1374341d008e92}{\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}!arc4\-\_\-disabled@{arc4\-\_\-disabled}}
+\index{arc4\-\_\-disabled@{arc4\-\_\-disabled}!mbedtls_ssl_config@{mbedtls\-\_\-ssl\-\_\-config}}
+\subsubsection[{arc4\-\_\-disabled}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int mbedtls\-\_\-ssl\-\_\-config\-::arc4\-\_\-disabled}}\label{structmbedtls__ssl__config_a7155fd95a3206146ef1374341d008e92}
+blacklist R\-C4 ciphersuites? 
+
+Definition at line 614 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__config_a0d3c2ea8eaf59a5acfcdb6b123148c1f}{\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}!authmode@{authmode}}
+\index{authmode@{authmode}!mbedtls_ssl_config@{mbedtls\-\_\-ssl\-\_\-config}}
+\subsubsection[{authmode}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int mbedtls\-\_\-ssl\-\_\-config\-::authmode}}\label{structmbedtls__ssl__config_a0d3c2ea8eaf59a5acfcdb6b123148c1f}
+M\-B\-E\-D\-T\-L\-S\-\_\-\-S\-S\-L\-\_\-\-V\-E\-R\-I\-F\-Y\-\_\-\-X\-X\-X 
+
+Definition at line 610 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__config_ab61653cfcc80cc9d0d902705212c6e4e}{\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}!badmac\-\_\-limit@{badmac\-\_\-limit}}
+\index{badmac\-\_\-limit@{badmac\-\_\-limit}!mbedtls_ssl_config@{mbedtls\-\_\-ssl\-\_\-config}}
+\subsubsection[{badmac\-\_\-limit}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int mbedtls\-\_\-ssl\-\_\-config\-::badmac\-\_\-limit}}\label{structmbedtls__ssl__config_ab61653cfcc80cc9d0d902705212c6e4e}
+limit of records with a bad M\-A\-C 
+
+Definition at line 592 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__config_a4087cd54ed61e8a5792725e0fcdf1321}{\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}!ca\-\_\-chain@{ca\-\_\-chain}}
+\index{ca\-\_\-chain@{ca\-\_\-chain}!mbedtls_ssl_config@{mbedtls\-\_\-ssl\-\_\-config}}
+\subsubsection[{ca\-\_\-chain}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mbedtls\-\_\-x509\-\_\-crt}$\ast$ mbedtls\-\_\-ssl\-\_\-config\-::ca\-\_\-chain}}\label{structmbedtls__ssl__config_a4087cd54ed61e8a5792725e0fcdf1321}
+trusted C\-As 
+
+Definition at line 544 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__config_a2ccccedcad4f76e3337a4b530cedc3a2}{\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}!ca\-\_\-crl@{ca\-\_\-crl}}
+\index{ca\-\_\-crl@{ca\-\_\-crl}!mbedtls_ssl_config@{mbedtls\-\_\-ssl\-\_\-config}}
+\subsubsection[{ca\-\_\-crl}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mbedtls\-\_\-x509\-\_\-crl}$\ast$ mbedtls\-\_\-ssl\-\_\-config\-::ca\-\_\-crl}}\label{structmbedtls__ssl__config_a2ccccedcad4f76e3337a4b530cedc3a2}
+trusted C\-As C\-R\-Ls 
+
+Definition at line 545 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__config_a053c327dda99451c6e82cda73e27d322}{\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}!cbc\-\_\-record\-\_\-splitting@{cbc\-\_\-record\-\_\-splitting}}
+\index{cbc\-\_\-record\-\_\-splitting@{cbc\-\_\-record\-\_\-splitting}!mbedtls_ssl_config@{mbedtls\-\_\-ssl\-\_\-config}}
+\subsubsection[{cbc\-\_\-record\-\_\-splitting}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int mbedtls\-\_\-ssl\-\_\-config\-::cbc\-\_\-record\-\_\-splitting}}\label{structmbedtls__ssl__config_a053c327dda99451c6e82cda73e27d322}
+do cbc record splitting 
+
+Definition at line 629 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__config_a72c287eeb318ef4975b28619d0413419}{\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}!cert\-\_\-profile@{cert\-\_\-profile}}
+\index{cert\-\_\-profile@{cert\-\_\-profile}!mbedtls_ssl_config@{mbedtls\-\_\-ssl\-\_\-config}}
+\subsubsection[{cert\-\_\-profile}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf mbedtls\-\_\-x509\-\_\-crt\-\_\-profile}$\ast$ mbedtls\-\_\-ssl\-\_\-config\-::cert\-\_\-profile}}\label{structmbedtls__ssl__config_a72c287eeb318ef4975b28619d0413419}
+verification profile 
+
+Definition at line 542 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__config_a15e716727b7dd508dfb96e270f37919f}{\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}!ciphersuite\-\_\-list@{ciphersuite\-\_\-list}}
+\index{ciphersuite\-\_\-list@{ciphersuite\-\_\-list}!mbedtls_ssl_config@{mbedtls\-\_\-ssl\-\_\-config}}
+\subsubsection[{ciphersuite\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}const int$\ast$ mbedtls\-\_\-ssl\-\_\-config\-::ciphersuite\-\_\-list\mbox{[}4\mbox{]}}}\label{structmbedtls__ssl__config_a15e716727b7dd508dfb96e270f37919f}
+allowed ciphersuites per version 
+
+Definition at line 488 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__config_a388e40cfcaadba5c07bf625c7dba18e0}{\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}!curve\-\_\-list@{curve\-\_\-list}}
+\index{curve\-\_\-list@{curve\-\_\-list}!mbedtls_ssl_config@{mbedtls\-\_\-ssl\-\_\-config}}
+\subsubsection[{curve\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf mbedtls\-\_\-ecp\-\_\-group\-\_\-id}$\ast$ mbedtls\-\_\-ssl\-\_\-config\-::curve\-\_\-list}}\label{structmbedtls__ssl__config_a388e40cfcaadba5c07bf625c7dba18e0}
+allowed curves 
+
+Definition at line 553 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__config_af0d45b3fc7171e48a08d904b7383fbba}{\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}!dhm\-\_\-\-G@{dhm\-\_\-\-G}}
+\index{dhm\-\_\-\-G@{dhm\-\_\-\-G}!mbedtls_ssl_config@{mbedtls\-\_\-ssl\-\_\-config}}
+\subsubsection[{dhm\-\_\-\-G}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mbedtls\-\_\-mpi} mbedtls\-\_\-ssl\-\_\-config\-::dhm\-\_\-\-G}}\label{structmbedtls__ssl__config_af0d45b3fc7171e48a08d904b7383fbba}
+generator for D\-H\-M 
+
+Definition at line 558 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__config_abba2011a713a2afab2cf724c21f11efb}{\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}!dhm\-\_\-min\-\_\-bitlen@{dhm\-\_\-min\-\_\-bitlen}}
+\index{dhm\-\_\-min\-\_\-bitlen@{dhm\-\_\-min\-\_\-bitlen}!mbedtls_ssl_config@{mbedtls\-\_\-ssl\-\_\-config}}
+\subsubsection[{dhm\-\_\-min\-\_\-bitlen}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int mbedtls\-\_\-ssl\-\_\-config\-::dhm\-\_\-min\-\_\-bitlen}}\label{structmbedtls__ssl__config_abba2011a713a2afab2cf724c21f11efb}
+min. bit length of the D\-H\-M prime 
+
+Definition at line 596 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__config_af6043fc1d3fd43d571ec8faa9de3906d}{\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}!dhm\-\_\-\-P@{dhm\-\_\-\-P}}
+\index{dhm\-\_\-\-P@{dhm\-\_\-\-P}!mbedtls_ssl_config@{mbedtls\-\_\-ssl\-\_\-config}}
+\subsubsection[{dhm\-\_\-\-P}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mbedtls\-\_\-mpi} mbedtls\-\_\-ssl\-\_\-config\-::dhm\-\_\-\-P}}\label{structmbedtls__ssl__config_af6043fc1d3fd43d571ec8faa9de3906d}
+prime modulus for D\-H\-M 
+
+Definition at line 557 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__config_a953d3f0bbb40ed6f4020dc3e1a196dfb}{\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}!disable\-\_\-renegotiation@{disable\-\_\-renegotiation}}
+\index{disable\-\_\-renegotiation@{disable\-\_\-renegotiation}!mbedtls_ssl_config@{mbedtls\-\_\-ssl\-\_\-config}}
+\subsubsection[{disable\-\_\-renegotiation}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int mbedtls\-\_\-ssl\-\_\-config\-::disable\-\_\-renegotiation}}\label{structmbedtls__ssl__config_a953d3f0bbb40ed6f4020dc3e1a196dfb}
+disable renegotiation? 
+
+Definition at line 632 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__config_a8f9e666cb46e055bed2b799a94a85e3e}{\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}!encrypt\-\_\-then\-\_\-mac@{encrypt\-\_\-then\-\_\-mac}}
+\index{encrypt\-\_\-then\-\_\-mac@{encrypt\-\_\-then\-\_\-mac}!mbedtls_ssl_config@{mbedtls\-\_\-ssl\-\_\-config}}
+\subsubsection[{encrypt\-\_\-then\-\_\-mac}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int mbedtls\-\_\-ssl\-\_\-config\-::encrypt\-\_\-then\-\_\-mac}}\label{structmbedtls__ssl__config_a8f9e666cb46e055bed2b799a94a85e3e}
+negotiate encrypt-\/then-\/mac? 
+
+Definition at line 620 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__config_a7ee72d610d141b932141bf8afb3aec2a}{\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}!endpoint@{endpoint}}
+\index{endpoint@{endpoint}!mbedtls_ssl_config@{mbedtls\-\_\-ssl\-\_\-config}}
+\subsubsection[{endpoint}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int mbedtls\-\_\-ssl\-\_\-config\-::endpoint}}\label{structmbedtls__ssl__config_a7ee72d610d141b932141bf8afb3aec2a}
+0\-: client, 1\-: server 
+
+Definition at line 608 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__config_ac6ac2c30ac20fc9033913e0de6ffbe93}{\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}!extended\-\_\-ms@{extended\-\_\-ms}}
+\index{extended\-\_\-ms@{extended\-\_\-ms}!mbedtls_ssl_config@{mbedtls\-\_\-ssl\-\_\-config}}
+\subsubsection[{extended\-\_\-ms}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int mbedtls\-\_\-ssl\-\_\-config\-::extended\-\_\-ms}}\label{structmbedtls__ssl__config_ac6ac2c30ac20fc9033913e0de6ffbe93}
+negotiate extended master secret? 
+
+Definition at line 623 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__config_a2a992d43e5f3215b07533dd6cacf5de4}{\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}!f\-\_\-cookie\-\_\-check@{f\-\_\-cookie\-\_\-check}}
+\index{f\-\_\-cookie\-\_\-check@{f\-\_\-cookie\-\_\-check}!mbedtls_ssl_config@{mbedtls\-\_\-ssl\-\_\-config}}
+\subsubsection[{f\-\_\-cookie\-\_\-check}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ mbedtls\-\_\-ssl\-\_\-config\-::f\-\_\-cookie\-\_\-check)(void $\ast$, const unsigned char $\ast$, size\-\_\-t, const unsigned char $\ast$, size\-\_\-t)}}\label{structmbedtls__ssl__config_a2a992d43e5f3215b07533dd6cacf5de4}
+Callback to verify validity of a Client\-Hello cookie 
+
+Definition at line 527 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__config_a24ad512d14251faef692f9692acab21c}{\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}!f\-\_\-cookie\-\_\-write@{f\-\_\-cookie\-\_\-write}}
+\index{f\-\_\-cookie\-\_\-write@{f\-\_\-cookie\-\_\-write}!mbedtls_ssl_config@{mbedtls\-\_\-ssl\-\_\-config}}
+\subsubsection[{f\-\_\-cookie\-\_\-write}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ mbedtls\-\_\-ssl\-\_\-config\-::f\-\_\-cookie\-\_\-write)(void $\ast$, unsigned char $\ast$$\ast$, unsigned char $\ast$, const unsigned char $\ast$, size\-\_\-t)}}\label{structmbedtls__ssl__config_a24ad512d14251faef692f9692acab21c}
+Callback to create \& write a cookie for Client\-Hello veirifcation 
+
+Definition at line 524 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__config_acc35711af502ca74adcfd706677110fc}{\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}!f\-\_\-dbg@{f\-\_\-dbg}}
+\index{f\-\_\-dbg@{f\-\_\-dbg}!mbedtls_ssl_config@{mbedtls\-\_\-ssl\-\_\-config}}
+\subsubsection[{f\-\_\-dbg}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ mbedtls\-\_\-ssl\-\_\-config\-::f\-\_\-dbg)(void $\ast$, int, const char $\ast$, int, const char $\ast$)}}\label{structmbedtls__ssl__config_acc35711af502ca74adcfd706677110fc}
+Callback for printing debug output 
+
+Definition at line 491 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__config_a8675186fe7701399b2d8c1a0c548ed79}{\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}!f\-\_\-get\-\_\-cache@{f\-\_\-get\-\_\-cache}}
+\index{f\-\_\-get\-\_\-cache@{f\-\_\-get\-\_\-cache}!mbedtls_ssl_config@{mbedtls\-\_\-ssl\-\_\-config}}
+\subsubsection[{f\-\_\-get\-\_\-cache}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ mbedtls\-\_\-ssl\-\_\-config\-::f\-\_\-get\-\_\-cache)(void $\ast$, {\bf mbedtls\-\_\-ssl\-\_\-session} $\ast$)}}\label{structmbedtls__ssl__config_a8675186fe7701399b2d8c1a0c548ed79}
+Callback to retrieve a session from the cache 
+
+Definition at line 499 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__config_aa910c0bbe6ec2a3787196faaef2e5ac3}{\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}!f\-\_\-psk@{f\-\_\-psk}}
+\index{f\-\_\-psk@{f\-\_\-psk}!mbedtls_ssl_config@{mbedtls\-\_\-ssl\-\_\-config}}
+\subsubsection[{f\-\_\-psk}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ mbedtls\-\_\-ssl\-\_\-config\-::f\-\_\-psk)(void $\ast$, {\bf mbedtls\-\_\-ssl\-\_\-context} $\ast$, const unsigned char $\ast$, size\-\_\-t)}}\label{structmbedtls__ssl__config_aa910c0bbe6ec2a3787196faaef2e5ac3}
+Callback to retrieve P\-S\-K key from identity 
+
+Definition at line 518 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__config_a816c169ce1ecc8a17797085f3b3915ee}{\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}!f\-\_\-rng@{f\-\_\-rng}}
+\index{f\-\_\-rng@{f\-\_\-rng}!mbedtls_ssl_config@{mbedtls\-\_\-ssl\-\_\-config}}
+\subsubsection[{f\-\_\-rng}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ mbedtls\-\_\-ssl\-\_\-config\-::f\-\_\-rng)(void $\ast$, unsigned char $\ast$, size\-\_\-t)}}\label{structmbedtls__ssl__config_a816c169ce1ecc8a17797085f3b3915ee}
+Callback for getting (pseudo-\/)random numbers 
+
+Definition at line 495 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__config_a9a46ae5b0da844020d37aa1fcd663e7c}{\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}!f\-\_\-set\-\_\-cache@{f\-\_\-set\-\_\-cache}}
+\index{f\-\_\-set\-\_\-cache@{f\-\_\-set\-\_\-cache}!mbedtls_ssl_config@{mbedtls\-\_\-ssl\-\_\-config}}
+\subsubsection[{f\-\_\-set\-\_\-cache}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ mbedtls\-\_\-ssl\-\_\-config\-::f\-\_\-set\-\_\-cache)(void $\ast$, const {\bf mbedtls\-\_\-ssl\-\_\-session} $\ast$)}}\label{structmbedtls__ssl__config_a9a46ae5b0da844020d37aa1fcd663e7c}
+Callback to store a session into the cache 
+
+Definition at line 501 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__config_aa649f149ca69b2ce28fa25e31097f80a}{\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}!f\-\_\-sni@{f\-\_\-sni}}
+\index{f\-\_\-sni@{f\-\_\-sni}!mbedtls_ssl_config@{mbedtls\-\_\-ssl\-\_\-config}}
+\subsubsection[{f\-\_\-sni}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ mbedtls\-\_\-ssl\-\_\-config\-::f\-\_\-sni)(void $\ast$, {\bf mbedtls\-\_\-ssl\-\_\-context} $\ast$, const unsigned char $\ast$, size\-\_\-t)}}\label{structmbedtls__ssl__config_aa649f149ca69b2ce28fa25e31097f80a}
+Callback for setting cert according to S\-N\-I extension 
+
+Definition at line 506 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__config_a8524cfef06d1e707603437926a487089}{\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}!f\-\_\-ticket\-\_\-parse@{f\-\_\-ticket\-\_\-parse}}
+\index{f\-\_\-ticket\-\_\-parse@{f\-\_\-ticket\-\_\-parse}!mbedtls_ssl_config@{mbedtls\-\_\-ssl\-\_\-config}}
+\subsubsection[{f\-\_\-ticket\-\_\-parse}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ mbedtls\-\_\-ssl\-\_\-config\-::f\-\_\-ticket\-\_\-parse)(void $\ast$, {\bf mbedtls\-\_\-ssl\-\_\-session} $\ast$, unsigned char $\ast$, size\-\_\-t)}}\label{structmbedtls__ssl__config_a8524cfef06d1e707603437926a487089}
+Callback to parse a session ticket into a session structure 
+
+Definition at line 537 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__config_aea65bf00504dd75984afa3b91e90b8f0}{\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}!f\-\_\-ticket\-\_\-write@{f\-\_\-ticket\-\_\-write}}
+\index{f\-\_\-ticket\-\_\-write@{f\-\_\-ticket\-\_\-write}!mbedtls_ssl_config@{mbedtls\-\_\-ssl\-\_\-config}}
+\subsubsection[{f\-\_\-ticket\-\_\-write}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ mbedtls\-\_\-ssl\-\_\-config\-::f\-\_\-ticket\-\_\-write)(void $\ast$, const {\bf mbedtls\-\_\-ssl\-\_\-session} $\ast$, unsigned char $\ast$, const unsigned char $\ast$, size\-\_\-t $\ast$, uint32\-\_\-t $\ast$)}}\label{structmbedtls__ssl__config_aea65bf00504dd75984afa3b91e90b8f0}
+Callback to create \& write a session ticket 
+
+Definition at line 534 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__config_adbb2dc3740e0f1d726f8e9ff026b6d11}{\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}!f\-\_\-vrfy@{f\-\_\-vrfy}}
+\index{f\-\_\-vrfy@{f\-\_\-vrfy}!mbedtls_ssl_config@{mbedtls\-\_\-ssl\-\_\-config}}
+\subsubsection[{f\-\_\-vrfy}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ mbedtls\-\_\-ssl\-\_\-config\-::f\-\_\-vrfy)(void $\ast$, {\bf mbedtls\-\_\-x509\-\_\-crt} $\ast$, int, uint32\-\_\-t $\ast$)}}\label{structmbedtls__ssl__config_adbb2dc3740e0f1d726f8e9ff026b6d11}
+Callback to customize X.\-509 certificate chain verification 
+
+Definition at line 512 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__config_a0ca184f6088f938d7240157e8b4bbbab}{\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}!fallback@{fallback}}
+\index{fallback@{fallback}!mbedtls_ssl_config@{mbedtls\-\_\-ssl\-\_\-config}}
+\subsubsection[{fallback}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int mbedtls\-\_\-ssl\-\_\-config\-::fallback}}\label{structmbedtls__ssl__config_a0ca184f6088f938d7240157e8b4bbbab}
+is this a fallback? 
+
+Definition at line 641 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__config_af44d9c59c9255186e2a00f44e0678fac}{\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}!hs\-\_\-timeout\-\_\-max@{hs\-\_\-timeout\-\_\-max}}
+\index{hs\-\_\-timeout\-\_\-max@{hs\-\_\-timeout\-\_\-max}!mbedtls_ssl_config@{mbedtls\-\_\-ssl\-\_\-config}}
+\subsubsection[{hs\-\_\-timeout\-\_\-max}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t mbedtls\-\_\-ssl\-\_\-config\-::hs\-\_\-timeout\-\_\-max}}\label{structmbedtls__ssl__config_af44d9c59c9255186e2a00f44e0678fac}
+maximum value of the handshake retransmission timeout (ms) 
+
+Definition at line 581 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__config_a28320f7be718c8f4197ee146dfdc2447}{\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}!hs\-\_\-timeout\-\_\-min@{hs\-\_\-timeout\-\_\-min}}
+\index{hs\-\_\-timeout\-\_\-min@{hs\-\_\-timeout\-\_\-min}!mbedtls_ssl_config@{mbedtls\-\_\-ssl\-\_\-config}}
+\subsubsection[{hs\-\_\-timeout\-\_\-min}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t mbedtls\-\_\-ssl\-\_\-config\-::hs\-\_\-timeout\-\_\-min}}\label{structmbedtls__ssl__config_a28320f7be718c8f4197ee146dfdc2447}
+initial value of the handshake retransmission timeout (ms) 
+
+Definition at line 579 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__config_afbcfe1cdb3e42ee1d1e14352cefde29e}{\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}!key\-\_\-cert@{key\-\_\-cert}}
+\index{key\-\_\-cert@{key\-\_\-cert}!mbedtls_ssl_config@{mbedtls\-\_\-ssl\-\_\-config}}
+\subsubsection[{key\-\_\-cert}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mbedtls\-\_\-ssl\-\_\-key\-\_\-cert}$\ast$ mbedtls\-\_\-ssl\-\_\-config\-::key\-\_\-cert}}\label{structmbedtls__ssl__config_afbcfe1cdb3e42ee1d1e14352cefde29e}
+own certificate/key pair(s) 
+
+Definition at line 543 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__config_a10a7ca31f5096d71fc9effbe004d3fd8}{\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}!max\-\_\-major\-\_\-ver@{max\-\_\-major\-\_\-ver}}
+\index{max\-\_\-major\-\_\-ver@{max\-\_\-major\-\_\-ver}!mbedtls_ssl_config@{mbedtls\-\_\-ssl\-\_\-config}}
+\subsubsection[{max\-\_\-major\-\_\-ver}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char mbedtls\-\_\-ssl\-\_\-config\-::max\-\_\-major\-\_\-ver}}\label{structmbedtls__ssl__config_a10a7ca31f5096d71fc9effbe004d3fd8}
+max. major version used 
+
+Definition at line 599 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__config_a5cd10b5cbe18392c64fa6831cb222243}{\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}!max\-\_\-minor\-\_\-ver@{max\-\_\-minor\-\_\-ver}}
+\index{max\-\_\-minor\-\_\-ver@{max\-\_\-minor\-\_\-ver}!mbedtls_ssl_config@{mbedtls\-\_\-ssl\-\_\-config}}
+\subsubsection[{max\-\_\-minor\-\_\-ver}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char mbedtls\-\_\-ssl\-\_\-config\-::max\-\_\-minor\-\_\-ver}}\label{structmbedtls__ssl__config_a5cd10b5cbe18392c64fa6831cb222243}
+max. minor version used 
+
+Definition at line 600 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__config_a67e52d2668c7f4bc4f6a872c35a679ab}{\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}!mfl\-\_\-code@{mfl\-\_\-code}}
+\index{mfl\-\_\-code@{mfl\-\_\-code}!mbedtls_ssl_config@{mbedtls\-\_\-ssl\-\_\-config}}
+\subsubsection[{mfl\-\_\-code}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int mbedtls\-\_\-ssl\-\_\-config\-::mfl\-\_\-code}}\label{structmbedtls__ssl__config_a67e52d2668c7f4bc4f6a872c35a679ab}
+desired fragment length 
+
+Definition at line 617 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__config_ae349313f286e0e79d21d18fe40fba06f}{\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}!min\-\_\-major\-\_\-ver@{min\-\_\-major\-\_\-ver}}
+\index{min\-\_\-major\-\_\-ver@{min\-\_\-major\-\_\-ver}!mbedtls_ssl_config@{mbedtls\-\_\-ssl\-\_\-config}}
+\subsubsection[{min\-\_\-major\-\_\-ver}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char mbedtls\-\_\-ssl\-\_\-config\-::min\-\_\-major\-\_\-ver}}\label{structmbedtls__ssl__config_ae349313f286e0e79d21d18fe40fba06f}
+min. major version used 
+
+Definition at line 601 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__config_a61579a80f1aa272cc8d9f7c2786b7b30}{\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}!min\-\_\-minor\-\_\-ver@{min\-\_\-minor\-\_\-ver}}
+\index{min\-\_\-minor\-\_\-ver@{min\-\_\-minor\-\_\-ver}!mbedtls_ssl_config@{mbedtls\-\_\-ssl\-\_\-config}}
+\subsubsection[{min\-\_\-minor\-\_\-ver}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char mbedtls\-\_\-ssl\-\_\-config\-::min\-\_\-minor\-\_\-ver}}\label{structmbedtls__ssl__config_a61579a80f1aa272cc8d9f7c2786b7b30}
+min. minor version used 
+
+Definition at line 602 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__config_ac5f5d3d7a788e65c722db381c66ecb24}{\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}!p\-\_\-cache@{p\-\_\-cache}}
+\index{p\-\_\-cache@{p\-\_\-cache}!mbedtls_ssl_config@{mbedtls\-\_\-ssl\-\_\-config}}
+\subsubsection[{p\-\_\-cache}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ mbedtls\-\_\-ssl\-\_\-config\-::p\-\_\-cache}}\label{structmbedtls__ssl__config_ac5f5d3d7a788e65c722db381c66ecb24}
+context for cache callbacks 
+
+Definition at line 502 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__config_a227d50ad74b96adcc59a8fdee0f618a4}{\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}!p\-\_\-cookie@{p\-\_\-cookie}}
+\index{p\-\_\-cookie@{p\-\_\-cookie}!mbedtls_ssl_config@{mbedtls\-\_\-ssl\-\_\-config}}
+\subsubsection[{p\-\_\-cookie}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ mbedtls\-\_\-ssl\-\_\-config\-::p\-\_\-cookie}}\label{structmbedtls__ssl__config_a227d50ad74b96adcc59a8fdee0f618a4}
+context for the cookie callbacks 
+
+Definition at line 529 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__config_ad591b46fdb117d844c0a5f7366423c48}{\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}!p\-\_\-dbg@{p\-\_\-dbg}}
+\index{p\-\_\-dbg@{p\-\_\-dbg}!mbedtls_ssl_config@{mbedtls\-\_\-ssl\-\_\-config}}
+\subsubsection[{p\-\_\-dbg}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ mbedtls\-\_\-ssl\-\_\-config\-::p\-\_\-dbg}}\label{structmbedtls__ssl__config_ad591b46fdb117d844c0a5f7366423c48}
+context for the debug function 
+
+Definition at line 492 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__config_ad42f2396c9758b6866d61342094a0a7d}{\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}!p\-\_\-psk@{p\-\_\-psk}}
+\index{p\-\_\-psk@{p\-\_\-psk}!mbedtls_ssl_config@{mbedtls\-\_\-ssl\-\_\-config}}
+\subsubsection[{p\-\_\-psk}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ mbedtls\-\_\-ssl\-\_\-config\-::p\-\_\-psk}}\label{structmbedtls__ssl__config_ad42f2396c9758b6866d61342094a0a7d}
+context for P\-S\-K callback 
+
+Definition at line 519 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__config_a1eff6c9817251b686e8f518597590476}{\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}!p\-\_\-rng@{p\-\_\-rng}}
+\index{p\-\_\-rng@{p\-\_\-rng}!mbedtls_ssl_config@{mbedtls\-\_\-ssl\-\_\-config}}
+\subsubsection[{p\-\_\-rng}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ mbedtls\-\_\-ssl\-\_\-config\-::p\-\_\-rng}}\label{structmbedtls__ssl__config_a1eff6c9817251b686e8f518597590476}
+context for the R\-N\-G function 
+
+Definition at line 496 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__config_a1ae68f4bd072068c60222866c0ea2f62}{\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}!p\-\_\-sni@{p\-\_\-sni}}
+\index{p\-\_\-sni@{p\-\_\-sni}!mbedtls_ssl_config@{mbedtls\-\_\-ssl\-\_\-config}}
+\subsubsection[{p\-\_\-sni}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ mbedtls\-\_\-ssl\-\_\-config\-::p\-\_\-sni}}\label{structmbedtls__ssl__config_a1ae68f4bd072068c60222866c0ea2f62}
+context for S\-N\-I callback 
+
+Definition at line 507 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__config_a0dab7f9f4f2c85644ebe32f8e37984dc}{\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}!p\-\_\-ticket@{p\-\_\-ticket}}
+\index{p\-\_\-ticket@{p\-\_\-ticket}!mbedtls_ssl_config@{mbedtls\-\_\-ssl\-\_\-config}}
+\subsubsection[{p\-\_\-ticket}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ mbedtls\-\_\-ssl\-\_\-config\-::p\-\_\-ticket}}\label{structmbedtls__ssl__config_a0dab7f9f4f2c85644ebe32f8e37984dc}
+context for the ticket callbacks 
+
+Definition at line 538 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__config_ac59c71efac4d612c645e703941efae51}{\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}!p\-\_\-vrfy@{p\-\_\-vrfy}}
+\index{p\-\_\-vrfy@{p\-\_\-vrfy}!mbedtls_ssl_config@{mbedtls\-\_\-ssl\-\_\-config}}
+\subsubsection[{p\-\_\-vrfy}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ mbedtls\-\_\-ssl\-\_\-config\-::p\-\_\-vrfy}}\label{structmbedtls__ssl__config_ac59c71efac4d612c645e703941efae51}
+context for X.\-509 verify calllback 
+
+Definition at line 513 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__config_a70636b4747d4b82e28c76c740e891ab3}{\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}!psk@{psk}}
+\index{psk@{psk}!mbedtls_ssl_config@{mbedtls\-\_\-ssl\-\_\-config}}
+\subsubsection[{psk}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char$\ast$ mbedtls\-\_\-ssl\-\_\-config\-::psk}}\label{structmbedtls__ssl__config_a70636b4747d4b82e28c76c740e891ab3}
+pre-\/shared key 
+
+Definition at line 562 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__config_a3ed897b829686c76876d5f2bbb43d641}{\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}!psk\-\_\-identity@{psk\-\_\-identity}}
+\index{psk\-\_\-identity@{psk\-\_\-identity}!mbedtls_ssl_config@{mbedtls\-\_\-ssl\-\_\-config}}
+\subsubsection[{psk\-\_\-identity}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char$\ast$ mbedtls\-\_\-ssl\-\_\-config\-::psk\-\_\-identity}}\label{structmbedtls__ssl__config_a3ed897b829686c76876d5f2bbb43d641}
+identity for P\-S\-K negotiation 
+
+Definition at line 564 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__config_a095fcfcae220215168448335c3294f6c}{\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}!psk\-\_\-identity\-\_\-len@{psk\-\_\-identity\-\_\-len}}
+\index{psk\-\_\-identity\-\_\-len@{psk\-\_\-identity\-\_\-len}!mbedtls_ssl_config@{mbedtls\-\_\-ssl\-\_\-config}}
+\subsubsection[{psk\-\_\-identity\-\_\-len}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t mbedtls\-\_\-ssl\-\_\-config\-::psk\-\_\-identity\-\_\-len}}\label{structmbedtls__ssl__config_a095fcfcae220215168448335c3294f6c}
+length of identity 
+
+Definition at line 565 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__config_ad45c9414cf24c068f0cae76dfe793bdf}{\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}!psk\-\_\-len@{psk\-\_\-len}}
+\index{psk\-\_\-len@{psk\-\_\-len}!mbedtls_ssl_config@{mbedtls\-\_\-ssl\-\_\-config}}
+\subsubsection[{psk\-\_\-len}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t mbedtls\-\_\-ssl\-\_\-config\-::psk\-\_\-len}}\label{structmbedtls__ssl__config_ad45c9414cf24c068f0cae76dfe793bdf}
+length of the pre-\/shared key 
+
+Definition at line 563 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__config_a8f32ca22ea20b3848176d78390c13153}{\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}!read\-\_\-timeout@{read\-\_\-timeout}}
+\index{read\-\_\-timeout@{read\-\_\-timeout}!mbedtls_ssl_config@{mbedtls\-\_\-ssl\-\_\-config}}
+\subsubsection[{read\-\_\-timeout}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t mbedtls\-\_\-ssl\-\_\-config\-::read\-\_\-timeout}}\label{structmbedtls__ssl__config_a8f32ca22ea20b3848176d78390c13153}
+timeout for mbedtls\-\_\-ssl\-\_\-read (ms) 
+
+Definition at line 576 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__config_a0f2ff6d7f481f9ffaf40025289011a2d}{\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}!renego\-\_\-max\-\_\-records@{renego\-\_\-max\-\_\-records}}
+\index{renego\-\_\-max\-\_\-records@{renego\-\_\-max\-\_\-records}!mbedtls_ssl_config@{mbedtls\-\_\-ssl\-\_\-config}}
+\subsubsection[{renego\-\_\-max\-\_\-records}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-ssl\-\_\-config\-::renego\-\_\-max\-\_\-records}}\label{structmbedtls__ssl__config_a0f2ff6d7f481f9ffaf40025289011a2d}
+grace period for renegotiation 
+
+Definition at line 586 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__config_ab1e7273cb7a477f5cb303134055555b0}{\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}!renego\-\_\-period@{renego\-\_\-period}}
+\index{renego\-\_\-period@{renego\-\_\-period}!mbedtls_ssl_config@{mbedtls\-\_\-ssl\-\_\-config}}
+\subsubsection[{renego\-\_\-period}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char mbedtls\-\_\-ssl\-\_\-config\-::renego\-\_\-period\mbox{[}8\mbox{]}}}\label{structmbedtls__ssl__config_ab1e7273cb7a477f5cb303134055555b0}
+value of the record counters that triggers renegotiation 
+
+Definition at line 587 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__config_a1b988bcd1b38c51cb802bf8af5d05c7b}{\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}!session\-\_\-tickets@{session\-\_\-tickets}}
+\index{session\-\_\-tickets@{session\-\_\-tickets}!mbedtls_ssl_config@{mbedtls\-\_\-ssl\-\_\-config}}
+\subsubsection[{session\-\_\-tickets}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int mbedtls\-\_\-ssl\-\_\-config\-::session\-\_\-tickets}}\label{structmbedtls__ssl__config_a1b988bcd1b38c51cb802bf8af5d05c7b}
+use session tickets? 
+
+Definition at line 638 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__config_a82552e1dd3c9065ef98e2835fc925653}{\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}!sig\-\_\-hashes@{sig\-\_\-hashes}}
+\index{sig\-\_\-hashes@{sig\-\_\-hashes}!mbedtls_ssl_config@{mbedtls\-\_\-ssl\-\_\-config}}
+\subsubsection[{sig\-\_\-hashes}]{\setlength{\rightskip}{0pt plus 5cm}const int$\ast$ mbedtls\-\_\-ssl\-\_\-config\-::sig\-\_\-hashes}}\label{structmbedtls__ssl__config_a82552e1dd3c9065ef98e2835fc925653}
+allowed signature hashes 
+
+Definition at line 549 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__config_a63cafd8d131ac7d162406b47bc6565d0}{\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}!transport@{transport}}
+\index{transport@{transport}!mbedtls_ssl_config@{mbedtls\-\_\-ssl\-\_\-config}}
+\subsubsection[{transport}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int mbedtls\-\_\-ssl\-\_\-config\-::transport}}\label{structmbedtls__ssl__config_a63cafd8d131ac7d162406b47bc6565d0}
+stream (T\-L\-S) or datagram (D\-T\-L\-S) 
+
+Definition at line 609 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__config_a24bf9d624a2e2432518e9da8ae908db4}{\index{mbedtls\-\_\-ssl\-\_\-config@{mbedtls\-\_\-ssl\-\_\-config}!trunc\-\_\-hmac@{trunc\-\_\-hmac}}
+\index{trunc\-\_\-hmac@{trunc\-\_\-hmac}!mbedtls_ssl_config@{mbedtls\-\_\-ssl\-\_\-config}}
+\subsubsection[{trunc\-\_\-hmac}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int mbedtls\-\_\-ssl\-\_\-config\-::trunc\-\_\-hmac}}\label{structmbedtls__ssl__config_a24bf9d624a2e2432518e9da8ae908db4}
+negotiate truncated hmac? 
+
+Definition at line 635 of file ssl.\-h.
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/\hyperlink{ssl_8h}{ssl.\-h}\end{DoxyCompactItemize}

@@ -1,0 +1,109 @@
+\hypertarget{structmbedtls__cipher__context__t}{\section{mbedtls\-\_\-cipher\-\_\-context\-\_\-t Struct Reference}
+\label{structmbedtls__cipher__context__t}\index{mbedtls\-\_\-cipher\-\_\-context\-\_\-t@{mbedtls\-\_\-cipher\-\_\-context\-\_\-t}}
+}
+
+
+{\ttfamily \#include $<$cipher.\-h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{structmbedtls__cipher__info__t}{mbedtls\-\_\-cipher\-\_\-info\-\_\-t} $\ast$ \hyperlink{structmbedtls__cipher__context__t_a7673da39ff63a88c9b85769048884dae}{cipher\-\_\-info}
+\item 
+int \hyperlink{structmbedtls__cipher__context__t_ac949d799444e6379acf0125891c04763}{key\-\_\-bitlen}
+\item 
+mbedtls\-\_\-operation\-\_\-t \hyperlink{structmbedtls__cipher__context__t_a0075f60f220daa87578223a2022ba405}{operation}
+\item 
+void($\ast$ \hyperlink{structmbedtls__cipher__context__t_a74bf13046088d8a575d0920f20178a8a}{add\-\_\-padding} )(unsigned char $\ast$output, size\-\_\-t olen, size\-\_\-t data\-\_\-len)
+\item 
+\hypertarget{structmbedtls__cipher__context__t_a23bc3805e705599cff8754567a056076}{int($\ast$ {\bfseries get\-\_\-padding} )(unsigned char $\ast$input, size\-\_\-t ilen, size\-\_\-t $\ast$data\-\_\-len)}\label{structmbedtls__cipher__context__t_a23bc3805e705599cff8754567a056076}
+
+\item 
+unsigned char \hyperlink{structmbedtls__cipher__context__t_a3fc86dfa20e0131377692ee07fb5b8f0}{unprocessed\-\_\-data} \mbox{[}\hyperlink{cipher_8h_ab8f30dc90403204515f868c3b6196ffd}{M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-A\-X\-\_\-\-B\-L\-O\-C\-K\-\_\-\-L\-E\-N\-G\-T\-H}\mbox{]}
+\item 
+size\-\_\-t \hyperlink{structmbedtls__cipher__context__t_ad9bb94ad0e914bdceb20190cfebfc702}{unprocessed\-\_\-len}
+\item 
+unsigned char \hyperlink{structmbedtls__cipher__context__t_a19262f2c275b31180e7412f4bcef0e7f}{iv} \mbox{[}\hyperlink{cipher_8h_aec294721b811aa0f7dcc940029fd8aab}{M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-A\-X\-\_\-\-I\-V\-\_\-\-L\-E\-N\-G\-T\-H}\mbox{]}
+\item 
+size\-\_\-t \hyperlink{structmbedtls__cipher__context__t_af11d1d21da68ef00a46d96d9de326206}{iv\-\_\-size}
+\item 
+void $\ast$ \hyperlink{structmbedtls__cipher__context__t_a5b7e2044b5186a4ee57456f6f927ad80}{cipher\-\_\-ctx}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Generic cipher context. 
+
+Definition at line 213 of file cipher.\-h.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structmbedtls__cipher__context__t_a74bf13046088d8a575d0920f20178a8a}{\index{mbedtls\-\_\-cipher\-\_\-context\-\_\-t@{mbedtls\-\_\-cipher\-\_\-context\-\_\-t}!add\-\_\-padding@{add\-\_\-padding}}
+\index{add\-\_\-padding@{add\-\_\-padding}!mbedtls_cipher_context_t@{mbedtls\-\_\-cipher\-\_\-context\-\_\-t}}
+\subsubsection[{add\-\_\-padding}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ mbedtls\-\_\-cipher\-\_\-context\-\_\-t\-::add\-\_\-padding)(unsigned char $\ast$output, size\-\_\-t olen, size\-\_\-t data\-\_\-len)}}\label{structmbedtls__cipher__context__t_a74bf13046088d8a575d0920f20178a8a}
+Padding functions to use, if relevant for cipher mode 
+
+Definition at line 225 of file cipher.\-h.
+
+\hypertarget{structmbedtls__cipher__context__t_a5b7e2044b5186a4ee57456f6f927ad80}{\index{mbedtls\-\_\-cipher\-\_\-context\-\_\-t@{mbedtls\-\_\-cipher\-\_\-context\-\_\-t}!cipher\-\_\-ctx@{cipher\-\_\-ctx}}
+\index{cipher\-\_\-ctx@{cipher\-\_\-ctx}!mbedtls_cipher_context_t@{mbedtls\-\_\-cipher\-\_\-context\-\_\-t}}
+\subsubsection[{cipher\-\_\-ctx}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ mbedtls\-\_\-cipher\-\_\-context\-\_\-t\-::cipher\-\_\-ctx}}\label{structmbedtls__cipher__context__t_a5b7e2044b5186a4ee57456f6f927ad80}
+Cipher-\/specific context 
+
+Definition at line 242 of file cipher.\-h.
+
+\hypertarget{structmbedtls__cipher__context__t_a7673da39ff63a88c9b85769048884dae}{\index{mbedtls\-\_\-cipher\-\_\-context\-\_\-t@{mbedtls\-\_\-cipher\-\_\-context\-\_\-t}!cipher\-\_\-info@{cipher\-\_\-info}}
+\index{cipher\-\_\-info@{cipher\-\_\-info}!mbedtls_cipher_context_t@{mbedtls\-\_\-cipher\-\_\-context\-\_\-t}}
+\subsubsection[{cipher\-\_\-info}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf mbedtls\-\_\-cipher\-\_\-info\-\_\-t}$\ast$ mbedtls\-\_\-cipher\-\_\-context\-\_\-t\-::cipher\-\_\-info}}\label{structmbedtls__cipher__context__t_a7673da39ff63a88c9b85769048884dae}
+Information about the associated cipher 
+
+Definition at line 215 of file cipher.\-h.
+
+\hypertarget{structmbedtls__cipher__context__t_a19262f2c275b31180e7412f4bcef0e7f}{\index{mbedtls\-\_\-cipher\-\_\-context\-\_\-t@{mbedtls\-\_\-cipher\-\_\-context\-\_\-t}!iv@{iv}}
+\index{iv@{iv}!mbedtls_cipher_context_t@{mbedtls\-\_\-cipher\-\_\-context\-\_\-t}}
+\subsubsection[{iv}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char mbedtls\-\_\-cipher\-\_\-context\-\_\-t\-::iv\mbox{[}{\bf M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-A\-X\-\_\-\-I\-V\-\_\-\-L\-E\-N\-G\-T\-H}\mbox{]}}}\label{structmbedtls__cipher__context__t_a19262f2c275b31180e7412f4bcef0e7f}
+Current I\-V or N\-O\-N\-C\-E\-\_\-\-C\-O\-U\-N\-T\-E\-R for C\-T\-R-\/mode 
+
+Definition at line 236 of file cipher.\-h.
+
+\hypertarget{structmbedtls__cipher__context__t_af11d1d21da68ef00a46d96d9de326206}{\index{mbedtls\-\_\-cipher\-\_\-context\-\_\-t@{mbedtls\-\_\-cipher\-\_\-context\-\_\-t}!iv\-\_\-size@{iv\-\_\-size}}
+\index{iv\-\_\-size@{iv\-\_\-size}!mbedtls_cipher_context_t@{mbedtls\-\_\-cipher\-\_\-context\-\_\-t}}
+\subsubsection[{iv\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t mbedtls\-\_\-cipher\-\_\-context\-\_\-t\-::iv\-\_\-size}}\label{structmbedtls__cipher__context__t_af11d1d21da68ef00a46d96d9de326206}
+I\-V size in bytes (for ciphers with variable-\/length I\-Vs) 
+
+Definition at line 239 of file cipher.\-h.
+
+\hypertarget{structmbedtls__cipher__context__t_ac949d799444e6379acf0125891c04763}{\index{mbedtls\-\_\-cipher\-\_\-context\-\_\-t@{mbedtls\-\_\-cipher\-\_\-context\-\_\-t}!key\-\_\-bitlen@{key\-\_\-bitlen}}
+\index{key\-\_\-bitlen@{key\-\_\-bitlen}!mbedtls_cipher_context_t@{mbedtls\-\_\-cipher\-\_\-context\-\_\-t}}
+\subsubsection[{key\-\_\-bitlen}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-cipher\-\_\-context\-\_\-t\-::key\-\_\-bitlen}}\label{structmbedtls__cipher__context__t_ac949d799444e6379acf0125891c04763}
+Key length to use 
+
+Definition at line 218 of file cipher.\-h.
+
+\hypertarget{structmbedtls__cipher__context__t_a0075f60f220daa87578223a2022ba405}{\index{mbedtls\-\_\-cipher\-\_\-context\-\_\-t@{mbedtls\-\_\-cipher\-\_\-context\-\_\-t}!operation@{operation}}
+\index{operation@{operation}!mbedtls_cipher_context_t@{mbedtls\-\_\-cipher\-\_\-context\-\_\-t}}
+\subsubsection[{operation}]{\setlength{\rightskip}{0pt plus 5cm}mbedtls\-\_\-operation\-\_\-t mbedtls\-\_\-cipher\-\_\-context\-\_\-t\-::operation}}\label{structmbedtls__cipher__context__t_a0075f60f220daa87578223a2022ba405}
+Operation that the context's key has been initialised for 
+
+Definition at line 221 of file cipher.\-h.
+
+\hypertarget{structmbedtls__cipher__context__t_a3fc86dfa20e0131377692ee07fb5b8f0}{\index{mbedtls\-\_\-cipher\-\_\-context\-\_\-t@{mbedtls\-\_\-cipher\-\_\-context\-\_\-t}!unprocessed\-\_\-data@{unprocessed\-\_\-data}}
+\index{unprocessed\-\_\-data@{unprocessed\-\_\-data}!mbedtls_cipher_context_t@{mbedtls\-\_\-cipher\-\_\-context\-\_\-t}}
+\subsubsection[{unprocessed\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char mbedtls\-\_\-cipher\-\_\-context\-\_\-t\-::unprocessed\-\_\-data\mbox{[}{\bf M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-A\-X\-\_\-\-B\-L\-O\-C\-K\-\_\-\-L\-E\-N\-G\-T\-H}\mbox{]}}}\label{structmbedtls__cipher__context__t_a3fc86dfa20e0131377692ee07fb5b8f0}
+Buffer for data that hasn't been encrypted yet 
+
+Definition at line 230 of file cipher.\-h.
+
+\hypertarget{structmbedtls__cipher__context__t_ad9bb94ad0e914bdceb20190cfebfc702}{\index{mbedtls\-\_\-cipher\-\_\-context\-\_\-t@{mbedtls\-\_\-cipher\-\_\-context\-\_\-t}!unprocessed\-\_\-len@{unprocessed\-\_\-len}}
+\index{unprocessed\-\_\-len@{unprocessed\-\_\-len}!mbedtls_cipher_context_t@{mbedtls\-\_\-cipher\-\_\-context\-\_\-t}}
+\subsubsection[{unprocessed\-\_\-len}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t mbedtls\-\_\-cipher\-\_\-context\-\_\-t\-::unprocessed\-\_\-len}}\label{structmbedtls__cipher__context__t_ad9bb94ad0e914bdceb20190cfebfc702}
+Number of bytes that still need processing 
+
+Definition at line 233 of file cipher.\-h.
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/\hyperlink{cipher_8h}{cipher.\-h}\end{DoxyCompactItemize}

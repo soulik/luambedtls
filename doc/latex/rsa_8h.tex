@@ -1,0 +1,1039 @@
+\hypertarget{rsa_8h}{\section{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/rsa.h File Reference}
+\label{rsa_8h}\index{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/rsa.\-h@{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/rsa.\-h}}
+}
+
+
+The R\-S\-A public-\/key cryptosystem.  
+
+
+{\ttfamily \#include \char`\"{}config.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}bignum.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}md.\-h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structmbedtls__rsa__context}{mbedtls\-\_\-rsa\-\_\-context}
+\begin{DoxyCompactList}\small\item\em R\-S\-A context structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{rsa_8h_abf2997e01281b898fd4594af0b7bfbb4}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A}~-\/0x4080
+\item 
+\#define \hyperlink{rsa_8h_add099b8887e9e2942fcc3bf1673f703d}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-P\-A\-D\-D\-I\-N\-G}~-\/0x4100
+\item 
+\#define \hyperlink{rsa_8h_ae334d56985d569186f5b5bb462cd6af2}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-K\-E\-Y\-\_\-\-G\-E\-N\-\_\-\-F\-A\-I\-L\-E\-D}~-\/0x4180
+\item 
+\#define \hyperlink{rsa_8h_a75113c3b54138090c45a973b864200ad}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-K\-E\-Y\-\_\-\-C\-H\-E\-C\-K\-\_\-\-F\-A\-I\-L\-E\-D}~-\/0x4200
+\item 
+\#define \hyperlink{rsa_8h_ae9bffdb461c7e5803b4081ddd745afb5}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-P\-U\-B\-L\-I\-C\-\_\-\-F\-A\-I\-L\-E\-D}~-\/0x4280
+\item 
+\#define \hyperlink{rsa_8h_af7ddb312b48f8cd135150fc9bbb791d0}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-P\-R\-I\-V\-A\-T\-E\-\_\-\-F\-A\-I\-L\-E\-D}~-\/0x4300
+\item 
+\#define \hyperlink{rsa_8h_a334c537fbd9e49eb37a2ff12a11392cd}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-V\-E\-R\-I\-F\-Y\-\_\-\-F\-A\-I\-L\-E\-D}~-\/0x4380
+\item 
+\#define \hyperlink{rsa_8h_a2d3d26a305009e5b26957e21b6b151c9}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-T\-O\-O\-\_\-\-L\-A\-R\-G\-E}~-\/0x4400
+\item 
+\#define \hyperlink{rsa_8h_a6aa8ac62f7c3079cba7da3250a2fb7af}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-R\-N\-G\-\_\-\-F\-A\-I\-L\-E\-D}~-\/0x4480
+\item 
+\hypertarget{rsa_8h_a0a9033343f995250ee30844b0defa3e9}{\#define {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-R\-S\-A\-\_\-\-P\-U\-B\-L\-I\-C}~0}\label{rsa_8h_a0a9033343f995250ee30844b0defa3e9}
+
+\item 
+\hypertarget{rsa_8h_a031a66acf0364a48a80827dd8713874d}{\#define {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-R\-S\-A\-\_\-\-P\-R\-I\-V\-A\-T\-E}~1}\label{rsa_8h_a031a66acf0364a48a80827dd8713874d}
+
+\item 
+\hypertarget{rsa_8h_a426a0d77233000f50dcce6f27d5ddd05}{\#define {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-R\-S\-A\-\_\-\-P\-K\-C\-S\-\_\-\-V15}~0}\label{rsa_8h_a426a0d77233000f50dcce6f27d5ddd05}
+
+\item 
+\hypertarget{rsa_8h_a903f0c378a6303efdbc1f53b18603bb1}{\#define {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-R\-S\-A\-\_\-\-P\-K\-C\-S\-\_\-\-V21}~1}\label{rsa_8h_a903f0c378a6303efdbc1f53b18603bb1}
+
+\item 
+\hypertarget{rsa_8h_ab2115255ea768cf9cef953f48ab24f53}{\#define {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-R\-S\-A\-\_\-\-S\-I\-G\-N}~1}\label{rsa_8h_ab2115255ea768cf9cef953f48ab24f53}
+
+\item 
+\hypertarget{rsa_8h_ad4bc17285be7e6ae4ccba4747de4ef76}{\#define {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-R\-S\-A\-\_\-\-C\-R\-Y\-P\-T}~2}\label{rsa_8h_ad4bc17285be7e6ae4ccba4747de4ef76}
+
+\item 
+\hypertarget{rsa_8h_ab7aa2f548235465c0f384a13617f184f}{\#define {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-R\-S\-A\-\_\-\-S\-A\-L\-T\-\_\-\-L\-E\-N\-\_\-\-A\-N\-Y}~-\/1}\label{rsa_8h_ab7aa2f548235465c0f384a13617f184f}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{rsa_8h_a15b13ee0d1e7d6fd10f07571cc4ff9de}{mbedtls\-\_\-rsa\-\_\-init} (\hyperlink{structmbedtls__rsa__context}{mbedtls\-\_\-rsa\-\_\-context} $\ast$ctx, int padding, int hash\-\_\-id)
+\begin{DoxyCompactList}\small\item\em Initialize an R\-S\-A context. \end{DoxyCompactList}\item 
+void \hyperlink{rsa_8h_ad92c3d026f78e8cac7bac4bf94dc0562}{mbedtls\-\_\-rsa\-\_\-set\-\_\-padding} (\hyperlink{structmbedtls__rsa__context}{mbedtls\-\_\-rsa\-\_\-context} $\ast$ctx, int padding, int hash\-\_\-id)
+\begin{DoxyCompactList}\small\item\em Set padding for an already initialized R\-S\-A context See {\ttfamily \hyperlink{rsa_8h_a15b13ee0d1e7d6fd10f07571cc4ff9de}{mbedtls\-\_\-rsa\-\_\-init()}} for details. \end{DoxyCompactList}\item 
+int \hyperlink{rsa_8h_a421fc8812e75698e33887aafacb0c829}{mbedtls\-\_\-rsa\-\_\-gen\-\_\-key} (\hyperlink{structmbedtls__rsa__context}{mbedtls\-\_\-rsa\-\_\-context} $\ast$ctx, int($\ast$f\-\_\-rng)(void $\ast$, unsigned char $\ast$, size\-\_\-t), void $\ast$p\-\_\-rng, unsigned int nbits, int exponent)
+\begin{DoxyCompactList}\small\item\em Generate an R\-S\-A keypair. \end{DoxyCompactList}\item 
+int \hyperlink{rsa_8h_ad5da263d80db9ee27f084b68b0092546}{mbedtls\-\_\-rsa\-\_\-check\-\_\-pubkey} (const \hyperlink{structmbedtls__rsa__context}{mbedtls\-\_\-rsa\-\_\-context} $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Check a public R\-S\-A key. \end{DoxyCompactList}\item 
+int \hyperlink{rsa_8h_ab393f7a4d3882ac0b2afa51b641bf475}{mbedtls\-\_\-rsa\-\_\-check\-\_\-privkey} (const \hyperlink{structmbedtls__rsa__context}{mbedtls\-\_\-rsa\-\_\-context} $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Check a private R\-S\-A key. \end{DoxyCompactList}\item 
+int \hyperlink{rsa_8h_a3204b1f8a0dafb33b4ccc16570a40999}{mbedtls\-\_\-rsa\-\_\-check\-\_\-pub\-\_\-priv} (const \hyperlink{structmbedtls__rsa__context}{mbedtls\-\_\-rsa\-\_\-context} $\ast$pub, const \hyperlink{structmbedtls__rsa__context}{mbedtls\-\_\-rsa\-\_\-context} $\ast$prv)
+\begin{DoxyCompactList}\small\item\em Check a public-\/private R\-S\-A key pair. Check each of the contexts, and make sure they match. \end{DoxyCompactList}\item 
+int \hyperlink{rsa_8h_a9db0f76aff9a6ce179b6fbe329bf5569}{mbedtls\-\_\-rsa\-\_\-public} (\hyperlink{structmbedtls__rsa__context}{mbedtls\-\_\-rsa\-\_\-context} $\ast$ctx, const unsigned char $\ast$input, unsigned char $\ast$output)
+\begin{DoxyCompactList}\small\item\em Do an R\-S\-A public key operation. \end{DoxyCompactList}\item 
+int \hyperlink{rsa_8h_a3e016741ddaa354916ade4d48e9a0965}{mbedtls\-\_\-rsa\-\_\-private} (\hyperlink{structmbedtls__rsa__context}{mbedtls\-\_\-rsa\-\_\-context} $\ast$ctx, int($\ast$f\-\_\-rng)(void $\ast$, unsigned char $\ast$, size\-\_\-t), void $\ast$p\-\_\-rng, const unsigned char $\ast$input, unsigned char $\ast$output)
+\begin{DoxyCompactList}\small\item\em Do an R\-S\-A private key operation. \end{DoxyCompactList}\item 
+int \hyperlink{rsa_8h_a047b85b9483a9abecaf31af0caa2e7ff}{mbedtls\-\_\-rsa\-\_\-pkcs1\-\_\-encrypt} (\hyperlink{structmbedtls__rsa__context}{mbedtls\-\_\-rsa\-\_\-context} $\ast$ctx, int($\ast$f\-\_\-rng)(void $\ast$, unsigned char $\ast$, size\-\_\-t), void $\ast$p\-\_\-rng, int mode, size\-\_\-t ilen, const unsigned char $\ast$input, unsigned char $\ast$output)
+\begin{DoxyCompactList}\small\item\em Generic wrapper to perform a P\-K\-C\-S\#1 encryption using the mode from the context. Add the message padding, then do an R\-S\-A operation. \end{DoxyCompactList}\item 
+int \hyperlink{rsa_8h_a5037e3e29277b9d0dc3a4ef84b251f4e}{mbedtls\-\_\-rsa\-\_\-rsaes\-\_\-pkcs1\-\_\-v15\-\_\-encrypt} (\hyperlink{structmbedtls__rsa__context}{mbedtls\-\_\-rsa\-\_\-context} $\ast$ctx, int($\ast$f\-\_\-rng)(void $\ast$, unsigned char $\ast$, size\-\_\-t), void $\ast$p\-\_\-rng, int mode, size\-\_\-t ilen, const unsigned char $\ast$input, unsigned char $\ast$output)
+\begin{DoxyCompactList}\small\item\em Perform a P\-K\-C\-S\#1 v1.\-5 encryption (R\-S\-A\-E\-S-\/\-P\-K\-C\-S1-\/v1\-\_\-5-\/\-E\-N\-C\-R\-Y\-P\-T) \end{DoxyCompactList}\item 
+int \hyperlink{rsa_8h_ad2dda710a8a517d02220632bcf0eda13}{mbedtls\-\_\-rsa\-\_\-rsaes\-\_\-oaep\-\_\-encrypt} (\hyperlink{structmbedtls__rsa__context}{mbedtls\-\_\-rsa\-\_\-context} $\ast$ctx, int($\ast$f\-\_\-rng)(void $\ast$, unsigned char $\ast$, size\-\_\-t), void $\ast$p\-\_\-rng, int mode, const unsigned char $\ast$label, size\-\_\-t label\-\_\-len, size\-\_\-t ilen, const unsigned char $\ast$input, unsigned char $\ast$output)
+\begin{DoxyCompactList}\small\item\em Perform a P\-K\-C\-S\#1 v2.\-1 O\-A\-E\-P encryption (R\-S\-A\-E\-S-\/\-O\-A\-E\-P-\/\-E\-N\-C\-R\-Y\-P\-T) \end{DoxyCompactList}\item 
+int \hyperlink{rsa_8h_a58f99b884b1697526061bedfe7be5570}{mbedtls\-\_\-rsa\-\_\-pkcs1\-\_\-decrypt} (\hyperlink{structmbedtls__rsa__context}{mbedtls\-\_\-rsa\-\_\-context} $\ast$ctx, int($\ast$f\-\_\-rng)(void $\ast$, unsigned char $\ast$, size\-\_\-t), void $\ast$p\-\_\-rng, int mode, size\-\_\-t $\ast$olen, const unsigned char $\ast$input, unsigned char $\ast$output, size\-\_\-t output\-\_\-max\-\_\-len)
+\begin{DoxyCompactList}\small\item\em Generic wrapper to perform a P\-K\-C\-S\#1 decryption using the mode from the context. Do an R\-S\-A operation, then remove the message padding. \end{DoxyCompactList}\item 
+int \hyperlink{rsa_8h_a57b7b96e1dbb900bb42cc2e1704e051b}{mbedtls\-\_\-rsa\-\_\-rsaes\-\_\-pkcs1\-\_\-v15\-\_\-decrypt} (\hyperlink{structmbedtls__rsa__context}{mbedtls\-\_\-rsa\-\_\-context} $\ast$ctx, int($\ast$f\-\_\-rng)(void $\ast$, unsigned char $\ast$, size\-\_\-t), void $\ast$p\-\_\-rng, int mode, size\-\_\-t $\ast$olen, const unsigned char $\ast$input, unsigned char $\ast$output, size\-\_\-t output\-\_\-max\-\_\-len)
+\begin{DoxyCompactList}\small\item\em Perform a P\-K\-C\-S\#1 v1.\-5 decryption (R\-S\-A\-E\-S-\/\-P\-K\-C\-S1-\/v1\-\_\-5-\/\-D\-E\-C\-R\-Y\-P\-T) \end{DoxyCompactList}\item 
+int \hyperlink{rsa_8h_afe0ea987f1d1627cc86137e5b1595da8}{mbedtls\-\_\-rsa\-\_\-rsaes\-\_\-oaep\-\_\-decrypt} (\hyperlink{structmbedtls__rsa__context}{mbedtls\-\_\-rsa\-\_\-context} $\ast$ctx, int($\ast$f\-\_\-rng)(void $\ast$, unsigned char $\ast$, size\-\_\-t), void $\ast$p\-\_\-rng, int mode, const unsigned char $\ast$label, size\-\_\-t label\-\_\-len, size\-\_\-t $\ast$olen, const unsigned char $\ast$input, unsigned char $\ast$output, size\-\_\-t output\-\_\-max\-\_\-len)
+\begin{DoxyCompactList}\small\item\em Perform a P\-K\-C\-S\#1 v2.\-1 O\-A\-E\-P decryption (R\-S\-A\-E\-S-\/\-O\-A\-E\-P-\/\-D\-E\-C\-R\-Y\-P\-T) \end{DoxyCompactList}\item 
+int \hyperlink{rsa_8h_a47d9e8989e233e986c59dc2aeb4a4caf}{mbedtls\-\_\-rsa\-\_\-pkcs1\-\_\-sign} (\hyperlink{structmbedtls__rsa__context}{mbedtls\-\_\-rsa\-\_\-context} $\ast$ctx, int($\ast$f\-\_\-rng)(void $\ast$, unsigned char $\ast$, size\-\_\-t), void $\ast$p\-\_\-rng, int mode, mbedtls\-\_\-md\-\_\-type\-\_\-t md\-\_\-alg, unsigned int hashlen, const unsigned char $\ast$hash, unsigned char $\ast$sig)
+\begin{DoxyCompactList}\small\item\em Generic wrapper to perform a P\-K\-C\-S\#1 signature using the mode from the context. Do a private R\-S\-A operation to sign a message digest. \end{DoxyCompactList}\item 
+int \hyperlink{rsa_8h_aed5ff7848640b50f4a829a43f7135de4}{mbedtls\-\_\-rsa\-\_\-rsassa\-\_\-pkcs1\-\_\-v15\-\_\-sign} (\hyperlink{structmbedtls__rsa__context}{mbedtls\-\_\-rsa\-\_\-context} $\ast$ctx, int($\ast$f\-\_\-rng)(void $\ast$, unsigned char $\ast$, size\-\_\-t), void $\ast$p\-\_\-rng, int mode, mbedtls\-\_\-md\-\_\-type\-\_\-t md\-\_\-alg, unsigned int hashlen, const unsigned char $\ast$hash, unsigned char $\ast$sig)
+\begin{DoxyCompactList}\small\item\em Perform a P\-K\-C\-S\#1 v1.\-5 signature (R\-S\-A\-S\-S\-A-\/\-P\-K\-C\-S1-\/v1\-\_\-5-\/\-S\-I\-G\-N) \end{DoxyCompactList}\item 
+int \hyperlink{rsa_8h_aec5d149705050cd3839fe68e095e32b2}{mbedtls\-\_\-rsa\-\_\-rsassa\-\_\-pss\-\_\-sign} (\hyperlink{structmbedtls__rsa__context}{mbedtls\-\_\-rsa\-\_\-context} $\ast$ctx, int($\ast$f\-\_\-rng)(void $\ast$, unsigned char $\ast$, size\-\_\-t), void $\ast$p\-\_\-rng, int mode, mbedtls\-\_\-md\-\_\-type\-\_\-t md\-\_\-alg, unsigned int hashlen, const unsigned char $\ast$hash, unsigned char $\ast$sig)
+\begin{DoxyCompactList}\small\item\em Perform a P\-K\-C\-S\#1 v2.\-1 P\-S\-S signature (R\-S\-A\-S\-S\-A-\/\-P\-S\-S-\/\-S\-I\-G\-N) \end{DoxyCompactList}\item 
+int \hyperlink{rsa_8h_a0aed18dcd3095b0ec29ed45a698a1935}{mbedtls\-\_\-rsa\-\_\-pkcs1\-\_\-verify} (\hyperlink{structmbedtls__rsa__context}{mbedtls\-\_\-rsa\-\_\-context} $\ast$ctx, int($\ast$f\-\_\-rng)(void $\ast$, unsigned char $\ast$, size\-\_\-t), void $\ast$p\-\_\-rng, int mode, mbedtls\-\_\-md\-\_\-type\-\_\-t md\-\_\-alg, unsigned int hashlen, const unsigned char $\ast$hash, const unsigned char $\ast$sig)
+\begin{DoxyCompactList}\small\item\em Generic wrapper to perform a P\-K\-C\-S\#1 verification using the mode from the context. Do a public R\-S\-A operation and check the message digest. \end{DoxyCompactList}\item 
+int \hyperlink{rsa_8h_a27b1f6721bfe13049ebda58b0684f446}{mbedtls\-\_\-rsa\-\_\-rsassa\-\_\-pkcs1\-\_\-v15\-\_\-verify} (\hyperlink{structmbedtls__rsa__context}{mbedtls\-\_\-rsa\-\_\-context} $\ast$ctx, int($\ast$f\-\_\-rng)(void $\ast$, unsigned char $\ast$, size\-\_\-t), void $\ast$p\-\_\-rng, int mode, mbedtls\-\_\-md\-\_\-type\-\_\-t md\-\_\-alg, unsigned int hashlen, const unsigned char $\ast$hash, const unsigned char $\ast$sig)
+\begin{DoxyCompactList}\small\item\em Perform a P\-K\-C\-S\#1 v1.\-5 verification (R\-S\-A\-S\-S\-A-\/\-P\-K\-C\-S1-\/v1\-\_\-5-\/\-V\-E\-R\-I\-F\-Y) \end{DoxyCompactList}\item 
+int \hyperlink{rsa_8h_a71b172ac54391d845ec163a20cbec09d}{mbedtls\-\_\-rsa\-\_\-rsassa\-\_\-pss\-\_\-verify} (\hyperlink{structmbedtls__rsa__context}{mbedtls\-\_\-rsa\-\_\-context} $\ast$ctx, int($\ast$f\-\_\-rng)(void $\ast$, unsigned char $\ast$, size\-\_\-t), void $\ast$p\-\_\-rng, int mode, mbedtls\-\_\-md\-\_\-type\-\_\-t md\-\_\-alg, unsigned int hashlen, const unsigned char $\ast$hash, const unsigned char $\ast$sig)
+\begin{DoxyCompactList}\small\item\em Perform a P\-K\-C\-S\#1 v2.\-1 P\-S\-S verification (R\-S\-A\-S\-S\-A-\/\-P\-S\-S-\/\-V\-E\-R\-I\-F\-Y) (This is the \char`\"{}simple\char`\"{} version.) \end{DoxyCompactList}\item 
+int \hyperlink{rsa_8h_ac7791a1e03b00651a844dc6f5f32aaaa}{mbedtls\-\_\-rsa\-\_\-rsassa\-\_\-pss\-\_\-verify\-\_\-ext} (\hyperlink{structmbedtls__rsa__context}{mbedtls\-\_\-rsa\-\_\-context} $\ast$ctx, int($\ast$f\-\_\-rng)(void $\ast$, unsigned char $\ast$, size\-\_\-t), void $\ast$p\-\_\-rng, int mode, mbedtls\-\_\-md\-\_\-type\-\_\-t md\-\_\-alg, unsigned int hashlen, const unsigned char $\ast$hash, mbedtls\-\_\-md\-\_\-type\-\_\-t mgf1\-\_\-hash\-\_\-id, int expected\-\_\-salt\-\_\-len, const unsigned char $\ast$sig)
+\begin{DoxyCompactList}\small\item\em Perform a P\-K\-C\-S\#1 v2.\-1 P\-S\-S verification (R\-S\-A\-S\-S\-A-\/\-P\-S\-S-\/\-V\-E\-R\-I\-F\-Y) (This is the version with \char`\"{}full\char`\"{} options.) \end{DoxyCompactList}\item 
+int \hyperlink{rsa_8h_a6c88adae1a4e49c11d210c59dbc89f46}{mbedtls\-\_\-rsa\-\_\-copy} (\hyperlink{structmbedtls__rsa__context}{mbedtls\-\_\-rsa\-\_\-context} $\ast$dst, const \hyperlink{structmbedtls__rsa__context}{mbedtls\-\_\-rsa\-\_\-context} $\ast$src)
+\begin{DoxyCompactList}\small\item\em Copy the components of an R\-S\-A context. \end{DoxyCompactList}\item 
+void \hyperlink{rsa_8h_a74eb13ecac0de582b01b4332c1d66494}{mbedtls\-\_\-rsa\-\_\-free} (\hyperlink{structmbedtls__rsa__context}{mbedtls\-\_\-rsa\-\_\-context} $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Free the components of an R\-S\-A key. \end{DoxyCompactList}\item 
+int \hyperlink{rsa_8h_a1e5352f846fbb0938fb757be5cde0262}{mbedtls\-\_\-rsa\-\_\-self\-\_\-test} (int verbose)
+\begin{DoxyCompactList}\small\item\em Checkup routine. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The R\-S\-A public-\/key cryptosystem. Copyright (C) 2006-\/2015, A\-R\-M Limited, All Rights Reserved
+
+This file is part of mbed T\-L\-S (\href{https://tls.mbed.org}{\tt https\-://tls.\-mbed.\-org})
+
+This program is free software; you can redistribute it and/or modify it under the terms of the G\-N\-U General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but W\-I\-T\-H\-O\-U\-T A\-N\-Y W\-A\-R\-R\-A\-N\-T\-Y; without even the implied warranty of M\-E\-R\-C\-H\-A\-N\-T\-A\-B\-I\-L\-I\-T\-Y or F\-I\-T\-N\-E\-S\-S F\-O\-R A P\-A\-R\-T\-I\-C\-U\-L\-A\-R P\-U\-R\-P\-O\-S\-E. See the G\-N\-U General Public License for more details.
+
+You should have received a copy of the G\-N\-U General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, M\-A 02110-\/1301 U\-S\-A. 
+
+Definition in file \hyperlink{rsa_8h_source}{rsa.\-h}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{rsa_8h_abf2997e01281b898fd4594af0b7bfbb4}{\index{rsa.\-h@{rsa.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A}!rsa.h@{rsa.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A~-\/0x4080}}\label{rsa_8h_abf2997e01281b898fd4594af0b7bfbb4}
+Bad input parameters to function. 
+
+Definition at line 43 of file rsa.\-h.
+
+\hypertarget{rsa_8h_add099b8887e9e2942fcc3bf1673f703d}{\index{rsa.\-h@{rsa.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-P\-A\-D\-D\-I\-N\-G@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-P\-A\-D\-D\-I\-N\-G}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-P\-A\-D\-D\-I\-N\-G@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-P\-A\-D\-D\-I\-N\-G}!rsa.h@{rsa.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-P\-A\-D\-D\-I\-N\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-P\-A\-D\-D\-I\-N\-G~-\/0x4100}}\label{rsa_8h_add099b8887e9e2942fcc3bf1673f703d}
+Input data contains invalid padding and is rejected. 
+
+Definition at line 44 of file rsa.\-h.
+
+\hypertarget{rsa_8h_a75113c3b54138090c45a973b864200ad}{\index{rsa.\-h@{rsa.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-K\-E\-Y\-\_\-\-C\-H\-E\-C\-K\-\_\-\-F\-A\-I\-L\-E\-D@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-K\-E\-Y\-\_\-\-C\-H\-E\-C\-K\-\_\-\-F\-A\-I\-L\-E\-D}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-K\-E\-Y\-\_\-\-C\-H\-E\-C\-K\-\_\-\-F\-A\-I\-L\-E\-D@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-K\-E\-Y\-\_\-\-C\-H\-E\-C\-K\-\_\-\-F\-A\-I\-L\-E\-D}!rsa.h@{rsa.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-K\-E\-Y\-\_\-\-C\-H\-E\-C\-K\-\_\-\-F\-A\-I\-L\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-K\-E\-Y\-\_\-\-C\-H\-E\-C\-K\-\_\-\-F\-A\-I\-L\-E\-D~-\/0x4200}}\label{rsa_8h_a75113c3b54138090c45a973b864200ad}
+Key failed to pass the library's validity check. 
+
+Definition at line 46 of file rsa.\-h.
+
+\hypertarget{rsa_8h_ae334d56985d569186f5b5bb462cd6af2}{\index{rsa.\-h@{rsa.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-K\-E\-Y\-\_\-\-G\-E\-N\-\_\-\-F\-A\-I\-L\-E\-D@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-K\-E\-Y\-\_\-\-G\-E\-N\-\_\-\-F\-A\-I\-L\-E\-D}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-K\-E\-Y\-\_\-\-G\-E\-N\-\_\-\-F\-A\-I\-L\-E\-D@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-K\-E\-Y\-\_\-\-G\-E\-N\-\_\-\-F\-A\-I\-L\-E\-D}!rsa.h@{rsa.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-K\-E\-Y\-\_\-\-G\-E\-N\-\_\-\-F\-A\-I\-L\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-K\-E\-Y\-\_\-\-G\-E\-N\-\_\-\-F\-A\-I\-L\-E\-D~-\/0x4180}}\label{rsa_8h_ae334d56985d569186f5b5bb462cd6af2}
+Something failed during generation of a key. 
+
+Definition at line 45 of file rsa.\-h.
+
+\hypertarget{rsa_8h_a2d3d26a305009e5b26957e21b6b151c9}{\index{rsa.\-h@{rsa.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-T\-O\-O\-\_\-\-L\-A\-R\-G\-E@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-T\-O\-O\-\_\-\-L\-A\-R\-G\-E}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-T\-O\-O\-\_\-\-L\-A\-R\-G\-E@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-T\-O\-O\-\_\-\-L\-A\-R\-G\-E}!rsa.h@{rsa.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-T\-O\-O\-\_\-\-L\-A\-R\-G\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-T\-O\-O\-\_\-\-L\-A\-R\-G\-E~-\/0x4400}}\label{rsa_8h_a2d3d26a305009e5b26957e21b6b151c9}
+The output buffer for decryption is not large enough. 
+
+Definition at line 50 of file rsa.\-h.
+
+\hypertarget{rsa_8h_af7ddb312b48f8cd135150fc9bbb791d0}{\index{rsa.\-h@{rsa.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-P\-R\-I\-V\-A\-T\-E\-\_\-\-F\-A\-I\-L\-E\-D@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-P\-R\-I\-V\-A\-T\-E\-\_\-\-F\-A\-I\-L\-E\-D}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-P\-R\-I\-V\-A\-T\-E\-\_\-\-F\-A\-I\-L\-E\-D@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-P\-R\-I\-V\-A\-T\-E\-\_\-\-F\-A\-I\-L\-E\-D}!rsa.h@{rsa.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-P\-R\-I\-V\-A\-T\-E\-\_\-\-F\-A\-I\-L\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-P\-R\-I\-V\-A\-T\-E\-\_\-\-F\-A\-I\-L\-E\-D~-\/0x4300}}\label{rsa_8h_af7ddb312b48f8cd135150fc9bbb791d0}
+The private key operation failed. 
+
+Definition at line 48 of file rsa.\-h.
+
+\hypertarget{rsa_8h_ae9bffdb461c7e5803b4081ddd745afb5}{\index{rsa.\-h@{rsa.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-P\-U\-B\-L\-I\-C\-\_\-\-F\-A\-I\-L\-E\-D@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-P\-U\-B\-L\-I\-C\-\_\-\-F\-A\-I\-L\-E\-D}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-P\-U\-B\-L\-I\-C\-\_\-\-F\-A\-I\-L\-E\-D@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-P\-U\-B\-L\-I\-C\-\_\-\-F\-A\-I\-L\-E\-D}!rsa.h@{rsa.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-P\-U\-B\-L\-I\-C\-\_\-\-F\-A\-I\-L\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-P\-U\-B\-L\-I\-C\-\_\-\-F\-A\-I\-L\-E\-D~-\/0x4280}}\label{rsa_8h_ae9bffdb461c7e5803b4081ddd745afb5}
+The public key operation failed. 
+
+Definition at line 47 of file rsa.\-h.
+
+\hypertarget{rsa_8h_a6aa8ac62f7c3079cba7da3250a2fb7af}{\index{rsa.\-h@{rsa.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-R\-N\-G\-\_\-\-F\-A\-I\-L\-E\-D@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-R\-N\-G\-\_\-\-F\-A\-I\-L\-E\-D}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-R\-N\-G\-\_\-\-F\-A\-I\-L\-E\-D@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-R\-N\-G\-\_\-\-F\-A\-I\-L\-E\-D}!rsa.h@{rsa.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-R\-N\-G\-\_\-\-F\-A\-I\-L\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-R\-N\-G\-\_\-\-F\-A\-I\-L\-E\-D~-\/0x4480}}\label{rsa_8h_a6aa8ac62f7c3079cba7da3250a2fb7af}
+The random generator failed to generate non-\/zeros. 
+
+Definition at line 51 of file rsa.\-h.
+
+\hypertarget{rsa_8h_a334c537fbd9e49eb37a2ff12a11392cd}{\index{rsa.\-h@{rsa.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-V\-E\-R\-I\-F\-Y\-\_\-\-F\-A\-I\-L\-E\-D@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-V\-E\-R\-I\-F\-Y\-\_\-\-F\-A\-I\-L\-E\-D}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-V\-E\-R\-I\-F\-Y\-\_\-\-F\-A\-I\-L\-E\-D@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-V\-E\-R\-I\-F\-Y\-\_\-\-F\-A\-I\-L\-E\-D}!rsa.h@{rsa.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-V\-E\-R\-I\-F\-Y\-\_\-\-F\-A\-I\-L\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-V\-E\-R\-I\-F\-Y\-\_\-\-F\-A\-I\-L\-E\-D~-\/0x4380}}\label{rsa_8h_a334c537fbd9e49eb37a2ff12a11392cd}
+The P\-K\-C\-S\#1 verification failed. 
+
+Definition at line 49 of file rsa.\-h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{rsa_8h_ab393f7a4d3882ac0b2afa51b641bf475}{\index{rsa.\-h@{rsa.\-h}!mbedtls\-\_\-rsa\-\_\-check\-\_\-privkey@{mbedtls\-\_\-rsa\-\_\-check\-\_\-privkey}}
+\index{mbedtls\-\_\-rsa\-\_\-check\-\_\-privkey@{mbedtls\-\_\-rsa\-\_\-check\-\_\-privkey}!rsa.h@{rsa.\-h}}
+\subsubsection[{mbedtls\-\_\-rsa\-\_\-check\-\_\-privkey}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-rsa\-\_\-check\-\_\-privkey (
+\begin{DoxyParamCaption}
+\item[{const {\bf mbedtls\-\_\-rsa\-\_\-context} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}}\label{rsa_8h_ab393f7a4d3882ac0b2afa51b641bf475}
+
+
+Check a private R\-S\-A key. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & R\-S\-A context to be checked\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, or an M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-X\-X\-X error code 
+\end{DoxyReturn}
+\hypertarget{rsa_8h_a3204b1f8a0dafb33b4ccc16570a40999}{\index{rsa.\-h@{rsa.\-h}!mbedtls\-\_\-rsa\-\_\-check\-\_\-pub\-\_\-priv@{mbedtls\-\_\-rsa\-\_\-check\-\_\-pub\-\_\-priv}}
+\index{mbedtls\-\_\-rsa\-\_\-check\-\_\-pub\-\_\-priv@{mbedtls\-\_\-rsa\-\_\-check\-\_\-pub\-\_\-priv}!rsa.h@{rsa.\-h}}
+\subsubsection[{mbedtls\-\_\-rsa\-\_\-check\-\_\-pub\-\_\-priv}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-rsa\-\_\-check\-\_\-pub\-\_\-priv (
+\begin{DoxyParamCaption}
+\item[{const {\bf mbedtls\-\_\-rsa\-\_\-context} $\ast$}]{pub, }
+\item[{const {\bf mbedtls\-\_\-rsa\-\_\-context} $\ast$}]{prv}
+\end{DoxyParamCaption}
+)}}\label{rsa_8h_a3204b1f8a0dafb33b4ccc16570a40999}
+
+
+Check a public-\/private R\-S\-A key pair. Check each of the contexts, and make sure they match. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pub} & R\-S\-A context holding the public key \\
+\hline
+{\em prv} & R\-S\-A context holding the private key\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, or an M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-X\-X\-X error code 
+\end{DoxyReturn}
+\hypertarget{rsa_8h_ad5da263d80db9ee27f084b68b0092546}{\index{rsa.\-h@{rsa.\-h}!mbedtls\-\_\-rsa\-\_\-check\-\_\-pubkey@{mbedtls\-\_\-rsa\-\_\-check\-\_\-pubkey}}
+\index{mbedtls\-\_\-rsa\-\_\-check\-\_\-pubkey@{mbedtls\-\_\-rsa\-\_\-check\-\_\-pubkey}!rsa.h@{rsa.\-h}}
+\subsubsection[{mbedtls\-\_\-rsa\-\_\-check\-\_\-pubkey}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-rsa\-\_\-check\-\_\-pubkey (
+\begin{DoxyParamCaption}
+\item[{const {\bf mbedtls\-\_\-rsa\-\_\-context} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}}\label{rsa_8h_ad5da263d80db9ee27f084b68b0092546}
+
+
+Check a public R\-S\-A key. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & R\-S\-A context to be checked\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, or an M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-X\-X\-X error code 
+\end{DoxyReturn}
+\hypertarget{rsa_8h_a6c88adae1a4e49c11d210c59dbc89f46}{\index{rsa.\-h@{rsa.\-h}!mbedtls\-\_\-rsa\-\_\-copy@{mbedtls\-\_\-rsa\-\_\-copy}}
+\index{mbedtls\-\_\-rsa\-\_\-copy@{mbedtls\-\_\-rsa\-\_\-copy}!rsa.h@{rsa.\-h}}
+\subsubsection[{mbedtls\-\_\-rsa\-\_\-copy}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-rsa\-\_\-copy (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-rsa\-\_\-context} $\ast$}]{dst, }
+\item[{const {\bf mbedtls\-\_\-rsa\-\_\-context} $\ast$}]{src}
+\end{DoxyParamCaption}
+)}}\label{rsa_8h_a6c88adae1a4e49c11d210c59dbc89f46}
+
+
+Copy the components of an R\-S\-A context. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dst} & Destination context \\
+\hline
+{\em src} & Source context\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-A\-L\-L\-O\-C\-\_\-\-F\-A\-I\-L\-E\-D on memory allocation failure 
+\end{DoxyReturn}
+\hypertarget{rsa_8h_a74eb13ecac0de582b01b4332c1d66494}{\index{rsa.\-h@{rsa.\-h}!mbedtls\-\_\-rsa\-\_\-free@{mbedtls\-\_\-rsa\-\_\-free}}
+\index{mbedtls\-\_\-rsa\-\_\-free@{mbedtls\-\_\-rsa\-\_\-free}!rsa.h@{rsa.\-h}}
+\subsubsection[{mbedtls\-\_\-rsa\-\_\-free}]{\setlength{\rightskip}{0pt plus 5cm}void mbedtls\-\_\-rsa\-\_\-free (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-rsa\-\_\-context} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}}\label{rsa_8h_a74eb13ecac0de582b01b4332c1d66494}
+
+
+Free the components of an R\-S\-A key. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & R\-S\-A Context to free \\
+\hline
+\end{DoxyParams}
+\hypertarget{rsa_8h_a421fc8812e75698e33887aafacb0c829}{\index{rsa.\-h@{rsa.\-h}!mbedtls\-\_\-rsa\-\_\-gen\-\_\-key@{mbedtls\-\_\-rsa\-\_\-gen\-\_\-key}}
+\index{mbedtls\-\_\-rsa\-\_\-gen\-\_\-key@{mbedtls\-\_\-rsa\-\_\-gen\-\_\-key}!rsa.h@{rsa.\-h}}
+\subsubsection[{mbedtls\-\_\-rsa\-\_\-gen\-\_\-key}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-rsa\-\_\-gen\-\_\-key (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-rsa\-\_\-context} $\ast$}]{ctx, }
+\item[{int($\ast$)(void $\ast$, unsigned char $\ast$, size\-\_\-t)}]{f\-\_\-rng, }
+\item[{void $\ast$}]{p\-\_\-rng, }
+\item[{unsigned int}]{nbits, }
+\item[{int}]{exponent}
+\end{DoxyParamCaption}
+)}}\label{rsa_8h_a421fc8812e75698e33887aafacb0c829}
+
+
+Generate an R\-S\-A keypair. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & R\-S\-A context that will hold the key \\
+\hline
+{\em f\-\_\-rng} & R\-N\-G function \\
+\hline
+{\em p\-\_\-rng} & R\-N\-G parameter \\
+\hline
+{\em nbits} & size of the public key in bits \\
+\hline
+{\em exponent} & public exponent (e.\-g., 65537)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+\hyperlink{rsa_8h_a15b13ee0d1e7d6fd10f07571cc4ff9de}{mbedtls\-\_\-rsa\-\_\-init()} must be called beforehand to setup the R\-S\-A context.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+0 if successful, or an M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-X\-X\-X error code 
+\end{DoxyReturn}
+\hypertarget{rsa_8h_a15b13ee0d1e7d6fd10f07571cc4ff9de}{\index{rsa.\-h@{rsa.\-h}!mbedtls\-\_\-rsa\-\_\-init@{mbedtls\-\_\-rsa\-\_\-init}}
+\index{mbedtls\-\_\-rsa\-\_\-init@{mbedtls\-\_\-rsa\-\_\-init}!rsa.h@{rsa.\-h}}
+\subsubsection[{mbedtls\-\_\-rsa\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void mbedtls\-\_\-rsa\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-rsa\-\_\-context} $\ast$}]{ctx, }
+\item[{int}]{padding, }
+\item[{int}]{hash\-\_\-id}
+\end{DoxyParamCaption}
+)}}\label{rsa_8h_a15b13ee0d1e7d6fd10f07571cc4ff9de}
+
+
+Initialize an R\-S\-A context. 
+
+\begin{DoxyVerb}            Note: Set padding to MBEDTLS_RSA_PKCS_V21 for the RSAES-OAEP
+            encryption scheme and the RSASSA-PSS signature scheme.
+\end{DoxyVerb}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & R\-S\-A context to be initialized \\
+\hline
+{\em padding} & M\-B\-E\-D\-T\-L\-S\-\_\-\-R\-S\-A\-\_\-\-P\-K\-C\-S\-\_\-\-V15 or M\-B\-E\-D\-T\-L\-S\-\_\-\-R\-S\-A\-\_\-\-P\-K\-C\-S\-\_\-\-V21 \\
+\hline
+{\em hash\-\_\-id} & M\-B\-E\-D\-T\-L\-S\-\_\-\-R\-S\-A\-\_\-\-P\-K\-C\-S\-\_\-\-V21 hash identifier\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The hash\-\_\-id parameter is actually ignored when using M\-B\-E\-D\-T\-L\-S\-\_\-\-R\-S\-A\-\_\-\-P\-K\-C\-S\-\_\-\-V15 padding.
+
+Choice of padding mode is strictly enforced for private key operations, since there might be security concerns in mixing padding modes. For public key operations it's merely a default value, which can be overriden by calling specific rsa\-\_\-rsaes\-\_\-xxx or rsa\-\_\-rsassa\-\_\-xxx functions.
+
+The chosen hash is always used for O\-E\-A\-P encryption. For P\-S\-S signatures, it's always used for making signatures, but can be overriden (and always is, if set to M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-D\-\_\-\-N\-O\-N\-E) for verifying them. 
+\end{DoxyNote}
+\hypertarget{rsa_8h_a58f99b884b1697526061bedfe7be5570}{\index{rsa.\-h@{rsa.\-h}!mbedtls\-\_\-rsa\-\_\-pkcs1\-\_\-decrypt@{mbedtls\-\_\-rsa\-\_\-pkcs1\-\_\-decrypt}}
+\index{mbedtls\-\_\-rsa\-\_\-pkcs1\-\_\-decrypt@{mbedtls\-\_\-rsa\-\_\-pkcs1\-\_\-decrypt}!rsa.h@{rsa.\-h}}
+\subsubsection[{mbedtls\-\_\-rsa\-\_\-pkcs1\-\_\-decrypt}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-rsa\-\_\-pkcs1\-\_\-decrypt (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-rsa\-\_\-context} $\ast$}]{ctx, }
+\item[{int($\ast$)(void $\ast$, unsigned char $\ast$, size\-\_\-t)}]{f\-\_\-rng, }
+\item[{void $\ast$}]{p\-\_\-rng, }
+\item[{int}]{mode, }
+\item[{size\-\_\-t $\ast$}]{olen, }
+\item[{const unsigned char $\ast$}]{input, }
+\item[{unsigned char $\ast$}]{output, }
+\item[{size\-\_\-t}]{output\-\_\-max\-\_\-len}
+\end{DoxyParamCaption}
+)}}\label{rsa_8h_a58f99b884b1697526061bedfe7be5570}
+
+
+Generic wrapper to perform a P\-K\-C\-S\#1 decryption using the mode from the context. Do an R\-S\-A operation, then remove the message padding. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & R\-S\-A context \\
+\hline
+{\em f\-\_\-rng} & R\-N\-G function (Only needed for M\-B\-E\-D\-T\-L\-S\-\_\-\-R\-S\-A\-\_\-\-P\-R\-I\-V\-A\-T\-E) \\
+\hline
+{\em p\-\_\-rng} & R\-N\-G parameter \\
+\hline
+{\em mode} & M\-B\-E\-D\-T\-L\-S\-\_\-\-R\-S\-A\-\_\-\-P\-U\-B\-L\-I\-C or M\-B\-E\-D\-T\-L\-S\-\_\-\-R\-S\-A\-\_\-\-P\-R\-I\-V\-A\-T\-E \\
+\hline
+{\em olen} & will contain the plaintext length \\
+\hline
+{\em input} & buffer holding the encrypted data \\
+\hline
+{\em output} & buffer that will hold the plaintext \\
+\hline
+{\em output\-\_\-max\-\_\-len} & maximum length of the output buffer\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, or an M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-X\-X\-X error code
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The output buffer must be as large as the size of ctx-\/$>$N (eg. 128 bytes if R\-S\-A-\/1024 is used) otherwise an error is thrown. 
+\end{DoxyNote}
+\hypertarget{rsa_8h_a047b85b9483a9abecaf31af0caa2e7ff}{\index{rsa.\-h@{rsa.\-h}!mbedtls\-\_\-rsa\-\_\-pkcs1\-\_\-encrypt@{mbedtls\-\_\-rsa\-\_\-pkcs1\-\_\-encrypt}}
+\index{mbedtls\-\_\-rsa\-\_\-pkcs1\-\_\-encrypt@{mbedtls\-\_\-rsa\-\_\-pkcs1\-\_\-encrypt}!rsa.h@{rsa.\-h}}
+\subsubsection[{mbedtls\-\_\-rsa\-\_\-pkcs1\-\_\-encrypt}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-rsa\-\_\-pkcs1\-\_\-encrypt (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-rsa\-\_\-context} $\ast$}]{ctx, }
+\item[{int($\ast$)(void $\ast$, unsigned char $\ast$, size\-\_\-t)}]{f\-\_\-rng, }
+\item[{void $\ast$}]{p\-\_\-rng, }
+\item[{int}]{mode, }
+\item[{size\-\_\-t}]{ilen, }
+\item[{const unsigned char $\ast$}]{input, }
+\item[{unsigned char $\ast$}]{output}
+\end{DoxyParamCaption}
+)}}\label{rsa_8h_a047b85b9483a9abecaf31af0caa2e7ff}
+
+
+Generic wrapper to perform a P\-K\-C\-S\#1 encryption using the mode from the context. Add the message padding, then do an R\-S\-A operation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & R\-S\-A context \\
+\hline
+{\em f\-\_\-rng} & R\-N\-G function (Needed for padding and P\-K\-C\-S\#1 v2.\-1 encoding and M\-B\-E\-D\-T\-L\-S\-\_\-\-R\-S\-A\-\_\-\-P\-R\-I\-V\-A\-T\-E) \\
+\hline
+{\em p\-\_\-rng} & R\-N\-G parameter \\
+\hline
+{\em mode} & M\-B\-E\-D\-T\-L\-S\-\_\-\-R\-S\-A\-\_\-\-P\-U\-B\-L\-I\-C or M\-B\-E\-D\-T\-L\-S\-\_\-\-R\-S\-A\-\_\-\-P\-R\-I\-V\-A\-T\-E \\
+\hline
+{\em ilen} & contains the plaintext length \\
+\hline
+{\em input} & buffer holding the data to be encrypted \\
+\hline
+{\em output} & buffer that will hold the ciphertext\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, or an M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-X\-X\-X error code
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The output buffer must be as large as the size of ctx-\/$>$N (eg. 128 bytes if R\-S\-A-\/1024 is used). 
+\end{DoxyNote}
+\hypertarget{rsa_8h_a47d9e8989e233e986c59dc2aeb4a4caf}{\index{rsa.\-h@{rsa.\-h}!mbedtls\-\_\-rsa\-\_\-pkcs1\-\_\-sign@{mbedtls\-\_\-rsa\-\_\-pkcs1\-\_\-sign}}
+\index{mbedtls\-\_\-rsa\-\_\-pkcs1\-\_\-sign@{mbedtls\-\_\-rsa\-\_\-pkcs1\-\_\-sign}!rsa.h@{rsa.\-h}}
+\subsubsection[{mbedtls\-\_\-rsa\-\_\-pkcs1\-\_\-sign}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-rsa\-\_\-pkcs1\-\_\-sign (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-rsa\-\_\-context} $\ast$}]{ctx, }
+\item[{int($\ast$)(void $\ast$, unsigned char $\ast$, size\-\_\-t)}]{f\-\_\-rng, }
+\item[{void $\ast$}]{p\-\_\-rng, }
+\item[{int}]{mode, }
+\item[{mbedtls\-\_\-md\-\_\-type\-\_\-t}]{md\-\_\-alg, }
+\item[{unsigned int}]{hashlen, }
+\item[{const unsigned char $\ast$}]{hash, }
+\item[{unsigned char $\ast$}]{sig}
+\end{DoxyParamCaption}
+)}}\label{rsa_8h_a47d9e8989e233e986c59dc2aeb4a4caf}
+
+
+Generic wrapper to perform a P\-K\-C\-S\#1 signature using the mode from the context. Do a private R\-S\-A operation to sign a message digest. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & R\-S\-A context \\
+\hline
+{\em f\-\_\-rng} & R\-N\-G function (Needed for P\-K\-C\-S\#1 v2.\-1 encoding and for M\-B\-E\-D\-T\-L\-S\-\_\-\-R\-S\-A\-\_\-\-P\-R\-I\-V\-A\-T\-E) \\
+\hline
+{\em p\-\_\-rng} & R\-N\-G parameter \\
+\hline
+{\em mode} & M\-B\-E\-D\-T\-L\-S\-\_\-\-R\-S\-A\-\_\-\-P\-U\-B\-L\-I\-C or M\-B\-E\-D\-T\-L\-S\-\_\-\-R\-S\-A\-\_\-\-P\-R\-I\-V\-A\-T\-E \\
+\hline
+{\em md\-\_\-alg} & a M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-D\-\_\-\-X\-X\-X (use M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-D\-\_\-\-N\-O\-N\-E for signing raw data) \\
+\hline
+{\em hashlen} & message digest length (for M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-D\-\_\-\-N\-O\-N\-E only) \\
+\hline
+{\em hash} & buffer holding the message digest \\
+\hline
+{\em sig} & buffer that will hold the ciphertext\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the signing operation was successful, or an M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-X\-X\-X error code
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The \char`\"{}sig\char`\"{} buffer must be as large as the size of ctx-\/$>$N (eg. 128 bytes if R\-S\-A-\/1024 is used).
+
+In case of P\-K\-C\-S\#1 v2.\-1 encoding, see comments on 
+
+{\ttfamily \hyperlink{rsa_8h_aec5d149705050cd3839fe68e095e32b2}{mbedtls\-\_\-rsa\-\_\-rsassa\-\_\-pss\-\_\-sign()}} for details on md\-\_\-alg and hash\-\_\-id. 
+\end{DoxyNote}
+\hypertarget{rsa_8h_a0aed18dcd3095b0ec29ed45a698a1935}{\index{rsa.\-h@{rsa.\-h}!mbedtls\-\_\-rsa\-\_\-pkcs1\-\_\-verify@{mbedtls\-\_\-rsa\-\_\-pkcs1\-\_\-verify}}
+\index{mbedtls\-\_\-rsa\-\_\-pkcs1\-\_\-verify@{mbedtls\-\_\-rsa\-\_\-pkcs1\-\_\-verify}!rsa.h@{rsa.\-h}}
+\subsubsection[{mbedtls\-\_\-rsa\-\_\-pkcs1\-\_\-verify}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-rsa\-\_\-pkcs1\-\_\-verify (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-rsa\-\_\-context} $\ast$}]{ctx, }
+\item[{int($\ast$)(void $\ast$, unsigned char $\ast$, size\-\_\-t)}]{f\-\_\-rng, }
+\item[{void $\ast$}]{p\-\_\-rng, }
+\item[{int}]{mode, }
+\item[{mbedtls\-\_\-md\-\_\-type\-\_\-t}]{md\-\_\-alg, }
+\item[{unsigned int}]{hashlen, }
+\item[{const unsigned char $\ast$}]{hash, }
+\item[{const unsigned char $\ast$}]{sig}
+\end{DoxyParamCaption}
+)}}\label{rsa_8h_a0aed18dcd3095b0ec29ed45a698a1935}
+
+
+Generic wrapper to perform a P\-K\-C\-S\#1 verification using the mode from the context. Do a public R\-S\-A operation and check the message digest. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & points to an R\-S\-A public key \\
+\hline
+{\em f\-\_\-rng} & R\-N\-G function (Only needed for M\-B\-E\-D\-T\-L\-S\-\_\-\-R\-S\-A\-\_\-\-P\-R\-I\-V\-A\-T\-E) \\
+\hline
+{\em p\-\_\-rng} & R\-N\-G parameter \\
+\hline
+{\em mode} & M\-B\-E\-D\-T\-L\-S\-\_\-\-R\-S\-A\-\_\-\-P\-U\-B\-L\-I\-C or M\-B\-E\-D\-T\-L\-S\-\_\-\-R\-S\-A\-\_\-\-P\-R\-I\-V\-A\-T\-E \\
+\hline
+{\em md\-\_\-alg} & a M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-D\-\_\-\-X\-X\-X (use M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-D\-\_\-\-N\-O\-N\-E for signing raw data) \\
+\hline
+{\em hashlen} & message digest length (for M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-D\-\_\-\-N\-O\-N\-E only) \\
+\hline
+{\em hash} & buffer holding the message digest \\
+\hline
+{\em sig} & buffer holding the ciphertext\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the verify operation was successful, or an M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-X\-X\-X error code
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The \char`\"{}sig\char`\"{} buffer must be as large as the size of ctx-\/$>$N (eg. 128 bytes if R\-S\-A-\/1024 is used).
+
+In case of P\-K\-C\-S\#1 v2.\-1 encoding, see comments on {\ttfamily \hyperlink{rsa_8h_a71b172ac54391d845ec163a20cbec09d}{mbedtls\-\_\-rsa\-\_\-rsassa\-\_\-pss\-\_\-verify()}} about md\-\_\-alg and hash\-\_\-id. 
+\end{DoxyNote}
+\hypertarget{rsa_8h_a3e016741ddaa354916ade4d48e9a0965}{\index{rsa.\-h@{rsa.\-h}!mbedtls\-\_\-rsa\-\_\-private@{mbedtls\-\_\-rsa\-\_\-private}}
+\index{mbedtls\-\_\-rsa\-\_\-private@{mbedtls\-\_\-rsa\-\_\-private}!rsa.h@{rsa.\-h}}
+\subsubsection[{mbedtls\-\_\-rsa\-\_\-private}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-rsa\-\_\-private (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-rsa\-\_\-context} $\ast$}]{ctx, }
+\item[{int($\ast$)(void $\ast$, unsigned char $\ast$, size\-\_\-t)}]{f\-\_\-rng, }
+\item[{void $\ast$}]{p\-\_\-rng, }
+\item[{const unsigned char $\ast$}]{input, }
+\item[{unsigned char $\ast$}]{output}
+\end{DoxyParamCaption}
+)}}\label{rsa_8h_a3e016741ddaa354916ade4d48e9a0965}
+
+
+Do an R\-S\-A private key operation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & R\-S\-A context \\
+\hline
+{\em f\-\_\-rng} & R\-N\-G function (Needed for blinding) \\
+\hline
+{\em p\-\_\-rng} & R\-N\-G parameter \\
+\hline
+{\em input} & input buffer \\
+\hline
+{\em output} & output buffer\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, or an M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-X\-X\-X error code
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The input and output buffers must be large enough (eg. 128 bytes if R\-S\-A-\/1024 is used). 
+\end{DoxyNote}
+\hypertarget{rsa_8h_a9db0f76aff9a6ce179b6fbe329bf5569}{\index{rsa.\-h@{rsa.\-h}!mbedtls\-\_\-rsa\-\_\-public@{mbedtls\-\_\-rsa\-\_\-public}}
+\index{mbedtls\-\_\-rsa\-\_\-public@{mbedtls\-\_\-rsa\-\_\-public}!rsa.h@{rsa.\-h}}
+\subsubsection[{mbedtls\-\_\-rsa\-\_\-public}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-rsa\-\_\-public (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-rsa\-\_\-context} $\ast$}]{ctx, }
+\item[{const unsigned char $\ast$}]{input, }
+\item[{unsigned char $\ast$}]{output}
+\end{DoxyParamCaption}
+)}}\label{rsa_8h_a9db0f76aff9a6ce179b6fbe329bf5569}
+
+
+Do an R\-S\-A public key operation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & R\-S\-A context \\
+\hline
+{\em input} & input buffer \\
+\hline
+{\em output} & output buffer\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, or an M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-X\-X\-X error code
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This function does N\-O\-T take care of message padding. Also, be sure to set input\mbox{[}0\mbox{]} = 0 or assure that input is smaller than N.
+
+The input and output buffers must be large enough (eg. 128 bytes if R\-S\-A-\/1024 is used). 
+\end{DoxyNote}
+\hypertarget{rsa_8h_afe0ea987f1d1627cc86137e5b1595da8}{\index{rsa.\-h@{rsa.\-h}!mbedtls\-\_\-rsa\-\_\-rsaes\-\_\-oaep\-\_\-decrypt@{mbedtls\-\_\-rsa\-\_\-rsaes\-\_\-oaep\-\_\-decrypt}}
+\index{mbedtls\-\_\-rsa\-\_\-rsaes\-\_\-oaep\-\_\-decrypt@{mbedtls\-\_\-rsa\-\_\-rsaes\-\_\-oaep\-\_\-decrypt}!rsa.h@{rsa.\-h}}
+\subsubsection[{mbedtls\-\_\-rsa\-\_\-rsaes\-\_\-oaep\-\_\-decrypt}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-rsa\-\_\-rsaes\-\_\-oaep\-\_\-decrypt (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-rsa\-\_\-context} $\ast$}]{ctx, }
+\item[{int($\ast$)(void $\ast$, unsigned char $\ast$, size\-\_\-t)}]{f\-\_\-rng, }
+\item[{void $\ast$}]{p\-\_\-rng, }
+\item[{int}]{mode, }
+\item[{const unsigned char $\ast$}]{label, }
+\item[{size\-\_\-t}]{label\-\_\-len, }
+\item[{size\-\_\-t $\ast$}]{olen, }
+\item[{const unsigned char $\ast$}]{input, }
+\item[{unsigned char $\ast$}]{output, }
+\item[{size\-\_\-t}]{output\-\_\-max\-\_\-len}
+\end{DoxyParamCaption}
+)}}\label{rsa_8h_afe0ea987f1d1627cc86137e5b1595da8}
+
+
+Perform a P\-K\-C\-S\#1 v2.\-1 O\-A\-E\-P decryption (R\-S\-A\-E\-S-\/\-O\-A\-E\-P-\/\-D\-E\-C\-R\-Y\-P\-T) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & R\-S\-A context \\
+\hline
+{\em f\-\_\-rng} & R\-N\-G function (Only needed for M\-B\-E\-D\-T\-L\-S\-\_\-\-R\-S\-A\-\_\-\-P\-R\-I\-V\-A\-T\-E) \\
+\hline
+{\em p\-\_\-rng} & R\-N\-G parameter \\
+\hline
+{\em mode} & M\-B\-E\-D\-T\-L\-S\-\_\-\-R\-S\-A\-\_\-\-P\-U\-B\-L\-I\-C or M\-B\-E\-D\-T\-L\-S\-\_\-\-R\-S\-A\-\_\-\-P\-R\-I\-V\-A\-T\-E \\
+\hline
+{\em label} & buffer holding the custom label to use \\
+\hline
+{\em label\-\_\-len} & contains the label length \\
+\hline
+{\em olen} & will contain the plaintext length \\
+\hline
+{\em input} & buffer holding the encrypted data \\
+\hline
+{\em output} & buffer that will hold the plaintext \\
+\hline
+{\em output\-\_\-max\-\_\-len} & maximum length of the output buffer\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, or an M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-X\-X\-X error code
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The output buffer must be as large as the size of ctx-\/$>$N (eg. 128 bytes if R\-S\-A-\/1024 is used) otherwise an error is thrown. 
+\end{DoxyNote}
+\hypertarget{rsa_8h_ad2dda710a8a517d02220632bcf0eda13}{\index{rsa.\-h@{rsa.\-h}!mbedtls\-\_\-rsa\-\_\-rsaes\-\_\-oaep\-\_\-encrypt@{mbedtls\-\_\-rsa\-\_\-rsaes\-\_\-oaep\-\_\-encrypt}}
+\index{mbedtls\-\_\-rsa\-\_\-rsaes\-\_\-oaep\-\_\-encrypt@{mbedtls\-\_\-rsa\-\_\-rsaes\-\_\-oaep\-\_\-encrypt}!rsa.h@{rsa.\-h}}
+\subsubsection[{mbedtls\-\_\-rsa\-\_\-rsaes\-\_\-oaep\-\_\-encrypt}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-rsa\-\_\-rsaes\-\_\-oaep\-\_\-encrypt (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-rsa\-\_\-context} $\ast$}]{ctx, }
+\item[{int($\ast$)(void $\ast$, unsigned char $\ast$, size\-\_\-t)}]{f\-\_\-rng, }
+\item[{void $\ast$}]{p\-\_\-rng, }
+\item[{int}]{mode, }
+\item[{const unsigned char $\ast$}]{label, }
+\item[{size\-\_\-t}]{label\-\_\-len, }
+\item[{size\-\_\-t}]{ilen, }
+\item[{const unsigned char $\ast$}]{input, }
+\item[{unsigned char $\ast$}]{output}
+\end{DoxyParamCaption}
+)}}\label{rsa_8h_ad2dda710a8a517d02220632bcf0eda13}
+
+
+Perform a P\-K\-C\-S\#1 v2.\-1 O\-A\-E\-P encryption (R\-S\-A\-E\-S-\/\-O\-A\-E\-P-\/\-E\-N\-C\-R\-Y\-P\-T) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & R\-S\-A context \\
+\hline
+{\em f\-\_\-rng} & R\-N\-G function (Needed for padding and P\-K\-C\-S\#1 v2.\-1 encoding and M\-B\-E\-D\-T\-L\-S\-\_\-\-R\-S\-A\-\_\-\-P\-R\-I\-V\-A\-T\-E) \\
+\hline
+{\em p\-\_\-rng} & R\-N\-G parameter \\
+\hline
+{\em mode} & M\-B\-E\-D\-T\-L\-S\-\_\-\-R\-S\-A\-\_\-\-P\-U\-B\-L\-I\-C or M\-B\-E\-D\-T\-L\-S\-\_\-\-R\-S\-A\-\_\-\-P\-R\-I\-V\-A\-T\-E \\
+\hline
+{\em label} & buffer holding the custom label to use \\
+\hline
+{\em label\-\_\-len} & contains the label length \\
+\hline
+{\em ilen} & contains the plaintext length \\
+\hline
+{\em input} & buffer holding the data to be encrypted \\
+\hline
+{\em output} & buffer that will hold the ciphertext\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, or an M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-X\-X\-X error code
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The output buffer must be as large as the size of ctx-\/$>$N (eg. 128 bytes if R\-S\-A-\/1024 is used). 
+\end{DoxyNote}
+\hypertarget{rsa_8h_a57b7b96e1dbb900bb42cc2e1704e051b}{\index{rsa.\-h@{rsa.\-h}!mbedtls\-\_\-rsa\-\_\-rsaes\-\_\-pkcs1\-\_\-v15\-\_\-decrypt@{mbedtls\-\_\-rsa\-\_\-rsaes\-\_\-pkcs1\-\_\-v15\-\_\-decrypt}}
+\index{mbedtls\-\_\-rsa\-\_\-rsaes\-\_\-pkcs1\-\_\-v15\-\_\-decrypt@{mbedtls\-\_\-rsa\-\_\-rsaes\-\_\-pkcs1\-\_\-v15\-\_\-decrypt}!rsa.h@{rsa.\-h}}
+\subsubsection[{mbedtls\-\_\-rsa\-\_\-rsaes\-\_\-pkcs1\-\_\-v15\-\_\-decrypt}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-rsa\-\_\-rsaes\-\_\-pkcs1\-\_\-v15\-\_\-decrypt (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-rsa\-\_\-context} $\ast$}]{ctx, }
+\item[{int($\ast$)(void $\ast$, unsigned char $\ast$, size\-\_\-t)}]{f\-\_\-rng, }
+\item[{void $\ast$}]{p\-\_\-rng, }
+\item[{int}]{mode, }
+\item[{size\-\_\-t $\ast$}]{olen, }
+\item[{const unsigned char $\ast$}]{input, }
+\item[{unsigned char $\ast$}]{output, }
+\item[{size\-\_\-t}]{output\-\_\-max\-\_\-len}
+\end{DoxyParamCaption}
+)}}\label{rsa_8h_a57b7b96e1dbb900bb42cc2e1704e051b}
+
+
+Perform a P\-K\-C\-S\#1 v1.\-5 decryption (R\-S\-A\-E\-S-\/\-P\-K\-C\-S1-\/v1\-\_\-5-\/\-D\-E\-C\-R\-Y\-P\-T) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & R\-S\-A context \\
+\hline
+{\em f\-\_\-rng} & R\-N\-G function (Only needed for M\-B\-E\-D\-T\-L\-S\-\_\-\-R\-S\-A\-\_\-\-P\-R\-I\-V\-A\-T\-E) \\
+\hline
+{\em p\-\_\-rng} & R\-N\-G parameter \\
+\hline
+{\em mode} & M\-B\-E\-D\-T\-L\-S\-\_\-\-R\-S\-A\-\_\-\-P\-U\-B\-L\-I\-C or M\-B\-E\-D\-T\-L\-S\-\_\-\-R\-S\-A\-\_\-\-P\-R\-I\-V\-A\-T\-E \\
+\hline
+{\em olen} & will contain the plaintext length \\
+\hline
+{\em input} & buffer holding the encrypted data \\
+\hline
+{\em output} & buffer that will hold the plaintext \\
+\hline
+{\em output\-\_\-max\-\_\-len} & maximum length of the output buffer\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, or an M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-X\-X\-X error code
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The output buffer must be as large as the size of ctx-\/$>$N (eg. 128 bytes if R\-S\-A-\/1024 is used) otherwise an error is thrown. 
+\end{DoxyNote}
+\hypertarget{rsa_8h_a5037e3e29277b9d0dc3a4ef84b251f4e}{\index{rsa.\-h@{rsa.\-h}!mbedtls\-\_\-rsa\-\_\-rsaes\-\_\-pkcs1\-\_\-v15\-\_\-encrypt@{mbedtls\-\_\-rsa\-\_\-rsaes\-\_\-pkcs1\-\_\-v15\-\_\-encrypt}}
+\index{mbedtls\-\_\-rsa\-\_\-rsaes\-\_\-pkcs1\-\_\-v15\-\_\-encrypt@{mbedtls\-\_\-rsa\-\_\-rsaes\-\_\-pkcs1\-\_\-v15\-\_\-encrypt}!rsa.h@{rsa.\-h}}
+\subsubsection[{mbedtls\-\_\-rsa\-\_\-rsaes\-\_\-pkcs1\-\_\-v15\-\_\-encrypt}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-rsa\-\_\-rsaes\-\_\-pkcs1\-\_\-v15\-\_\-encrypt (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-rsa\-\_\-context} $\ast$}]{ctx, }
+\item[{int($\ast$)(void $\ast$, unsigned char $\ast$, size\-\_\-t)}]{f\-\_\-rng, }
+\item[{void $\ast$}]{p\-\_\-rng, }
+\item[{int}]{mode, }
+\item[{size\-\_\-t}]{ilen, }
+\item[{const unsigned char $\ast$}]{input, }
+\item[{unsigned char $\ast$}]{output}
+\end{DoxyParamCaption}
+)}}\label{rsa_8h_a5037e3e29277b9d0dc3a4ef84b251f4e}
+
+
+Perform a P\-K\-C\-S\#1 v1.\-5 encryption (R\-S\-A\-E\-S-\/\-P\-K\-C\-S1-\/v1\-\_\-5-\/\-E\-N\-C\-R\-Y\-P\-T) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & R\-S\-A context \\
+\hline
+{\em f\-\_\-rng} & R\-N\-G function (Needed for padding and M\-B\-E\-D\-T\-L\-S\-\_\-\-R\-S\-A\-\_\-\-P\-R\-I\-V\-A\-T\-E) \\
+\hline
+{\em p\-\_\-rng} & R\-N\-G parameter \\
+\hline
+{\em mode} & M\-B\-E\-D\-T\-L\-S\-\_\-\-R\-S\-A\-\_\-\-P\-U\-B\-L\-I\-C or M\-B\-E\-D\-T\-L\-S\-\_\-\-R\-S\-A\-\_\-\-P\-R\-I\-V\-A\-T\-E \\
+\hline
+{\em ilen} & contains the plaintext length \\
+\hline
+{\em input} & buffer holding the data to be encrypted \\
+\hline
+{\em output} & buffer that will hold the ciphertext\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, or an M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-X\-X\-X error code
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The output buffer must be as large as the size of ctx-\/$>$N (eg. 128 bytes if R\-S\-A-\/1024 is used). 
+\end{DoxyNote}
+\hypertarget{rsa_8h_aed5ff7848640b50f4a829a43f7135de4}{\index{rsa.\-h@{rsa.\-h}!mbedtls\-\_\-rsa\-\_\-rsassa\-\_\-pkcs1\-\_\-v15\-\_\-sign@{mbedtls\-\_\-rsa\-\_\-rsassa\-\_\-pkcs1\-\_\-v15\-\_\-sign}}
+\index{mbedtls\-\_\-rsa\-\_\-rsassa\-\_\-pkcs1\-\_\-v15\-\_\-sign@{mbedtls\-\_\-rsa\-\_\-rsassa\-\_\-pkcs1\-\_\-v15\-\_\-sign}!rsa.h@{rsa.\-h}}
+\subsubsection[{mbedtls\-\_\-rsa\-\_\-rsassa\-\_\-pkcs1\-\_\-v15\-\_\-sign}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-rsa\-\_\-rsassa\-\_\-pkcs1\-\_\-v15\-\_\-sign (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-rsa\-\_\-context} $\ast$}]{ctx, }
+\item[{int($\ast$)(void $\ast$, unsigned char $\ast$, size\-\_\-t)}]{f\-\_\-rng, }
+\item[{void $\ast$}]{p\-\_\-rng, }
+\item[{int}]{mode, }
+\item[{mbedtls\-\_\-md\-\_\-type\-\_\-t}]{md\-\_\-alg, }
+\item[{unsigned int}]{hashlen, }
+\item[{const unsigned char $\ast$}]{hash, }
+\item[{unsigned char $\ast$}]{sig}
+\end{DoxyParamCaption}
+)}}\label{rsa_8h_aed5ff7848640b50f4a829a43f7135de4}
+
+
+Perform a P\-K\-C\-S\#1 v1.\-5 signature (R\-S\-A\-S\-S\-A-\/\-P\-K\-C\-S1-\/v1\-\_\-5-\/\-S\-I\-G\-N) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & R\-S\-A context \\
+\hline
+{\em f\-\_\-rng} & R\-N\-G function (Only needed for M\-B\-E\-D\-T\-L\-S\-\_\-\-R\-S\-A\-\_\-\-P\-R\-I\-V\-A\-T\-E) \\
+\hline
+{\em p\-\_\-rng} & R\-N\-G parameter \\
+\hline
+{\em mode} & M\-B\-E\-D\-T\-L\-S\-\_\-\-R\-S\-A\-\_\-\-P\-U\-B\-L\-I\-C or M\-B\-E\-D\-T\-L\-S\-\_\-\-R\-S\-A\-\_\-\-P\-R\-I\-V\-A\-T\-E \\
+\hline
+{\em md\-\_\-alg} & a M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-D\-\_\-\-X\-X\-X (use M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-D\-\_\-\-N\-O\-N\-E for signing raw data) \\
+\hline
+{\em hashlen} & message digest length (for M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-D\-\_\-\-N\-O\-N\-E only) \\
+\hline
+{\em hash} & buffer holding the message digest \\
+\hline
+{\em sig} & buffer that will hold the ciphertext\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the signing operation was successful, or an M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-X\-X\-X error code
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The \char`\"{}sig\char`\"{} buffer must be as large as the size of ctx-\/$>$N (eg. 128 bytes if R\-S\-A-\/1024 is used). 
+\end{DoxyNote}
+\hypertarget{rsa_8h_a27b1f6721bfe13049ebda58b0684f446}{\index{rsa.\-h@{rsa.\-h}!mbedtls\-\_\-rsa\-\_\-rsassa\-\_\-pkcs1\-\_\-v15\-\_\-verify@{mbedtls\-\_\-rsa\-\_\-rsassa\-\_\-pkcs1\-\_\-v15\-\_\-verify}}
+\index{mbedtls\-\_\-rsa\-\_\-rsassa\-\_\-pkcs1\-\_\-v15\-\_\-verify@{mbedtls\-\_\-rsa\-\_\-rsassa\-\_\-pkcs1\-\_\-v15\-\_\-verify}!rsa.h@{rsa.\-h}}
+\subsubsection[{mbedtls\-\_\-rsa\-\_\-rsassa\-\_\-pkcs1\-\_\-v15\-\_\-verify}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-rsa\-\_\-rsassa\-\_\-pkcs1\-\_\-v15\-\_\-verify (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-rsa\-\_\-context} $\ast$}]{ctx, }
+\item[{int($\ast$)(void $\ast$, unsigned char $\ast$, size\-\_\-t)}]{f\-\_\-rng, }
+\item[{void $\ast$}]{p\-\_\-rng, }
+\item[{int}]{mode, }
+\item[{mbedtls\-\_\-md\-\_\-type\-\_\-t}]{md\-\_\-alg, }
+\item[{unsigned int}]{hashlen, }
+\item[{const unsigned char $\ast$}]{hash, }
+\item[{const unsigned char $\ast$}]{sig}
+\end{DoxyParamCaption}
+)}}\label{rsa_8h_a27b1f6721bfe13049ebda58b0684f446}
+
+
+Perform a P\-K\-C\-S\#1 v1.\-5 verification (R\-S\-A\-S\-S\-A-\/\-P\-K\-C\-S1-\/v1\-\_\-5-\/\-V\-E\-R\-I\-F\-Y) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & points to an R\-S\-A public key \\
+\hline
+{\em f\-\_\-rng} & R\-N\-G function (Only needed for M\-B\-E\-D\-T\-L\-S\-\_\-\-R\-S\-A\-\_\-\-P\-R\-I\-V\-A\-T\-E) \\
+\hline
+{\em p\-\_\-rng} & R\-N\-G parameter \\
+\hline
+{\em mode} & M\-B\-E\-D\-T\-L\-S\-\_\-\-R\-S\-A\-\_\-\-P\-U\-B\-L\-I\-C or M\-B\-E\-D\-T\-L\-S\-\_\-\-R\-S\-A\-\_\-\-P\-R\-I\-V\-A\-T\-E \\
+\hline
+{\em md\-\_\-alg} & a M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-D\-\_\-\-X\-X\-X (use M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-D\-\_\-\-N\-O\-N\-E for signing raw data) \\
+\hline
+{\em hashlen} & message digest length (for M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-D\-\_\-\-N\-O\-N\-E only) \\
+\hline
+{\em hash} & buffer holding the message digest \\
+\hline
+{\em sig} & buffer holding the ciphertext\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the verify operation was successful, or an M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-X\-X\-X error code
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The \char`\"{}sig\char`\"{} buffer must be as large as the size of ctx-\/$>$N (eg. 128 bytes if R\-S\-A-\/1024 is used). 
+\end{DoxyNote}
+\hypertarget{rsa_8h_aec5d149705050cd3839fe68e095e32b2}{\index{rsa.\-h@{rsa.\-h}!mbedtls\-\_\-rsa\-\_\-rsassa\-\_\-pss\-\_\-sign@{mbedtls\-\_\-rsa\-\_\-rsassa\-\_\-pss\-\_\-sign}}
+\index{mbedtls\-\_\-rsa\-\_\-rsassa\-\_\-pss\-\_\-sign@{mbedtls\-\_\-rsa\-\_\-rsassa\-\_\-pss\-\_\-sign}!rsa.h@{rsa.\-h}}
+\subsubsection[{mbedtls\-\_\-rsa\-\_\-rsassa\-\_\-pss\-\_\-sign}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-rsa\-\_\-rsassa\-\_\-pss\-\_\-sign (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-rsa\-\_\-context} $\ast$}]{ctx, }
+\item[{int($\ast$)(void $\ast$, unsigned char $\ast$, size\-\_\-t)}]{f\-\_\-rng, }
+\item[{void $\ast$}]{p\-\_\-rng, }
+\item[{int}]{mode, }
+\item[{mbedtls\-\_\-md\-\_\-type\-\_\-t}]{md\-\_\-alg, }
+\item[{unsigned int}]{hashlen, }
+\item[{const unsigned char $\ast$}]{hash, }
+\item[{unsigned char $\ast$}]{sig}
+\end{DoxyParamCaption}
+)}}\label{rsa_8h_aec5d149705050cd3839fe68e095e32b2}
+
+
+Perform a P\-K\-C\-S\#1 v2.\-1 P\-S\-S signature (R\-S\-A\-S\-S\-A-\/\-P\-S\-S-\/\-S\-I\-G\-N) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & R\-S\-A context \\
+\hline
+{\em f\-\_\-rng} & R\-N\-G function (Needed for P\-K\-C\-S\#1 v2.\-1 encoding and for M\-B\-E\-D\-T\-L\-S\-\_\-\-R\-S\-A\-\_\-\-P\-R\-I\-V\-A\-T\-E) \\
+\hline
+{\em p\-\_\-rng} & R\-N\-G parameter \\
+\hline
+{\em mode} & M\-B\-E\-D\-T\-L\-S\-\_\-\-R\-S\-A\-\_\-\-P\-U\-B\-L\-I\-C or M\-B\-E\-D\-T\-L\-S\-\_\-\-R\-S\-A\-\_\-\-P\-R\-I\-V\-A\-T\-E \\
+\hline
+{\em md\-\_\-alg} & a M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-D\-\_\-\-X\-X\-X (use M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-D\-\_\-\-N\-O\-N\-E for signing raw data) \\
+\hline
+{\em hashlen} & message digest length (for M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-D\-\_\-\-N\-O\-N\-E only) \\
+\hline
+{\em hash} & buffer holding the message digest \\
+\hline
+{\em sig} & buffer that will hold the ciphertext\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the signing operation was successful, or an M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-X\-X\-X error code
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The \char`\"{}sig\char`\"{} buffer must be as large as the size of ctx-\/$>$N (eg. 128 bytes if R\-S\-A-\/1024 is used).
+
+The hash\-\_\-id in the R\-S\-A context is the one used for the encoding. md\-\_\-alg in the function call is the type of hash that is encoded. According to R\-F\-C 3447 it is advised to keep both hashes the same. 
+\end{DoxyNote}
+\hypertarget{rsa_8h_a71b172ac54391d845ec163a20cbec09d}{\index{rsa.\-h@{rsa.\-h}!mbedtls\-\_\-rsa\-\_\-rsassa\-\_\-pss\-\_\-verify@{mbedtls\-\_\-rsa\-\_\-rsassa\-\_\-pss\-\_\-verify}}
+\index{mbedtls\-\_\-rsa\-\_\-rsassa\-\_\-pss\-\_\-verify@{mbedtls\-\_\-rsa\-\_\-rsassa\-\_\-pss\-\_\-verify}!rsa.h@{rsa.\-h}}
+\subsubsection[{mbedtls\-\_\-rsa\-\_\-rsassa\-\_\-pss\-\_\-verify}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-rsa\-\_\-rsassa\-\_\-pss\-\_\-verify (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-rsa\-\_\-context} $\ast$}]{ctx, }
+\item[{int($\ast$)(void $\ast$, unsigned char $\ast$, size\-\_\-t)}]{f\-\_\-rng, }
+\item[{void $\ast$}]{p\-\_\-rng, }
+\item[{int}]{mode, }
+\item[{mbedtls\-\_\-md\-\_\-type\-\_\-t}]{md\-\_\-alg, }
+\item[{unsigned int}]{hashlen, }
+\item[{const unsigned char $\ast$}]{hash, }
+\item[{const unsigned char $\ast$}]{sig}
+\end{DoxyParamCaption}
+)}}\label{rsa_8h_a71b172ac54391d845ec163a20cbec09d}
+
+
+Perform a P\-K\-C\-S\#1 v2.\-1 P\-S\-S verification (R\-S\-A\-S\-S\-A-\/\-P\-S\-S-\/\-V\-E\-R\-I\-F\-Y) (This is the \char`\"{}simple\char`\"{} version.) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & points to an R\-S\-A public key \\
+\hline
+{\em f\-\_\-rng} & R\-N\-G function (Only needed for M\-B\-E\-D\-T\-L\-S\-\_\-\-R\-S\-A\-\_\-\-P\-R\-I\-V\-A\-T\-E) \\
+\hline
+{\em p\-\_\-rng} & R\-N\-G parameter \\
+\hline
+{\em mode} & M\-B\-E\-D\-T\-L\-S\-\_\-\-R\-S\-A\-\_\-\-P\-U\-B\-L\-I\-C or M\-B\-E\-D\-T\-L\-S\-\_\-\-R\-S\-A\-\_\-\-P\-R\-I\-V\-A\-T\-E \\
+\hline
+{\em md\-\_\-alg} & a M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-D\-\_\-\-X\-X\-X (use M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-D\-\_\-\-N\-O\-N\-E for signing raw data) \\
+\hline
+{\em hashlen} & message digest length (for M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-D\-\_\-\-N\-O\-N\-E only) \\
+\hline
+{\em hash} & buffer holding the message digest \\
+\hline
+{\em sig} & buffer holding the ciphertext\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the verify operation was successful, or an M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-X\-X\-X error code
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The \char`\"{}sig\char`\"{} buffer must be as large as the size of ctx-\/$>$N (eg. 128 bytes if R\-S\-A-\/1024 is used).
+
+The hash\-\_\-id in the R\-S\-A context is the one used for the verification. md\-\_\-alg in the function call is the type of hash that is verified. According to R\-F\-C 3447 it is advised to keep both hashes the same. If hash\-\_\-id in the R\-S\-A context is unset, the md\-\_\-alg from the function call is used. 
+\end{DoxyNote}
+\hypertarget{rsa_8h_ac7791a1e03b00651a844dc6f5f32aaaa}{\index{rsa.\-h@{rsa.\-h}!mbedtls\-\_\-rsa\-\_\-rsassa\-\_\-pss\-\_\-verify\-\_\-ext@{mbedtls\-\_\-rsa\-\_\-rsassa\-\_\-pss\-\_\-verify\-\_\-ext}}
+\index{mbedtls\-\_\-rsa\-\_\-rsassa\-\_\-pss\-\_\-verify\-\_\-ext@{mbedtls\-\_\-rsa\-\_\-rsassa\-\_\-pss\-\_\-verify\-\_\-ext}!rsa.h@{rsa.\-h}}
+\subsubsection[{mbedtls\-\_\-rsa\-\_\-rsassa\-\_\-pss\-\_\-verify\-\_\-ext}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-rsa\-\_\-rsassa\-\_\-pss\-\_\-verify\-\_\-ext (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-rsa\-\_\-context} $\ast$}]{ctx, }
+\item[{int($\ast$)(void $\ast$, unsigned char $\ast$, size\-\_\-t)}]{f\-\_\-rng, }
+\item[{void $\ast$}]{p\-\_\-rng, }
+\item[{int}]{mode, }
+\item[{mbedtls\-\_\-md\-\_\-type\-\_\-t}]{md\-\_\-alg, }
+\item[{unsigned int}]{hashlen, }
+\item[{const unsigned char $\ast$}]{hash, }
+\item[{mbedtls\-\_\-md\-\_\-type\-\_\-t}]{mgf1\-\_\-hash\-\_\-id, }
+\item[{int}]{expected\-\_\-salt\-\_\-len, }
+\item[{const unsigned char $\ast$}]{sig}
+\end{DoxyParamCaption}
+)}}\label{rsa_8h_ac7791a1e03b00651a844dc6f5f32aaaa}
+
+
+Perform a P\-K\-C\-S\#1 v2.\-1 P\-S\-S verification (R\-S\-A\-S\-S\-A-\/\-P\-S\-S-\/\-V\-E\-R\-I\-F\-Y) (This is the version with \char`\"{}full\char`\"{} options.) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & points to an R\-S\-A public key \\
+\hline
+{\em f\-\_\-rng} & R\-N\-G function (Only needed for M\-B\-E\-D\-T\-L\-S\-\_\-\-R\-S\-A\-\_\-\-P\-R\-I\-V\-A\-T\-E) \\
+\hline
+{\em p\-\_\-rng} & R\-N\-G parameter \\
+\hline
+{\em mode} & M\-B\-E\-D\-T\-L\-S\-\_\-\-R\-S\-A\-\_\-\-P\-U\-B\-L\-I\-C or M\-B\-E\-D\-T\-L\-S\-\_\-\-R\-S\-A\-\_\-\-P\-R\-I\-V\-A\-T\-E \\
+\hline
+{\em md\-\_\-alg} & a M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-D\-\_\-\-X\-X\-X (use M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-D\-\_\-\-N\-O\-N\-E for signing raw data) \\
+\hline
+{\em hashlen} & message digest length (for M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-D\-\_\-\-N\-O\-N\-E only) \\
+\hline
+{\em hash} & buffer holding the message digest \\
+\hline
+{\em mgf1\-\_\-hash\-\_\-id} & message digest used for mask generation \\
+\hline
+{\em expected\-\_\-salt\-\_\-len} & Length of the salt used in padding, use M\-B\-E\-D\-T\-L\-S\-\_\-\-R\-S\-A\-\_\-\-S\-A\-L\-T\-\_\-\-L\-E\-N\-\_\-\-A\-N\-Y to accept any salt length \\
+\hline
+{\em sig} & buffer holding the ciphertext\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the verify operation was successful, or an M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-R\-S\-A\-\_\-\-X\-X\-X error code
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The \char`\"{}sig\char`\"{} buffer must be as large as the size of ctx-\/$>$N (eg. 128 bytes if R\-S\-A-\/1024 is used).
+
+The hash\-\_\-id in the R\-S\-A context is ignored. 
+\end{DoxyNote}
+\hypertarget{rsa_8h_a1e5352f846fbb0938fb757be5cde0262}{\index{rsa.\-h@{rsa.\-h}!mbedtls\-\_\-rsa\-\_\-self\-\_\-test@{mbedtls\-\_\-rsa\-\_\-self\-\_\-test}}
+\index{mbedtls\-\_\-rsa\-\_\-self\-\_\-test@{mbedtls\-\_\-rsa\-\_\-self\-\_\-test}!rsa.h@{rsa.\-h}}
+\subsubsection[{mbedtls\-\_\-rsa\-\_\-self\-\_\-test}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-rsa\-\_\-self\-\_\-test (
+\begin{DoxyParamCaption}
+\item[{int}]{verbose}
+\end{DoxyParamCaption}
+)}}\label{rsa_8h_a1e5352f846fbb0938fb757be5cde0262}
+
+
+Checkup routine. 
+
+\begin{DoxyReturn}{Returns}
+0 if successful, or 1 if the test failed 
+\end{DoxyReturn}
+\hypertarget{rsa_8h_ad92c3d026f78e8cac7bac4bf94dc0562}{\index{rsa.\-h@{rsa.\-h}!mbedtls\-\_\-rsa\-\_\-set\-\_\-padding@{mbedtls\-\_\-rsa\-\_\-set\-\_\-padding}}
+\index{mbedtls\-\_\-rsa\-\_\-set\-\_\-padding@{mbedtls\-\_\-rsa\-\_\-set\-\_\-padding}!rsa.h@{rsa.\-h}}
+\subsubsection[{mbedtls\-\_\-rsa\-\_\-set\-\_\-padding}]{\setlength{\rightskip}{0pt plus 5cm}void mbedtls\-\_\-rsa\-\_\-set\-\_\-padding (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-rsa\-\_\-context} $\ast$}]{ctx, }
+\item[{int}]{padding, }
+\item[{int}]{hash\-\_\-id}
+\end{DoxyParamCaption}
+)}}\label{rsa_8h_ad92c3d026f78e8cac7bac4bf94dc0562}
+
+
+Set padding for an already initialized R\-S\-A context See {\ttfamily \hyperlink{rsa_8h_a15b13ee0d1e7d6fd10f07571cc4ff9de}{mbedtls\-\_\-rsa\-\_\-init()}} for details. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & R\-S\-A context to be set \\
+\hline
+{\em padding} & M\-B\-E\-D\-T\-L\-S\-\_\-\-R\-S\-A\-\_\-\-P\-K\-C\-S\-\_\-\-V15 or M\-B\-E\-D\-T\-L\-S\-\_\-\-R\-S\-A\-\_\-\-P\-K\-C\-S\-\_\-\-V21 \\
+\hline
+{\em hash\-\_\-id} & M\-B\-E\-D\-T\-L\-S\-\_\-\-R\-S\-A\-\_\-\-P\-K\-C\-S\-\_\-\-V21 hash identifier \\
+\hline
+\end{DoxyParams}

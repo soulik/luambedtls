@@ -1,0 +1,111 @@
+\hypertarget{debug_8h}{\section{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/debug.h File Reference}
+\label{debug_8h}\index{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/debug.\-h@{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/debug.\-h}}
+}
+
+
+Debug functions.  
+
+
+{\ttfamily \#include \char`\"{}config.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ssl.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ecp.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{debug_8h_ae7f64a58e2831778b181c89ed0d7c41b}{\#define {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-D\-E\-B\-U\-G\-\_\-\-S\-T\-R\-I\-P\-\_\-\-P\-A\-R\-E\-N\-S}(...)~\-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-}\label{debug_8h_ae7f64a58e2831778b181c89ed0d7c41b}
+
+\item 
+\#define {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-S\-S\-L\-\_\-\-D\-E\-B\-U\-G\-\_\-\-M\-S\-G}(level, args)
+\item 
+\hypertarget{debug_8h_a04d31b121dc268e602493e305fbbe168}{\#define {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-S\-S\-L\-\_\-\-D\-E\-B\-U\-G\-\_\-\-R\-E\-T}(level, text, ret)~mbedtls\-\_\-debug\-\_\-print\-\_\-ret( ssl, level, \-\_\-\-\_\-\-F\-I\-L\-E\-\_\-\-\_\-, \-\_\-\-\_\-\-L\-I\-N\-E\-\_\-\-\_\-, text, ret )}\label{debug_8h_a04d31b121dc268e602493e305fbbe168}
+
+\item 
+\hypertarget{debug_8h_acdedea6b9cc837248785d0f21bf18e4d}{\#define {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-S\-S\-L\-\_\-\-D\-E\-B\-U\-G\-\_\-\-B\-U\-F}(level, text, buf, len)~mbedtls\-\_\-debug\-\_\-print\-\_\-buf( ssl, level, \-\_\-\-\_\-\-F\-I\-L\-E\-\_\-\-\_\-, \-\_\-\-\_\-\-L\-I\-N\-E\-\_\-\-\_\-, text, buf, len )}\label{debug_8h_acdedea6b9cc837248785d0f21bf18e4d}
+
+\item 
+\hypertarget{debug_8h_a92f0b84ca7102607354ba10b600714f7}{\#define {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-S\-S\-L\-\_\-\-D\-E\-B\-U\-G\-\_\-\-M\-P\-I}(level, text, X)~mbedtls\-\_\-debug\-\_\-print\-\_\-mpi( ssl, level, \-\_\-\-\_\-\-F\-I\-L\-E\-\_\-\-\_\-, \-\_\-\-\_\-\-L\-I\-N\-E\-\_\-\-\_\-, text, X )}\label{debug_8h_a92f0b84ca7102607354ba10b600714f7}
+
+\item 
+\hypertarget{debug_8h_af9a6a54fd166cd81b3c55b99431c09df}{\#define {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-S\-S\-L\-\_\-\-D\-E\-B\-U\-G\-\_\-\-E\-C\-P}(level, text, X)~mbedtls\-\_\-debug\-\_\-print\-\_\-ecp( ssl, level, \-\_\-\-\_\-\-F\-I\-L\-E\-\_\-\-\_\-, \-\_\-\-\_\-\-L\-I\-N\-E\-\_\-\-\_\-, text, X )}\label{debug_8h_af9a6a54fd166cd81b3c55b99431c09df}
+
+\item 
+\hypertarget{debug_8h_a6e80bf7a1fc7c91fe07744c6f7272149}{\#define {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-S\-S\-L\-\_\-\-D\-E\-B\-U\-G\-\_\-\-C\-R\-T}(level, text, crt)~mbedtls\-\_\-debug\-\_\-print\-\_\-crt( ssl, level, \-\_\-\-\_\-\-F\-I\-L\-E\-\_\-\-\_\-, \-\_\-\-\_\-\-L\-I\-N\-E\-\_\-\-\_\-, text, crt )}\label{debug_8h_a6e80bf7a1fc7c91fe07744c6f7272149}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{debug_8h_a6629362e96b43725ace95c8ff01d9985}{mbedtls\-\_\-debug\-\_\-set\-\_\-threshold} (int threshold)
+\begin{DoxyCompactList}\small\item\em Set the level threshold to handle globally. Messages that have a level over the threshold value are ignored. (Default value\-: 0 (No debug)) \end{DoxyCompactList}\item 
+\hypertarget{debug_8h_aed62ccbc2142782faf6b0ad5d46ab226}{void {\bfseries mbedtls\-\_\-debug\-\_\-print\-\_\-msg} (const \hyperlink{structmbedtls__ssl__context}{mbedtls\-\_\-ssl\-\_\-context} $\ast$ssl, int level, const char $\ast$file, int line, const char $\ast$format,...)}\label{debug_8h_aed62ccbc2142782faf6b0ad5d46ab226}
+
+\item 
+\hypertarget{debug_8h_ac38765871abd623d8acee7091f04c061}{void {\bfseries mbedtls\-\_\-debug\-\_\-print\-\_\-ret} (const \hyperlink{structmbedtls__ssl__context}{mbedtls\-\_\-ssl\-\_\-context} $\ast$ssl, int level, const char $\ast$file, int line, const char $\ast$text, int ret)}\label{debug_8h_ac38765871abd623d8acee7091f04c061}
+
+\item 
+\hypertarget{debug_8h_abd948e0fd4d81c1ef908b81ba6961614}{void {\bfseries mbedtls\-\_\-debug\-\_\-print\-\_\-buf} (const \hyperlink{structmbedtls__ssl__context}{mbedtls\-\_\-ssl\-\_\-context} $\ast$ssl, int level, const char $\ast$file, int line, const char $\ast$text, const unsigned char $\ast$buf, size\-\_\-t len)}\label{debug_8h_abd948e0fd4d81c1ef908b81ba6961614}
+
+\item 
+\hypertarget{debug_8h_a43a3f5a37b9816abb8c68fca8942780d}{void {\bfseries mbedtls\-\_\-debug\-\_\-print\-\_\-mpi} (const \hyperlink{structmbedtls__ssl__context}{mbedtls\-\_\-ssl\-\_\-context} $\ast$ssl, int level, const char $\ast$file, int line, const char $\ast$text, const \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$X)}\label{debug_8h_a43a3f5a37b9816abb8c68fca8942780d}
+
+\item 
+\hypertarget{debug_8h_a67c49649a174985ae4a2b3e585a72efd}{void {\bfseries mbedtls\-\_\-debug\-\_\-print\-\_\-ecp} (const \hyperlink{structmbedtls__ssl__context}{mbedtls\-\_\-ssl\-\_\-context} $\ast$ssl, int level, const char $\ast$file, int line, const char $\ast$text, const \hyperlink{structmbedtls__ecp__point}{mbedtls\-\_\-ecp\-\_\-point} $\ast$X)}\label{debug_8h_a67c49649a174985ae4a2b3e585a72efd}
+
+\item 
+\hypertarget{debug_8h_ac6af6ac3c4308a5f7abeaa30ee444d3d}{void {\bfseries mbedtls\-\_\-debug\-\_\-print\-\_\-crt} (const \hyperlink{structmbedtls__ssl__context}{mbedtls\-\_\-ssl\-\_\-context} $\ast$ssl, int level, const char $\ast$file, int line, const char $\ast$text, const \hyperlink{structmbedtls__x509__crt}{mbedtls\-\_\-x509\-\_\-crt} $\ast$crt)}\label{debug_8h_ac6af6ac3c4308a5f7abeaa30ee444d3d}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Debug functions. Copyright (C) 2006-\/2015, A\-R\-M Limited, All Rights Reserved
+
+This file is part of mbed T\-L\-S (\href{https://tls.mbed.org}{\tt https\-://tls.\-mbed.\-org})
+
+This program is free software; you can redistribute it and/or modify it under the terms of the G\-N\-U General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but W\-I\-T\-H\-O\-U\-T A\-N\-Y W\-A\-R\-R\-A\-N\-T\-Y; without even the implied warranty of M\-E\-R\-C\-H\-A\-N\-T\-A\-B\-I\-L\-I\-T\-Y or F\-I\-T\-N\-E\-S\-S F\-O\-R A P\-A\-R\-T\-I\-C\-U\-L\-A\-R P\-U\-R\-P\-O\-S\-E. See the G\-N\-U General Public License for more details.
+
+You should have received a copy of the G\-N\-U General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, M\-A 02110-\/1301 U\-S\-A. 
+
+Definition in file \hyperlink{debug_8h_source}{debug.\-h}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{debug_8h_a76d4633d24aaac287bd14686224b3c47}{\index{debug.\-h@{debug.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-S\-S\-L\-\_\-\-D\-E\-B\-U\-G\-\_\-\-M\-S\-G@{M\-B\-E\-D\-T\-L\-S\-\_\-\-S\-S\-L\-\_\-\-D\-E\-B\-U\-G\-\_\-\-M\-S\-G}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-S\-S\-L\-\_\-\-D\-E\-B\-U\-G\-\_\-\-M\-S\-G@{M\-B\-E\-D\-T\-L\-S\-\_\-\-S\-S\-L\-\_\-\-D\-E\-B\-U\-G\-\_\-\-M\-S\-G}!debug.h@{debug.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-S\-S\-L\-\_\-\-D\-E\-B\-U\-G\-\_\-\-M\-S\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-S\-S\-L\-\_\-\-D\-E\-B\-U\-G\-\_\-\-M\-S\-G(
+\begin{DoxyParamCaption}
+\item[{}]{level, }
+\item[{}]{args}
+\end{DoxyParamCaption}
+)}}\label{debug_8h_a76d4633d24aaac287bd14686224b3c47}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+mbedtls\_debug\_print\_msg( ssl, level, \_\_FILE\_\_, \_\_LINE\_\_,    \(\backslash\)
+                             MBEDTLS\_DEBUG\_STRIP\_PARENS args )
+\end{DoxyCode}
+
+
+Definition at line 43 of file debug.\-h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{debug_8h_a6629362e96b43725ace95c8ff01d9985}{\index{debug.\-h@{debug.\-h}!mbedtls\-\_\-debug\-\_\-set\-\_\-threshold@{mbedtls\-\_\-debug\-\_\-set\-\_\-threshold}}
+\index{mbedtls\-\_\-debug\-\_\-set\-\_\-threshold@{mbedtls\-\_\-debug\-\_\-set\-\_\-threshold}!debug.h@{debug.\-h}}
+\subsubsection[{mbedtls\-\_\-debug\-\_\-set\-\_\-threshold}]{\setlength{\rightskip}{0pt plus 5cm}void mbedtls\-\_\-debug\-\_\-set\-\_\-threshold (
+\begin{DoxyParamCaption}
+\item[{int}]{threshold}
+\end{DoxyParamCaption}
+)}}\label{debug_8h_a6629362e96b43725ace95c8ff01d9985}
+
+
+Set the level threshold to handle globally. Messages that have a level over the threshold value are ignored. (Default value\-: 0 (No debug)) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em threshold} & maximum level of messages to pass on \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,97 @@
+\hypertarget{structmbedtls__cipher__info__t}{\section{mbedtls\-\_\-cipher\-\_\-info\-\_\-t Struct Reference}
+\label{structmbedtls__cipher__info__t}\index{mbedtls\-\_\-cipher\-\_\-info\-\_\-t@{mbedtls\-\_\-cipher\-\_\-info\-\_\-t}}
+}
+
+
+{\ttfamily \#include $<$cipher.\-h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+mbedtls\-\_\-cipher\-\_\-type\-\_\-t \hyperlink{structmbedtls__cipher__info__t_a399f289efa81ca0da63bc80686b5fe82}{type}
+\item 
+mbedtls\-\_\-cipher\-\_\-mode\-\_\-t \hyperlink{structmbedtls__cipher__info__t_a6603375900f4834ae6c91e305aef34f6}{mode}
+\item 
+unsigned int \hyperlink{structmbedtls__cipher__info__t_a21ac3fc6bf536ce16f1754301e7fe3c9}{key\-\_\-bitlen}
+\item 
+const char $\ast$ \hyperlink{structmbedtls__cipher__info__t_a7e79a9fb2bd143cc08d59b89b86c9ed7}{name}
+\item 
+unsigned int \hyperlink{structmbedtls__cipher__info__t_a3416bc1e18e1694da17bc922f152b20d}{iv\-\_\-size}
+\item 
+int \hyperlink{structmbedtls__cipher__info__t_af0aa5e7fedfd8a85434ec43691d890d8}{flags}
+\item 
+unsigned int \hyperlink{structmbedtls__cipher__info__t_a7be9560c375110a1d829407e74ab698f}{block\-\_\-size}
+\item 
+const \hyperlink{structmbedtls__cipher__base__t}{mbedtls\-\_\-cipher\-\_\-base\-\_\-t} $\ast$ \hyperlink{structmbedtls__cipher__info__t_ab49e136926e04b02806503deb8844f2d}{base}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Cipher information. Allows cipher functions to be called in a generic way. 
+
+Definition at line 181 of file cipher.\-h.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structmbedtls__cipher__info__t_ab49e136926e04b02806503deb8844f2d}{\index{mbedtls\-\_\-cipher\-\_\-info\-\_\-t@{mbedtls\-\_\-cipher\-\_\-info\-\_\-t}!base@{base}}
+\index{base@{base}!mbedtls_cipher_info_t@{mbedtls\-\_\-cipher\-\_\-info\-\_\-t}}
+\subsubsection[{base}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf mbedtls\-\_\-cipher\-\_\-base\-\_\-t}$\ast$ mbedtls\-\_\-cipher\-\_\-info\-\_\-t\-::base}}\label{structmbedtls__cipher__info__t_ab49e136926e04b02806503deb8844f2d}
+Base cipher information and functions 
+
+Definition at line 206 of file cipher.\-h.
+
+\hypertarget{structmbedtls__cipher__info__t_a7be9560c375110a1d829407e74ab698f}{\index{mbedtls\-\_\-cipher\-\_\-info\-\_\-t@{mbedtls\-\_\-cipher\-\_\-info\-\_\-t}!block\-\_\-size@{block\-\_\-size}}
+\index{block\-\_\-size@{block\-\_\-size}!mbedtls_cipher_info_t@{mbedtls\-\_\-cipher\-\_\-info\-\_\-t}}
+\subsubsection[{block\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int mbedtls\-\_\-cipher\-\_\-info\-\_\-t\-::block\-\_\-size}}\label{structmbedtls__cipher__info__t_a7be9560c375110a1d829407e74ab698f}
+block size, in bytes 
+
+Definition at line 203 of file cipher.\-h.
+
+\hypertarget{structmbedtls__cipher__info__t_af0aa5e7fedfd8a85434ec43691d890d8}{\index{mbedtls\-\_\-cipher\-\_\-info\-\_\-t@{mbedtls\-\_\-cipher\-\_\-info\-\_\-t}!flags@{flags}}
+\index{flags@{flags}!mbedtls_cipher_info_t@{mbedtls\-\_\-cipher\-\_\-info\-\_\-t}}
+\subsubsection[{flags}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-cipher\-\_\-info\-\_\-t\-::flags}}\label{structmbedtls__cipher__info__t_af0aa5e7fedfd8a85434ec43691d890d8}
+Flags for variable I\-V size, variable key size, etc. 
+
+Definition at line 200 of file cipher.\-h.
+
+\hypertarget{structmbedtls__cipher__info__t_a3416bc1e18e1694da17bc922f152b20d}{\index{mbedtls\-\_\-cipher\-\_\-info\-\_\-t@{mbedtls\-\_\-cipher\-\_\-info\-\_\-t}!iv\-\_\-size@{iv\-\_\-size}}
+\index{iv\-\_\-size@{iv\-\_\-size}!mbedtls_cipher_info_t@{mbedtls\-\_\-cipher\-\_\-info\-\_\-t}}
+\subsubsection[{iv\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int mbedtls\-\_\-cipher\-\_\-info\-\_\-t\-::iv\-\_\-size}}\label{structmbedtls__cipher__info__t_a3416bc1e18e1694da17bc922f152b20d}
+I\-V/\-N\-O\-N\-C\-E size, in bytes. For cipher that accept many sizes\-: recommended size 
+
+Definition at line 197 of file cipher.\-h.
+
+\hypertarget{structmbedtls__cipher__info__t_a21ac3fc6bf536ce16f1754301e7fe3c9}{\index{mbedtls\-\_\-cipher\-\_\-info\-\_\-t@{mbedtls\-\_\-cipher\-\_\-info\-\_\-t}!key\-\_\-bitlen@{key\-\_\-bitlen}}
+\index{key\-\_\-bitlen@{key\-\_\-bitlen}!mbedtls_cipher_info_t@{mbedtls\-\_\-cipher\-\_\-info\-\_\-t}}
+\subsubsection[{key\-\_\-bitlen}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int mbedtls\-\_\-cipher\-\_\-info\-\_\-t\-::key\-\_\-bitlen}}\label{structmbedtls__cipher__info__t_a21ac3fc6bf536ce16f1754301e7fe3c9}
+Cipher key length, in bits (default length for variable sized ciphers) (Includes parity bits for ciphers like D\-E\-S) 
+
+Definition at line 190 of file cipher.\-h.
+
+\hypertarget{structmbedtls__cipher__info__t_a6603375900f4834ae6c91e305aef34f6}{\index{mbedtls\-\_\-cipher\-\_\-info\-\_\-t@{mbedtls\-\_\-cipher\-\_\-info\-\_\-t}!mode@{mode}}
+\index{mode@{mode}!mbedtls_cipher_info_t@{mbedtls\-\_\-cipher\-\_\-info\-\_\-t}}
+\subsubsection[{mode}]{\setlength{\rightskip}{0pt plus 5cm}mbedtls\-\_\-cipher\-\_\-mode\-\_\-t mbedtls\-\_\-cipher\-\_\-info\-\_\-t\-::mode}}\label{structmbedtls__cipher__info__t_a6603375900f4834ae6c91e305aef34f6}
+Cipher mode (e.\-g. M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-O\-D\-E\-\_\-\-C\-B\-C) 
+
+Definition at line 186 of file cipher.\-h.
+
+\hypertarget{structmbedtls__cipher__info__t_a7e79a9fb2bd143cc08d59b89b86c9ed7}{\index{mbedtls\-\_\-cipher\-\_\-info\-\_\-t@{mbedtls\-\_\-cipher\-\_\-info\-\_\-t}!name@{name}}
+\index{name@{name}!mbedtls_cipher_info_t@{mbedtls\-\_\-cipher\-\_\-info\-\_\-t}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ mbedtls\-\_\-cipher\-\_\-info\-\_\-t\-::name}}\label{structmbedtls__cipher__info__t_a7e79a9fb2bd143cc08d59b89b86c9ed7}
+Name of the cipher 
+
+Definition at line 193 of file cipher.\-h.
+
+\hypertarget{structmbedtls__cipher__info__t_a399f289efa81ca0da63bc80686b5fe82}{\index{mbedtls\-\_\-cipher\-\_\-info\-\_\-t@{mbedtls\-\_\-cipher\-\_\-info\-\_\-t}!type@{type}}
+\index{type@{type}!mbedtls_cipher_info_t@{mbedtls\-\_\-cipher\-\_\-info\-\_\-t}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}mbedtls\-\_\-cipher\-\_\-type\-\_\-t mbedtls\-\_\-cipher\-\_\-info\-\_\-t\-::type}}\label{structmbedtls__cipher__info__t_a399f289efa81ca0da63bc80686b5fe82}
+Full cipher identifier (e.\-g. M\-B\-E\-D\-T\-L\-S\-\_\-\-C\-I\-P\-H\-E\-R\-\_\-\-A\-E\-S\-\_\-256\-\_\-\-C\-B\-C) 
+
+Definition at line 183 of file cipher.\-h.
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/\hyperlink{cipher_8h}{cipher.\-h}\end{DoxyCompactItemize}

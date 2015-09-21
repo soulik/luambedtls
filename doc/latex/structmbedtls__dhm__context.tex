@@ -1,0 +1,129 @@
+\hypertarget{structmbedtls__dhm__context}{\section{mbedtls\-\_\-dhm\-\_\-context Struct Reference}
+\label{structmbedtls__dhm__context}\index{mbedtls\-\_\-dhm\-\_\-context@{mbedtls\-\_\-dhm\-\_\-context}}
+}
+
+
+D\-H\-M context structure.  
+
+
+
+
+{\ttfamily \#include $<$dhm.\-h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+size\-\_\-t \hyperlink{structmbedtls__dhm__context_aaadf5b8713eeb657004c50742d9e26b1}{len}
+\item 
+\hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} \hyperlink{structmbedtls__dhm__context_a94404f47038e146712b25d142ea4abd0}{P}
+\item 
+\hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} \hyperlink{structmbedtls__dhm__context_a4fa0b65bab8ce280ffab2df4285b7ee1}{G}
+\item 
+\hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} \hyperlink{structmbedtls__dhm__context_a175e534f5a3a4483ebcc4d7ec852d4cd}{X}
+\item 
+\hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} \hyperlink{structmbedtls__dhm__context_ac33a9d76870e8a807e1d0d9bf77fe85e}{G\-X}
+\item 
+\hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} \hyperlink{structmbedtls__dhm__context_a834d14fb13ba02b1d604c306d0792bca}{G\-Y}
+\item 
+\hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} \hyperlink{structmbedtls__dhm__context_a2226d2a7380caf66c6e962e8d5edbb41}{K}
+\item 
+\hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} \hyperlink{structmbedtls__dhm__context_ae1801da339af972ee271f947b3fe3734}{R\-P}
+\item 
+\hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} \hyperlink{structmbedtls__dhm__context_a21fea3aadf6f05d8aa42c79e55c5d98c}{Vi}
+\item 
+\hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} \hyperlink{structmbedtls__dhm__context_a1ebf1105240ca26820edb81f41dd6180}{Vf}
+\item 
+\hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} \hyperlink{structmbedtls__dhm__context_abd0b3459e4a58e2b29b3bd29f6358319}{p\-X}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+D\-H\-M context structure. 
+
+Definition at line 150 of file dhm.\-h.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structmbedtls__dhm__context_a4fa0b65bab8ce280ffab2df4285b7ee1}{\index{mbedtls\-\_\-dhm\-\_\-context@{mbedtls\-\_\-dhm\-\_\-context}!G@{G}}
+\index{G@{G}!mbedtls_dhm_context@{mbedtls\-\_\-dhm\-\_\-context}}
+\subsubsection[{G}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mbedtls\-\_\-mpi} mbedtls\-\_\-dhm\-\_\-context\-::\-G}}\label{structmbedtls__dhm__context_a4fa0b65bab8ce280ffab2df4285b7ee1}
+generator 
+
+Definition at line 154 of file dhm.\-h.
+
+\hypertarget{structmbedtls__dhm__context_ac33a9d76870e8a807e1d0d9bf77fe85e}{\index{mbedtls\-\_\-dhm\-\_\-context@{mbedtls\-\_\-dhm\-\_\-context}!G\-X@{G\-X}}
+\index{G\-X@{G\-X}!mbedtls_dhm_context@{mbedtls\-\_\-dhm\-\_\-context}}
+\subsubsection[{G\-X}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mbedtls\-\_\-mpi} mbedtls\-\_\-dhm\-\_\-context\-::\-G\-X}}\label{structmbedtls__dhm__context_ac33a9d76870e8a807e1d0d9bf77fe85e}
+self = G$^\wedge$\-X mod P 
+
+Definition at line 156 of file dhm.\-h.
+
+\hypertarget{structmbedtls__dhm__context_a834d14fb13ba02b1d604c306d0792bca}{\index{mbedtls\-\_\-dhm\-\_\-context@{mbedtls\-\_\-dhm\-\_\-context}!G\-Y@{G\-Y}}
+\index{G\-Y@{G\-Y}!mbedtls_dhm_context@{mbedtls\-\_\-dhm\-\_\-context}}
+\subsubsection[{G\-Y}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mbedtls\-\_\-mpi} mbedtls\-\_\-dhm\-\_\-context\-::\-G\-Y}}\label{structmbedtls__dhm__context_a834d14fb13ba02b1d604c306d0792bca}
+peer = G$^\wedge$\-Y mod P 
+
+Definition at line 157 of file dhm.\-h.
+
+\hypertarget{structmbedtls__dhm__context_a2226d2a7380caf66c6e962e8d5edbb41}{\index{mbedtls\-\_\-dhm\-\_\-context@{mbedtls\-\_\-dhm\-\_\-context}!K@{K}}
+\index{K@{K}!mbedtls_dhm_context@{mbedtls\-\_\-dhm\-\_\-context}}
+\subsubsection[{K}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mbedtls\-\_\-mpi} mbedtls\-\_\-dhm\-\_\-context\-::\-K}}\label{structmbedtls__dhm__context_a2226d2a7380caf66c6e962e8d5edbb41}
+key = G\-Y$^\wedge$\-X mod P 
+
+Definition at line 158 of file dhm.\-h.
+
+\hypertarget{structmbedtls__dhm__context_aaadf5b8713eeb657004c50742d9e26b1}{\index{mbedtls\-\_\-dhm\-\_\-context@{mbedtls\-\_\-dhm\-\_\-context}!len@{len}}
+\index{len@{len}!mbedtls_dhm_context@{mbedtls\-\_\-dhm\-\_\-context}}
+\subsubsection[{len}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t mbedtls\-\_\-dhm\-\_\-context\-::len}}\label{structmbedtls__dhm__context_aaadf5b8713eeb657004c50742d9e26b1}
+size(\-P) in chars 
+
+Definition at line 152 of file dhm.\-h.
+
+\hypertarget{structmbedtls__dhm__context_a94404f47038e146712b25d142ea4abd0}{\index{mbedtls\-\_\-dhm\-\_\-context@{mbedtls\-\_\-dhm\-\_\-context}!P@{P}}
+\index{P@{P}!mbedtls_dhm_context@{mbedtls\-\_\-dhm\-\_\-context}}
+\subsubsection[{P}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mbedtls\-\_\-mpi} mbedtls\-\_\-dhm\-\_\-context\-::\-P}}\label{structmbedtls__dhm__context_a94404f47038e146712b25d142ea4abd0}
+prime modulus 
+
+Definition at line 153 of file dhm.\-h.
+
+\hypertarget{structmbedtls__dhm__context_abd0b3459e4a58e2b29b3bd29f6358319}{\index{mbedtls\-\_\-dhm\-\_\-context@{mbedtls\-\_\-dhm\-\_\-context}!p\-X@{p\-X}}
+\index{p\-X@{p\-X}!mbedtls_dhm_context@{mbedtls\-\_\-dhm\-\_\-context}}
+\subsubsection[{p\-X}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mbedtls\-\_\-mpi} mbedtls\-\_\-dhm\-\_\-context\-::p\-X}}\label{structmbedtls__dhm__context_abd0b3459e4a58e2b29b3bd29f6358319}
+previous X 
+
+Definition at line 162 of file dhm.\-h.
+
+\hypertarget{structmbedtls__dhm__context_ae1801da339af972ee271f947b3fe3734}{\index{mbedtls\-\_\-dhm\-\_\-context@{mbedtls\-\_\-dhm\-\_\-context}!R\-P@{R\-P}}
+\index{R\-P@{R\-P}!mbedtls_dhm_context@{mbedtls\-\_\-dhm\-\_\-context}}
+\subsubsection[{R\-P}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mbedtls\-\_\-mpi} mbedtls\-\_\-dhm\-\_\-context\-::\-R\-P}}\label{structmbedtls__dhm__context_ae1801da339af972ee271f947b3fe3734}
+cached R$^\wedge$2 mod P 
+
+Definition at line 159 of file dhm.\-h.
+
+\hypertarget{structmbedtls__dhm__context_a1ebf1105240ca26820edb81f41dd6180}{\index{mbedtls\-\_\-dhm\-\_\-context@{mbedtls\-\_\-dhm\-\_\-context}!Vf@{Vf}}
+\index{Vf@{Vf}!mbedtls_dhm_context@{mbedtls\-\_\-dhm\-\_\-context}}
+\subsubsection[{Vf}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mbedtls\-\_\-mpi} mbedtls\-\_\-dhm\-\_\-context\-::\-Vf}}\label{structmbedtls__dhm__context_a1ebf1105240ca26820edb81f41dd6180}
+un-\/blinding value 
+
+Definition at line 161 of file dhm.\-h.
+
+\hypertarget{structmbedtls__dhm__context_a21fea3aadf6f05d8aa42c79e55c5d98c}{\index{mbedtls\-\_\-dhm\-\_\-context@{mbedtls\-\_\-dhm\-\_\-context}!Vi@{Vi}}
+\index{Vi@{Vi}!mbedtls_dhm_context@{mbedtls\-\_\-dhm\-\_\-context}}
+\subsubsection[{Vi}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mbedtls\-\_\-mpi} mbedtls\-\_\-dhm\-\_\-context\-::\-Vi}}\label{structmbedtls__dhm__context_a21fea3aadf6f05d8aa42c79e55c5d98c}
+blinding value 
+
+Definition at line 160 of file dhm.\-h.
+
+\hypertarget{structmbedtls__dhm__context_a175e534f5a3a4483ebcc4d7ec852d4cd}{\index{mbedtls\-\_\-dhm\-\_\-context@{mbedtls\-\_\-dhm\-\_\-context}!X@{X}}
+\index{X@{X}!mbedtls_dhm_context@{mbedtls\-\_\-dhm\-\_\-context}}
+\subsubsection[{X}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mbedtls\-\_\-mpi} mbedtls\-\_\-dhm\-\_\-context\-::\-X}}\label{structmbedtls__dhm__context_a175e534f5a3a4483ebcc4d7ec852d4cd}
+secret value 
+
+Definition at line 155 of file dhm.\-h.
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/\hyperlink{dhm_8h}{dhm.\-h}\end{DoxyCompactItemize}

@@ -1,0 +1,63 @@
+This documentation describes the internal structure of mbed T\-L\-S. It was automatically generated from specially formatted comment blocks in mbed T\-L\-S's source code using Doxygen. (See \href{http://www.stack.nl/~dimitri/doxygen/}{\tt http\-://www.\-stack.\-nl/$\sim$dimitri/doxygen/} for more information on Doxygen)
+
+mbed T\-L\-S has a simple setup\-: it provides the ingredients for an S\-S\-L/\-T\-L\-S implementation. These ingredients are listed as modules in the \hyperlink{index_mainpage_modules}{Modules section}. This \char`\"{}\-Modules section\char`\"{} introduces the high-\/level module concepts used throughout this documentation.\par
+ Some examples of mbed T\-L\-S usage can be found in the \hyperlink{index_mainpage_examples}{Examples section}.\hypertarget{index_mainpage_modules}{}\section{Modules}\label{index_mainpage_modules}
+mbed T\-L\-S supports S\-S\-Lv3 up to T\-L\-Sv1.\-2 communication by providing the following\-:
+\begin{DoxyItemize}
+\item T\-C\-P/\-I\-P communication functions\-: listen, connect, accept, read/write.
+\item S\-S\-L/\-T\-L\-S communication functions\-: init, handshake, read/write.
+\item X.\-509 functions\-: C\-R\-T, C\-R\-L and key handling
+\item Random number generation
+\item Hashing
+\item Encryption/decryption
+\end{DoxyItemize}
+
+Above functions are split up neatly into logical interfaces. These can be used separately to provide any of the above functions or to mix-\/and-\/match into an S\-S\-L server/client solution that utilises a X.\-509 P\-K\-I. Examples of such implementations are amply provided with the source code.
+
+Note that mbed T\-L\-S does not provide a control channel or (multiple) session handling without additional work from the developer.\hypertarget{index_mainpage_examples}{}\section{Examples}\label{index_mainpage_examples}
+Example server setup\-:
+
+{\bfseries Prerequisites\-:} 
+\begin{DoxyItemize}
+\item X.\-509 certificate and private key
+\item session handling functions
+\end{DoxyItemize}
+
+{\bfseries Setup\-:} 
+\begin{DoxyItemize}
+\item Load your certificate and your private R\-S\-A key (X.\-509 interface)
+\item Setup the listening T\-C\-P socket (T\-C\-P/\-I\-P interface)
+\item Accept incoming client connection (T\-C\-P/\-I\-P interface)
+\item Initialise as an S\-S\-L-\/server (S\-S\-L/\-T\-L\-S interface)
+\begin{DoxyItemize}
+\item Set parameters, e.\-g. authentication, ciphers, C\-A-\/chain, key exchange
+\item Set callback functions R\-N\-G, I\-O, session handling
+\end{DoxyItemize}
+\item Perform an S\-S\-L-\/handshake (S\-S\-L/\-T\-L\-S interface)
+\item Read/write data (S\-S\-L/\-T\-L\-S interface)
+\item Close and cleanup (all interfaces)
+\end{DoxyItemize}
+
+Example client setup\-:
+
+{\bfseries Prerequisites\-:} 
+\begin{DoxyItemize}
+\item X.\-509 certificate and private key
+\item X.\-509 trusted C\-A certificates
+\end{DoxyItemize}
+
+{\bfseries Setup\-:} 
+\begin{DoxyItemize}
+\item Load the trusted C\-A certificates (X.\-509 interface)
+\item Load your certificate and your private R\-S\-A key (X.\-509 interface)
+\item Setup a T\-C\-P/\-I\-P connection (T\-C\-P/\-I\-P interface)
+\item Initialise as an S\-S\-L-\/client (S\-S\-L/\-T\-L\-S interface)
+\begin{DoxyItemize}
+\item Set parameters, e.\-g. authentication mode, ciphers, C\-A-\/chain, session
+\item Set callback functions R\-N\-G, I\-O
+\end{DoxyItemize}
+\item Perform an S\-S\-L-\/handshake (S\-S\-L/\-T\-L\-S interface)
+\item Verify the server certificate (S\-S\-L/\-T\-L\-S interface)
+\item Write/read data (S\-S\-L/\-T\-L\-S interface)
+\item Close and cleanup (all interfaces) 
+\end{DoxyItemize}

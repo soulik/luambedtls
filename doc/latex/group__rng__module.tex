@@ -1,0 +1,13 @@
+\hypertarget{group__rng__module}{\section{Random number generator (R\-N\-G) module}
+\label{group__rng__module}\index{Random number generator (\-R\-N\-G) module@{Random number generator (\-R\-N\-G) module}}
+}
+The Random number generator (R\-N\-G) module provides random number generation, see {\ttfamily ctr\-\_\-dbrg\-\_\-random()}.
+
+The block-\/cipher counter-\/mode based deterministic random bit generator (C\-T\-R\-\_\-\-D\-B\-R\-G) as specified in N\-I\-S\-T S\-P800-\/90. It needs an external source of entropy. For these purposes {\ttfamily \hyperlink{entropy_8h_a81765f6cdf4e5111bcb9f4324f3234cb}{mbedtls\-\_\-entropy\-\_\-func()}} can be used. This is an implementation based on a simple entropy accumulator design.
+
+The other number generator that is included is less strong and uses the H\-A\-V\-E\-G\-E (H\-Ardware Volatile Entropy Gathering and Expansion) software heuristic which considered unsafe for primary usage, but provides additional random to the entropy pool if enables.
+\begin{DoxyItemize}
+\item Meaning that there seems to be no practical algorithm that can guess the next bit with a probability larger than 1/2 in an output sequence.
+\end{DoxyItemize}
+
+This module can be used to generate random numbers. 

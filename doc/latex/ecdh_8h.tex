@@ -1,0 +1,352 @@
+\hypertarget{ecdh_8h}{\section{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/ecdh.h File Reference}
+\label{ecdh_8h}\index{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/ecdh.\-h@{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/ecdh.\-h}}
+}
+
+
+Elliptic curve Diffie-\/\-Hellman.  
+
+
+{\ttfamily \#include \char`\"{}ecp.\-h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structmbedtls__ecdh__context}{mbedtls\-\_\-ecdh\-\_\-context}
+\begin{DoxyCompactList}\small\item\em E\-C\-D\-H context structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{ecdh_8h_ae5df12f2068df09a102e05e02fb1e39c}{mbedtls\-\_\-ecdh\-\_\-side} \{ {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-C\-D\-H\-\_\-\-O\-U\-R\-S}, 
+{\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-C\-D\-H\-\_\-\-T\-H\-E\-I\-R\-S}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{ecdh_8h_a403a5d7363b6219a2017b837b665c354}{mbedtls\-\_\-ecdh\-\_\-gen\-\_\-public} (\hyperlink{structmbedtls__ecp__group}{mbedtls\-\_\-ecp\-\_\-group} $\ast$grp, \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$d, \hyperlink{structmbedtls__ecp__point}{mbedtls\-\_\-ecp\-\_\-point} $\ast$Q, int($\ast$f\-\_\-rng)(void $\ast$, unsigned char $\ast$, size\-\_\-t), void $\ast$p\-\_\-rng)
+\begin{DoxyCompactList}\small\item\em Generate a public key. Raw function that only does the core computation. \end{DoxyCompactList}\item 
+int \hyperlink{ecdh_8h_aca0670e79f3002a218d6da8c8dee61e1}{mbedtls\-\_\-ecdh\-\_\-compute\-\_\-shared} (\hyperlink{structmbedtls__ecp__group}{mbedtls\-\_\-ecp\-\_\-group} $\ast$grp, \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$z, const \hyperlink{structmbedtls__ecp__point}{mbedtls\-\_\-ecp\-\_\-point} $\ast$Q, const \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$d, int($\ast$f\-\_\-rng)(void $\ast$, unsigned char $\ast$, size\-\_\-t), void $\ast$p\-\_\-rng)
+\begin{DoxyCompactList}\small\item\em Compute shared secret Raw function that only does the core computation. \end{DoxyCompactList}\item 
+void \hyperlink{ecdh_8h_a97e787a12f7aae180ab9828303199dca}{mbedtls\-\_\-ecdh\-\_\-init} (\hyperlink{structmbedtls__ecdh__context}{mbedtls\-\_\-ecdh\-\_\-context} $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Initialize context. \end{DoxyCompactList}\item 
+void \hyperlink{ecdh_8h_a89cc40dc92fbbaf0275ea9a6184a5e71}{mbedtls\-\_\-ecdh\-\_\-free} (\hyperlink{structmbedtls__ecdh__context}{mbedtls\-\_\-ecdh\-\_\-context} $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Free context. \end{DoxyCompactList}\item 
+int \hyperlink{ecdh_8h_a784e56d5eea12e38374e9ce028692940}{mbedtls\-\_\-ecdh\-\_\-make\-\_\-params} (\hyperlink{structmbedtls__ecdh__context}{mbedtls\-\_\-ecdh\-\_\-context} $\ast$ctx, size\-\_\-t $\ast$olen, unsigned char $\ast$buf, size\-\_\-t blen, int($\ast$f\-\_\-rng)(void $\ast$, unsigned char $\ast$, size\-\_\-t), void $\ast$p\-\_\-rng)
+\begin{DoxyCompactList}\small\item\em Generate a public key and a T\-L\-S Server\-Key\-Exchange payload. (First function used by a T\-L\-S server for E\-C\-D\-H\-E.) \end{DoxyCompactList}\item 
+int \hyperlink{ecdh_8h_af07326ad0017bf6fcfb9f93e43641254}{mbedtls\-\_\-ecdh\-\_\-read\-\_\-params} (\hyperlink{structmbedtls__ecdh__context}{mbedtls\-\_\-ecdh\-\_\-context} $\ast$ctx, const unsigned char $\ast$$\ast$buf, const unsigned char $\ast$end)
+\begin{DoxyCompactList}\small\item\em Parse and procress a T\-L\-S Server\-Key\-Exhange payload. (First function used by a T\-L\-S client for E\-C\-D\-H\-E.) \end{DoxyCompactList}\item 
+int \hyperlink{ecdh_8h_a3c03b82213c39abd90a5bd4b1646441d}{mbedtls\-\_\-ecdh\-\_\-get\-\_\-params} (\hyperlink{structmbedtls__ecdh__context}{mbedtls\-\_\-ecdh\-\_\-context} $\ast$ctx, const \hyperlink{structmbedtls__ecp__keypair}{mbedtls\-\_\-ecp\-\_\-keypair} $\ast$key, \hyperlink{ecdh_8h_ae5df12f2068df09a102e05e02fb1e39c}{mbedtls\-\_\-ecdh\-\_\-side} side)
+\begin{DoxyCompactList}\small\item\em Setup an E\-C\-D\-H context from an E\-C key. (Used by clients and servers in place of the Server\-Key\-Echange for static E\-C\-D\-H\-: import E\-C\-D\-H parameters from a certificate's E\-C key information.) \end{DoxyCompactList}\item 
+int \hyperlink{ecdh_8h_a417fd45ce78adb1b52027f995fa5ee57}{mbedtls\-\_\-ecdh\-\_\-make\-\_\-public} (\hyperlink{structmbedtls__ecdh__context}{mbedtls\-\_\-ecdh\-\_\-context} $\ast$ctx, size\-\_\-t $\ast$olen, unsigned char $\ast$buf, size\-\_\-t blen, int($\ast$f\-\_\-rng)(void $\ast$, unsigned char $\ast$, size\-\_\-t), void $\ast$p\-\_\-rng)
+\begin{DoxyCompactList}\small\item\em Generate a public key and a T\-L\-S Client\-Key\-Exchange payload. (Second function used by a T\-L\-S client for E\-C\-D\-H(\-E).) \end{DoxyCompactList}\item 
+int \hyperlink{ecdh_8h_a9f417d90797b109d3036feb288e33207}{mbedtls\-\_\-ecdh\-\_\-read\-\_\-public} (\hyperlink{structmbedtls__ecdh__context}{mbedtls\-\_\-ecdh\-\_\-context} $\ast$ctx, const unsigned char $\ast$buf, size\-\_\-t blen)
+\begin{DoxyCompactList}\small\item\em Parse and process a T\-L\-S Client\-Key\-Exchange payload. (Second function used by a T\-L\-S server for E\-C\-D\-H(\-E).) \end{DoxyCompactList}\item 
+int \hyperlink{ecdh_8h_a423fee27a0c8603bba336cbfe6dadcaa}{mbedtls\-\_\-ecdh\-\_\-calc\-\_\-secret} (\hyperlink{structmbedtls__ecdh__context}{mbedtls\-\_\-ecdh\-\_\-context} $\ast$ctx, size\-\_\-t $\ast$olen, unsigned char $\ast$buf, size\-\_\-t blen, int($\ast$f\-\_\-rng)(void $\ast$, unsigned char $\ast$, size\-\_\-t), void $\ast$p\-\_\-rng)
+\begin{DoxyCompactList}\small\item\em Derive and export the shared secret. (Last function used by both T\-L\-S client en servers.) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Elliptic curve Diffie-\/\-Hellman. Copyright (C) 2006-\/2015, A\-R\-M Limited, All Rights Reserved
+
+This file is part of mbed T\-L\-S (\href{https://tls.mbed.org}{\tt https\-://tls.\-mbed.\-org})
+
+This program is free software; you can redistribute it and/or modify it under the terms of the G\-N\-U General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but W\-I\-T\-H\-O\-U\-T A\-N\-Y W\-A\-R\-R\-A\-N\-T\-Y; without even the implied warranty of M\-E\-R\-C\-H\-A\-N\-T\-A\-B\-I\-L\-I\-T\-Y or F\-I\-T\-N\-E\-S\-S F\-O\-R A P\-A\-R\-T\-I\-C\-U\-L\-A\-R P\-U\-R\-P\-O\-S\-E. See the G\-N\-U General Public License for more details.
+
+You should have received a copy of the G\-N\-U General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, M\-A 02110-\/1301 U\-S\-A. 
+
+Definition in file \hyperlink{ecdh_8h_source}{ecdh.\-h}.
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{ecdh_8h_ae5df12f2068df09a102e05e02fb1e39c}{\index{ecdh.\-h@{ecdh.\-h}!mbedtls\-\_\-ecdh\-\_\-side@{mbedtls\-\_\-ecdh\-\_\-side}}
+\index{mbedtls\-\_\-ecdh\-\_\-side@{mbedtls\-\_\-ecdh\-\_\-side}!ecdh.h@{ecdh.\-h}}
+\subsubsection[{mbedtls\-\_\-ecdh\-\_\-side}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf mbedtls\-\_\-ecdh\-\_\-side}}}\label{ecdh_8h_ae5df12f2068df09a102e05e02fb1e39c}
+When importing from an E\-C key, select if it is our key or the peer's key 
+
+Definition at line 36 of file ecdh.\-h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{ecdh_8h_a423fee27a0c8603bba336cbfe6dadcaa}{\index{ecdh.\-h@{ecdh.\-h}!mbedtls\-\_\-ecdh\-\_\-calc\-\_\-secret@{mbedtls\-\_\-ecdh\-\_\-calc\-\_\-secret}}
+\index{mbedtls\-\_\-ecdh\-\_\-calc\-\_\-secret@{mbedtls\-\_\-ecdh\-\_\-calc\-\_\-secret}!ecdh.h@{ecdh.\-h}}
+\subsubsection[{mbedtls\-\_\-ecdh\-\_\-calc\-\_\-secret}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-ecdh\-\_\-calc\-\_\-secret (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-ecdh\-\_\-context} $\ast$}]{ctx, }
+\item[{size\-\_\-t $\ast$}]{olen, }
+\item[{unsigned char $\ast$}]{buf, }
+\item[{size\-\_\-t}]{blen, }
+\item[{int($\ast$)(void $\ast$, unsigned char $\ast$, size\-\_\-t)}]{f\-\_\-rng, }
+\item[{void $\ast$}]{p\-\_\-rng}
+\end{DoxyParamCaption}
+)}}\label{ecdh_8h_a423fee27a0c8603bba336cbfe6dadcaa}
+
+
+Derive and export the shared secret. (Last function used by both T\-L\-S client en servers.) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & E\-C\-D\-H context \\
+\hline
+{\em olen} & number of bytes written \\
+\hline
+{\em buf} & destination buffer \\
+\hline
+{\em blen} & buffer length \\
+\hline
+{\em f\-\_\-rng} & R\-N\-G function, see notes for {\ttfamily \hyperlink{ecdh_8h_aca0670e79f3002a218d6da8c8dee61e1}{mbedtls\-\_\-ecdh\-\_\-compute\-\_\-shared()}} \\
+\hline
+{\em p\-\_\-rng} & R\-N\-G parameter\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, or an M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-C\-P\-\_\-\-X\-X\-X error code 
+\end{DoxyReturn}
+\hypertarget{ecdh_8h_aca0670e79f3002a218d6da8c8dee61e1}{\index{ecdh.\-h@{ecdh.\-h}!mbedtls\-\_\-ecdh\-\_\-compute\-\_\-shared@{mbedtls\-\_\-ecdh\-\_\-compute\-\_\-shared}}
+\index{mbedtls\-\_\-ecdh\-\_\-compute\-\_\-shared@{mbedtls\-\_\-ecdh\-\_\-compute\-\_\-shared}!ecdh.h@{ecdh.\-h}}
+\subsubsection[{mbedtls\-\_\-ecdh\-\_\-compute\-\_\-shared}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-ecdh\-\_\-compute\-\_\-shared (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-ecp\-\_\-group} $\ast$}]{grp, }
+\item[{{\bf mbedtls\-\_\-mpi} $\ast$}]{z, }
+\item[{const {\bf mbedtls\-\_\-ecp\-\_\-point} $\ast$}]{Q, }
+\item[{const {\bf mbedtls\-\_\-mpi} $\ast$}]{d, }
+\item[{int($\ast$)(void $\ast$, unsigned char $\ast$, size\-\_\-t)}]{f\-\_\-rng, }
+\item[{void $\ast$}]{p\-\_\-rng}
+\end{DoxyParamCaption}
+)}}\label{ecdh_8h_aca0670e79f3002a218d6da8c8dee61e1}
+
+
+Compute shared secret Raw function that only does the core computation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em grp} & E\-C\-P group \\
+\hline
+{\em z} & Destination M\-P\-I (shared secret) \\
+\hline
+{\em Q} & Public key from other party \\
+\hline
+{\em d} & Our secret exponent (private key) \\
+\hline
+{\em f\-\_\-rng} & R\-N\-G function (see notes) \\
+\hline
+{\em p\-\_\-rng} & R\-N\-G parameter\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, or a M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-C\-P\-\_\-\-X\-X\-X or M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-P\-I\-\_\-\-X\-X\-X error code
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If f\-\_\-rng is not N\-U\-L\-L, it is used to implement countermeasures against potential elaborate timing attacks, see {\ttfamily \hyperlink{ecp_8h_a4d005045c302e100c78bdc587e8f0e6a}{mbedtls\-\_\-ecp\-\_\-mul()}} for details. 
+\end{DoxyNote}
+\hypertarget{ecdh_8h_a89cc40dc92fbbaf0275ea9a6184a5e71}{\index{ecdh.\-h@{ecdh.\-h}!mbedtls\-\_\-ecdh\-\_\-free@{mbedtls\-\_\-ecdh\-\_\-free}}
+\index{mbedtls\-\_\-ecdh\-\_\-free@{mbedtls\-\_\-ecdh\-\_\-free}!ecdh.h@{ecdh.\-h}}
+\subsubsection[{mbedtls\-\_\-ecdh\-\_\-free}]{\setlength{\rightskip}{0pt plus 5cm}void mbedtls\-\_\-ecdh\-\_\-free (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-ecdh\-\_\-context} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}}\label{ecdh_8h_a89cc40dc92fbbaf0275ea9a6184a5e71}
+
+
+Free context. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Context to free \\
+\hline
+\end{DoxyParams}
+\hypertarget{ecdh_8h_a403a5d7363b6219a2017b837b665c354}{\index{ecdh.\-h@{ecdh.\-h}!mbedtls\-\_\-ecdh\-\_\-gen\-\_\-public@{mbedtls\-\_\-ecdh\-\_\-gen\-\_\-public}}
+\index{mbedtls\-\_\-ecdh\-\_\-gen\-\_\-public@{mbedtls\-\_\-ecdh\-\_\-gen\-\_\-public}!ecdh.h@{ecdh.\-h}}
+\subsubsection[{mbedtls\-\_\-ecdh\-\_\-gen\-\_\-public}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-ecdh\-\_\-gen\-\_\-public (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-ecp\-\_\-group} $\ast$}]{grp, }
+\item[{{\bf mbedtls\-\_\-mpi} $\ast$}]{d, }
+\item[{{\bf mbedtls\-\_\-ecp\-\_\-point} $\ast$}]{Q, }
+\item[{int($\ast$)(void $\ast$, unsigned char $\ast$, size\-\_\-t)}]{f\-\_\-rng, }
+\item[{void $\ast$}]{p\-\_\-rng}
+\end{DoxyParamCaption}
+)}}\label{ecdh_8h_a403a5d7363b6219a2017b837b665c354}
+
+
+Generate a public key. Raw function that only does the core computation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em grp} & E\-C\-P group \\
+\hline
+{\em d} & Destination M\-P\-I (secret exponent, aka private key) \\
+\hline
+{\em Q} & Destination point (public key) \\
+\hline
+{\em f\-\_\-rng} & R\-N\-G function \\
+\hline
+{\em p\-\_\-rng} & R\-N\-G parameter\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, or a M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-C\-P\-\_\-\-X\-X\-X or M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-P\-I\-\_\-\-X\-X\-X error code 
+\end{DoxyReturn}
+\hypertarget{ecdh_8h_a3c03b82213c39abd90a5bd4b1646441d}{\index{ecdh.\-h@{ecdh.\-h}!mbedtls\-\_\-ecdh\-\_\-get\-\_\-params@{mbedtls\-\_\-ecdh\-\_\-get\-\_\-params}}
+\index{mbedtls\-\_\-ecdh\-\_\-get\-\_\-params@{mbedtls\-\_\-ecdh\-\_\-get\-\_\-params}!ecdh.h@{ecdh.\-h}}
+\subsubsection[{mbedtls\-\_\-ecdh\-\_\-get\-\_\-params}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-ecdh\-\_\-get\-\_\-params (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-ecdh\-\_\-context} $\ast$}]{ctx, }
+\item[{const {\bf mbedtls\-\_\-ecp\-\_\-keypair} $\ast$}]{key, }
+\item[{{\bf mbedtls\-\_\-ecdh\-\_\-side}}]{side}
+\end{DoxyParamCaption}
+)}}\label{ecdh_8h_a3c03b82213c39abd90a5bd4b1646441d}
+
+
+Setup an E\-C\-D\-H context from an E\-C key. (Used by clients and servers in place of the Server\-Key\-Echange for static E\-C\-D\-H\-: import E\-C\-D\-H parameters from a certificate's E\-C key information.) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & E\-C\-D\-H constext to set \\
+\hline
+{\em key} & E\-C key to use \\
+\hline
+{\em side} & Is it our key (1) or the peer's key (0) ?\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, or an M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-C\-P\-\_\-\-X\-X\-X error code 
+\end{DoxyReturn}
+\hypertarget{ecdh_8h_a97e787a12f7aae180ab9828303199dca}{\index{ecdh.\-h@{ecdh.\-h}!mbedtls\-\_\-ecdh\-\_\-init@{mbedtls\-\_\-ecdh\-\_\-init}}
+\index{mbedtls\-\_\-ecdh\-\_\-init@{mbedtls\-\_\-ecdh\-\_\-init}!ecdh.h@{ecdh.\-h}}
+\subsubsection[{mbedtls\-\_\-ecdh\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void mbedtls\-\_\-ecdh\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-ecdh\-\_\-context} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}}\label{ecdh_8h_a97e787a12f7aae180ab9828303199dca}
+
+
+Initialize context. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Context to initialize \\
+\hline
+\end{DoxyParams}
+\hypertarget{ecdh_8h_a784e56d5eea12e38374e9ce028692940}{\index{ecdh.\-h@{ecdh.\-h}!mbedtls\-\_\-ecdh\-\_\-make\-\_\-params@{mbedtls\-\_\-ecdh\-\_\-make\-\_\-params}}
+\index{mbedtls\-\_\-ecdh\-\_\-make\-\_\-params@{mbedtls\-\_\-ecdh\-\_\-make\-\_\-params}!ecdh.h@{ecdh.\-h}}
+\subsubsection[{mbedtls\-\_\-ecdh\-\_\-make\-\_\-params}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-ecdh\-\_\-make\-\_\-params (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-ecdh\-\_\-context} $\ast$}]{ctx, }
+\item[{size\-\_\-t $\ast$}]{olen, }
+\item[{unsigned char $\ast$}]{buf, }
+\item[{size\-\_\-t}]{blen, }
+\item[{int($\ast$)(void $\ast$, unsigned char $\ast$, size\-\_\-t)}]{f\-\_\-rng, }
+\item[{void $\ast$}]{p\-\_\-rng}
+\end{DoxyParamCaption}
+)}}\label{ecdh_8h_a784e56d5eea12e38374e9ce028692940}
+
+
+Generate a public key and a T\-L\-S Server\-Key\-Exchange payload. (First function used by a T\-L\-S server for E\-C\-D\-H\-E.) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & E\-C\-D\-H context \\
+\hline
+{\em olen} & number of chars written \\
+\hline
+{\em buf} & destination buffer \\
+\hline
+{\em blen} & length of buffer \\
+\hline
+{\em f\-\_\-rng} & R\-N\-G function \\
+\hline
+{\em p\-\_\-rng} & R\-N\-G parameter\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This function assumes that ctx-\/$>$grp has already been properly set (for example using mbedtls\-\_\-ecp\-\_\-group\-\_\-load).
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+0 if successful, or an M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-C\-P\-\_\-\-X\-X\-X error code 
+\end{DoxyReturn}
+\hypertarget{ecdh_8h_a417fd45ce78adb1b52027f995fa5ee57}{\index{ecdh.\-h@{ecdh.\-h}!mbedtls\-\_\-ecdh\-\_\-make\-\_\-public@{mbedtls\-\_\-ecdh\-\_\-make\-\_\-public}}
+\index{mbedtls\-\_\-ecdh\-\_\-make\-\_\-public@{mbedtls\-\_\-ecdh\-\_\-make\-\_\-public}!ecdh.h@{ecdh.\-h}}
+\subsubsection[{mbedtls\-\_\-ecdh\-\_\-make\-\_\-public}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-ecdh\-\_\-make\-\_\-public (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-ecdh\-\_\-context} $\ast$}]{ctx, }
+\item[{size\-\_\-t $\ast$}]{olen, }
+\item[{unsigned char $\ast$}]{buf, }
+\item[{size\-\_\-t}]{blen, }
+\item[{int($\ast$)(void $\ast$, unsigned char $\ast$, size\-\_\-t)}]{f\-\_\-rng, }
+\item[{void $\ast$}]{p\-\_\-rng}
+\end{DoxyParamCaption}
+)}}\label{ecdh_8h_a417fd45ce78adb1b52027f995fa5ee57}
+
+
+Generate a public key and a T\-L\-S Client\-Key\-Exchange payload. (Second function used by a T\-L\-S client for E\-C\-D\-H(\-E).) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & E\-C\-D\-H context \\
+\hline
+{\em olen} & number of bytes actually written \\
+\hline
+{\em buf} & destination buffer \\
+\hline
+{\em blen} & size of destination buffer \\
+\hline
+{\em f\-\_\-rng} & R\-N\-G function \\
+\hline
+{\em p\-\_\-rng} & R\-N\-G parameter\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, or an M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-C\-P\-\_\-\-X\-X\-X error code 
+\end{DoxyReturn}
+\hypertarget{ecdh_8h_af07326ad0017bf6fcfb9f93e43641254}{\index{ecdh.\-h@{ecdh.\-h}!mbedtls\-\_\-ecdh\-\_\-read\-\_\-params@{mbedtls\-\_\-ecdh\-\_\-read\-\_\-params}}
+\index{mbedtls\-\_\-ecdh\-\_\-read\-\_\-params@{mbedtls\-\_\-ecdh\-\_\-read\-\_\-params}!ecdh.h@{ecdh.\-h}}
+\subsubsection[{mbedtls\-\_\-ecdh\-\_\-read\-\_\-params}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-ecdh\-\_\-read\-\_\-params (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-ecdh\-\_\-context} $\ast$}]{ctx, }
+\item[{const unsigned char $\ast$$\ast$}]{buf, }
+\item[{const unsigned char $\ast$}]{end}
+\end{DoxyParamCaption}
+)}}\label{ecdh_8h_af07326ad0017bf6fcfb9f93e43641254}
+
+
+Parse and procress a T\-L\-S Server\-Key\-Exhange payload. (First function used by a T\-L\-S client for E\-C\-D\-H\-E.) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & E\-C\-D\-H context \\
+\hline
+{\em buf} & pointer to start of input buffer \\
+\hline
+{\em end} & one past end of buffer\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, or an M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-C\-P\-\_\-\-X\-X\-X error code 
+\end{DoxyReturn}
+\hypertarget{ecdh_8h_a9f417d90797b109d3036feb288e33207}{\index{ecdh.\-h@{ecdh.\-h}!mbedtls\-\_\-ecdh\-\_\-read\-\_\-public@{mbedtls\-\_\-ecdh\-\_\-read\-\_\-public}}
+\index{mbedtls\-\_\-ecdh\-\_\-read\-\_\-public@{mbedtls\-\_\-ecdh\-\_\-read\-\_\-public}!ecdh.h@{ecdh.\-h}}
+\subsubsection[{mbedtls\-\_\-ecdh\-\_\-read\-\_\-public}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-ecdh\-\_\-read\-\_\-public (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-ecdh\-\_\-context} $\ast$}]{ctx, }
+\item[{const unsigned char $\ast$}]{buf, }
+\item[{size\-\_\-t}]{blen}
+\end{DoxyParamCaption}
+)}}\label{ecdh_8h_a9f417d90797b109d3036feb288e33207}
+
+
+Parse and process a T\-L\-S Client\-Key\-Exchange payload. (Second function used by a T\-L\-S server for E\-C\-D\-H(\-E).) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & E\-C\-D\-H context \\
+\hline
+{\em buf} & start of input buffer \\
+\hline
+{\em blen} & length of input buffer\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, or an M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-C\-P\-\_\-\-X\-X\-X error code 
+\end{DoxyReturn}

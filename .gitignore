@@ -6,4 +6,10 @@
 *.so
 *.so.*
 build/*
-
+tests/*.txt
+tests/*.dll
+tests/*.exe
+tests/*.bin
+tests/*.crt
+tests/*.crl
+tests/*.key

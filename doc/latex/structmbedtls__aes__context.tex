@@ -1,0 +1,66 @@
+\hypertarget{structmbedtls__aes__context}{\section{mbedtls\-\_\-aes\-\_\-context Struct Reference}
+\label{structmbedtls__aes__context}\index{mbedtls\-\_\-aes\-\_\-context@{mbedtls\-\_\-aes\-\_\-context}}
+}
+
+
+A\-E\-S context structure.  
+
+
+
+
+{\ttfamily \#include $<$aes.\-h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{structmbedtls__aes__context_ad0b4f626fa3881c76f23a9a96812b69a}{nr}
+\item 
+uint32\-\_\-t $\ast$ \hyperlink{structmbedtls__aes__context_ac7e235e5b270daba3635f5e39949b7a4}{rk}
+\item 
+uint32\-\_\-t \hyperlink{structmbedtls__aes__context_ad9a8f020a5028732e2cf3c8e07b39795}{buf} \mbox{[}68\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A\-E\-S context structure. 
+
+\begin{DoxyNote}{Note}
+buf is able to hold 32 extra bytes, which can be used\-:
+\begin{DoxyItemize}
+\item for alignment purposes if V\-I\-A padlock is used, and/or
+\item to simplify key expansion in the 256-\/bit case by generating an extra round key 
+\end{DoxyItemize}
+\end{DoxyNote}
+
+
+Definition at line 59 of file aes.\-h.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structmbedtls__aes__context_ad9a8f020a5028732e2cf3c8e07b39795}{\index{mbedtls\-\_\-aes\-\_\-context@{mbedtls\-\_\-aes\-\_\-context}!buf@{buf}}
+\index{buf@{buf}!mbedtls_aes_context@{mbedtls\-\_\-aes\-\_\-context}}
+\subsubsection[{buf}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t mbedtls\-\_\-aes\-\_\-context\-::buf\mbox{[}68\mbox{]}}}\label{structmbedtls__aes__context_ad9a8f020a5028732e2cf3c8e07b39795}
+unaligned data 
+
+Definition at line 63 of file aes.\-h.
+
+\hypertarget{structmbedtls__aes__context_ad0b4f626fa3881c76f23a9a96812b69a}{\index{mbedtls\-\_\-aes\-\_\-context@{mbedtls\-\_\-aes\-\_\-context}!nr@{nr}}
+\index{nr@{nr}!mbedtls_aes_context@{mbedtls\-\_\-aes\-\_\-context}}
+\subsubsection[{nr}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-aes\-\_\-context\-::nr}}\label{structmbedtls__aes__context_ad0b4f626fa3881c76f23a9a96812b69a}
+number of rounds 
+
+Definition at line 61 of file aes.\-h.
+
+\hypertarget{structmbedtls__aes__context_ac7e235e5b270daba3635f5e39949b7a4}{\index{mbedtls\-\_\-aes\-\_\-context@{mbedtls\-\_\-aes\-\_\-context}!rk@{rk}}
+\index{rk@{rk}!mbedtls_aes_context@{mbedtls\-\_\-aes\-\_\-context}}
+\subsubsection[{rk}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t$\ast$ mbedtls\-\_\-aes\-\_\-context\-::rk}}\label{structmbedtls__aes__context_ac7e235e5b270daba3635f5e39949b7a4}
+A\-E\-S round keys 
+
+Definition at line 62 of file aes.\-h.
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/\hyperlink{aes_8h}{aes.\-h}\end{DoxyCompactItemize}

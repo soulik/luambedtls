@@ -1,0 +1,97 @@
+\hypertarget{structmbedtls__hmac__drbg__context}{\section{mbedtls\-\_\-hmac\-\_\-drbg\-\_\-context Struct Reference}
+\label{structmbedtls__hmac__drbg__context}\index{mbedtls\-\_\-hmac\-\_\-drbg\-\_\-context@{mbedtls\-\_\-hmac\-\_\-drbg\-\_\-context}}
+}
+
+
+{\ttfamily \#include $<$hmac\-\_\-drbg.\-h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structmbedtls__md__context__t}{mbedtls\-\_\-md\-\_\-context\-\_\-t} \hyperlink{structmbedtls__hmac__drbg__context_ae5ab42fe02b5f9d26c5b4535e3614a4d}{md\-\_\-ctx}
+\item 
+unsigned char \hyperlink{structmbedtls__hmac__drbg__context_a3e426c343012174c037a462535d23715}{V} \mbox{[}M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-D\-\_\-\-M\-A\-X\-\_\-\-S\-I\-Z\-E\mbox{]}
+\item 
+int \hyperlink{structmbedtls__hmac__drbg__context_a3bdabbbda4d50c954907f5db1f8cecaf}{reseed\-\_\-counter}
+\item 
+size\-\_\-t \hyperlink{structmbedtls__hmac__drbg__context_a137d68a6581248a2a6fbe06dae4a830b}{entropy\-\_\-len}
+\item 
+int \hyperlink{structmbedtls__hmac__drbg__context_a2c486e648011f32883056541249f7a80}{prediction\-\_\-resistance}
+\item 
+int \hyperlink{structmbedtls__hmac__drbg__context_aa69d31aabb0c213dd5f3ea38b8f3f1ad}{reseed\-\_\-interval}
+\item 
+int($\ast$ \hyperlink{structmbedtls__hmac__drbg__context_a8d1372acc13224e983b2e73a8fde9f64}{f\-\_\-entropy} )(void $\ast$, unsigned char $\ast$, size\-\_\-t)
+\item 
+void $\ast$ \hyperlink{structmbedtls__hmac__drbg__context_a218d146b662c9795b9f05b94fa482790}{p\-\_\-entropy}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+H\-M\-A\-C\-\_\-\-D\-R\-B\-G context. 
+
+Definition at line 77 of file hmac\-\_\-drbg.\-h.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structmbedtls__hmac__drbg__context_a137d68a6581248a2a6fbe06dae4a830b}{\index{mbedtls\-\_\-hmac\-\_\-drbg\-\_\-context@{mbedtls\-\_\-hmac\-\_\-drbg\-\_\-context}!entropy\-\_\-len@{entropy\-\_\-len}}
+\index{entropy\-\_\-len@{entropy\-\_\-len}!mbedtls_hmac_drbg_context@{mbedtls\-\_\-hmac\-\_\-drbg\-\_\-context}}
+\subsubsection[{entropy\-\_\-len}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t mbedtls\-\_\-hmac\-\_\-drbg\-\_\-context\-::entropy\-\_\-len}}\label{structmbedtls__hmac__drbg__context_a137d68a6581248a2a6fbe06dae4a830b}
+entropy bytes grabbed on each (re)seed 
+
+Definition at line 86 of file hmac\-\_\-drbg.\-h.
+
+\hypertarget{structmbedtls__hmac__drbg__context_a8d1372acc13224e983b2e73a8fde9f64}{\index{mbedtls\-\_\-hmac\-\_\-drbg\-\_\-context@{mbedtls\-\_\-hmac\-\_\-drbg\-\_\-context}!f\-\_\-entropy@{f\-\_\-entropy}}
+\index{f\-\_\-entropy@{f\-\_\-entropy}!mbedtls_hmac_drbg_context@{mbedtls\-\_\-hmac\-\_\-drbg\-\_\-context}}
+\subsubsection[{f\-\_\-entropy}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ mbedtls\-\_\-hmac\-\_\-drbg\-\_\-context\-::f\-\_\-entropy)(void $\ast$, unsigned char $\ast$, size\-\_\-t)}}\label{structmbedtls__hmac__drbg__context_a8d1372acc13224e983b2e73a8fde9f64}
+entropy function 
+
+Definition at line 92 of file hmac\-\_\-drbg.\-h.
+
+\hypertarget{structmbedtls__hmac__drbg__context_ae5ab42fe02b5f9d26c5b4535e3614a4d}{\index{mbedtls\-\_\-hmac\-\_\-drbg\-\_\-context@{mbedtls\-\_\-hmac\-\_\-drbg\-\_\-context}!md\-\_\-ctx@{md\-\_\-ctx}}
+\index{md\-\_\-ctx@{md\-\_\-ctx}!mbedtls_hmac_drbg_context@{mbedtls\-\_\-hmac\-\_\-drbg\-\_\-context}}
+\subsubsection[{md\-\_\-ctx}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mbedtls\-\_\-md\-\_\-context\-\_\-t} mbedtls\-\_\-hmac\-\_\-drbg\-\_\-context\-::md\-\_\-ctx}}\label{structmbedtls__hmac__drbg__context_ae5ab42fe02b5f9d26c5b4535e3614a4d}
+H\-M\-A\-C context (inc. K) 
+
+Definition at line 81 of file hmac\-\_\-drbg.\-h.
+
+\hypertarget{structmbedtls__hmac__drbg__context_a218d146b662c9795b9f05b94fa482790}{\index{mbedtls\-\_\-hmac\-\_\-drbg\-\_\-context@{mbedtls\-\_\-hmac\-\_\-drbg\-\_\-context}!p\-\_\-entropy@{p\-\_\-entropy}}
+\index{p\-\_\-entropy@{p\-\_\-entropy}!mbedtls_hmac_drbg_context@{mbedtls\-\_\-hmac\-\_\-drbg\-\_\-context}}
+\subsubsection[{p\-\_\-entropy}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ mbedtls\-\_\-hmac\-\_\-drbg\-\_\-context\-::p\-\_\-entropy}}\label{structmbedtls__hmac__drbg__context_a218d146b662c9795b9f05b94fa482790}
+context for the entropy function 
+
+Definition at line 93 of file hmac\-\_\-drbg.\-h.
+
+\hypertarget{structmbedtls__hmac__drbg__context_a2c486e648011f32883056541249f7a80}{\index{mbedtls\-\_\-hmac\-\_\-drbg\-\_\-context@{mbedtls\-\_\-hmac\-\_\-drbg\-\_\-context}!prediction\-\_\-resistance@{prediction\-\_\-resistance}}
+\index{prediction\-\_\-resistance@{prediction\-\_\-resistance}!mbedtls_hmac_drbg_context@{mbedtls\-\_\-hmac\-\_\-drbg\-\_\-context}}
+\subsubsection[{prediction\-\_\-resistance}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-hmac\-\_\-drbg\-\_\-context\-::prediction\-\_\-resistance}}\label{structmbedtls__hmac__drbg__context_a2c486e648011f32883056541249f7a80}
+enable prediction resistance (Automatic reseed before every random generation) 
+
+Definition at line 87 of file hmac\-\_\-drbg.\-h.
+
+\hypertarget{structmbedtls__hmac__drbg__context_a3bdabbbda4d50c954907f5db1f8cecaf}{\index{mbedtls\-\_\-hmac\-\_\-drbg\-\_\-context@{mbedtls\-\_\-hmac\-\_\-drbg\-\_\-context}!reseed\-\_\-counter@{reseed\-\_\-counter}}
+\index{reseed\-\_\-counter@{reseed\-\_\-counter}!mbedtls_hmac_drbg_context@{mbedtls\-\_\-hmac\-\_\-drbg\-\_\-context}}
+\subsubsection[{reseed\-\_\-counter}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-hmac\-\_\-drbg\-\_\-context\-::reseed\-\_\-counter}}\label{structmbedtls__hmac__drbg__context_a3bdabbbda4d50c954907f5db1f8cecaf}
+reseed counter 
+
+Definition at line 83 of file hmac\-\_\-drbg.\-h.
+
+\hypertarget{structmbedtls__hmac__drbg__context_aa69d31aabb0c213dd5f3ea38b8f3f1ad}{\index{mbedtls\-\_\-hmac\-\_\-drbg\-\_\-context@{mbedtls\-\_\-hmac\-\_\-drbg\-\_\-context}!reseed\-\_\-interval@{reseed\-\_\-interval}}
+\index{reseed\-\_\-interval@{reseed\-\_\-interval}!mbedtls_hmac_drbg_context@{mbedtls\-\_\-hmac\-\_\-drbg\-\_\-context}}
+\subsubsection[{reseed\-\_\-interval}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-hmac\-\_\-drbg\-\_\-context\-::reseed\-\_\-interval}}\label{structmbedtls__hmac__drbg__context_aa69d31aabb0c213dd5f3ea38b8f3f1ad}
+reseed interval 
+
+Definition at line 89 of file hmac\-\_\-drbg.\-h.
+
+\hypertarget{structmbedtls__hmac__drbg__context_a3e426c343012174c037a462535d23715}{\index{mbedtls\-\_\-hmac\-\_\-drbg\-\_\-context@{mbedtls\-\_\-hmac\-\_\-drbg\-\_\-context}!V@{V}}
+\index{V@{V}!mbedtls_hmac_drbg_context@{mbedtls\-\_\-hmac\-\_\-drbg\-\_\-context}}
+\subsubsection[{V}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char mbedtls\-\_\-hmac\-\_\-drbg\-\_\-context\-::\-V\mbox{[}M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-D\-\_\-\-M\-A\-X\-\_\-\-S\-I\-Z\-E\mbox{]}}}\label{structmbedtls__hmac__drbg__context_a3e426c343012174c037a462535d23715}
+V in the spec 
+
+Definition at line 82 of file hmac\-\_\-drbg.\-h.
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/\hyperlink{hmac__drbg_8h}{hmac\-\_\-drbg.\-h}\end{DoxyCompactItemize}

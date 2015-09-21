@@ -1,0 +1,115 @@
+\hypertarget{structmbedtls__cipher__base__t}{\section{mbedtls\-\_\-cipher\-\_\-base\-\_\-t Struct Reference}
+\label{structmbedtls__cipher__base__t}\index{mbedtls\-\_\-cipher\-\_\-base\-\_\-t@{mbedtls\-\_\-cipher\-\_\-base\-\_\-t}}
+}
+
+
+{\ttfamily \#include $<$cipher\-\_\-internal.\-h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+mbedtls\-\_\-cipher\-\_\-id\-\_\-t \hyperlink{structmbedtls__cipher__base__t_a0c4c819c23b0a579445f92a4bee7d577}{cipher}
+\item 
+int($\ast$ \hyperlink{structmbedtls__cipher__base__t_a121420c2b88c1d6ae21381b83689994a}{ecb\-\_\-func} )(void $\ast$ctx, mbedtls\-\_\-operation\-\_\-t mode, const unsigned char $\ast$input, unsigned char $\ast$output)
+\item 
+int($\ast$ \hyperlink{structmbedtls__cipher__base__t_ae8660ce572a7631aff9d36088ed88f6d}{cbc\-\_\-func} )(void $\ast$ctx, mbedtls\-\_\-operation\-\_\-t mode, size\-\_\-t length, unsigned char $\ast$iv, const unsigned char $\ast$input, unsigned char $\ast$output)
+\item 
+int($\ast$ \hyperlink{structmbedtls__cipher__base__t_a3e6bf51180be5dbe94774e5d1418d8dc}{cfb\-\_\-func} )(void $\ast$ctx, mbedtls\-\_\-operation\-\_\-t mode, size\-\_\-t length, size\-\_\-t $\ast$iv\-\_\-off, unsigned char $\ast$iv, const unsigned char $\ast$input, unsigned char $\ast$output)
+\item 
+int($\ast$ \hyperlink{structmbedtls__cipher__base__t_aa80b801b6e776896bffb0869b01c1781}{ctr\-\_\-func} )(void $\ast$ctx, size\-\_\-t length, size\-\_\-t $\ast$nc\-\_\-off, unsigned char $\ast$nonce\-\_\-counter, unsigned char $\ast$stream\-\_\-block, const unsigned char $\ast$input, unsigned char $\ast$output)
+\item 
+int($\ast$ \hyperlink{structmbedtls__cipher__base__t_a78fcec085792ca33918b911a747a4b3f}{stream\-\_\-func} )(void $\ast$ctx, size\-\_\-t length, const unsigned char $\ast$input, unsigned char $\ast$output)
+\item 
+int($\ast$ \hyperlink{structmbedtls__cipher__base__t_a40976b94076be9ae19c01268ed61c7c7}{setkey\-\_\-enc\-\_\-func} )(void $\ast$ctx, const unsigned char $\ast$key, unsigned int key\-\_\-bitlen)
+\item 
+int($\ast$ \hyperlink{structmbedtls__cipher__base__t_a23cd6e5b5beae65a6ff897c74ae24988}{setkey\-\_\-dec\-\_\-func} )(void $\ast$ctx, const unsigned char $\ast$key, unsigned int key\-\_\-bitlen)
+\item 
+void $\ast$($\ast$ \hyperlink{structmbedtls__cipher__base__t_a0ea058a70ad20f77afdbb27347e876a0}{ctx\-\_\-alloc\-\_\-func} )(void)
+\item 
+void($\ast$ \hyperlink{structmbedtls__cipher__base__t_aa135cf3bd8a9aba15917e1909c4e55be}{ctx\-\_\-free\-\_\-func} )(void $\ast$ctx)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Base cipher information. The non-\/mode specific functions and values. 
+
+Definition at line 44 of file cipher\-\_\-internal.\-h.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structmbedtls__cipher__base__t_ae8660ce572a7631aff9d36088ed88f6d}{\index{mbedtls\-\_\-cipher\-\_\-base\-\_\-t@{mbedtls\-\_\-cipher\-\_\-base\-\_\-t}!cbc\-\_\-func@{cbc\-\_\-func}}
+\index{cbc\-\_\-func@{cbc\-\_\-func}!mbedtls_cipher_base_t@{mbedtls\-\_\-cipher\-\_\-base\-\_\-t}}
+\subsubsection[{cbc\-\_\-func}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ mbedtls\-\_\-cipher\-\_\-base\-\_\-t\-::cbc\-\_\-func)(void $\ast$ctx, mbedtls\-\_\-operation\-\_\-t mode, size\-\_\-t length, unsigned char $\ast$iv, const unsigned char $\ast$input, unsigned char $\ast$output)}}\label{structmbedtls__cipher__base__t_ae8660ce572a7631aff9d36088ed88f6d}
+Encrypt using C\-B\-C 
+
+Definition at line 55 of file cipher\-\_\-internal.\-h.
+
+\hypertarget{structmbedtls__cipher__base__t_a3e6bf51180be5dbe94774e5d1418d8dc}{\index{mbedtls\-\_\-cipher\-\_\-base\-\_\-t@{mbedtls\-\_\-cipher\-\_\-base\-\_\-t}!cfb\-\_\-func@{cfb\-\_\-func}}
+\index{cfb\-\_\-func@{cfb\-\_\-func}!mbedtls_cipher_base_t@{mbedtls\-\_\-cipher\-\_\-base\-\_\-t}}
+\subsubsection[{cfb\-\_\-func}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ mbedtls\-\_\-cipher\-\_\-base\-\_\-t\-::cfb\-\_\-func)(void $\ast$ctx, mbedtls\-\_\-operation\-\_\-t mode, size\-\_\-t length, size\-\_\-t $\ast$iv\-\_\-off, unsigned char $\ast$iv, const unsigned char $\ast$input, unsigned char $\ast$output)}}\label{structmbedtls__cipher__base__t_a3e6bf51180be5dbe94774e5d1418d8dc}
+Encrypt using C\-F\-B (Full length) 
+
+Definition at line 62 of file cipher\-\_\-internal.\-h.
+
+\hypertarget{structmbedtls__cipher__base__t_a0c4c819c23b0a579445f92a4bee7d577}{\index{mbedtls\-\_\-cipher\-\_\-base\-\_\-t@{mbedtls\-\_\-cipher\-\_\-base\-\_\-t}!cipher@{cipher}}
+\index{cipher@{cipher}!mbedtls_cipher_base_t@{mbedtls\-\_\-cipher\-\_\-base\-\_\-t}}
+\subsubsection[{cipher}]{\setlength{\rightskip}{0pt plus 5cm}mbedtls\-\_\-cipher\-\_\-id\-\_\-t mbedtls\-\_\-cipher\-\_\-base\-\_\-t\-::cipher}}\label{structmbedtls__cipher__base__t_a0c4c819c23b0a579445f92a4bee7d577}
+Base Cipher type (e.\-g. M\-B\-E\-D\-T\-L\-S\-\_\-\-C\-I\-P\-H\-E\-R\-\_\-\-I\-D\-\_\-\-A\-E\-S) 
+
+Definition at line 47 of file cipher\-\_\-internal.\-h.
+
+\hypertarget{structmbedtls__cipher__base__t_aa80b801b6e776896bffb0869b01c1781}{\index{mbedtls\-\_\-cipher\-\_\-base\-\_\-t@{mbedtls\-\_\-cipher\-\_\-base\-\_\-t}!ctr\-\_\-func@{ctr\-\_\-func}}
+\index{ctr\-\_\-func@{ctr\-\_\-func}!mbedtls_cipher_base_t@{mbedtls\-\_\-cipher\-\_\-base\-\_\-t}}
+\subsubsection[{ctr\-\_\-func}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ mbedtls\-\_\-cipher\-\_\-base\-\_\-t\-::ctr\-\_\-func)(void $\ast$ctx, size\-\_\-t length, size\-\_\-t $\ast$nc\-\_\-off, unsigned char $\ast$nonce\-\_\-counter, unsigned char $\ast$stream\-\_\-block, const unsigned char $\ast$input, unsigned char $\ast$output)}}\label{structmbedtls__cipher__base__t_aa80b801b6e776896bffb0869b01c1781}
+Encrypt using C\-T\-R 
+
+Definition at line 69 of file cipher\-\_\-internal.\-h.
+
+\hypertarget{structmbedtls__cipher__base__t_a0ea058a70ad20f77afdbb27347e876a0}{\index{mbedtls\-\_\-cipher\-\_\-base\-\_\-t@{mbedtls\-\_\-cipher\-\_\-base\-\_\-t}!ctx\-\_\-alloc\-\_\-func@{ctx\-\_\-alloc\-\_\-func}}
+\index{ctx\-\_\-alloc\-\_\-func@{ctx\-\_\-alloc\-\_\-func}!mbedtls_cipher_base_t@{mbedtls\-\_\-cipher\-\_\-base\-\_\-t}}
+\subsubsection[{ctx\-\_\-alloc\-\_\-func}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$($\ast$ mbedtls\-\_\-cipher\-\_\-base\-\_\-t\-::ctx\-\_\-alloc\-\_\-func)(void)}}\label{structmbedtls__cipher__base__t_a0ea058a70ad20f77afdbb27347e876a0}
+Allocate a new context 
+
+Definition at line 89 of file cipher\-\_\-internal.\-h.
+
+\hypertarget{structmbedtls__cipher__base__t_aa135cf3bd8a9aba15917e1909c4e55be}{\index{mbedtls\-\_\-cipher\-\_\-base\-\_\-t@{mbedtls\-\_\-cipher\-\_\-base\-\_\-t}!ctx\-\_\-free\-\_\-func@{ctx\-\_\-free\-\_\-func}}
+\index{ctx\-\_\-free\-\_\-func@{ctx\-\_\-free\-\_\-func}!mbedtls_cipher_base_t@{mbedtls\-\_\-cipher\-\_\-base\-\_\-t}}
+\subsubsection[{ctx\-\_\-free\-\_\-func}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ mbedtls\-\_\-cipher\-\_\-base\-\_\-t\-::ctx\-\_\-free\-\_\-func)(void $\ast$ctx)}}\label{structmbedtls__cipher__base__t_aa135cf3bd8a9aba15917e1909c4e55be}
+Free the given context 
+
+Definition at line 92 of file cipher\-\_\-internal.\-h.
+
+\hypertarget{structmbedtls__cipher__base__t_a121420c2b88c1d6ae21381b83689994a}{\index{mbedtls\-\_\-cipher\-\_\-base\-\_\-t@{mbedtls\-\_\-cipher\-\_\-base\-\_\-t}!ecb\-\_\-func@{ecb\-\_\-func}}
+\index{ecb\-\_\-func@{ecb\-\_\-func}!mbedtls_cipher_base_t@{mbedtls\-\_\-cipher\-\_\-base\-\_\-t}}
+\subsubsection[{ecb\-\_\-func}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ mbedtls\-\_\-cipher\-\_\-base\-\_\-t\-::ecb\-\_\-func)(void $\ast$ctx, mbedtls\-\_\-operation\-\_\-t mode, const unsigned char $\ast$input, unsigned char $\ast$output)}}\label{structmbedtls__cipher__base__t_a121420c2b88c1d6ae21381b83689994a}
+Encrypt using E\-C\-B 
+
+Definition at line 50 of file cipher\-\_\-internal.\-h.
+
+\hypertarget{structmbedtls__cipher__base__t_a23cd6e5b5beae65a6ff897c74ae24988}{\index{mbedtls\-\_\-cipher\-\_\-base\-\_\-t@{mbedtls\-\_\-cipher\-\_\-base\-\_\-t}!setkey\-\_\-dec\-\_\-func@{setkey\-\_\-dec\-\_\-func}}
+\index{setkey\-\_\-dec\-\_\-func@{setkey\-\_\-dec\-\_\-func}!mbedtls_cipher_base_t@{mbedtls\-\_\-cipher\-\_\-base\-\_\-t}}
+\subsubsection[{setkey\-\_\-dec\-\_\-func}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ mbedtls\-\_\-cipher\-\_\-base\-\_\-t\-::setkey\-\_\-dec\-\_\-func)(void $\ast$ctx, const unsigned char $\ast$key, unsigned int key\-\_\-bitlen)}}\label{structmbedtls__cipher__base__t_a23cd6e5b5beae65a6ff897c74ae24988}
+Set key for decryption purposes 
+
+Definition at line 85 of file cipher\-\_\-internal.\-h.
+
+\hypertarget{structmbedtls__cipher__base__t_a40976b94076be9ae19c01268ed61c7c7}{\index{mbedtls\-\_\-cipher\-\_\-base\-\_\-t@{mbedtls\-\_\-cipher\-\_\-base\-\_\-t}!setkey\-\_\-enc\-\_\-func@{setkey\-\_\-enc\-\_\-func}}
+\index{setkey\-\_\-enc\-\_\-func@{setkey\-\_\-enc\-\_\-func}!mbedtls_cipher_base_t@{mbedtls\-\_\-cipher\-\_\-base\-\_\-t}}
+\subsubsection[{setkey\-\_\-enc\-\_\-func}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ mbedtls\-\_\-cipher\-\_\-base\-\_\-t\-::setkey\-\_\-enc\-\_\-func)(void $\ast$ctx, const unsigned char $\ast$key, unsigned int key\-\_\-bitlen)}}\label{structmbedtls__cipher__base__t_a40976b94076be9ae19c01268ed61c7c7}
+Set key for encryption purposes 
+
+Definition at line 81 of file cipher\-\_\-internal.\-h.
+
+\hypertarget{structmbedtls__cipher__base__t_a78fcec085792ca33918b911a747a4b3f}{\index{mbedtls\-\_\-cipher\-\_\-base\-\_\-t@{mbedtls\-\_\-cipher\-\_\-base\-\_\-t}!stream\-\_\-func@{stream\-\_\-func}}
+\index{stream\-\_\-func@{stream\-\_\-func}!mbedtls_cipher_base_t@{mbedtls\-\_\-cipher\-\_\-base\-\_\-t}}
+\subsubsection[{stream\-\_\-func}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ mbedtls\-\_\-cipher\-\_\-base\-\_\-t\-::stream\-\_\-func)(void $\ast$ctx, size\-\_\-t length, const unsigned char $\ast$input, unsigned char $\ast$output)}}\label{structmbedtls__cipher__base__t_a78fcec085792ca33918b911a747a4b3f}
+Encrypt using S\-T\-R\-E\-A\-M 
+
+Definition at line 76 of file cipher\-\_\-internal.\-h.
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/\hyperlink{cipher__internal_8h}{cipher\-\_\-internal.\-h}\end{DoxyCompactItemize}

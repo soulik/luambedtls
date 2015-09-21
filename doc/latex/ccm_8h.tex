@@ -1,0 +1,240 @@
+\hypertarget{ccm_8h}{\section{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/ccm.h File Reference}
+\label{ccm_8h}\index{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/ccm.\-h@{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/ccm.\-h}}
+}
+
+
+Counter with C\-B\-C-\/\-M\-A\-C (C\-C\-M) for 128-\/bit block ciphers.  
+
+
+{\ttfamily \#include \char`\"{}cipher.\-h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structmbedtls__ccm__context}{mbedtls\-\_\-ccm\-\_\-context}
+\begin{DoxyCompactList}\small\item\em C\-C\-M context structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{ccm_8h_a6ad00876b856ad8ac9f366fa7e1cf463}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-C\-C\-M\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T}~-\/0x000\-D
+\item 
+\#define \hyperlink{ccm_8h_ae7fda1fbbd14f096374da7ccd54f9d3e}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-C\-C\-M\-\_\-\-A\-U\-T\-H\-\_\-\-F\-A\-I\-L\-E\-D}~-\/0x000\-F
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{ccm_8h_abaeb0629dfac72016fda58a4f7870040}{mbedtls\-\_\-ccm\-\_\-init} (\hyperlink{structmbedtls__ccm__context}{mbedtls\-\_\-ccm\-\_\-context} $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Initialize C\-C\-M context (just makes references valid) Makes the context ready for \hyperlink{ccm_8h_a464d8e724738b4bbd5b415ca0580f1b1}{mbedtls\-\_\-ccm\-\_\-setkey()} or \hyperlink{ccm_8h_a2bd8130a83c6633a4dfd61b181cdabac}{mbedtls\-\_\-ccm\-\_\-free()}. \end{DoxyCompactList}\item 
+int \hyperlink{ccm_8h_a464d8e724738b4bbd5b415ca0580f1b1}{mbedtls\-\_\-ccm\-\_\-setkey} (\hyperlink{structmbedtls__ccm__context}{mbedtls\-\_\-ccm\-\_\-context} $\ast$ctx, mbedtls\-\_\-cipher\-\_\-id\-\_\-t cipher, const unsigned char $\ast$key, unsigned int keybits)
+\begin{DoxyCompactList}\small\item\em C\-C\-M initialization (encryption and decryption) \end{DoxyCompactList}\item 
+void \hyperlink{ccm_8h_a2bd8130a83c6633a4dfd61b181cdabac}{mbedtls\-\_\-ccm\-\_\-free} (\hyperlink{structmbedtls__ccm__context}{mbedtls\-\_\-ccm\-\_\-context} $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Free a C\-C\-M context and underlying cipher sub-\/context. \end{DoxyCompactList}\item 
+int \hyperlink{ccm_8h_a64de697edfefbff94d7eb0d9a8de926f}{mbedtls\-\_\-ccm\-\_\-encrypt\-\_\-and\-\_\-tag} (\hyperlink{structmbedtls__ccm__context}{mbedtls\-\_\-ccm\-\_\-context} $\ast$ctx, size\-\_\-t length, const unsigned char $\ast$iv, size\-\_\-t iv\-\_\-len, const unsigned char $\ast$add, size\-\_\-t add\-\_\-len, const unsigned char $\ast$input, unsigned char $\ast$output, unsigned char $\ast$tag, size\-\_\-t tag\-\_\-len)
+\begin{DoxyCompactList}\small\item\em C\-C\-M buffer encryption. \end{DoxyCompactList}\item 
+int \hyperlink{ccm_8h_a8dc9dfe246064185498f005d8bf22622}{mbedtls\-\_\-ccm\-\_\-auth\-\_\-decrypt} (\hyperlink{structmbedtls__ccm__context}{mbedtls\-\_\-ccm\-\_\-context} $\ast$ctx, size\-\_\-t length, const unsigned char $\ast$iv, size\-\_\-t iv\-\_\-len, const unsigned char $\ast$add, size\-\_\-t add\-\_\-len, const unsigned char $\ast$input, unsigned char $\ast$output, const unsigned char $\ast$tag, size\-\_\-t tag\-\_\-len)
+\begin{DoxyCompactList}\small\item\em C\-C\-M buffer authenticated decryption. \end{DoxyCompactList}\item 
+int \hyperlink{ccm_8h_a14e016798db6cee11977bbdf5e7e0ab8}{mbedtls\-\_\-ccm\-\_\-self\-\_\-test} (int verbose)
+\begin{DoxyCompactList}\small\item\em Checkup routine. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Counter with C\-B\-C-\/\-M\-A\-C (C\-C\-M) for 128-\/bit block ciphers. Copyright (C) 2006-\/2015, A\-R\-M Limited, All Rights Reserved
+
+This file is part of mbed T\-L\-S (\href{https://tls.mbed.org}{\tt https\-://tls.\-mbed.\-org})
+
+This program is free software; you can redistribute it and/or modify it under the terms of the G\-N\-U General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but W\-I\-T\-H\-O\-U\-T A\-N\-Y W\-A\-R\-R\-A\-N\-T\-Y; without even the implied warranty of M\-E\-R\-C\-H\-A\-N\-T\-A\-B\-I\-L\-I\-T\-Y or F\-I\-T\-N\-E\-S\-S F\-O\-R A P\-A\-R\-T\-I\-C\-U\-L\-A\-R P\-U\-R\-P\-O\-S\-E. See the G\-N\-U General Public License for more details.
+
+You should have received a copy of the G\-N\-U General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, M\-A 02110-\/1301 U\-S\-A. 
+
+Definition in file \hyperlink{ccm_8h_source}{ccm.\-h}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{ccm_8h_ae7fda1fbbd14f096374da7ccd54f9d3e}{\index{ccm.\-h@{ccm.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-C\-C\-M\-\_\-\-A\-U\-T\-H\-\_\-\-F\-A\-I\-L\-E\-D@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-C\-C\-M\-\_\-\-A\-U\-T\-H\-\_\-\-F\-A\-I\-L\-E\-D}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-C\-C\-M\-\_\-\-A\-U\-T\-H\-\_\-\-F\-A\-I\-L\-E\-D@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-C\-C\-M\-\_\-\-A\-U\-T\-H\-\_\-\-F\-A\-I\-L\-E\-D}!ccm.h@{ccm.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-C\-C\-M\-\_\-\-A\-U\-T\-H\-\_\-\-F\-A\-I\-L\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-C\-C\-M\-\_\-\-A\-U\-T\-H\-\_\-\-F\-A\-I\-L\-E\-D~-\/0x000\-F}}\label{ccm_8h_ae7fda1fbbd14f096374da7ccd54f9d3e}
+Authenticated decryption failed. 
+
+Definition at line 30 of file ccm.\-h.
+
+\hypertarget{ccm_8h_a6ad00876b856ad8ac9f366fa7e1cf463}{\index{ccm.\-h@{ccm.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-C\-C\-M\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-C\-C\-M\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-C\-C\-M\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-C\-C\-M\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T}!ccm.h@{ccm.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-C\-C\-M\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-C\-C\-M\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T~-\/0x000\-D}}\label{ccm_8h_a6ad00876b856ad8ac9f366fa7e1cf463}
+Bad input parameters to function. 
+
+Definition at line 29 of file ccm.\-h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{ccm_8h_a8dc9dfe246064185498f005d8bf22622}{\index{ccm.\-h@{ccm.\-h}!mbedtls\-\_\-ccm\-\_\-auth\-\_\-decrypt@{mbedtls\-\_\-ccm\-\_\-auth\-\_\-decrypt}}
+\index{mbedtls\-\_\-ccm\-\_\-auth\-\_\-decrypt@{mbedtls\-\_\-ccm\-\_\-auth\-\_\-decrypt}!ccm.h@{ccm.\-h}}
+\subsubsection[{mbedtls\-\_\-ccm\-\_\-auth\-\_\-decrypt}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-ccm\-\_\-auth\-\_\-decrypt (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-ccm\-\_\-context} $\ast$}]{ctx, }
+\item[{size\-\_\-t}]{length, }
+\item[{const unsigned char $\ast$}]{iv, }
+\item[{size\-\_\-t}]{iv\-\_\-len, }
+\item[{const unsigned char $\ast$}]{add, }
+\item[{size\-\_\-t}]{add\-\_\-len, }
+\item[{const unsigned char $\ast$}]{input, }
+\item[{unsigned char $\ast$}]{output, }
+\item[{const unsigned char $\ast$}]{tag, }
+\item[{size\-\_\-t}]{tag\-\_\-len}
+\end{DoxyParamCaption}
+)}}\label{ccm_8h_a8dc9dfe246064185498f005d8bf22622}
+
+
+C\-C\-M buffer authenticated decryption. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & C\-C\-M context \\
+\hline
+{\em length} & length of the input data \\
+\hline
+{\em iv} & initialization vector \\
+\hline
+{\em iv\-\_\-len} & length of I\-V \\
+\hline
+{\em add} & additional data \\
+\hline
+{\em add\-\_\-len} & length of additional data \\
+\hline
+{\em input} & buffer holding the input data \\
+\hline
+{\em output} & buffer for holding the output data \\
+\hline
+{\em tag} & buffer holding the tag \\
+\hline
+{\em tag\-\_\-len} & length of the tag\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful and authenticated, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-C\-C\-M\-\_\-\-A\-U\-T\-H\-\_\-\-F\-A\-I\-L\-E\-D if tag does not match 
+\end{DoxyReturn}
+\hypertarget{ccm_8h_a64de697edfefbff94d7eb0d9a8de926f}{\index{ccm.\-h@{ccm.\-h}!mbedtls\-\_\-ccm\-\_\-encrypt\-\_\-and\-\_\-tag@{mbedtls\-\_\-ccm\-\_\-encrypt\-\_\-and\-\_\-tag}}
+\index{mbedtls\-\_\-ccm\-\_\-encrypt\-\_\-and\-\_\-tag@{mbedtls\-\_\-ccm\-\_\-encrypt\-\_\-and\-\_\-tag}!ccm.h@{ccm.\-h}}
+\subsubsection[{mbedtls\-\_\-ccm\-\_\-encrypt\-\_\-and\-\_\-tag}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-ccm\-\_\-encrypt\-\_\-and\-\_\-tag (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-ccm\-\_\-context} $\ast$}]{ctx, }
+\item[{size\-\_\-t}]{length, }
+\item[{const unsigned char $\ast$}]{iv, }
+\item[{size\-\_\-t}]{iv\-\_\-len, }
+\item[{const unsigned char $\ast$}]{add, }
+\item[{size\-\_\-t}]{add\-\_\-len, }
+\item[{const unsigned char $\ast$}]{input, }
+\item[{unsigned char $\ast$}]{output, }
+\item[{unsigned char $\ast$}]{tag, }
+\item[{size\-\_\-t}]{tag\-\_\-len}
+\end{DoxyParamCaption}
+)}}\label{ccm_8h_a64de697edfefbff94d7eb0d9a8de926f}
+
+
+C\-C\-M buffer encryption. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & C\-C\-M context \\
+\hline
+{\em length} & length of the input data in bytes \\
+\hline
+{\em iv} & nonce (initialization vector) \\
+\hline
+{\em iv\-\_\-len} & length of I\-V in bytes must be 2, 3, 4, 5, 6, 7 or 8 \\
+\hline
+{\em add} & additional data \\
+\hline
+{\em add\-\_\-len} & length of additional data in bytes must be less than 2$^\wedge$16 -\/ 2$^\wedge$8 \\
+\hline
+{\em input} & buffer holding the input data \\
+\hline
+{\em output} & buffer for holding the output data must be at least 'length' bytes wide \\
+\hline
+{\em tag} & buffer for holding the tag \\
+\hline
+{\em tag\-\_\-len} & length of the tag to generate in bytes must be 4, 6, 8, 10, 14 or 16\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The tag is written to a separate buffer. To get the tag concatenated with the output as in the C\-C\-M spec, use tag = output + length and make sure the output buffer is at least length + tag\-\_\-len wide.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+0 if successful 
+\end{DoxyReturn}
+\hypertarget{ccm_8h_a2bd8130a83c6633a4dfd61b181cdabac}{\index{ccm.\-h@{ccm.\-h}!mbedtls\-\_\-ccm\-\_\-free@{mbedtls\-\_\-ccm\-\_\-free}}
+\index{mbedtls\-\_\-ccm\-\_\-free@{mbedtls\-\_\-ccm\-\_\-free}!ccm.h@{ccm.\-h}}
+\subsubsection[{mbedtls\-\_\-ccm\-\_\-free}]{\setlength{\rightskip}{0pt plus 5cm}void mbedtls\-\_\-ccm\-\_\-free (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-ccm\-\_\-context} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}}\label{ccm_8h_a2bd8130a83c6633a4dfd61b181cdabac}
+
+
+Free a C\-C\-M context and underlying cipher sub-\/context. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & C\-C\-M context to free \\
+\hline
+\end{DoxyParams}
+\hypertarget{ccm_8h_abaeb0629dfac72016fda58a4f7870040}{\index{ccm.\-h@{ccm.\-h}!mbedtls\-\_\-ccm\-\_\-init@{mbedtls\-\_\-ccm\-\_\-init}}
+\index{mbedtls\-\_\-ccm\-\_\-init@{mbedtls\-\_\-ccm\-\_\-init}!ccm.h@{ccm.\-h}}
+\subsubsection[{mbedtls\-\_\-ccm\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void mbedtls\-\_\-ccm\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-ccm\-\_\-context} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}}\label{ccm_8h_abaeb0629dfac72016fda58a4f7870040}
+
+
+Initialize C\-C\-M context (just makes references valid) Makes the context ready for \hyperlink{ccm_8h_a464d8e724738b4bbd5b415ca0580f1b1}{mbedtls\-\_\-ccm\-\_\-setkey()} or \hyperlink{ccm_8h_a2bd8130a83c6633a4dfd61b181cdabac}{mbedtls\-\_\-ccm\-\_\-free()}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & C\-C\-M context to initialize \\
+\hline
+\end{DoxyParams}
+\hypertarget{ccm_8h_a14e016798db6cee11977bbdf5e7e0ab8}{\index{ccm.\-h@{ccm.\-h}!mbedtls\-\_\-ccm\-\_\-self\-\_\-test@{mbedtls\-\_\-ccm\-\_\-self\-\_\-test}}
+\index{mbedtls\-\_\-ccm\-\_\-self\-\_\-test@{mbedtls\-\_\-ccm\-\_\-self\-\_\-test}!ccm.h@{ccm.\-h}}
+\subsubsection[{mbedtls\-\_\-ccm\-\_\-self\-\_\-test}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-ccm\-\_\-self\-\_\-test (
+\begin{DoxyParamCaption}
+\item[{int}]{verbose}
+\end{DoxyParamCaption}
+)}}\label{ccm_8h_a14e016798db6cee11977bbdf5e7e0ab8}
+
+
+Checkup routine. 
+
+\begin{DoxyReturn}{Returns}
+0 if successful, or 1 if the test failed 
+\end{DoxyReturn}
+\hypertarget{ccm_8h_a464d8e724738b4bbd5b415ca0580f1b1}{\index{ccm.\-h@{ccm.\-h}!mbedtls\-\_\-ccm\-\_\-setkey@{mbedtls\-\_\-ccm\-\_\-setkey}}
+\index{mbedtls\-\_\-ccm\-\_\-setkey@{mbedtls\-\_\-ccm\-\_\-setkey}!ccm.h@{ccm.\-h}}
+\subsubsection[{mbedtls\-\_\-ccm\-\_\-setkey}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-ccm\-\_\-setkey (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-ccm\-\_\-context} $\ast$}]{ctx, }
+\item[{mbedtls\-\_\-cipher\-\_\-id\-\_\-t}]{cipher, }
+\item[{const unsigned char $\ast$}]{key, }
+\item[{unsigned int}]{keybits}
+\end{DoxyParamCaption}
+)}}\label{ccm_8h_a464d8e724738b4bbd5b415ca0580f1b1}
+
+
+C\-C\-M initialization (encryption and decryption) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & C\-C\-M context to be initialized \\
+\hline
+{\em cipher} & cipher to use (a 128-\/bit block cipher) \\
+\hline
+{\em key} & encryption key \\
+\hline
+{\em keybits} & key size in bits (must be acceptable by the cipher)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, or a cipher specific error code 
+\end{DoxyReturn}

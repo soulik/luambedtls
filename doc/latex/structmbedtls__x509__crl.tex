@@ -1,0 +1,133 @@
+\hypertarget{structmbedtls__x509__crl}{\section{mbedtls\-\_\-x509\-\_\-crl Struct Reference}
+\label{structmbedtls__x509__crl}\index{mbedtls\-\_\-x509\-\_\-crl@{mbedtls\-\_\-x509\-\_\-crl}}
+}
+
+
+{\ttfamily \#include $<$x509\-\_\-crl.\-h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{group__x509__module_ga4d02c9e8e4e2934555e0d132cd2976dc}{mbedtls\-\_\-x509\-\_\-buf} \hyperlink{structmbedtls__x509__crl_a6fb756d2b65237ccaff6061f4217b2eb}{raw}
+\item 
+\hyperlink{group__x509__module_ga4d02c9e8e4e2934555e0d132cd2976dc}{mbedtls\-\_\-x509\-\_\-buf} \hyperlink{structmbedtls__x509__crl_ab8086dd1a2a3d82363cc91e1cdfb5850}{tbs}
+\item 
+int \hyperlink{structmbedtls__x509__crl_aaf0d47225a63a5d9bf0e2e99d641e72d}{version}
+\item 
+\hyperlink{group__x509__module_ga4d02c9e8e4e2934555e0d132cd2976dc}{mbedtls\-\_\-x509\-\_\-buf} \hyperlink{structmbedtls__x509__crl_ad21b69052f214be907ceb84a9274b9f2}{sig\-\_\-oid}
+\item 
+\hyperlink{group__x509__module_ga4d02c9e8e4e2934555e0d132cd2976dc}{mbedtls\-\_\-x509\-\_\-buf} \hyperlink{structmbedtls__x509__crl_a009d0e1b844df85a2389ec10b770a6f6}{issuer\-\_\-raw}
+\item 
+\hyperlink{group__x509__module_ga2272228c7776102328df31623af3168c}{mbedtls\-\_\-x509\-\_\-name} \hyperlink{structmbedtls__x509__crl_aae988566d13fadf805d8ad31d13b44d8}{issuer}
+\item 
+\hypertarget{structmbedtls__x509__crl_a61c51dd535f4f954e04f5de02fe1065e}{\hyperlink{structmbedtls__x509__time}{mbedtls\-\_\-x509\-\_\-time} {\bfseries this\-\_\-update}}\label{structmbedtls__x509__crl_a61c51dd535f4f954e04f5de02fe1065e}
+
+\item 
+\hypertarget{structmbedtls__x509__crl_a87b72e6cb62919b6172d3f100b9d09ea}{\hyperlink{structmbedtls__x509__time}{mbedtls\-\_\-x509\-\_\-time} {\bfseries next\-\_\-update}}\label{structmbedtls__x509__crl_a87b72e6cb62919b6172d3f100b9d09ea}
+
+\item 
+\hyperlink{structmbedtls__x509__crl__entry}{mbedtls\-\_\-x509\-\_\-crl\-\_\-entry} \hyperlink{structmbedtls__x509__crl_a880036b1b4a2b449542f8f1fa389694f}{entry}
+\item 
+\hypertarget{structmbedtls__x509__crl_a6bed76483128f2128c0b92cba28ac118}{\hyperlink{group__x509__module_ga4d02c9e8e4e2934555e0d132cd2976dc}{mbedtls\-\_\-x509\-\_\-buf} {\bfseries crl\-\_\-ext}}\label{structmbedtls__x509__crl_a6bed76483128f2128c0b92cba28ac118}
+
+\item 
+\hypertarget{structmbedtls__x509__crl_ac2c9b5655e5dfaabd3d285e8e0b4b34b}{\hyperlink{group__x509__module_ga4d02c9e8e4e2934555e0d132cd2976dc}{mbedtls\-\_\-x509\-\_\-buf} {\bfseries sig\-\_\-oid2}}\label{structmbedtls__x509__crl_ac2c9b5655e5dfaabd3d285e8e0b4b34b}
+
+\item 
+\hypertarget{structmbedtls__x509__crl_a91614cb3497ac7220394c04014cf0f2d}{\hyperlink{group__x509__module_ga4d02c9e8e4e2934555e0d132cd2976dc}{mbedtls\-\_\-x509\-\_\-buf} {\bfseries sig}}\label{structmbedtls__x509__crl_a91614cb3497ac7220394c04014cf0f2d}
+
+\item 
+mbedtls\-\_\-md\-\_\-type\-\_\-t \hyperlink{structmbedtls__x509__crl_a85c03124f3b4a2afe8b5c47fab13a8a9}{sig\-\_\-md}
+\item 
+\hyperlink{pk_8h_a3fe41eff5605ae727eb9d28dad297020}{mbedtls\-\_\-pk\-\_\-type\-\_\-t} \hyperlink{structmbedtls__x509__crl_a8c94375266c53f6e73d0134dc978151a}{sig\-\_\-pk}
+\item 
+void $\ast$ \hyperlink{structmbedtls__x509__crl_ad59e3744b290f19d6400678d364aef77}{sig\-\_\-opts}
+\item 
+\hypertarget{structmbedtls__x509__crl_a6dbfb57fe2c749c3bff9f7f45aacec05}{struct \hyperlink{structmbedtls__x509__crl}{mbedtls\-\_\-x509\-\_\-crl} $\ast$ {\bfseries next}}\label{structmbedtls__x509__crl_a6dbfb57fe2c749c3bff9f7f45aacec05}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Certificate revocation list structure. Every C\-R\-L may have multiple entries. 
+
+Definition at line 70 of file x509\-\_\-crl.\-h.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structmbedtls__x509__crl_a880036b1b4a2b449542f8f1fa389694f}{\index{mbedtls\-\_\-x509\-\_\-crl@{mbedtls\-\_\-x509\-\_\-crl}!entry@{entry}}
+\index{entry@{entry}!mbedtls_x509_crl@{mbedtls\-\_\-x509\-\_\-crl}}
+\subsubsection[{entry}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mbedtls\-\_\-x509\-\_\-crl\-\_\-entry} mbedtls\-\_\-x509\-\_\-crl\-::entry}}\label{structmbedtls__x509__crl_a880036b1b4a2b449542f8f1fa389694f}
+The C\-R\-L entries containing the certificate revocation times for this C\-A. 
+
+Definition at line 85 of file x509\-\_\-crl.\-h.
+
+\hypertarget{structmbedtls__x509__crl_aae988566d13fadf805d8ad31d13b44d8}{\index{mbedtls\-\_\-x509\-\_\-crl@{mbedtls\-\_\-x509\-\_\-crl}!issuer@{issuer}}
+\index{issuer@{issuer}!mbedtls_x509_crl@{mbedtls\-\_\-x509\-\_\-crl}}
+\subsubsection[{issuer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mbedtls\-\_\-x509\-\_\-name} mbedtls\-\_\-x509\-\_\-crl\-::issuer}}\label{structmbedtls__x509__crl_aae988566d13fadf805d8ad31d13b44d8}
+The parsed issuer data (named information object). 
+
+Definition at line 80 of file x509\-\_\-crl.\-h.
+
+\hypertarget{structmbedtls__x509__crl_a009d0e1b844df85a2389ec10b770a6f6}{\index{mbedtls\-\_\-x509\-\_\-crl@{mbedtls\-\_\-x509\-\_\-crl}!issuer\-\_\-raw@{issuer\-\_\-raw}}
+\index{issuer\-\_\-raw@{issuer\-\_\-raw}!mbedtls_x509_crl@{mbedtls\-\_\-x509\-\_\-crl}}
+\subsubsection[{issuer\-\_\-raw}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mbedtls\-\_\-x509\-\_\-buf} mbedtls\-\_\-x509\-\_\-crl\-::issuer\-\_\-raw}}\label{structmbedtls__x509__crl_a009d0e1b844df85a2389ec10b770a6f6}
+The raw issuer data (D\-E\-R). 
+
+Definition at line 78 of file x509\-\_\-crl.\-h.
+
+\hypertarget{structmbedtls__x509__crl_a6fb756d2b65237ccaff6061f4217b2eb}{\index{mbedtls\-\_\-x509\-\_\-crl@{mbedtls\-\_\-x509\-\_\-crl}!raw@{raw}}
+\index{raw@{raw}!mbedtls_x509_crl@{mbedtls\-\_\-x509\-\_\-crl}}
+\subsubsection[{raw}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mbedtls\-\_\-x509\-\_\-buf} mbedtls\-\_\-x509\-\_\-crl\-::raw}}\label{structmbedtls__x509__crl_a6fb756d2b65237ccaff6061f4217b2eb}
+The raw certificate data (D\-E\-R). 
+
+Definition at line 72 of file x509\-\_\-crl.\-h.
+
+\hypertarget{structmbedtls__x509__crl_a85c03124f3b4a2afe8b5c47fab13a8a9}{\index{mbedtls\-\_\-x509\-\_\-crl@{mbedtls\-\_\-x509\-\_\-crl}!sig\-\_\-md@{sig\-\_\-md}}
+\index{sig\-\_\-md@{sig\-\_\-md}!mbedtls_x509_crl@{mbedtls\-\_\-x509\-\_\-crl}}
+\subsubsection[{sig\-\_\-md}]{\setlength{\rightskip}{0pt plus 5cm}mbedtls\-\_\-md\-\_\-type\-\_\-t mbedtls\-\_\-x509\-\_\-crl\-::sig\-\_\-md}}\label{structmbedtls__x509__crl_a85c03124f3b4a2afe8b5c47fab13a8a9}
+Internal representation of the M\-D algorithm of the signature algorithm, e.\-g. M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-D\-\_\-\-S\-H\-A256 
+
+Definition at line 91 of file x509\-\_\-crl.\-h.
+
+\hypertarget{structmbedtls__x509__crl_ad21b69052f214be907ceb84a9274b9f2}{\index{mbedtls\-\_\-x509\-\_\-crl@{mbedtls\-\_\-x509\-\_\-crl}!sig\-\_\-oid@{sig\-\_\-oid}}
+\index{sig\-\_\-oid@{sig\-\_\-oid}!mbedtls_x509_crl@{mbedtls\-\_\-x509\-\_\-crl}}
+\subsubsection[{sig\-\_\-oid}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mbedtls\-\_\-x509\-\_\-buf} mbedtls\-\_\-x509\-\_\-crl\-::sig\-\_\-oid}}\label{structmbedtls__x509__crl_ad21b69052f214be907ceb84a9274b9f2}
+C\-R\-L signature type identifier 
+
+Definition at line 76 of file x509\-\_\-crl.\-h.
+
+\hypertarget{structmbedtls__x509__crl_ad59e3744b290f19d6400678d364aef77}{\index{mbedtls\-\_\-x509\-\_\-crl@{mbedtls\-\_\-x509\-\_\-crl}!sig\-\_\-opts@{sig\-\_\-opts}}
+\index{sig\-\_\-opts@{sig\-\_\-opts}!mbedtls_x509_crl@{mbedtls\-\_\-x509\-\_\-crl}}
+\subsubsection[{sig\-\_\-opts}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ mbedtls\-\_\-x509\-\_\-crl\-::sig\-\_\-opts}}\label{structmbedtls__x509__crl_ad59e3744b290f19d6400678d364aef77}
+Signature options to be passed to \hyperlink{pk_8h_a81f0c5e40b839f5eca676c2c2752036f}{mbedtls\-\_\-pk\-\_\-verify\-\_\-ext()}, e.\-g. for R\-S\-A\-S\-S\-A-\/\-P\-S\-S 
+
+Definition at line 93 of file x509\-\_\-crl.\-h.
+
+\hypertarget{structmbedtls__x509__crl_a8c94375266c53f6e73d0134dc978151a}{\index{mbedtls\-\_\-x509\-\_\-crl@{mbedtls\-\_\-x509\-\_\-crl}!sig\-\_\-pk@{sig\-\_\-pk}}
+\index{sig\-\_\-pk@{sig\-\_\-pk}!mbedtls_x509_crl@{mbedtls\-\_\-x509\-\_\-crl}}
+\subsubsection[{sig\-\_\-pk}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mbedtls\-\_\-pk\-\_\-type\-\_\-t} mbedtls\-\_\-x509\-\_\-crl\-::sig\-\_\-pk}}\label{structmbedtls__x509__crl_a8c94375266c53f6e73d0134dc978151a}
+Internal representation of the Public Key algorithm of the signature algorithm, e.\-g. M\-B\-E\-D\-T\-L\-S\-\_\-\-P\-K\-\_\-\-R\-S\-A 
+
+Definition at line 92 of file x509\-\_\-crl.\-h.
+
+\hypertarget{structmbedtls__x509__crl_ab8086dd1a2a3d82363cc91e1cdfb5850}{\index{mbedtls\-\_\-x509\-\_\-crl@{mbedtls\-\_\-x509\-\_\-crl}!tbs@{tbs}}
+\index{tbs@{tbs}!mbedtls_x509_crl@{mbedtls\-\_\-x509\-\_\-crl}}
+\subsubsection[{tbs}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mbedtls\-\_\-x509\-\_\-buf} mbedtls\-\_\-x509\-\_\-crl\-::tbs}}\label{structmbedtls__x509__crl_ab8086dd1a2a3d82363cc91e1cdfb5850}
+The raw certificate body (D\-E\-R). The part that is To Be Signed. 
+
+Definition at line 73 of file x509\-\_\-crl.\-h.
+
+\hypertarget{structmbedtls__x509__crl_aaf0d47225a63a5d9bf0e2e99d641e72d}{\index{mbedtls\-\_\-x509\-\_\-crl@{mbedtls\-\_\-x509\-\_\-crl}!version@{version}}
+\index{version@{version}!mbedtls_x509_crl@{mbedtls\-\_\-x509\-\_\-crl}}
+\subsubsection[{version}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-x509\-\_\-crl\-::version}}\label{structmbedtls__x509__crl_aaf0d47225a63a5d9bf0e2e99d641e72d}
+C\-R\-L version (1=v1, 2=v2) 
+
+Definition at line 75 of file x509\-\_\-crl.\-h.
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/x509\-\_\-crl.\-h\end{DoxyCompactItemize}

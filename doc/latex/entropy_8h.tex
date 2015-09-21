@@ -1,0 +1,395 @@
+\hypertarget{entropy_8h}{\section{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/entropy.h File Reference}
+\label{entropy_8h}\index{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/entropy.\-h@{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/entropy.\-h}}
+}
+
+
+Entropy accumulator implementation.  
+
+
+{\ttfamily \#include \char`\"{}config.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$stddef.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}sha512.\-h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structmbedtls__entropy__source__state}{mbedtls\-\_\-entropy\-\_\-source\-\_\-state}
+\begin{DoxyCompactList}\small\item\em Entropy source state. \end{DoxyCompactList}\item 
+struct \hyperlink{structmbedtls__entropy__context}{mbedtls\-\_\-entropy\-\_\-context}
+\begin{DoxyCompactList}\small\item\em Entropy context structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{entropy_8h_a77e56d52d29721c24f22a9ec01391ecb}{\#define {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-S\-H\-A512\-\_\-\-A\-C\-C\-U\-M\-U\-L\-A\-T\-O\-R}}\label{entropy_8h_a77e56d52d29721c24f22a9ec01391ecb}
+
+\item 
+\#define \hyperlink{entropy_8h_af4cd68e9098b27fed32e7d4a48a4048b}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-S\-O\-U\-R\-C\-E\-\_\-\-F\-A\-I\-L\-E\-D}~-\/0x003\-C
+\item 
+\#define \hyperlink{entropy_8h_a12a0600bd163efc21469e406a4e194ce}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-M\-A\-X\-\_\-\-S\-O\-U\-R\-C\-E\-S}~-\/0x003\-E
+\item 
+\#define \hyperlink{entropy_8h_ab9f0a333fbef6d5ebe4fda846249f5c6}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-N\-O\-\_\-\-S\-O\-U\-R\-C\-E\-S\-\_\-\-D\-E\-F\-I\-N\-E\-D}~-\/0x0040
+\item 
+\#define \hyperlink{entropy_8h_a8116299707c4a7fbf19cac3f30ce1e7a}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-N\-O\-\_\-\-S\-T\-R\-O\-N\-G\-\_\-\-S\-O\-U\-R\-C\-E}~-\/0x003\-D
+\item 
+\#define \hyperlink{entropy_8h_a356b20cef049a2de3e99909321894463}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-F\-I\-L\-E\-\_\-\-I\-O\-\_\-\-E\-R\-R\-O\-R}~-\/0x003\-F
+\item 
+\#define \hyperlink{entropy_8h_acc0fdb8c34a1ae04a81b4b21cb383941}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-B\-L\-O\-C\-K\-\_\-\-S\-I\-Z\-E}~64
+\item 
+\#define \hyperlink{entropy_8h_afff6ba3d7fc6df1fedd007d3a9a4136b}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-M\-A\-X\-\_\-\-S\-E\-E\-D\-\_\-\-S\-I\-Z\-E}~1024
+\item 
+\hypertarget{entropy_8h_a841232804d6de404b072c57a374502c8}{\#define {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-S\-O\-U\-R\-C\-E\-\_\-\-M\-A\-N\-U\-A\-L}~\hyperlink{entropy_8h_a819aa4f3046aa257738f0dafe481ca1f}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-M\-A\-X\-\_\-\-S\-O\-U\-R\-C\-E\-S}}\label{entropy_8h_a841232804d6de404b072c57a374502c8}
+
+\item 
+\#define \hyperlink{entropy_8h_acf3946666d3aa196a7a4ba7705740580}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-S\-O\-U\-R\-C\-E\-\_\-\-S\-T\-R\-O\-N\-G}~1
+\item 
+\#define \hyperlink{entropy_8h_a3aaeef22d87036afb296bfdb4d7d4c4c}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-S\-O\-U\-R\-C\-E\-\_\-\-W\-E\-A\-K}~0
+\end{DoxyCompactItemize}
+\begin{Indent}{\bf S\-E\-C\-T\-I\-O\-N\-: Module settings}\par
+{\em The configuration options you can set for this module are in this section. Either change them in \hyperlink{config_8h}{config.\-h} or define them on the compiler command line. }\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{entropy_8h_a819aa4f3046aa257738f0dafe481ca1f}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-M\-A\-X\-\_\-\-S\-O\-U\-R\-C\-E\-S}~20
+\item 
+\#define \hyperlink{entropy_8h_a21637aa9a738da4fce13931a8442dc28}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-M\-A\-X\-\_\-\-G\-A\-T\-H\-E\-R}~128
+\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef int($\ast$ \hyperlink{entropy_8h_ac77904920528c196bc0a90c59ae100e4}{mbedtls\-\_\-entropy\-\_\-f\-\_\-source\-\_\-ptr} )(void $\ast$data, unsigned char $\ast$output, size\-\_\-t len, size\-\_\-t $\ast$olen)
+\begin{DoxyCompactList}\small\item\em Entropy poll callback pointer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{entropy_8h_aa901e027093c6fe65dee5760db78aced}{mbedtls\-\_\-entropy\-\_\-init} (\hyperlink{structmbedtls__entropy__context}{mbedtls\-\_\-entropy\-\_\-context} $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Initialize the context. \end{DoxyCompactList}\item 
+void \hyperlink{entropy_8h_a06778439f8a0e2daa2d3b444e06ad8dd}{mbedtls\-\_\-entropy\-\_\-free} (\hyperlink{structmbedtls__entropy__context}{mbedtls\-\_\-entropy\-\_\-context} $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Free the data in the context. \end{DoxyCompactList}\item 
+int \hyperlink{entropy_8h_ad1bf424d076142e9aeec9e68207f5aaa}{mbedtls\-\_\-entropy\-\_\-add\-\_\-source} (\hyperlink{structmbedtls__entropy__context}{mbedtls\-\_\-entropy\-\_\-context} $\ast$ctx, \hyperlink{entropy_8h_ac77904920528c196bc0a90c59ae100e4}{mbedtls\-\_\-entropy\-\_\-f\-\_\-source\-\_\-ptr} f\-\_\-source, void $\ast$p\-\_\-source, size\-\_\-t threshold, int strong)
+\begin{DoxyCompactList}\small\item\em Adds an entropy source to poll (Thread-\/safe if M\-B\-E\-D\-T\-L\-S\-\_\-\-T\-H\-R\-E\-A\-D\-I\-N\-G\-\_\-\-C is enabled) \end{DoxyCompactList}\item 
+int \hyperlink{entropy_8h_ac49de4b842e7d56cfcd1088286a09b7d}{mbedtls\-\_\-entropy\-\_\-gather} (\hyperlink{structmbedtls__entropy__context}{mbedtls\-\_\-entropy\-\_\-context} $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Trigger an extra gather poll for the accumulator (Thread-\/safe if M\-B\-E\-D\-T\-L\-S\-\_\-\-T\-H\-R\-E\-A\-D\-I\-N\-G\-\_\-\-C is enabled) \end{DoxyCompactList}\item 
+int \hyperlink{entropy_8h_a81765f6cdf4e5111bcb9f4324f3234cb}{mbedtls\-\_\-entropy\-\_\-func} (void $\ast$data, unsigned char $\ast$output, size\-\_\-t len)
+\begin{DoxyCompactList}\small\item\em Retrieve entropy from the accumulator (Maximum length\-: M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-B\-L\-O\-C\-K\-\_\-\-S\-I\-Z\-E) (Thread-\/safe if M\-B\-E\-D\-T\-L\-S\-\_\-\-T\-H\-R\-E\-A\-D\-I\-N\-G\-\_\-\-C is enabled) \end{DoxyCompactList}\item 
+int \hyperlink{entropy_8h_aa79492f288cc3202ea455564be855d64}{mbedtls\-\_\-entropy\-\_\-update\-\_\-manual} (\hyperlink{structmbedtls__entropy__context}{mbedtls\-\_\-entropy\-\_\-context} $\ast$ctx, const unsigned char $\ast$data, size\-\_\-t len)
+\begin{DoxyCompactList}\small\item\em Add data to the accumulator manually (Thread-\/safe if M\-B\-E\-D\-T\-L\-S\-\_\-\-T\-H\-R\-E\-A\-D\-I\-N\-G\-\_\-\-C is enabled) \end{DoxyCompactList}\item 
+int \hyperlink{entropy_8h_abffb5c2d08b9cc94788910d463ce3181}{mbedtls\-\_\-entropy\-\_\-write\-\_\-seed\-\_\-file} (\hyperlink{structmbedtls__entropy__context}{mbedtls\-\_\-entropy\-\_\-context} $\ast$ctx, const char $\ast$path)
+\begin{DoxyCompactList}\small\item\em Write a seed file. \end{DoxyCompactList}\item 
+int \hyperlink{entropy_8h_a3d72b19c00eb0cabb319d3d81599a57a}{mbedtls\-\_\-entropy\-\_\-update\-\_\-seed\-\_\-file} (\hyperlink{structmbedtls__entropy__context}{mbedtls\-\_\-entropy\-\_\-context} $\ast$ctx, const char $\ast$path)
+\begin{DoxyCompactList}\small\item\em Read and update a seed file. Seed is added to this instance. No more than M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-M\-A\-X\-\_\-\-S\-E\-E\-D\-\_\-\-S\-I\-Z\-E bytes are read from the seed file. The rest is ignored. \end{DoxyCompactList}\item 
+int \hyperlink{entropy_8h_ad31b29e855ba719ba5282e2da4f5c338}{mbedtls\-\_\-entropy\-\_\-self\-\_\-test} (int verbose)
+\begin{DoxyCompactList}\small\item\em Checkup routine. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Entropy accumulator implementation. Copyright (C) 2006-\/2015, A\-R\-M Limited, All Rights Reserved
+
+This file is part of mbed T\-L\-S (\href{https://tls.mbed.org}{\tt https\-://tls.\-mbed.\-org})
+
+This program is free software; you can redistribute it and/or modify it under the terms of the G\-N\-U General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but W\-I\-T\-H\-O\-U\-T A\-N\-Y W\-A\-R\-R\-A\-N\-T\-Y; without even the implied warranty of M\-E\-R\-C\-H\-A\-N\-T\-A\-B\-I\-L\-I\-T\-Y or F\-I\-T\-N\-E\-S\-S F\-O\-R A P\-A\-R\-T\-I\-C\-U\-L\-A\-R P\-U\-R\-P\-O\-S\-E. See the G\-N\-U General Public License for more details.
+
+You should have received a copy of the G\-N\-U General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, M\-A 02110-\/1301 U\-S\-A. 
+
+Definition in file \hyperlink{entropy_8h_source}{entropy.\-h}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{entropy_8h_acc0fdb8c34a1ae04a81b4b21cb383941}{\index{entropy.\-h@{entropy.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-B\-L\-O\-C\-K\-\_\-\-S\-I\-Z\-E@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-B\-L\-O\-C\-K\-\_\-\-S\-I\-Z\-E}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-B\-L\-O\-C\-K\-\_\-\-S\-I\-Z\-E@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-B\-L\-O\-C\-K\-\_\-\-S\-I\-Z\-E}!entropy.h@{entropy.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-B\-L\-O\-C\-K\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-B\-L\-O\-C\-K\-\_\-\-S\-I\-Z\-E~64}}\label{entropy_8h_acc0fdb8c34a1ae04a81b4b21cb383941}
+Block size of entropy accumulator (S\-H\-A-\/512) 
+
+Definition at line 78 of file entropy.\-h.
+
+\hypertarget{entropy_8h_a21637aa9a738da4fce13931a8442dc28}{\index{entropy.\-h@{entropy.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-M\-A\-X\-\_\-\-G\-A\-T\-H\-E\-R@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-M\-A\-X\-\_\-\-G\-A\-T\-H\-E\-R}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-M\-A\-X\-\_\-\-G\-A\-T\-H\-E\-R@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-M\-A\-X\-\_\-\-G\-A\-T\-H\-E\-R}!entropy.h@{entropy.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-M\-A\-X\-\_\-\-G\-A\-T\-H\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-M\-A\-X\-\_\-\-G\-A\-T\-H\-E\-R~128}}\label{entropy_8h_a21637aa9a738da4fce13931a8442dc28}
+Maximum amount requested from entropy sources 
+
+Definition at line 72 of file entropy.\-h.
+
+\hypertarget{entropy_8h_afff6ba3d7fc6df1fedd007d3a9a4136b}{\index{entropy.\-h@{entropy.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-M\-A\-X\-\_\-\-S\-E\-E\-D\-\_\-\-S\-I\-Z\-E@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-M\-A\-X\-\_\-\-S\-E\-E\-D\-\_\-\-S\-I\-Z\-E}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-M\-A\-X\-\_\-\-S\-E\-E\-D\-\_\-\-S\-I\-Z\-E@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-M\-A\-X\-\_\-\-S\-E\-E\-D\-\_\-\-S\-I\-Z\-E}!entropy.h@{entropy.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-M\-A\-X\-\_\-\-S\-E\-E\-D\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-M\-A\-X\-\_\-\-S\-E\-E\-D\-\_\-\-S\-I\-Z\-E~1024}}\label{entropy_8h_afff6ba3d7fc6df1fedd007d3a9a4136b}
+Maximum size of seed we read from seed file 
+
+Definition at line 83 of file entropy.\-h.
+
+\hypertarget{entropy_8h_a819aa4f3046aa257738f0dafe481ca1f}{\index{entropy.\-h@{entropy.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-M\-A\-X\-\_\-\-S\-O\-U\-R\-C\-E\-S@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-M\-A\-X\-\_\-\-S\-O\-U\-R\-C\-E\-S}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-M\-A\-X\-\_\-\-S\-O\-U\-R\-C\-E\-S@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-M\-A\-X\-\_\-\-S\-O\-U\-R\-C\-E\-S}!entropy.h@{entropy.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-M\-A\-X\-\_\-\-S\-O\-U\-R\-C\-E\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-M\-A\-X\-\_\-\-S\-O\-U\-R\-C\-E\-S~20}}\label{entropy_8h_a819aa4f3046aa257738f0dafe481ca1f}
+Maximum number of sources supported 
+
+Definition at line 68 of file entropy.\-h.
+
+\hypertarget{entropy_8h_acf3946666d3aa196a7a4ba7705740580}{\index{entropy.\-h@{entropy.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-S\-O\-U\-R\-C\-E\-\_\-\-S\-T\-R\-O\-N\-G@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-S\-O\-U\-R\-C\-E\-\_\-\-S\-T\-R\-O\-N\-G}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-S\-O\-U\-R\-C\-E\-\_\-\-S\-T\-R\-O\-N\-G@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-S\-O\-U\-R\-C\-E\-\_\-\-S\-T\-R\-O\-N\-G}!entropy.h@{entropy.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-S\-O\-U\-R\-C\-E\-\_\-\-S\-T\-R\-O\-N\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-S\-O\-U\-R\-C\-E\-\_\-\-S\-T\-R\-O\-N\-G~1}}\label{entropy_8h_acf3946666d3aa196a7a4ba7705740580}
+Entropy source is strong 
+
+Definition at line 86 of file entropy.\-h.
+
+\hypertarget{entropy_8h_a3aaeef22d87036afb296bfdb4d7d4c4c}{\index{entropy.\-h@{entropy.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-S\-O\-U\-R\-C\-E\-\_\-\-W\-E\-A\-K@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-S\-O\-U\-R\-C\-E\-\_\-\-W\-E\-A\-K}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-S\-O\-U\-R\-C\-E\-\_\-\-W\-E\-A\-K@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-S\-O\-U\-R\-C\-E\-\_\-\-W\-E\-A\-K}!entropy.h@{entropy.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-S\-O\-U\-R\-C\-E\-\_\-\-W\-E\-A\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-S\-O\-U\-R\-C\-E\-\_\-\-W\-E\-A\-K~0}}\label{entropy_8h_a3aaeef22d87036afb296bfdb4d7d4c4c}
+Entropy source is weak 
+
+Definition at line 87 of file entropy.\-h.
+
+\hypertarget{entropy_8h_a356b20cef049a2de3e99909321894463}{\index{entropy.\-h@{entropy.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-F\-I\-L\-E\-\_\-\-I\-O\-\_\-\-E\-R\-R\-O\-R@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-F\-I\-L\-E\-\_\-\-I\-O\-\_\-\-E\-R\-R\-O\-R}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-F\-I\-L\-E\-\_\-\-I\-O\-\_\-\-E\-R\-R\-O\-R@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-F\-I\-L\-E\-\_\-\-I\-O\-\_\-\-E\-R\-R\-O\-R}!entropy.h@{entropy.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-F\-I\-L\-E\-\_\-\-I\-O\-\_\-\-E\-R\-R\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-F\-I\-L\-E\-\_\-\-I\-O\-\_\-\-E\-R\-R\-O\-R~-\/0x003\-F}}\label{entropy_8h_a356b20cef049a2de3e99909321894463}
+Read/write error in file. 
+
+Definition at line 57 of file entropy.\-h.
+
+\hypertarget{entropy_8h_a12a0600bd163efc21469e406a4e194ce}{\index{entropy.\-h@{entropy.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-M\-A\-X\-\_\-\-S\-O\-U\-R\-C\-E\-S@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-M\-A\-X\-\_\-\-S\-O\-U\-R\-C\-E\-S}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-M\-A\-X\-\_\-\-S\-O\-U\-R\-C\-E\-S@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-M\-A\-X\-\_\-\-S\-O\-U\-R\-C\-E\-S}!entropy.h@{entropy.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-M\-A\-X\-\_\-\-S\-O\-U\-R\-C\-E\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-M\-A\-X\-\_\-\-S\-O\-U\-R\-C\-E\-S~-\/0x003\-E}}\label{entropy_8h_a12a0600bd163efc21469e406a4e194ce}
+No more sources can be added. 
+
+Definition at line 54 of file entropy.\-h.
+
+\hypertarget{entropy_8h_ab9f0a333fbef6d5ebe4fda846249f5c6}{\index{entropy.\-h@{entropy.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-N\-O\-\_\-\-S\-O\-U\-R\-C\-E\-S\-\_\-\-D\-E\-F\-I\-N\-E\-D@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-N\-O\-\_\-\-S\-O\-U\-R\-C\-E\-S\-\_\-\-D\-E\-F\-I\-N\-E\-D}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-N\-O\-\_\-\-S\-O\-U\-R\-C\-E\-S\-\_\-\-D\-E\-F\-I\-N\-E\-D@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-N\-O\-\_\-\-S\-O\-U\-R\-C\-E\-S\-\_\-\-D\-E\-F\-I\-N\-E\-D}!entropy.h@{entropy.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-N\-O\-\_\-\-S\-O\-U\-R\-C\-E\-S\-\_\-\-D\-E\-F\-I\-N\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-N\-O\-\_\-\-S\-O\-U\-R\-C\-E\-S\-\_\-\-D\-E\-F\-I\-N\-E\-D~-\/0x0040}}\label{entropy_8h_ab9f0a333fbef6d5ebe4fda846249f5c6}
+No sources have been added to poll. 
+
+Definition at line 55 of file entropy.\-h.
+
+\hypertarget{entropy_8h_a8116299707c4a7fbf19cac3f30ce1e7a}{\index{entropy.\-h@{entropy.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-N\-O\-\_\-\-S\-T\-R\-O\-N\-G\-\_\-\-S\-O\-U\-R\-C\-E@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-N\-O\-\_\-\-S\-T\-R\-O\-N\-G\-\_\-\-S\-O\-U\-R\-C\-E}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-N\-O\-\_\-\-S\-T\-R\-O\-N\-G\-\_\-\-S\-O\-U\-R\-C\-E@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-N\-O\-\_\-\-S\-T\-R\-O\-N\-G\-\_\-\-S\-O\-U\-R\-C\-E}!entropy.h@{entropy.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-N\-O\-\_\-\-S\-T\-R\-O\-N\-G\-\_\-\-S\-O\-U\-R\-C\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-N\-O\-\_\-\-S\-T\-R\-O\-N\-G\-\_\-\-S\-O\-U\-R\-C\-E~-\/0x003\-D}}\label{entropy_8h_a8116299707c4a7fbf19cac3f30ce1e7a}
+No strong sources have been added to poll. 
+
+Definition at line 56 of file entropy.\-h.
+
+\hypertarget{entropy_8h_af4cd68e9098b27fed32e7d4a48a4048b}{\index{entropy.\-h@{entropy.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-S\-O\-U\-R\-C\-E\-\_\-\-F\-A\-I\-L\-E\-D@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-S\-O\-U\-R\-C\-E\-\_\-\-F\-A\-I\-L\-E\-D}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-S\-O\-U\-R\-C\-E\-\_\-\-F\-A\-I\-L\-E\-D@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-S\-O\-U\-R\-C\-E\-\_\-\-F\-A\-I\-L\-E\-D}!entropy.h@{entropy.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-S\-O\-U\-R\-C\-E\-\_\-\-F\-A\-I\-L\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-S\-O\-U\-R\-C\-E\-\_\-\-F\-A\-I\-L\-E\-D~-\/0x003\-C}}\label{entropy_8h_af4cd68e9098b27fed32e7d4a48a4048b}
+Critical entropy source failure. 
+
+Definition at line 53 of file entropy.\-h.
+
+
+
+\subsection{Typedef Documentation}
+\hypertarget{entropy_8h_ac77904920528c196bc0a90c59ae100e4}{\index{entropy.\-h@{entropy.\-h}!mbedtls\-\_\-entropy\-\_\-f\-\_\-source\-\_\-ptr@{mbedtls\-\_\-entropy\-\_\-f\-\_\-source\-\_\-ptr}}
+\index{mbedtls\-\_\-entropy\-\_\-f\-\_\-source\-\_\-ptr@{mbedtls\-\_\-entropy\-\_\-f\-\_\-source\-\_\-ptr}!entropy.h@{entropy.\-h}}
+\subsubsection[{mbedtls\-\_\-entropy\-\_\-f\-\_\-source\-\_\-ptr}]{\setlength{\rightskip}{0pt plus 5cm}typedef int($\ast$ mbedtls\-\_\-entropy\-\_\-f\-\_\-source\-\_\-ptr)(void $\ast$data, unsigned char $\ast$output, size\-\_\-t len, size\-\_\-t $\ast$olen)}}\label{entropy_8h_ac77904920528c196bc0a90c59ae100e4}
+
+
+Entropy poll callback pointer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Callback-\/specific data pointer \\
+\hline
+{\em output} & Data to fill \\
+\hline
+{\em len} & Maximum size to provide \\
+\hline
+{\em olen} & The actual amount of bytes put into the buffer (Can be 0)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if no critical failures occurred, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-S\-O\-U\-R\-C\-E\-\_\-\-F\-A\-I\-L\-E\-D otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 104 of file entropy.\-h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{entropy_8h_ad1bf424d076142e9aeec9e68207f5aaa}{\index{entropy.\-h@{entropy.\-h}!mbedtls\-\_\-entropy\-\_\-add\-\_\-source@{mbedtls\-\_\-entropy\-\_\-add\-\_\-source}}
+\index{mbedtls\-\_\-entropy\-\_\-add\-\_\-source@{mbedtls\-\_\-entropy\-\_\-add\-\_\-source}!entropy.h@{entropy.\-h}}
+\subsubsection[{mbedtls\-\_\-entropy\-\_\-add\-\_\-source}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-entropy\-\_\-add\-\_\-source (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-entropy\-\_\-context} $\ast$}]{ctx, }
+\item[{{\bf mbedtls\-\_\-entropy\-\_\-f\-\_\-source\-\_\-ptr}}]{f\-\_\-source, }
+\item[{void $\ast$}]{p\-\_\-source, }
+\item[{size\-\_\-t}]{threshold, }
+\item[{int}]{strong}
+\end{DoxyParamCaption}
+)}}\label{entropy_8h_ad1bf424d076142e9aeec9e68207f5aaa}
+
+
+Adds an entropy source to poll (Thread-\/safe if M\-B\-E\-D\-T\-L\-S\-\_\-\-T\-H\-R\-E\-A\-D\-I\-N\-G\-\_\-\-C is enabled) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Entropy context \\
+\hline
+{\em f\-\_\-source} & Entropy function \\
+\hline
+{\em p\-\_\-source} & Function data \\
+\hline
+{\em threshold} & Minimum required from source before entropy is released ( with \hyperlink{entropy_8h_a81765f6cdf4e5111bcb9f4324f3234cb}{mbedtls\-\_\-entropy\-\_\-func()} ) (in bytes) \\
+\hline
+{\em strong} & M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-S\-O\-U\-R\-C\-E\-\_\-\-S\-T\-R\-O\-N\-G or M\-B\-E\-D\-T\-S\-L\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-S\-O\-U\-R\-C\-E\-\_\-\-W\-E\-A\-K. At least one strong source needs to be added. Weaker sources (such as the cycle counter) can be used as a complement.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful or M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-M\-A\-X\-\_\-\-S\-O\-U\-R\-C\-E\-S 
+\end{DoxyReturn}
+\hypertarget{entropy_8h_a06778439f8a0e2daa2d3b444e06ad8dd}{\index{entropy.\-h@{entropy.\-h}!mbedtls\-\_\-entropy\-\_\-free@{mbedtls\-\_\-entropy\-\_\-free}}
+\index{mbedtls\-\_\-entropy\-\_\-free@{mbedtls\-\_\-entropy\-\_\-free}!entropy.h@{entropy.\-h}}
+\subsubsection[{mbedtls\-\_\-entropy\-\_\-free}]{\setlength{\rightskip}{0pt plus 5cm}void mbedtls\-\_\-entropy\-\_\-free (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-entropy\-\_\-context} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}}\label{entropy_8h_a06778439f8a0e2daa2d3b444e06ad8dd}
+
+
+Free the data in the context. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Entropy context to free \\
+\hline
+\end{DoxyParams}
+\hypertarget{entropy_8h_a81765f6cdf4e5111bcb9f4324f3234cb}{\index{entropy.\-h@{entropy.\-h}!mbedtls\-\_\-entropy\-\_\-func@{mbedtls\-\_\-entropy\-\_\-func}}
+\index{mbedtls\-\_\-entropy\-\_\-func@{mbedtls\-\_\-entropy\-\_\-func}!entropy.h@{entropy.\-h}}
+\subsubsection[{mbedtls\-\_\-entropy\-\_\-func}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-entropy\-\_\-func (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{data, }
+\item[{unsigned char $\ast$}]{output, }
+\item[{size\-\_\-t}]{len}
+\end{DoxyParamCaption}
+)}}\label{entropy_8h_a81765f6cdf4e5111bcb9f4324f3234cb}
+
+
+Retrieve entropy from the accumulator (Maximum length\-: M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-B\-L\-O\-C\-K\-\_\-\-S\-I\-Z\-E) (Thread-\/safe if M\-B\-E\-D\-T\-L\-S\-\_\-\-T\-H\-R\-E\-A\-D\-I\-N\-G\-\_\-\-C is enabled) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Entropy context \\
+\hline
+{\em output} & Buffer to fill \\
+\hline
+{\em len} & Number of bytes desired, must be at most M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-B\-L\-O\-C\-K\-\_\-\-S\-I\-Z\-E\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, or M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-S\-O\-U\-R\-C\-E\-\_\-\-F\-A\-I\-L\-E\-D 
+\end{DoxyReturn}
+\hypertarget{entropy_8h_ac49de4b842e7d56cfcd1088286a09b7d}{\index{entropy.\-h@{entropy.\-h}!mbedtls\-\_\-entropy\-\_\-gather@{mbedtls\-\_\-entropy\-\_\-gather}}
+\index{mbedtls\-\_\-entropy\-\_\-gather@{mbedtls\-\_\-entropy\-\_\-gather}!entropy.h@{entropy.\-h}}
+\subsubsection[{mbedtls\-\_\-entropy\-\_\-gather}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-entropy\-\_\-gather (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-entropy\-\_\-context} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}}\label{entropy_8h_ac49de4b842e7d56cfcd1088286a09b7d}
+
+
+Trigger an extra gather poll for the accumulator (Thread-\/safe if M\-B\-E\-D\-T\-L\-S\-\_\-\-T\-H\-R\-E\-A\-D\-I\-N\-G\-\_\-\-C is enabled) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Entropy context\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, or M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-S\-O\-U\-R\-C\-E\-\_\-\-F\-A\-I\-L\-E\-D 
+\end{DoxyReturn}
+\hypertarget{entropy_8h_aa901e027093c6fe65dee5760db78aced}{\index{entropy.\-h@{entropy.\-h}!mbedtls\-\_\-entropy\-\_\-init@{mbedtls\-\_\-entropy\-\_\-init}}
+\index{mbedtls\-\_\-entropy\-\_\-init@{mbedtls\-\_\-entropy\-\_\-init}!entropy.h@{entropy.\-h}}
+\subsubsection[{mbedtls\-\_\-entropy\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void mbedtls\-\_\-entropy\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-entropy\-\_\-context} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}}\label{entropy_8h_aa901e027093c6fe65dee5760db78aced}
+
+
+Initialize the context. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Entropy context to initialize \\
+\hline
+\end{DoxyParams}
+\hypertarget{entropy_8h_ad31b29e855ba719ba5282e2da4f5c338}{\index{entropy.\-h@{entropy.\-h}!mbedtls\-\_\-entropy\-\_\-self\-\_\-test@{mbedtls\-\_\-entropy\-\_\-self\-\_\-test}}
+\index{mbedtls\-\_\-entropy\-\_\-self\-\_\-test@{mbedtls\-\_\-entropy\-\_\-self\-\_\-test}!entropy.h@{entropy.\-h}}
+\subsubsection[{mbedtls\-\_\-entropy\-\_\-self\-\_\-test}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-entropy\-\_\-self\-\_\-test (
+\begin{DoxyParamCaption}
+\item[{int}]{verbose}
+\end{DoxyParamCaption}
+)}}\label{entropy_8h_ad31b29e855ba719ba5282e2da4f5c338}
+
+
+Checkup routine. 
+
+\begin{DoxyReturn}{Returns}
+0 if successful, or 1 if a test failed 
+\end{DoxyReturn}
+\hypertarget{entropy_8h_aa79492f288cc3202ea455564be855d64}{\index{entropy.\-h@{entropy.\-h}!mbedtls\-\_\-entropy\-\_\-update\-\_\-manual@{mbedtls\-\_\-entropy\-\_\-update\-\_\-manual}}
+\index{mbedtls\-\_\-entropy\-\_\-update\-\_\-manual@{mbedtls\-\_\-entropy\-\_\-update\-\_\-manual}!entropy.h@{entropy.\-h}}
+\subsubsection[{mbedtls\-\_\-entropy\-\_\-update\-\_\-manual}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-entropy\-\_\-update\-\_\-manual (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-entropy\-\_\-context} $\ast$}]{ctx, }
+\item[{const unsigned char $\ast$}]{data, }
+\item[{size\-\_\-t}]{len}
+\end{DoxyParamCaption}
+)}}\label{entropy_8h_aa79492f288cc3202ea455564be855d64}
+
+
+Add data to the accumulator manually (Thread-\/safe if M\-B\-E\-D\-T\-L\-S\-\_\-\-T\-H\-R\-E\-A\-D\-I\-N\-G\-\_\-\-C is enabled) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Entropy context \\
+\hline
+{\em data} & Data to add \\
+\hline
+{\em len} & Length of data\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful 
+\end{DoxyReturn}
+\hypertarget{entropy_8h_a3d72b19c00eb0cabb319d3d81599a57a}{\index{entropy.\-h@{entropy.\-h}!mbedtls\-\_\-entropy\-\_\-update\-\_\-seed\-\_\-file@{mbedtls\-\_\-entropy\-\_\-update\-\_\-seed\-\_\-file}}
+\index{mbedtls\-\_\-entropy\-\_\-update\-\_\-seed\-\_\-file@{mbedtls\-\_\-entropy\-\_\-update\-\_\-seed\-\_\-file}!entropy.h@{entropy.\-h}}
+\subsubsection[{mbedtls\-\_\-entropy\-\_\-update\-\_\-seed\-\_\-file}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-entropy\-\_\-update\-\_\-seed\-\_\-file (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-entropy\-\_\-context} $\ast$}]{ctx, }
+\item[{const char $\ast$}]{path}
+\end{DoxyParamCaption}
+)}}\label{entropy_8h_a3d72b19c00eb0cabb319d3d81599a57a}
+
+
+Read and update a seed file. Seed is added to this instance. No more than M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-M\-A\-X\-\_\-\-S\-E\-E\-D\-\_\-\-S\-I\-Z\-E bytes are read from the seed file. The rest is ignored. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Entropy context \\
+\hline
+{\em path} & Name of the file\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-F\-I\-L\-E\-\_\-\-I\-O\-\_\-\-E\-R\-R\-O\-R on file error, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-S\-O\-U\-R\-C\-E\-\_\-\-F\-A\-I\-L\-E\-D 
+\end{DoxyReturn}
+\hypertarget{entropy_8h_abffb5c2d08b9cc94788910d463ce3181}{\index{entropy.\-h@{entropy.\-h}!mbedtls\-\_\-entropy\-\_\-write\-\_\-seed\-\_\-file@{mbedtls\-\_\-entropy\-\_\-write\-\_\-seed\-\_\-file}}
+\index{mbedtls\-\_\-entropy\-\_\-write\-\_\-seed\-\_\-file@{mbedtls\-\_\-entropy\-\_\-write\-\_\-seed\-\_\-file}!entropy.h@{entropy.\-h}}
+\subsubsection[{mbedtls\-\_\-entropy\-\_\-write\-\_\-seed\-\_\-file}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-entropy\-\_\-write\-\_\-seed\-\_\-file (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-entropy\-\_\-context} $\ast$}]{ctx, }
+\item[{const char $\ast$}]{path}
+\end{DoxyParamCaption}
+)}}\label{entropy_8h_abffb5c2d08b9cc94788910d463ce3181}
+
+
+Write a seed file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Entropy context \\
+\hline
+{\em path} & Name of the file\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-F\-I\-L\-E\-\_\-\-I\-O\-\_\-\-E\-R\-R\-O\-R on file error, or M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-N\-T\-R\-O\-P\-Y\-\_\-\-S\-O\-U\-R\-C\-E\-\_\-\-F\-A\-I\-L\-E\-D 
+\end{DoxyReturn}

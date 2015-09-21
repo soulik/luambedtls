@@ -1,0 +1,515 @@
+\hypertarget{des_8h}{\section{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/des.h File Reference}
+\label{des_8h}\index{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/des.\-h@{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/des.\-h}}
+}
+
+
+D\-E\-S block cipher.  
+
+
+{\ttfamily \#include \char`\"{}config.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$stddef.\-h$>$}\\*
+{\ttfamily \#include $<$stdint.\-h$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structmbedtls__des__context}{mbedtls\-\_\-des\-\_\-context}
+\begin{DoxyCompactList}\small\item\em D\-E\-S context structure. \end{DoxyCompactList}\item 
+struct \hyperlink{structmbedtls__des3__context}{mbedtls\-\_\-des3\-\_\-context}
+\begin{DoxyCompactList}\small\item\em Triple-\/\-D\-E\-S context structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{des_8h_a2baa8eadc1de93b98c54a459c7817ecd}{\#define {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-D\-E\-S\-\_\-\-E\-N\-C\-R\-Y\-P\-T}~1}\label{des_8h_a2baa8eadc1de93b98c54a459c7817ecd}
+
+\item 
+\hypertarget{des_8h_ae6b569e85f0f2b43420a179a992a1160}{\#define {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-D\-E\-S\-\_\-\-D\-E\-C\-R\-Y\-P\-T}~0}\label{des_8h_ae6b569e85f0f2b43420a179a992a1160}
+
+\item 
+\#define \hyperlink{des_8h_a2804ced2d0ca1eea5988cce20789d534}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-D\-E\-S\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-L\-E\-N\-G\-T\-H}~-\/0x0032
+\item 
+\hypertarget{des_8h_ada76e71315efeead481c398b615b8bdc}{\#define {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-D\-E\-S\-\_\-\-K\-E\-Y\-\_\-\-S\-I\-Z\-E}~8}\label{des_8h_ada76e71315efeead481c398b615b8bdc}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{des_8h_a0db47d1acf616d86fa382025e87ca9b8}{mbedtls\-\_\-des\-\_\-init} (\hyperlink{structmbedtls__des__context}{mbedtls\-\_\-des\-\_\-context} $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Initialize D\-E\-S context. \end{DoxyCompactList}\item 
+void \hyperlink{des_8h_af167e6e2204a49c2e4edb93370a3dab8}{mbedtls\-\_\-des\-\_\-free} (\hyperlink{structmbedtls__des__context}{mbedtls\-\_\-des\-\_\-context} $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Clear D\-E\-S context. \end{DoxyCompactList}\item 
+void \hyperlink{des_8h_abf86c340783d109ea29748dd5714126f}{mbedtls\-\_\-des3\-\_\-init} (\hyperlink{structmbedtls__des3__context}{mbedtls\-\_\-des3\-\_\-context} $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Initialize Triple-\/\-D\-E\-S context. \end{DoxyCompactList}\item 
+void \hyperlink{des_8h_a2e837fe8386148143d98ca9e16d64632}{mbedtls\-\_\-des3\-\_\-free} (\hyperlink{structmbedtls__des3__context}{mbedtls\-\_\-des3\-\_\-context} $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Clear Triple-\/\-D\-E\-S context. \end{DoxyCompactList}\item 
+void \hyperlink{des_8h_a6bd13ab5e6cd7b31bce1d6e17b6740b5}{mbedtls\-\_\-des\-\_\-key\-\_\-set\-\_\-parity} (unsigned char key\mbox{[}M\-B\-E\-D\-T\-L\-S\-\_\-\-D\-E\-S\-\_\-\-K\-E\-Y\-\_\-\-S\-I\-Z\-E\mbox{]})
+\begin{DoxyCompactList}\small\item\em Set key parity on the given key to odd. \end{DoxyCompactList}\item 
+int \hyperlink{des_8h_aa268f8fd445c90b18add317e9a17a046}{mbedtls\-\_\-des\-\_\-key\-\_\-check\-\_\-key\-\_\-parity} (const unsigned char key\mbox{[}M\-B\-E\-D\-T\-L\-S\-\_\-\-D\-E\-S\-\_\-\-K\-E\-Y\-\_\-\-S\-I\-Z\-E\mbox{]})
+\begin{DoxyCompactList}\small\item\em Check that key parity on the given key is odd. \end{DoxyCompactList}\item 
+int \hyperlink{des_8h_aae065a353f2461bbe7150e4827d2d025}{mbedtls\-\_\-des\-\_\-key\-\_\-check\-\_\-weak} (const unsigned char key\mbox{[}M\-B\-E\-D\-T\-L\-S\-\_\-\-D\-E\-S\-\_\-\-K\-E\-Y\-\_\-\-S\-I\-Z\-E\mbox{]})
+\begin{DoxyCompactList}\small\item\em Check that key is not a weak or semi-\/weak D\-E\-S key. \end{DoxyCompactList}\item 
+int \hyperlink{des_8h_a69e09a8459bfffdc473dec3be141d5bb}{mbedtls\-\_\-des\-\_\-setkey\-\_\-enc} (\hyperlink{structmbedtls__des__context}{mbedtls\-\_\-des\-\_\-context} $\ast$ctx, const unsigned char key\mbox{[}M\-B\-E\-D\-T\-L\-S\-\_\-\-D\-E\-S\-\_\-\-K\-E\-Y\-\_\-\-S\-I\-Z\-E\mbox{]})
+\begin{DoxyCompactList}\small\item\em D\-E\-S key schedule (56-\/bit, encryption) \end{DoxyCompactList}\item 
+int \hyperlink{des_8h_a2c7c908813ed41109e5f7f598cc0c9c4}{mbedtls\-\_\-des\-\_\-setkey\-\_\-dec} (\hyperlink{structmbedtls__des__context}{mbedtls\-\_\-des\-\_\-context} $\ast$ctx, const unsigned char key\mbox{[}M\-B\-E\-D\-T\-L\-S\-\_\-\-D\-E\-S\-\_\-\-K\-E\-Y\-\_\-\-S\-I\-Z\-E\mbox{]})
+\begin{DoxyCompactList}\small\item\em D\-E\-S key schedule (56-\/bit, decryption) \end{DoxyCompactList}\item 
+int \hyperlink{des_8h_a99a16d6e93153c83298110aa96fc55b9}{mbedtls\-\_\-des3\-\_\-set2key\-\_\-enc} (\hyperlink{structmbedtls__des3__context}{mbedtls\-\_\-des3\-\_\-context} $\ast$ctx, const unsigned char key\mbox{[}M\-B\-E\-D\-T\-L\-S\-\_\-\-D\-E\-S\-\_\-\-K\-E\-Y\-\_\-\-S\-I\-Z\-E $\ast$2\mbox{]})
+\begin{DoxyCompactList}\small\item\em Triple-\/\-D\-E\-S key schedule (112-\/bit, encryption) \end{DoxyCompactList}\item 
+int \hyperlink{des_8h_a3f1b58a886f8b26a183c5f786670a54a}{mbedtls\-\_\-des3\-\_\-set2key\-\_\-dec} (\hyperlink{structmbedtls__des3__context}{mbedtls\-\_\-des3\-\_\-context} $\ast$ctx, const unsigned char key\mbox{[}M\-B\-E\-D\-T\-L\-S\-\_\-\-D\-E\-S\-\_\-\-K\-E\-Y\-\_\-\-S\-I\-Z\-E $\ast$2\mbox{]})
+\begin{DoxyCompactList}\small\item\em Triple-\/\-D\-E\-S key schedule (112-\/bit, decryption) \end{DoxyCompactList}\item 
+int \hyperlink{des_8h_a6fd7043d3f134c16c5dbe8c442e55f2c}{mbedtls\-\_\-des3\-\_\-set3key\-\_\-enc} (\hyperlink{structmbedtls__des3__context}{mbedtls\-\_\-des3\-\_\-context} $\ast$ctx, const unsigned char key\mbox{[}M\-B\-E\-D\-T\-L\-S\-\_\-\-D\-E\-S\-\_\-\-K\-E\-Y\-\_\-\-S\-I\-Z\-E $\ast$3\mbox{]})
+\begin{DoxyCompactList}\small\item\em Triple-\/\-D\-E\-S key schedule (168-\/bit, encryption) \end{DoxyCompactList}\item 
+int \hyperlink{des_8h_aec78c60a3fa75abd7255d120747fde52}{mbedtls\-\_\-des3\-\_\-set3key\-\_\-dec} (\hyperlink{structmbedtls__des3__context}{mbedtls\-\_\-des3\-\_\-context} $\ast$ctx, const unsigned char key\mbox{[}M\-B\-E\-D\-T\-L\-S\-\_\-\-D\-E\-S\-\_\-\-K\-E\-Y\-\_\-\-S\-I\-Z\-E $\ast$3\mbox{]})
+\begin{DoxyCompactList}\small\item\em Triple-\/\-D\-E\-S key schedule (168-\/bit, decryption) \end{DoxyCompactList}\item 
+int \hyperlink{des_8h_aa713501cc3e30c39a763b4568698f5c1}{mbedtls\-\_\-des\-\_\-crypt\-\_\-ecb} (\hyperlink{structmbedtls__des__context}{mbedtls\-\_\-des\-\_\-context} $\ast$ctx, const unsigned char input\mbox{[}8\mbox{]}, unsigned char output\mbox{[}8\mbox{]})
+\begin{DoxyCompactList}\small\item\em D\-E\-S-\/\-E\-C\-B block encryption/decryption. \end{DoxyCompactList}\item 
+int \hyperlink{des_8h_a95353a2f0d2e8d1377f43f71ca12a231}{mbedtls\-\_\-des\-\_\-crypt\-\_\-cbc} (\hyperlink{structmbedtls__des__context}{mbedtls\-\_\-des\-\_\-context} $\ast$ctx, int mode, size\-\_\-t length, unsigned char iv\mbox{[}8\mbox{]}, const unsigned char $\ast$input, unsigned char $\ast$output)
+\begin{DoxyCompactList}\small\item\em D\-E\-S-\/\-C\-B\-C buffer encryption/decryption. \end{DoxyCompactList}\item 
+int \hyperlink{des_8h_a933b8f629cc201e06f5e89396d065204}{mbedtls\-\_\-des3\-\_\-crypt\-\_\-ecb} (\hyperlink{structmbedtls__des3__context}{mbedtls\-\_\-des3\-\_\-context} $\ast$ctx, const unsigned char input\mbox{[}8\mbox{]}, unsigned char output\mbox{[}8\mbox{]})
+\begin{DoxyCompactList}\small\item\em 3\-D\-E\-S-\/\-E\-C\-B block encryption/decryption \end{DoxyCompactList}\item 
+int \hyperlink{des_8h_a4f5bb9106306e11c906abfa46fc51b94}{mbedtls\-\_\-des3\-\_\-crypt\-\_\-cbc} (\hyperlink{structmbedtls__des3__context}{mbedtls\-\_\-des3\-\_\-context} $\ast$ctx, int mode, size\-\_\-t length, unsigned char iv\mbox{[}8\mbox{]}, const unsigned char $\ast$input, unsigned char $\ast$output)
+\begin{DoxyCompactList}\small\item\em 3\-D\-E\-S-\/\-C\-B\-C buffer encryption/decryption \end{DoxyCompactList}\item 
+void \hyperlink{des_8h_a9ee690737bded4f7f6e12da86110a8e5}{mbedtls\-\_\-des\-\_\-setkey} (uint32\-\_\-t S\-K\mbox{[}32\mbox{]}, const unsigned char key\mbox{[}M\-B\-E\-D\-T\-L\-S\-\_\-\-D\-E\-S\-\_\-\-K\-E\-Y\-\_\-\-S\-I\-Z\-E\mbox{]})
+\begin{DoxyCompactList}\small\item\em Internal function for key expansion. (Only exposed to allow overriding it, see M\-B\-E\-D\-T\-L\-S\-\_\-\-D\-E\-S\-\_\-\-S\-E\-T\-K\-E\-Y\-\_\-\-A\-L\-T) \end{DoxyCompactList}\item 
+int \hyperlink{des_8h_a05ea48cba38269e488ac4d4e54dacc11}{mbedtls\-\_\-des\-\_\-self\-\_\-test} (int verbose)
+\begin{DoxyCompactList}\small\item\em Checkup routine. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+D\-E\-S block cipher. Copyright (C) 2006-\/2015, A\-R\-M Limited, All Rights Reserved
+
+This file is part of mbed T\-L\-S (\href{https://tls.mbed.org}{\tt https\-://tls.\-mbed.\-org})
+
+This program is free software; you can redistribute it and/or modify it under the terms of the G\-N\-U General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but W\-I\-T\-H\-O\-U\-T A\-N\-Y W\-A\-R\-R\-A\-N\-T\-Y; without even the implied warranty of M\-E\-R\-C\-H\-A\-N\-T\-A\-B\-I\-L\-I\-T\-Y or F\-I\-T\-N\-E\-S\-S F\-O\-R A P\-A\-R\-T\-I\-C\-U\-L\-A\-R P\-U\-R\-P\-O\-S\-E. See the G\-N\-U General Public License for more details.
+
+You should have received a copy of the G\-N\-U General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, M\-A 02110-\/1301 U\-S\-A. 
+
+Definition in file \hyperlink{des_8h_source}{des.\-h}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{des_8h_a2804ced2d0ca1eea5988cce20789d534}{\index{des.\-h@{des.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-D\-E\-S\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-L\-E\-N\-G\-T\-H@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-D\-E\-S\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-L\-E\-N\-G\-T\-H}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-D\-E\-S\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-L\-E\-N\-G\-T\-H@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-D\-E\-S\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-L\-E\-N\-G\-T\-H}!des.h@{des.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-D\-E\-S\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-L\-E\-N\-G\-T\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-D\-E\-S\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-L\-E\-N\-G\-T\-H~-\/0x0032}}\label{des_8h_a2804ced2d0ca1eea5988cce20789d534}
+The data input has an invalid length. 
+
+Definition at line 39 of file des.\-h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{des_8h_a4f5bb9106306e11c906abfa46fc51b94}{\index{des.\-h@{des.\-h}!mbedtls\-\_\-des3\-\_\-crypt\-\_\-cbc@{mbedtls\-\_\-des3\-\_\-crypt\-\_\-cbc}}
+\index{mbedtls\-\_\-des3\-\_\-crypt\-\_\-cbc@{mbedtls\-\_\-des3\-\_\-crypt\-\_\-cbc}!des.h@{des.\-h}}
+\subsubsection[{mbedtls\-\_\-des3\-\_\-crypt\-\_\-cbc}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-des3\-\_\-crypt\-\_\-cbc (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-des3\-\_\-context} $\ast$}]{ctx, }
+\item[{int}]{mode, }
+\item[{size\-\_\-t}]{length, }
+\item[{unsigned char}]{iv\mbox{[}8\mbox{]}, }
+\item[{const unsigned char $\ast$}]{input, }
+\item[{unsigned char $\ast$}]{output}
+\end{DoxyParamCaption}
+)}}\label{des_8h_a4f5bb9106306e11c906abfa46fc51b94}
+
+
+3\-D\-E\-S-\/\-C\-B\-C buffer encryption/decryption 
+
+\begin{DoxyNote}{Note}
+Upon exit, the content of the I\-V is updated so that you can call the function same function again on the following block(s) of data and get the same result as if it was encrypted in one call. This allows a \char`\"{}streaming\char`\"{} usage. If on the other hand you need to retain the contents of the I\-V, you should either save it manually or use the cipher module instead.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & 3\-D\-E\-S context \\
+\hline
+{\em mode} & M\-B\-E\-D\-T\-L\-S\-\_\-\-D\-E\-S\-\_\-\-E\-N\-C\-R\-Y\-P\-T or M\-B\-E\-D\-T\-L\-S\-\_\-\-D\-E\-S\-\_\-\-D\-E\-C\-R\-Y\-P\-T \\
+\hline
+{\em length} & length of the input data \\
+\hline
+{\em iv} & initialization vector (updated after use) \\
+\hline
+{\em input} & buffer holding the input data \\
+\hline
+{\em output} & buffer holding the output data\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, or M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-D\-E\-S\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-L\-E\-N\-G\-T\-H 
+\end{DoxyReturn}
+\hypertarget{des_8h_a933b8f629cc201e06f5e89396d065204}{\index{des.\-h@{des.\-h}!mbedtls\-\_\-des3\-\_\-crypt\-\_\-ecb@{mbedtls\-\_\-des3\-\_\-crypt\-\_\-ecb}}
+\index{mbedtls\-\_\-des3\-\_\-crypt\-\_\-ecb@{mbedtls\-\_\-des3\-\_\-crypt\-\_\-ecb}!des.h@{des.\-h}}
+\subsubsection[{mbedtls\-\_\-des3\-\_\-crypt\-\_\-ecb}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-des3\-\_\-crypt\-\_\-ecb (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-des3\-\_\-context} $\ast$}]{ctx, }
+\item[{const unsigned char}]{input\mbox{[}8\mbox{]}, }
+\item[{unsigned char}]{output\mbox{[}8\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{des_8h_a933b8f629cc201e06f5e89396d065204}
+
+
+3\-D\-E\-S-\/\-E\-C\-B block encryption/decryption 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & 3\-D\-E\-S context \\
+\hline
+{\em input} & 64-\/bit input block \\
+\hline
+{\em output} & 64-\/bit output block\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful 
+\end{DoxyReturn}
+\hypertarget{des_8h_a2e837fe8386148143d98ca9e16d64632}{\index{des.\-h@{des.\-h}!mbedtls\-\_\-des3\-\_\-free@{mbedtls\-\_\-des3\-\_\-free}}
+\index{mbedtls\-\_\-des3\-\_\-free@{mbedtls\-\_\-des3\-\_\-free}!des.h@{des.\-h}}
+\subsubsection[{mbedtls\-\_\-des3\-\_\-free}]{\setlength{\rightskip}{0pt plus 5cm}void mbedtls\-\_\-des3\-\_\-free (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-des3\-\_\-context} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}}\label{des_8h_a2e837fe8386148143d98ca9e16d64632}
+
+
+Clear Triple-\/\-D\-E\-S context. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & D\-E\-S3 context to be cleared \\
+\hline
+\end{DoxyParams}
+\hypertarget{des_8h_abf86c340783d109ea29748dd5714126f}{\index{des.\-h@{des.\-h}!mbedtls\-\_\-des3\-\_\-init@{mbedtls\-\_\-des3\-\_\-init}}
+\index{mbedtls\-\_\-des3\-\_\-init@{mbedtls\-\_\-des3\-\_\-init}!des.h@{des.\-h}}
+\subsubsection[{mbedtls\-\_\-des3\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void mbedtls\-\_\-des3\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-des3\-\_\-context} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}}\label{des_8h_abf86c340783d109ea29748dd5714126f}
+
+
+Initialize Triple-\/\-D\-E\-S context. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & D\-E\-S3 context to be initialized \\
+\hline
+\end{DoxyParams}
+\hypertarget{des_8h_a3f1b58a886f8b26a183c5f786670a54a}{\index{des.\-h@{des.\-h}!mbedtls\-\_\-des3\-\_\-set2key\-\_\-dec@{mbedtls\-\_\-des3\-\_\-set2key\-\_\-dec}}
+\index{mbedtls\-\_\-des3\-\_\-set2key\-\_\-dec@{mbedtls\-\_\-des3\-\_\-set2key\-\_\-dec}!des.h@{des.\-h}}
+\subsubsection[{mbedtls\-\_\-des3\-\_\-set2key\-\_\-dec}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-des3\-\_\-set2key\-\_\-dec (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-des3\-\_\-context} $\ast$}]{ctx, }
+\item[{const unsigned char}]{key\mbox{[}\-M\-B\-E\-D\-T\-L\-S\-\_\-\-D\-E\-S\-\_\-\-K\-E\-Y\-\_\-\-S\-I\-Z\-E $\ast$2\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{des_8h_a3f1b58a886f8b26a183c5f786670a54a}
+
+
+Triple-\/\-D\-E\-S key schedule (112-\/bit, decryption) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & 3\-D\-E\-S context to be initialized \\
+\hline
+{\em key} & 16-\/byte secret key\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 
+\end{DoxyReturn}
+\hypertarget{des_8h_a99a16d6e93153c83298110aa96fc55b9}{\index{des.\-h@{des.\-h}!mbedtls\-\_\-des3\-\_\-set2key\-\_\-enc@{mbedtls\-\_\-des3\-\_\-set2key\-\_\-enc}}
+\index{mbedtls\-\_\-des3\-\_\-set2key\-\_\-enc@{mbedtls\-\_\-des3\-\_\-set2key\-\_\-enc}!des.h@{des.\-h}}
+\subsubsection[{mbedtls\-\_\-des3\-\_\-set2key\-\_\-enc}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-des3\-\_\-set2key\-\_\-enc (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-des3\-\_\-context} $\ast$}]{ctx, }
+\item[{const unsigned char}]{key\mbox{[}\-M\-B\-E\-D\-T\-L\-S\-\_\-\-D\-E\-S\-\_\-\-K\-E\-Y\-\_\-\-S\-I\-Z\-E $\ast$2\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{des_8h_a99a16d6e93153c83298110aa96fc55b9}
+
+
+Triple-\/\-D\-E\-S key schedule (112-\/bit, encryption) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & 3\-D\-E\-S context to be initialized \\
+\hline
+{\em key} & 16-\/byte secret key\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 
+\end{DoxyReturn}
+\hypertarget{des_8h_aec78c60a3fa75abd7255d120747fde52}{\index{des.\-h@{des.\-h}!mbedtls\-\_\-des3\-\_\-set3key\-\_\-dec@{mbedtls\-\_\-des3\-\_\-set3key\-\_\-dec}}
+\index{mbedtls\-\_\-des3\-\_\-set3key\-\_\-dec@{mbedtls\-\_\-des3\-\_\-set3key\-\_\-dec}!des.h@{des.\-h}}
+\subsubsection[{mbedtls\-\_\-des3\-\_\-set3key\-\_\-dec}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-des3\-\_\-set3key\-\_\-dec (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-des3\-\_\-context} $\ast$}]{ctx, }
+\item[{const unsigned char}]{key\mbox{[}\-M\-B\-E\-D\-T\-L\-S\-\_\-\-D\-E\-S\-\_\-\-K\-E\-Y\-\_\-\-S\-I\-Z\-E $\ast$3\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{des_8h_aec78c60a3fa75abd7255d120747fde52}
+
+
+Triple-\/\-D\-E\-S key schedule (168-\/bit, decryption) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & 3\-D\-E\-S context to be initialized \\
+\hline
+{\em key} & 24-\/byte secret key\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 
+\end{DoxyReturn}
+\hypertarget{des_8h_a6fd7043d3f134c16c5dbe8c442e55f2c}{\index{des.\-h@{des.\-h}!mbedtls\-\_\-des3\-\_\-set3key\-\_\-enc@{mbedtls\-\_\-des3\-\_\-set3key\-\_\-enc}}
+\index{mbedtls\-\_\-des3\-\_\-set3key\-\_\-enc@{mbedtls\-\_\-des3\-\_\-set3key\-\_\-enc}!des.h@{des.\-h}}
+\subsubsection[{mbedtls\-\_\-des3\-\_\-set3key\-\_\-enc}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-des3\-\_\-set3key\-\_\-enc (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-des3\-\_\-context} $\ast$}]{ctx, }
+\item[{const unsigned char}]{key\mbox{[}\-M\-B\-E\-D\-T\-L\-S\-\_\-\-D\-E\-S\-\_\-\-K\-E\-Y\-\_\-\-S\-I\-Z\-E $\ast$3\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{des_8h_a6fd7043d3f134c16c5dbe8c442e55f2c}
+
+
+Triple-\/\-D\-E\-S key schedule (168-\/bit, encryption) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & 3\-D\-E\-S context to be initialized \\
+\hline
+{\em key} & 24-\/byte secret key\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 
+\end{DoxyReturn}
+\hypertarget{des_8h_a95353a2f0d2e8d1377f43f71ca12a231}{\index{des.\-h@{des.\-h}!mbedtls\-\_\-des\-\_\-crypt\-\_\-cbc@{mbedtls\-\_\-des\-\_\-crypt\-\_\-cbc}}
+\index{mbedtls\-\_\-des\-\_\-crypt\-\_\-cbc@{mbedtls\-\_\-des\-\_\-crypt\-\_\-cbc}!des.h@{des.\-h}}
+\subsubsection[{mbedtls\-\_\-des\-\_\-crypt\-\_\-cbc}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-des\-\_\-crypt\-\_\-cbc (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-des\-\_\-context} $\ast$}]{ctx, }
+\item[{int}]{mode, }
+\item[{size\-\_\-t}]{length, }
+\item[{unsigned char}]{iv\mbox{[}8\mbox{]}, }
+\item[{const unsigned char $\ast$}]{input, }
+\item[{unsigned char $\ast$}]{output}
+\end{DoxyParamCaption}
+)}}\label{des_8h_a95353a2f0d2e8d1377f43f71ca12a231}
+
+
+D\-E\-S-\/\-C\-B\-C buffer encryption/decryption. 
+
+\begin{DoxyNote}{Note}
+Upon exit, the content of the I\-V is updated so that you can call the function same function again on the following block(s) of data and get the same result as if it was encrypted in one call. This allows a \char`\"{}streaming\char`\"{} usage. If on the other hand you need to retain the contents of the I\-V, you should either save it manually or use the cipher module instead.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & D\-E\-S context \\
+\hline
+{\em mode} & M\-B\-E\-D\-T\-L\-S\-\_\-\-D\-E\-S\-\_\-\-E\-N\-C\-R\-Y\-P\-T or M\-B\-E\-D\-T\-L\-S\-\_\-\-D\-E\-S\-\_\-\-D\-E\-C\-R\-Y\-P\-T \\
+\hline
+{\em length} & length of the input data \\
+\hline
+{\em iv} & initialization vector (updated after use) \\
+\hline
+{\em input} & buffer holding the input data \\
+\hline
+{\em output} & buffer holding the output data \\
+\hline
+\end{DoxyParams}
+\hypertarget{des_8h_aa713501cc3e30c39a763b4568698f5c1}{\index{des.\-h@{des.\-h}!mbedtls\-\_\-des\-\_\-crypt\-\_\-ecb@{mbedtls\-\_\-des\-\_\-crypt\-\_\-ecb}}
+\index{mbedtls\-\_\-des\-\_\-crypt\-\_\-ecb@{mbedtls\-\_\-des\-\_\-crypt\-\_\-ecb}!des.h@{des.\-h}}
+\subsubsection[{mbedtls\-\_\-des\-\_\-crypt\-\_\-ecb}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-des\-\_\-crypt\-\_\-ecb (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-des\-\_\-context} $\ast$}]{ctx, }
+\item[{const unsigned char}]{input\mbox{[}8\mbox{]}, }
+\item[{unsigned char}]{output\mbox{[}8\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{des_8h_aa713501cc3e30c39a763b4568698f5c1}
+
+
+D\-E\-S-\/\-E\-C\-B block encryption/decryption. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & D\-E\-S context \\
+\hline
+{\em input} & 64-\/bit input block \\
+\hline
+{\em output} & 64-\/bit output block\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful 
+\end{DoxyReturn}
+\hypertarget{des_8h_af167e6e2204a49c2e4edb93370a3dab8}{\index{des.\-h@{des.\-h}!mbedtls\-\_\-des\-\_\-free@{mbedtls\-\_\-des\-\_\-free}}
+\index{mbedtls\-\_\-des\-\_\-free@{mbedtls\-\_\-des\-\_\-free}!des.h@{des.\-h}}
+\subsubsection[{mbedtls\-\_\-des\-\_\-free}]{\setlength{\rightskip}{0pt plus 5cm}void mbedtls\-\_\-des\-\_\-free (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-des\-\_\-context} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}}\label{des_8h_af167e6e2204a49c2e4edb93370a3dab8}
+
+
+Clear D\-E\-S context. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & D\-E\-S context to be cleared \\
+\hline
+\end{DoxyParams}
+\hypertarget{des_8h_a0db47d1acf616d86fa382025e87ca9b8}{\index{des.\-h@{des.\-h}!mbedtls\-\_\-des\-\_\-init@{mbedtls\-\_\-des\-\_\-init}}
+\index{mbedtls\-\_\-des\-\_\-init@{mbedtls\-\_\-des\-\_\-init}!des.h@{des.\-h}}
+\subsubsection[{mbedtls\-\_\-des\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void mbedtls\-\_\-des\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-des\-\_\-context} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}}\label{des_8h_a0db47d1acf616d86fa382025e87ca9b8}
+
+
+Initialize D\-E\-S context. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & D\-E\-S context to be initialized \\
+\hline
+\end{DoxyParams}
+\hypertarget{des_8h_aa268f8fd445c90b18add317e9a17a046}{\index{des.\-h@{des.\-h}!mbedtls\-\_\-des\-\_\-key\-\_\-check\-\_\-key\-\_\-parity@{mbedtls\-\_\-des\-\_\-key\-\_\-check\-\_\-key\-\_\-parity}}
+\index{mbedtls\-\_\-des\-\_\-key\-\_\-check\-\_\-key\-\_\-parity@{mbedtls\-\_\-des\-\_\-key\-\_\-check\-\_\-key\-\_\-parity}!des.h@{des.\-h}}
+\subsubsection[{mbedtls\-\_\-des\-\_\-key\-\_\-check\-\_\-key\-\_\-parity}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-des\-\_\-key\-\_\-check\-\_\-key\-\_\-parity (
+\begin{DoxyParamCaption}
+\item[{const unsigned char}]{key\mbox{[}\-M\-B\-E\-D\-T\-L\-S\-\_\-\-D\-E\-S\-\_\-\-K\-E\-Y\-\_\-\-S\-I\-Z\-E\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{des_8h_aa268f8fd445c90b18add317e9a17a046}
+
+
+Check that key parity on the given key is odd. 
+
+\begin{DoxyVerb}            DES keys are 56 bits long, but each byte is padded with
+            a parity bit to allow verification.
+\end{DoxyVerb}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & 8-\/byte secret key\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 is parity was ok, 1 if parity was not correct. 
+\end{DoxyReturn}
+\hypertarget{des_8h_aae065a353f2461bbe7150e4827d2d025}{\index{des.\-h@{des.\-h}!mbedtls\-\_\-des\-\_\-key\-\_\-check\-\_\-weak@{mbedtls\-\_\-des\-\_\-key\-\_\-check\-\_\-weak}}
+\index{mbedtls\-\_\-des\-\_\-key\-\_\-check\-\_\-weak@{mbedtls\-\_\-des\-\_\-key\-\_\-check\-\_\-weak}!des.h@{des.\-h}}
+\subsubsection[{mbedtls\-\_\-des\-\_\-key\-\_\-check\-\_\-weak}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-des\-\_\-key\-\_\-check\-\_\-weak (
+\begin{DoxyParamCaption}
+\item[{const unsigned char}]{key\mbox{[}\-M\-B\-E\-D\-T\-L\-S\-\_\-\-D\-E\-S\-\_\-\-K\-E\-Y\-\_\-\-S\-I\-Z\-E\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{des_8h_aae065a353f2461bbe7150e4827d2d025}
+
+
+Check that key is not a weak or semi-\/weak D\-E\-S key. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & 8-\/byte secret key\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if no weak key was found, 1 if a weak key was identified. 
+\end{DoxyReturn}
+\hypertarget{des_8h_a6bd13ab5e6cd7b31bce1d6e17b6740b5}{\index{des.\-h@{des.\-h}!mbedtls\-\_\-des\-\_\-key\-\_\-set\-\_\-parity@{mbedtls\-\_\-des\-\_\-key\-\_\-set\-\_\-parity}}
+\index{mbedtls\-\_\-des\-\_\-key\-\_\-set\-\_\-parity@{mbedtls\-\_\-des\-\_\-key\-\_\-set\-\_\-parity}!des.h@{des.\-h}}
+\subsubsection[{mbedtls\-\_\-des\-\_\-key\-\_\-set\-\_\-parity}]{\setlength{\rightskip}{0pt plus 5cm}void mbedtls\-\_\-des\-\_\-key\-\_\-set\-\_\-parity (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{key\mbox{[}\-M\-B\-E\-D\-T\-L\-S\-\_\-\-D\-E\-S\-\_\-\-K\-E\-Y\-\_\-\-S\-I\-Z\-E\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{des_8h_a6bd13ab5e6cd7b31bce1d6e17b6740b5}
+
+
+Set key parity on the given key to odd. 
+
+\begin{DoxyVerb}            DES keys are 56 bits long, but each byte is padded with
+            a parity bit to allow verification.
+\end{DoxyVerb}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & 8-\/byte secret key \\
+\hline
+\end{DoxyParams}
+\hypertarget{des_8h_a05ea48cba38269e488ac4d4e54dacc11}{\index{des.\-h@{des.\-h}!mbedtls\-\_\-des\-\_\-self\-\_\-test@{mbedtls\-\_\-des\-\_\-self\-\_\-test}}
+\index{mbedtls\-\_\-des\-\_\-self\-\_\-test@{mbedtls\-\_\-des\-\_\-self\-\_\-test}!des.h@{des.\-h}}
+\subsubsection[{mbedtls\-\_\-des\-\_\-self\-\_\-test}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-des\-\_\-self\-\_\-test (
+\begin{DoxyParamCaption}
+\item[{int}]{verbose}
+\end{DoxyParamCaption}
+)}}\label{des_8h_a05ea48cba38269e488ac4d4e54dacc11}
+
+
+Checkup routine. 
+
+\begin{DoxyReturn}{Returns}
+0 if successful, or 1 if the test failed 
+\end{DoxyReturn}
+\hypertarget{des_8h_a9ee690737bded4f7f6e12da86110a8e5}{\index{des.\-h@{des.\-h}!mbedtls\-\_\-des\-\_\-setkey@{mbedtls\-\_\-des\-\_\-setkey}}
+\index{mbedtls\-\_\-des\-\_\-setkey@{mbedtls\-\_\-des\-\_\-setkey}!des.h@{des.\-h}}
+\subsubsection[{mbedtls\-\_\-des\-\_\-setkey}]{\setlength{\rightskip}{0pt plus 5cm}void mbedtls\-\_\-des\-\_\-setkey (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{S\-K\mbox{[}32\mbox{]}, }
+\item[{const unsigned char}]{key\mbox{[}\-M\-B\-E\-D\-T\-L\-S\-\_\-\-D\-E\-S\-\_\-\-K\-E\-Y\-\_\-\-S\-I\-Z\-E\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{des_8h_a9ee690737bded4f7f6e12da86110a8e5}
+
+
+Internal function for key expansion. (Only exposed to allow overriding it, see M\-B\-E\-D\-T\-L\-S\-\_\-\-D\-E\-S\-\_\-\-S\-E\-T\-K\-E\-Y\-\_\-\-A\-L\-T) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em S\-K} & Round keys \\
+\hline
+{\em key} & Base key \\
+\hline
+\end{DoxyParams}
+\hypertarget{des_8h_a2c7c908813ed41109e5f7f598cc0c9c4}{\index{des.\-h@{des.\-h}!mbedtls\-\_\-des\-\_\-setkey\-\_\-dec@{mbedtls\-\_\-des\-\_\-setkey\-\_\-dec}}
+\index{mbedtls\-\_\-des\-\_\-setkey\-\_\-dec@{mbedtls\-\_\-des\-\_\-setkey\-\_\-dec}!des.h@{des.\-h}}
+\subsubsection[{mbedtls\-\_\-des\-\_\-setkey\-\_\-dec}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-des\-\_\-setkey\-\_\-dec (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-des\-\_\-context} $\ast$}]{ctx, }
+\item[{const unsigned char}]{key\mbox{[}\-M\-B\-E\-D\-T\-L\-S\-\_\-\-D\-E\-S\-\_\-\-K\-E\-Y\-\_\-\-S\-I\-Z\-E\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{des_8h_a2c7c908813ed41109e5f7f598cc0c9c4}
+
+
+D\-E\-S key schedule (56-\/bit, decryption) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & D\-E\-S context to be initialized \\
+\hline
+{\em key} & 8-\/byte secret key\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 
+\end{DoxyReturn}
+\hypertarget{des_8h_a69e09a8459bfffdc473dec3be141d5bb}{\index{des.\-h@{des.\-h}!mbedtls\-\_\-des\-\_\-setkey\-\_\-enc@{mbedtls\-\_\-des\-\_\-setkey\-\_\-enc}}
+\index{mbedtls\-\_\-des\-\_\-setkey\-\_\-enc@{mbedtls\-\_\-des\-\_\-setkey\-\_\-enc}!des.h@{des.\-h}}
+\subsubsection[{mbedtls\-\_\-des\-\_\-setkey\-\_\-enc}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-des\-\_\-setkey\-\_\-enc (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-des\-\_\-context} $\ast$}]{ctx, }
+\item[{const unsigned char}]{key\mbox{[}\-M\-B\-E\-D\-T\-L\-S\-\_\-\-D\-E\-S\-\_\-\-K\-E\-Y\-\_\-\-S\-I\-Z\-E\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{des_8h_a69e09a8459bfffdc473dec3be141d5bb}
+
+
+D\-E\-S key schedule (56-\/bit, encryption) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & D\-E\-S context to be initialized \\
+\hline
+{\em key} & 8-\/byte secret key\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 
+\end{DoxyReturn}

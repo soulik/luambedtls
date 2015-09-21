@@ -1,0 +1,198 @@
+\hypertarget{ssl__cache_8h}{\section{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/ssl\-\_\-cache.h File Reference}
+\label{ssl__cache_8h}\index{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/ssl\-\_\-cache.\-h@{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/ssl\-\_\-cache.\-h}}
+}
+
+
+S\-S\-L session cache implementation.  
+
+
+{\ttfamily \#include \char`\"{}ssl.\-h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structmbedtls__ssl__cache__entry}{mbedtls\-\_\-ssl\-\_\-cache\-\_\-entry}
+\begin{DoxyCompactList}\small\item\em This structure is used for storing cache entries. \end{DoxyCompactList}\item 
+struct \hyperlink{structmbedtls__ssl__cache__context}{mbedtls\-\_\-ssl\-\_\-cache\-\_\-context}
+\begin{DoxyCompactList}\small\item\em Cache context. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{Indent}{\bf S\-E\-C\-T\-I\-O\-N\-: Module settings}\par
+{\em The configuration options you can set for this module are in this section. Either change them in \hyperlink{config_8h}{config.\-h} or define them on the compiler command line. }\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{ssl__cache_8h_a02b027cfb82a0436a19bfeada16cb8db}{M\-B\-E\-D\-T\-L\-S\-\_\-\-S\-S\-L\-\_\-\-C\-A\-C\-H\-E\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-I\-M\-E\-O\-U\-T}~86400
+\item 
+\#define \hyperlink{ssl__cache_8h_a03256bf3d0f0c370d6984b441b86567e}{M\-B\-E\-D\-T\-L\-S\-\_\-\-S\-S\-L\-\_\-\-C\-A\-C\-H\-E\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-A\-X\-\_\-\-E\-N\-T\-R\-I\-E\-S}~50
+\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{ssl__cache_8h_a9abd00554287df218aa9c3b035a2037a}{typedef struct \\*
+\hyperlink{structmbedtls__ssl__cache__context}{mbedtls\-\_\-ssl\-\_\-cache\-\_\-context} {\bfseries mbedtls\-\_\-ssl\-\_\-cache\-\_\-context}}\label{ssl__cache_8h_a9abd00554287df218aa9c3b035a2037a}
+
+\item 
+\hypertarget{ssl__cache_8h_a332c11cba2ba38db69b96458551da577}{typedef struct \\*
+\hyperlink{structmbedtls__ssl__cache__entry}{mbedtls\-\_\-ssl\-\_\-cache\-\_\-entry} {\bfseries mbedtls\-\_\-ssl\-\_\-cache\-\_\-entry}}\label{ssl__cache_8h_a332c11cba2ba38db69b96458551da577}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{ssl__cache_8h_a90886fd9ad56471c5ebaed2e05086cd5}{mbedtls\-\_\-ssl\-\_\-cache\-\_\-init} (\hyperlink{structmbedtls__ssl__cache__context}{mbedtls\-\_\-ssl\-\_\-cache\-\_\-context} $\ast$cache)
+\begin{DoxyCompactList}\small\item\em Initialize an S\-S\-L cache context. \end{DoxyCompactList}\item 
+int \hyperlink{ssl__cache_8h_af0ab0006ecbbec9405be5566ac16c4b3}{mbedtls\-\_\-ssl\-\_\-cache\-\_\-get} (void $\ast$data, \hyperlink{structmbedtls__ssl__session}{mbedtls\-\_\-ssl\-\_\-session} $\ast$session)
+\begin{DoxyCompactList}\small\item\em Cache get callback implementation (Thread-\/safe if M\-B\-E\-D\-T\-L\-S\-\_\-\-T\-H\-R\-E\-A\-D\-I\-N\-G\-\_\-\-C is enabled) \end{DoxyCompactList}\item 
+int \hyperlink{ssl__cache_8h_a896a81cf3107ba7464e6273970c2c1eb}{mbedtls\-\_\-ssl\-\_\-cache\-\_\-set} (void $\ast$data, const \hyperlink{structmbedtls__ssl__session}{mbedtls\-\_\-ssl\-\_\-session} $\ast$session)
+\begin{DoxyCompactList}\small\item\em Cache set callback implementation (Thread-\/safe if M\-B\-E\-D\-T\-L\-S\-\_\-\-T\-H\-R\-E\-A\-D\-I\-N\-G\-\_\-\-C is enabled) \end{DoxyCompactList}\item 
+void \hyperlink{ssl__cache_8h_aa3468c4ebd9484227436014db30b8f5f}{mbedtls\-\_\-ssl\-\_\-cache\-\_\-set\-\_\-timeout} (\hyperlink{structmbedtls__ssl__cache__context}{mbedtls\-\_\-ssl\-\_\-cache\-\_\-context} $\ast$cache, int timeout)
+\begin{DoxyCompactList}\small\item\em Set the cache timeout (Default\-: M\-B\-E\-D\-T\-L\-S\-\_\-\-S\-S\-L\-\_\-\-C\-A\-C\-H\-E\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-I\-M\-E\-O\-U\-T (1 day)) \end{DoxyCompactList}\item 
+void \hyperlink{ssl__cache_8h_abc39c23cf3f791359104d9094bd9cf6f}{mbedtls\-\_\-ssl\-\_\-cache\-\_\-set\-\_\-max\-\_\-entries} (\hyperlink{structmbedtls__ssl__cache__context}{mbedtls\-\_\-ssl\-\_\-cache\-\_\-context} $\ast$cache, int max)
+\begin{DoxyCompactList}\small\item\em Set the cache timeout (Default\-: M\-B\-E\-D\-T\-L\-S\-\_\-\-S\-S\-L\-\_\-\-C\-A\-C\-H\-E\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-A\-X\-\_\-\-E\-N\-T\-R\-I\-E\-S (50)) \end{DoxyCompactList}\item 
+void \hyperlink{ssl__cache_8h_a93a35f5cd109f9d698bfac659905c0d8}{mbedtls\-\_\-ssl\-\_\-cache\-\_\-free} (\hyperlink{structmbedtls__ssl__cache__context}{mbedtls\-\_\-ssl\-\_\-cache\-\_\-context} $\ast$cache)
+\begin{DoxyCompactList}\small\item\em Free referenced items in a cache context and clear memory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+S\-S\-L session cache implementation. Copyright (C) 2006-\/2015, A\-R\-M Limited, All Rights Reserved
+
+This file is part of mbed T\-L\-S (\href{https://tls.mbed.org}{\tt https\-://tls.\-mbed.\-org})
+
+This program is free software; you can redistribute it and/or modify it under the terms of the G\-N\-U General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but W\-I\-T\-H\-O\-U\-T A\-N\-Y W\-A\-R\-R\-A\-N\-T\-Y; without even the implied warranty of M\-E\-R\-C\-H\-A\-N\-T\-A\-B\-I\-L\-I\-T\-Y or F\-I\-T\-N\-E\-S\-S F\-O\-R A P\-A\-R\-T\-I\-C\-U\-L\-A\-R P\-U\-R\-P\-O\-S\-E. See the G\-N\-U General Public License for more details.
+
+You should have received a copy of the G\-N\-U General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, M\-A 02110-\/1301 U\-S\-A. 
+
+Definition in file \hyperlink{ssl__cache_8h_source}{ssl\-\_\-cache.\-h}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{ssl__cache_8h_a03256bf3d0f0c370d6984b441b86567e}{\index{ssl\-\_\-cache.\-h@{ssl\-\_\-cache.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-S\-S\-L\-\_\-\-C\-A\-C\-H\-E\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-A\-X\-\_\-\-E\-N\-T\-R\-I\-E\-S@{M\-B\-E\-D\-T\-L\-S\-\_\-\-S\-S\-L\-\_\-\-C\-A\-C\-H\-E\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-A\-X\-\_\-\-E\-N\-T\-R\-I\-E\-S}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-S\-S\-L\-\_\-\-C\-A\-C\-H\-E\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-A\-X\-\_\-\-E\-N\-T\-R\-I\-E\-S@{M\-B\-E\-D\-T\-L\-S\-\_\-\-S\-S\-L\-\_\-\-C\-A\-C\-H\-E\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-A\-X\-\_\-\-E\-N\-T\-R\-I\-E\-S}!ssl_cache.h@{ssl\-\_\-cache.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-S\-S\-L\-\_\-\-C\-A\-C\-H\-E\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-A\-X\-\_\-\-E\-N\-T\-R\-I\-E\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-S\-S\-L\-\_\-\-C\-A\-C\-H\-E\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-A\-X\-\_\-\-E\-N\-T\-R\-I\-E\-S~50}}\label{ssl__cache_8h_a03256bf3d0f0c370d6984b441b86567e}
+Maximum entries in cache 
+
+Definition at line 46 of file ssl\-\_\-cache.\-h.
+
+\hypertarget{ssl__cache_8h_a02b027cfb82a0436a19bfeada16cb8db}{\index{ssl\-\_\-cache.\-h@{ssl\-\_\-cache.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-S\-S\-L\-\_\-\-C\-A\-C\-H\-E\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-I\-M\-E\-O\-U\-T@{M\-B\-E\-D\-T\-L\-S\-\_\-\-S\-S\-L\-\_\-\-C\-A\-C\-H\-E\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-I\-M\-E\-O\-U\-T}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-S\-S\-L\-\_\-\-C\-A\-C\-H\-E\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-I\-M\-E\-O\-U\-T@{M\-B\-E\-D\-T\-L\-S\-\_\-\-S\-S\-L\-\_\-\-C\-A\-C\-H\-E\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-I\-M\-E\-O\-U\-T}!ssl_cache.h@{ssl\-\_\-cache.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-S\-S\-L\-\_\-\-C\-A\-C\-H\-E\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-I\-M\-E\-O\-U\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-S\-S\-L\-\_\-\-C\-A\-C\-H\-E\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-I\-M\-E\-O\-U\-T~86400}}\label{ssl__cache_8h_a02b027cfb82a0436a19bfeada16cb8db}
+1 day 
+
+Definition at line 42 of file ssl\-\_\-cache.\-h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{ssl__cache_8h_a93a35f5cd109f9d698bfac659905c0d8}{\index{ssl\-\_\-cache.\-h@{ssl\-\_\-cache.\-h}!mbedtls\-\_\-ssl\-\_\-cache\-\_\-free@{mbedtls\-\_\-ssl\-\_\-cache\-\_\-free}}
+\index{mbedtls\-\_\-ssl\-\_\-cache\-\_\-free@{mbedtls\-\_\-ssl\-\_\-cache\-\_\-free}!ssl_cache.h@{ssl\-\_\-cache.\-h}}
+\subsubsection[{mbedtls\-\_\-ssl\-\_\-cache\-\_\-free}]{\setlength{\rightskip}{0pt plus 5cm}void mbedtls\-\_\-ssl\-\_\-cache\-\_\-free (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-ssl\-\_\-cache\-\_\-context} $\ast$}]{cache}
+\end{DoxyParamCaption}
+)}}\label{ssl__cache_8h_a93a35f5cd109f9d698bfac659905c0d8}
+
+
+Free referenced items in a cache context and clear memory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cache} & S\-S\-L cache context \\
+\hline
+\end{DoxyParams}
+\hypertarget{ssl__cache_8h_af0ab0006ecbbec9405be5566ac16c4b3}{\index{ssl\-\_\-cache.\-h@{ssl\-\_\-cache.\-h}!mbedtls\-\_\-ssl\-\_\-cache\-\_\-get@{mbedtls\-\_\-ssl\-\_\-cache\-\_\-get}}
+\index{mbedtls\-\_\-ssl\-\_\-cache\-\_\-get@{mbedtls\-\_\-ssl\-\_\-cache\-\_\-get}!ssl_cache.h@{ssl\-\_\-cache.\-h}}
+\subsubsection[{mbedtls\-\_\-ssl\-\_\-cache\-\_\-get}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-ssl\-\_\-cache\-\_\-get (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{data, }
+\item[{{\bf mbedtls\-\_\-ssl\-\_\-session} $\ast$}]{session}
+\end{DoxyParamCaption}
+)}}\label{ssl__cache_8h_af0ab0006ecbbec9405be5566ac16c4b3}
+
+
+Cache get callback implementation (Thread-\/safe if M\-B\-E\-D\-T\-L\-S\-\_\-\-T\-H\-R\-E\-A\-D\-I\-N\-G\-\_\-\-C is enabled) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & S\-S\-L cache context \\
+\hline
+{\em session} & session to retrieve entry for \\
+\hline
+\end{DoxyParams}
+\hypertarget{ssl__cache_8h_a90886fd9ad56471c5ebaed2e05086cd5}{\index{ssl\-\_\-cache.\-h@{ssl\-\_\-cache.\-h}!mbedtls\-\_\-ssl\-\_\-cache\-\_\-init@{mbedtls\-\_\-ssl\-\_\-cache\-\_\-init}}
+\index{mbedtls\-\_\-ssl\-\_\-cache\-\_\-init@{mbedtls\-\_\-ssl\-\_\-cache\-\_\-init}!ssl_cache.h@{ssl\-\_\-cache.\-h}}
+\subsubsection[{mbedtls\-\_\-ssl\-\_\-cache\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void mbedtls\-\_\-ssl\-\_\-cache\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-ssl\-\_\-cache\-\_\-context} $\ast$}]{cache}
+\end{DoxyParamCaption}
+)}}\label{ssl__cache_8h_a90886fd9ad56471c5ebaed2e05086cd5}
+
+
+Initialize an S\-S\-L cache context. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cache} & S\-S\-L cache context \\
+\hline
+\end{DoxyParams}
+\hypertarget{ssl__cache_8h_a896a81cf3107ba7464e6273970c2c1eb}{\index{ssl\-\_\-cache.\-h@{ssl\-\_\-cache.\-h}!mbedtls\-\_\-ssl\-\_\-cache\-\_\-set@{mbedtls\-\_\-ssl\-\_\-cache\-\_\-set}}
+\index{mbedtls\-\_\-ssl\-\_\-cache\-\_\-set@{mbedtls\-\_\-ssl\-\_\-cache\-\_\-set}!ssl_cache.h@{ssl\-\_\-cache.\-h}}
+\subsubsection[{mbedtls\-\_\-ssl\-\_\-cache\-\_\-set}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-ssl\-\_\-cache\-\_\-set (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{data, }
+\item[{const {\bf mbedtls\-\_\-ssl\-\_\-session} $\ast$}]{session}
+\end{DoxyParamCaption}
+)}}\label{ssl__cache_8h_a896a81cf3107ba7464e6273970c2c1eb}
+
+
+Cache set callback implementation (Thread-\/safe if M\-B\-E\-D\-T\-L\-S\-\_\-\-T\-H\-R\-E\-A\-D\-I\-N\-G\-\_\-\-C is enabled) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & S\-S\-L cache context \\
+\hline
+{\em session} & session to store entry for \\
+\hline
+\end{DoxyParams}
+\hypertarget{ssl__cache_8h_abc39c23cf3f791359104d9094bd9cf6f}{\index{ssl\-\_\-cache.\-h@{ssl\-\_\-cache.\-h}!mbedtls\-\_\-ssl\-\_\-cache\-\_\-set\-\_\-max\-\_\-entries@{mbedtls\-\_\-ssl\-\_\-cache\-\_\-set\-\_\-max\-\_\-entries}}
+\index{mbedtls\-\_\-ssl\-\_\-cache\-\_\-set\-\_\-max\-\_\-entries@{mbedtls\-\_\-ssl\-\_\-cache\-\_\-set\-\_\-max\-\_\-entries}!ssl_cache.h@{ssl\-\_\-cache.\-h}}
+\subsubsection[{mbedtls\-\_\-ssl\-\_\-cache\-\_\-set\-\_\-max\-\_\-entries}]{\setlength{\rightskip}{0pt plus 5cm}void mbedtls\-\_\-ssl\-\_\-cache\-\_\-set\-\_\-max\-\_\-entries (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-ssl\-\_\-cache\-\_\-context} $\ast$}]{cache, }
+\item[{int}]{max}
+\end{DoxyParamCaption}
+)}}\label{ssl__cache_8h_abc39c23cf3f791359104d9094bd9cf6f}
+
+
+Set the cache timeout (Default\-: M\-B\-E\-D\-T\-L\-S\-\_\-\-S\-S\-L\-\_\-\-C\-A\-C\-H\-E\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-A\-X\-\_\-\-E\-N\-T\-R\-I\-E\-S (50)) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cache} & S\-S\-L cache context \\
+\hline
+{\em max} & cache entry maximum \\
+\hline
+\end{DoxyParams}
+\hypertarget{ssl__cache_8h_aa3468c4ebd9484227436014db30b8f5f}{\index{ssl\-\_\-cache.\-h@{ssl\-\_\-cache.\-h}!mbedtls\-\_\-ssl\-\_\-cache\-\_\-set\-\_\-timeout@{mbedtls\-\_\-ssl\-\_\-cache\-\_\-set\-\_\-timeout}}
+\index{mbedtls\-\_\-ssl\-\_\-cache\-\_\-set\-\_\-timeout@{mbedtls\-\_\-ssl\-\_\-cache\-\_\-set\-\_\-timeout}!ssl_cache.h@{ssl\-\_\-cache.\-h}}
+\subsubsection[{mbedtls\-\_\-ssl\-\_\-cache\-\_\-set\-\_\-timeout}]{\setlength{\rightskip}{0pt plus 5cm}void mbedtls\-\_\-ssl\-\_\-cache\-\_\-set\-\_\-timeout (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-ssl\-\_\-cache\-\_\-context} $\ast$}]{cache, }
+\item[{int}]{timeout}
+\end{DoxyParamCaption}
+)}}\label{ssl__cache_8h_aa3468c4ebd9484227436014db30b8f5f}
+
+
+Set the cache timeout (Default\-: M\-B\-E\-D\-T\-L\-S\-\_\-\-S\-S\-L\-\_\-\-C\-A\-C\-H\-E\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-I\-M\-E\-O\-U\-T (1 day)) 
+
+\begin{DoxyVerb}            A timeout of 0 indicates no timeout.
+\end{DoxyVerb}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em cache} & S\-S\-L cache context \\
+\hline
+{\em timeout} & cache entry timeout in seconds \\
+\hline
+\end{DoxyParams}

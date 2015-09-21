@@ -1,0 +1,69 @@
+\hypertarget{bn__mul_8h}{\section{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/bn\-\_\-mul.h File Reference}
+\label{bn__mul_8h}\index{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/bn\-\_\-mul.\-h@{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/bn\-\_\-mul.\-h}}
+}
+
+
+Multi-\/precision integer library.  
+
+
+{\ttfamily \#include \char`\"{}bignum.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{bn__mul_8h_a71921cebf4610b0dbb2b7a0daaf3fedf}{\#define {\bfseries asm}~\-\_\-\-\_\-asm}\label{bn__mul_8h_a71921cebf4610b0dbb2b7a0daaf3fedf}
+
+\item 
+\#define {\bfseries M\-U\-L\-A\-D\-D\-C\-\_\-\-I\-N\-I\-T}
+\item 
+\#define {\bfseries M\-U\-L\-A\-D\-D\-C\-\_\-\-C\-O\-R\-E}
+\item 
+\hypertarget{bn__mul_8h_aca47b090c97546b17261fdd712e910f9}{\#define {\bfseries M\-U\-L\-A\-D\-D\-C\-\_\-\-S\-T\-O\-P}~\}}\label{bn__mul_8h_aca47b090c97546b17261fdd712e910f9}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Multi-\/precision integer library. Copyright (C) 2006-\/2015, A\-R\-M Limited, All Rights Reserved
+
+This file is part of mbed T\-L\-S (\href{https://tls.mbed.org}{\tt https\-://tls.\-mbed.\-org})
+
+This program is free software; you can redistribute it and/or modify it under the terms of the G\-N\-U General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but W\-I\-T\-H\-O\-U\-T A\-N\-Y W\-A\-R\-R\-A\-N\-T\-Y; without even the implied warranty of M\-E\-R\-C\-H\-A\-N\-T\-A\-B\-I\-L\-I\-T\-Y or F\-I\-T\-N\-E\-S\-S F\-O\-R A P\-A\-R\-T\-I\-C\-U\-L\-A\-R P\-U\-R\-P\-O\-S\-E. See the G\-N\-U General Public License for more details.
+
+You should have received a copy of the G\-N\-U General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, M\-A 02110-\/1301 U\-S\-A. 
+
+Definition in file \hyperlink{bn__mul_8h_source}{bn\-\_\-mul.\-h}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{bn__mul_8h_a3b3b2d66bb9377769084b8f69e6a0d3c}{\index{bn\-\_\-mul.\-h@{bn\-\_\-mul.\-h}!M\-U\-L\-A\-D\-D\-C\-\_\-\-C\-O\-R\-E@{M\-U\-L\-A\-D\-D\-C\-\_\-\-C\-O\-R\-E}}
+\index{M\-U\-L\-A\-D\-D\-C\-\_\-\-C\-O\-R\-E@{M\-U\-L\-A\-D\-D\-C\-\_\-\-C\-O\-R\-E}!bn_mul.h@{bn\-\_\-mul.\-h}}
+\subsubsection[{M\-U\-L\-A\-D\-D\-C\-\_\-\-C\-O\-R\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-U\-L\-A\-D\-D\-C\-\_\-\-C\-O\-R\-E}}\label{bn__mul_8h_a3b3b2d66bb9377769084b8f69e6a0d3c}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+r   = *(s++) * (mbedtls\_t\_udbl) b;          \(\backslash\)
+    r0  = (mbedtls\_mpi\_uint) r;                   \(\backslash\)
+    r1  = (mbedtls\_mpi\_uint)( r >> biL );         \(\backslash\)
+    r0 += c;  r1 += (r0 <  c);          \(\backslash\)
+    r0 += *d; r1 += (r0 < *d);          \(\backslash\)
+    c = r1; *(d++) = r0;
+\end{DoxyCode}
+
+
+Definition at line 837 of file bn\-\_\-mul.\-h.
+
+\hypertarget{bn__mul_8h_a3c34f8aa787b08f646c7537e9b2911c6}{\index{bn\-\_\-mul.\-h@{bn\-\_\-mul.\-h}!M\-U\-L\-A\-D\-D\-C\-\_\-\-I\-N\-I\-T@{M\-U\-L\-A\-D\-D\-C\-\_\-\-I\-N\-I\-T}}
+\index{M\-U\-L\-A\-D\-D\-C\-\_\-\-I\-N\-I\-T@{M\-U\-L\-A\-D\-D\-C\-\_\-\-I\-N\-I\-T}!bn_mul.h@{bn\-\_\-mul.\-h}}
+\subsubsection[{M\-U\-L\-A\-D\-D\-C\-\_\-\-I\-N\-I\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-U\-L\-A\-D\-D\-C\-\_\-\-I\-N\-I\-T}}\label{bn__mul_8h_a3c34f8aa787b08f646c7537e9b2911c6}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\{                                       \(\backslash\)
+    mbedtls\_t\_udbl r;                           \(\backslash\)
+    mbedtls\_mpi\_uint r0, r1;
+\end{DoxyCode}
+
+
+Definition at line 832 of file bn\-\_\-mul.\-h.
+

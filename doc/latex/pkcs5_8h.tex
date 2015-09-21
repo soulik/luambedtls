@@ -1,0 +1,181 @@
+\hypertarget{pkcs5_8h}{\section{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/pkcs5.h File Reference}
+\label{pkcs5_8h}\index{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/pkcs5.\-h@{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/pkcs5.\-h}}
+}
+
+
+P\-K\-C\-S\#5 functions.  
+
+
+{\ttfamily \#include \char`\"{}asn1.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}md.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$stddef.\-h$>$}\\*
+{\ttfamily \#include $<$stdint.\-h$>$}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{pkcs5_8h_a12ca62fa36fecf6a6d9d9218601255f7}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-C\-S5\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A}~-\/0x2f80
+\item 
+\#define \hyperlink{pkcs5_8h_ab1258962a0e536ca372ee144565f108a}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-C\-S5\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-F\-O\-R\-M\-A\-T}~-\/0x2f00
+\item 
+\#define \hyperlink{pkcs5_8h_a2162372c89339c4a6da1b9d01e08ee90}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-C\-S5\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-U\-N\-A\-V\-A\-I\-L\-A\-B\-L\-E}~-\/0x2e80
+\item 
+\#define \hyperlink{pkcs5_8h_adb5b742465ef7f4fb9f282880ceecfeb}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-C\-S5\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D\-\_\-\-M\-I\-S\-M\-A\-T\-C\-H}~-\/0x2e00
+\item 
+\hypertarget{pkcs5_8h_a306c6ad661f0f626dc76769571c84ad1}{\#define {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-P\-K\-C\-S5\-\_\-\-D\-E\-C\-R\-Y\-P\-T}~0}\label{pkcs5_8h_a306c6ad661f0f626dc76769571c84ad1}
+
+\item 
+\hypertarget{pkcs5_8h_a8405a6ac15d294e3d9f5efb48284a4ca}{\#define {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-P\-K\-C\-S5\-\_\-\-E\-N\-C\-R\-Y\-P\-T}~1}\label{pkcs5_8h_a8405a6ac15d294e3d9f5efb48284a4ca}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{pkcs5_8h_aaeb7b4b406e07afe3d8aa807a30d28cd}{mbedtls\-\_\-pkcs5\-\_\-pbes2} (const \hyperlink{structmbedtls__asn1__buf}{mbedtls\-\_\-asn1\-\_\-buf} $\ast$pbe\-\_\-params, int mode, const unsigned char $\ast$pwd, size\-\_\-t pwdlen, const unsigned char $\ast$data, size\-\_\-t datalen, unsigned char $\ast$output)
+\begin{DoxyCompactList}\small\item\em P\-K\-C\-S\#5 P\-B\-E\-S2 function. \end{DoxyCompactList}\item 
+int \hyperlink{pkcs5_8h_a73ec933de2a4f010604b525640338b1e}{mbedtls\-\_\-pkcs5\-\_\-pbkdf2\-\_\-hmac} (\hyperlink{structmbedtls__md__context__t}{mbedtls\-\_\-md\-\_\-context\-\_\-t} $\ast$ctx, const unsigned char $\ast$password, size\-\_\-t plen, const unsigned char $\ast$salt, size\-\_\-t slen, unsigned int iteration\-\_\-count, uint32\-\_\-t key\-\_\-length, unsigned char $\ast$output)
+\begin{DoxyCompactList}\small\item\em P\-K\-C\-S\#5 P\-B\-K\-D\-F2 using H\-M\-A\-C. \end{DoxyCompactList}\item 
+int \hyperlink{pkcs5_8h_a918e7f20c7ad1204980e7ec69869deb3}{mbedtls\-\_\-pkcs5\-\_\-self\-\_\-test} (int verbose)
+\begin{DoxyCompactList}\small\item\em Checkup routine. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+P\-K\-C\-S\#5 functions. \begin{DoxyAuthor}{Author}
+Mathias Olsson \href{mailto:mathias@kompetensum.com}{\tt mathias@kompetensum.\-com}
+\end{DoxyAuthor}
+Copyright (C) 2006-\/2015, A\-R\-M Limited, All Rights Reserved
+
+This file is part of mbed T\-L\-S (\href{https://tls.mbed.org}{\tt https\-://tls.\-mbed.\-org})
+
+This program is free software; you can redistribute it and/or modify it under the terms of the G\-N\-U General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but W\-I\-T\-H\-O\-U\-T A\-N\-Y W\-A\-R\-R\-A\-N\-T\-Y; without even the implied warranty of M\-E\-R\-C\-H\-A\-N\-T\-A\-B\-I\-L\-I\-T\-Y or F\-I\-T\-N\-E\-S\-S F\-O\-R A P\-A\-R\-T\-I\-C\-U\-L\-A\-R P\-U\-R\-P\-O\-S\-E. See the G\-N\-U General Public License for more details.
+
+You should have received a copy of the G\-N\-U General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, M\-A 02110-\/1301 U\-S\-A. 
+
+Definition in file \hyperlink{pkcs5_8h_source}{pkcs5.\-h}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{pkcs5_8h_a12ca62fa36fecf6a6d9d9218601255f7}{\index{pkcs5.\-h@{pkcs5.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-C\-S5\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-C\-S5\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-C\-S5\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-C\-S5\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A}!pkcs5.h@{pkcs5.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-C\-S5\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-C\-S5\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A~-\/0x2f80}}\label{pkcs5_8h_a12ca62fa36fecf6a6d9d9218601255f7}
+Bad input parameters to function. 
+
+Definition at line 35 of file pkcs5.\-h.
+
+\hypertarget{pkcs5_8h_a2162372c89339c4a6da1b9d01e08ee90}{\index{pkcs5.\-h@{pkcs5.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-C\-S5\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-U\-N\-A\-V\-A\-I\-L\-A\-B\-L\-E@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-C\-S5\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-U\-N\-A\-V\-A\-I\-L\-A\-B\-L\-E}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-C\-S5\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-U\-N\-A\-V\-A\-I\-L\-A\-B\-L\-E@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-C\-S5\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-U\-N\-A\-V\-A\-I\-L\-A\-B\-L\-E}!pkcs5.h@{pkcs5.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-C\-S5\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-U\-N\-A\-V\-A\-I\-L\-A\-B\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-C\-S5\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-U\-N\-A\-V\-A\-I\-L\-A\-B\-L\-E~-\/0x2e80}}\label{pkcs5_8h_a2162372c89339c4a6da1b9d01e08ee90}
+Requested encryption or digest alg not available. 
+
+Definition at line 37 of file pkcs5.\-h.
+
+\hypertarget{pkcs5_8h_ab1258962a0e536ca372ee144565f108a}{\index{pkcs5.\-h@{pkcs5.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-C\-S5\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-F\-O\-R\-M\-A\-T@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-C\-S5\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-F\-O\-R\-M\-A\-T}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-C\-S5\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-F\-O\-R\-M\-A\-T@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-C\-S5\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-F\-O\-R\-M\-A\-T}!pkcs5.h@{pkcs5.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-C\-S5\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-F\-O\-R\-M\-A\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-C\-S5\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-F\-O\-R\-M\-A\-T~-\/0x2f00}}\label{pkcs5_8h_ab1258962a0e536ca372ee144565f108a}
+Unexpected A\-S\-N.\-1 data. 
+
+Definition at line 36 of file pkcs5.\-h.
+
+\hypertarget{pkcs5_8h_adb5b742465ef7f4fb9f282880ceecfeb}{\index{pkcs5.\-h@{pkcs5.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-C\-S5\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D\-\_\-\-M\-I\-S\-M\-A\-T\-C\-H@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-C\-S5\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D\-\_\-\-M\-I\-S\-M\-A\-T\-C\-H}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-C\-S5\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D\-\_\-\-M\-I\-S\-M\-A\-T\-C\-H@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-C\-S5\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D\-\_\-\-M\-I\-S\-M\-A\-T\-C\-H}!pkcs5.h@{pkcs5.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-C\-S5\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D\-\_\-\-M\-I\-S\-M\-A\-T\-C\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-C\-S5\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D\-\_\-\-M\-I\-S\-M\-A\-T\-C\-H~-\/0x2e00}}\label{pkcs5_8h_adb5b742465ef7f4fb9f282880ceecfeb}
+Given private key password does not allow for correct decryption. 
+
+Definition at line 38 of file pkcs5.\-h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{pkcs5_8h_aaeb7b4b406e07afe3d8aa807a30d28cd}{\index{pkcs5.\-h@{pkcs5.\-h}!mbedtls\-\_\-pkcs5\-\_\-pbes2@{mbedtls\-\_\-pkcs5\-\_\-pbes2}}
+\index{mbedtls\-\_\-pkcs5\-\_\-pbes2@{mbedtls\-\_\-pkcs5\-\_\-pbes2}!pkcs5.h@{pkcs5.\-h}}
+\subsubsection[{mbedtls\-\_\-pkcs5\-\_\-pbes2}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-pkcs5\-\_\-pbes2 (
+\begin{DoxyParamCaption}
+\item[{const {\bf mbedtls\-\_\-asn1\-\_\-buf} $\ast$}]{pbe\-\_\-params, }
+\item[{int}]{mode, }
+\item[{const unsigned char $\ast$}]{pwd, }
+\item[{size\-\_\-t}]{pwdlen, }
+\item[{const unsigned char $\ast$}]{data, }
+\item[{size\-\_\-t}]{datalen, }
+\item[{unsigned char $\ast$}]{output}
+\end{DoxyParamCaption}
+)}}\label{pkcs5_8h_aaeb7b4b406e07afe3d8aa807a30d28cd}
+
+
+P\-K\-C\-S\#5 P\-B\-E\-S2 function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pbe\-\_\-params} & the A\-S\-N.\-1 algorithm parameters \\
+\hline
+{\em mode} & either M\-B\-E\-D\-T\-L\-S\-\_\-\-P\-K\-C\-S5\-\_\-\-D\-E\-C\-R\-Y\-P\-T or M\-B\-E\-D\-T\-L\-S\-\_\-\-P\-K\-C\-S5\-\_\-\-E\-N\-C\-R\-Y\-P\-T \\
+\hline
+{\em pwd} & password to use when generating key \\
+\hline
+{\em pwdlen} & length of password \\
+\hline
+{\em data} & data to process \\
+\hline
+{\em datalen} & length of data \\
+\hline
+{\em output} & output buffer\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, or a M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-X\-X\-X code if verification fails. 
+\end{DoxyReturn}
+\hypertarget{pkcs5_8h_a73ec933de2a4f010604b525640338b1e}{\index{pkcs5.\-h@{pkcs5.\-h}!mbedtls\-\_\-pkcs5\-\_\-pbkdf2\-\_\-hmac@{mbedtls\-\_\-pkcs5\-\_\-pbkdf2\-\_\-hmac}}
+\index{mbedtls\-\_\-pkcs5\-\_\-pbkdf2\-\_\-hmac@{mbedtls\-\_\-pkcs5\-\_\-pbkdf2\-\_\-hmac}!pkcs5.h@{pkcs5.\-h}}
+\subsubsection[{mbedtls\-\_\-pkcs5\-\_\-pbkdf2\-\_\-hmac}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-pkcs5\-\_\-pbkdf2\-\_\-hmac (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-md\-\_\-context\-\_\-t} $\ast$}]{ctx, }
+\item[{const unsigned char $\ast$}]{password, }
+\item[{size\-\_\-t}]{plen, }
+\item[{const unsigned char $\ast$}]{salt, }
+\item[{size\-\_\-t}]{slen, }
+\item[{unsigned int}]{iteration\-\_\-count, }
+\item[{uint32\-\_\-t}]{key\-\_\-length, }
+\item[{unsigned char $\ast$}]{output}
+\end{DoxyParamCaption}
+)}}\label{pkcs5_8h_a73ec933de2a4f010604b525640338b1e}
+
+
+P\-K\-C\-S\#5 P\-B\-K\-D\-F2 using H\-M\-A\-C. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Generic H\-M\-A\-C context \\
+\hline
+{\em password} & Password to use when generating key \\
+\hline
+{\em plen} & Length of password \\
+\hline
+{\em salt} & Salt to use when generating key \\
+\hline
+{\em slen} & Length of salt \\
+\hline
+{\em iteration\-\_\-count} & Iteration count \\
+\hline
+{\em key\-\_\-length} & Length of generated key in bytes \\
+\hline
+{\em output} & Generated key. Must be at least as big as key\-\_\-length\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, or a M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-X\-X\-X code if verification fails. 
+\end{DoxyReturn}
+\hypertarget{pkcs5_8h_a918e7f20c7ad1204980e7ec69869deb3}{\index{pkcs5.\-h@{pkcs5.\-h}!mbedtls\-\_\-pkcs5\-\_\-self\-\_\-test@{mbedtls\-\_\-pkcs5\-\_\-self\-\_\-test}}
+\index{mbedtls\-\_\-pkcs5\-\_\-self\-\_\-test@{mbedtls\-\_\-pkcs5\-\_\-self\-\_\-test}!pkcs5.h@{pkcs5.\-h}}
+\subsubsection[{mbedtls\-\_\-pkcs5\-\_\-self\-\_\-test}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-pkcs5\-\_\-self\-\_\-test (
+\begin{DoxyParamCaption}
+\item[{int}]{verbose}
+\end{DoxyParamCaption}
+)}}\label{pkcs5_8h_a918e7f20c7ad1204980e7ec69869deb3}
+
+
+Checkup routine. 
+
+\begin{DoxyReturn}{Returns}
+0 if successful, or 1 if the test failed 
+\end{DoxyReturn}

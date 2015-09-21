@@ -1,0 +1,455 @@
+\hypertarget{net_8h}{\section{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/net.h File Reference}
+\label{net_8h}\index{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/net.\-h@{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/net.\-h}}
+}
+
+
+Network communication functions.  
+
+
+{\ttfamily \#include \char`\"{}config.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ssl.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$stddef.\-h$>$}\\*
+{\ttfamily \#include $<$stdint.\-h$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structmbedtls__net__context}{mbedtls\-\_\-net\-\_\-context}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{net_8h_aa639b33eeaf6414c0de66ab9b8ff6cde}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-S\-O\-C\-K\-E\-T\-\_\-\-F\-A\-I\-L\-E\-D}~-\/0x0042
+\item 
+\#define \hyperlink{net_8h_acdd34e19acf5a23c593895605bf3f219}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-C\-O\-N\-N\-E\-C\-T\-\_\-\-F\-A\-I\-L\-E\-D}~-\/0x0044
+\item 
+\#define \hyperlink{net_8h_a4dbd66233b3f8bdd812f388667fcf123}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-B\-I\-N\-D\-\_\-\-F\-A\-I\-L\-E\-D}~-\/0x0046
+\item 
+\#define \hyperlink{net_8h_a4bf7cbe6fff470186e4a7a275dde4bdd}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-L\-I\-S\-T\-E\-N\-\_\-\-F\-A\-I\-L\-E\-D}~-\/0x0048
+\item 
+\#define \hyperlink{net_8h_a030cd35e75797c983c61152fd36bd135}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-A\-C\-C\-E\-P\-T\-\_\-\-F\-A\-I\-L\-E\-D}~-\/0x004\-A
+\item 
+\#define \hyperlink{net_8h_a0c95b85b300ddc10a753899ff2f154f2}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-R\-E\-C\-V\-\_\-\-F\-A\-I\-L\-E\-D}~-\/0x004\-C
+\item 
+\#define \hyperlink{net_8h_ad11d72cca1319fd35fb9e73c9428e92d}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-S\-E\-N\-D\-\_\-\-F\-A\-I\-L\-E\-D}~-\/0x004\-E
+\item 
+\#define \hyperlink{net_8h_a1793f099e5c010750c7a07bf259898d9}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-C\-O\-N\-N\-\_\-\-R\-E\-S\-E\-T}~-\/0x0050
+\item 
+\#define \hyperlink{net_8h_a937d55e9aa02f1554a43f562a5fc24f9}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-U\-N\-K\-N\-O\-W\-N\-\_\-\-H\-O\-S\-T}~-\/0x0052
+\item 
+\#define \hyperlink{net_8h_a6a089c6b33dd98bfae43a42ed726cacb}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-T\-O\-O\-\_\-\-S\-M\-A\-L\-L}~-\/0x0043
+\item 
+\#define \hyperlink{net_8h_a945ec2afc6c9d9d73166ce1e073aaa18}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-C\-O\-N\-T\-E\-X\-T}~-\/0x0045
+\item 
+\#define \hyperlink{net_8h_a28c00c358ccc381ecfc2a28f59db8bd3}{M\-B\-E\-D\-T\-L\-S\-\_\-\-N\-E\-T\-\_\-\-L\-I\-S\-T\-E\-N\-\_\-\-B\-A\-C\-K\-L\-O\-G}~10
+\item 
+\#define \hyperlink{net_8h_a989e1bc1aae7e48ac318d5ddd24efa3b}{M\-B\-E\-D\-T\-L\-S\-\_\-\-N\-E\-T\-\_\-\-P\-R\-O\-T\-O\-\_\-\-T\-C\-P}~0
+\item 
+\#define \hyperlink{net_8h_a8d6d212e9f0ea5756fff8d06c46f4f44}{M\-B\-E\-D\-T\-L\-S\-\_\-\-N\-E\-T\-\_\-\-P\-R\-O\-T\-O\-\_\-\-U\-D\-P}~1
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{net_8h_aed7458e19fc1b4794f3a23aa3df49543}{mbedtls\-\_\-net\-\_\-init} (\hyperlink{structmbedtls__net__context}{mbedtls\-\_\-net\-\_\-context} $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Initialize a context Just makes the context ready to be used or freed safely. \end{DoxyCompactList}\item 
+int \hyperlink{net_8h_ac12c400864a5aad46666828ce2a089a4}{mbedtls\-\_\-net\-\_\-connect} (\hyperlink{structmbedtls__net__context}{mbedtls\-\_\-net\-\_\-context} $\ast$ctx, const char $\ast$host, const char $\ast$port, int proto)
+\begin{DoxyCompactList}\small\item\em Initiate a connection with host\-:port in the given protocol. \end{DoxyCompactList}\item 
+int \hyperlink{net_8h_aa1cb7fc819153c43a2c75c95d0152c75}{mbedtls\-\_\-net\-\_\-bind} (\hyperlink{structmbedtls__net__context}{mbedtls\-\_\-net\-\_\-context} $\ast$ctx, const char $\ast$bind\-\_\-ip, const char $\ast$port, int proto)
+\begin{DoxyCompactList}\small\item\em Create a receiving socket on bind\-\_\-ip\-:port in the chosen protocol. If bind\-\_\-ip == N\-U\-L\-L, all interfaces are bound. \end{DoxyCompactList}\item 
+int \hyperlink{net_8h_a2f862b9086f3466593d5cf399b2c98c6}{mbedtls\-\_\-net\-\_\-accept} (\hyperlink{structmbedtls__net__context}{mbedtls\-\_\-net\-\_\-context} $\ast$bind\-\_\-ctx, \hyperlink{structmbedtls__net__context}{mbedtls\-\_\-net\-\_\-context} $\ast$client\-\_\-ctx, void $\ast$client\-\_\-ip, size\-\_\-t buf\-\_\-size, size\-\_\-t $\ast$ip\-\_\-len)
+\begin{DoxyCompactList}\small\item\em Accept a connection from a remote client. \end{DoxyCompactList}\item 
+int \hyperlink{net_8h_aeea4e6fd5ad3167bf8563e61f6f75963}{mbedtls\-\_\-net\-\_\-set\-\_\-block} (\hyperlink{structmbedtls__net__context}{mbedtls\-\_\-net\-\_\-context} $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Set the socket blocking. \end{DoxyCompactList}\item 
+int \hyperlink{net_8h_a2ee4acdc24ef78c9acf5068a423b8c30}{mbedtls\-\_\-net\-\_\-set\-\_\-nonblock} (\hyperlink{structmbedtls__net__context}{mbedtls\-\_\-net\-\_\-context} $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Set the socket non-\/blocking. \end{DoxyCompactList}\item 
+void \hyperlink{net_8h_a716044d3c30c449bd68052b7c418ff84}{mbedtls\-\_\-net\-\_\-usleep} (unsigned long usec)
+\begin{DoxyCompactList}\small\item\em Portable usleep helper. \end{DoxyCompactList}\item 
+int \hyperlink{net_8h_a03af351ec420bbeb5e91357abcfb3663}{mbedtls\-\_\-net\-\_\-recv} (void $\ast$ctx, unsigned char $\ast$buf, size\-\_\-t len)
+\begin{DoxyCompactList}\small\item\em Read at most 'len' characters. If no error occurs, the actual amount read is returned. \end{DoxyCompactList}\item 
+int \hyperlink{net_8h_a4841afd0e14f1fd44b82c3a850961ab7}{mbedtls\-\_\-net\-\_\-send} (void $\ast$ctx, const unsigned char $\ast$buf, size\-\_\-t len)
+\begin{DoxyCompactList}\small\item\em Write at most 'len' characters. If no error occurs, the actual amount read is returned. \end{DoxyCompactList}\item 
+int \hyperlink{net_8h_a67810154d2328a80b146155d8cdecfd9}{mbedtls\-\_\-net\-\_\-recv\-\_\-timeout} (void $\ast$ctx, unsigned char $\ast$buf, size\-\_\-t len, uint32\-\_\-t timeout)
+\begin{DoxyCompactList}\small\item\em Read at most 'len' characters, blocking for at most 'timeout' seconds. If no error occurs, the actual amount read is returned. \end{DoxyCompactList}\item 
+void \hyperlink{net_8h_a77c35cb3f4b9fe6035d1d3742f3b4a24}{mbedtls\-\_\-net\-\_\-free} (\hyperlink{structmbedtls__net__context}{mbedtls\-\_\-net\-\_\-context} $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Gracefully shutdown the connection and free associated data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Network communication functions. Copyright (C) 2006-\/2015, A\-R\-M Limited, All Rights Reserved
+
+This file is part of mbed T\-L\-S (\href{https://tls.mbed.org}{\tt https\-://tls.\-mbed.\-org})
+
+This program is free software; you can redistribute it and/or modify it under the terms of the G\-N\-U General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but W\-I\-T\-H\-O\-U\-T A\-N\-Y W\-A\-R\-R\-A\-N\-T\-Y; without even the implied warranty of M\-E\-R\-C\-H\-A\-N\-T\-A\-B\-I\-L\-I\-T\-Y or F\-I\-T\-N\-E\-S\-S F\-O\-R A P\-A\-R\-T\-I\-C\-U\-L\-A\-R P\-U\-R\-P\-O\-S\-E. See the G\-N\-U General Public License for more details.
+
+You should have received a copy of the G\-N\-U General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, M\-A 02110-\/1301 U\-S\-A. 
+
+Definition in file \hyperlink{net_8h_source}{net.\-h}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{net_8h_a030cd35e75797c983c61152fd36bd135}{\index{net.\-h@{net.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-A\-C\-C\-E\-P\-T\-\_\-\-F\-A\-I\-L\-E\-D@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-A\-C\-C\-E\-P\-T\-\_\-\-F\-A\-I\-L\-E\-D}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-A\-C\-C\-E\-P\-T\-\_\-\-F\-A\-I\-L\-E\-D@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-A\-C\-C\-E\-P\-T\-\_\-\-F\-A\-I\-L\-E\-D}!net.h@{net.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-A\-C\-C\-E\-P\-T\-\_\-\-F\-A\-I\-L\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-A\-C\-C\-E\-P\-T\-\_\-\-F\-A\-I\-L\-E\-D~-\/0x004\-A}}\label{net_8h_a030cd35e75797c983c61152fd36bd135}
+Could not accept the incoming connection. 
+
+Definition at line 42 of file net.\-h.
+
+\hypertarget{net_8h_a4dbd66233b3f8bdd812f388667fcf123}{\index{net.\-h@{net.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-B\-I\-N\-D\-\_\-\-F\-A\-I\-L\-E\-D@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-B\-I\-N\-D\-\_\-\-F\-A\-I\-L\-E\-D}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-B\-I\-N\-D\-\_\-\-F\-A\-I\-L\-E\-D@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-B\-I\-N\-D\-\_\-\-F\-A\-I\-L\-E\-D}!net.h@{net.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-B\-I\-N\-D\-\_\-\-F\-A\-I\-L\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-B\-I\-N\-D\-\_\-\-F\-A\-I\-L\-E\-D~-\/0x0046}}\label{net_8h_a4dbd66233b3f8bdd812f388667fcf123}
+Binding of the socket failed. 
+
+Definition at line 40 of file net.\-h.
+
+\hypertarget{net_8h_a6a089c6b33dd98bfae43a42ed726cacb}{\index{net.\-h@{net.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-T\-O\-O\-\_\-\-S\-M\-A\-L\-L@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-T\-O\-O\-\_\-\-S\-M\-A\-L\-L}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-T\-O\-O\-\_\-\-S\-M\-A\-L\-L@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-T\-O\-O\-\_\-\-S\-M\-A\-L\-L}!net.h@{net.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-T\-O\-O\-\_\-\-S\-M\-A\-L\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-T\-O\-O\-\_\-\-S\-M\-A\-L\-L~-\/0x0043}}\label{net_8h_a6a089c6b33dd98bfae43a42ed726cacb}
+Buffer is too small to hold the data. 
+
+Definition at line 47 of file net.\-h.
+
+\hypertarget{net_8h_a1793f099e5c010750c7a07bf259898d9}{\index{net.\-h@{net.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-C\-O\-N\-N\-\_\-\-R\-E\-S\-E\-T@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-C\-O\-N\-N\-\_\-\-R\-E\-S\-E\-T}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-C\-O\-N\-N\-\_\-\-R\-E\-S\-E\-T@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-C\-O\-N\-N\-\_\-\-R\-E\-S\-E\-T}!net.h@{net.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-C\-O\-N\-N\-\_\-\-R\-E\-S\-E\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-C\-O\-N\-N\-\_\-\-R\-E\-S\-E\-T~-\/0x0050}}\label{net_8h_a1793f099e5c010750c7a07bf259898d9}
+Connection was reset by peer. 
+
+Definition at line 45 of file net.\-h.
+
+\hypertarget{net_8h_acdd34e19acf5a23c593895605bf3f219}{\index{net.\-h@{net.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-C\-O\-N\-N\-E\-C\-T\-\_\-\-F\-A\-I\-L\-E\-D@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-C\-O\-N\-N\-E\-C\-T\-\_\-\-F\-A\-I\-L\-E\-D}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-C\-O\-N\-N\-E\-C\-T\-\_\-\-F\-A\-I\-L\-E\-D@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-C\-O\-N\-N\-E\-C\-T\-\_\-\-F\-A\-I\-L\-E\-D}!net.h@{net.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-C\-O\-N\-N\-E\-C\-T\-\_\-\-F\-A\-I\-L\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-C\-O\-N\-N\-E\-C\-T\-\_\-\-F\-A\-I\-L\-E\-D~-\/0x0044}}\label{net_8h_acdd34e19acf5a23c593895605bf3f219}
+The connection to the given server / port failed. 
+
+Definition at line 39 of file net.\-h.
+
+\hypertarget{net_8h_a945ec2afc6c9d9d73166ce1e073aaa18}{\index{net.\-h@{net.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-C\-O\-N\-T\-E\-X\-T@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-C\-O\-N\-T\-E\-X\-T}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-C\-O\-N\-T\-E\-X\-T@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-C\-O\-N\-T\-E\-X\-T}!net.h@{net.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-C\-O\-N\-T\-E\-X\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-C\-O\-N\-T\-E\-X\-T~-\/0x0045}}\label{net_8h_a945ec2afc6c9d9d73166ce1e073aaa18}
+The context is invalid, eg because it was free()ed. 
+
+Definition at line 48 of file net.\-h.
+
+\hypertarget{net_8h_a4bf7cbe6fff470186e4a7a275dde4bdd}{\index{net.\-h@{net.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-L\-I\-S\-T\-E\-N\-\_\-\-F\-A\-I\-L\-E\-D@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-L\-I\-S\-T\-E\-N\-\_\-\-F\-A\-I\-L\-E\-D}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-L\-I\-S\-T\-E\-N\-\_\-\-F\-A\-I\-L\-E\-D@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-L\-I\-S\-T\-E\-N\-\_\-\-F\-A\-I\-L\-E\-D}!net.h@{net.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-L\-I\-S\-T\-E\-N\-\_\-\-F\-A\-I\-L\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-L\-I\-S\-T\-E\-N\-\_\-\-F\-A\-I\-L\-E\-D~-\/0x0048}}\label{net_8h_a4bf7cbe6fff470186e4a7a275dde4bdd}
+Could not listen on the socket. 
+
+Definition at line 41 of file net.\-h.
+
+\hypertarget{net_8h_a0c95b85b300ddc10a753899ff2f154f2}{\index{net.\-h@{net.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-R\-E\-C\-V\-\_\-\-F\-A\-I\-L\-E\-D@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-R\-E\-C\-V\-\_\-\-F\-A\-I\-L\-E\-D}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-R\-E\-C\-V\-\_\-\-F\-A\-I\-L\-E\-D@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-R\-E\-C\-V\-\_\-\-F\-A\-I\-L\-E\-D}!net.h@{net.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-R\-E\-C\-V\-\_\-\-F\-A\-I\-L\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-R\-E\-C\-V\-\_\-\-F\-A\-I\-L\-E\-D~-\/0x004\-C}}\label{net_8h_a0c95b85b300ddc10a753899ff2f154f2}
+Reading information from the socket failed. 
+
+Definition at line 43 of file net.\-h.
+
+\hypertarget{net_8h_ad11d72cca1319fd35fb9e73c9428e92d}{\index{net.\-h@{net.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-S\-E\-N\-D\-\_\-\-F\-A\-I\-L\-E\-D@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-S\-E\-N\-D\-\_\-\-F\-A\-I\-L\-E\-D}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-S\-E\-N\-D\-\_\-\-F\-A\-I\-L\-E\-D@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-S\-E\-N\-D\-\_\-\-F\-A\-I\-L\-E\-D}!net.h@{net.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-S\-E\-N\-D\-\_\-\-F\-A\-I\-L\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-S\-E\-N\-D\-\_\-\-F\-A\-I\-L\-E\-D~-\/0x004\-E}}\label{net_8h_ad11d72cca1319fd35fb9e73c9428e92d}
+Sending information through the socket failed. 
+
+Definition at line 44 of file net.\-h.
+
+\hypertarget{net_8h_aa639b33eeaf6414c0de66ab9b8ff6cde}{\index{net.\-h@{net.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-S\-O\-C\-K\-E\-T\-\_\-\-F\-A\-I\-L\-E\-D@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-S\-O\-C\-K\-E\-T\-\_\-\-F\-A\-I\-L\-E\-D}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-S\-O\-C\-K\-E\-T\-\_\-\-F\-A\-I\-L\-E\-D@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-S\-O\-C\-K\-E\-T\-\_\-\-F\-A\-I\-L\-E\-D}!net.h@{net.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-S\-O\-C\-K\-E\-T\-\_\-\-F\-A\-I\-L\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-S\-O\-C\-K\-E\-T\-\_\-\-F\-A\-I\-L\-E\-D~-\/0x0042}}\label{net_8h_aa639b33eeaf6414c0de66ab9b8ff6cde}
+Failed to open a socket. 
+
+Definition at line 38 of file net.\-h.
+
+\hypertarget{net_8h_a937d55e9aa02f1554a43f562a5fc24f9}{\index{net.\-h@{net.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-U\-N\-K\-N\-O\-W\-N\-\_\-\-H\-O\-S\-T@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-U\-N\-K\-N\-O\-W\-N\-\_\-\-H\-O\-S\-T}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-U\-N\-K\-N\-O\-W\-N\-\_\-\-H\-O\-S\-T@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-U\-N\-K\-N\-O\-W\-N\-\_\-\-H\-O\-S\-T}!net.h@{net.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-U\-N\-K\-N\-O\-W\-N\-\_\-\-H\-O\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-U\-N\-K\-N\-O\-W\-N\-\_\-\-H\-O\-S\-T~-\/0x0052}}\label{net_8h_a937d55e9aa02f1554a43f562a5fc24f9}
+Failed to get an I\-P address for the given hostname. 
+
+Definition at line 46 of file net.\-h.
+
+\hypertarget{net_8h_a28c00c358ccc381ecfc2a28f59db8bd3}{\index{net.\-h@{net.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-N\-E\-T\-\_\-\-L\-I\-S\-T\-E\-N\-\_\-\-B\-A\-C\-K\-L\-O\-G@{M\-B\-E\-D\-T\-L\-S\-\_\-\-N\-E\-T\-\_\-\-L\-I\-S\-T\-E\-N\-\_\-\-B\-A\-C\-K\-L\-O\-G}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-N\-E\-T\-\_\-\-L\-I\-S\-T\-E\-N\-\_\-\-B\-A\-C\-K\-L\-O\-G@{M\-B\-E\-D\-T\-L\-S\-\_\-\-N\-E\-T\-\_\-\-L\-I\-S\-T\-E\-N\-\_\-\-B\-A\-C\-K\-L\-O\-G}!net.h@{net.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-N\-E\-T\-\_\-\-L\-I\-S\-T\-E\-N\-\_\-\-B\-A\-C\-K\-L\-O\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-N\-E\-T\-\_\-\-L\-I\-S\-T\-E\-N\-\_\-\-B\-A\-C\-K\-L\-O\-G~10}}\label{net_8h_a28c00c358ccc381ecfc2a28f59db8bd3}
+The backlog that listen() should use. 
+
+Definition at line 50 of file net.\-h.
+
+\hypertarget{net_8h_a989e1bc1aae7e48ac318d5ddd24efa3b}{\index{net.\-h@{net.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-N\-E\-T\-\_\-\-P\-R\-O\-T\-O\-\_\-\-T\-C\-P@{M\-B\-E\-D\-T\-L\-S\-\_\-\-N\-E\-T\-\_\-\-P\-R\-O\-T\-O\-\_\-\-T\-C\-P}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-N\-E\-T\-\_\-\-P\-R\-O\-T\-O\-\_\-\-T\-C\-P@{M\-B\-E\-D\-T\-L\-S\-\_\-\-N\-E\-T\-\_\-\-P\-R\-O\-T\-O\-\_\-\-T\-C\-P}!net.h@{net.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-N\-E\-T\-\_\-\-P\-R\-O\-T\-O\-\_\-\-T\-C\-P}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-N\-E\-T\-\_\-\-P\-R\-O\-T\-O\-\_\-\-T\-C\-P~0}}\label{net_8h_a989e1bc1aae7e48ac318d5ddd24efa3b}
+The T\-C\-P transport protocol 
+
+Definition at line 52 of file net.\-h.
+
+\hypertarget{net_8h_a8d6d212e9f0ea5756fff8d06c46f4f44}{\index{net.\-h@{net.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-N\-E\-T\-\_\-\-P\-R\-O\-T\-O\-\_\-\-U\-D\-P@{M\-B\-E\-D\-T\-L\-S\-\_\-\-N\-E\-T\-\_\-\-P\-R\-O\-T\-O\-\_\-\-U\-D\-P}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-N\-E\-T\-\_\-\-P\-R\-O\-T\-O\-\_\-\-U\-D\-P@{M\-B\-E\-D\-T\-L\-S\-\_\-\-N\-E\-T\-\_\-\-P\-R\-O\-T\-O\-\_\-\-U\-D\-P}!net.h@{net.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-N\-E\-T\-\_\-\-P\-R\-O\-T\-O\-\_\-\-U\-D\-P}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-N\-E\-T\-\_\-\-P\-R\-O\-T\-O\-\_\-\-U\-D\-P~1}}\label{net_8h_a8d6d212e9f0ea5756fff8d06c46f4f44}
+The U\-D\-P transport protocol 
+
+Definition at line 53 of file net.\-h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{net_8h_a2f862b9086f3466593d5cf399b2c98c6}{\index{net.\-h@{net.\-h}!mbedtls\-\_\-net\-\_\-accept@{mbedtls\-\_\-net\-\_\-accept}}
+\index{mbedtls\-\_\-net\-\_\-accept@{mbedtls\-\_\-net\-\_\-accept}!net.h@{net.\-h}}
+\subsubsection[{mbedtls\-\_\-net\-\_\-accept}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-net\-\_\-accept (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-net\-\_\-context} $\ast$}]{bind\-\_\-ctx, }
+\item[{{\bf mbedtls\-\_\-net\-\_\-context} $\ast$}]{client\-\_\-ctx, }
+\item[{void $\ast$}]{client\-\_\-ip, }
+\item[{size\-\_\-t}]{buf\-\_\-size, }
+\item[{size\-\_\-t $\ast$}]{ip\-\_\-len}
+\end{DoxyParamCaption}
+)}}\label{net_8h_a2f862b9086f3466593d5cf399b2c98c6}
+
+
+Accept a connection from a remote client. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bind\-\_\-ctx} & Relevant socket \\
+\hline
+{\em client\-\_\-ctx} & Will contain the connected client socket \\
+\hline
+{\em client\-\_\-ip} & Will contain the client I\-P address \\
+\hline
+{\em buf\-\_\-size} & Size of the client\-\_\-ip buffer \\
+\hline
+{\em ip\-\_\-len} & Will receive the size of the client I\-P written\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, or M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-A\-C\-C\-E\-P\-T\-\_\-\-F\-A\-I\-L\-E\-D, or M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-T\-O\-O\-\_\-\-S\-M\-A\-L\-L if buf\-\_\-size is too small, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-S\-S\-L\-\_\-\-W\-A\-N\-T\-\_\-\-R\-E\-A\-D if bind\-\_\-fd was set to non-\/blocking and accept() would block. 
+\end{DoxyReturn}
+\hypertarget{net_8h_aa1cb7fc819153c43a2c75c95d0152c75}{\index{net.\-h@{net.\-h}!mbedtls\-\_\-net\-\_\-bind@{mbedtls\-\_\-net\-\_\-bind}}
+\index{mbedtls\-\_\-net\-\_\-bind@{mbedtls\-\_\-net\-\_\-bind}!net.h@{net.\-h}}
+\subsubsection[{mbedtls\-\_\-net\-\_\-bind}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-net\-\_\-bind (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-net\-\_\-context} $\ast$}]{ctx, }
+\item[{const char $\ast$}]{bind\-\_\-ip, }
+\item[{const char $\ast$}]{port, }
+\item[{int}]{proto}
+\end{DoxyParamCaption}
+)}}\label{net_8h_aa1cb7fc819153c43a2c75c95d0152c75}
+
+
+Create a receiving socket on bind\-\_\-ip\-:port in the chosen protocol. If bind\-\_\-ip == N\-U\-L\-L, all interfaces are bound. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Socket to use \\
+\hline
+{\em bind\-\_\-ip} & I\-P to bind to, can be N\-U\-L\-L \\
+\hline
+{\em port} & Port number to use \\
+\hline
+{\em proto} & Protocol\-: M\-B\-E\-D\-T\-L\-S\-\_\-\-N\-E\-T\-\_\-\-P\-R\-O\-T\-O\-\_\-\-T\-C\-P or M\-B\-E\-D\-T\-L\-S\-\_\-\-N\-E\-T\-\_\-\-P\-R\-O\-T\-O\-\_\-\-U\-D\-P\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, or one of\-: M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-S\-O\-C\-K\-E\-T\-\_\-\-F\-A\-I\-L\-E\-D, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-B\-I\-N\-D\-\_\-\-F\-A\-I\-L\-E\-D, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-L\-I\-S\-T\-E\-N\-\_\-\-F\-A\-I\-L\-E\-D
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Regardless of the protocol, opens the sockets and binds it. In addition, make the socket listening if protocol is T\-C\-P. 
+\end{DoxyNote}
+\hypertarget{net_8h_ac12c400864a5aad46666828ce2a089a4}{\index{net.\-h@{net.\-h}!mbedtls\-\_\-net\-\_\-connect@{mbedtls\-\_\-net\-\_\-connect}}
+\index{mbedtls\-\_\-net\-\_\-connect@{mbedtls\-\_\-net\-\_\-connect}!net.h@{net.\-h}}
+\subsubsection[{mbedtls\-\_\-net\-\_\-connect}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-net\-\_\-connect (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-net\-\_\-context} $\ast$}]{ctx, }
+\item[{const char $\ast$}]{host, }
+\item[{const char $\ast$}]{port, }
+\item[{int}]{proto}
+\end{DoxyParamCaption}
+)}}\label{net_8h_ac12c400864a5aad46666828ce2a089a4}
+
+
+Initiate a connection with host\-:port in the given protocol. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Socket to use \\
+\hline
+{\em host} & Host to connect to \\
+\hline
+{\em port} & Port to connect to \\
+\hline
+{\em proto} & Protocol\-: M\-B\-E\-D\-T\-L\-S\-\_\-\-N\-E\-T\-\_\-\-P\-R\-O\-T\-O\-\_\-\-T\-C\-P or M\-B\-E\-D\-T\-L\-S\-\_\-\-N\-E\-T\-\_\-\-P\-R\-O\-T\-O\-\_\-\-U\-D\-P\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, or one of\-: M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-S\-O\-C\-K\-E\-T\-\_\-\-F\-A\-I\-L\-E\-D, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-U\-N\-K\-N\-O\-W\-N\-\_\-\-H\-O\-S\-T, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-N\-E\-T\-\_\-\-C\-O\-N\-N\-E\-C\-T\-\_\-\-F\-A\-I\-L\-E\-D
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Sets the socket in connected mode even with U\-D\-P. 
+\end{DoxyNote}
+\hypertarget{net_8h_a77c35cb3f4b9fe6035d1d3742f3b4a24}{\index{net.\-h@{net.\-h}!mbedtls\-\_\-net\-\_\-free@{mbedtls\-\_\-net\-\_\-free}}
+\index{mbedtls\-\_\-net\-\_\-free@{mbedtls\-\_\-net\-\_\-free}!net.h@{net.\-h}}
+\subsubsection[{mbedtls\-\_\-net\-\_\-free}]{\setlength{\rightskip}{0pt plus 5cm}void mbedtls\-\_\-net\-\_\-free (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-net\-\_\-context} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}}\label{net_8h_a77c35cb3f4b9fe6035d1d3742f3b4a24}
+
+
+Gracefully shutdown the connection and free associated data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & The context to free \\
+\hline
+\end{DoxyParams}
+\hypertarget{net_8h_aed7458e19fc1b4794f3a23aa3df49543}{\index{net.\-h@{net.\-h}!mbedtls\-\_\-net\-\_\-init@{mbedtls\-\_\-net\-\_\-init}}
+\index{mbedtls\-\_\-net\-\_\-init@{mbedtls\-\_\-net\-\_\-init}!net.h@{net.\-h}}
+\subsubsection[{mbedtls\-\_\-net\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void mbedtls\-\_\-net\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-net\-\_\-context} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}}\label{net_8h_aed7458e19fc1b4794f3a23aa3df49543}
+
+
+Initialize a context Just makes the context ready to be used or freed safely. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Context to initialize \\
+\hline
+\end{DoxyParams}
+\hypertarget{net_8h_a03af351ec420bbeb5e91357abcfb3663}{\index{net.\-h@{net.\-h}!mbedtls\-\_\-net\-\_\-recv@{mbedtls\-\_\-net\-\_\-recv}}
+\index{mbedtls\-\_\-net\-\_\-recv@{mbedtls\-\_\-net\-\_\-recv}!net.h@{net.\-h}}
+\subsubsection[{mbedtls\-\_\-net\-\_\-recv}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-net\-\_\-recv (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{ctx, }
+\item[{unsigned char $\ast$}]{buf, }
+\item[{size\-\_\-t}]{len}
+\end{DoxyParamCaption}
+)}}\label{net_8h_a03af351ec420bbeb5e91357abcfb3663}
+
+
+Read at most 'len' characters. If no error occurs, the actual amount read is returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Socket \\
+\hline
+{\em buf} & The buffer to write to \\
+\hline
+{\em len} & Maximum length of the buffer\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of bytes received, or a non-\/zero error code; with a non-\/blocking socket, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-S\-S\-L\-\_\-\-W\-A\-N\-T\-\_\-\-R\-E\-A\-D indicates read() would block. 
+\end{DoxyReturn}
+\hypertarget{net_8h_a67810154d2328a80b146155d8cdecfd9}{\index{net.\-h@{net.\-h}!mbedtls\-\_\-net\-\_\-recv\-\_\-timeout@{mbedtls\-\_\-net\-\_\-recv\-\_\-timeout}}
+\index{mbedtls\-\_\-net\-\_\-recv\-\_\-timeout@{mbedtls\-\_\-net\-\_\-recv\-\_\-timeout}!net.h@{net.\-h}}
+\subsubsection[{mbedtls\-\_\-net\-\_\-recv\-\_\-timeout}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-net\-\_\-recv\-\_\-timeout (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{ctx, }
+\item[{unsigned char $\ast$}]{buf, }
+\item[{size\-\_\-t}]{len, }
+\item[{uint32\-\_\-t}]{timeout}
+\end{DoxyParamCaption}
+)}}\label{net_8h_a67810154d2328a80b146155d8cdecfd9}
+
+
+Read at most 'len' characters, blocking for at most 'timeout' seconds. If no error occurs, the actual amount read is returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Socket \\
+\hline
+{\em buf} & The buffer to write to \\
+\hline
+{\em len} & Maximum length of the buffer \\
+\hline
+{\em timeout} & Maximum number of milliseconds to wait for data 0 means no timeout (wait forever)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of bytes received, or a non-\/zero error code\-: M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-S\-S\-L\-\_\-\-T\-I\-M\-E\-O\-U\-T if the operation timed out, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-S\-S\-L\-\_\-\-W\-A\-N\-T\-\_\-\-R\-E\-A\-D if interrupted by a signal.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This function will block (until data becomes available or timeout is reached) even if the socket is set to non-\/blocking. Handling timeouts with non-\/blocking reads requires a different strategy. 
+\end{DoxyNote}
+\hypertarget{net_8h_a4841afd0e14f1fd44b82c3a850961ab7}{\index{net.\-h@{net.\-h}!mbedtls\-\_\-net\-\_\-send@{mbedtls\-\_\-net\-\_\-send}}
+\index{mbedtls\-\_\-net\-\_\-send@{mbedtls\-\_\-net\-\_\-send}!net.h@{net.\-h}}
+\subsubsection[{mbedtls\-\_\-net\-\_\-send}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-net\-\_\-send (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{ctx, }
+\item[{const unsigned char $\ast$}]{buf, }
+\item[{size\-\_\-t}]{len}
+\end{DoxyParamCaption}
+)}}\label{net_8h_a4841afd0e14f1fd44b82c3a850961ab7}
+
+
+Write at most 'len' characters. If no error occurs, the actual amount read is returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Socket \\
+\hline
+{\em buf} & The buffer to read from \\
+\hline
+{\em len} & The length of the buffer\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of bytes sent, or a non-\/zero error code; with a non-\/blocking socket, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-S\-S\-L\-\_\-\-W\-A\-N\-T\-\_\-\-W\-R\-I\-T\-E indicates write() would block. 
+\end{DoxyReturn}
+\hypertarget{net_8h_aeea4e6fd5ad3167bf8563e61f6f75963}{\index{net.\-h@{net.\-h}!mbedtls\-\_\-net\-\_\-set\-\_\-block@{mbedtls\-\_\-net\-\_\-set\-\_\-block}}
+\index{mbedtls\-\_\-net\-\_\-set\-\_\-block@{mbedtls\-\_\-net\-\_\-set\-\_\-block}!net.h@{net.\-h}}
+\subsubsection[{mbedtls\-\_\-net\-\_\-set\-\_\-block}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-net\-\_\-set\-\_\-block (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-net\-\_\-context} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}}\label{net_8h_aeea4e6fd5ad3167bf8563e61f6f75963}
+
+
+Set the socket blocking. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Socket to set\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, or a non-\/zero error code 
+\end{DoxyReturn}
+\hypertarget{net_8h_a2ee4acdc24ef78c9acf5068a423b8c30}{\index{net.\-h@{net.\-h}!mbedtls\-\_\-net\-\_\-set\-\_\-nonblock@{mbedtls\-\_\-net\-\_\-set\-\_\-nonblock}}
+\index{mbedtls\-\_\-net\-\_\-set\-\_\-nonblock@{mbedtls\-\_\-net\-\_\-set\-\_\-nonblock}!net.h@{net.\-h}}
+\subsubsection[{mbedtls\-\_\-net\-\_\-set\-\_\-nonblock}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-net\-\_\-set\-\_\-nonblock (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-net\-\_\-context} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}}\label{net_8h_a2ee4acdc24ef78c9acf5068a423b8c30}
+
+
+Set the socket non-\/blocking. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Socket to set\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, or a non-\/zero error code 
+\end{DoxyReturn}
+\hypertarget{net_8h_a716044d3c30c449bd68052b7c418ff84}{\index{net.\-h@{net.\-h}!mbedtls\-\_\-net\-\_\-usleep@{mbedtls\-\_\-net\-\_\-usleep}}
+\index{mbedtls\-\_\-net\-\_\-usleep@{mbedtls\-\_\-net\-\_\-usleep}!net.h@{net.\-h}}
+\subsubsection[{mbedtls\-\_\-net\-\_\-usleep}]{\setlength{\rightskip}{0pt plus 5cm}void mbedtls\-\_\-net\-\_\-usleep (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{usec}
+\end{DoxyParamCaption}
+)}}\label{net_8h_a716044d3c30c449bd68052b7c418ff84}
+
+
+Portable usleep helper. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em usec} & Amount of microseconds to sleep\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Real amount of time slept will not be less than select()'s timeout granularity (typically, 10ms). 
+\end{DoxyNote}

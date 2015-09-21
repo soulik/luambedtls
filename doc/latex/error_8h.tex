@@ -1,0 +1,72 @@
+\hypertarget{error_8h}{\section{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/error.h File Reference}
+\label{error_8h}\index{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/error.\-h@{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/error.\-h}}
+}
+
+
+Error to string translation.  
+
+
+{\ttfamily \#include $<$stddef.\-h$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{error_8h_a8c41c149b77a4807115b19c2af858558}{mbedtls\-\_\-strerror} (int errnum, char $\ast$buffer, size\-\_\-t buflen)
+\begin{DoxyCompactList}\small\item\em Translate a mbed T\-L\-S error code into a string representation, Result is truncated if necessary and always includes a terminating null byte. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Error to string translation. Copyright (C) 2006-\/2015, A\-R\-M Limited, All Rights Reserved
+
+This file is part of mbed T\-L\-S (\href{https://tls.mbed.org}{\tt https\-://tls.\-mbed.\-org})
+
+This program is free software; you can redistribute it and/or modify it under the terms of the G\-N\-U General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but W\-I\-T\-H\-O\-U\-T A\-N\-Y W\-A\-R\-R\-A\-N\-T\-Y; without even the implied warranty of M\-E\-R\-C\-H\-A\-N\-T\-A\-B\-I\-L\-I\-T\-Y or F\-I\-T\-N\-E\-S\-S F\-O\-R A P\-A\-R\-T\-I\-C\-U\-L\-A\-R P\-U\-R\-P\-O\-S\-E. See the G\-N\-U General Public License for more details.
+
+You should have received a copy of the G\-N\-U General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, M\-A 02110-\/1301 U\-S\-A. 
+
+Definition in file \hyperlink{error_8h_source}{error.\-h}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{error_8h_a8c41c149b77a4807115b19c2af858558}{\index{error.\-h@{error.\-h}!mbedtls\-\_\-strerror@{mbedtls\-\_\-strerror}}
+\index{mbedtls\-\_\-strerror@{mbedtls\-\_\-strerror}!error.h@{error.\-h}}
+\subsubsection[{mbedtls\-\_\-strerror}]{\setlength{\rightskip}{0pt plus 5cm}void mbedtls\-\_\-strerror (
+\begin{DoxyParamCaption}
+\item[{int}]{errnum, }
+\item[{char $\ast$}]{buffer, }
+\item[{size\-\_\-t}]{buflen}
+\end{DoxyParamCaption}
+)}}\label{error_8h_a8c41c149b77a4807115b19c2af858558}
+
+
+Translate a mbed T\-L\-S error code into a string representation, Result is truncated if necessary and always includes a terminating null byte. 
+
+Error code layout.
+
+Currently we try to keep all error codes within the negative space of 16 bits signed integers to support all platforms (-\/0x0001 -\/ -\/0x7\-F\-F\-F). In addition we'd like to give two layers of information on the error if possible.
+
+For that purpose the error codes are segmented in the following manner\-:
+
+16 bit error code bit-\/segmentation
+
+1 bit -\/ Unused (sign bit) 3 bits -\/ High level module I\-D 5 bits -\/ Module-\/dependent error code 7 bits -\/ Low level module errors
+
+For historical reasons, low-\/level error codes are divided in even and odd, even codes were assigned first, and -\/1 is reserved for other errors.
+
+Low-\/level module errors (0x0002-\/0x007\-E, 0x0003-\/0x007\-F)
+
+Module Nr Codes assigned M\-P\-I 7 0x0002-\/0x0010 G\-C\-M 2 0x0012-\/0x0014 B\-L\-O\-W\-F\-I\-S\-H 2 0x0016-\/0x0018 T\-H\-R\-E\-A\-D\-I\-N\-G 3 0x001\-A-\/0x001\-E A\-E\-S 2 0x0020-\/0x0022 C\-A\-M\-E\-L\-L\-I\-A 2 0x0024-\/0x0026 X\-T\-E\-A 1 0x0028-\/0x0028 B\-A\-S\-E64 2 0x002\-A-\/0x002\-C O\-I\-D 1 0x002\-E-\/0x002\-E 0x000\-B-\/0x000\-B P\-A\-D\-L\-O\-C\-K 1 0x0030-\/0x0030 D\-E\-S 1 0x0032-\/0x0032 C\-T\-R\-\_\-\-D\-B\-R\-G 4 0x0034-\/0x003\-A E\-N\-T\-R\-O\-P\-Y 3 0x003\-C-\/0x0040 0x003\-D-\/0x003\-F N\-E\-T 11 0x0042-\/0x0052 0x0043-\/0x0045 A\-S\-N1 7 0x0060-\/0x006\-C P\-B\-K\-D\-F2 1 0x007\-C-\/0x007\-C H\-M\-A\-C\-\_\-\-D\-R\-B\-G 4 0x0003-\/0x0009 C\-C\-M 2 0x000\-D-\/0x000\-F
+
+High-\/level module nr (3 bits -\/ 0x0...-\/0x7...) Name I\-D Nr of Errors P\-E\-M 1 9 P\-K\-C\-S\#12 1 4 (Started from top) X509 2 19 P\-K\-C\-S5 2 4 (Started from top) D\-H\-M 3 9 P\-K 3 14 (Started from top) R\-S\-A 4 9 E\-C\-P 4 8 (Started from top) M\-D 5 4 C\-I\-P\-H\-E\-R 6 6 S\-S\-L 6 16 (Started from top) S\-S\-L 7 31
+
+Module dependent error code (5 bits 0x.\-00.-\/0x.\-F8.) 
+\begin{DoxyParams}{Parameters}
+{\em errnum} & error code \\
+\hline
+{\em buffer} & buffer to place representation in \\
+\hline
+{\em buflen} & length of the buffer \\
+\hline
+\end{DoxyParams}

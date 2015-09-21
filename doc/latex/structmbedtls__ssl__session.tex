@@ -1,0 +1,147 @@
+\hypertarget{structmbedtls__ssl__session}{\section{mbedtls\-\_\-ssl\-\_\-session Struct Reference}
+\label{structmbedtls__ssl__session}\index{mbedtls\-\_\-ssl\-\_\-session@{mbedtls\-\_\-ssl\-\_\-session}}
+}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+time\-\_\-t \hyperlink{structmbedtls__ssl__session_a191c291c985d4637ad2ed5dce190a4fd}{start}
+\item 
+int \hyperlink{structmbedtls__ssl__session_ad91239f4186bd272e3eb441c9c309b9e}{ciphersuite}
+\item 
+int \hyperlink{structmbedtls__ssl__session_a71b31d138a01adef0ef99f03084da801}{compression}
+\item 
+size\-\_\-t \hyperlink{structmbedtls__ssl__session_ad1bc5443b7ac77eadd1df71a69f18ba6}{id\-\_\-len}
+\item 
+unsigned char \hyperlink{structmbedtls__ssl__session_abd00d63c5fe4ae5dd87cbba60155fbc4}{id} \mbox{[}32\mbox{]}
+\item 
+unsigned char \hyperlink{structmbedtls__ssl__session_ae8adb932e053a2179530a8aff8750624}{master} \mbox{[}48\mbox{]}
+\item 
+\hyperlink{structmbedtls__x509__crt}{mbedtls\-\_\-x509\-\_\-crt} $\ast$ \hyperlink{structmbedtls__ssl__session_a2133d1643e524378f074bd9da89aca42}{peer\-\_\-cert}
+\item 
+uint32\-\_\-t \hyperlink{structmbedtls__ssl__session_a7767cf999b47eaa545fb6a86b3447a20}{verify\-\_\-result}
+\item 
+unsigned char $\ast$ \hyperlink{structmbedtls__ssl__session_ad639f04ea53fe3602f1188967187436f}{ticket}
+\item 
+size\-\_\-t \hyperlink{structmbedtls__ssl__session_a381594bf55513430e6c61bf287baf38b}{ticket\-\_\-len}
+\item 
+uint32\-\_\-t \hyperlink{structmbedtls__ssl__session_a0d6aad183f79d64f7eee544cd5277be2}{ticket\-\_\-lifetime}
+\item 
+unsigned char \hyperlink{structmbedtls__ssl__session_a9eb94cea53e9e6cb74e6f4204aee0a72}{mfl\-\_\-code}
+\item 
+int \hyperlink{structmbedtls__ssl__session_ad782325576a5b4c06bf55e2b9f2c7bcc}{trunc\-\_\-hmac}
+\item 
+int \hyperlink{structmbedtls__ssl__session_ac0ac3fa9cca796f14ae26cfbeb28e807}{encrypt\-\_\-then\-\_\-mac}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 442 of file ssl.\-h.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structmbedtls__ssl__session_ad91239f4186bd272e3eb441c9c309b9e}{\index{mbedtls\-\_\-ssl\-\_\-session@{mbedtls\-\_\-ssl\-\_\-session}!ciphersuite@{ciphersuite}}
+\index{ciphersuite@{ciphersuite}!mbedtls_ssl_session@{mbedtls\-\_\-ssl\-\_\-session}}
+\subsubsection[{ciphersuite}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-ssl\-\_\-session\-::ciphersuite}}\label{structmbedtls__ssl__session_ad91239f4186bd272e3eb441c9c309b9e}
+chosen ciphersuite 
+
+Definition at line 447 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__session_a71b31d138a01adef0ef99f03084da801}{\index{mbedtls\-\_\-ssl\-\_\-session@{mbedtls\-\_\-ssl\-\_\-session}!compression@{compression}}
+\index{compression@{compression}!mbedtls_ssl_session@{mbedtls\-\_\-ssl\-\_\-session}}
+\subsubsection[{compression}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-ssl\-\_\-session\-::compression}}\label{structmbedtls__ssl__session_a71b31d138a01adef0ef99f03084da801}
+chosen compression 
+
+Definition at line 448 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__session_ac0ac3fa9cca796f14ae26cfbeb28e807}{\index{mbedtls\-\_\-ssl\-\_\-session@{mbedtls\-\_\-ssl\-\_\-session}!encrypt\-\_\-then\-\_\-mac@{encrypt\-\_\-then\-\_\-mac}}
+\index{encrypt\-\_\-then\-\_\-mac@{encrypt\-\_\-then\-\_\-mac}!mbedtls_ssl_session@{mbedtls\-\_\-ssl\-\_\-session}}
+\subsubsection[{encrypt\-\_\-then\-\_\-mac}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-ssl\-\_\-session\-::encrypt\-\_\-then\-\_\-mac}}\label{structmbedtls__ssl__session_ac0ac3fa9cca796f14ae26cfbeb28e807}
+flag for Et\-M activation 
+
+Definition at line 473 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__session_abd00d63c5fe4ae5dd87cbba60155fbc4}{\index{mbedtls\-\_\-ssl\-\_\-session@{mbedtls\-\_\-ssl\-\_\-session}!id@{id}}
+\index{id@{id}!mbedtls_ssl_session@{mbedtls\-\_\-ssl\-\_\-session}}
+\subsubsection[{id}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char mbedtls\-\_\-ssl\-\_\-session\-::id\mbox{[}32\mbox{]}}}\label{structmbedtls__ssl__session_abd00d63c5fe4ae5dd87cbba60155fbc4}
+session identifier 
+
+Definition at line 450 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__session_ad1bc5443b7ac77eadd1df71a69f18ba6}{\index{mbedtls\-\_\-ssl\-\_\-session@{mbedtls\-\_\-ssl\-\_\-session}!id\-\_\-len@{id\-\_\-len}}
+\index{id\-\_\-len@{id\-\_\-len}!mbedtls_ssl_session@{mbedtls\-\_\-ssl\-\_\-session}}
+\subsubsection[{id\-\_\-len}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t mbedtls\-\_\-ssl\-\_\-session\-::id\-\_\-len}}\label{structmbedtls__ssl__session_ad1bc5443b7ac77eadd1df71a69f18ba6}
+session id length 
+
+Definition at line 449 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__session_ae8adb932e053a2179530a8aff8750624}{\index{mbedtls\-\_\-ssl\-\_\-session@{mbedtls\-\_\-ssl\-\_\-session}!master@{master}}
+\index{master@{master}!mbedtls_ssl_session@{mbedtls\-\_\-ssl\-\_\-session}}
+\subsubsection[{master}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char mbedtls\-\_\-ssl\-\_\-session\-::master\mbox{[}48\mbox{]}}}\label{structmbedtls__ssl__session_ae8adb932e053a2179530a8aff8750624}
+the master secret 
+
+Definition at line 451 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__session_a9eb94cea53e9e6cb74e6f4204aee0a72}{\index{mbedtls\-\_\-ssl\-\_\-session@{mbedtls\-\_\-ssl\-\_\-session}!mfl\-\_\-code@{mfl\-\_\-code}}
+\index{mfl\-\_\-code@{mfl\-\_\-code}!mbedtls_ssl_session@{mbedtls\-\_\-ssl\-\_\-session}}
+\subsubsection[{mfl\-\_\-code}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char mbedtls\-\_\-ssl\-\_\-session\-::mfl\-\_\-code}}\label{structmbedtls__ssl__session_a9eb94cea53e9e6cb74e6f4204aee0a72}
+Max\-Fragment\-Length negotiated by peer 
+
+Definition at line 465 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__session_a2133d1643e524378f074bd9da89aca42}{\index{mbedtls\-\_\-ssl\-\_\-session@{mbedtls\-\_\-ssl\-\_\-session}!peer\-\_\-cert@{peer\-\_\-cert}}
+\index{peer\-\_\-cert@{peer\-\_\-cert}!mbedtls_ssl_session@{mbedtls\-\_\-ssl\-\_\-session}}
+\subsubsection[{peer\-\_\-cert}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mbedtls\-\_\-x509\-\_\-crt}$\ast$ mbedtls\-\_\-ssl\-\_\-session\-::peer\-\_\-cert}}\label{structmbedtls__ssl__session_a2133d1643e524378f074bd9da89aca42}
+peer X.\-509 cert chain 
+
+Definition at line 454 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__session_a191c291c985d4637ad2ed5dce190a4fd}{\index{mbedtls\-\_\-ssl\-\_\-session@{mbedtls\-\_\-ssl\-\_\-session}!start@{start}}
+\index{start@{start}!mbedtls_ssl_session@{mbedtls\-\_\-ssl\-\_\-session}}
+\subsubsection[{start}]{\setlength{\rightskip}{0pt plus 5cm}time\-\_\-t mbedtls\-\_\-ssl\-\_\-session\-::start}}\label{structmbedtls__ssl__session_a191c291c985d4637ad2ed5dce190a4fd}
+starting time 
+
+Definition at line 445 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__session_ad639f04ea53fe3602f1188967187436f}{\index{mbedtls\-\_\-ssl\-\_\-session@{mbedtls\-\_\-ssl\-\_\-session}!ticket@{ticket}}
+\index{ticket@{ticket}!mbedtls_ssl_session@{mbedtls\-\_\-ssl\-\_\-session}}
+\subsubsection[{ticket}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char$\ast$ mbedtls\-\_\-ssl\-\_\-session\-::ticket}}\label{structmbedtls__ssl__session_ad639f04ea53fe3602f1188967187436f}
+R\-F\-C 5077 session ticket 
+
+Definition at line 459 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__session_a381594bf55513430e6c61bf287baf38b}{\index{mbedtls\-\_\-ssl\-\_\-session@{mbedtls\-\_\-ssl\-\_\-session}!ticket\-\_\-len@{ticket\-\_\-len}}
+\index{ticket\-\_\-len@{ticket\-\_\-len}!mbedtls_ssl_session@{mbedtls\-\_\-ssl\-\_\-session}}
+\subsubsection[{ticket\-\_\-len}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t mbedtls\-\_\-ssl\-\_\-session\-::ticket\-\_\-len}}\label{structmbedtls__ssl__session_a381594bf55513430e6c61bf287baf38b}
+session ticket length 
+
+Definition at line 460 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__session_a0d6aad183f79d64f7eee544cd5277be2}{\index{mbedtls\-\_\-ssl\-\_\-session@{mbedtls\-\_\-ssl\-\_\-session}!ticket\-\_\-lifetime@{ticket\-\_\-lifetime}}
+\index{ticket\-\_\-lifetime@{ticket\-\_\-lifetime}!mbedtls_ssl_session@{mbedtls\-\_\-ssl\-\_\-session}}
+\subsubsection[{ticket\-\_\-lifetime}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t mbedtls\-\_\-ssl\-\_\-session\-::ticket\-\_\-lifetime}}\label{structmbedtls__ssl__session_a0d6aad183f79d64f7eee544cd5277be2}
+ticket lifetime hint 
+
+Definition at line 461 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__session_ad782325576a5b4c06bf55e2b9f2c7bcc}{\index{mbedtls\-\_\-ssl\-\_\-session@{mbedtls\-\_\-ssl\-\_\-session}!trunc\-\_\-hmac@{trunc\-\_\-hmac}}
+\index{trunc\-\_\-hmac@{trunc\-\_\-hmac}!mbedtls_ssl_session@{mbedtls\-\_\-ssl\-\_\-session}}
+\subsubsection[{trunc\-\_\-hmac}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-ssl\-\_\-session\-::trunc\-\_\-hmac}}\label{structmbedtls__ssl__session_ad782325576a5b4c06bf55e2b9f2c7bcc}
+flag for truncated hmac activation 
+
+Definition at line 469 of file ssl.\-h.
+
+\hypertarget{structmbedtls__ssl__session_a7767cf999b47eaa545fb6a86b3447a20}{\index{mbedtls\-\_\-ssl\-\_\-session@{mbedtls\-\_\-ssl\-\_\-session}!verify\-\_\-result@{verify\-\_\-result}}
+\index{verify\-\_\-result@{verify\-\_\-result}!mbedtls_ssl_session@{mbedtls\-\_\-ssl\-\_\-session}}
+\subsubsection[{verify\-\_\-result}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t mbedtls\-\_\-ssl\-\_\-session\-::verify\-\_\-result}}\label{structmbedtls__ssl__session_a7767cf999b47eaa545fb6a86b3447a20}
+verification result 
+
+Definition at line 456 of file ssl.\-h.
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/\hyperlink{ssl_8h}{ssl.\-h}\end{DoxyCompactItemize}

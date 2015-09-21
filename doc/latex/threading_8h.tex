@@ -1,0 +1,79 @@
+\hypertarget{threading_8h}{\section{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/threading.h File Reference}
+\label{threading_8h}\index{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/threading.\-h@{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/threading.\-h}}
+}
+
+
+Threading abstraction layer.  
+
+
+{\ttfamily \#include \char`\"{}config.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{threading_8h_ad3cbda6bbb5ce837b33ada893d7d5613}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-T\-H\-R\-E\-A\-D\-I\-N\-G\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-U\-N\-A\-V\-A\-I\-L\-A\-B\-L\-E}~-\/0x001\-A
+\item 
+\#define \hyperlink{threading_8h_a76cd79a1ed3fd583ed3a4428d6a1e967}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-T\-H\-R\-E\-A\-D\-I\-N\-G\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A}~-\/0x001\-C
+\item 
+\#define \hyperlink{threading_8h_a51005c51b928706511d3c2ea3390c07f}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-T\-H\-R\-E\-A\-D\-I\-N\-G\-\_\-\-M\-U\-T\-E\-X\-\_\-\-E\-R\-R\-O\-R}~-\/0x001\-E
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{threading_8h_a92228f8dc3c7b899b0f3d190c78c5383}{void($\ast$ {\bfseries mbedtls\-\_\-mutex\-\_\-init} )(mbedtls\-\_\-threading\-\_\-mutex\-\_\-t $\ast$mutex)}\label{threading_8h_a92228f8dc3c7b899b0f3d190c78c5383}
+
+\item 
+\hypertarget{threading_8h_a76b36ae7227a79d855795b1a0cdb21b6}{void($\ast$ {\bfseries mbedtls\-\_\-mutex\-\_\-free} )(mbedtls\-\_\-threading\-\_\-mutex\-\_\-t $\ast$mutex)}\label{threading_8h_a76b36ae7227a79d855795b1a0cdb21b6}
+
+\item 
+\hypertarget{threading_8h_a1de33e9651d8fa82ada873f7c41fe118}{int($\ast$ {\bfseries mbedtls\-\_\-mutex\-\_\-lock} )(mbedtls\-\_\-threading\-\_\-mutex\-\_\-t $\ast$mutex)}\label{threading_8h_a1de33e9651d8fa82ada873f7c41fe118}
+
+\item 
+\hypertarget{threading_8h_a3bc5b1a8f4c0b19a69db0978f4879b73}{int($\ast$ {\bfseries mbedtls\-\_\-mutex\-\_\-unlock} )(mbedtls\-\_\-threading\-\_\-mutex\-\_\-t $\ast$mutex)}\label{threading_8h_a3bc5b1a8f4c0b19a69db0978f4879b73}
+
+\item 
+\hypertarget{threading_8h_a87bbccdf40874b80a9f7313627734c38}{mbedtls\-\_\-threading\-\_\-mutex\-\_\-t {\bfseries mbedtls\-\_\-threading\-\_\-readdir\-\_\-mutex}}\label{threading_8h_a87bbccdf40874b80a9f7313627734c38}
+
+\item 
+\hypertarget{threading_8h_a81df682884dc24198fb7fc86c6100f34}{mbedtls\-\_\-threading\-\_\-mutex\-\_\-t {\bfseries mbedtls\-\_\-threading\-\_\-gmtime\-\_\-mutex}}\label{threading_8h_a81df682884dc24198fb7fc86c6100f34}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Threading abstraction layer. Copyright (C) 2006-\/2015, A\-R\-M Limited, All Rights Reserved
+
+This file is part of mbed T\-L\-S (\href{https://tls.mbed.org}{\tt https\-://tls.\-mbed.\-org})
+
+This program is free software; you can redistribute it and/or modify it under the terms of the G\-N\-U General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but W\-I\-T\-H\-O\-U\-T A\-N\-Y W\-A\-R\-R\-A\-N\-T\-Y; without even the implied warranty of M\-E\-R\-C\-H\-A\-N\-T\-A\-B\-I\-L\-I\-T\-Y or F\-I\-T\-N\-E\-S\-S F\-O\-R A P\-A\-R\-T\-I\-C\-U\-L\-A\-R P\-U\-R\-P\-O\-S\-E. See the G\-N\-U General Public License for more details.
+
+You should have received a copy of the G\-N\-U General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, M\-A 02110-\/1301 U\-S\-A. 
+
+Definition in file \hyperlink{threading_8h_source}{threading.\-h}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{threading_8h_a76cd79a1ed3fd583ed3a4428d6a1e967}{\index{threading.\-h@{threading.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-T\-H\-R\-E\-A\-D\-I\-N\-G\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-T\-H\-R\-E\-A\-D\-I\-N\-G\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-T\-H\-R\-E\-A\-D\-I\-N\-G\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-T\-H\-R\-E\-A\-D\-I\-N\-G\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A}!threading.h@{threading.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-T\-H\-R\-E\-A\-D\-I\-N\-G\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-T\-H\-R\-E\-A\-D\-I\-N\-G\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A~-\/0x001\-C}}\label{threading_8h_a76cd79a1ed3fd583ed3a4428d6a1e967}
+Bad input parameters to function. 
+
+Definition at line 40 of file threading.\-h.
+
+\hypertarget{threading_8h_ad3cbda6bbb5ce837b33ada893d7d5613}{\index{threading.\-h@{threading.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-T\-H\-R\-E\-A\-D\-I\-N\-G\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-U\-N\-A\-V\-A\-I\-L\-A\-B\-L\-E@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-T\-H\-R\-E\-A\-D\-I\-N\-G\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-U\-N\-A\-V\-A\-I\-L\-A\-B\-L\-E}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-T\-H\-R\-E\-A\-D\-I\-N\-G\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-U\-N\-A\-V\-A\-I\-L\-A\-B\-L\-E@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-T\-H\-R\-E\-A\-D\-I\-N\-G\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-U\-N\-A\-V\-A\-I\-L\-A\-B\-L\-E}!threading.h@{threading.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-T\-H\-R\-E\-A\-D\-I\-N\-G\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-U\-N\-A\-V\-A\-I\-L\-A\-B\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-T\-H\-R\-E\-A\-D\-I\-N\-G\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-U\-N\-A\-V\-A\-I\-L\-A\-B\-L\-E~-\/0x001\-A}}\label{threading_8h_ad3cbda6bbb5ce837b33ada893d7d5613}
+The selected feature is not available. 
+
+Definition at line 39 of file threading.\-h.
+
+\hypertarget{threading_8h_a51005c51b928706511d3c2ea3390c07f}{\index{threading.\-h@{threading.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-T\-H\-R\-E\-A\-D\-I\-N\-G\-\_\-\-M\-U\-T\-E\-X\-\_\-\-E\-R\-R\-O\-R@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-T\-H\-R\-E\-A\-D\-I\-N\-G\-\_\-\-M\-U\-T\-E\-X\-\_\-\-E\-R\-R\-O\-R}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-T\-H\-R\-E\-A\-D\-I\-N\-G\-\_\-\-M\-U\-T\-E\-X\-\_\-\-E\-R\-R\-O\-R@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-T\-H\-R\-E\-A\-D\-I\-N\-G\-\_\-\-M\-U\-T\-E\-X\-\_\-\-E\-R\-R\-O\-R}!threading.h@{threading.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-T\-H\-R\-E\-A\-D\-I\-N\-G\-\_\-\-M\-U\-T\-E\-X\-\_\-\-E\-R\-R\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-T\-H\-R\-E\-A\-D\-I\-N\-G\-\_\-\-M\-U\-T\-E\-X\-\_\-\-E\-R\-R\-O\-R~-\/0x001\-E}}\label{threading_8h_a51005c51b928706511d3c2ea3390c07f}
+Locking / unlocking / free failed with error code. 
+
+Definition at line 41 of file threading.\-h.
+

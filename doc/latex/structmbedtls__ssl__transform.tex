@@ -1,0 +1,147 @@
+\hypertarget{structmbedtls__ssl__transform}{\section{mbedtls\-\_\-ssl\-\_\-transform Struct Reference}
+\label{structmbedtls__ssl__transform}\index{mbedtls\-\_\-ssl\-\_\-transform@{mbedtls\-\_\-ssl\-\_\-transform}}
+}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{structmbedtls__ssl__ciphersuite__t}{mbedtls\-\_\-ssl\-\_\-ciphersuite\-\_\-t} $\ast$ \hyperlink{structmbedtls__ssl__transform_a669b64ca817f92c2f2da4531745b5563}{ciphersuite\-\_\-info}
+\item 
+unsigned int \hyperlink{structmbedtls__ssl__transform_aacb827d7f8a0d31359870c64d213baa9}{keylen}
+\item 
+size\-\_\-t \hyperlink{structmbedtls__ssl__transform_aaa43c099c7bc4f20f283362fd2feb619}{minlen}
+\item 
+size\-\_\-t \hyperlink{structmbedtls__ssl__transform_aabfe6c0fea0a8bcaa89823c2f06d885a}{ivlen}
+\item 
+size\-\_\-t \hyperlink{structmbedtls__ssl__transform_aeb9dc8aee94effb34d725e259e390c2d}{fixed\-\_\-ivlen}
+\item 
+size\-\_\-t \hyperlink{structmbedtls__ssl__transform_a2b616bec2cc218b736dffe87e58efc56}{maclen}
+\item 
+unsigned char \hyperlink{structmbedtls__ssl__transform_a5dc42f2d1f720d396c35eb355cba69e2}{iv\-\_\-enc} \mbox{[}16\mbox{]}
+\item 
+unsigned char \hyperlink{structmbedtls__ssl__transform_ad31f126ea147ffa513cc4ad170d2ff25}{iv\-\_\-dec} \mbox{[}16\mbox{]}
+\item 
+unsigned char \hyperlink{structmbedtls__ssl__transform_a6f9cda9ccf9ca99b7170f394180f49a2}{mac\-\_\-enc} \mbox{[}20\mbox{]}
+\item 
+unsigned char \hyperlink{structmbedtls__ssl__transform_a3170985961f116ffc229315acfe91373}{mac\-\_\-dec} \mbox{[}20\mbox{]}
+\item 
+\hyperlink{structmbedtls__md__context__t}{mbedtls\-\_\-md\-\_\-context\-\_\-t} \hyperlink{structmbedtls__ssl__transform_a17f516488ea4254947d296a53c527af8}{md\-\_\-ctx\-\_\-enc}
+\item 
+\hyperlink{structmbedtls__md__context__t}{mbedtls\-\_\-md\-\_\-context\-\_\-t} \hyperlink{structmbedtls__ssl__transform_a9d9d8245fb1000d30a9a63191cddf0e0}{md\-\_\-ctx\-\_\-dec}
+\item 
+\hyperlink{structmbedtls__cipher__context__t}{mbedtls\-\_\-cipher\-\_\-context\-\_\-t} \hyperlink{structmbedtls__ssl__transform_a4a1c49f6f40086491dd8dd059f163a61}{cipher\-\_\-ctx\-\_\-enc}
+\item 
+\hyperlink{structmbedtls__cipher__context__t}{mbedtls\-\_\-cipher\-\_\-context\-\_\-t} \hyperlink{structmbedtls__ssl__transform_a8f7e9c4b90dda8083df54037e5be955e}{cipher\-\_\-ctx\-\_\-dec}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 258 of file ssl\-\_\-internal.\-h.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structmbedtls__ssl__transform_a8f7e9c4b90dda8083df54037e5be955e}{\index{mbedtls\-\_\-ssl\-\_\-transform@{mbedtls\-\_\-ssl\-\_\-transform}!cipher\-\_\-ctx\-\_\-dec@{cipher\-\_\-ctx\-\_\-dec}}
+\index{cipher\-\_\-ctx\-\_\-dec@{cipher\-\_\-ctx\-\_\-dec}!mbedtls_ssl_transform@{mbedtls\-\_\-ssl\-\_\-transform}}
+\subsubsection[{cipher\-\_\-ctx\-\_\-dec}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mbedtls\-\_\-cipher\-\_\-context\-\_\-t} mbedtls\-\_\-ssl\-\_\-transform\-::cipher\-\_\-ctx\-\_\-dec}}\label{structmbedtls__ssl__transform_a8f7e9c4b90dda8083df54037e5be955e}
+decryption context 
+
+Definition at line 284 of file ssl\-\_\-internal.\-h.
+
+\hypertarget{structmbedtls__ssl__transform_a4a1c49f6f40086491dd8dd059f163a61}{\index{mbedtls\-\_\-ssl\-\_\-transform@{mbedtls\-\_\-ssl\-\_\-transform}!cipher\-\_\-ctx\-\_\-enc@{cipher\-\_\-ctx\-\_\-enc}}
+\index{cipher\-\_\-ctx\-\_\-enc@{cipher\-\_\-ctx\-\_\-enc}!mbedtls_ssl_transform@{mbedtls\-\_\-ssl\-\_\-transform}}
+\subsubsection[{cipher\-\_\-ctx\-\_\-enc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mbedtls\-\_\-cipher\-\_\-context\-\_\-t} mbedtls\-\_\-ssl\-\_\-transform\-::cipher\-\_\-ctx\-\_\-enc}}\label{structmbedtls__ssl__transform_a4a1c49f6f40086491dd8dd059f163a61}
+encryption context 
+
+Definition at line 283 of file ssl\-\_\-internal.\-h.
+
+\hypertarget{structmbedtls__ssl__transform_a669b64ca817f92c2f2da4531745b5563}{\index{mbedtls\-\_\-ssl\-\_\-transform@{mbedtls\-\_\-ssl\-\_\-transform}!ciphersuite\-\_\-info@{ciphersuite\-\_\-info}}
+\index{ciphersuite\-\_\-info@{ciphersuite\-\_\-info}!mbedtls_ssl_transform@{mbedtls\-\_\-ssl\-\_\-transform}}
+\subsubsection[{ciphersuite\-\_\-info}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf mbedtls\-\_\-ssl\-\_\-ciphersuite\-\_\-t}$\ast$ mbedtls\-\_\-ssl\-\_\-transform\-::ciphersuite\-\_\-info}}\label{structmbedtls__ssl__transform_a669b64ca817f92c2f2da4531745b5563}
+Chosen cipersuite\-\_\-info 
+
+Definition at line 263 of file ssl\-\_\-internal.\-h.
+
+\hypertarget{structmbedtls__ssl__transform_aeb9dc8aee94effb34d725e259e390c2d}{\index{mbedtls\-\_\-ssl\-\_\-transform@{mbedtls\-\_\-ssl\-\_\-transform}!fixed\-\_\-ivlen@{fixed\-\_\-ivlen}}
+\index{fixed\-\_\-ivlen@{fixed\-\_\-ivlen}!mbedtls_ssl_transform@{mbedtls\-\_\-ssl\-\_\-transform}}
+\subsubsection[{fixed\-\_\-ivlen}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t mbedtls\-\_\-ssl\-\_\-transform\-::fixed\-\_\-ivlen}}\label{structmbedtls__ssl__transform_aeb9dc8aee94effb34d725e259e390c2d}
+Fixed part of I\-V (A\-E\-A\-D) 
+
+Definition at line 268 of file ssl\-\_\-internal.\-h.
+
+\hypertarget{structmbedtls__ssl__transform_ad31f126ea147ffa513cc4ad170d2ff25}{\index{mbedtls\-\_\-ssl\-\_\-transform@{mbedtls\-\_\-ssl\-\_\-transform}!iv\-\_\-dec@{iv\-\_\-dec}}
+\index{iv\-\_\-dec@{iv\-\_\-dec}!mbedtls_ssl_transform@{mbedtls\-\_\-ssl\-\_\-transform}}
+\subsubsection[{iv\-\_\-dec}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char mbedtls\-\_\-ssl\-\_\-transform\-::iv\-\_\-dec\mbox{[}16\mbox{]}}}\label{structmbedtls__ssl__transform_ad31f126ea147ffa513cc4ad170d2ff25}
+I\-V (decryption) 
+
+Definition at line 272 of file ssl\-\_\-internal.\-h.
+
+\hypertarget{structmbedtls__ssl__transform_a5dc42f2d1f720d396c35eb355cba69e2}{\index{mbedtls\-\_\-ssl\-\_\-transform@{mbedtls\-\_\-ssl\-\_\-transform}!iv\-\_\-enc@{iv\-\_\-enc}}
+\index{iv\-\_\-enc@{iv\-\_\-enc}!mbedtls_ssl_transform@{mbedtls\-\_\-ssl\-\_\-transform}}
+\subsubsection[{iv\-\_\-enc}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char mbedtls\-\_\-ssl\-\_\-transform\-::iv\-\_\-enc\mbox{[}16\mbox{]}}}\label{structmbedtls__ssl__transform_a5dc42f2d1f720d396c35eb355cba69e2}
+I\-V (encryption) 
+
+Definition at line 271 of file ssl\-\_\-internal.\-h.
+
+\hypertarget{structmbedtls__ssl__transform_aabfe6c0fea0a8bcaa89823c2f06d885a}{\index{mbedtls\-\_\-ssl\-\_\-transform@{mbedtls\-\_\-ssl\-\_\-transform}!ivlen@{ivlen}}
+\index{ivlen@{ivlen}!mbedtls_ssl_transform@{mbedtls\-\_\-ssl\-\_\-transform}}
+\subsubsection[{ivlen}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t mbedtls\-\_\-ssl\-\_\-transform\-::ivlen}}\label{structmbedtls__ssl__transform_aabfe6c0fea0a8bcaa89823c2f06d885a}
+I\-V length 
+
+Definition at line 267 of file ssl\-\_\-internal.\-h.
+
+\hypertarget{structmbedtls__ssl__transform_aacb827d7f8a0d31359870c64d213baa9}{\index{mbedtls\-\_\-ssl\-\_\-transform@{mbedtls\-\_\-ssl\-\_\-transform}!keylen@{keylen}}
+\index{keylen@{keylen}!mbedtls_ssl_transform@{mbedtls\-\_\-ssl\-\_\-transform}}
+\subsubsection[{keylen}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int mbedtls\-\_\-ssl\-\_\-transform\-::keylen}}\label{structmbedtls__ssl__transform_aacb827d7f8a0d31359870c64d213baa9}
+symmetric key length (bytes) 
+
+Definition at line 265 of file ssl\-\_\-internal.\-h.
+
+\hypertarget{structmbedtls__ssl__transform_a3170985961f116ffc229315acfe91373}{\index{mbedtls\-\_\-ssl\-\_\-transform@{mbedtls\-\_\-ssl\-\_\-transform}!mac\-\_\-dec@{mac\-\_\-dec}}
+\index{mac\-\_\-dec@{mac\-\_\-dec}!mbedtls_ssl_transform@{mbedtls\-\_\-ssl\-\_\-transform}}
+\subsubsection[{mac\-\_\-dec}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char mbedtls\-\_\-ssl\-\_\-transform\-::mac\-\_\-dec\mbox{[}20\mbox{]}}}\label{structmbedtls__ssl__transform_a3170985961f116ffc229315acfe91373}
+S\-S\-L v3.\-0 secret (dec) 
+
+Definition at line 277 of file ssl\-\_\-internal.\-h.
+
+\hypertarget{structmbedtls__ssl__transform_a6f9cda9ccf9ca99b7170f394180f49a2}{\index{mbedtls\-\_\-ssl\-\_\-transform@{mbedtls\-\_\-ssl\-\_\-transform}!mac\-\_\-enc@{mac\-\_\-enc}}
+\index{mac\-\_\-enc@{mac\-\_\-enc}!mbedtls_ssl_transform@{mbedtls\-\_\-ssl\-\_\-transform}}
+\subsubsection[{mac\-\_\-enc}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char mbedtls\-\_\-ssl\-\_\-transform\-::mac\-\_\-enc\mbox{[}20\mbox{]}}}\label{structmbedtls__ssl__transform_a6f9cda9ccf9ca99b7170f394180f49a2}
+S\-S\-L v3.\-0 secret (enc) 
+
+Definition at line 276 of file ssl\-\_\-internal.\-h.
+
+\hypertarget{structmbedtls__ssl__transform_a2b616bec2cc218b736dffe87e58efc56}{\index{mbedtls\-\_\-ssl\-\_\-transform@{mbedtls\-\_\-ssl\-\_\-transform}!maclen@{maclen}}
+\index{maclen@{maclen}!mbedtls_ssl_transform@{mbedtls\-\_\-ssl\-\_\-transform}}
+\subsubsection[{maclen}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t mbedtls\-\_\-ssl\-\_\-transform\-::maclen}}\label{structmbedtls__ssl__transform_a2b616bec2cc218b736dffe87e58efc56}
+M\-A\-C length 
+
+Definition at line 269 of file ssl\-\_\-internal.\-h.
+
+\hypertarget{structmbedtls__ssl__transform_a9d9d8245fb1000d30a9a63191cddf0e0}{\index{mbedtls\-\_\-ssl\-\_\-transform@{mbedtls\-\_\-ssl\-\_\-transform}!md\-\_\-ctx\-\_\-dec@{md\-\_\-ctx\-\_\-dec}}
+\index{md\-\_\-ctx\-\_\-dec@{md\-\_\-ctx\-\_\-dec}!mbedtls_ssl_transform@{mbedtls\-\_\-ssl\-\_\-transform}}
+\subsubsection[{md\-\_\-ctx\-\_\-dec}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mbedtls\-\_\-md\-\_\-context\-\_\-t} mbedtls\-\_\-ssl\-\_\-transform\-::md\-\_\-ctx\-\_\-dec}}\label{structmbedtls__ssl__transform_a9d9d8245fb1000d30a9a63191cddf0e0}
+M\-A\-C (decryption) 
+
+Definition at line 281 of file ssl\-\_\-internal.\-h.
+
+\hypertarget{structmbedtls__ssl__transform_a17f516488ea4254947d296a53c527af8}{\index{mbedtls\-\_\-ssl\-\_\-transform@{mbedtls\-\_\-ssl\-\_\-transform}!md\-\_\-ctx\-\_\-enc@{md\-\_\-ctx\-\_\-enc}}
+\index{md\-\_\-ctx\-\_\-enc@{md\-\_\-ctx\-\_\-enc}!mbedtls_ssl_transform@{mbedtls\-\_\-ssl\-\_\-transform}}
+\subsubsection[{md\-\_\-ctx\-\_\-enc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mbedtls\-\_\-md\-\_\-context\-\_\-t} mbedtls\-\_\-ssl\-\_\-transform\-::md\-\_\-ctx\-\_\-enc}}\label{structmbedtls__ssl__transform_a17f516488ea4254947d296a53c527af8}
+M\-A\-C (encryption) 
+
+Definition at line 280 of file ssl\-\_\-internal.\-h.
+
+\hypertarget{structmbedtls__ssl__transform_aaa43c099c7bc4f20f283362fd2feb619}{\index{mbedtls\-\_\-ssl\-\_\-transform@{mbedtls\-\_\-ssl\-\_\-transform}!minlen@{minlen}}
+\index{minlen@{minlen}!mbedtls_ssl_transform@{mbedtls\-\_\-ssl\-\_\-transform}}
+\subsubsection[{minlen}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t mbedtls\-\_\-ssl\-\_\-transform\-::minlen}}\label{structmbedtls__ssl__transform_aaa43c099c7bc4f20f283362fd2feb619}
+min. ciphertext length 
+
+Definition at line 266 of file ssl\-\_\-internal.\-h.
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/ssl\-\_\-internal.\-h\end{DoxyCompactItemize}

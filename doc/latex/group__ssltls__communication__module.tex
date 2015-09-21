@@ -1,0 +1,26 @@
+\hypertarget{group__ssltls__communication__module}{\section{S\-S\-L/\-T\-L\-S communication module}
+\label{group__ssltls__communication__module}\index{S\-S\-L/\-T\-L\-S communication module@{S\-S\-L/\-T\-L\-S communication module}}
+}
+The S\-S\-L/\-T\-L\-S communication module provides the means to create an S\-S\-L/\-T\-L\-S communication channel.
+
+The basic provisions are\-:
+\begin{DoxyItemize}
+\item initialise an S\-S\-L/\-T\-L\-S context (see {\ttfamily \hyperlink{ssl_8h_a8560dea66d7830a11874188727ec4c45}{mbedtls\-\_\-ssl\-\_\-init()}}).
+\item perform an S\-S\-L/\-T\-L\-S handshake (see {\ttfamily \hyperlink{ssl_8h_a4a37e497cd08c896870a42b1b618186e}{mbedtls\-\_\-ssl\-\_\-handshake()}}).
+\item read/write (see {\ttfamily \hyperlink{ssl_8h_aa2c29eeb1deaf5ad9f01a7515006ede5}{mbedtls\-\_\-ssl\-\_\-read()}} and {\ttfamily \hyperlink{ssl_8h_a5bbda87d484de82df730758b475f32e5}{mbedtls\-\_\-ssl\-\_\-write()}}).
+\item notify a peer that connection is being closed (see {\ttfamily \hyperlink{ssl_8h_ac2c1b17128ead2df3082e27b603deb4c}{mbedtls\-\_\-ssl\-\_\-close\-\_\-notify()}}).
+\end{DoxyItemize}
+
+Many aspects of such a channel are set through parameters and callback functions\-:
+\begin{DoxyItemize}
+\item the endpoint role\-: client or server.
+\item the authentication mode. Should verification take place.
+\item the Host-\/to-\/host communication channel. A T\-C\-P/\-I\-P module is provided.
+\item the random number generator (R\-N\-G).
+\item the ciphers to use for encryption/decryption.
+\item session control functions.
+\item X.\-509 parameters for certificate-\/handling and key exchange.
+\end{DoxyItemize}
+
+This module can be used to create an S\-S\-L/\-T\-L\-S server and client and to provide a basic framework to setup and communicate through an S\-S\-L/\-T\-L\-S communication channel.\par
+ Note that you need to provide for several aspects yourself as mentioned above. 

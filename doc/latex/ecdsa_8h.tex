@@ -1,0 +1,389 @@
+\hypertarget{ecdsa_8h}{\section{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/ecdsa.h File Reference}
+\label{ecdsa_8h}\index{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/ecdsa.\-h@{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/ecdsa.\-h}}
+}
+
+
+Elliptic curve D\-S\-A.  
+
+
+{\ttfamily \#include \char`\"{}ecp.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}md.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{ecdsa_8h_aeb07d11aef4d847c5cc5cfba49547136}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-C\-D\-S\-A\-\_\-\-M\-A\-X\-\_\-\-L\-E\-N}~( 3 + 2 $\ast$ ( 3 + M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-C\-P\-\_\-\-M\-A\-X\-\_\-\-B\-Y\-T\-E\-S ) )
+\item 
+\hypertarget{ecdsa_8h_aa9f53b232ef244efb301233d111930dc}{\#define {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-D\-E\-P\-R\-E\-C\-A\-T\-E\-D}}\label{ecdsa_8h_aa9f53b232ef244efb301233d111930dc}
+
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{ecdsa_8h_a86ad4c743272c83310c20585ec7a182f}{typedef \hyperlink{structmbedtls__ecp__keypair}{mbedtls\-\_\-ecp\-\_\-keypair} \hyperlink{ecdsa_8h_a86ad4c743272c83310c20585ec7a182f}{mbedtls\-\_\-ecdsa\-\_\-context}}\label{ecdsa_8h_a86ad4c743272c83310c20585ec7a182f}
+
+\begin{DoxyCompactList}\small\item\em E\-C\-D\-S\-A context structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{ecdsa_8h_af10f6fda2169862871d0ac07555c8641}{mbedtls\-\_\-ecdsa\-\_\-sign} (\hyperlink{structmbedtls__ecp__group}{mbedtls\-\_\-ecp\-\_\-group} $\ast$grp, \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$r, \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$s, const \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$d, const unsigned char $\ast$buf, size\-\_\-t blen, int($\ast$f\-\_\-rng)(void $\ast$, unsigned char $\ast$, size\-\_\-t), void $\ast$p\-\_\-rng)
+\begin{DoxyCompactList}\small\item\em Compute E\-C\-D\-S\-A signature of a previously hashed message. \end{DoxyCompactList}\item 
+int \hyperlink{ecdsa_8h_a381af8cc9ab0146a4cf1ba5226c81a8f}{mbedtls\-\_\-ecdsa\-\_\-sign\-\_\-det} (\hyperlink{structmbedtls__ecp__group}{mbedtls\-\_\-ecp\-\_\-group} $\ast$grp, \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$r, \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$s, const \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$d, const unsigned char $\ast$buf, size\-\_\-t blen, mbedtls\-\_\-md\-\_\-type\-\_\-t md\-\_\-alg)
+\begin{DoxyCompactList}\small\item\em Compute E\-C\-D\-S\-A signature of a previously hashed message, deterministic version (R\-F\-C 6979). \end{DoxyCompactList}\item 
+int \hyperlink{ecdsa_8h_a2292032f359fda59a7fd14911cc56f38}{mbedtls\-\_\-ecdsa\-\_\-verify} (\hyperlink{structmbedtls__ecp__group}{mbedtls\-\_\-ecp\-\_\-group} $\ast$grp, const unsigned char $\ast$buf, size\-\_\-t blen, const \hyperlink{structmbedtls__ecp__point}{mbedtls\-\_\-ecp\-\_\-point} $\ast$Q, const \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$r, const \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$s)
+\begin{DoxyCompactList}\small\item\em Verify E\-C\-D\-S\-A signature of a previously hashed message. \end{DoxyCompactList}\item 
+int \hyperlink{ecdsa_8h_a76da70289de1f746ad9cce1eadf7b135}{mbedtls\-\_\-ecdsa\-\_\-write\-\_\-signature} (\hyperlink{ecdsa_8h_a86ad4c743272c83310c20585ec7a182f}{mbedtls\-\_\-ecdsa\-\_\-context} $\ast$ctx, mbedtls\-\_\-md\-\_\-type\-\_\-t md\-\_\-alg, const unsigned char $\ast$hash, size\-\_\-t hlen, unsigned char $\ast$sig, size\-\_\-t $\ast$slen, int($\ast$f\-\_\-rng)(void $\ast$, unsigned char $\ast$, size\-\_\-t), void $\ast$p\-\_\-rng)
+\begin{DoxyCompactList}\small\item\em Compute E\-C\-D\-S\-A signature and write it to buffer, serialized as defined in R\-F\-C 4492 page 20. (Not thread-\/safe to use same context in multiple threads) \end{DoxyCompactList}\item 
+int \hyperlink{ecdsa_8h_a3827a7cf6502530e831e0bb1fcfdd5d8}{mbedtls\-\_\-ecdsa\-\_\-write\-\_\-signature\-\_\-det} (\hyperlink{ecdsa_8h_a86ad4c743272c83310c20585ec7a182f}{mbedtls\-\_\-ecdsa\-\_\-context} $\ast$ctx, const unsigned char $\ast$hash, size\-\_\-t hlen, unsigned char $\ast$sig, size\-\_\-t $\ast$slen, mbedtls\-\_\-md\-\_\-type\-\_\-t md\-\_\-alg) M\-B\-E\-D\-T\-L\-S\-\_\-\-D\-E\-P\-R\-E\-C\-A\-T\-E\-D
+\begin{DoxyCompactList}\small\item\em Compute E\-C\-D\-S\-A signature and write it to buffer, serialized as defined in R\-F\-C 4492 page 20. Deterministic version, R\-F\-C 6979. (Not thread-\/safe to use same context in multiple threads) \end{DoxyCompactList}\item 
+int \hyperlink{ecdsa_8h_a8085ade3e127118aa615f65cb1d393d5}{mbedtls\-\_\-ecdsa\-\_\-read\-\_\-signature} (\hyperlink{ecdsa_8h_a86ad4c743272c83310c20585ec7a182f}{mbedtls\-\_\-ecdsa\-\_\-context} $\ast$ctx, const unsigned char $\ast$hash, size\-\_\-t hlen, const unsigned char $\ast$sig, size\-\_\-t slen)
+\begin{DoxyCompactList}\small\item\em Read and verify an E\-C\-D\-S\-A signature. \end{DoxyCompactList}\item 
+int \hyperlink{ecdsa_8h_ab909bd06650e761e9fd176a86bd1ce17}{mbedtls\-\_\-ecdsa\-\_\-genkey} (\hyperlink{ecdsa_8h_a86ad4c743272c83310c20585ec7a182f}{mbedtls\-\_\-ecdsa\-\_\-context} $\ast$ctx, \hyperlink{ecp_8h_af79e530ea8f8416480f805baa20b1a2d}{mbedtls\-\_\-ecp\-\_\-group\-\_\-id} gid, int($\ast$f\-\_\-rng)(void $\ast$, unsigned char $\ast$, size\-\_\-t), void $\ast$p\-\_\-rng)
+\begin{DoxyCompactList}\small\item\em Generate an E\-C\-D\-S\-A keypair on the given curve. \end{DoxyCompactList}\item 
+int \hyperlink{ecdsa_8h_a6de8efd872cfe1bc2ee93b4a5584226c}{mbedtls\-\_\-ecdsa\-\_\-from\-\_\-keypair} (\hyperlink{ecdsa_8h_a86ad4c743272c83310c20585ec7a182f}{mbedtls\-\_\-ecdsa\-\_\-context} $\ast$ctx, const \hyperlink{structmbedtls__ecp__keypair}{mbedtls\-\_\-ecp\-\_\-keypair} $\ast$key)
+\begin{DoxyCompactList}\small\item\em Set an E\-C\-D\-S\-A context from an E\-C key pair. \end{DoxyCompactList}\item 
+void \hyperlink{ecdsa_8h_aca644ee02921388fdc42eb06377f4b62}{mbedtls\-\_\-ecdsa\-\_\-init} (\hyperlink{ecdsa_8h_a86ad4c743272c83310c20585ec7a182f}{mbedtls\-\_\-ecdsa\-\_\-context} $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Initialize context. \end{DoxyCompactList}\item 
+void \hyperlink{ecdsa_8h_a28dd93cb376a51cce39f062858c1c186}{mbedtls\-\_\-ecdsa\-\_\-free} (\hyperlink{ecdsa_8h_a86ad4c743272c83310c20585ec7a182f}{mbedtls\-\_\-ecdsa\-\_\-context} $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Free context. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Elliptic curve D\-S\-A. Copyright (C) 2006-\/2015, A\-R\-M Limited, All Rights Reserved
+
+This file is part of mbed T\-L\-S (\href{https://tls.mbed.org}{\tt https\-://tls.\-mbed.\-org})
+
+This program is free software; you can redistribute it and/or modify it under the terms of the G\-N\-U General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but W\-I\-T\-H\-O\-U\-T A\-N\-Y W\-A\-R\-R\-A\-N\-T\-Y; without even the implied warranty of M\-E\-R\-C\-H\-A\-N\-T\-A\-B\-I\-L\-I\-T\-Y or F\-I\-T\-N\-E\-S\-S F\-O\-R A P\-A\-R\-T\-I\-C\-U\-L\-A\-R P\-U\-R\-P\-O\-S\-E. See the G\-N\-U General Public License for more details.
+
+You should have received a copy of the G\-N\-U General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, M\-A 02110-\/1301 U\-S\-A. 
+
+Definition in file \hyperlink{ecdsa_8h_source}{ecdsa.\-h}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{ecdsa_8h_aeb07d11aef4d847c5cc5cfba49547136}{\index{ecdsa.\-h@{ecdsa.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-C\-D\-S\-A\-\_\-\-M\-A\-X\-\_\-\-L\-E\-N@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-C\-D\-S\-A\-\_\-\-M\-A\-X\-\_\-\-L\-E\-N}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-C\-D\-S\-A\-\_\-\-M\-A\-X\-\_\-\-L\-E\-N@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-C\-D\-S\-A\-\_\-\-M\-A\-X\-\_\-\-L\-E\-N}!ecdsa.h@{ecdsa.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-C\-D\-S\-A\-\_\-\-M\-A\-X\-\_\-\-L\-E\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-C\-D\-S\-A\-\_\-\-M\-A\-X\-\_\-\-L\-E\-N~( 3 + 2 $\ast$ ( 3 + M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-C\-P\-\_\-\-M\-A\-X\-\_\-\-B\-Y\-T\-E\-S ) )}}\label{ecdsa_8h_aeb07d11aef4d847c5cc5cfba49547136}
+Maximum size of an E\-C\-D\-S\-A signature in bytes 
+
+Definition at line 48 of file ecdsa.\-h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{ecdsa_8h_a28dd93cb376a51cce39f062858c1c186}{\index{ecdsa.\-h@{ecdsa.\-h}!mbedtls\-\_\-ecdsa\-\_\-free@{mbedtls\-\_\-ecdsa\-\_\-free}}
+\index{mbedtls\-\_\-ecdsa\-\_\-free@{mbedtls\-\_\-ecdsa\-\_\-free}!ecdsa.h@{ecdsa.\-h}}
+\subsubsection[{mbedtls\-\_\-ecdsa\-\_\-free}]{\setlength{\rightskip}{0pt plus 5cm}void mbedtls\-\_\-ecdsa\-\_\-free (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-ecdsa\-\_\-context} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}}\label{ecdsa_8h_a28dd93cb376a51cce39f062858c1c186}
+
+
+Free context. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Context to free \\
+\hline
+\end{DoxyParams}
+\hypertarget{ecdsa_8h_a6de8efd872cfe1bc2ee93b4a5584226c}{\index{ecdsa.\-h@{ecdsa.\-h}!mbedtls\-\_\-ecdsa\-\_\-from\-\_\-keypair@{mbedtls\-\_\-ecdsa\-\_\-from\-\_\-keypair}}
+\index{mbedtls\-\_\-ecdsa\-\_\-from\-\_\-keypair@{mbedtls\-\_\-ecdsa\-\_\-from\-\_\-keypair}!ecdsa.h@{ecdsa.\-h}}
+\subsubsection[{mbedtls\-\_\-ecdsa\-\_\-from\-\_\-keypair}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-ecdsa\-\_\-from\-\_\-keypair (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-ecdsa\-\_\-context} $\ast$}]{ctx, }
+\item[{const {\bf mbedtls\-\_\-ecp\-\_\-keypair} $\ast$}]{key}
+\end{DoxyParamCaption}
+)}}\label{ecdsa_8h_a6de8efd872cfe1bc2ee93b4a5584226c}
+
+
+Set an E\-C\-D\-S\-A context from an E\-C key pair. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & E\-C\-D\-S\-A context to set \\
+\hline
+{\em key} & E\-C key to use\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, or a M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-C\-P\-\_\-\-X\-X\-X code. 
+\end{DoxyReturn}
+\hypertarget{ecdsa_8h_ab909bd06650e761e9fd176a86bd1ce17}{\index{ecdsa.\-h@{ecdsa.\-h}!mbedtls\-\_\-ecdsa\-\_\-genkey@{mbedtls\-\_\-ecdsa\-\_\-genkey}}
+\index{mbedtls\-\_\-ecdsa\-\_\-genkey@{mbedtls\-\_\-ecdsa\-\_\-genkey}!ecdsa.h@{ecdsa.\-h}}
+\subsubsection[{mbedtls\-\_\-ecdsa\-\_\-genkey}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-ecdsa\-\_\-genkey (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-ecdsa\-\_\-context} $\ast$}]{ctx, }
+\item[{{\bf mbedtls\-\_\-ecp\-\_\-group\-\_\-id}}]{gid, }
+\item[{int($\ast$)(void $\ast$, unsigned char $\ast$, size\-\_\-t)}]{f\-\_\-rng, }
+\item[{void $\ast$}]{p\-\_\-rng}
+\end{DoxyParamCaption}
+)}}\label{ecdsa_8h_ab909bd06650e761e9fd176a86bd1ce17}
+
+
+Generate an E\-C\-D\-S\-A keypair on the given curve. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & E\-C\-D\-S\-A context in which the keypair should be stored \\
+\hline
+{\em gid} & Group (elliptic curve) to use. One of the various M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-C\-P\-\_\-\-D\-P\-\_\-\-X\-X\-X macros depending on configuration. \\
+\hline
+{\em f\-\_\-rng} & R\-N\-G function \\
+\hline
+{\em p\-\_\-rng} & R\-N\-G parameter\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, or a M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-C\-P\-\_\-\-X\-X\-X code. 
+\end{DoxyReturn}
+\hypertarget{ecdsa_8h_aca644ee02921388fdc42eb06377f4b62}{\index{ecdsa.\-h@{ecdsa.\-h}!mbedtls\-\_\-ecdsa\-\_\-init@{mbedtls\-\_\-ecdsa\-\_\-init}}
+\index{mbedtls\-\_\-ecdsa\-\_\-init@{mbedtls\-\_\-ecdsa\-\_\-init}!ecdsa.h@{ecdsa.\-h}}
+\subsubsection[{mbedtls\-\_\-ecdsa\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void mbedtls\-\_\-ecdsa\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-ecdsa\-\_\-context} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}}\label{ecdsa_8h_aca644ee02921388fdc42eb06377f4b62}
+
+
+Initialize context. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Context to initialize \\
+\hline
+\end{DoxyParams}
+\hypertarget{ecdsa_8h_a8085ade3e127118aa615f65cb1d393d5}{\index{ecdsa.\-h@{ecdsa.\-h}!mbedtls\-\_\-ecdsa\-\_\-read\-\_\-signature@{mbedtls\-\_\-ecdsa\-\_\-read\-\_\-signature}}
+\index{mbedtls\-\_\-ecdsa\-\_\-read\-\_\-signature@{mbedtls\-\_\-ecdsa\-\_\-read\-\_\-signature}!ecdsa.h@{ecdsa.\-h}}
+\subsubsection[{mbedtls\-\_\-ecdsa\-\_\-read\-\_\-signature}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-ecdsa\-\_\-read\-\_\-signature (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-ecdsa\-\_\-context} $\ast$}]{ctx, }
+\item[{const unsigned char $\ast$}]{hash, }
+\item[{size\-\_\-t}]{hlen, }
+\item[{const unsigned char $\ast$}]{sig, }
+\item[{size\-\_\-t}]{slen}
+\end{DoxyParamCaption}
+)}}\label{ecdsa_8h_a8085ade3e127118aa615f65cb1d393d5}
+
+
+Read and verify an E\-C\-D\-S\-A signature. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & E\-C\-D\-S\-A context \\
+\hline
+{\em hash} & Message hash \\
+\hline
+{\em hlen} & Size of hash \\
+\hline
+{\em sig} & Signature to read and verify \\
+\hline
+{\em slen} & Size of sig\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-C\-P\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A if signature is invalid, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-C\-P\-\_\-\-S\-I\-G\-\_\-\-L\-E\-N\-\_\-\-M\-I\-S\-M\-A\-T\-C\-H if the signature is valid but its actual length is less than siglen, or a M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-C\-P\-\_\-\-X\-X\-X or M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-X\-X\-X error code 
+\end{DoxyReturn}
+\hypertarget{ecdsa_8h_af10f6fda2169862871d0ac07555c8641}{\index{ecdsa.\-h@{ecdsa.\-h}!mbedtls\-\_\-ecdsa\-\_\-sign@{mbedtls\-\_\-ecdsa\-\_\-sign}}
+\index{mbedtls\-\_\-ecdsa\-\_\-sign@{mbedtls\-\_\-ecdsa\-\_\-sign}!ecdsa.h@{ecdsa.\-h}}
+\subsubsection[{mbedtls\-\_\-ecdsa\-\_\-sign}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-ecdsa\-\_\-sign (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-ecp\-\_\-group} $\ast$}]{grp, }
+\item[{{\bf mbedtls\-\_\-mpi} $\ast$}]{r, }
+\item[{{\bf mbedtls\-\_\-mpi} $\ast$}]{s, }
+\item[{const {\bf mbedtls\-\_\-mpi} $\ast$}]{d, }
+\item[{const unsigned char $\ast$}]{buf, }
+\item[{size\-\_\-t}]{blen, }
+\item[{int($\ast$)(void $\ast$, unsigned char $\ast$, size\-\_\-t)}]{f\-\_\-rng, }
+\item[{void $\ast$}]{p\-\_\-rng}
+\end{DoxyParamCaption}
+)}}\label{ecdsa_8h_af10f6fda2169862871d0ac07555c8641}
+
+
+Compute E\-C\-D\-S\-A signature of a previously hashed message. 
+
+\begin{DoxyNote}{Note}
+The deterministic version is usually prefered.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em grp} & E\-C\-P group \\
+\hline
+{\em r} & First output integer \\
+\hline
+{\em s} & Second output integer \\
+\hline
+{\em d} & Private signing key \\
+\hline
+{\em buf} & Message hash \\
+\hline
+{\em blen} & Length of buf \\
+\hline
+{\em f\-\_\-rng} & R\-N\-G function \\
+\hline
+{\em p\-\_\-rng} & R\-N\-G parameter\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, or a M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-C\-P\-\_\-\-X\-X\-X or M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-P\-I\-\_\-\-X\-X\-X error code 
+\end{DoxyReturn}
+\hypertarget{ecdsa_8h_a381af8cc9ab0146a4cf1ba5226c81a8f}{\index{ecdsa.\-h@{ecdsa.\-h}!mbedtls\-\_\-ecdsa\-\_\-sign\-\_\-det@{mbedtls\-\_\-ecdsa\-\_\-sign\-\_\-det}}
+\index{mbedtls\-\_\-ecdsa\-\_\-sign\-\_\-det@{mbedtls\-\_\-ecdsa\-\_\-sign\-\_\-det}!ecdsa.h@{ecdsa.\-h}}
+\subsubsection[{mbedtls\-\_\-ecdsa\-\_\-sign\-\_\-det}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-ecdsa\-\_\-sign\-\_\-det (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-ecp\-\_\-group} $\ast$}]{grp, }
+\item[{{\bf mbedtls\-\_\-mpi} $\ast$}]{r, }
+\item[{{\bf mbedtls\-\_\-mpi} $\ast$}]{s, }
+\item[{const {\bf mbedtls\-\_\-mpi} $\ast$}]{d, }
+\item[{const unsigned char $\ast$}]{buf, }
+\item[{size\-\_\-t}]{blen, }
+\item[{mbedtls\-\_\-md\-\_\-type\-\_\-t}]{md\-\_\-alg}
+\end{DoxyParamCaption}
+)}}\label{ecdsa_8h_a381af8cc9ab0146a4cf1ba5226c81a8f}
+
+
+Compute E\-C\-D\-S\-A signature of a previously hashed message, deterministic version (R\-F\-C 6979). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em grp} & E\-C\-P group \\
+\hline
+{\em r} & First output integer \\
+\hline
+{\em s} & Second output integer \\
+\hline
+{\em d} & Private signing key \\
+\hline
+{\em buf} & Message hash \\
+\hline
+{\em blen} & Length of buf \\
+\hline
+{\em md\-\_\-alg} & M\-D algorithm used to hash the message\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, or a M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-C\-P\-\_\-\-X\-X\-X or M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-P\-I\-\_\-\-X\-X\-X error code 
+\end{DoxyReturn}
+\hypertarget{ecdsa_8h_a2292032f359fda59a7fd14911cc56f38}{\index{ecdsa.\-h@{ecdsa.\-h}!mbedtls\-\_\-ecdsa\-\_\-verify@{mbedtls\-\_\-ecdsa\-\_\-verify}}
+\index{mbedtls\-\_\-ecdsa\-\_\-verify@{mbedtls\-\_\-ecdsa\-\_\-verify}!ecdsa.h@{ecdsa.\-h}}
+\subsubsection[{mbedtls\-\_\-ecdsa\-\_\-verify}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-ecdsa\-\_\-verify (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-ecp\-\_\-group} $\ast$}]{grp, }
+\item[{const unsigned char $\ast$}]{buf, }
+\item[{size\-\_\-t}]{blen, }
+\item[{const {\bf mbedtls\-\_\-ecp\-\_\-point} $\ast$}]{Q, }
+\item[{const {\bf mbedtls\-\_\-mpi} $\ast$}]{r, }
+\item[{const {\bf mbedtls\-\_\-mpi} $\ast$}]{s}
+\end{DoxyParamCaption}
+)}}\label{ecdsa_8h_a2292032f359fda59a7fd14911cc56f38}
+
+
+Verify E\-C\-D\-S\-A signature of a previously hashed message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em grp} & E\-C\-P group \\
+\hline
+{\em buf} & Message hash \\
+\hline
+{\em blen} & Length of buf \\
+\hline
+{\em Q} & Public key to use for verification \\
+\hline
+{\em r} & First integer of the signature \\
+\hline
+{\em s} & Second integer of the signature\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-C\-P\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A if signature is invalid or a M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-C\-P\-\_\-\-X\-X\-X or M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-P\-I\-\_\-\-X\-X\-X error code 
+\end{DoxyReturn}
+\hypertarget{ecdsa_8h_a76da70289de1f746ad9cce1eadf7b135}{\index{ecdsa.\-h@{ecdsa.\-h}!mbedtls\-\_\-ecdsa\-\_\-write\-\_\-signature@{mbedtls\-\_\-ecdsa\-\_\-write\-\_\-signature}}
+\index{mbedtls\-\_\-ecdsa\-\_\-write\-\_\-signature@{mbedtls\-\_\-ecdsa\-\_\-write\-\_\-signature}!ecdsa.h@{ecdsa.\-h}}
+\subsubsection[{mbedtls\-\_\-ecdsa\-\_\-write\-\_\-signature}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-ecdsa\-\_\-write\-\_\-signature (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-ecdsa\-\_\-context} $\ast$}]{ctx, }
+\item[{mbedtls\-\_\-md\-\_\-type\-\_\-t}]{md\-\_\-alg, }
+\item[{const unsigned char $\ast$}]{hash, }
+\item[{size\-\_\-t}]{hlen, }
+\item[{unsigned char $\ast$}]{sig, }
+\item[{size\-\_\-t $\ast$}]{slen, }
+\item[{int($\ast$)(void $\ast$, unsigned char $\ast$, size\-\_\-t)}]{f\-\_\-rng, }
+\item[{void $\ast$}]{p\-\_\-rng}
+\end{DoxyParamCaption}
+)}}\label{ecdsa_8h_a76da70289de1f746ad9cce1eadf7b135}
+
+
+Compute E\-C\-D\-S\-A signature and write it to buffer, serialized as defined in R\-F\-C 4492 page 20. (Not thread-\/safe to use same context in multiple threads) 
+
+\begin{DoxyNote}{Note}
+The deterministice version (R\-F\-C 6979) is used if M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-C\-D\-S\-A\-\_\-\-D\-E\-T\-E\-R\-M\-I\-N\-I\-S\-T\-I\-C is defined.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & E\-C\-D\-S\-A context \\
+\hline
+{\em md\-\_\-alg} & Algorithm that was used to hash the message \\
+\hline
+{\em hash} & Message hash \\
+\hline
+{\em hlen} & Length of hash \\
+\hline
+{\em sig} & Buffer that will hold the signature \\
+\hline
+{\em slen} & Length of the signature written \\
+\hline
+{\em f\-\_\-rng} & R\-N\-G function \\
+\hline
+{\em p\-\_\-rng} & R\-N\-G parameter\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The \char`\"{}sig\char`\"{} buffer must be at least as large as twice the size of the curve used, plus 9 (eg. 73 bytes if a 256-\/bit curve is used). M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-C\-D\-S\-A\-\_\-\-M\-A\-X\-\_\-\-L\-E\-N is always safe.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+0 if successful, or a M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-C\-P\-\_\-\-X\-X\-X, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-X\-X\-X or M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-A\-S\-N1\-\_\-\-X\-X\-X error code 
+\end{DoxyReturn}
+\hypertarget{ecdsa_8h_a3827a7cf6502530e831e0bb1fcfdd5d8}{\index{ecdsa.\-h@{ecdsa.\-h}!mbedtls\-\_\-ecdsa\-\_\-write\-\_\-signature\-\_\-det@{mbedtls\-\_\-ecdsa\-\_\-write\-\_\-signature\-\_\-det}}
+\index{mbedtls\-\_\-ecdsa\-\_\-write\-\_\-signature\-\_\-det@{mbedtls\-\_\-ecdsa\-\_\-write\-\_\-signature\-\_\-det}!ecdsa.h@{ecdsa.\-h}}
+\subsubsection[{mbedtls\-\_\-ecdsa\-\_\-write\-\_\-signature\-\_\-det}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-ecdsa\-\_\-write\-\_\-signature\-\_\-det (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-ecdsa\-\_\-context} $\ast$}]{ctx, }
+\item[{const unsigned char $\ast$}]{hash, }
+\item[{size\-\_\-t}]{hlen, }
+\item[{unsigned char $\ast$}]{sig, }
+\item[{size\-\_\-t $\ast$}]{slen, }
+\item[{mbedtls\-\_\-md\-\_\-type\-\_\-t}]{md\-\_\-alg}
+\end{DoxyParamCaption}
+)}}\label{ecdsa_8h_a3827a7cf6502530e831e0bb1fcfdd5d8}
+
+
+Compute E\-C\-D\-S\-A signature and write it to buffer, serialized as defined in R\-F\-C 4492 page 20. Deterministic version, R\-F\-C 6979. (Not thread-\/safe to use same context in multiple threads) 
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000002}{Deprecated}]Superseded by \hyperlink{ecdsa_8h_a76da70289de1f746ad9cce1eadf7b135}{mbedtls\-\_\-ecdsa\-\_\-write\-\_\-signature()} in 2.\-0.\-0\end{DoxyRefDesc}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & E\-C\-D\-S\-A context \\
+\hline
+{\em hash} & Message hash \\
+\hline
+{\em hlen} & Length of hash \\
+\hline
+{\em sig} & Buffer that will hold the signature \\
+\hline
+{\em slen} & Length of the signature written \\
+\hline
+{\em md\-\_\-alg} & M\-D algorithm used to hash the message\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The \char`\"{}sig\char`\"{} buffer must be at least as large as twice the size of the curve used, plus 9 (eg. 73 bytes if a 256-\/bit curve is used). M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-C\-D\-S\-A\-\_\-\-M\-A\-X\-\_\-\-L\-E\-N is always safe.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+0 if successful, or a M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-E\-C\-P\-\_\-\-X\-X\-X, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-X\-X\-X or M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-A\-S\-N1\-\_\-\-X\-X\-X error code 
+\end{DoxyReturn}

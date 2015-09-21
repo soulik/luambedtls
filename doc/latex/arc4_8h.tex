@@ -1,0 +1,142 @@
+\hypertarget{arc4_8h}{\section{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/arc4.h File Reference}
+\label{arc4_8h}\index{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/arc4.\-h@{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/arc4.\-h}}
+}
+
+
+The A\-R\-C\-F\-O\-U\-R stream cipher.  
+
+
+{\ttfamily \#include \char`\"{}config.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$stddef.\-h$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structmbedtls__arc4__context}{mbedtls\-\_\-arc4\-\_\-context}
+\begin{DoxyCompactList}\small\item\em A\-R\-C4 context structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{arc4_8h_a7795c92c7a8a4b9cf715da081665ccfd}{mbedtls\-\_\-arc4\-\_\-init} (\hyperlink{structmbedtls__arc4__context}{mbedtls\-\_\-arc4\-\_\-context} $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Initialize A\-R\-C4 context. \end{DoxyCompactList}\item 
+void \hyperlink{arc4_8h_a888a4167caf8503e9e82a132c7b89313}{mbedtls\-\_\-arc4\-\_\-free} (\hyperlink{structmbedtls__arc4__context}{mbedtls\-\_\-arc4\-\_\-context} $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Clear A\-R\-C4 context. \end{DoxyCompactList}\item 
+void \hyperlink{arc4_8h_a6a689a989cb433e41181caef8d8bf4ba}{mbedtls\-\_\-arc4\-\_\-setup} (\hyperlink{structmbedtls__arc4__context}{mbedtls\-\_\-arc4\-\_\-context} $\ast$ctx, const unsigned char $\ast$key, unsigned int keylen)
+\begin{DoxyCompactList}\small\item\em A\-R\-C4 key schedule. \end{DoxyCompactList}\item 
+int \hyperlink{arc4_8h_a51d378246f0c277a68352cdac782e8fb}{mbedtls\-\_\-arc4\-\_\-crypt} (\hyperlink{structmbedtls__arc4__context}{mbedtls\-\_\-arc4\-\_\-context} $\ast$ctx, size\-\_\-t length, const unsigned char $\ast$input, unsigned char $\ast$output)
+\begin{DoxyCompactList}\small\item\em A\-R\-C4 cipher function. \end{DoxyCompactList}\item 
+int \hyperlink{arc4_8h_aba830fee9057fa1c63dcc38c7caf7730}{mbedtls\-\_\-arc4\-\_\-self\-\_\-test} (int verbose)
+\begin{DoxyCompactList}\small\item\em Checkup routine. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The A\-R\-C\-F\-O\-U\-R stream cipher. Copyright (C) 2006-\/2015, A\-R\-M Limited, All Rights Reserved
+
+This file is part of mbed T\-L\-S (\href{https://tls.mbed.org}{\tt https\-://tls.\-mbed.\-org})
+
+This program is free software; you can redistribute it and/or modify it under the terms of the G\-N\-U General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but W\-I\-T\-H\-O\-U\-T A\-N\-Y W\-A\-R\-R\-A\-N\-T\-Y; without even the implied warranty of M\-E\-R\-C\-H\-A\-N\-T\-A\-B\-I\-L\-I\-T\-Y or F\-I\-T\-N\-E\-S\-S F\-O\-R A P\-A\-R\-T\-I\-C\-U\-L\-A\-R P\-U\-R\-P\-O\-S\-E. See the G\-N\-U General Public License for more details.
+
+You should have received a copy of the G\-N\-U General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, M\-A 02110-\/1301 U\-S\-A. 
+
+Definition in file \hyperlink{arc4_8h_source}{arc4.\-h}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{arc4_8h_a51d378246f0c277a68352cdac782e8fb}{\index{arc4.\-h@{arc4.\-h}!mbedtls\-\_\-arc4\-\_\-crypt@{mbedtls\-\_\-arc4\-\_\-crypt}}
+\index{mbedtls\-\_\-arc4\-\_\-crypt@{mbedtls\-\_\-arc4\-\_\-crypt}!arc4.h@{arc4.\-h}}
+\subsubsection[{mbedtls\-\_\-arc4\-\_\-crypt}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-arc4\-\_\-crypt (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-arc4\-\_\-context} $\ast$}]{ctx, }
+\item[{size\-\_\-t}]{length, }
+\item[{const unsigned char $\ast$}]{input, }
+\item[{unsigned char $\ast$}]{output}
+\end{DoxyParamCaption}
+)}}\label{arc4_8h_a51d378246f0c277a68352cdac782e8fb}
+
+
+A\-R\-C4 cipher function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & A\-R\-C4 context \\
+\hline
+{\em length} & length of the input data \\
+\hline
+{\em input} & buffer holding the input data \\
+\hline
+{\em output} & buffer for the output data\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful 
+\end{DoxyReturn}
+\hypertarget{arc4_8h_a888a4167caf8503e9e82a132c7b89313}{\index{arc4.\-h@{arc4.\-h}!mbedtls\-\_\-arc4\-\_\-free@{mbedtls\-\_\-arc4\-\_\-free}}
+\index{mbedtls\-\_\-arc4\-\_\-free@{mbedtls\-\_\-arc4\-\_\-free}!arc4.h@{arc4.\-h}}
+\subsubsection[{mbedtls\-\_\-arc4\-\_\-free}]{\setlength{\rightskip}{0pt plus 5cm}void mbedtls\-\_\-arc4\-\_\-free (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-arc4\-\_\-context} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}}\label{arc4_8h_a888a4167caf8503e9e82a132c7b89313}
+
+
+Clear A\-R\-C4 context. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & A\-R\-C4 context to be cleared \\
+\hline
+\end{DoxyParams}
+\hypertarget{arc4_8h_a7795c92c7a8a4b9cf715da081665ccfd}{\index{arc4.\-h@{arc4.\-h}!mbedtls\-\_\-arc4\-\_\-init@{mbedtls\-\_\-arc4\-\_\-init}}
+\index{mbedtls\-\_\-arc4\-\_\-init@{mbedtls\-\_\-arc4\-\_\-init}!arc4.h@{arc4.\-h}}
+\subsubsection[{mbedtls\-\_\-arc4\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void mbedtls\-\_\-arc4\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-arc4\-\_\-context} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}}\label{arc4_8h_a7795c92c7a8a4b9cf715da081665ccfd}
+
+
+Initialize A\-R\-C4 context. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & A\-R\-C4 context to be initialized \\
+\hline
+\end{DoxyParams}
+\hypertarget{arc4_8h_aba830fee9057fa1c63dcc38c7caf7730}{\index{arc4.\-h@{arc4.\-h}!mbedtls\-\_\-arc4\-\_\-self\-\_\-test@{mbedtls\-\_\-arc4\-\_\-self\-\_\-test}}
+\index{mbedtls\-\_\-arc4\-\_\-self\-\_\-test@{mbedtls\-\_\-arc4\-\_\-self\-\_\-test}!arc4.h@{arc4.\-h}}
+\subsubsection[{mbedtls\-\_\-arc4\-\_\-self\-\_\-test}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-arc4\-\_\-self\-\_\-test (
+\begin{DoxyParamCaption}
+\item[{int}]{verbose}
+\end{DoxyParamCaption}
+)}}\label{arc4_8h_aba830fee9057fa1c63dcc38c7caf7730}
+
+
+Checkup routine. 
+
+\begin{DoxyReturn}{Returns}
+0 if successful, or 1 if the test failed 
+\end{DoxyReturn}
+\hypertarget{arc4_8h_a6a689a989cb433e41181caef8d8bf4ba}{\index{arc4.\-h@{arc4.\-h}!mbedtls\-\_\-arc4\-\_\-setup@{mbedtls\-\_\-arc4\-\_\-setup}}
+\index{mbedtls\-\_\-arc4\-\_\-setup@{mbedtls\-\_\-arc4\-\_\-setup}!arc4.h@{arc4.\-h}}
+\subsubsection[{mbedtls\-\_\-arc4\-\_\-setup}]{\setlength{\rightskip}{0pt plus 5cm}void mbedtls\-\_\-arc4\-\_\-setup (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-arc4\-\_\-context} $\ast$}]{ctx, }
+\item[{const unsigned char $\ast$}]{key, }
+\item[{unsigned int}]{keylen}
+\end{DoxyParamCaption}
+)}}\label{arc4_8h_a6a689a989cb433e41181caef8d8bf4ba}
+
+
+A\-R\-C4 key schedule. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & A\-R\-C4 context to be setup \\
+\hline
+{\em key} & the secret key \\
+\hline
+{\em keylen} & length of the key, in bytes \\
+\hline
+\end{DoxyParams}

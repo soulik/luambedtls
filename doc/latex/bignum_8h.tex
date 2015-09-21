@@ -1,0 +1,1333 @@
+\hypertarget{bignum_8h}{\section{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/bignum.h File Reference}
+\label{bignum_8h}\index{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/bignum.\-h@{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/bignum.\-h}}
+}
+
+
+Multi-\/precision integer library.  
+
+
+{\ttfamily \#include \char`\"{}config.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$stddef.\-h$>$}\\*
+{\ttfamily \#include $<$stdint.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi}
+\begin{DoxyCompactList}\small\item\em M\-P\-I structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{bignum_8h_a5ba505f058780047978dcdafd50d0b1e}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-F\-I\-L\-E\-\_\-\-I\-O\-\_\-\-E\-R\-R\-O\-R}~-\/0x0002
+\item 
+\#define \hyperlink{bignum_8h_a3989a97b1d92d04dd05242731e6f37f2}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A}~-\/0x0004
+\item 
+\#define \hyperlink{bignum_8h_a0ef495d9a083d986f00e5f604126382f}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-C\-H\-A\-R\-A\-C\-T\-E\-R}~-\/0x0006
+\item 
+\#define \hyperlink{bignum_8h_a7fc9b9c20686c88b949d0a35c0def909}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-T\-O\-O\-\_\-\-S\-M\-A\-L\-L}~-\/0x0008
+\item 
+\#define \hyperlink{bignum_8h_ab7f06e7dfde557a02fe7137d4d47eed3}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-N\-E\-G\-A\-T\-I\-V\-E\-\_\-\-V\-A\-L\-U\-E}~-\/0x000\-A
+\item 
+\#define \hyperlink{bignum_8h_a97e2c5a552770757da26b4a9b2e56f6c}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-D\-I\-V\-I\-S\-I\-O\-N\-\_\-\-B\-Y\-\_\-\-Z\-E\-R\-O}~-\/0x000\-C
+\item 
+\#define \hyperlink{bignum_8h_a24f0dfbee8599f6e72852247d5681503}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-N\-O\-T\-\_\-\-A\-C\-C\-E\-P\-T\-A\-B\-L\-E}~-\/0x000\-E
+\item 
+\#define \hyperlink{bignum_8h_a9bb66b22357ba30dedfe856efeab5544}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-A\-L\-L\-O\-C\-\_\-\-F\-A\-I\-L\-E\-D}~-\/0x0010
+\item 
+\hypertarget{bignum_8h_ab0a21d28acd6b59cc60a45547e2412af}{\#define {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-P\-I\-\_\-\-C\-H\-K}(f)~do \{ if( ( ret = f ) != 0 ) goto cleanup; \} while( 0 )}\label{bignum_8h_ab0a21d28acd6b59cc60a45547e2412af}
+
+\item 
+\hypertarget{bignum_8h_a50617c9e123096b168d65a9d957b2ebe}{\#define {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-P\-I\-\_\-\-M\-A\-X\-\_\-\-L\-I\-M\-B\-S}~10000}\label{bignum_8h_a50617c9e123096b168d65a9d957b2ebe}
+
+\item 
+\#define \hyperlink{bignum_8h_a7cec1de79c434f1053488b1d3b9454c4}{M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-P\-I\-\_\-\-W\-I\-N\-D\-O\-W\-\_\-\-S\-I\-Z\-E}~6
+\item 
+\#define \hyperlink{bignum_8h_a02bfffc46b7b2e10c0080d29bb56e6b0}{M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-P\-I\-\_\-\-M\-A\-X\-\_\-\-S\-I\-Z\-E}~1024
+\item 
+\#define \hyperlink{bignum_8h_a134ba62182ca105e273d465861f5a4d5}{M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-P\-I\-\_\-\-M\-A\-X\-\_\-\-B\-I\-T\-S}~( 8 $\ast$ \hyperlink{bignum_8h_a02bfffc46b7b2e10c0080d29bb56e6b0}{M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-P\-I\-\_\-\-M\-A\-X\-\_\-\-S\-I\-Z\-E} )
+\item 
+\hypertarget{bignum_8h_a5e807323a5823be0f1e7eef38dce9cb0}{\#define {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-P\-I\-\_\-\-M\-A\-X\-\_\-\-B\-I\-T\-S\-\_\-\-S\-C\-A\-L\-E100}~( 100 $\ast$ \hyperlink{bignum_8h_a134ba62182ca105e273d465861f5a4d5}{M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-P\-I\-\_\-\-M\-A\-X\-\_\-\-B\-I\-T\-S} )}\label{bignum_8h_a5e807323a5823be0f1e7eef38dce9cb0}
+
+\item 
+\hypertarget{bignum_8h_a844008ccbe6672f636d250230755d5ee}{\#define {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-L\-N\-\_\-2\-\_\-\-D\-I\-V\-\_\-\-L\-N\-\_\-10\-\_\-\-S\-C\-A\-L\-E100}~332}\label{bignum_8h_a844008ccbe6672f636d250230755d5ee}
+
+\item 
+\hypertarget{bignum_8h_a95aa572170385895daf25b70c6f0d63f}{\#define {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-P\-I\-\_\-\-R\-W\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E}~( ((M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-P\-I\-\_\-\-M\-A\-X\-\_\-\-B\-I\-T\-S\-\_\-\-S\-C\-A\-L\-E100 + M\-B\-E\-D\-T\-L\-S\-\_\-\-L\-N\-\_\-2\-\_\-\-D\-I\-V\-\_\-\-L\-N\-\_\-10\-\_\-\-S\-C\-A\-L\-E100 -\/ 1) / M\-B\-E\-D\-T\-L\-S\-\_\-\-L\-N\-\_\-2\-\_\-\-D\-I\-V\-\_\-\-L\-N\-\_\-10\-\_\-\-S\-C\-A\-L\-E100) + 10 + 6 )}\label{bignum_8h_a95aa572170385895daf25b70c6f0d63f}
+
+\item 
+\hypertarget{bignum_8h_ae9ed748679544c60d2b429ee2bc93818}{\#define {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-H\-A\-V\-E\-\_\-\-I\-N\-T32}}\label{bignum_8h_ae9ed748679544c60d2b429ee2bc93818}
+
+\item 
+\hypertarget{bignum_8h_ae1ace2caabfb2c45a1dab0a8f0bd6b66}{\#define {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-H\-A\-V\-E\-\_\-\-U\-D\-B\-L}}\label{bignum_8h_ae1ace2caabfb2c45a1dab0a8f0bd6b66}
+
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{bignum_8h_a831621e03bb6892a866c36673644612e}{typedef int32\-\_\-t {\bfseries mbedtls\-\_\-mpi\-\_\-sint}}\label{bignum_8h_a831621e03bb6892a866c36673644612e}
+
+\item 
+\hypertarget{bignum_8h_ae5f62e04027ff6e12397b3e94c3912cd}{typedef uint32\-\_\-t {\bfseries mbedtls\-\_\-mpi\-\_\-uint}}\label{bignum_8h_ae5f62e04027ff6e12397b3e94c3912cd}
+
+\item 
+\hypertarget{bignum_8h_af64c95417575870c4f465c0a663fb51b}{typedef uint64\-\_\-t {\bfseries mbedtls\-\_\-t\-\_\-udbl}}\label{bignum_8h_af64c95417575870c4f465c0a663fb51b}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{bignum_8h_a99c7cca612b47dc4f3b96905c4f9d69e}{mbedtls\-\_\-mpi\-\_\-init} (\hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$X)
+\begin{DoxyCompactList}\small\item\em Initialize one M\-P\-I (make internal references valid) This just makes it ready to be set or freed, but does not define a value for the M\-P\-I. \end{DoxyCompactList}\item 
+void \hyperlink{bignum_8h_abffd5d8382cb86c089a1ef2bebb90f9f}{mbedtls\-\_\-mpi\-\_\-free} (\hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$X)
+\begin{DoxyCompactList}\small\item\em Unallocate one M\-P\-I. \end{DoxyCompactList}\item 
+int \hyperlink{bignum_8h_a22263d90d838cb58f271aa8f1920843d}{mbedtls\-\_\-mpi\-\_\-grow} (\hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$X, size\-\_\-t nblimbs)
+\begin{DoxyCompactList}\small\item\em Enlarge to the specified number of limbs. \end{DoxyCompactList}\item 
+int \hyperlink{bignum_8h_abaaef229c95711a53b2f38eff0a2c14a}{mbedtls\-\_\-mpi\-\_\-shrink} (\hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$X, size\-\_\-t nblimbs)
+\begin{DoxyCompactList}\small\item\em Resize down, keeping at least the specified number of limbs. \end{DoxyCompactList}\item 
+int \hyperlink{bignum_8h_a2f722863f9fd9098690f8a9db9962044}{mbedtls\-\_\-mpi\-\_\-copy} (\hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$X, const \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$Y)
+\begin{DoxyCompactList}\small\item\em Copy the contents of Y into X. \end{DoxyCompactList}\item 
+void \hyperlink{bignum_8h_a60d0c82301d6cf50e69808b6a3c5cd63}{mbedtls\-\_\-mpi\-\_\-swap} (\hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$X, \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$Y)
+\begin{DoxyCompactList}\small\item\em Swap the contents of X and Y. \end{DoxyCompactList}\item 
+int \hyperlink{bignum_8h_a623c565706f22d8fbcc665ba49a51c7c}{mbedtls\-\_\-mpi\-\_\-safe\-\_\-cond\-\_\-assign} (\hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$X, const \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$Y, unsigned char assign)
+\begin{DoxyCompactList}\small\item\em Safe conditional assignement X = Y if assign is 1. \end{DoxyCompactList}\item 
+int \hyperlink{bignum_8h_a956c54f87d26ceb6da98043805e67684}{mbedtls\-\_\-mpi\-\_\-safe\-\_\-cond\-\_\-swap} (\hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$X, \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$Y, unsigned char assign)
+\begin{DoxyCompactList}\small\item\em Safe conditional swap X $<$-\/$>$ Y if swap is 1. \end{DoxyCompactList}\item 
+int \hyperlink{bignum_8h_a65644d139404325130491759a5651f6d}{mbedtls\-\_\-mpi\-\_\-lset} (\hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$X, mbedtls\-\_\-mpi\-\_\-sint z)
+\begin{DoxyCompactList}\small\item\em Set value from integer. \end{DoxyCompactList}\item 
+int \hyperlink{bignum_8h_abfc40fb7192507bc0eeb9f24e8e69c2d}{mbedtls\-\_\-mpi\-\_\-get\-\_\-bit} (const \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$X, size\-\_\-t pos)
+\begin{DoxyCompactList}\small\item\em Get a specific bit from X. \end{DoxyCompactList}\item 
+int \hyperlink{bignum_8h_a39a475e7957e7a60993fc6e801d9913b}{mbedtls\-\_\-mpi\-\_\-set\-\_\-bit} (\hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$X, size\-\_\-t pos, unsigned char val)
+\begin{DoxyCompactList}\small\item\em Set a bit of X to a specific value of 0 or 1. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{bignum_8h_aa67117fd61db9570746dc2ffca88d004}{mbedtls\-\_\-mpi\-\_\-lsb} (const \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$X)
+\begin{DoxyCompactList}\small\item\em Return the number of zero-\/bits before the least significant '1' bit. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{bignum_8h_a681ab2710d044c0cb091b6497c6ed395}{mbedtls\-\_\-mpi\-\_\-bitlen} (const \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$X)
+\begin{DoxyCompactList}\small\item\em Return the number of bits up to and including the most significant '1' bit'. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{bignum_8h_a538110c9da02704d34d67a07d16fb3ab}{mbedtls\-\_\-mpi\-\_\-size} (const \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$X)
+\begin{DoxyCompactList}\small\item\em Return the total size in bytes. \end{DoxyCompactList}\item 
+int \hyperlink{bignum_8h_a15efd3f2f86700b69f6c18d34ac05758}{mbedtls\-\_\-mpi\-\_\-read\-\_\-string} (\hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$X, int radix, const char $\ast$s)
+\begin{DoxyCompactList}\small\item\em Import from an A\-S\-C\-I\-I string. \end{DoxyCompactList}\item 
+int \hyperlink{bignum_8h_ab2197e4833449c3e505ec8d11b348913}{mbedtls\-\_\-mpi\-\_\-write\-\_\-string} (const \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$X, int radix, char $\ast$buf, size\-\_\-t buflen, size\-\_\-t $\ast$olen)
+\begin{DoxyCompactList}\small\item\em Export into an A\-S\-C\-I\-I string. \end{DoxyCompactList}\item 
+int \hyperlink{bignum_8h_acb4d0ed28a946cfa83219ae8709941d4}{mbedtls\-\_\-mpi\-\_\-read\-\_\-file} (\hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$X, int radix, F\-I\-L\-E $\ast$fin)
+\begin{DoxyCompactList}\small\item\em Read X from an opened file. \end{DoxyCompactList}\item 
+int \hyperlink{bignum_8h_ab23e312f4a0479c8b63a4bc9328e1324}{mbedtls\-\_\-mpi\-\_\-write\-\_\-file} (const char $\ast$p, const \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$X, int radix, F\-I\-L\-E $\ast$fout)
+\begin{DoxyCompactList}\small\item\em Write X into an opened file, or stdout if fout is N\-U\-L\-L. \end{DoxyCompactList}\item 
+int \hyperlink{bignum_8h_a68f62c99e53eb034daea486e5d5d83ca}{mbedtls\-\_\-mpi\-\_\-read\-\_\-binary} (\hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$X, const unsigned char $\ast$buf, size\-\_\-t buflen)
+\begin{DoxyCompactList}\small\item\em Import X from unsigned binary data, big endian. \end{DoxyCompactList}\item 
+int \hyperlink{bignum_8h_aceb4aeeb376a582a5e904135205ada44}{mbedtls\-\_\-mpi\-\_\-write\-\_\-binary} (const \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$X, unsigned char $\ast$buf, size\-\_\-t buflen)
+\begin{DoxyCompactList}\small\item\em Export X into unsigned binary data, big endian. Always fills the whole buffer, which will start with zeros if the number is smaller. \end{DoxyCompactList}\item 
+int \hyperlink{bignum_8h_a8d48a56155412dda56e67256be4d10d9}{mbedtls\-\_\-mpi\-\_\-shift\-\_\-l} (\hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$X, size\-\_\-t count)
+\begin{DoxyCompactList}\small\item\em Left-\/shift\-: X $<$$<$= count. \end{DoxyCompactList}\item 
+int \hyperlink{bignum_8h_aee1140147b1e807645cebf64ebded168}{mbedtls\-\_\-mpi\-\_\-shift\-\_\-r} (\hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$X, size\-\_\-t count)
+\begin{DoxyCompactList}\small\item\em Right-\/shift\-: X $>$$>$= count. \end{DoxyCompactList}\item 
+int \hyperlink{bignum_8h_a81ea45be21ea77f5d8deae9e99d9a11b}{mbedtls\-\_\-mpi\-\_\-cmp\-\_\-abs} (const \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$X, const \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$Y)
+\begin{DoxyCompactList}\small\item\em Compare unsigned values. \end{DoxyCompactList}\item 
+int \hyperlink{bignum_8h_a762dd8add46384d4935a4aecc125096e}{mbedtls\-\_\-mpi\-\_\-cmp\-\_\-mpi} (const \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$X, const \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$Y)
+\begin{DoxyCompactList}\small\item\em Compare signed values. \end{DoxyCompactList}\item 
+int \hyperlink{bignum_8h_ad0e7f426326afc7d3fde309a7a8d82fa}{mbedtls\-\_\-mpi\-\_\-cmp\-\_\-int} (const \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$X, mbedtls\-\_\-mpi\-\_\-sint z)
+\begin{DoxyCompactList}\small\item\em Compare signed values. \end{DoxyCompactList}\item 
+int \hyperlink{bignum_8h_a5ddb2c6dc59dd39874695e04ff40afdb}{mbedtls\-\_\-mpi\-\_\-add\-\_\-abs} (\hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$X, const \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$A, const \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$B)
+\begin{DoxyCompactList}\small\item\em Unsigned addition\-: X = $|$\-A$|$ + $|$\-B$|$. \end{DoxyCompactList}\item 
+int \hyperlink{bignum_8h_ad5840808639d50a98edbede345251293}{mbedtls\-\_\-mpi\-\_\-sub\-\_\-abs} (\hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$X, const \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$A, const \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$B)
+\begin{DoxyCompactList}\small\item\em Unsigned subtraction\-: X = $|$\-A$|$ -\/ $|$\-B$|$. \end{DoxyCompactList}\item 
+int \hyperlink{bignum_8h_a5fd1cfd561c1ada500097f860aa4fe68}{mbedtls\-\_\-mpi\-\_\-add\-\_\-mpi} (\hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$X, const \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$A, const \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$B)
+\begin{DoxyCompactList}\small\item\em Signed addition\-: X = A + B. \end{DoxyCompactList}\item 
+int \hyperlink{bignum_8h_a1a38a8d9f5052491df94d8010bd34955}{mbedtls\-\_\-mpi\-\_\-sub\-\_\-mpi} (\hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$X, const \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$A, const \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$B)
+\begin{DoxyCompactList}\small\item\em Signed subtraction\-: X = A -\/ B. \end{DoxyCompactList}\item 
+int \hyperlink{bignum_8h_a1e6f6ba90e3c73ce6022ed7354443b2a}{mbedtls\-\_\-mpi\-\_\-add\-\_\-int} (\hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$X, const \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$A, mbedtls\-\_\-mpi\-\_\-sint b)
+\begin{DoxyCompactList}\small\item\em Signed addition\-: X = A + b. \end{DoxyCompactList}\item 
+int \hyperlink{bignum_8h_a1a925403c039d920059297cfb4ad5bad}{mbedtls\-\_\-mpi\-\_\-sub\-\_\-int} (\hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$X, const \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$A, mbedtls\-\_\-mpi\-\_\-sint b)
+\begin{DoxyCompactList}\small\item\em Signed subtraction\-: X = A -\/ b. \end{DoxyCompactList}\item 
+int \hyperlink{bignum_8h_aa9065cae8e3a287095b4043317f6b706}{mbedtls\-\_\-mpi\-\_\-mul\-\_\-mpi} (\hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$X, const \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$A, const \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$B)
+\begin{DoxyCompactList}\small\item\em Baseline multiplication\-: X = A $\ast$ B. \end{DoxyCompactList}\item 
+int \hyperlink{bignum_8h_ac4a22cb29f7e19dd4c823d1868f45eab}{mbedtls\-\_\-mpi\-\_\-mul\-\_\-int} (\hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$X, const \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$A, mbedtls\-\_\-mpi\-\_\-uint b)
+\begin{DoxyCompactList}\small\item\em Baseline multiplication\-: X = A $\ast$ b. \end{DoxyCompactList}\item 
+int \hyperlink{bignum_8h_a5f3db711e21b4fe2f1a009099478e796}{mbedtls\-\_\-mpi\-\_\-div\-\_\-mpi} (\hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$Q, \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$R, const \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$A, const \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$B)
+\begin{DoxyCompactList}\small\item\em Division by \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi}\-: A = Q $\ast$ B + R. \end{DoxyCompactList}\item 
+int \hyperlink{bignum_8h_a7ffac96dd27bbe62dba7c6307edd2c60}{mbedtls\-\_\-mpi\-\_\-div\-\_\-int} (\hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$Q, \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$R, const \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$A, mbedtls\-\_\-mpi\-\_\-sint b)
+\begin{DoxyCompactList}\small\item\em Division by int\-: A = Q $\ast$ b + R. \end{DoxyCompactList}\item 
+int \hyperlink{bignum_8h_a7b9db15054cb320c69dd065d3f17e674}{mbedtls\-\_\-mpi\-\_\-mod\-\_\-mpi} (\hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$R, const \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$A, const \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$B)
+\begin{DoxyCompactList}\small\item\em Modulo\-: R = A mod B. \end{DoxyCompactList}\item 
+int \hyperlink{bignum_8h_a3d2a4a4c3d64490e26e05153ed798058}{mbedtls\-\_\-mpi\-\_\-mod\-\_\-int} (mbedtls\-\_\-mpi\-\_\-uint $\ast$r, const \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$A, mbedtls\-\_\-mpi\-\_\-sint b)
+\begin{DoxyCompactList}\small\item\em Modulo\-: r = A mod b. \end{DoxyCompactList}\item 
+int \hyperlink{bignum_8h_a55433a16c951178e2b98a01c6386239e}{mbedtls\-\_\-mpi\-\_\-exp\-\_\-mod} (\hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$X, const \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$A, const \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$E, const \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$N, \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$\-\_\-\-R\-R)
+\begin{DoxyCompactList}\small\item\em Sliding-\/window exponentiation\-: X = A$^\wedge$\-E mod N. \end{DoxyCompactList}\item 
+int \hyperlink{bignum_8h_a81b99c0a79d3e8ddedfd4a6ee37ceb1e}{mbedtls\-\_\-mpi\-\_\-fill\-\_\-random} (\hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$X, size\-\_\-t size, int($\ast$f\-\_\-rng)(void $\ast$, unsigned char $\ast$, size\-\_\-t), void $\ast$p\-\_\-rng)
+\begin{DoxyCompactList}\small\item\em Fill an M\-P\-I X with size bytes of random. \end{DoxyCompactList}\item 
+int \hyperlink{bignum_8h_aeebcfa54676b583d2e767b1c01c9844f}{mbedtls\-\_\-mpi\-\_\-gcd} (\hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$G, const \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$A, const \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$B)
+\begin{DoxyCompactList}\small\item\em Greatest common divisor\-: G = gcd(\-A, B) \end{DoxyCompactList}\item 
+int \hyperlink{bignum_8h_abb720bf24bc902fe6edd2ce0cd9ce6e3}{mbedtls\-\_\-mpi\-\_\-inv\-\_\-mod} (\hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$X, const \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$A, const \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$N)
+\begin{DoxyCompactList}\small\item\em Modular inverse\-: X = A$^\wedge$-\/1 mod N. \end{DoxyCompactList}\item 
+int \hyperlink{bignum_8h_a5e5d03e6e1758bf871d23c96f7b91394}{mbedtls\-\_\-mpi\-\_\-is\-\_\-prime} (const \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$X, int($\ast$f\-\_\-rng)(void $\ast$, unsigned char $\ast$, size\-\_\-t), void $\ast$p\-\_\-rng)
+\begin{DoxyCompactList}\small\item\em Miller-\/\-Rabin primality test. \end{DoxyCompactList}\item 
+int \hyperlink{bignum_8h_ad1267890b0187b0a73ce0e7ce4ab4929}{mbedtls\-\_\-mpi\-\_\-gen\-\_\-prime} (\hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$X, size\-\_\-t nbits, int dh\-\_\-flag, int($\ast$f\-\_\-rng)(void $\ast$, unsigned char $\ast$, size\-\_\-t), void $\ast$p\-\_\-rng)
+\begin{DoxyCompactList}\small\item\em Prime number generation. \end{DoxyCompactList}\item 
+int \hyperlink{bignum_8h_a75b6f4376bdceb63ef5a65737c1a638c}{mbedtls\-\_\-mpi\-\_\-self\-\_\-test} (int verbose)
+\begin{DoxyCompactList}\small\item\em Checkup routine. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Multi-\/precision integer library. Copyright (C) 2006-\/2015, A\-R\-M Limited, All Rights Reserved
+
+This file is part of mbed T\-L\-S (\href{https://tls.mbed.org}{\tt https\-://tls.\-mbed.\-org})
+
+This program is free software; you can redistribute it and/or modify it under the terms of the G\-N\-U General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but W\-I\-T\-H\-O\-U\-T A\-N\-Y W\-A\-R\-R\-A\-N\-T\-Y; without even the implied warranty of M\-E\-R\-C\-H\-A\-N\-T\-A\-B\-I\-L\-I\-T\-Y or F\-I\-T\-N\-E\-S\-S F\-O\-R A P\-A\-R\-T\-I\-C\-U\-L\-A\-R P\-U\-R\-P\-O\-S\-E. See the G\-N\-U General Public License for more details.
+
+You should have received a copy of the G\-N\-U General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, M\-A 02110-\/1301 U\-S\-A. 
+
+Definition in file \hyperlink{bignum_8h_source}{bignum.\-h}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{bignum_8h_a9bb66b22357ba30dedfe856efeab5544}{\index{bignum.\-h@{bignum.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-A\-L\-L\-O\-C\-\_\-\-F\-A\-I\-L\-E\-D@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-A\-L\-L\-O\-C\-\_\-\-F\-A\-I\-L\-E\-D}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-A\-L\-L\-O\-C\-\_\-\-F\-A\-I\-L\-E\-D@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-A\-L\-L\-O\-C\-\_\-\-F\-A\-I\-L\-E\-D}!bignum.h@{bignum.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-A\-L\-L\-O\-C\-\_\-\-F\-A\-I\-L\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-A\-L\-L\-O\-C\-\_\-\-F\-A\-I\-L\-E\-D~-\/0x0010}}\label{bignum_8h_a9bb66b22357ba30dedfe856efeab5544}
+Memory allocation failed. 
+
+Definition at line 47 of file bignum.\-h.
+
+\hypertarget{bignum_8h_a3989a97b1d92d04dd05242731e6f37f2}{\index{bignum.\-h@{bignum.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A}!bignum.h@{bignum.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A~-\/0x0004}}\label{bignum_8h_a3989a97b1d92d04dd05242731e6f37f2}
+Bad input parameters to function. 
+
+Definition at line 41 of file bignum.\-h.
+
+\hypertarget{bignum_8h_a7fc9b9c20686c88b949d0a35c0def909}{\index{bignum.\-h@{bignum.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-T\-O\-O\-\_\-\-S\-M\-A\-L\-L@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-T\-O\-O\-\_\-\-S\-M\-A\-L\-L}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-T\-O\-O\-\_\-\-S\-M\-A\-L\-L@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-T\-O\-O\-\_\-\-S\-M\-A\-L\-L}!bignum.h@{bignum.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-T\-O\-O\-\_\-\-S\-M\-A\-L\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-T\-O\-O\-\_\-\-S\-M\-A\-L\-L~-\/0x0008}}\label{bignum_8h_a7fc9b9c20686c88b949d0a35c0def909}
+The buffer is too small to write to. 
+
+Definition at line 43 of file bignum.\-h.
+
+\hypertarget{bignum_8h_a97e2c5a552770757da26b4a9b2e56f6c}{\index{bignum.\-h@{bignum.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-D\-I\-V\-I\-S\-I\-O\-N\-\_\-\-B\-Y\-\_\-\-Z\-E\-R\-O@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-D\-I\-V\-I\-S\-I\-O\-N\-\_\-\-B\-Y\-\_\-\-Z\-E\-R\-O}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-D\-I\-V\-I\-S\-I\-O\-N\-\_\-\-B\-Y\-\_\-\-Z\-E\-R\-O@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-D\-I\-V\-I\-S\-I\-O\-N\-\_\-\-B\-Y\-\_\-\-Z\-E\-R\-O}!bignum.h@{bignum.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-D\-I\-V\-I\-S\-I\-O\-N\-\_\-\-B\-Y\-\_\-\-Z\-E\-R\-O}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-D\-I\-V\-I\-S\-I\-O\-N\-\_\-\-B\-Y\-\_\-\-Z\-E\-R\-O~-\/0x000\-C}}\label{bignum_8h_a97e2c5a552770757da26b4a9b2e56f6c}
+The input argument for division is zero, which is not allowed. 
+
+Definition at line 45 of file bignum.\-h.
+
+\hypertarget{bignum_8h_a5ba505f058780047978dcdafd50d0b1e}{\index{bignum.\-h@{bignum.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-F\-I\-L\-E\-\_\-\-I\-O\-\_\-\-E\-R\-R\-O\-R@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-F\-I\-L\-E\-\_\-\-I\-O\-\_\-\-E\-R\-R\-O\-R}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-F\-I\-L\-E\-\_\-\-I\-O\-\_\-\-E\-R\-R\-O\-R@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-F\-I\-L\-E\-\_\-\-I\-O\-\_\-\-E\-R\-R\-O\-R}!bignum.h@{bignum.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-F\-I\-L\-E\-\_\-\-I\-O\-\_\-\-E\-R\-R\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-F\-I\-L\-E\-\_\-\-I\-O\-\_\-\-E\-R\-R\-O\-R~-\/0x0002}}\label{bignum_8h_a5ba505f058780047978dcdafd50d0b1e}
+An error occurred while reading from or writing to a file. 
+
+Definition at line 40 of file bignum.\-h.
+
+\hypertarget{bignum_8h_a0ef495d9a083d986f00e5f604126382f}{\index{bignum.\-h@{bignum.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-C\-H\-A\-R\-A\-C\-T\-E\-R@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-C\-H\-A\-R\-A\-C\-T\-E\-R}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-C\-H\-A\-R\-A\-C\-T\-E\-R@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-C\-H\-A\-R\-A\-C\-T\-E\-R}!bignum.h@{bignum.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-C\-H\-A\-R\-A\-C\-T\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-C\-H\-A\-R\-A\-C\-T\-E\-R~-\/0x0006}}\label{bignum_8h_a0ef495d9a083d986f00e5f604126382f}
+There is an invalid character in the digit string. 
+
+Definition at line 42 of file bignum.\-h.
+
+\hypertarget{bignum_8h_ab7f06e7dfde557a02fe7137d4d47eed3}{\index{bignum.\-h@{bignum.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-N\-E\-G\-A\-T\-I\-V\-E\-\_\-\-V\-A\-L\-U\-E@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-N\-E\-G\-A\-T\-I\-V\-E\-\_\-\-V\-A\-L\-U\-E}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-N\-E\-G\-A\-T\-I\-V\-E\-\_\-\-V\-A\-L\-U\-E@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-N\-E\-G\-A\-T\-I\-V\-E\-\_\-\-V\-A\-L\-U\-E}!bignum.h@{bignum.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-N\-E\-G\-A\-T\-I\-V\-E\-\_\-\-V\-A\-L\-U\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-N\-E\-G\-A\-T\-I\-V\-E\-\_\-\-V\-A\-L\-U\-E~-\/0x000\-A}}\label{bignum_8h_ab7f06e7dfde557a02fe7137d4d47eed3}
+The input arguments are negative or result in illegal output. 
+
+Definition at line 44 of file bignum.\-h.
+
+\hypertarget{bignum_8h_a24f0dfbee8599f6e72852247d5681503}{\index{bignum.\-h@{bignum.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-N\-O\-T\-\_\-\-A\-C\-C\-E\-P\-T\-A\-B\-L\-E@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-N\-O\-T\-\_\-\-A\-C\-C\-E\-P\-T\-A\-B\-L\-E}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-N\-O\-T\-\_\-\-A\-C\-C\-E\-P\-T\-A\-B\-L\-E@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-N\-O\-T\-\_\-\-A\-C\-C\-E\-P\-T\-A\-B\-L\-E}!bignum.h@{bignum.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-N\-O\-T\-\_\-\-A\-C\-C\-E\-P\-T\-A\-B\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-N\-O\-T\-\_\-\-A\-C\-C\-E\-P\-T\-A\-B\-L\-E~-\/0x000\-E}}\label{bignum_8h_a24f0dfbee8599f6e72852247d5681503}
+The input arguments are not acceptable. 
+
+Definition at line 46 of file bignum.\-h.
+
+\hypertarget{bignum_8h_a134ba62182ca105e273d465861f5a4d5}{\index{bignum.\-h@{bignum.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-P\-I\-\_\-\-M\-A\-X\-\_\-\-B\-I\-T\-S@{M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-P\-I\-\_\-\-M\-A\-X\-\_\-\-B\-I\-T\-S}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-P\-I\-\_\-\-M\-A\-X\-\_\-\-B\-I\-T\-S@{M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-P\-I\-\_\-\-M\-A\-X\-\_\-\-B\-I\-T\-S}!bignum.h@{bignum.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-P\-I\-\_\-\-M\-A\-X\-\_\-\-B\-I\-T\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-P\-I\-\_\-\-M\-A\-X\-\_\-\-B\-I\-T\-S~( 8 $\ast$ {\bf M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-P\-I\-\_\-\-M\-A\-X\-\_\-\-S\-I\-Z\-E} )}}\label{bignum_8h_a134ba62182ca105e273d465861f5a4d5}
+Maximum number of bits for usable M\-P\-Is. 
+
+Definition at line 80 of file bignum.\-h.
+
+\hypertarget{bignum_8h_a02bfffc46b7b2e10c0080d29bb56e6b0}{\index{bignum.\-h@{bignum.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-P\-I\-\_\-\-M\-A\-X\-\_\-\-S\-I\-Z\-E@{M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-P\-I\-\_\-\-M\-A\-X\-\_\-\-S\-I\-Z\-E}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-P\-I\-\_\-\-M\-A\-X\-\_\-\-S\-I\-Z\-E@{M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-P\-I\-\_\-\-M\-A\-X\-\_\-\-S\-I\-Z\-E}!bignum.h@{bignum.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-P\-I\-\_\-\-M\-A\-X\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-P\-I\-\_\-\-M\-A\-X\-\_\-\-S\-I\-Z\-E~1024}}\label{bignum_8h_a02bfffc46b7b2e10c0080d29bb56e6b0}
+Maximum number of bytes for usable M\-P\-Is. 
+
+Definition at line 77 of file bignum.\-h.
+
+\hypertarget{bignum_8h_a7cec1de79c434f1053488b1d3b9454c4}{\index{bignum.\-h@{bignum.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-P\-I\-\_\-\-W\-I\-N\-D\-O\-W\-\_\-\-S\-I\-Z\-E@{M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-P\-I\-\_\-\-W\-I\-N\-D\-O\-W\-\_\-\-S\-I\-Z\-E}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-P\-I\-\_\-\-W\-I\-N\-D\-O\-W\-\_\-\-S\-I\-Z\-E@{M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-P\-I\-\_\-\-W\-I\-N\-D\-O\-W\-\_\-\-S\-I\-Z\-E}!bignum.h@{bignum.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-P\-I\-\_\-\-W\-I\-N\-D\-O\-W\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-P\-I\-\_\-\-W\-I\-N\-D\-O\-W\-\_\-\-S\-I\-Z\-E~6}}\label{bignum_8h_a7cec1de79c434f1053488b1d3b9454c4}
+Maximum windows size used. 
+
+Definition at line 66 of file bignum.\-h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{bignum_8h_a5ddb2c6dc59dd39874695e04ff40afdb}{\index{bignum.\-h@{bignum.\-h}!mbedtls\-\_\-mpi\-\_\-add\-\_\-abs@{mbedtls\-\_\-mpi\-\_\-add\-\_\-abs}}
+\index{mbedtls\-\_\-mpi\-\_\-add\-\_\-abs@{mbedtls\-\_\-mpi\-\_\-add\-\_\-abs}!bignum.h@{bignum.\-h}}
+\subsubsection[{mbedtls\-\_\-mpi\-\_\-add\-\_\-abs}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-mpi\-\_\-add\-\_\-abs (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-mpi} $\ast$}]{X, }
+\item[{const {\bf mbedtls\-\_\-mpi} $\ast$}]{A, }
+\item[{const {\bf mbedtls\-\_\-mpi} $\ast$}]{B}
+\end{DoxyParamCaption}
+)}}\label{bignum_8h_a5ddb2c6dc59dd39874695e04ff40afdb}
+
+
+Unsigned addition\-: X = $|$\-A$|$ + $|$\-B$|$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em X} & Destination M\-P\-I \\
+\hline
+{\em A} & Left-\/hand M\-P\-I \\
+\hline
+{\em B} & Right-\/hand M\-P\-I\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-A\-L\-L\-O\-C\-\_\-\-F\-A\-I\-L\-E\-D if memory allocation failed 
+\end{DoxyReturn}
+\hypertarget{bignum_8h_a1e6f6ba90e3c73ce6022ed7354443b2a}{\index{bignum.\-h@{bignum.\-h}!mbedtls\-\_\-mpi\-\_\-add\-\_\-int@{mbedtls\-\_\-mpi\-\_\-add\-\_\-int}}
+\index{mbedtls\-\_\-mpi\-\_\-add\-\_\-int@{mbedtls\-\_\-mpi\-\_\-add\-\_\-int}!bignum.h@{bignum.\-h}}
+\subsubsection[{mbedtls\-\_\-mpi\-\_\-add\-\_\-int}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-mpi\-\_\-add\-\_\-int (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-mpi} $\ast$}]{X, }
+\item[{const {\bf mbedtls\-\_\-mpi} $\ast$}]{A, }
+\item[{mbedtls\-\_\-mpi\-\_\-sint}]{b}
+\end{DoxyParamCaption}
+)}}\label{bignum_8h_a1e6f6ba90e3c73ce6022ed7354443b2a}
+
+
+Signed addition\-: X = A + b. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em X} & Destination M\-P\-I \\
+\hline
+{\em A} & Left-\/hand M\-P\-I \\
+\hline
+{\em b} & The integer value to add\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-A\-L\-L\-O\-C\-\_\-\-F\-A\-I\-L\-E\-D if memory allocation failed 
+\end{DoxyReturn}
+\hypertarget{bignum_8h_a5fd1cfd561c1ada500097f860aa4fe68}{\index{bignum.\-h@{bignum.\-h}!mbedtls\-\_\-mpi\-\_\-add\-\_\-mpi@{mbedtls\-\_\-mpi\-\_\-add\-\_\-mpi}}
+\index{mbedtls\-\_\-mpi\-\_\-add\-\_\-mpi@{mbedtls\-\_\-mpi\-\_\-add\-\_\-mpi}!bignum.h@{bignum.\-h}}
+\subsubsection[{mbedtls\-\_\-mpi\-\_\-add\-\_\-mpi}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-mpi\-\_\-add\-\_\-mpi (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-mpi} $\ast$}]{X, }
+\item[{const {\bf mbedtls\-\_\-mpi} $\ast$}]{A, }
+\item[{const {\bf mbedtls\-\_\-mpi} $\ast$}]{B}
+\end{DoxyParamCaption}
+)}}\label{bignum_8h_a5fd1cfd561c1ada500097f860aa4fe68}
+
+
+Signed addition\-: X = A + B. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em X} & Destination M\-P\-I \\
+\hline
+{\em A} & Left-\/hand M\-P\-I \\
+\hline
+{\em B} & Right-\/hand M\-P\-I\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-A\-L\-L\-O\-C\-\_\-\-F\-A\-I\-L\-E\-D if memory allocation failed 
+\end{DoxyReturn}
+\hypertarget{bignum_8h_a681ab2710d044c0cb091b6497c6ed395}{\index{bignum.\-h@{bignum.\-h}!mbedtls\-\_\-mpi\-\_\-bitlen@{mbedtls\-\_\-mpi\-\_\-bitlen}}
+\index{mbedtls\-\_\-mpi\-\_\-bitlen@{mbedtls\-\_\-mpi\-\_\-bitlen}!bignum.h@{bignum.\-h}}
+\subsubsection[{mbedtls\-\_\-mpi\-\_\-bitlen}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t mbedtls\-\_\-mpi\-\_\-bitlen (
+\begin{DoxyParamCaption}
+\item[{const {\bf mbedtls\-\_\-mpi} $\ast$}]{X}
+\end{DoxyParamCaption}
+)}}\label{bignum_8h_a681ab2710d044c0cb091b6497c6ed395}
+
+
+Return the number of bits up to and including the most significant '1' bit'. 
+
+Note\-: Thus also the one-\/based index of the most significant '1' bit
+
+
+\begin{DoxyParams}{Parameters}
+{\em X} & M\-P\-I to use \\
+\hline
+\end{DoxyParams}
+\hypertarget{bignum_8h_a81ea45be21ea77f5d8deae9e99d9a11b}{\index{bignum.\-h@{bignum.\-h}!mbedtls\-\_\-mpi\-\_\-cmp\-\_\-abs@{mbedtls\-\_\-mpi\-\_\-cmp\-\_\-abs}}
+\index{mbedtls\-\_\-mpi\-\_\-cmp\-\_\-abs@{mbedtls\-\_\-mpi\-\_\-cmp\-\_\-abs}!bignum.h@{bignum.\-h}}
+\subsubsection[{mbedtls\-\_\-mpi\-\_\-cmp\-\_\-abs}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-mpi\-\_\-cmp\-\_\-abs (
+\begin{DoxyParamCaption}
+\item[{const {\bf mbedtls\-\_\-mpi} $\ast$}]{X, }
+\item[{const {\bf mbedtls\-\_\-mpi} $\ast$}]{Y}
+\end{DoxyParamCaption}
+)}}\label{bignum_8h_a81ea45be21ea77f5d8deae9e99d9a11b}
+
+
+Compare unsigned values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em X} & Left-\/hand M\-P\-I \\
+\hline
+{\em Y} & Right-\/hand M\-P\-I\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if $|$\-X$|$ is greater than $|$\-Y$|$, -\/1 if $|$\-X$|$ is lesser than $|$\-Y$|$ or 0 if $|$\-X$|$ is equal to $|$\-Y$|$ 
+\end{DoxyReturn}
+\hypertarget{bignum_8h_ad0e7f426326afc7d3fde309a7a8d82fa}{\index{bignum.\-h@{bignum.\-h}!mbedtls\-\_\-mpi\-\_\-cmp\-\_\-int@{mbedtls\-\_\-mpi\-\_\-cmp\-\_\-int}}
+\index{mbedtls\-\_\-mpi\-\_\-cmp\-\_\-int@{mbedtls\-\_\-mpi\-\_\-cmp\-\_\-int}!bignum.h@{bignum.\-h}}
+\subsubsection[{mbedtls\-\_\-mpi\-\_\-cmp\-\_\-int}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-mpi\-\_\-cmp\-\_\-int (
+\begin{DoxyParamCaption}
+\item[{const {\bf mbedtls\-\_\-mpi} $\ast$}]{X, }
+\item[{mbedtls\-\_\-mpi\-\_\-sint}]{z}
+\end{DoxyParamCaption}
+)}}\label{bignum_8h_ad0e7f426326afc7d3fde309a7a8d82fa}
+
+
+Compare signed values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em X} & Left-\/hand M\-P\-I \\
+\hline
+{\em z} & The integer value to compare to\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if X is greater than z, -\/1 if X is lesser than z or 0 if X is equal to z 
+\end{DoxyReturn}
+\hypertarget{bignum_8h_a762dd8add46384d4935a4aecc125096e}{\index{bignum.\-h@{bignum.\-h}!mbedtls\-\_\-mpi\-\_\-cmp\-\_\-mpi@{mbedtls\-\_\-mpi\-\_\-cmp\-\_\-mpi}}
+\index{mbedtls\-\_\-mpi\-\_\-cmp\-\_\-mpi@{mbedtls\-\_\-mpi\-\_\-cmp\-\_\-mpi}!bignum.h@{bignum.\-h}}
+\subsubsection[{mbedtls\-\_\-mpi\-\_\-cmp\-\_\-mpi}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-mpi\-\_\-cmp\-\_\-mpi (
+\begin{DoxyParamCaption}
+\item[{const {\bf mbedtls\-\_\-mpi} $\ast$}]{X, }
+\item[{const {\bf mbedtls\-\_\-mpi} $\ast$}]{Y}
+\end{DoxyParamCaption}
+)}}\label{bignum_8h_a762dd8add46384d4935a4aecc125096e}
+
+
+Compare signed values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em X} & Left-\/hand M\-P\-I \\
+\hline
+{\em Y} & Right-\/hand M\-P\-I\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if X is greater than Y, -\/1 if X is lesser than Y or 0 if X is equal to Y 
+\end{DoxyReturn}
+\hypertarget{bignum_8h_a2f722863f9fd9098690f8a9db9962044}{\index{bignum.\-h@{bignum.\-h}!mbedtls\-\_\-mpi\-\_\-copy@{mbedtls\-\_\-mpi\-\_\-copy}}
+\index{mbedtls\-\_\-mpi\-\_\-copy@{mbedtls\-\_\-mpi\-\_\-copy}!bignum.h@{bignum.\-h}}
+\subsubsection[{mbedtls\-\_\-mpi\-\_\-copy}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-mpi\-\_\-copy (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-mpi} $\ast$}]{X, }
+\item[{const {\bf mbedtls\-\_\-mpi} $\ast$}]{Y}
+\end{DoxyParamCaption}
+)}}\label{bignum_8h_a2f722863f9fd9098690f8a9db9962044}
+
+
+Copy the contents of Y into X. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em X} & Destination M\-P\-I \\
+\hline
+{\em Y} & Source M\-P\-I\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-A\-L\-L\-O\-C\-\_\-\-F\-A\-I\-L\-E\-D if memory allocation failed 
+\end{DoxyReturn}
+\hypertarget{bignum_8h_a7ffac96dd27bbe62dba7c6307edd2c60}{\index{bignum.\-h@{bignum.\-h}!mbedtls\-\_\-mpi\-\_\-div\-\_\-int@{mbedtls\-\_\-mpi\-\_\-div\-\_\-int}}
+\index{mbedtls\-\_\-mpi\-\_\-div\-\_\-int@{mbedtls\-\_\-mpi\-\_\-div\-\_\-int}!bignum.h@{bignum.\-h}}
+\subsubsection[{mbedtls\-\_\-mpi\-\_\-div\-\_\-int}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-mpi\-\_\-div\-\_\-int (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-mpi} $\ast$}]{Q, }
+\item[{{\bf mbedtls\-\_\-mpi} $\ast$}]{R, }
+\item[{const {\bf mbedtls\-\_\-mpi} $\ast$}]{A, }
+\item[{mbedtls\-\_\-mpi\-\_\-sint}]{b}
+\end{DoxyParamCaption}
+)}}\label{bignum_8h_a7ffac96dd27bbe62dba7c6307edd2c60}
+
+
+Division by int\-: A = Q $\ast$ b + R. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Q} & Destination M\-P\-I for the quotient \\
+\hline
+{\em R} & Destination M\-P\-I for the rest value \\
+\hline
+{\em A} & Left-\/hand M\-P\-I \\
+\hline
+{\em b} & Integer to divide by\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-A\-L\-L\-O\-C\-\_\-\-F\-A\-I\-L\-E\-D if memory allocation failed, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-D\-I\-V\-I\-S\-I\-O\-N\-\_\-\-B\-Y\-\_\-\-Z\-E\-R\-O if b == 0
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Either Q or R can be N\-U\-L\-L. 
+\end{DoxyNote}
+\hypertarget{bignum_8h_a5f3db711e21b4fe2f1a009099478e796}{\index{bignum.\-h@{bignum.\-h}!mbedtls\-\_\-mpi\-\_\-div\-\_\-mpi@{mbedtls\-\_\-mpi\-\_\-div\-\_\-mpi}}
+\index{mbedtls\-\_\-mpi\-\_\-div\-\_\-mpi@{mbedtls\-\_\-mpi\-\_\-div\-\_\-mpi}!bignum.h@{bignum.\-h}}
+\subsubsection[{mbedtls\-\_\-mpi\-\_\-div\-\_\-mpi}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-mpi\-\_\-div\-\_\-mpi (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-mpi} $\ast$}]{Q, }
+\item[{{\bf mbedtls\-\_\-mpi} $\ast$}]{R, }
+\item[{const {\bf mbedtls\-\_\-mpi} $\ast$}]{A, }
+\item[{const {\bf mbedtls\-\_\-mpi} $\ast$}]{B}
+\end{DoxyParamCaption}
+)}}\label{bignum_8h_a5f3db711e21b4fe2f1a009099478e796}
+
+
+Division by \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi}\-: A = Q $\ast$ B + R. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Q} & Destination M\-P\-I for the quotient \\
+\hline
+{\em R} & Destination M\-P\-I for the rest value \\
+\hline
+{\em A} & Left-\/hand M\-P\-I \\
+\hline
+{\em B} & Right-\/hand M\-P\-I\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-A\-L\-L\-O\-C\-\_\-\-F\-A\-I\-L\-E\-D if memory allocation failed, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-D\-I\-V\-I\-S\-I\-O\-N\-\_\-\-B\-Y\-\_\-\-Z\-E\-R\-O if B == 0
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Either Q or R can be N\-U\-L\-L. 
+\end{DoxyNote}
+\hypertarget{bignum_8h_a55433a16c951178e2b98a01c6386239e}{\index{bignum.\-h@{bignum.\-h}!mbedtls\-\_\-mpi\-\_\-exp\-\_\-mod@{mbedtls\-\_\-mpi\-\_\-exp\-\_\-mod}}
+\index{mbedtls\-\_\-mpi\-\_\-exp\-\_\-mod@{mbedtls\-\_\-mpi\-\_\-exp\-\_\-mod}!bignum.h@{bignum.\-h}}
+\subsubsection[{mbedtls\-\_\-mpi\-\_\-exp\-\_\-mod}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-mpi\-\_\-exp\-\_\-mod (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-mpi} $\ast$}]{X, }
+\item[{const {\bf mbedtls\-\_\-mpi} $\ast$}]{A, }
+\item[{const {\bf mbedtls\-\_\-mpi} $\ast$}]{E, }
+\item[{const {\bf mbedtls\-\_\-mpi} $\ast$}]{N, }
+\item[{{\bf mbedtls\-\_\-mpi} $\ast$}]{\-\_\-\-R\-R}
+\end{DoxyParamCaption}
+)}}\label{bignum_8h_a55433a16c951178e2b98a01c6386239e}
+
+
+Sliding-\/window exponentiation\-: X = A$^\wedge$\-E mod N. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em X} & Destination M\-P\-I \\
+\hline
+{\em A} & Left-\/hand M\-P\-I \\
+\hline
+{\em E} & Exponent M\-P\-I \\
+\hline
+{\em N} & Modular M\-P\-I \\
+\hline
+{\em \-\_\-\-R\-R} & Speed-\/up M\-P\-I used for recalculations\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-A\-L\-L\-O\-C\-\_\-\-F\-A\-I\-L\-E\-D if memory allocation failed, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A if N is negative or even or if E is negative
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+\-\_\-\-R\-R is used to avoid re-\/computing R$\ast$\-R mod N across multiple calls, which speeds up things a bit. It can be set to N\-U\-L\-L if the extra performance is unneeded. 
+\end{DoxyNote}
+\hypertarget{bignum_8h_a81b99c0a79d3e8ddedfd4a6ee37ceb1e}{\index{bignum.\-h@{bignum.\-h}!mbedtls\-\_\-mpi\-\_\-fill\-\_\-random@{mbedtls\-\_\-mpi\-\_\-fill\-\_\-random}}
+\index{mbedtls\-\_\-mpi\-\_\-fill\-\_\-random@{mbedtls\-\_\-mpi\-\_\-fill\-\_\-random}!bignum.h@{bignum.\-h}}
+\subsubsection[{mbedtls\-\_\-mpi\-\_\-fill\-\_\-random}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-mpi\-\_\-fill\-\_\-random (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-mpi} $\ast$}]{X, }
+\item[{size\-\_\-t}]{size, }
+\item[{int($\ast$)(void $\ast$, unsigned char $\ast$, size\-\_\-t)}]{f\-\_\-rng, }
+\item[{void $\ast$}]{p\-\_\-rng}
+\end{DoxyParamCaption}
+)}}\label{bignum_8h_a81b99c0a79d3e8ddedfd4a6ee37ceb1e}
+
+
+Fill an M\-P\-I X with size bytes of random. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em X} & Destination M\-P\-I \\
+\hline
+{\em size} & Size in bytes \\
+\hline
+{\em f\-\_\-rng} & R\-N\-G function \\
+\hline
+{\em p\-\_\-rng} & R\-N\-G parameter\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-A\-L\-L\-O\-C\-\_\-\-F\-A\-I\-L\-E\-D if memory allocation failed 
+\end{DoxyReturn}
+\hypertarget{bignum_8h_abffd5d8382cb86c089a1ef2bebb90f9f}{\index{bignum.\-h@{bignum.\-h}!mbedtls\-\_\-mpi\-\_\-free@{mbedtls\-\_\-mpi\-\_\-free}}
+\index{mbedtls\-\_\-mpi\-\_\-free@{mbedtls\-\_\-mpi\-\_\-free}!bignum.h@{bignum.\-h}}
+\subsubsection[{mbedtls\-\_\-mpi\-\_\-free}]{\setlength{\rightskip}{0pt plus 5cm}void mbedtls\-\_\-mpi\-\_\-free (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-mpi} $\ast$}]{X}
+\end{DoxyParamCaption}
+)}}\label{bignum_8h_abffd5d8382cb86c089a1ef2bebb90f9f}
+
+
+Unallocate one M\-P\-I. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em X} & One M\-P\-I to unallocate. \\
+\hline
+\end{DoxyParams}
+\hypertarget{bignum_8h_aeebcfa54676b583d2e767b1c01c9844f}{\index{bignum.\-h@{bignum.\-h}!mbedtls\-\_\-mpi\-\_\-gcd@{mbedtls\-\_\-mpi\-\_\-gcd}}
+\index{mbedtls\-\_\-mpi\-\_\-gcd@{mbedtls\-\_\-mpi\-\_\-gcd}!bignum.h@{bignum.\-h}}
+\subsubsection[{mbedtls\-\_\-mpi\-\_\-gcd}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-mpi\-\_\-gcd (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-mpi} $\ast$}]{G, }
+\item[{const {\bf mbedtls\-\_\-mpi} $\ast$}]{A, }
+\item[{const {\bf mbedtls\-\_\-mpi} $\ast$}]{B}
+\end{DoxyParamCaption}
+)}}\label{bignum_8h_aeebcfa54676b583d2e767b1c01c9844f}
+
+
+Greatest common divisor\-: G = gcd(\-A, B) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em G} & Destination M\-P\-I \\
+\hline
+{\em A} & Left-\/hand M\-P\-I \\
+\hline
+{\em B} & Right-\/hand M\-P\-I\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-A\-L\-L\-O\-C\-\_\-\-F\-A\-I\-L\-E\-D if memory allocation failed 
+\end{DoxyReturn}
+\hypertarget{bignum_8h_ad1267890b0187b0a73ce0e7ce4ab4929}{\index{bignum.\-h@{bignum.\-h}!mbedtls\-\_\-mpi\-\_\-gen\-\_\-prime@{mbedtls\-\_\-mpi\-\_\-gen\-\_\-prime}}
+\index{mbedtls\-\_\-mpi\-\_\-gen\-\_\-prime@{mbedtls\-\_\-mpi\-\_\-gen\-\_\-prime}!bignum.h@{bignum.\-h}}
+\subsubsection[{mbedtls\-\_\-mpi\-\_\-gen\-\_\-prime}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-mpi\-\_\-gen\-\_\-prime (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-mpi} $\ast$}]{X, }
+\item[{size\-\_\-t}]{nbits, }
+\item[{int}]{dh\-\_\-flag, }
+\item[{int($\ast$)(void $\ast$, unsigned char $\ast$, size\-\_\-t)}]{f\-\_\-rng, }
+\item[{void $\ast$}]{p\-\_\-rng}
+\end{DoxyParamCaption}
+)}}\label{bignum_8h_ad1267890b0187b0a73ce0e7ce4ab4929}
+
+
+Prime number generation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em X} & Destination M\-P\-I \\
+\hline
+{\em nbits} & Required size of X in bits ( 3 $<$= nbits $<$= M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-P\-I\-\_\-\-M\-A\-X\-\_\-\-B\-I\-T\-S ) \\
+\hline
+{\em dh\-\_\-flag} & If 1, then (X-\/1)/2 will be prime too \\
+\hline
+{\em f\-\_\-rng} & R\-N\-G function \\
+\hline
+{\em p\-\_\-rng} & R\-N\-G parameter\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful (probably prime), M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-A\-L\-L\-O\-C\-\_\-\-F\-A\-I\-L\-E\-D if memory allocation failed, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A if nbits is $<$ 3 
+\end{DoxyReturn}
+\hypertarget{bignum_8h_abfc40fb7192507bc0eeb9f24e8e69c2d}{\index{bignum.\-h@{bignum.\-h}!mbedtls\-\_\-mpi\-\_\-get\-\_\-bit@{mbedtls\-\_\-mpi\-\_\-get\-\_\-bit}}
+\index{mbedtls\-\_\-mpi\-\_\-get\-\_\-bit@{mbedtls\-\_\-mpi\-\_\-get\-\_\-bit}!bignum.h@{bignum.\-h}}
+\subsubsection[{mbedtls\-\_\-mpi\-\_\-get\-\_\-bit}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-mpi\-\_\-get\-\_\-bit (
+\begin{DoxyParamCaption}
+\item[{const {\bf mbedtls\-\_\-mpi} $\ast$}]{X, }
+\item[{size\-\_\-t}]{pos}
+\end{DoxyParamCaption}
+)}}\label{bignum_8h_abfc40fb7192507bc0eeb9f24e8e69c2d}
+
+
+Get a specific bit from X. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em X} & M\-P\-I to use \\
+\hline
+{\em pos} & Zero-\/based index of the bit in X\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Either a 0 or a 1 
+\end{DoxyReturn}
+\hypertarget{bignum_8h_a22263d90d838cb58f271aa8f1920843d}{\index{bignum.\-h@{bignum.\-h}!mbedtls\-\_\-mpi\-\_\-grow@{mbedtls\-\_\-mpi\-\_\-grow}}
+\index{mbedtls\-\_\-mpi\-\_\-grow@{mbedtls\-\_\-mpi\-\_\-grow}!bignum.h@{bignum.\-h}}
+\subsubsection[{mbedtls\-\_\-mpi\-\_\-grow}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-mpi\-\_\-grow (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-mpi} $\ast$}]{X, }
+\item[{size\-\_\-t}]{nblimbs}
+\end{DoxyParamCaption}
+)}}\label{bignum_8h_a22263d90d838cb58f271aa8f1920843d}
+
+
+Enlarge to the specified number of limbs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em X} & M\-P\-I to grow \\
+\hline
+{\em nblimbs} & The target number of limbs\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-A\-L\-L\-O\-C\-\_\-\-F\-A\-I\-L\-E\-D if memory allocation failed 
+\end{DoxyReturn}
+\hypertarget{bignum_8h_a99c7cca612b47dc4f3b96905c4f9d69e}{\index{bignum.\-h@{bignum.\-h}!mbedtls\-\_\-mpi\-\_\-init@{mbedtls\-\_\-mpi\-\_\-init}}
+\index{mbedtls\-\_\-mpi\-\_\-init@{mbedtls\-\_\-mpi\-\_\-init}!bignum.h@{bignum.\-h}}
+\subsubsection[{mbedtls\-\_\-mpi\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void mbedtls\-\_\-mpi\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-mpi} $\ast$}]{X}
+\end{DoxyParamCaption}
+)}}\label{bignum_8h_a99c7cca612b47dc4f3b96905c4f9d69e}
+
+
+Initialize one M\-P\-I (make internal references valid) This just makes it ready to be set or freed, but does not define a value for the M\-P\-I. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em X} & One M\-P\-I to initialize. \\
+\hline
+\end{DoxyParams}
+\hypertarget{bignum_8h_abb720bf24bc902fe6edd2ce0cd9ce6e3}{\index{bignum.\-h@{bignum.\-h}!mbedtls\-\_\-mpi\-\_\-inv\-\_\-mod@{mbedtls\-\_\-mpi\-\_\-inv\-\_\-mod}}
+\index{mbedtls\-\_\-mpi\-\_\-inv\-\_\-mod@{mbedtls\-\_\-mpi\-\_\-inv\-\_\-mod}!bignum.h@{bignum.\-h}}
+\subsubsection[{mbedtls\-\_\-mpi\-\_\-inv\-\_\-mod}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-mpi\-\_\-inv\-\_\-mod (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-mpi} $\ast$}]{X, }
+\item[{const {\bf mbedtls\-\_\-mpi} $\ast$}]{A, }
+\item[{const {\bf mbedtls\-\_\-mpi} $\ast$}]{N}
+\end{DoxyParamCaption}
+)}}\label{bignum_8h_abb720bf24bc902fe6edd2ce0cd9ce6e3}
+
+
+Modular inverse\-: X = A$^\wedge$-\/1 mod N. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em X} & Destination M\-P\-I \\
+\hline
+{\em A} & Left-\/hand M\-P\-I \\
+\hline
+{\em N} & Right-\/hand M\-P\-I\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-A\-L\-L\-O\-C\-\_\-\-F\-A\-I\-L\-E\-D if memory allocation failed, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A if N is negative or nil M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-N\-O\-T\-\_\-\-A\-C\-C\-E\-P\-T\-A\-B\-L\-E if A has no inverse mod N 
+\end{DoxyReturn}
+\hypertarget{bignum_8h_a5e5d03e6e1758bf871d23c96f7b91394}{\index{bignum.\-h@{bignum.\-h}!mbedtls\-\_\-mpi\-\_\-is\-\_\-prime@{mbedtls\-\_\-mpi\-\_\-is\-\_\-prime}}
+\index{mbedtls\-\_\-mpi\-\_\-is\-\_\-prime@{mbedtls\-\_\-mpi\-\_\-is\-\_\-prime}!bignum.h@{bignum.\-h}}
+\subsubsection[{mbedtls\-\_\-mpi\-\_\-is\-\_\-prime}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-mpi\-\_\-is\-\_\-prime (
+\begin{DoxyParamCaption}
+\item[{const {\bf mbedtls\-\_\-mpi} $\ast$}]{X, }
+\item[{int($\ast$)(void $\ast$, unsigned char $\ast$, size\-\_\-t)}]{f\-\_\-rng, }
+\item[{void $\ast$}]{p\-\_\-rng}
+\end{DoxyParamCaption}
+)}}\label{bignum_8h_a5e5d03e6e1758bf871d23c96f7b91394}
+
+
+Miller-\/\-Rabin primality test. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em X} & M\-P\-I to check \\
+\hline
+{\em f\-\_\-rng} & R\-N\-G function \\
+\hline
+{\em p\-\_\-rng} & R\-N\-G parameter\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful (probably prime), M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-A\-L\-L\-O\-C\-\_\-\-F\-A\-I\-L\-E\-D if memory allocation failed, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-N\-O\-T\-\_\-\-A\-C\-C\-E\-P\-T\-A\-B\-L\-E if X is not prime 
+\end{DoxyReturn}
+\hypertarget{bignum_8h_aa67117fd61db9570746dc2ffca88d004}{\index{bignum.\-h@{bignum.\-h}!mbedtls\-\_\-mpi\-\_\-lsb@{mbedtls\-\_\-mpi\-\_\-lsb}}
+\index{mbedtls\-\_\-mpi\-\_\-lsb@{mbedtls\-\_\-mpi\-\_\-lsb}!bignum.h@{bignum.\-h}}
+\subsubsection[{mbedtls\-\_\-mpi\-\_\-lsb}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t mbedtls\-\_\-mpi\-\_\-lsb (
+\begin{DoxyParamCaption}
+\item[{const {\bf mbedtls\-\_\-mpi} $\ast$}]{X}
+\end{DoxyParamCaption}
+)}}\label{bignum_8h_aa67117fd61db9570746dc2ffca88d004}
+
+
+Return the number of zero-\/bits before the least significant '1' bit. 
+
+Note\-: Thus also the zero-\/based index of the least significant '1' bit
+
+
+\begin{DoxyParams}{Parameters}
+{\em X} & M\-P\-I to use \\
+\hline
+\end{DoxyParams}
+\hypertarget{bignum_8h_a65644d139404325130491759a5651f6d}{\index{bignum.\-h@{bignum.\-h}!mbedtls\-\_\-mpi\-\_\-lset@{mbedtls\-\_\-mpi\-\_\-lset}}
+\index{mbedtls\-\_\-mpi\-\_\-lset@{mbedtls\-\_\-mpi\-\_\-lset}!bignum.h@{bignum.\-h}}
+\subsubsection[{mbedtls\-\_\-mpi\-\_\-lset}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-mpi\-\_\-lset (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-mpi} $\ast$}]{X, }
+\item[{mbedtls\-\_\-mpi\-\_\-sint}]{z}
+\end{DoxyParamCaption}
+)}}\label{bignum_8h_a65644d139404325130491759a5651f6d}
+
+
+Set value from integer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em X} & M\-P\-I to set \\
+\hline
+{\em z} & Value to use\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-A\-L\-L\-O\-C\-\_\-\-F\-A\-I\-L\-E\-D if memory allocation failed 
+\end{DoxyReturn}
+\hypertarget{bignum_8h_a3d2a4a4c3d64490e26e05153ed798058}{\index{bignum.\-h@{bignum.\-h}!mbedtls\-\_\-mpi\-\_\-mod\-\_\-int@{mbedtls\-\_\-mpi\-\_\-mod\-\_\-int}}
+\index{mbedtls\-\_\-mpi\-\_\-mod\-\_\-int@{mbedtls\-\_\-mpi\-\_\-mod\-\_\-int}!bignum.h@{bignum.\-h}}
+\subsubsection[{mbedtls\-\_\-mpi\-\_\-mod\-\_\-int}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-mpi\-\_\-mod\-\_\-int (
+\begin{DoxyParamCaption}
+\item[{mbedtls\-\_\-mpi\-\_\-uint $\ast$}]{r, }
+\item[{const {\bf mbedtls\-\_\-mpi} $\ast$}]{A, }
+\item[{mbedtls\-\_\-mpi\-\_\-sint}]{b}
+\end{DoxyParamCaption}
+)}}\label{bignum_8h_a3d2a4a4c3d64490e26e05153ed798058}
+
+
+Modulo\-: r = A mod b. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Destination mbedtls\-\_\-mpi\-\_\-uint \\
+\hline
+{\em A} & Left-\/hand M\-P\-I \\
+\hline
+{\em b} & Integer to divide by\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-A\-L\-L\-O\-C\-\_\-\-F\-A\-I\-L\-E\-D if memory allocation failed, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-D\-I\-V\-I\-S\-I\-O\-N\-\_\-\-B\-Y\-\_\-\-Z\-E\-R\-O if b == 0, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-N\-E\-G\-A\-T\-I\-V\-E\-\_\-\-V\-A\-L\-U\-E if b $<$ 0 
+\end{DoxyReturn}
+\hypertarget{bignum_8h_a7b9db15054cb320c69dd065d3f17e674}{\index{bignum.\-h@{bignum.\-h}!mbedtls\-\_\-mpi\-\_\-mod\-\_\-mpi@{mbedtls\-\_\-mpi\-\_\-mod\-\_\-mpi}}
+\index{mbedtls\-\_\-mpi\-\_\-mod\-\_\-mpi@{mbedtls\-\_\-mpi\-\_\-mod\-\_\-mpi}!bignum.h@{bignum.\-h}}
+\subsubsection[{mbedtls\-\_\-mpi\-\_\-mod\-\_\-mpi}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-mpi\-\_\-mod\-\_\-mpi (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-mpi} $\ast$}]{R, }
+\item[{const {\bf mbedtls\-\_\-mpi} $\ast$}]{A, }
+\item[{const {\bf mbedtls\-\_\-mpi} $\ast$}]{B}
+\end{DoxyParamCaption}
+)}}\label{bignum_8h_a7b9db15054cb320c69dd065d3f17e674}
+
+
+Modulo\-: R = A mod B. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em R} & Destination M\-P\-I for the rest value \\
+\hline
+{\em A} & Left-\/hand M\-P\-I \\
+\hline
+{\em B} & Right-\/hand M\-P\-I\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-A\-L\-L\-O\-C\-\_\-\-F\-A\-I\-L\-E\-D if memory allocation failed, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-D\-I\-V\-I\-S\-I\-O\-N\-\_\-\-B\-Y\-\_\-\-Z\-E\-R\-O if B == 0, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-N\-E\-G\-A\-T\-I\-V\-E\-\_\-\-V\-A\-L\-U\-E if B $<$ 0 
+\end{DoxyReturn}
+\hypertarget{bignum_8h_ac4a22cb29f7e19dd4c823d1868f45eab}{\index{bignum.\-h@{bignum.\-h}!mbedtls\-\_\-mpi\-\_\-mul\-\_\-int@{mbedtls\-\_\-mpi\-\_\-mul\-\_\-int}}
+\index{mbedtls\-\_\-mpi\-\_\-mul\-\_\-int@{mbedtls\-\_\-mpi\-\_\-mul\-\_\-int}!bignum.h@{bignum.\-h}}
+\subsubsection[{mbedtls\-\_\-mpi\-\_\-mul\-\_\-int}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-mpi\-\_\-mul\-\_\-int (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-mpi} $\ast$}]{X, }
+\item[{const {\bf mbedtls\-\_\-mpi} $\ast$}]{A, }
+\item[{mbedtls\-\_\-mpi\-\_\-uint}]{b}
+\end{DoxyParamCaption}
+)}}\label{bignum_8h_ac4a22cb29f7e19dd4c823d1868f45eab}
+
+
+Baseline multiplication\-: X = A $\ast$ b. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em X} & Destination M\-P\-I \\
+\hline
+{\em A} & Left-\/hand M\-P\-I \\
+\hline
+{\em b} & The unsigned integer value to multiply with\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+b is unsigned
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+0 if successful, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-A\-L\-L\-O\-C\-\_\-\-F\-A\-I\-L\-E\-D if memory allocation failed 
+\end{DoxyReturn}
+\hypertarget{bignum_8h_aa9065cae8e3a287095b4043317f6b706}{\index{bignum.\-h@{bignum.\-h}!mbedtls\-\_\-mpi\-\_\-mul\-\_\-mpi@{mbedtls\-\_\-mpi\-\_\-mul\-\_\-mpi}}
+\index{mbedtls\-\_\-mpi\-\_\-mul\-\_\-mpi@{mbedtls\-\_\-mpi\-\_\-mul\-\_\-mpi}!bignum.h@{bignum.\-h}}
+\subsubsection[{mbedtls\-\_\-mpi\-\_\-mul\-\_\-mpi}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-mpi\-\_\-mul\-\_\-mpi (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-mpi} $\ast$}]{X, }
+\item[{const {\bf mbedtls\-\_\-mpi} $\ast$}]{A, }
+\item[{const {\bf mbedtls\-\_\-mpi} $\ast$}]{B}
+\end{DoxyParamCaption}
+)}}\label{bignum_8h_aa9065cae8e3a287095b4043317f6b706}
+
+
+Baseline multiplication\-: X = A $\ast$ B. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em X} & Destination M\-P\-I \\
+\hline
+{\em A} & Left-\/hand M\-P\-I \\
+\hline
+{\em B} & Right-\/hand M\-P\-I\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-A\-L\-L\-O\-C\-\_\-\-F\-A\-I\-L\-E\-D if memory allocation failed 
+\end{DoxyReturn}
+\hypertarget{bignum_8h_a68f62c99e53eb034daea486e5d5d83ca}{\index{bignum.\-h@{bignum.\-h}!mbedtls\-\_\-mpi\-\_\-read\-\_\-binary@{mbedtls\-\_\-mpi\-\_\-read\-\_\-binary}}
+\index{mbedtls\-\_\-mpi\-\_\-read\-\_\-binary@{mbedtls\-\_\-mpi\-\_\-read\-\_\-binary}!bignum.h@{bignum.\-h}}
+\subsubsection[{mbedtls\-\_\-mpi\-\_\-read\-\_\-binary}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-mpi\-\_\-read\-\_\-binary (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-mpi} $\ast$}]{X, }
+\item[{const unsigned char $\ast$}]{buf, }
+\item[{size\-\_\-t}]{buflen}
+\end{DoxyParamCaption}
+)}}\label{bignum_8h_a68f62c99e53eb034daea486e5d5d83ca}
+
+
+Import X from unsigned binary data, big endian. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em X} & Destination M\-P\-I \\
+\hline
+{\em buf} & Input buffer \\
+\hline
+{\em buflen} & Input buffer size\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-A\-L\-L\-O\-C\-\_\-\-F\-A\-I\-L\-E\-D if memory allocation failed 
+\end{DoxyReturn}
+\hypertarget{bignum_8h_acb4d0ed28a946cfa83219ae8709941d4}{\index{bignum.\-h@{bignum.\-h}!mbedtls\-\_\-mpi\-\_\-read\-\_\-file@{mbedtls\-\_\-mpi\-\_\-read\-\_\-file}}
+\index{mbedtls\-\_\-mpi\-\_\-read\-\_\-file@{mbedtls\-\_\-mpi\-\_\-read\-\_\-file}!bignum.h@{bignum.\-h}}
+\subsubsection[{mbedtls\-\_\-mpi\-\_\-read\-\_\-file}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-mpi\-\_\-read\-\_\-file (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-mpi} $\ast$}]{X, }
+\item[{int}]{radix, }
+\item[{F\-I\-L\-E $\ast$}]{fin}
+\end{DoxyParamCaption}
+)}}\label{bignum_8h_acb4d0ed28a946cfa83219ae8709941d4}
+
+
+Read X from an opened file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em X} & Destination M\-P\-I \\
+\hline
+{\em radix} & Input numeric base \\
+\hline
+{\em fin} & Input file handle\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-T\-O\-O\-\_\-\-S\-M\-A\-L\-L if the file read buffer is too small or a M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-X\-X\-X error code 
+\end{DoxyReturn}
+\hypertarget{bignum_8h_a15efd3f2f86700b69f6c18d34ac05758}{\index{bignum.\-h@{bignum.\-h}!mbedtls\-\_\-mpi\-\_\-read\-\_\-string@{mbedtls\-\_\-mpi\-\_\-read\-\_\-string}}
+\index{mbedtls\-\_\-mpi\-\_\-read\-\_\-string@{mbedtls\-\_\-mpi\-\_\-read\-\_\-string}!bignum.h@{bignum.\-h}}
+\subsubsection[{mbedtls\-\_\-mpi\-\_\-read\-\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-mpi\-\_\-read\-\_\-string (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-mpi} $\ast$}]{X, }
+\item[{int}]{radix, }
+\item[{const char $\ast$}]{s}
+\end{DoxyParamCaption}
+)}}\label{bignum_8h_a15efd3f2f86700b69f6c18d34ac05758}
+
+
+Import from an A\-S\-C\-I\-I string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em X} & Destination M\-P\-I \\
+\hline
+{\em radix} & Input numeric base \\
+\hline
+{\em s} & Null-\/terminated string buffer\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, or a M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-X\-X\-X error code 
+\end{DoxyReturn}
+\hypertarget{bignum_8h_a623c565706f22d8fbcc665ba49a51c7c}{\index{bignum.\-h@{bignum.\-h}!mbedtls\-\_\-mpi\-\_\-safe\-\_\-cond\-\_\-assign@{mbedtls\-\_\-mpi\-\_\-safe\-\_\-cond\-\_\-assign}}
+\index{mbedtls\-\_\-mpi\-\_\-safe\-\_\-cond\-\_\-assign@{mbedtls\-\_\-mpi\-\_\-safe\-\_\-cond\-\_\-assign}!bignum.h@{bignum.\-h}}
+\subsubsection[{mbedtls\-\_\-mpi\-\_\-safe\-\_\-cond\-\_\-assign}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-mpi\-\_\-safe\-\_\-cond\-\_\-assign (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-mpi} $\ast$}]{X, }
+\item[{const {\bf mbedtls\-\_\-mpi} $\ast$}]{Y, }
+\item[{unsigned char}]{assign}
+\end{DoxyParamCaption}
+)}}\label{bignum_8h_a623c565706f22d8fbcc665ba49a51c7c}
+
+
+Safe conditional assignement X = Y if assign is 1. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em X} & M\-P\-I to conditionally assign to \\
+\hline
+{\em Y} & Value to be assigned \\
+\hline
+{\em assign} & 1\-: perform the assignment, 0\-: keep X's original value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-A\-L\-L\-O\-C\-\_\-\-F\-A\-I\-L\-E\-D if memory allocation failed,
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This function is equivalent to if( assign ) mbedtls\-\_\-mpi\-\_\-copy( X, Y ); except that it avoids leaking any information about whether the assignment was done or not (the above code may leak information through branch prediction and/or memory access patterns analysis). 
+\end{DoxyNote}
+\hypertarget{bignum_8h_a956c54f87d26ceb6da98043805e67684}{\index{bignum.\-h@{bignum.\-h}!mbedtls\-\_\-mpi\-\_\-safe\-\_\-cond\-\_\-swap@{mbedtls\-\_\-mpi\-\_\-safe\-\_\-cond\-\_\-swap}}
+\index{mbedtls\-\_\-mpi\-\_\-safe\-\_\-cond\-\_\-swap@{mbedtls\-\_\-mpi\-\_\-safe\-\_\-cond\-\_\-swap}!bignum.h@{bignum.\-h}}
+\subsubsection[{mbedtls\-\_\-mpi\-\_\-safe\-\_\-cond\-\_\-swap}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-mpi\-\_\-safe\-\_\-cond\-\_\-swap (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-mpi} $\ast$}]{X, }
+\item[{{\bf mbedtls\-\_\-mpi} $\ast$}]{Y, }
+\item[{unsigned char}]{assign}
+\end{DoxyParamCaption}
+)}}\label{bignum_8h_a956c54f87d26ceb6da98043805e67684}
+
+
+Safe conditional swap X $<$-\/$>$ Y if swap is 1. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em X} & First \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} value \\
+\hline
+{\em Y} & Second \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} value \\
+\hline
+{\em assign} & 1\-: perform the swap, 0\-: keep X and Y's original values\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-A\-L\-L\-O\-C\-\_\-\-F\-A\-I\-L\-E\-D if memory allocation failed,
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This function is equivalent to if( assign ) mbedtls\-\_\-mpi\-\_\-swap( X, Y ); except that it avoids leaking any information about whether the assignment was done or not (the above code may leak information through branch prediction and/or memory access patterns analysis). 
+\end{DoxyNote}
+\hypertarget{bignum_8h_a75b6f4376bdceb63ef5a65737c1a638c}{\index{bignum.\-h@{bignum.\-h}!mbedtls\-\_\-mpi\-\_\-self\-\_\-test@{mbedtls\-\_\-mpi\-\_\-self\-\_\-test}}
+\index{mbedtls\-\_\-mpi\-\_\-self\-\_\-test@{mbedtls\-\_\-mpi\-\_\-self\-\_\-test}!bignum.h@{bignum.\-h}}
+\subsubsection[{mbedtls\-\_\-mpi\-\_\-self\-\_\-test}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-mpi\-\_\-self\-\_\-test (
+\begin{DoxyParamCaption}
+\item[{int}]{verbose}
+\end{DoxyParamCaption}
+)}}\label{bignum_8h_a75b6f4376bdceb63ef5a65737c1a638c}
+
+
+Checkup routine. 
+
+\begin{DoxyReturn}{Returns}
+0 if successful, or 1 if the test failed 
+\end{DoxyReturn}
+\hypertarget{bignum_8h_a39a475e7957e7a60993fc6e801d9913b}{\index{bignum.\-h@{bignum.\-h}!mbedtls\-\_\-mpi\-\_\-set\-\_\-bit@{mbedtls\-\_\-mpi\-\_\-set\-\_\-bit}}
+\index{mbedtls\-\_\-mpi\-\_\-set\-\_\-bit@{mbedtls\-\_\-mpi\-\_\-set\-\_\-bit}!bignum.h@{bignum.\-h}}
+\subsubsection[{mbedtls\-\_\-mpi\-\_\-set\-\_\-bit}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-mpi\-\_\-set\-\_\-bit (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-mpi} $\ast$}]{X, }
+\item[{size\-\_\-t}]{pos, }
+\item[{unsigned char}]{val}
+\end{DoxyParamCaption}
+)}}\label{bignum_8h_a39a475e7957e7a60993fc6e801d9913b}
+
+
+Set a bit of X to a specific value of 0 or 1. 
+
+\begin{DoxyNote}{Note}
+Will grow X if necessary to set a bit to 1 in a not yet existing limb. Will not grow if bit should be set to 0
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em X} & M\-P\-I to use \\
+\hline
+{\em pos} & Zero-\/based index of the bit in X \\
+\hline
+{\em val} & The value to set the bit to (0 or 1)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-A\-L\-L\-O\-C\-\_\-\-F\-A\-I\-L\-E\-D if memory allocation failed, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A if val is not 0 or 1 
+\end{DoxyReturn}
+\hypertarget{bignum_8h_a8d48a56155412dda56e67256be4d10d9}{\index{bignum.\-h@{bignum.\-h}!mbedtls\-\_\-mpi\-\_\-shift\-\_\-l@{mbedtls\-\_\-mpi\-\_\-shift\-\_\-l}}
+\index{mbedtls\-\_\-mpi\-\_\-shift\-\_\-l@{mbedtls\-\_\-mpi\-\_\-shift\-\_\-l}!bignum.h@{bignum.\-h}}
+\subsubsection[{mbedtls\-\_\-mpi\-\_\-shift\-\_\-l}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-mpi\-\_\-shift\-\_\-l (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-mpi} $\ast$}]{X, }
+\item[{size\-\_\-t}]{count}
+\end{DoxyParamCaption}
+)}}\label{bignum_8h_a8d48a56155412dda56e67256be4d10d9}
+
+
+Left-\/shift\-: X $<$$<$= count. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em X} & M\-P\-I to shift \\
+\hline
+{\em count} & Amount to shift\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-A\-L\-L\-O\-C\-\_\-\-F\-A\-I\-L\-E\-D if memory allocation failed 
+\end{DoxyReturn}
+\hypertarget{bignum_8h_aee1140147b1e807645cebf64ebded168}{\index{bignum.\-h@{bignum.\-h}!mbedtls\-\_\-mpi\-\_\-shift\-\_\-r@{mbedtls\-\_\-mpi\-\_\-shift\-\_\-r}}
+\index{mbedtls\-\_\-mpi\-\_\-shift\-\_\-r@{mbedtls\-\_\-mpi\-\_\-shift\-\_\-r}!bignum.h@{bignum.\-h}}
+\subsubsection[{mbedtls\-\_\-mpi\-\_\-shift\-\_\-r}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-mpi\-\_\-shift\-\_\-r (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-mpi} $\ast$}]{X, }
+\item[{size\-\_\-t}]{count}
+\end{DoxyParamCaption}
+)}}\label{bignum_8h_aee1140147b1e807645cebf64ebded168}
+
+
+Right-\/shift\-: X $>$$>$= count. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em X} & M\-P\-I to shift \\
+\hline
+{\em count} & Amount to shift\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-A\-L\-L\-O\-C\-\_\-\-F\-A\-I\-L\-E\-D if memory allocation failed 
+\end{DoxyReturn}
+\hypertarget{bignum_8h_abaaef229c95711a53b2f38eff0a2c14a}{\index{bignum.\-h@{bignum.\-h}!mbedtls\-\_\-mpi\-\_\-shrink@{mbedtls\-\_\-mpi\-\_\-shrink}}
+\index{mbedtls\-\_\-mpi\-\_\-shrink@{mbedtls\-\_\-mpi\-\_\-shrink}!bignum.h@{bignum.\-h}}
+\subsubsection[{mbedtls\-\_\-mpi\-\_\-shrink}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-mpi\-\_\-shrink (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-mpi} $\ast$}]{X, }
+\item[{size\-\_\-t}]{nblimbs}
+\end{DoxyParamCaption}
+)}}\label{bignum_8h_abaaef229c95711a53b2f38eff0a2c14a}
+
+
+Resize down, keeping at least the specified number of limbs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em X} & M\-P\-I to shrink \\
+\hline
+{\em nblimbs} & The minimum number of limbs to keep\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-A\-L\-L\-O\-C\-\_\-\-F\-A\-I\-L\-E\-D if memory allocation failed 
+\end{DoxyReturn}
+\hypertarget{bignum_8h_a538110c9da02704d34d67a07d16fb3ab}{\index{bignum.\-h@{bignum.\-h}!mbedtls\-\_\-mpi\-\_\-size@{mbedtls\-\_\-mpi\-\_\-size}}
+\index{mbedtls\-\_\-mpi\-\_\-size@{mbedtls\-\_\-mpi\-\_\-size}!bignum.h@{bignum.\-h}}
+\subsubsection[{mbedtls\-\_\-mpi\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t mbedtls\-\_\-mpi\-\_\-size (
+\begin{DoxyParamCaption}
+\item[{const {\bf mbedtls\-\_\-mpi} $\ast$}]{X}
+\end{DoxyParamCaption}
+)}}\label{bignum_8h_a538110c9da02704d34d67a07d16fb3ab}
+
+
+Return the total size in bytes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em X} & M\-P\-I to use \\
+\hline
+\end{DoxyParams}
+\hypertarget{bignum_8h_ad5840808639d50a98edbede345251293}{\index{bignum.\-h@{bignum.\-h}!mbedtls\-\_\-mpi\-\_\-sub\-\_\-abs@{mbedtls\-\_\-mpi\-\_\-sub\-\_\-abs}}
+\index{mbedtls\-\_\-mpi\-\_\-sub\-\_\-abs@{mbedtls\-\_\-mpi\-\_\-sub\-\_\-abs}!bignum.h@{bignum.\-h}}
+\subsubsection[{mbedtls\-\_\-mpi\-\_\-sub\-\_\-abs}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-mpi\-\_\-sub\-\_\-abs (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-mpi} $\ast$}]{X, }
+\item[{const {\bf mbedtls\-\_\-mpi} $\ast$}]{A, }
+\item[{const {\bf mbedtls\-\_\-mpi} $\ast$}]{B}
+\end{DoxyParamCaption}
+)}}\label{bignum_8h_ad5840808639d50a98edbede345251293}
+
+
+Unsigned subtraction\-: X = $|$\-A$|$ -\/ $|$\-B$|$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em X} & Destination M\-P\-I \\
+\hline
+{\em A} & Left-\/hand M\-P\-I \\
+\hline
+{\em B} & Right-\/hand M\-P\-I\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-N\-E\-G\-A\-T\-I\-V\-E\-\_\-\-V\-A\-L\-U\-E if B is greater than A 
+\end{DoxyReturn}
+\hypertarget{bignum_8h_a1a925403c039d920059297cfb4ad5bad}{\index{bignum.\-h@{bignum.\-h}!mbedtls\-\_\-mpi\-\_\-sub\-\_\-int@{mbedtls\-\_\-mpi\-\_\-sub\-\_\-int}}
+\index{mbedtls\-\_\-mpi\-\_\-sub\-\_\-int@{mbedtls\-\_\-mpi\-\_\-sub\-\_\-int}!bignum.h@{bignum.\-h}}
+\subsubsection[{mbedtls\-\_\-mpi\-\_\-sub\-\_\-int}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-mpi\-\_\-sub\-\_\-int (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-mpi} $\ast$}]{X, }
+\item[{const {\bf mbedtls\-\_\-mpi} $\ast$}]{A, }
+\item[{mbedtls\-\_\-mpi\-\_\-sint}]{b}
+\end{DoxyParamCaption}
+)}}\label{bignum_8h_a1a925403c039d920059297cfb4ad5bad}
+
+
+Signed subtraction\-: X = A -\/ b. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em X} & Destination M\-P\-I \\
+\hline
+{\em A} & Left-\/hand M\-P\-I \\
+\hline
+{\em b} & The integer value to subtract\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-A\-L\-L\-O\-C\-\_\-\-F\-A\-I\-L\-E\-D if memory allocation failed 
+\end{DoxyReturn}
+\hypertarget{bignum_8h_a1a38a8d9f5052491df94d8010bd34955}{\index{bignum.\-h@{bignum.\-h}!mbedtls\-\_\-mpi\-\_\-sub\-\_\-mpi@{mbedtls\-\_\-mpi\-\_\-sub\-\_\-mpi}}
+\index{mbedtls\-\_\-mpi\-\_\-sub\-\_\-mpi@{mbedtls\-\_\-mpi\-\_\-sub\-\_\-mpi}!bignum.h@{bignum.\-h}}
+\subsubsection[{mbedtls\-\_\-mpi\-\_\-sub\-\_\-mpi}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-mpi\-\_\-sub\-\_\-mpi (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-mpi} $\ast$}]{X, }
+\item[{const {\bf mbedtls\-\_\-mpi} $\ast$}]{A, }
+\item[{const {\bf mbedtls\-\_\-mpi} $\ast$}]{B}
+\end{DoxyParamCaption}
+)}}\label{bignum_8h_a1a38a8d9f5052491df94d8010bd34955}
+
+
+Signed subtraction\-: X = A -\/ B. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em X} & Destination M\-P\-I \\
+\hline
+{\em A} & Left-\/hand M\-P\-I \\
+\hline
+{\em B} & Right-\/hand M\-P\-I\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-A\-L\-L\-O\-C\-\_\-\-F\-A\-I\-L\-E\-D if memory allocation failed 
+\end{DoxyReturn}
+\hypertarget{bignum_8h_a60d0c82301d6cf50e69808b6a3c5cd63}{\index{bignum.\-h@{bignum.\-h}!mbedtls\-\_\-mpi\-\_\-swap@{mbedtls\-\_\-mpi\-\_\-swap}}
+\index{mbedtls\-\_\-mpi\-\_\-swap@{mbedtls\-\_\-mpi\-\_\-swap}!bignum.h@{bignum.\-h}}
+\subsubsection[{mbedtls\-\_\-mpi\-\_\-swap}]{\setlength{\rightskip}{0pt plus 5cm}void mbedtls\-\_\-mpi\-\_\-swap (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-mpi} $\ast$}]{X, }
+\item[{{\bf mbedtls\-\_\-mpi} $\ast$}]{Y}
+\end{DoxyParamCaption}
+)}}\label{bignum_8h_a60d0c82301d6cf50e69808b6a3c5cd63}
+
+
+Swap the contents of X and Y. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em X} & First M\-P\-I value \\
+\hline
+{\em Y} & Second M\-P\-I value \\
+\hline
+\end{DoxyParams}
+\hypertarget{bignum_8h_aceb4aeeb376a582a5e904135205ada44}{\index{bignum.\-h@{bignum.\-h}!mbedtls\-\_\-mpi\-\_\-write\-\_\-binary@{mbedtls\-\_\-mpi\-\_\-write\-\_\-binary}}
+\index{mbedtls\-\_\-mpi\-\_\-write\-\_\-binary@{mbedtls\-\_\-mpi\-\_\-write\-\_\-binary}!bignum.h@{bignum.\-h}}
+\subsubsection[{mbedtls\-\_\-mpi\-\_\-write\-\_\-binary}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-mpi\-\_\-write\-\_\-binary (
+\begin{DoxyParamCaption}
+\item[{const {\bf mbedtls\-\_\-mpi} $\ast$}]{X, }
+\item[{unsigned char $\ast$}]{buf, }
+\item[{size\-\_\-t}]{buflen}
+\end{DoxyParamCaption}
+)}}\label{bignum_8h_aceb4aeeb376a582a5e904135205ada44}
+
+
+Export X into unsigned binary data, big endian. Always fills the whole buffer, which will start with zeros if the number is smaller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em X} & Source M\-P\-I \\
+\hline
+{\em buf} & Output buffer \\
+\hline
+{\em buflen} & Output buffer size\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-T\-O\-O\-\_\-\-S\-M\-A\-L\-L if buf isn't large enough 
+\end{DoxyReturn}
+\hypertarget{bignum_8h_ab23e312f4a0479c8b63a4bc9328e1324}{\index{bignum.\-h@{bignum.\-h}!mbedtls\-\_\-mpi\-\_\-write\-\_\-file@{mbedtls\-\_\-mpi\-\_\-write\-\_\-file}}
+\index{mbedtls\-\_\-mpi\-\_\-write\-\_\-file@{mbedtls\-\_\-mpi\-\_\-write\-\_\-file}!bignum.h@{bignum.\-h}}
+\subsubsection[{mbedtls\-\_\-mpi\-\_\-write\-\_\-file}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-mpi\-\_\-write\-\_\-file (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{p, }
+\item[{const {\bf mbedtls\-\_\-mpi} $\ast$}]{X, }
+\item[{int}]{radix, }
+\item[{F\-I\-L\-E $\ast$}]{fout}
+\end{DoxyParamCaption}
+)}}\label{bignum_8h_ab23e312f4a0479c8b63a4bc9328e1324}
+
+
+Write X into an opened file, or stdout if fout is N\-U\-L\-L. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Prefix, can be N\-U\-L\-L \\
+\hline
+{\em X} & Source M\-P\-I \\
+\hline
+{\em radix} & Output numeric base \\
+\hline
+{\em fout} & Output file handle (can be N\-U\-L\-L)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, or a M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-X\-X\-X error code
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Set fout == N\-U\-L\-L to print X on the console. 
+\end{DoxyNote}
+\hypertarget{bignum_8h_ab2197e4833449c3e505ec8d11b348913}{\index{bignum.\-h@{bignum.\-h}!mbedtls\-\_\-mpi\-\_\-write\-\_\-string@{mbedtls\-\_\-mpi\-\_\-write\-\_\-string}}
+\index{mbedtls\-\_\-mpi\-\_\-write\-\_\-string@{mbedtls\-\_\-mpi\-\_\-write\-\_\-string}!bignum.h@{bignum.\-h}}
+\subsubsection[{mbedtls\-\_\-mpi\-\_\-write\-\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-mpi\-\_\-write\-\_\-string (
+\begin{DoxyParamCaption}
+\item[{const {\bf mbedtls\-\_\-mpi} $\ast$}]{X, }
+\item[{int}]{radix, }
+\item[{char $\ast$}]{buf, }
+\item[{size\-\_\-t}]{buflen, }
+\item[{size\-\_\-t $\ast$}]{olen}
+\end{DoxyParamCaption}
+)}}\label{bignum_8h_ab2197e4833449c3e505ec8d11b348913}
+
+
+Export into an A\-S\-C\-I\-I string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em X} & Source M\-P\-I \\
+\hline
+{\em radix} & Output numeric base \\
+\hline
+{\em buf} & Buffer to write the string to \\
+\hline
+{\em buflen} & Length of buf \\
+\hline
+{\em olen} & Length of the string written, including final N\-U\-L byte\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, or a M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-M\-P\-I\-\_\-\-X\-X\-X error code. $\ast$olen is always updated to reflect the amount of data that has (or would have) been written.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Call this function with buflen = 0 to obtain the minimum required buffer size in $\ast$olen. 
+\end{DoxyNote}

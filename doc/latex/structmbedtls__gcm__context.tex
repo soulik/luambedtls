@@ -1,0 +1,111 @@
+\hypertarget{structmbedtls__gcm__context}{\section{mbedtls\-\_\-gcm\-\_\-context Struct Reference}
+\label{structmbedtls__gcm__context}\index{mbedtls\-\_\-gcm\-\_\-context@{mbedtls\-\_\-gcm\-\_\-context}}
+}
+
+
+G\-C\-M context structure.  
+
+
+
+
+{\ttfamily \#include $<$gcm.\-h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structmbedtls__cipher__context__t}{mbedtls\-\_\-cipher\-\_\-context\-\_\-t} \hyperlink{structmbedtls__gcm__context_a3687a336bb05c025fb3861ca99cd945d}{cipher\-\_\-ctx}
+\item 
+uint64\-\_\-t \hyperlink{structmbedtls__gcm__context_af5731ab9002f0b1b913e66071e1138fc}{H\-L} \mbox{[}16\mbox{]}
+\item 
+uint64\-\_\-t \hyperlink{structmbedtls__gcm__context_a5935337c8028cc6fec0c5b9c7d0d4fd8}{H\-H} \mbox{[}16\mbox{]}
+\item 
+uint64\-\_\-t \hyperlink{structmbedtls__gcm__context_a7ca348b10a75f1ab46f7c5067c1ab6e7}{len}
+\item 
+uint64\-\_\-t \hyperlink{structmbedtls__gcm__context_aabc65285117dd4b35998a328648faa20}{add\-\_\-len}
+\item 
+unsigned char \hyperlink{structmbedtls__gcm__context_a0ad9a8fb116959218c800b0bc3caeaba}{base\-\_\-ectr} \mbox{[}16\mbox{]}
+\item 
+unsigned char \hyperlink{structmbedtls__gcm__context_a1a7eb48ed5911aeb2dd983da6cfd32bb}{y} \mbox{[}16\mbox{]}
+\item 
+unsigned char \hyperlink{structmbedtls__gcm__context_a772f2b1c947e9a3631f55b241c421aca}{buf} \mbox{[}16\mbox{]}
+\item 
+int \hyperlink{structmbedtls__gcm__context_a48f2fbbac9f7bb46411fea24ac433628}{mode}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+G\-C\-M context structure. 
+
+Definition at line 44 of file gcm.\-h.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structmbedtls__gcm__context_aabc65285117dd4b35998a328648faa20}{\index{mbedtls\-\_\-gcm\-\_\-context@{mbedtls\-\_\-gcm\-\_\-context}!add\-\_\-len@{add\-\_\-len}}
+\index{add\-\_\-len@{add\-\_\-len}!mbedtls_gcm_context@{mbedtls\-\_\-gcm\-\_\-context}}
+\subsubsection[{add\-\_\-len}]{\setlength{\rightskip}{0pt plus 5cm}uint64\-\_\-t mbedtls\-\_\-gcm\-\_\-context\-::add\-\_\-len}}\label{structmbedtls__gcm__context_aabc65285117dd4b35998a328648faa20}
+Total add length 
+
+Definition at line 49 of file gcm.\-h.
+
+\hypertarget{structmbedtls__gcm__context_a0ad9a8fb116959218c800b0bc3caeaba}{\index{mbedtls\-\_\-gcm\-\_\-context@{mbedtls\-\_\-gcm\-\_\-context}!base\-\_\-ectr@{base\-\_\-ectr}}
+\index{base\-\_\-ectr@{base\-\_\-ectr}!mbedtls_gcm_context@{mbedtls\-\_\-gcm\-\_\-context}}
+\subsubsection[{base\-\_\-ectr}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char mbedtls\-\_\-gcm\-\_\-context\-::base\-\_\-ectr\mbox{[}16\mbox{]}}}\label{structmbedtls__gcm__context_a0ad9a8fb116959218c800b0bc3caeaba}
+First E\-C\-T\-R for tag 
+
+Definition at line 50 of file gcm.\-h.
+
+\hypertarget{structmbedtls__gcm__context_a772f2b1c947e9a3631f55b241c421aca}{\index{mbedtls\-\_\-gcm\-\_\-context@{mbedtls\-\_\-gcm\-\_\-context}!buf@{buf}}
+\index{buf@{buf}!mbedtls_gcm_context@{mbedtls\-\_\-gcm\-\_\-context}}
+\subsubsection[{buf}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char mbedtls\-\_\-gcm\-\_\-context\-::buf\mbox{[}16\mbox{]}}}\label{structmbedtls__gcm__context_a772f2b1c947e9a3631f55b241c421aca}
+buf working value 
+
+Definition at line 52 of file gcm.\-h.
+
+\hypertarget{structmbedtls__gcm__context_a3687a336bb05c025fb3861ca99cd945d}{\index{mbedtls\-\_\-gcm\-\_\-context@{mbedtls\-\_\-gcm\-\_\-context}!cipher\-\_\-ctx@{cipher\-\_\-ctx}}
+\index{cipher\-\_\-ctx@{cipher\-\_\-ctx}!mbedtls_gcm_context@{mbedtls\-\_\-gcm\-\_\-context}}
+\subsubsection[{cipher\-\_\-ctx}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mbedtls\-\_\-cipher\-\_\-context\-\_\-t} mbedtls\-\_\-gcm\-\_\-context\-::cipher\-\_\-ctx}}\label{structmbedtls__gcm__context_a3687a336bb05c025fb3861ca99cd945d}
+cipher context used 
+
+Definition at line 45 of file gcm.\-h.
+
+\hypertarget{structmbedtls__gcm__context_a5935337c8028cc6fec0c5b9c7d0d4fd8}{\index{mbedtls\-\_\-gcm\-\_\-context@{mbedtls\-\_\-gcm\-\_\-context}!H\-H@{H\-H}}
+\index{H\-H@{H\-H}!mbedtls_gcm_context@{mbedtls\-\_\-gcm\-\_\-context}}
+\subsubsection[{H\-H}]{\setlength{\rightskip}{0pt plus 5cm}uint64\-\_\-t mbedtls\-\_\-gcm\-\_\-context\-::\-H\-H\mbox{[}16\mbox{]}}}\label{structmbedtls__gcm__context_a5935337c8028cc6fec0c5b9c7d0d4fd8}
+Precalculated H\-Table 
+
+Definition at line 47 of file gcm.\-h.
+
+\hypertarget{structmbedtls__gcm__context_af5731ab9002f0b1b913e66071e1138fc}{\index{mbedtls\-\_\-gcm\-\_\-context@{mbedtls\-\_\-gcm\-\_\-context}!H\-L@{H\-L}}
+\index{H\-L@{H\-L}!mbedtls_gcm_context@{mbedtls\-\_\-gcm\-\_\-context}}
+\subsubsection[{H\-L}]{\setlength{\rightskip}{0pt plus 5cm}uint64\-\_\-t mbedtls\-\_\-gcm\-\_\-context\-::\-H\-L\mbox{[}16\mbox{]}}}\label{structmbedtls__gcm__context_af5731ab9002f0b1b913e66071e1138fc}
+Precalculated H\-Table 
+
+Definition at line 46 of file gcm.\-h.
+
+\hypertarget{structmbedtls__gcm__context_a7ca348b10a75f1ab46f7c5067c1ab6e7}{\index{mbedtls\-\_\-gcm\-\_\-context@{mbedtls\-\_\-gcm\-\_\-context}!len@{len}}
+\index{len@{len}!mbedtls_gcm_context@{mbedtls\-\_\-gcm\-\_\-context}}
+\subsubsection[{len}]{\setlength{\rightskip}{0pt plus 5cm}uint64\-\_\-t mbedtls\-\_\-gcm\-\_\-context\-::len}}\label{structmbedtls__gcm__context_a7ca348b10a75f1ab46f7c5067c1ab6e7}
+Total data length 
+
+Definition at line 48 of file gcm.\-h.
+
+\hypertarget{structmbedtls__gcm__context_a48f2fbbac9f7bb46411fea24ac433628}{\index{mbedtls\-\_\-gcm\-\_\-context@{mbedtls\-\_\-gcm\-\_\-context}!mode@{mode}}
+\index{mode@{mode}!mbedtls_gcm_context@{mbedtls\-\_\-gcm\-\_\-context}}
+\subsubsection[{mode}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-gcm\-\_\-context\-::mode}}\label{structmbedtls__gcm__context_a48f2fbbac9f7bb46411fea24ac433628}
+Encrypt or Decrypt 
+
+Definition at line 53 of file gcm.\-h.
+
+\hypertarget{structmbedtls__gcm__context_a1a7eb48ed5911aeb2dd983da6cfd32bb}{\index{mbedtls\-\_\-gcm\-\_\-context@{mbedtls\-\_\-gcm\-\_\-context}!y@{y}}
+\index{y@{y}!mbedtls_gcm_context@{mbedtls\-\_\-gcm\-\_\-context}}
+\subsubsection[{y}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char mbedtls\-\_\-gcm\-\_\-context\-::y\mbox{[}16\mbox{]}}}\label{structmbedtls__gcm__context_a1a7eb48ed5911aeb2dd983da6cfd32bb}
+Y working value 
+
+Definition at line 51 of file gcm.\-h.
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/\hyperlink{gcm_8h}{gcm.\-h}\end{DoxyCompactItemize}

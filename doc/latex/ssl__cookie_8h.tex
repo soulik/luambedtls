@@ -1,0 +1,91 @@
+\hypertarget{ssl__cookie_8h}{\section{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/ssl\-\_\-cookie.h File Reference}
+\label{ssl__cookie_8h}\index{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/ssl\-\_\-cookie.\-h@{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/ssl\-\_\-cookie.\-h}}
+}
+
+
+D\-T\-L\-S cookie callbacks implementation.  
+
+
+{\ttfamily \#include \char`\"{}ssl.\-h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structmbedtls__ssl__cookie__ctx}{mbedtls\-\_\-ssl\-\_\-cookie\-\_\-ctx}
+\begin{DoxyCompactList}\small\item\em Context for the default cookie functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{Indent}{\bf S\-E\-C\-T\-I\-O\-N\-: Module settings}\par
+{\em The configuration options you can set for this module are in this section. Either change them in \hyperlink{config_8h}{config.\-h} or define them on the compiler command line. }\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{ssl__cookie_8h_ae8066a424d7e37be9243c96dac2fc18a}{M\-B\-E\-D\-T\-L\-S\-\_\-\-S\-S\-L\-\_\-\-C\-O\-O\-K\-I\-E\-\_\-\-T\-I\-M\-E\-O\-U\-T}~60
+\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{ssl__cookie_8h_affed42a7313e08576aad621f25d5c4f3}{void \hyperlink{ssl__cookie_8h_affed42a7313e08576aad621f25d5c4f3}{mbedtls\-\_\-ssl\-\_\-cookie\-\_\-init} (\hyperlink{structmbedtls__ssl__cookie__ctx}{mbedtls\-\_\-ssl\-\_\-cookie\-\_\-ctx} $\ast$ctx)}\label{ssl__cookie_8h_affed42a7313e08576aad621f25d5c4f3}
+
+\begin{DoxyCompactList}\small\item\em Initialize cookie context. \end{DoxyCompactList}\item 
+\hypertarget{ssl__cookie_8h_ac81843a6bd31b31765639b65329d6b69}{int \hyperlink{ssl__cookie_8h_ac81843a6bd31b31765639b65329d6b69}{mbedtls\-\_\-ssl\-\_\-cookie\-\_\-setup} (\hyperlink{structmbedtls__ssl__cookie__ctx}{mbedtls\-\_\-ssl\-\_\-cookie\-\_\-ctx} $\ast$ctx, int($\ast$f\-\_\-rng)(void $\ast$, unsigned char $\ast$, size\-\_\-t), void $\ast$p\-\_\-rng)}\label{ssl__cookie_8h_ac81843a6bd31b31765639b65329d6b69}
+
+\begin{DoxyCompactList}\small\item\em Setup cookie context (generate keys) \end{DoxyCompactList}\item 
+void \hyperlink{ssl__cookie_8h_a5ae5d375a80fbe6f6f1b219c1b1dc8bb}{mbedtls\-\_\-ssl\-\_\-cookie\-\_\-set\-\_\-timeout} (\hyperlink{structmbedtls__ssl__cookie__ctx}{mbedtls\-\_\-ssl\-\_\-cookie\-\_\-ctx} $\ast$ctx, unsigned long delay)
+\begin{DoxyCompactList}\small\item\em Set expiration delay for cookies (Default M\-B\-E\-D\-T\-L\-S\-\_\-\-S\-S\-L\-\_\-\-C\-O\-O\-K\-I\-E\-\_\-\-T\-I\-M\-E\-O\-U\-T) \end{DoxyCompactList}\item 
+\hypertarget{ssl__cookie_8h_a77d57052186940783e056f5ca95bda03}{void \hyperlink{ssl__cookie_8h_a77d57052186940783e056f5ca95bda03}{mbedtls\-\_\-ssl\-\_\-cookie\-\_\-free} (\hyperlink{structmbedtls__ssl__cookie__ctx}{mbedtls\-\_\-ssl\-\_\-cookie\-\_\-ctx} $\ast$ctx)}\label{ssl__cookie_8h_a77d57052186940783e056f5ca95bda03}
+
+\begin{DoxyCompactList}\small\item\em Free cookie context. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{ssl__cookie_8h_a132e60f12cd3465264d283042cabe6d2}{\hyperlink{ssl_8h_a536f8b89936f26732150b00639a47ff0}{mbedtls\-\_\-ssl\-\_\-cookie\-\_\-write\-\_\-t} \hyperlink{ssl__cookie_8h_a132e60f12cd3465264d283042cabe6d2}{mbedtls\-\_\-ssl\-\_\-cookie\-\_\-write}}\label{ssl__cookie_8h_a132e60f12cd3465264d283042cabe6d2}
+
+\begin{DoxyCompactList}\small\item\em Generate cookie, see {\ttfamily mbedtls\-\_\-ssl\-\_\-cookie\-\_\-write\-\_\-t}. \end{DoxyCompactList}\item 
+\hypertarget{ssl__cookie_8h_ac83489027c04984e12f89b1b29eac27b}{\hyperlink{ssl_8h_a9cfda5aee70d6c2c19a8dfb5af900d80}{mbedtls\-\_\-ssl\-\_\-cookie\-\_\-check\-\_\-t} \hyperlink{ssl__cookie_8h_ac83489027c04984e12f89b1b29eac27b}{mbedtls\-\_\-ssl\-\_\-cookie\-\_\-check}}\label{ssl__cookie_8h_ac83489027c04984e12f89b1b29eac27b}
+
+\begin{DoxyCompactList}\small\item\em Verify cookie, see {\ttfamily mbedtls\-\_\-ssl\-\_\-cookie\-\_\-write\-\_\-t}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+D\-T\-L\-S cookie callbacks implementation. Copyright (C) 2006-\/2015, A\-R\-M Limited, All Rights Reserved
+
+This file is part of mbed T\-L\-S (\href{https://tls.mbed.org}{\tt https\-://tls.\-mbed.\-org})
+
+This program is free software; you can redistribute it and/or modify it under the terms of the G\-N\-U General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but W\-I\-T\-H\-O\-U\-T A\-N\-Y W\-A\-R\-R\-A\-N\-T\-Y; without even the implied warranty of M\-E\-R\-C\-H\-A\-N\-T\-A\-B\-I\-L\-I\-T\-Y or F\-I\-T\-N\-E\-S\-S F\-O\-R A P\-A\-R\-T\-I\-C\-U\-L\-A\-R P\-U\-R\-P\-O\-S\-E. See the G\-N\-U General Public License for more details.
+
+You should have received a copy of the G\-N\-U General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, M\-A 02110-\/1301 U\-S\-A. 
+
+Definition in file \hyperlink{ssl__cookie_8h_source}{ssl\-\_\-cookie.\-h}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{ssl__cookie_8h_ae8066a424d7e37be9243c96dac2fc18a}{\index{ssl\-\_\-cookie.\-h@{ssl\-\_\-cookie.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-S\-S\-L\-\_\-\-C\-O\-O\-K\-I\-E\-\_\-\-T\-I\-M\-E\-O\-U\-T@{M\-B\-E\-D\-T\-L\-S\-\_\-\-S\-S\-L\-\_\-\-C\-O\-O\-K\-I\-E\-\_\-\-T\-I\-M\-E\-O\-U\-T}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-S\-S\-L\-\_\-\-C\-O\-O\-K\-I\-E\-\_\-\-T\-I\-M\-E\-O\-U\-T@{M\-B\-E\-D\-T\-L\-S\-\_\-\-S\-S\-L\-\_\-\-C\-O\-O\-K\-I\-E\-\_\-\-T\-I\-M\-E\-O\-U\-T}!ssl_cookie.h@{ssl\-\_\-cookie.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-S\-S\-L\-\_\-\-C\-O\-O\-K\-I\-E\-\_\-\-T\-I\-M\-E\-O\-U\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-S\-S\-L\-\_\-\-C\-O\-O\-K\-I\-E\-\_\-\-T\-I\-M\-E\-O\-U\-T~60}}\label{ssl__cookie_8h_ae8066a424d7e37be9243c96dac2fc18a}
+Default expiration delay of D\-T\-L\-S cookies, in seconds if H\-A\-V\-E\-\_\-\-T\-I\-M\-E, or in number of cookies issued 
+
+Definition at line 41 of file ssl\-\_\-cookie.\-h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{ssl__cookie_8h_a5ae5d375a80fbe6f6f1b219c1b1dc8bb}{\index{ssl\-\_\-cookie.\-h@{ssl\-\_\-cookie.\-h}!mbedtls\-\_\-ssl\-\_\-cookie\-\_\-set\-\_\-timeout@{mbedtls\-\_\-ssl\-\_\-cookie\-\_\-set\-\_\-timeout}}
+\index{mbedtls\-\_\-ssl\-\_\-cookie\-\_\-set\-\_\-timeout@{mbedtls\-\_\-ssl\-\_\-cookie\-\_\-set\-\_\-timeout}!ssl_cookie.h@{ssl\-\_\-cookie.\-h}}
+\subsubsection[{mbedtls\-\_\-ssl\-\_\-cookie\-\_\-set\-\_\-timeout}]{\setlength{\rightskip}{0pt plus 5cm}void mbedtls\-\_\-ssl\-\_\-cookie\-\_\-set\-\_\-timeout (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-ssl\-\_\-cookie\-\_\-ctx} $\ast$}]{ctx, }
+\item[{unsigned long}]{delay}
+\end{DoxyParamCaption}
+)}}\label{ssl__cookie_8h_a5ae5d375a80fbe6f6f1b219c1b1dc8bb}
+
+
+Set expiration delay for cookies (Default M\-B\-E\-D\-T\-L\-S\-\_\-\-S\-S\-L\-\_\-\-C\-O\-O\-K\-I\-E\-\_\-\-T\-I\-M\-E\-O\-U\-T) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Cookie contex \\
+\hline
+{\em delay} & Delay, in seconds if H\-A\-V\-E\-\_\-\-T\-I\-M\-E, or in number of cookies issued in the meantime. 0 to disable expiration (N\-O\-T recommended) \\
+\hline
+\end{DoxyParams}

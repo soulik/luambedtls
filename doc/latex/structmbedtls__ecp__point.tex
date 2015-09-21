@@ -1,0 +1,62 @@
+\hypertarget{structmbedtls__ecp__point}{\section{mbedtls\-\_\-ecp\-\_\-point Struct Reference}
+\label{structmbedtls__ecp__point}\index{mbedtls\-\_\-ecp\-\_\-point@{mbedtls\-\_\-ecp\-\_\-point}}
+}
+
+
+E\-C\-P point structure (jacobian coordinates)  
+
+
+
+
+{\ttfamily \#include $<$ecp.\-h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} \hyperlink{structmbedtls__ecp__point_ac8ab6fd8f0f1173e6da5a4abcff1f0bf}{X}
+\item 
+\hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} \hyperlink{structmbedtls__ecp__point_af8fb56647185a0186c7a3c54eea30a4d}{Y}
+\item 
+\hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} \hyperlink{structmbedtls__ecp__point_a83c24649cb4c1ed8aae6449a29d094e5}{Z}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+E\-C\-P point structure (jacobian coordinates) 
+
+\begin{DoxyNote}{Note}
+All functions expect and return points satisfying the following condition\-: Z == 0 or Z == 1. (Other values of Z are used by internal functions only.) The point is zero, or \char`\"{}at infinity\char`\"{}, if Z == 0. Otherwise, X and Y are its standard (affine) coordinates. 
+\end{DoxyNote}
+
+
+Definition at line 98 of file ecp.\-h.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structmbedtls__ecp__point_ac8ab6fd8f0f1173e6da5a4abcff1f0bf}{\index{mbedtls\-\_\-ecp\-\_\-point@{mbedtls\-\_\-ecp\-\_\-point}!X@{X}}
+\index{X@{X}!mbedtls_ecp_point@{mbedtls\-\_\-ecp\-\_\-point}}
+\subsubsection[{X}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mbedtls\-\_\-mpi} mbedtls\-\_\-ecp\-\_\-point\-::\-X}}\label{structmbedtls__ecp__point_ac8ab6fd8f0f1173e6da5a4abcff1f0bf}
+the point's X coordinate 
+
+Definition at line 100 of file ecp.\-h.
+
+\hypertarget{structmbedtls__ecp__point_af8fb56647185a0186c7a3c54eea30a4d}{\index{mbedtls\-\_\-ecp\-\_\-point@{mbedtls\-\_\-ecp\-\_\-point}!Y@{Y}}
+\index{Y@{Y}!mbedtls_ecp_point@{mbedtls\-\_\-ecp\-\_\-point}}
+\subsubsection[{Y}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mbedtls\-\_\-mpi} mbedtls\-\_\-ecp\-\_\-point\-::\-Y}}\label{structmbedtls__ecp__point_af8fb56647185a0186c7a3c54eea30a4d}
+the point's Y coordinate 
+
+Definition at line 101 of file ecp.\-h.
+
+\hypertarget{structmbedtls__ecp__point_a83c24649cb4c1ed8aae6449a29d094e5}{\index{mbedtls\-\_\-ecp\-\_\-point@{mbedtls\-\_\-ecp\-\_\-point}!Z@{Z}}
+\index{Z@{Z}!mbedtls_ecp_point@{mbedtls\-\_\-ecp\-\_\-point}}
+\subsubsection[{Z}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mbedtls\-\_\-mpi} mbedtls\-\_\-ecp\-\_\-point\-::\-Z}}\label{structmbedtls__ecp__point_a83c24649cb4c1ed8aae6449a29d094e5}
+the point's Z coordinate 
+
+Definition at line 102 of file ecp.\-h.
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/\hyperlink{ecp_8h}{ecp.\-h}\end{DoxyCompactItemize}

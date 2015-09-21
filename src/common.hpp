@@ -29,6 +29,9 @@
 
 */
 
+#ifndef LUA_MBEDTLS_COMMON_H
+#define LUA_MBEDTLS_COMMON_H
+
 #include <lutok2/lutok2.hpp>
 using namespace lutok2;
 
@@ -42,3 +45,72 @@ using namespace lutok2;
 #define LUAMBEDTLS_DLL_EXPORTED
 #endif
 
+#define INIT_OBJECT(OBJ_NAME) state->registerInterface<OBJ_NAME>("luambedtls_" #OBJ_NAME); state->stack->setField(#OBJ_NAME)
+#define OBJECT_IFACE(OBJ_NAME) state.getInterface<OBJ_NAME>("luambedtls_" #OBJ_NAME)
+
+#include <mbedtls/aes.h>
+#include <mbedtls/arc4.h>
+#include <mbedtls/blowfish.h>
+#include <mbedtls/camellia.h>
+#include <mbedtls/des.h>
+#include <mbedtls/gcm.h>
+#include <mbedtls/xtea.h>
+
+#include <mbedtls/md.h>
+
+#include <mbedtls/dhm.h>
+#include <mbedtls/rsa.h>
+
+#include <mbedtls/ssl.h>
+#include <mbedtls/entropy.h>
+#include <mbedtls/x509.h>
+#include <mbedtls/x509_csr.h>
+#include <mbedtls/ctr_drbg.h>
+#include <mbedtls/certs.h>
+#include <mbedtls/timing.h>
+#include <mbedtls/error.h>
+#include <mbedtls/debug.h>
+
+#include <mbedtls/oid.h>
+#include <mbedtls/pk.h>
+#include <mbedtls/pk_internal.h>
+
+namespace luambedtls {
+	void initASN1buf(State * state, Module & module);
+	void initASN1named(State * state, Module & module);
+
+	void initAESContext(State * state, Module & module);
+	void initARC4Context(State * state, Module & module);
+	void initBlowfishContext(State * state, Module & module);
+	void initCamelliaContext(State * state, Module & module);
+	void initDESContext(State * state, Module & module);
+	void initDES3Context(State * state, Module & module);
+	void initGCMContext(State * state, Module & module);
+	void initXTEAContext(State * state, Module & module);
+
+	void initDHMContext(State * state, Module & module);
+	void initRSAContext(State * state, Module & module);
+
+	void initMDContext(State * state, Module & module);
+
+	void initEntropyContext(State * state, Module & module);
+	void initPKContext(State * state, Module & module);
+	void initSSLConfig(State * state, Module & module);
+	void initSSLContext(State * state, Module & module);
+	void initSSLSession(State * state, Module & module);
+	void initx509crt(State * state, Module & module);
+	void initx509crl(State * state, Module & module);
+	void initx509crtProfile(State * state, Module & module);
+	void initx509csr(State * state, Module & module);
+	void initCTRDRBGContext(State * state, Module & module);
+	void initTimingDelayContext(State * state, Module & module);
+
+	void initConstants(State * state, Module & module);
+
+	int pushMPI(Stack * stack, const mbedtls_mpi * X, int radix=16);
+	int readMPI(Stack * stack, mbedtls_mpi * X, int radix=16, const int index=-1);
+	int MPIlen(State & state);
+	int pushX509time(State & state, mbedtls_x509_time * t);
+};
+
+#endif

@@ -1,0 +1,972 @@
+\hypertarget{pk_8h}{\section{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/pk.h File Reference}
+\label{pk_8h}\index{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/pk.\-h@{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/pk.\-h}}
+}
+
+
+Public Key abstraction layer.  
+
+
+{\ttfamily \#include \char`\"{}config.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}md.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}rsa.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ecp.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ecdsa.\-h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structmbedtls__pk__rsassa__pss__options}{mbedtls\-\_\-pk\-\_\-rsassa\-\_\-pss\-\_\-options}
+\begin{DoxyCompactList}\small\item\em Options for R\-S\-A\-S\-S\-A-\/\-P\-S\-S signature verification. See {\ttfamily \hyperlink{rsa_8h_ac7791a1e03b00651a844dc6f5f32aaaa}{mbedtls\-\_\-rsa\-\_\-rsassa\-\_\-pss\-\_\-verify\-\_\-ext()}} \end{DoxyCompactList}\item 
+struct \hyperlink{structmbedtls__pk__debug__item}{mbedtls\-\_\-pk\-\_\-debug\-\_\-item}
+\begin{DoxyCompactList}\small\item\em Item to send to the debug module. \end{DoxyCompactList}\item 
+struct \hyperlink{structmbedtls__pk__context}{mbedtls\-\_\-pk\-\_\-context}
+\begin{DoxyCompactList}\small\item\em Public key container. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{pk_8h_acf55308a7cac0363ea25de294c8b633d}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-A\-L\-L\-O\-C\-\_\-\-F\-A\-I\-L\-E\-D}~-\/0x3\-F80
+\item 
+\#define \hyperlink{pk_8h_a7a7fb7cb156476722c09de42368156dc}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-I\-S\-M\-A\-T\-C\-H}~-\/0x3\-F00
+\item 
+\#define \hyperlink{pk_8h_aab119ef4dc86ea6546472299a259bfe8}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A}~-\/0x3\-E80
+\item 
+\#define \hyperlink{pk_8h_a334a28580efaab3c749fdf1dde28feb8}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-F\-I\-L\-E\-\_\-\-I\-O\-\_\-\-E\-R\-R\-O\-R}~-\/0x3\-E00
+\item 
+\#define \hyperlink{pk_8h_a9b589f81143439f8580b3004dc8ecaf1}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-K\-E\-Y\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-V\-E\-R\-S\-I\-O\-N}~-\/0x3\-D80
+\item 
+\#define \hyperlink{pk_8h_a291c7d21aa2cd94b2100703e8e3a1d06}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-K\-E\-Y\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-F\-O\-R\-M\-A\-T}~-\/0x3\-D00
+\item 
+\#define \hyperlink{pk_8h_a877b66447bfa2cd49c1b99f1dc887568}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-U\-N\-K\-N\-O\-W\-N\-\_\-\-P\-K\-\_\-\-A\-L\-G}~-\/0x3\-C80
+\item 
+\#define \hyperlink{pk_8h_a9c1de7ccb4e18a3ea74b35c4e2cb7527}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D\-\_\-\-R\-E\-Q\-U\-I\-R\-E\-D}~-\/0x3\-C00
+\item 
+\#define \hyperlink{pk_8h_a24723299c688b1ca6cfa613c19cef6f5}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D\-\_\-\-M\-I\-S\-M\-A\-T\-C\-H}~-\/0x3\-B80
+\item 
+\#define \hyperlink{pk_8h_a0fdf1044cce5beb387d76d19bf4ef0a2}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-P\-U\-B\-K\-E\-Y}~-\/0x3\-B00
+\item 
+\#define \hyperlink{pk_8h_a5d71f30a40d67d5d205a20b69303a341}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-A\-L\-G}~-\/0x3\-A80
+\item 
+\#define \hyperlink{pk_8h_a802d8b95e9b6a517d597dc92cb591e99}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-U\-N\-K\-N\-O\-W\-N\-\_\-\-N\-A\-M\-E\-D\-\_\-\-C\-U\-R\-V\-E}~-\/0x3\-A00
+\item 
+\#define \hyperlink{pk_8h_af4a79b15d48bd86c96767db4b9ce2caf}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-U\-N\-A\-V\-A\-I\-L\-A\-B\-L\-E}~-\/0x3980
+\item 
+\#define \hyperlink{pk_8h_abce78b0c7f04018824b70b816e091dc0}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-S\-I\-G\-\_\-\-L\-E\-N\-\_\-\-M\-I\-S\-M\-A\-T\-C\-H}~-\/0x3900
+\item 
+\#define \hyperlink{pk_8h_a73c1247ff4513b853b61b0dc36b69892}{M\-B\-E\-D\-T\-L\-S\-\_\-\-P\-K\-\_\-\-D\-E\-B\-U\-G\-\_\-\-M\-A\-X\-\_\-\-I\-T\-E\-M\-S}~3
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{pk_8h_a5929d902e6b2dad79458c8583ca5c42d}{typedef struct \hyperlink{structmbedtls__pk__info__t}{mbedtls\-\_\-pk\-\_\-info\-\_\-t} \hyperlink{pk_8h_a5929d902e6b2dad79458c8583ca5c42d}{mbedtls\-\_\-pk\-\_\-info\-\_\-t}}\label{pk_8h_a5929d902e6b2dad79458c8583ca5c42d}
+
+\begin{DoxyCompactList}\small\item\em Public key information and operations. \end{DoxyCompactList}\item 
+\hypertarget{pk_8h_af1d17481ef09075da6d435adc0be1d61}{typedef int($\ast$ \hyperlink{pk_8h_af1d17481ef09075da6d435adc0be1d61}{mbedtls\-\_\-pk\-\_\-rsa\-\_\-alt\-\_\-decrypt\-\_\-func} )(void $\ast$ctx, int mode, size\-\_\-t $\ast$olen, const unsigned char $\ast$input, unsigned char $\ast$output, size\-\_\-t output\-\_\-max\-\_\-len)}\label{pk_8h_af1d17481ef09075da6d435adc0be1d61}
+
+\begin{DoxyCompactList}\small\item\em Types for R\-S\-A-\/alt abstraction. \end{DoxyCompactList}\item 
+\hypertarget{pk_8h_a5bee900861a2f5d41920025794209bda}{typedef int($\ast$ {\bfseries mbedtls\-\_\-pk\-\_\-rsa\-\_\-alt\-\_\-sign\-\_\-func} )(void $\ast$ctx, int($\ast$f\-\_\-rng)(void $\ast$, unsigned char $\ast$, size\-\_\-t), void $\ast$p\-\_\-rng, int mode, mbedtls\-\_\-md\-\_\-type\-\_\-t md\-\_\-alg, unsigned int hashlen, const unsigned char $\ast$hash, unsigned char $\ast$sig)}\label{pk_8h_a5bee900861a2f5d41920025794209bda}
+
+\item 
+\hypertarget{pk_8h_ab1ed8a5271ab39b393ebc9a85d62b40e}{typedef size\-\_\-t($\ast$ {\bfseries mbedtls\-\_\-pk\-\_\-rsa\-\_\-alt\-\_\-key\-\_\-len\-\_\-func} )(void $\ast$ctx)}\label{pk_8h_ab1ed8a5271ab39b393ebc9a85d62b40e}
+
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{pk_8h_a3fe41eff5605ae727eb9d28dad297020}{mbedtls\-\_\-pk\-\_\-type\-\_\-t} \{ \\*
+{\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-P\-K\-\_\-\-N\-O\-N\-E} =0, 
+{\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-P\-K\-\_\-\-R\-S\-A}, 
+{\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-P\-K\-\_\-\-E\-C\-K\-E\-Y}, 
+{\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-P\-K\-\_\-\-E\-C\-K\-E\-Y\-\_\-\-D\-H}, 
+\\*
+{\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-P\-K\-\_\-\-E\-C\-D\-S\-A}, 
+{\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-P\-K\-\_\-\-R\-S\-A\-\_\-\-A\-L\-T}, 
+{\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-P\-K\-\_\-\-R\-S\-A\-S\-S\-A\-\_\-\-P\-S\-S}
+ \}
+\begin{DoxyCompactList}\small\item\em Public key types. \end{DoxyCompactList}\item 
+enum \hyperlink{pk_8h_a959c5419b3dd34df5420ee83bbc54002}{mbedtls\-\_\-pk\-\_\-debug\-\_\-type} \{ {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-P\-K\-\_\-\-D\-E\-B\-U\-G\-\_\-\-N\-O\-N\-E} = 0, 
+{\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-P\-K\-\_\-\-D\-E\-B\-U\-G\-\_\-\-M\-P\-I}, 
+{\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-P\-K\-\_\-\-D\-E\-B\-U\-G\-\_\-\-E\-C\-P}
+ \}
+\begin{DoxyCompactList}\small\item\em Types for interfacing with the debug module. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{structmbedtls__pk__info__t}{mbedtls\-\_\-pk\-\_\-info\-\_\-t} $\ast$ \hyperlink{pk_8h_a05eb3e96499280b250cb71e2ef2d270b}{mbedtls\-\_\-pk\-\_\-info\-\_\-from\-\_\-type} (\hyperlink{pk_8h_a3fe41eff5605ae727eb9d28dad297020}{mbedtls\-\_\-pk\-\_\-type\-\_\-t} pk\-\_\-type)
+\begin{DoxyCompactList}\small\item\em Return information associated with the given P\-K type. \end{DoxyCompactList}\item 
+\hypertarget{pk_8h_a999d1160bb30c03d0c4382c3a9b0aa89}{void \hyperlink{pk_8h_a999d1160bb30c03d0c4382c3a9b0aa89}{mbedtls\-\_\-pk\-\_\-init} (\hyperlink{structmbedtls__pk__context}{mbedtls\-\_\-pk\-\_\-context} $\ast$ctx)}\label{pk_8h_a999d1160bb30c03d0c4382c3a9b0aa89}
+
+\begin{DoxyCompactList}\small\item\em Initialize a \hyperlink{structmbedtls__pk__context}{mbedtls\-\_\-pk\-\_\-context} (as N\-O\-N\-E) \end{DoxyCompactList}\item 
+\hypertarget{pk_8h_ac6a9786d96abfd73c4dff6814238feb9}{void \hyperlink{pk_8h_ac6a9786d96abfd73c4dff6814238feb9}{mbedtls\-\_\-pk\-\_\-free} (\hyperlink{structmbedtls__pk__context}{mbedtls\-\_\-pk\-\_\-context} $\ast$ctx)}\label{pk_8h_ac6a9786d96abfd73c4dff6814238feb9}
+
+\begin{DoxyCompactList}\small\item\em Free a \hyperlink{structmbedtls__pk__context}{mbedtls\-\_\-pk\-\_\-context}. \end{DoxyCompactList}\item 
+int \hyperlink{pk_8h_a7d6cc2c1768cc6db883b08c3c0f10889}{mbedtls\-\_\-pk\-\_\-setup} (\hyperlink{structmbedtls__pk__context}{mbedtls\-\_\-pk\-\_\-context} $\ast$ctx, const \hyperlink{structmbedtls__pk__info__t}{mbedtls\-\_\-pk\-\_\-info\-\_\-t} $\ast$info)
+\begin{DoxyCompactList}\small\item\em Initialize a P\-K context with the information given and allocates the type-\/specific P\-K subcontext. \end{DoxyCompactList}\item 
+int \hyperlink{pk_8h_ab719d0b89ef0a49fef2bc8ba20e4726b}{mbedtls\-\_\-pk\-\_\-setup\-\_\-rsa\-\_\-alt} (\hyperlink{structmbedtls__pk__context}{mbedtls\-\_\-pk\-\_\-context} $\ast$ctx, void $\ast$key, \hyperlink{pk_8h_af1d17481ef09075da6d435adc0be1d61}{mbedtls\-\_\-pk\-\_\-rsa\-\_\-alt\-\_\-decrypt\-\_\-func} decrypt\-\_\-func, mbedtls\-\_\-pk\-\_\-rsa\-\_\-alt\-\_\-sign\-\_\-func sign\-\_\-func, mbedtls\-\_\-pk\-\_\-rsa\-\_\-alt\-\_\-key\-\_\-len\-\_\-func key\-\_\-len\-\_\-func)
+\begin{DoxyCompactList}\small\item\em Initialize an R\-S\-A-\/alt context. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{pk_8h_a4a31083a590b155dd54d22cf618eefcc}{mbedtls\-\_\-pk\-\_\-get\-\_\-bitlen} (const \hyperlink{structmbedtls__pk__context}{mbedtls\-\_\-pk\-\_\-context} $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Get the size in bits of the underlying key. \end{DoxyCompactList}\item 
+int \hyperlink{pk_8h_a2d72c66f5e78abe153bdf08874aaabf6}{mbedtls\-\_\-pk\-\_\-can\-\_\-do} (const \hyperlink{structmbedtls__pk__context}{mbedtls\-\_\-pk\-\_\-context} $\ast$ctx, \hyperlink{pk_8h_a3fe41eff5605ae727eb9d28dad297020}{mbedtls\-\_\-pk\-\_\-type\-\_\-t} type)
+\begin{DoxyCompactList}\small\item\em Tell if a context can do the operation given by type. \end{DoxyCompactList}\item 
+int \hyperlink{pk_8h_abf1939cc1d89f6b9fd341b67d5241914}{mbedtls\-\_\-pk\-\_\-verify} (\hyperlink{structmbedtls__pk__context}{mbedtls\-\_\-pk\-\_\-context} $\ast$ctx, mbedtls\-\_\-md\-\_\-type\-\_\-t md\-\_\-alg, const unsigned char $\ast$hash, size\-\_\-t hash\-\_\-len, const unsigned char $\ast$sig, size\-\_\-t sig\-\_\-len)
+\begin{DoxyCompactList}\small\item\em Verify signature (including padding if relevant). \end{DoxyCompactList}\item 
+int \hyperlink{pk_8h_a81f0c5e40b839f5eca676c2c2752036f}{mbedtls\-\_\-pk\-\_\-verify\-\_\-ext} (\hyperlink{pk_8h_a3fe41eff5605ae727eb9d28dad297020}{mbedtls\-\_\-pk\-\_\-type\-\_\-t} type, const void $\ast$options, \hyperlink{structmbedtls__pk__context}{mbedtls\-\_\-pk\-\_\-context} $\ast$ctx, mbedtls\-\_\-md\-\_\-type\-\_\-t md\-\_\-alg, const unsigned char $\ast$hash, size\-\_\-t hash\-\_\-len, const unsigned char $\ast$sig, size\-\_\-t sig\-\_\-len)
+\begin{DoxyCompactList}\small\item\em Verify signature, with options. (Includes verification of the padding depending on type.) \end{DoxyCompactList}\item 
+int \hyperlink{pk_8h_a6055db23bfff422e65b3a41400344d15}{mbedtls\-\_\-pk\-\_\-sign} (\hyperlink{structmbedtls__pk__context}{mbedtls\-\_\-pk\-\_\-context} $\ast$ctx, mbedtls\-\_\-md\-\_\-type\-\_\-t md\-\_\-alg, const unsigned char $\ast$hash, size\-\_\-t hash\-\_\-len, unsigned char $\ast$sig, size\-\_\-t $\ast$sig\-\_\-len, int($\ast$f\-\_\-rng)(void $\ast$, unsigned char $\ast$, size\-\_\-t), void $\ast$p\-\_\-rng)
+\begin{DoxyCompactList}\small\item\em Make signature, including padding if relevant. \end{DoxyCompactList}\item 
+int \hyperlink{pk_8h_a428e2ffa53bb9bb6cf000452881682c1}{mbedtls\-\_\-pk\-\_\-decrypt} (\hyperlink{structmbedtls__pk__context}{mbedtls\-\_\-pk\-\_\-context} $\ast$ctx, const unsigned char $\ast$input, size\-\_\-t ilen, unsigned char $\ast$output, size\-\_\-t $\ast$olen, size\-\_\-t osize, int($\ast$f\-\_\-rng)(void $\ast$, unsigned char $\ast$, size\-\_\-t), void $\ast$p\-\_\-rng)
+\begin{DoxyCompactList}\small\item\em Decrypt message (including padding if relevant). \end{DoxyCompactList}\item 
+int \hyperlink{pk_8h_ae543fd58f365e84cdfe3689ee2f10113}{mbedtls\-\_\-pk\-\_\-encrypt} (\hyperlink{structmbedtls__pk__context}{mbedtls\-\_\-pk\-\_\-context} $\ast$ctx, const unsigned char $\ast$input, size\-\_\-t ilen, unsigned char $\ast$output, size\-\_\-t $\ast$olen, size\-\_\-t osize, int($\ast$f\-\_\-rng)(void $\ast$, unsigned char $\ast$, size\-\_\-t), void $\ast$p\-\_\-rng)
+\begin{DoxyCompactList}\small\item\em Encrypt message (including padding if relevant). \end{DoxyCompactList}\item 
+int \hyperlink{pk_8h_a87f9989d6859e2dceb5e1d4c4491fdca}{mbedtls\-\_\-pk\-\_\-check\-\_\-pair} (const \hyperlink{structmbedtls__pk__context}{mbedtls\-\_\-pk\-\_\-context} $\ast$pub, const \hyperlink{structmbedtls__pk__context}{mbedtls\-\_\-pk\-\_\-context} $\ast$prv)
+\begin{DoxyCompactList}\small\item\em Check if a public-\/private pair of keys matches. \end{DoxyCompactList}\item 
+int \hyperlink{pk_8h_a0fb685e5a303eb149db2a61296986e14}{mbedtls\-\_\-pk\-\_\-debug} (const \hyperlink{structmbedtls__pk__context}{mbedtls\-\_\-pk\-\_\-context} $\ast$ctx, \hyperlink{structmbedtls__pk__debug__item}{mbedtls\-\_\-pk\-\_\-debug\-\_\-item} $\ast$items)
+\begin{DoxyCompactList}\small\item\em Export debug information. \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{pk_8h_a1b0fb8d16905ec72515dd574b77a4518}{mbedtls\-\_\-pk\-\_\-get\-\_\-name} (const \hyperlink{structmbedtls__pk__context}{mbedtls\-\_\-pk\-\_\-context} $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Access the type name. \end{DoxyCompactList}\item 
+\hyperlink{pk_8h_a3fe41eff5605ae727eb9d28dad297020}{mbedtls\-\_\-pk\-\_\-type\-\_\-t} \hyperlink{pk_8h_ab568e6594c1c4cffaa5046e1e0cada55}{mbedtls\-\_\-pk\-\_\-get\-\_\-type} (const \hyperlink{structmbedtls__pk__context}{mbedtls\-\_\-pk\-\_\-context} $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Get the key type. \end{DoxyCompactList}\item 
+int \hyperlink{pk_8h_a072d27dc4143bfd600786232f9417e08}{mbedtls\-\_\-pk\-\_\-parse\-\_\-key} (\hyperlink{structmbedtls__pk__context}{mbedtls\-\_\-pk\-\_\-context} $\ast$ctx, const unsigned char $\ast$key, size\-\_\-t keylen, const unsigned char $\ast$pwd, size\-\_\-t pwdlen)
+\begin{DoxyCompactList}\small\item\em Parse a private key in P\-E\-M or D\-E\-R format. \end{DoxyCompactList}\item 
+int \hyperlink{pk_8h_ade680bf8e87df7ccc3bb36b52e43972b}{mbedtls\-\_\-pk\-\_\-parse\-\_\-public\-\_\-key} (\hyperlink{structmbedtls__pk__context}{mbedtls\-\_\-pk\-\_\-context} $\ast$ctx, const unsigned char $\ast$key, size\-\_\-t keylen)
+\begin{DoxyCompactList}\small\item\em Parse a public key in P\-E\-M or D\-E\-R format. \end{DoxyCompactList}\item 
+int \hyperlink{pk_8h_a935d710e542409462d0209f2381da83e}{mbedtls\-\_\-pk\-\_\-parse\-\_\-keyfile} (\hyperlink{structmbedtls__pk__context}{mbedtls\-\_\-pk\-\_\-context} $\ast$ctx, const char $\ast$path, const char $\ast$password)
+\begin{DoxyCompactList}\small\item\em Load and parse a private key. \end{DoxyCompactList}\item 
+int \hyperlink{pk_8h_af5a0ae67100c005638bb74f575ee4ad6}{mbedtls\-\_\-pk\-\_\-parse\-\_\-public\-\_\-keyfile} (\hyperlink{structmbedtls__pk__context}{mbedtls\-\_\-pk\-\_\-context} $\ast$ctx, const char $\ast$path)
+\begin{DoxyCompactList}\small\item\em Load and parse a public key. \end{DoxyCompactList}\item 
+int \hyperlink{pk_8h_a698b57f2d3074eff3f8b668b12f4dbae}{mbedtls\-\_\-pk\-\_\-write\-\_\-key\-\_\-der} (\hyperlink{structmbedtls__pk__context}{mbedtls\-\_\-pk\-\_\-context} $\ast$ctx, unsigned char $\ast$buf, size\-\_\-t size)
+\begin{DoxyCompactList}\small\item\em Write a private key to a P\-K\-C\-S\#1 or S\-E\-C1 D\-E\-R structure Note\-: data is written at the end of the buffer! Use the return value to determine where you should start using the buffer. \end{DoxyCompactList}\item 
+int \hyperlink{pk_8h_af5b7c3953ad6fe8be09d35508ee569f6}{mbedtls\-\_\-pk\-\_\-write\-\_\-pubkey\-\_\-der} (\hyperlink{structmbedtls__pk__context}{mbedtls\-\_\-pk\-\_\-context} $\ast$ctx, unsigned char $\ast$buf, size\-\_\-t size)
+\begin{DoxyCompactList}\small\item\em Write a public key to a Subject\-Public\-Key\-Info D\-E\-R structure Note\-: data is written at the end of the buffer! Use the return value to determine where you should start using the buffer. \end{DoxyCompactList}\item 
+int \hyperlink{pk_8h_a7a26c73637e652bbc1946e5d1e9eee3a}{mbedtls\-\_\-pk\-\_\-write\-\_\-pubkey\-\_\-pem} (\hyperlink{structmbedtls__pk__context}{mbedtls\-\_\-pk\-\_\-context} $\ast$ctx, unsigned char $\ast$buf, size\-\_\-t size)
+\begin{DoxyCompactList}\small\item\em Write a public key to a P\-E\-M string. \end{DoxyCompactList}\item 
+int \hyperlink{pk_8h_a9d199cfd9756b157b1270f2f1e170ac2}{mbedtls\-\_\-pk\-\_\-write\-\_\-key\-\_\-pem} (\hyperlink{structmbedtls__pk__context}{mbedtls\-\_\-pk\-\_\-context} $\ast$ctx, unsigned char $\ast$buf, size\-\_\-t size)
+\begin{DoxyCompactList}\small\item\em Write a private key to a P\-K\-C\-S\#1 or S\-E\-C1 P\-E\-M string. \end{DoxyCompactList}\item 
+int \hyperlink{pk_8h_a261a06b48443981316e19bd1c2c377f9}{mbedtls\-\_\-pk\-\_\-parse\-\_\-subpubkey} (unsigned char $\ast$$\ast$p, const unsigned char $\ast$end, \hyperlink{structmbedtls__pk__context}{mbedtls\-\_\-pk\-\_\-context} $\ast$pk)
+\begin{DoxyCompactList}\small\item\em Parse a Subject\-Public\-Key\-Info D\-E\-R structure. \end{DoxyCompactList}\item 
+int \hyperlink{pk_8h_accf9dd8e63389e467a59a04f791efc0f}{mbedtls\-\_\-pk\-\_\-write\-\_\-pubkey} (unsigned char $\ast$$\ast$p, unsigned char $\ast$start, const \hyperlink{structmbedtls__pk__context}{mbedtls\-\_\-pk\-\_\-context} $\ast$key)
+\begin{DoxyCompactList}\small\item\em Write a subject\-Public\-Key to A\-S\-N.\-1 data Note\-: function works backwards in data buffer. \end{DoxyCompactList}\item 
+\hypertarget{pk_8h_a769bf6ab8da6168d83652b59f3d25802}{int {\bfseries mbedtls\-\_\-pk\-\_\-load\-\_\-file} (const char $\ast$path, unsigned char $\ast$$\ast$buf, size\-\_\-t $\ast$n)}\label{pk_8h_a769bf6ab8da6168d83652b59f3d25802}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Public Key abstraction layer. Public Key abstraction layer\-: wrapper functions.
+
+Copyright (C) 2006-\/2015, A\-R\-M Limited, All Rights Reserved
+
+This file is part of mbed T\-L\-S (\href{https://tls.mbed.org}{\tt https\-://tls.\-mbed.\-org})
+
+This program is free software; you can redistribute it and/or modify it under the terms of the G\-N\-U General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but W\-I\-T\-H\-O\-U\-T A\-N\-Y W\-A\-R\-R\-A\-N\-T\-Y; without even the implied warranty of M\-E\-R\-C\-H\-A\-N\-T\-A\-B\-I\-L\-I\-T\-Y or F\-I\-T\-N\-E\-S\-S F\-O\-R A P\-A\-R\-T\-I\-C\-U\-L\-A\-R P\-U\-R\-P\-O\-S\-E. See the G\-N\-U General Public License for more details.
+
+You should have received a copy of the G\-N\-U General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, M\-A 02110-\/1301 U\-S\-A. 
+
+Definition in file \hyperlink{pk_8h_source}{pk.\-h}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{pk_8h_acf55308a7cac0363ea25de294c8b633d}{\index{pk.\-h@{pk.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-A\-L\-L\-O\-C\-\_\-\-F\-A\-I\-L\-E\-D@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-A\-L\-L\-O\-C\-\_\-\-F\-A\-I\-L\-E\-D}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-A\-L\-L\-O\-C\-\_\-\-F\-A\-I\-L\-E\-D@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-A\-L\-L\-O\-C\-\_\-\-F\-A\-I\-L\-E\-D}!pk.h@{pk.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-A\-L\-L\-O\-C\-\_\-\-F\-A\-I\-L\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-A\-L\-L\-O\-C\-\_\-\-F\-A\-I\-L\-E\-D~-\/0x3\-F80}}\label{pk_8h_acf55308a7cac0363ea25de294c8b633d}
+Memory allocation failed. 
+
+Definition at line 48 of file pk.\-h.
+
+\hypertarget{pk_8h_aab119ef4dc86ea6546472299a259bfe8}{\index{pk.\-h@{pk.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A}!pk.h@{pk.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A~-\/0x3\-E80}}\label{pk_8h_aab119ef4dc86ea6546472299a259bfe8}
+Bad input parameters to function. 
+
+Definition at line 50 of file pk.\-h.
+
+\hypertarget{pk_8h_af4a79b15d48bd86c96767db4b9ce2caf}{\index{pk.\-h@{pk.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-U\-N\-A\-V\-A\-I\-L\-A\-B\-L\-E@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-U\-N\-A\-V\-A\-I\-L\-A\-B\-L\-E}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-U\-N\-A\-V\-A\-I\-L\-A\-B\-L\-E@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-U\-N\-A\-V\-A\-I\-L\-A\-B\-L\-E}!pk.h@{pk.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-U\-N\-A\-V\-A\-I\-L\-A\-B\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-U\-N\-A\-V\-A\-I\-L\-A\-B\-L\-E~-\/0x3980}}\label{pk_8h_af4a79b15d48bd86c96767db4b9ce2caf}
+Unavailable feature, e.\-g. R\-S\-A disabled for R\-S\-A key. 
+
+Definition at line 60 of file pk.\-h.
+
+\hypertarget{pk_8h_a334a28580efaab3c749fdf1dde28feb8}{\index{pk.\-h@{pk.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-F\-I\-L\-E\-\_\-\-I\-O\-\_\-\-E\-R\-R\-O\-R@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-F\-I\-L\-E\-\_\-\-I\-O\-\_\-\-E\-R\-R\-O\-R}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-F\-I\-L\-E\-\_\-\-I\-O\-\_\-\-E\-R\-R\-O\-R@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-F\-I\-L\-E\-\_\-\-I\-O\-\_\-\-E\-R\-R\-O\-R}!pk.h@{pk.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-F\-I\-L\-E\-\_\-\-I\-O\-\_\-\-E\-R\-R\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-F\-I\-L\-E\-\_\-\-I\-O\-\_\-\-E\-R\-R\-O\-R~-\/0x3\-E00}}\label{pk_8h_a334a28580efaab3c749fdf1dde28feb8}
+Read/write of file failed. 
+
+Definition at line 51 of file pk.\-h.
+
+\hypertarget{pk_8h_a5d71f30a40d67d5d205a20b69303a341}{\index{pk.\-h@{pk.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-A\-L\-G@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-A\-L\-G}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-A\-L\-G@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-A\-L\-G}!pk.h@{pk.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-A\-L\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-A\-L\-G~-\/0x3\-A80}}\label{pk_8h_a5d71f30a40d67d5d205a20b69303a341}
+The algorithm tag or value is invalid. 
+
+Definition at line 58 of file pk.\-h.
+
+\hypertarget{pk_8h_a0fdf1044cce5beb387d76d19bf4ef0a2}{\index{pk.\-h@{pk.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-P\-U\-B\-K\-E\-Y@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-P\-U\-B\-K\-E\-Y}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-P\-U\-B\-K\-E\-Y@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-P\-U\-B\-K\-E\-Y}!pk.h@{pk.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-P\-U\-B\-K\-E\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-P\-U\-B\-K\-E\-Y~-\/0x3\-B00}}\label{pk_8h_a0fdf1044cce5beb387d76d19bf4ef0a2}
+The pubkey tag or value is invalid (only R\-S\-A and E\-C are supported). 
+
+Definition at line 57 of file pk.\-h.
+
+\hypertarget{pk_8h_a291c7d21aa2cd94b2100703e8e3a1d06}{\index{pk.\-h@{pk.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-K\-E\-Y\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-F\-O\-R\-M\-A\-T@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-K\-E\-Y\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-F\-O\-R\-M\-A\-T}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-K\-E\-Y\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-F\-O\-R\-M\-A\-T@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-K\-E\-Y\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-F\-O\-R\-M\-A\-T}!pk.h@{pk.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-K\-E\-Y\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-F\-O\-R\-M\-A\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-K\-E\-Y\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-F\-O\-R\-M\-A\-T~-\/0x3\-D00}}\label{pk_8h_a291c7d21aa2cd94b2100703e8e3a1d06}
+Invalid key tag or value. 
+
+Definition at line 53 of file pk.\-h.
+
+\hypertarget{pk_8h_a9b589f81143439f8580b3004dc8ecaf1}{\index{pk.\-h@{pk.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-K\-E\-Y\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-V\-E\-R\-S\-I\-O\-N@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-K\-E\-Y\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-V\-E\-R\-S\-I\-O\-N}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-K\-E\-Y\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-V\-E\-R\-S\-I\-O\-N@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-K\-E\-Y\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-V\-E\-R\-S\-I\-O\-N}!pk.h@{pk.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-K\-E\-Y\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-V\-E\-R\-S\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-K\-E\-Y\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-V\-E\-R\-S\-I\-O\-N~-\/0x3\-D80}}\label{pk_8h_a9b589f81143439f8580b3004dc8ecaf1}
+Unsupported key version 
+
+Definition at line 52 of file pk.\-h.
+
+\hypertarget{pk_8h_a24723299c688b1ca6cfa613c19cef6f5}{\index{pk.\-h@{pk.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D\-\_\-\-M\-I\-S\-M\-A\-T\-C\-H@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D\-\_\-\-M\-I\-S\-M\-A\-T\-C\-H}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D\-\_\-\-M\-I\-S\-M\-A\-T\-C\-H@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D\-\_\-\-M\-I\-S\-M\-A\-T\-C\-H}!pk.h@{pk.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D\-\_\-\-M\-I\-S\-M\-A\-T\-C\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D\-\_\-\-M\-I\-S\-M\-A\-T\-C\-H~-\/0x3\-B80}}\label{pk_8h_a24723299c688b1ca6cfa613c19cef6f5}
+Given private key password does not allow for correct decryption. 
+
+Definition at line 56 of file pk.\-h.
+
+\hypertarget{pk_8h_a9c1de7ccb4e18a3ea74b35c4e2cb7527}{\index{pk.\-h@{pk.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D\-\_\-\-R\-E\-Q\-U\-I\-R\-E\-D@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D\-\_\-\-R\-E\-Q\-U\-I\-R\-E\-D}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D\-\_\-\-R\-E\-Q\-U\-I\-R\-E\-D@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D\-\_\-\-R\-E\-Q\-U\-I\-R\-E\-D}!pk.h@{pk.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D\-\_\-\-R\-E\-Q\-U\-I\-R\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D\-\_\-\-R\-E\-Q\-U\-I\-R\-E\-D~-\/0x3\-C00}}\label{pk_8h_a9c1de7ccb4e18a3ea74b35c4e2cb7527}
+Private key password can't be empty. 
+
+Definition at line 55 of file pk.\-h.
+
+\hypertarget{pk_8h_abce78b0c7f04018824b70b816e091dc0}{\index{pk.\-h@{pk.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-S\-I\-G\-\_\-\-L\-E\-N\-\_\-\-M\-I\-S\-M\-A\-T\-C\-H@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-S\-I\-G\-\_\-\-L\-E\-N\-\_\-\-M\-I\-S\-M\-A\-T\-C\-H}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-S\-I\-G\-\_\-\-L\-E\-N\-\_\-\-M\-I\-S\-M\-A\-T\-C\-H@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-S\-I\-G\-\_\-\-L\-E\-N\-\_\-\-M\-I\-S\-M\-A\-T\-C\-H}!pk.h@{pk.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-S\-I\-G\-\_\-\-L\-E\-N\-\_\-\-M\-I\-S\-M\-A\-T\-C\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-S\-I\-G\-\_\-\-L\-E\-N\-\_\-\-M\-I\-S\-M\-A\-T\-C\-H~-\/0x3900}}\label{pk_8h_abce78b0c7f04018824b70b816e091dc0}
+The signature is valid but its length is less than expected. 
+
+Definition at line 61 of file pk.\-h.
+
+\hypertarget{pk_8h_a7a7fb7cb156476722c09de42368156dc}{\index{pk.\-h@{pk.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-I\-S\-M\-A\-T\-C\-H@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-I\-S\-M\-A\-T\-C\-H}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-I\-S\-M\-A\-T\-C\-H@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-I\-S\-M\-A\-T\-C\-H}!pk.h@{pk.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-I\-S\-M\-A\-T\-C\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-I\-S\-M\-A\-T\-C\-H~-\/0x3\-F00}}\label{pk_8h_a7a7fb7cb156476722c09de42368156dc}
+Type mismatch, eg attempt to encrypt with an E\-C\-D\-S\-A key 
+
+Definition at line 49 of file pk.\-h.
+
+\hypertarget{pk_8h_a802d8b95e9b6a517d597dc92cb591e99}{\index{pk.\-h@{pk.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-U\-N\-K\-N\-O\-W\-N\-\_\-\-N\-A\-M\-E\-D\-\_\-\-C\-U\-R\-V\-E@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-U\-N\-K\-N\-O\-W\-N\-\_\-\-N\-A\-M\-E\-D\-\_\-\-C\-U\-R\-V\-E}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-U\-N\-K\-N\-O\-W\-N\-\_\-\-N\-A\-M\-E\-D\-\_\-\-C\-U\-R\-V\-E@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-U\-N\-K\-N\-O\-W\-N\-\_\-\-N\-A\-M\-E\-D\-\_\-\-C\-U\-R\-V\-E}!pk.h@{pk.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-U\-N\-K\-N\-O\-W\-N\-\_\-\-N\-A\-M\-E\-D\-\_\-\-C\-U\-R\-V\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-U\-N\-K\-N\-O\-W\-N\-\_\-\-N\-A\-M\-E\-D\-\_\-\-C\-U\-R\-V\-E~-\/0x3\-A00}}\label{pk_8h_a802d8b95e9b6a517d597dc92cb591e99}
+Elliptic curve is unsupported (only N\-I\-S\-T curves are supported). 
+
+Definition at line 59 of file pk.\-h.
+
+\hypertarget{pk_8h_a877b66447bfa2cd49c1b99f1dc887568}{\index{pk.\-h@{pk.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-U\-N\-K\-N\-O\-W\-N\-\_\-\-P\-K\-\_\-\-A\-L\-G@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-U\-N\-K\-N\-O\-W\-N\-\_\-\-P\-K\-\_\-\-A\-L\-G}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-U\-N\-K\-N\-O\-W\-N\-\_\-\-P\-K\-\_\-\-A\-L\-G@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-U\-N\-K\-N\-O\-W\-N\-\_\-\-P\-K\-\_\-\-A\-L\-G}!pk.h@{pk.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-U\-N\-K\-N\-O\-W\-N\-\_\-\-P\-K\-\_\-\-A\-L\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-U\-N\-K\-N\-O\-W\-N\-\_\-\-P\-K\-\_\-\-A\-L\-G~-\/0x3\-C80}}\label{pk_8h_a877b66447bfa2cd49c1b99f1dc887568}
+Key algorithm is unsupported (only R\-S\-A and E\-C are supported). 
+
+Definition at line 54 of file pk.\-h.
+
+\hypertarget{pk_8h_a73c1247ff4513b853b61b0dc36b69892}{\index{pk.\-h@{pk.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-P\-K\-\_\-\-D\-E\-B\-U\-G\-\_\-\-M\-A\-X\-\_\-\-I\-T\-E\-M\-S@{M\-B\-E\-D\-T\-L\-S\-\_\-\-P\-K\-\_\-\-D\-E\-B\-U\-G\-\_\-\-M\-A\-X\-\_\-\-I\-T\-E\-M\-S}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-P\-K\-\_\-\-D\-E\-B\-U\-G\-\_\-\-M\-A\-X\-\_\-\-I\-T\-E\-M\-S@{M\-B\-E\-D\-T\-L\-S\-\_\-\-P\-K\-\_\-\-D\-E\-B\-U\-G\-\_\-\-M\-A\-X\-\_\-\-I\-T\-E\-M\-S}!pk.h@{pk.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-P\-K\-\_\-\-D\-E\-B\-U\-G\-\_\-\-M\-A\-X\-\_\-\-I\-T\-E\-M\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-P\-K\-\_\-\-D\-E\-B\-U\-G\-\_\-\-M\-A\-X\-\_\-\-I\-T\-E\-M\-S~3}}\label{pk_8h_a73c1247ff4513b853b61b0dc36b69892}
+Maximum number of item send for debugging, plus 1 
+
+Definition at line 113 of file pk.\-h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{pk_8h_a2d72c66f5e78abe153bdf08874aaabf6}{\index{pk.\-h@{pk.\-h}!mbedtls\-\_\-pk\-\_\-can\-\_\-do@{mbedtls\-\_\-pk\-\_\-can\-\_\-do}}
+\index{mbedtls\-\_\-pk\-\_\-can\-\_\-do@{mbedtls\-\_\-pk\-\_\-can\-\_\-do}!pk.h@{pk.\-h}}
+\subsubsection[{mbedtls\-\_\-pk\-\_\-can\-\_\-do}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-pk\-\_\-can\-\_\-do (
+\begin{DoxyParamCaption}
+\item[{const {\bf mbedtls\-\_\-pk\-\_\-context} $\ast$}]{ctx, }
+\item[{{\bf mbedtls\-\_\-pk\-\_\-type\-\_\-t}}]{type}
+\end{DoxyParamCaption}
+)}}\label{pk_8h_a2d72c66f5e78abe153bdf08874aaabf6}
+
+
+Tell if a context can do the operation given by type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Context to test \\
+\hline
+{\em type} & Target type\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if context can't do the operations, 1 otherwise. 
+\end{DoxyReturn}
+\hypertarget{pk_8h_a87f9989d6859e2dceb5e1d4c4491fdca}{\index{pk.\-h@{pk.\-h}!mbedtls\-\_\-pk\-\_\-check\-\_\-pair@{mbedtls\-\_\-pk\-\_\-check\-\_\-pair}}
+\index{mbedtls\-\_\-pk\-\_\-check\-\_\-pair@{mbedtls\-\_\-pk\-\_\-check\-\_\-pair}!pk.h@{pk.\-h}}
+\subsubsection[{mbedtls\-\_\-pk\-\_\-check\-\_\-pair}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-pk\-\_\-check\-\_\-pair (
+\begin{DoxyParamCaption}
+\item[{const {\bf mbedtls\-\_\-pk\-\_\-context} $\ast$}]{pub, }
+\item[{const {\bf mbedtls\-\_\-pk\-\_\-context} $\ast$}]{prv}
+\end{DoxyParamCaption}
+)}}\label{pk_8h_a87f9989d6859e2dceb5e1d4c4491fdca}
+
+
+Check if a public-\/private pair of keys matches. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pub} & Context holding a public key. \\
+\hline
+{\em prv} & Context holding a private (and public) key.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success or M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A 
+\end{DoxyReturn}
+\hypertarget{pk_8h_a0fb685e5a303eb149db2a61296986e14}{\index{pk.\-h@{pk.\-h}!mbedtls\-\_\-pk\-\_\-debug@{mbedtls\-\_\-pk\-\_\-debug}}
+\index{mbedtls\-\_\-pk\-\_\-debug@{mbedtls\-\_\-pk\-\_\-debug}!pk.h@{pk.\-h}}
+\subsubsection[{mbedtls\-\_\-pk\-\_\-debug}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-pk\-\_\-debug (
+\begin{DoxyParamCaption}
+\item[{const {\bf mbedtls\-\_\-pk\-\_\-context} $\ast$}]{ctx, }
+\item[{{\bf mbedtls\-\_\-pk\-\_\-debug\-\_\-item} $\ast$}]{items}
+\end{DoxyParamCaption}
+)}}\label{pk_8h_a0fb685e5a303eb149db2a61296986e14}
+
+
+Export debug information. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Context to use \\
+\hline
+{\em items} & Place to write debug items\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success or M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A 
+\end{DoxyReturn}
+\hypertarget{pk_8h_a428e2ffa53bb9bb6cf000452881682c1}{\index{pk.\-h@{pk.\-h}!mbedtls\-\_\-pk\-\_\-decrypt@{mbedtls\-\_\-pk\-\_\-decrypt}}
+\index{mbedtls\-\_\-pk\-\_\-decrypt@{mbedtls\-\_\-pk\-\_\-decrypt}!pk.h@{pk.\-h}}
+\subsubsection[{mbedtls\-\_\-pk\-\_\-decrypt}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-pk\-\_\-decrypt (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-pk\-\_\-context} $\ast$}]{ctx, }
+\item[{const unsigned char $\ast$}]{input, }
+\item[{size\-\_\-t}]{ilen, }
+\item[{unsigned char $\ast$}]{output, }
+\item[{size\-\_\-t $\ast$}]{olen, }
+\item[{size\-\_\-t}]{osize, }
+\item[{int($\ast$)(void $\ast$, unsigned char $\ast$, size\-\_\-t)}]{f\-\_\-rng, }
+\item[{void $\ast$}]{p\-\_\-rng}
+\end{DoxyParamCaption}
+)}}\label{pk_8h_a428e2ffa53bb9bb6cf000452881682c1}
+
+
+Decrypt message (including padding if relevant). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & P\-K context to use \\
+\hline
+{\em input} & Input to decrypt \\
+\hline
+{\em ilen} & Input size \\
+\hline
+{\em output} & Decrypted output \\
+\hline
+{\em olen} & Decrypted message length \\
+\hline
+{\em osize} & Size of the output buffer \\
+\hline
+{\em f\-\_\-rng} & R\-N\-G function \\
+\hline
+{\em p\-\_\-rng} & R\-N\-G parameter\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+For R\-S\-A keys, the default padding type is P\-K\-C\-S\#1 v1.\-5.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+0 on success, or a specific error code. 
+\end{DoxyReturn}
+\hypertarget{pk_8h_ae543fd58f365e84cdfe3689ee2f10113}{\index{pk.\-h@{pk.\-h}!mbedtls\-\_\-pk\-\_\-encrypt@{mbedtls\-\_\-pk\-\_\-encrypt}}
+\index{mbedtls\-\_\-pk\-\_\-encrypt@{mbedtls\-\_\-pk\-\_\-encrypt}!pk.h@{pk.\-h}}
+\subsubsection[{mbedtls\-\_\-pk\-\_\-encrypt}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-pk\-\_\-encrypt (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-pk\-\_\-context} $\ast$}]{ctx, }
+\item[{const unsigned char $\ast$}]{input, }
+\item[{size\-\_\-t}]{ilen, }
+\item[{unsigned char $\ast$}]{output, }
+\item[{size\-\_\-t $\ast$}]{olen, }
+\item[{size\-\_\-t}]{osize, }
+\item[{int($\ast$)(void $\ast$, unsigned char $\ast$, size\-\_\-t)}]{f\-\_\-rng, }
+\item[{void $\ast$}]{p\-\_\-rng}
+\end{DoxyParamCaption}
+)}}\label{pk_8h_ae543fd58f365e84cdfe3689ee2f10113}
+
+
+Encrypt message (including padding if relevant). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & P\-K context to use \\
+\hline
+{\em input} & Message to encrypt \\
+\hline
+{\em ilen} & Message size \\
+\hline
+{\em output} & Encrypted output \\
+\hline
+{\em olen} & Encrypted output length \\
+\hline
+{\em osize} & Size of the output buffer \\
+\hline
+{\em f\-\_\-rng} & R\-N\-G function \\
+\hline
+{\em p\-\_\-rng} & R\-N\-G parameter\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+For R\-S\-A keys, the default padding type is P\-K\-C\-S\#1 v1.\-5.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+0 on success, or a specific error code. 
+\end{DoxyReturn}
+\hypertarget{pk_8h_a4a31083a590b155dd54d22cf618eefcc}{\index{pk.\-h@{pk.\-h}!mbedtls\-\_\-pk\-\_\-get\-\_\-bitlen@{mbedtls\-\_\-pk\-\_\-get\-\_\-bitlen}}
+\index{mbedtls\-\_\-pk\-\_\-get\-\_\-bitlen@{mbedtls\-\_\-pk\-\_\-get\-\_\-bitlen}!pk.h@{pk.\-h}}
+\subsubsection[{mbedtls\-\_\-pk\-\_\-get\-\_\-bitlen}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t mbedtls\-\_\-pk\-\_\-get\-\_\-bitlen (
+\begin{DoxyParamCaption}
+\item[{const {\bf mbedtls\-\_\-pk\-\_\-context} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}}\label{pk_8h_a4a31083a590b155dd54d22cf618eefcc}
+
+
+Get the size in bits of the underlying key. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Context to use\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Key size in bits, or 0 on error 
+\end{DoxyReturn}
+\hypertarget{pk_8h_a1b0fb8d16905ec72515dd574b77a4518}{\index{pk.\-h@{pk.\-h}!mbedtls\-\_\-pk\-\_\-get\-\_\-name@{mbedtls\-\_\-pk\-\_\-get\-\_\-name}}
+\index{mbedtls\-\_\-pk\-\_\-get\-\_\-name@{mbedtls\-\_\-pk\-\_\-get\-\_\-name}!pk.h@{pk.\-h}}
+\subsubsection[{mbedtls\-\_\-pk\-\_\-get\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ mbedtls\-\_\-pk\-\_\-get\-\_\-name (
+\begin{DoxyParamCaption}
+\item[{const {\bf mbedtls\-\_\-pk\-\_\-context} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}}\label{pk_8h_a1b0fb8d16905ec72515dd574b77a4518}
+
+
+Access the type name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Context to use\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Type name on success, or \char`\"{}invalid P\-K\char`\"{} 
+\end{DoxyReturn}
+\hypertarget{pk_8h_ab568e6594c1c4cffaa5046e1e0cada55}{\index{pk.\-h@{pk.\-h}!mbedtls\-\_\-pk\-\_\-get\-\_\-type@{mbedtls\-\_\-pk\-\_\-get\-\_\-type}}
+\index{mbedtls\-\_\-pk\-\_\-get\-\_\-type@{mbedtls\-\_\-pk\-\_\-get\-\_\-type}!pk.h@{pk.\-h}}
+\subsubsection[{mbedtls\-\_\-pk\-\_\-get\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mbedtls\-\_\-pk\-\_\-type\-\_\-t} mbedtls\-\_\-pk\-\_\-get\-\_\-type (
+\begin{DoxyParamCaption}
+\item[{const {\bf mbedtls\-\_\-pk\-\_\-context} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}}\label{pk_8h_ab568e6594c1c4cffaa5046e1e0cada55}
+
+
+Get the key type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Context to use\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Type on success, or M\-B\-E\-D\-T\-L\-S\-\_\-\-P\-K\-\_\-\-N\-O\-N\-E 
+\end{DoxyReturn}
+\hypertarget{pk_8h_a05eb3e96499280b250cb71e2ef2d270b}{\index{pk.\-h@{pk.\-h}!mbedtls\-\_\-pk\-\_\-info\-\_\-from\-\_\-type@{mbedtls\-\_\-pk\-\_\-info\-\_\-from\-\_\-type}}
+\index{mbedtls\-\_\-pk\-\_\-info\-\_\-from\-\_\-type@{mbedtls\-\_\-pk\-\_\-info\-\_\-from\-\_\-type}!pk.h@{pk.\-h}}
+\subsubsection[{mbedtls\-\_\-pk\-\_\-info\-\_\-from\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf mbedtls\-\_\-pk\-\_\-info\-\_\-t}$\ast$ mbedtls\-\_\-pk\-\_\-info\-\_\-from\-\_\-type (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-pk\-\_\-type\-\_\-t}}]{pk\-\_\-type}
+\end{DoxyParamCaption}
+)}}\label{pk_8h_a05eb3e96499280b250cb71e2ef2d270b}
+
+
+Return information associated with the given P\-K type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pk\-\_\-type} & P\-K type to search for.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The P\-K info associated with the type or N\-U\-L\-L if not found. 
+\end{DoxyReturn}
+\hypertarget{pk_8h_a072d27dc4143bfd600786232f9417e08}{\index{pk.\-h@{pk.\-h}!mbedtls\-\_\-pk\-\_\-parse\-\_\-key@{mbedtls\-\_\-pk\-\_\-parse\-\_\-key}}
+\index{mbedtls\-\_\-pk\-\_\-parse\-\_\-key@{mbedtls\-\_\-pk\-\_\-parse\-\_\-key}!pk.h@{pk.\-h}}
+\subsubsection[{mbedtls\-\_\-pk\-\_\-parse\-\_\-key}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-pk\-\_\-parse\-\_\-key (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-pk\-\_\-context} $\ast$}]{ctx, }
+\item[{const unsigned char $\ast$}]{key, }
+\item[{size\-\_\-t}]{keylen, }
+\item[{const unsigned char $\ast$}]{pwd, }
+\item[{size\-\_\-t}]{pwdlen}
+\end{DoxyParamCaption}
+)}}\label{pk_8h_a072d27dc4143bfd600786232f9417e08}
+
+
+Parse a private key in P\-E\-M or D\-E\-R format. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & key to be initialized \\
+\hline
+{\em key} & input buffer \\
+\hline
+{\em keylen} & size of the buffer (including the terminating null byte for P\-E\-M data) \\
+\hline
+{\em pwd} & password for decryption (optional) \\
+\hline
+{\em pwdlen} & size of the password\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+On entry, ctx must be empty, either freshly initialised with \hyperlink{pk_8h_a999d1160bb30c03d0c4382c3a9b0aa89}{mbedtls\-\_\-pk\-\_\-init()} or reset with \hyperlink{pk_8h_ac6a9786d96abfd73c4dff6814238feb9}{mbedtls\-\_\-pk\-\_\-free()}. If you need a specific key type, check the result with \hyperlink{pk_8h_a2d72c66f5e78abe153bdf08874aaabf6}{mbedtls\-\_\-pk\-\_\-can\-\_\-do()}.
+
+The key is also checked for correctness.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+0 if successful, or a specific P\-K or P\-E\-M error code 
+\end{DoxyReturn}
+\hypertarget{pk_8h_a935d710e542409462d0209f2381da83e}{\index{pk.\-h@{pk.\-h}!mbedtls\-\_\-pk\-\_\-parse\-\_\-keyfile@{mbedtls\-\_\-pk\-\_\-parse\-\_\-keyfile}}
+\index{mbedtls\-\_\-pk\-\_\-parse\-\_\-keyfile@{mbedtls\-\_\-pk\-\_\-parse\-\_\-keyfile}!pk.h@{pk.\-h}}
+\subsubsection[{mbedtls\-\_\-pk\-\_\-parse\-\_\-keyfile}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-pk\-\_\-parse\-\_\-keyfile (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-pk\-\_\-context} $\ast$}]{ctx, }
+\item[{const char $\ast$}]{path, }
+\item[{const char $\ast$}]{password}
+\end{DoxyParamCaption}
+)}}\label{pk_8h_a935d710e542409462d0209f2381da83e}
+
+
+Load and parse a private key. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & key to be initialized \\
+\hline
+{\em path} & filename to read the private key from \\
+\hline
+{\em password} & password to decrypt the file (can be N\-U\-L\-L)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+On entry, ctx must be empty, either freshly initialised with \hyperlink{pk_8h_a999d1160bb30c03d0c4382c3a9b0aa89}{mbedtls\-\_\-pk\-\_\-init()} or reset with \hyperlink{pk_8h_ac6a9786d96abfd73c4dff6814238feb9}{mbedtls\-\_\-pk\-\_\-free()}. If you need a specific key type, check the result with \hyperlink{pk_8h_a2d72c66f5e78abe153bdf08874aaabf6}{mbedtls\-\_\-pk\-\_\-can\-\_\-do()}.
+
+The key is also checked for correctness.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+0 if successful, or a specific P\-K or P\-E\-M error code 
+\end{DoxyReturn}
+\hypertarget{pk_8h_ade680bf8e87df7ccc3bb36b52e43972b}{\index{pk.\-h@{pk.\-h}!mbedtls\-\_\-pk\-\_\-parse\-\_\-public\-\_\-key@{mbedtls\-\_\-pk\-\_\-parse\-\_\-public\-\_\-key}}
+\index{mbedtls\-\_\-pk\-\_\-parse\-\_\-public\-\_\-key@{mbedtls\-\_\-pk\-\_\-parse\-\_\-public\-\_\-key}!pk.h@{pk.\-h}}
+\subsubsection[{mbedtls\-\_\-pk\-\_\-parse\-\_\-public\-\_\-key}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-pk\-\_\-parse\-\_\-public\-\_\-key (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-pk\-\_\-context} $\ast$}]{ctx, }
+\item[{const unsigned char $\ast$}]{key, }
+\item[{size\-\_\-t}]{keylen}
+\end{DoxyParamCaption}
+)}}\label{pk_8h_ade680bf8e87df7ccc3bb36b52e43972b}
+
+
+Parse a public key in P\-E\-M or D\-E\-R format. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & key to be initialized \\
+\hline
+{\em key} & input buffer \\
+\hline
+{\em keylen} & size of the buffer (including the terminating null byte for P\-E\-M data)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+On entry, ctx must be empty, either freshly initialised with \hyperlink{pk_8h_a999d1160bb30c03d0c4382c3a9b0aa89}{mbedtls\-\_\-pk\-\_\-init()} or reset with \hyperlink{pk_8h_ac6a9786d96abfd73c4dff6814238feb9}{mbedtls\-\_\-pk\-\_\-free()}. If you need a specific key type, check the result with \hyperlink{pk_8h_a2d72c66f5e78abe153bdf08874aaabf6}{mbedtls\-\_\-pk\-\_\-can\-\_\-do()}.
+
+The key is also checked for correctness.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+0 if successful, or a specific P\-K or P\-E\-M error code 
+\end{DoxyReturn}
+\hypertarget{pk_8h_af5a0ae67100c005638bb74f575ee4ad6}{\index{pk.\-h@{pk.\-h}!mbedtls\-\_\-pk\-\_\-parse\-\_\-public\-\_\-keyfile@{mbedtls\-\_\-pk\-\_\-parse\-\_\-public\-\_\-keyfile}}
+\index{mbedtls\-\_\-pk\-\_\-parse\-\_\-public\-\_\-keyfile@{mbedtls\-\_\-pk\-\_\-parse\-\_\-public\-\_\-keyfile}!pk.h@{pk.\-h}}
+\subsubsection[{mbedtls\-\_\-pk\-\_\-parse\-\_\-public\-\_\-keyfile}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-pk\-\_\-parse\-\_\-public\-\_\-keyfile (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-pk\-\_\-context} $\ast$}]{ctx, }
+\item[{const char $\ast$}]{path}
+\end{DoxyParamCaption}
+)}}\label{pk_8h_af5a0ae67100c005638bb74f575ee4ad6}
+
+
+Load and parse a public key. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & key to be initialized \\
+\hline
+{\em path} & filename to read the private key from\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+On entry, ctx must be empty, either freshly initialised with \hyperlink{pk_8h_a999d1160bb30c03d0c4382c3a9b0aa89}{mbedtls\-\_\-pk\-\_\-init()} or reset with \hyperlink{pk_8h_ac6a9786d96abfd73c4dff6814238feb9}{mbedtls\-\_\-pk\-\_\-free()}. If you need a specific key type, check the result with \hyperlink{pk_8h_a2d72c66f5e78abe153bdf08874aaabf6}{mbedtls\-\_\-pk\-\_\-can\-\_\-do()}.
+
+The key is also checked for correctness.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+0 if successful, or a specific P\-K or P\-E\-M error code 
+\end{DoxyReturn}
+\hypertarget{pk_8h_a261a06b48443981316e19bd1c2c377f9}{\index{pk.\-h@{pk.\-h}!mbedtls\-\_\-pk\-\_\-parse\-\_\-subpubkey@{mbedtls\-\_\-pk\-\_\-parse\-\_\-subpubkey}}
+\index{mbedtls\-\_\-pk\-\_\-parse\-\_\-subpubkey@{mbedtls\-\_\-pk\-\_\-parse\-\_\-subpubkey}!pk.h@{pk.\-h}}
+\subsubsection[{mbedtls\-\_\-pk\-\_\-parse\-\_\-subpubkey}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-pk\-\_\-parse\-\_\-subpubkey (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$$\ast$}]{p, }
+\item[{const unsigned char $\ast$}]{end, }
+\item[{{\bf mbedtls\-\_\-pk\-\_\-context} $\ast$}]{pk}
+\end{DoxyParamCaption}
+)}}\label{pk_8h_a261a06b48443981316e19bd1c2c377f9}
+
+
+Parse a Subject\-Public\-Key\-Info D\-E\-R structure. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & the position in the A\-S\-N.\-1 data \\
+\hline
+{\em end} & end of the buffer \\
+\hline
+{\em pk} & the key to fill\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, or a specific P\-K error code 
+\end{DoxyReturn}
+\hypertarget{pk_8h_a7d6cc2c1768cc6db883b08c3c0f10889}{\index{pk.\-h@{pk.\-h}!mbedtls\-\_\-pk\-\_\-setup@{mbedtls\-\_\-pk\-\_\-setup}}
+\index{mbedtls\-\_\-pk\-\_\-setup@{mbedtls\-\_\-pk\-\_\-setup}!pk.h@{pk.\-h}}
+\subsubsection[{mbedtls\-\_\-pk\-\_\-setup}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-pk\-\_\-setup (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-pk\-\_\-context} $\ast$}]{ctx, }
+\item[{const {\bf mbedtls\-\_\-pk\-\_\-info\-\_\-t} $\ast$}]{info}
+\end{DoxyParamCaption}
+)}}\label{pk_8h_a7d6cc2c1768cc6db883b08c3c0f10889}
+
+
+Initialize a P\-K context with the information given and allocates the type-\/specific P\-K subcontext. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Context to initialize. Must be empty (type N\-O\-N\-E). \\
+\hline
+{\em info} & Information to use\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A on invalid input, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-A\-L\-L\-O\-C\-\_\-\-F\-A\-I\-L\-E\-D on allocation failure.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+For contexts holding an R\-S\-A-\/alt key, use {\ttfamily \hyperlink{pk_8h_ab719d0b89ef0a49fef2bc8ba20e4726b}{mbedtls\-\_\-pk\-\_\-setup\-\_\-rsa\-\_\-alt()}} instead. 
+\end{DoxyNote}
+\hypertarget{pk_8h_ab719d0b89ef0a49fef2bc8ba20e4726b}{\index{pk.\-h@{pk.\-h}!mbedtls\-\_\-pk\-\_\-setup\-\_\-rsa\-\_\-alt@{mbedtls\-\_\-pk\-\_\-setup\-\_\-rsa\-\_\-alt}}
+\index{mbedtls\-\_\-pk\-\_\-setup\-\_\-rsa\-\_\-alt@{mbedtls\-\_\-pk\-\_\-setup\-\_\-rsa\-\_\-alt}!pk.h@{pk.\-h}}
+\subsubsection[{mbedtls\-\_\-pk\-\_\-setup\-\_\-rsa\-\_\-alt}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-pk\-\_\-setup\-\_\-rsa\-\_\-alt (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-pk\-\_\-context} $\ast$}]{ctx, }
+\item[{void $\ast$}]{key, }
+\item[{{\bf mbedtls\-\_\-pk\-\_\-rsa\-\_\-alt\-\_\-decrypt\-\_\-func}}]{decrypt\-\_\-func, }
+\item[{mbedtls\-\_\-pk\-\_\-rsa\-\_\-alt\-\_\-sign\-\_\-func}]{sign\-\_\-func, }
+\item[{mbedtls\-\_\-pk\-\_\-rsa\-\_\-alt\-\_\-key\-\_\-len\-\_\-func}]{key\-\_\-len\-\_\-func}
+\end{DoxyParamCaption}
+)}}\label{pk_8h_ab719d0b89ef0a49fef2bc8ba20e4726b}
+
+
+Initialize an R\-S\-A-\/alt context. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Context to initialize. Must be empty (type N\-O\-N\-E). \\
+\hline
+{\em key} & R\-S\-A key pointer \\
+\hline
+{\em decrypt\-\_\-func} & Decryption function \\
+\hline
+{\em sign\-\_\-func} & Signing function \\
+\hline
+{\em key\-\_\-len\-\_\-func} & Function returning key length in bytes\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, or M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A if the context wasn't already initialized as R\-S\-A\-\_\-\-A\-L\-T.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This function replaces {\ttfamily \hyperlink{pk_8h_a7d6cc2c1768cc6db883b08c3c0f10889}{mbedtls\-\_\-pk\-\_\-setup()}} for R\-S\-A-\/alt. 
+\end{DoxyNote}
+\hypertarget{pk_8h_a6055db23bfff422e65b3a41400344d15}{\index{pk.\-h@{pk.\-h}!mbedtls\-\_\-pk\-\_\-sign@{mbedtls\-\_\-pk\-\_\-sign}}
+\index{mbedtls\-\_\-pk\-\_\-sign@{mbedtls\-\_\-pk\-\_\-sign}!pk.h@{pk.\-h}}
+\subsubsection[{mbedtls\-\_\-pk\-\_\-sign}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-pk\-\_\-sign (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-pk\-\_\-context} $\ast$}]{ctx, }
+\item[{mbedtls\-\_\-md\-\_\-type\-\_\-t}]{md\-\_\-alg, }
+\item[{const unsigned char $\ast$}]{hash, }
+\item[{size\-\_\-t}]{hash\-\_\-len, }
+\item[{unsigned char $\ast$}]{sig, }
+\item[{size\-\_\-t $\ast$}]{sig\-\_\-len, }
+\item[{int($\ast$)(void $\ast$, unsigned char $\ast$, size\-\_\-t)}]{f\-\_\-rng, }
+\item[{void $\ast$}]{p\-\_\-rng}
+\end{DoxyParamCaption}
+)}}\label{pk_8h_a6055db23bfff422e65b3a41400344d15}
+
+
+Make signature, including padding if relevant. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & P\-K context to use \\
+\hline
+{\em md\-\_\-alg} & Hash algorithm used (see notes) \\
+\hline
+{\em hash} & Hash of the message to sign \\
+\hline
+{\em hash\-\_\-len} & Hash length or 0 (see notes) \\
+\hline
+{\em sig} & Place to write the signature \\
+\hline
+{\em sig\-\_\-len} & Number of bytes written \\
+\hline
+{\em f\-\_\-rng} & R\-N\-G function \\
+\hline
+{\em p\-\_\-rng} & R\-N\-G parameter\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, or a specific error code.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+For R\-S\-A keys, the default padding type is P\-K\-C\-S\#1 v1.\-5. There is no interface in the P\-K module to make R\-S\-A\-S\-S\-A-\/\-P\-S\-S signatures yet.
+
+If hash\-\_\-len is 0, then the length associated with md\-\_\-alg is used instead, or an error returned if it is invalid.
+
+For R\-S\-A, md\-\_\-alg may be M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-D\-\_\-\-N\-O\-N\-E if hash\-\_\-len != 0. For E\-C\-D\-S\-A, md\-\_\-alg may never be M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-D\-\_\-\-N\-O\-N\-E. 
+\end{DoxyNote}
+\hypertarget{pk_8h_abf1939cc1d89f6b9fd341b67d5241914}{\index{pk.\-h@{pk.\-h}!mbedtls\-\_\-pk\-\_\-verify@{mbedtls\-\_\-pk\-\_\-verify}}
+\index{mbedtls\-\_\-pk\-\_\-verify@{mbedtls\-\_\-pk\-\_\-verify}!pk.h@{pk.\-h}}
+\subsubsection[{mbedtls\-\_\-pk\-\_\-verify}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-pk\-\_\-verify (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-pk\-\_\-context} $\ast$}]{ctx, }
+\item[{mbedtls\-\_\-md\-\_\-type\-\_\-t}]{md\-\_\-alg, }
+\item[{const unsigned char $\ast$}]{hash, }
+\item[{size\-\_\-t}]{hash\-\_\-len, }
+\item[{const unsigned char $\ast$}]{sig, }
+\item[{size\-\_\-t}]{sig\-\_\-len}
+\end{DoxyParamCaption}
+)}}\label{pk_8h_abf1939cc1d89f6b9fd341b67d5241914}
+
+
+Verify signature (including padding if relevant). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & P\-K context to use \\
+\hline
+{\em md\-\_\-alg} & Hash algorithm used (see notes) \\
+\hline
+{\em hash} & Hash of the message to sign \\
+\hline
+{\em hash\-\_\-len} & Hash length or 0 (see notes) \\
+\hline
+{\em sig} & Signature to verify \\
+\hline
+{\em sig\-\_\-len} & Signature length\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success (signature is valid), M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-S\-I\-G\-\_\-\-L\-E\-N\-\_\-\-M\-I\-S\-M\-A\-T\-C\-H if the signature is valid but its actual length is less than sig\-\_\-len, or a specific error code.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+For R\-S\-A keys, the default padding type is P\-K\-C\-S\#1 v1.\-5. Use {\ttfamily mbedtls\-\_\-pk\-\_\-verify\-\_\-ext}( M\-B\-E\-D\-T\-L\-S\-\_\-\-P\-K\-\_\-\-R\-S\-A\-S\-S\-A\-\_\-\-P\-S\-S, ... ) to verify R\-S\-A\-S\-S\-A\-\_\-\-P\-S\-S signatures.
+
+If hash\-\_\-len is 0, then the length associated with md\-\_\-alg is used instead, or an error returned if it is invalid.
+
+md\-\_\-alg may be M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-D\-\_\-\-N\-O\-N\-E, only if hash\-\_\-len != 0 
+\end{DoxyNote}
+\hypertarget{pk_8h_a81f0c5e40b839f5eca676c2c2752036f}{\index{pk.\-h@{pk.\-h}!mbedtls\-\_\-pk\-\_\-verify\-\_\-ext@{mbedtls\-\_\-pk\-\_\-verify\-\_\-ext}}
+\index{mbedtls\-\_\-pk\-\_\-verify\-\_\-ext@{mbedtls\-\_\-pk\-\_\-verify\-\_\-ext}!pk.h@{pk.\-h}}
+\subsubsection[{mbedtls\-\_\-pk\-\_\-verify\-\_\-ext}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-pk\-\_\-verify\-\_\-ext (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-pk\-\_\-type\-\_\-t}}]{type, }
+\item[{const void $\ast$}]{options, }
+\item[{{\bf mbedtls\-\_\-pk\-\_\-context} $\ast$}]{ctx, }
+\item[{mbedtls\-\_\-md\-\_\-type\-\_\-t}]{md\-\_\-alg, }
+\item[{const unsigned char $\ast$}]{hash, }
+\item[{size\-\_\-t}]{hash\-\_\-len, }
+\item[{const unsigned char $\ast$}]{sig, }
+\item[{size\-\_\-t}]{sig\-\_\-len}
+\end{DoxyParamCaption}
+)}}\label{pk_8h_a81f0c5e40b839f5eca676c2c2752036f}
+
+
+Verify signature, with options. (Includes verification of the padding depending on type.) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & Signature type (inc. possible padding type) to verify \\
+\hline
+{\em options} & Pointer to type-\/specific options, or N\-U\-L\-L \\
+\hline
+{\em ctx} & P\-K context to use \\
+\hline
+{\em md\-\_\-alg} & Hash algorithm used (see notes) \\
+\hline
+{\em hash} & Hash of the message to sign \\
+\hline
+{\em hash\-\_\-len} & Hash length or 0 (see notes) \\
+\hline
+{\em sig} & Signature to verify \\
+\hline
+{\em sig\-\_\-len} & Signature length\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success (signature is valid), M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-I\-S\-M\-A\-T\-C\-H if the P\-K context can't be used for this type of signatures, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-\_\-\-S\-I\-G\-\_\-\-L\-E\-N\-\_\-\-M\-I\-S\-M\-A\-T\-C\-H if the signature is valid but its actual length is less than sig\-\_\-len, or a specific error code.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If hash\-\_\-len is 0, then the length associated with md\-\_\-alg is used instead, or an error returned if it is invalid.
+
+md\-\_\-alg may be M\-B\-E\-D\-T\-L\-S\-\_\-\-M\-D\-\_\-\-N\-O\-N\-E, only if hash\-\_\-len != 0
+
+If type is M\-B\-E\-D\-T\-L\-S\-\_\-\-P\-K\-\_\-\-R\-S\-A\-S\-S\-A\-\_\-\-P\-S\-S, then options must point to a \hyperlink{structmbedtls__pk__rsassa__pss__options}{mbedtls\-\_\-pk\-\_\-rsassa\-\_\-pss\-\_\-options} structure, otherwise it must be N\-U\-L\-L. 
+\end{DoxyNote}
+\hypertarget{pk_8h_a698b57f2d3074eff3f8b668b12f4dbae}{\index{pk.\-h@{pk.\-h}!mbedtls\-\_\-pk\-\_\-write\-\_\-key\-\_\-der@{mbedtls\-\_\-pk\-\_\-write\-\_\-key\-\_\-der}}
+\index{mbedtls\-\_\-pk\-\_\-write\-\_\-key\-\_\-der@{mbedtls\-\_\-pk\-\_\-write\-\_\-key\-\_\-der}!pk.h@{pk.\-h}}
+\subsubsection[{mbedtls\-\_\-pk\-\_\-write\-\_\-key\-\_\-der}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-pk\-\_\-write\-\_\-key\-\_\-der (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-pk\-\_\-context} $\ast$}]{ctx, }
+\item[{unsigned char $\ast$}]{buf, }
+\item[{size\-\_\-t}]{size}
+\end{DoxyParamCaption}
+)}}\label{pk_8h_a698b57f2d3074eff3f8b668b12f4dbae}
+
+
+Write a private key to a P\-K\-C\-S\#1 or S\-E\-C1 D\-E\-R structure Note\-: data is written at the end of the buffer! Use the return value to determine where you should start using the buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & private to write away \\
+\hline
+{\em buf} & buffer to write to \\
+\hline
+{\em size} & size of the buffer\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+length of data written if successful, or a specific error code 
+\end{DoxyReturn}
+\hypertarget{pk_8h_a9d199cfd9756b157b1270f2f1e170ac2}{\index{pk.\-h@{pk.\-h}!mbedtls\-\_\-pk\-\_\-write\-\_\-key\-\_\-pem@{mbedtls\-\_\-pk\-\_\-write\-\_\-key\-\_\-pem}}
+\index{mbedtls\-\_\-pk\-\_\-write\-\_\-key\-\_\-pem@{mbedtls\-\_\-pk\-\_\-write\-\_\-key\-\_\-pem}!pk.h@{pk.\-h}}
+\subsubsection[{mbedtls\-\_\-pk\-\_\-write\-\_\-key\-\_\-pem}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-pk\-\_\-write\-\_\-key\-\_\-pem (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-pk\-\_\-context} $\ast$}]{ctx, }
+\item[{unsigned char $\ast$}]{buf, }
+\item[{size\-\_\-t}]{size}
+\end{DoxyParamCaption}
+)}}\label{pk_8h_a9d199cfd9756b157b1270f2f1e170ac2}
+
+
+Write a private key to a P\-K\-C\-S\#1 or S\-E\-C1 P\-E\-M string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & private to write away \\
+\hline
+{\em buf} & buffer to write to \\
+\hline
+{\em size} & size of the buffer\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, or a specific error code 
+\end{DoxyReturn}
+\hypertarget{pk_8h_accf9dd8e63389e467a59a04f791efc0f}{\index{pk.\-h@{pk.\-h}!mbedtls\-\_\-pk\-\_\-write\-\_\-pubkey@{mbedtls\-\_\-pk\-\_\-write\-\_\-pubkey}}
+\index{mbedtls\-\_\-pk\-\_\-write\-\_\-pubkey@{mbedtls\-\_\-pk\-\_\-write\-\_\-pubkey}!pk.h@{pk.\-h}}
+\subsubsection[{mbedtls\-\_\-pk\-\_\-write\-\_\-pubkey}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-pk\-\_\-write\-\_\-pubkey (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$$\ast$}]{p, }
+\item[{unsigned char $\ast$}]{start, }
+\item[{const {\bf mbedtls\-\_\-pk\-\_\-context} $\ast$}]{key}
+\end{DoxyParamCaption}
+)}}\label{pk_8h_accf9dd8e63389e467a59a04f791efc0f}
+
+
+Write a subject\-Public\-Key to A\-S\-N.\-1 data Note\-: function works backwards in data buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & reference to current position pointer \\
+\hline
+{\em start} & start of the buffer (for bounds-\/checking) \\
+\hline
+{\em key} & public key to write away\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the length written or a negative error code 
+\end{DoxyReturn}
+\hypertarget{pk_8h_af5b7c3953ad6fe8be09d35508ee569f6}{\index{pk.\-h@{pk.\-h}!mbedtls\-\_\-pk\-\_\-write\-\_\-pubkey\-\_\-der@{mbedtls\-\_\-pk\-\_\-write\-\_\-pubkey\-\_\-der}}
+\index{mbedtls\-\_\-pk\-\_\-write\-\_\-pubkey\-\_\-der@{mbedtls\-\_\-pk\-\_\-write\-\_\-pubkey\-\_\-der}!pk.h@{pk.\-h}}
+\subsubsection[{mbedtls\-\_\-pk\-\_\-write\-\_\-pubkey\-\_\-der}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-pk\-\_\-write\-\_\-pubkey\-\_\-der (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-pk\-\_\-context} $\ast$}]{ctx, }
+\item[{unsigned char $\ast$}]{buf, }
+\item[{size\-\_\-t}]{size}
+\end{DoxyParamCaption}
+)}}\label{pk_8h_af5b7c3953ad6fe8be09d35508ee569f6}
+
+
+Write a public key to a Subject\-Public\-Key\-Info D\-E\-R structure Note\-: data is written at the end of the buffer! Use the return value to determine where you should start using the buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & public key to write away \\
+\hline
+{\em buf} & buffer to write to \\
+\hline
+{\em size} & size of the buffer\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+length of data written if successful, or a specific error code 
+\end{DoxyReturn}
+\hypertarget{pk_8h_a7a26c73637e652bbc1946e5d1e9eee3a}{\index{pk.\-h@{pk.\-h}!mbedtls\-\_\-pk\-\_\-write\-\_\-pubkey\-\_\-pem@{mbedtls\-\_\-pk\-\_\-write\-\_\-pubkey\-\_\-pem}}
+\index{mbedtls\-\_\-pk\-\_\-write\-\_\-pubkey\-\_\-pem@{mbedtls\-\_\-pk\-\_\-write\-\_\-pubkey\-\_\-pem}!pk.h@{pk.\-h}}
+\subsubsection[{mbedtls\-\_\-pk\-\_\-write\-\_\-pubkey\-\_\-pem}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-pk\-\_\-write\-\_\-pubkey\-\_\-pem (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-pk\-\_\-context} $\ast$}]{ctx, }
+\item[{unsigned char $\ast$}]{buf, }
+\item[{size\-\_\-t}]{size}
+\end{DoxyParamCaption}
+)}}\label{pk_8h_a7a26c73637e652bbc1946e5d1e9eee3a}
+
+
+Write a public key to a P\-E\-M string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & public key to write away \\
+\hline
+{\em buf} & buffer to write to \\
+\hline
+{\em size} & size of the buffer\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, or a specific error code 
+\end{DoxyReturn}

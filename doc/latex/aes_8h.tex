@@ -1,0 +1,418 @@
+\hypertarget{aes_8h}{\section{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/aes.h File Reference}
+\label{aes_8h}\index{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/aes.\-h@{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/aes.\-h}}
+}
+
+
+A\-E\-S block cipher.  
+
+
+{\ttfamily \#include \char`\"{}config.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$stddef.\-h$>$}\\*
+{\ttfamily \#include $<$stdint.\-h$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structmbedtls__aes__context}{mbedtls\-\_\-aes\-\_\-context}
+\begin{DoxyCompactList}\small\item\em A\-E\-S context structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{aes_8h_ace4e123be5bb40b2adfdc4cb4f4750c8}{\#define {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-A\-E\-S\-\_\-\-E\-N\-C\-R\-Y\-P\-T}~1}\label{aes_8h_ace4e123be5bb40b2adfdc4cb4f4750c8}
+
+\item 
+\hypertarget{aes_8h_ac21fbdd76fa7c6f3f87dc5eb7b5b30f8}{\#define {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-A\-E\-S\-\_\-\-D\-E\-C\-R\-Y\-P\-T}~0}\label{aes_8h_ac21fbdd76fa7c6f3f87dc5eb7b5b30f8}
+
+\item 
+\#define \hyperlink{aes_8h_a4506452f9cd9a317327b2b1ce9b1bf59}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-A\-E\-S\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-K\-E\-Y\-\_\-\-L\-E\-N\-G\-T\-H}~-\/0x0020
+\item 
+\#define \hyperlink{aes_8h_ac46465e53bd0fc9dcd79cb90965e3571}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-A\-E\-S\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-L\-E\-N\-G\-T\-H}~-\/0x0022
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{aes_8h_aa72dac8d698ab861843ef74ce8ebf62c}{mbedtls\-\_\-aes\-\_\-init} (\hyperlink{structmbedtls__aes__context}{mbedtls\-\_\-aes\-\_\-context} $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Initialize A\-E\-S context. \end{DoxyCompactList}\item 
+void \hyperlink{aes_8h_ad1424ff458ff2ed765d37b620aae4882}{mbedtls\-\_\-aes\-\_\-free} (\hyperlink{structmbedtls__aes__context}{mbedtls\-\_\-aes\-\_\-context} $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Clear A\-E\-S context. \end{DoxyCompactList}\item 
+int \hyperlink{aes_8h_acec17c6592b98876106d035c372b1efa}{mbedtls\-\_\-aes\-\_\-setkey\-\_\-enc} (\hyperlink{structmbedtls__aes__context}{mbedtls\-\_\-aes\-\_\-context} $\ast$ctx, const unsigned char $\ast$key, unsigned int keybits)
+\begin{DoxyCompactList}\small\item\em A\-E\-S key schedule (encryption) \end{DoxyCompactList}\item 
+int \hyperlink{aes_8h_a11580b789634605dd57e425eadb56617}{mbedtls\-\_\-aes\-\_\-setkey\-\_\-dec} (\hyperlink{structmbedtls__aes__context}{mbedtls\-\_\-aes\-\_\-context} $\ast$ctx, const unsigned char $\ast$key, unsigned int keybits)
+\begin{DoxyCompactList}\small\item\em A\-E\-S key schedule (decryption) \end{DoxyCompactList}\item 
+int \hyperlink{aes_8h_a0e59fdda18a145e702984268b9ab291a}{mbedtls\-\_\-aes\-\_\-crypt\-\_\-ecb} (\hyperlink{structmbedtls__aes__context}{mbedtls\-\_\-aes\-\_\-context} $\ast$ctx, int mode, const unsigned char input\mbox{[}16\mbox{]}, unsigned char output\mbox{[}16\mbox{]})
+\begin{DoxyCompactList}\small\item\em A\-E\-S-\/\-E\-C\-B block encryption/decryption. \end{DoxyCompactList}\item 
+int \hyperlink{aes_8h_a321834eafbf0dacb36dac343bfd6b35d}{mbedtls\-\_\-aes\-\_\-crypt\-\_\-cbc} (\hyperlink{structmbedtls__aes__context}{mbedtls\-\_\-aes\-\_\-context} $\ast$ctx, int mode, size\-\_\-t length, unsigned char iv\mbox{[}16\mbox{]}, const unsigned char $\ast$input, unsigned char $\ast$output)
+\begin{DoxyCompactList}\small\item\em A\-E\-S-\/\-C\-B\-C buffer encryption/decryption Length should be a multiple of the block size (16 bytes) \end{DoxyCompactList}\item 
+int \hyperlink{aes_8h_a944946adabbc344f2c6cf6e6f51a21e3}{mbedtls\-\_\-aes\-\_\-crypt\-\_\-cfb128} (\hyperlink{structmbedtls__aes__context}{mbedtls\-\_\-aes\-\_\-context} $\ast$ctx, int mode, size\-\_\-t length, size\-\_\-t $\ast$iv\-\_\-off, unsigned char iv\mbox{[}16\mbox{]}, const unsigned char $\ast$input, unsigned char $\ast$output)
+\begin{DoxyCompactList}\small\item\em A\-E\-S-\/\-C\-F\-B128 buffer encryption/decryption. \end{DoxyCompactList}\item 
+int \hyperlink{aes_8h_a9abf42a70f835ca9d9f62350d497e465}{mbedtls\-\_\-aes\-\_\-crypt\-\_\-cfb8} (\hyperlink{structmbedtls__aes__context}{mbedtls\-\_\-aes\-\_\-context} $\ast$ctx, int mode, size\-\_\-t length, unsigned char iv\mbox{[}16\mbox{]}, const unsigned char $\ast$input, unsigned char $\ast$output)
+\begin{DoxyCompactList}\small\item\em A\-E\-S-\/\-C\-F\-B8 buffer encryption/decryption. \end{DoxyCompactList}\item 
+int \hyperlink{aes_8h_a375c98cba4c5806d3a39c7d1e1e226da}{mbedtls\-\_\-aes\-\_\-crypt\-\_\-ctr} (\hyperlink{structmbedtls__aes__context}{mbedtls\-\_\-aes\-\_\-context} $\ast$ctx, size\-\_\-t length, size\-\_\-t $\ast$nc\-\_\-off, unsigned char nonce\-\_\-counter\mbox{[}16\mbox{]}, unsigned char stream\-\_\-block\mbox{[}16\mbox{]}, const unsigned char $\ast$input, unsigned char $\ast$output)
+\begin{DoxyCompactList}\small\item\em A\-E\-S-\/\-C\-T\-R buffer encryption/decryption. \end{DoxyCompactList}\item 
+void \hyperlink{aes_8h_a4ddac8f03fe94629e8011c84fbf825dc}{mbedtls\-\_\-aes\-\_\-encrypt} (\hyperlink{structmbedtls__aes__context}{mbedtls\-\_\-aes\-\_\-context} $\ast$ctx, const unsigned char input\mbox{[}16\mbox{]}, unsigned char output\mbox{[}16\mbox{]})
+\begin{DoxyCompactList}\small\item\em Internal A\-E\-S block encryption function (Only exposed to allow overriding it, see M\-B\-E\-D\-T\-L\-S\-\_\-\-A\-E\-S\-\_\-\-E\-N\-C\-R\-Y\-P\-T\-\_\-\-A\-L\-T) \end{DoxyCompactList}\item 
+void \hyperlink{aes_8h_ae73df41aee0be1ca64cdc171c88db2e5}{mbedtls\-\_\-aes\-\_\-decrypt} (\hyperlink{structmbedtls__aes__context}{mbedtls\-\_\-aes\-\_\-context} $\ast$ctx, const unsigned char input\mbox{[}16\mbox{]}, unsigned char output\mbox{[}16\mbox{]})
+\begin{DoxyCompactList}\small\item\em Internal A\-E\-S block decryption function (Only exposed to allow overriding it, see M\-B\-E\-D\-T\-L\-S\-\_\-\-A\-E\-S\-\_\-\-D\-E\-C\-R\-Y\-P\-T\-\_\-\-A\-L\-T) \end{DoxyCompactList}\item 
+int \hyperlink{aes_8h_a17845a4d1272959f0bb9370e86bfd398}{mbedtls\-\_\-aes\-\_\-self\-\_\-test} (int verbose)
+\begin{DoxyCompactList}\small\item\em Checkup routine. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A\-E\-S block cipher. Copyright (C) 2006-\/2015, A\-R\-M Limited, All Rights Reserved
+
+This file is part of mbed T\-L\-S (\href{https://tls.mbed.org}{\tt https\-://tls.\-mbed.\-org})
+
+This program is free software; you can redistribute it and/or modify it under the terms of the G\-N\-U General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but W\-I\-T\-H\-O\-U\-T A\-N\-Y W\-A\-R\-R\-A\-N\-T\-Y; without even the implied warranty of M\-E\-R\-C\-H\-A\-N\-T\-A\-B\-I\-L\-I\-T\-Y or F\-I\-T\-N\-E\-S\-S F\-O\-R A P\-A\-R\-T\-I\-C\-U\-L\-A\-R P\-U\-R\-P\-O\-S\-E. See the G\-N\-U General Public License for more details.
+
+You should have received a copy of the G\-N\-U General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, M\-A 02110-\/1301 U\-S\-A. 
+
+Definition in file \hyperlink{aes_8h_source}{aes.\-h}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{aes_8h_ac46465e53bd0fc9dcd79cb90965e3571}{\index{aes.\-h@{aes.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-A\-E\-S\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-L\-E\-N\-G\-T\-H@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-A\-E\-S\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-L\-E\-N\-G\-T\-H}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-A\-E\-S\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-L\-E\-N\-G\-T\-H@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-A\-E\-S\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-L\-E\-N\-G\-T\-H}!aes.h@{aes.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-A\-E\-S\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-L\-E\-N\-G\-T\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-A\-E\-S\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-L\-E\-N\-G\-T\-H~-\/0x0022}}\label{aes_8h_ac46465e53bd0fc9dcd79cb90965e3571}
+Invalid data input length. 
+
+Definition at line 41 of file aes.\-h.
+
+\hypertarget{aes_8h_a4506452f9cd9a317327b2b1ce9b1bf59}{\index{aes.\-h@{aes.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-A\-E\-S\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-K\-E\-Y\-\_\-\-L\-E\-N\-G\-T\-H@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-A\-E\-S\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-K\-E\-Y\-\_\-\-L\-E\-N\-G\-T\-H}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-A\-E\-S\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-K\-E\-Y\-\_\-\-L\-E\-N\-G\-T\-H@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-A\-E\-S\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-K\-E\-Y\-\_\-\-L\-E\-N\-G\-T\-H}!aes.h@{aes.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-A\-E\-S\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-K\-E\-Y\-\_\-\-L\-E\-N\-G\-T\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-A\-E\-S\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-K\-E\-Y\-\_\-\-L\-E\-N\-G\-T\-H~-\/0x0020}}\label{aes_8h_a4506452f9cd9a317327b2b1ce9b1bf59}
+Invalid key length. 
+
+Definition at line 40 of file aes.\-h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{aes_8h_a321834eafbf0dacb36dac343bfd6b35d}{\index{aes.\-h@{aes.\-h}!mbedtls\-\_\-aes\-\_\-crypt\-\_\-cbc@{mbedtls\-\_\-aes\-\_\-crypt\-\_\-cbc}}
+\index{mbedtls\-\_\-aes\-\_\-crypt\-\_\-cbc@{mbedtls\-\_\-aes\-\_\-crypt\-\_\-cbc}!aes.h@{aes.\-h}}
+\subsubsection[{mbedtls\-\_\-aes\-\_\-crypt\-\_\-cbc}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-aes\-\_\-crypt\-\_\-cbc (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-aes\-\_\-context} $\ast$}]{ctx, }
+\item[{int}]{mode, }
+\item[{size\-\_\-t}]{length, }
+\item[{unsigned char}]{iv\mbox{[}16\mbox{]}, }
+\item[{const unsigned char $\ast$}]{input, }
+\item[{unsigned char $\ast$}]{output}
+\end{DoxyParamCaption}
+)}}\label{aes_8h_a321834eafbf0dacb36dac343bfd6b35d}
+
+
+A\-E\-S-\/\-C\-B\-C buffer encryption/decryption Length should be a multiple of the block size (16 bytes) 
+
+\begin{DoxyNote}{Note}
+Upon exit, the content of the I\-V is updated so that you can call the function same function again on the following block(s) of data and get the same result as if it was encrypted in one call. This allows a \char`\"{}streaming\char`\"{} usage. If on the other hand you need to retain the contents of the I\-V, you should either save it manually or use the cipher module instead.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & A\-E\-S context \\
+\hline
+{\em mode} & M\-B\-E\-D\-T\-L\-S\-\_\-\-A\-E\-S\-\_\-\-E\-N\-C\-R\-Y\-P\-T or M\-B\-E\-D\-T\-L\-S\-\_\-\-A\-E\-S\-\_\-\-D\-E\-C\-R\-Y\-P\-T \\
+\hline
+{\em length} & length of the input data \\
+\hline
+{\em iv} & initialization vector (updated after use) \\
+\hline
+{\em input} & buffer holding the input data \\
+\hline
+{\em output} & buffer holding the output data\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, or M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-A\-E\-S\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-L\-E\-N\-G\-T\-H 
+\end{DoxyReturn}
+\hypertarget{aes_8h_a944946adabbc344f2c6cf6e6f51a21e3}{\index{aes.\-h@{aes.\-h}!mbedtls\-\_\-aes\-\_\-crypt\-\_\-cfb128@{mbedtls\-\_\-aes\-\_\-crypt\-\_\-cfb128}}
+\index{mbedtls\-\_\-aes\-\_\-crypt\-\_\-cfb128@{mbedtls\-\_\-aes\-\_\-crypt\-\_\-cfb128}!aes.h@{aes.\-h}}
+\subsubsection[{mbedtls\-\_\-aes\-\_\-crypt\-\_\-cfb128}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-aes\-\_\-crypt\-\_\-cfb128 (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-aes\-\_\-context} $\ast$}]{ctx, }
+\item[{int}]{mode, }
+\item[{size\-\_\-t}]{length, }
+\item[{size\-\_\-t $\ast$}]{iv\-\_\-off, }
+\item[{unsigned char}]{iv\mbox{[}16\mbox{]}, }
+\item[{const unsigned char $\ast$}]{input, }
+\item[{unsigned char $\ast$}]{output}
+\end{DoxyParamCaption}
+)}}\label{aes_8h_a944946adabbc344f2c6cf6e6f51a21e3}
+
+
+A\-E\-S-\/\-C\-F\-B128 buffer encryption/decryption. 
+
+Note\-: Due to the nature of C\-F\-B you should use the same key schedule for both encryption and decryption. So a context initialized with \hyperlink{aes_8h_acec17c6592b98876106d035c372b1efa}{mbedtls\-\_\-aes\-\_\-setkey\-\_\-enc()} for both M\-B\-E\-D\-T\-L\-S\-\_\-\-A\-E\-S\-\_\-\-E\-N\-C\-R\-Y\-P\-T and M\-B\-E\-D\-T\-L\-S\-\_\-\-A\-E\-S\-\_\-\-D\-E\-C\-R\-Y\-P\-T.
+
+\begin{DoxyNote}{Note}
+Upon exit, the content of the I\-V is updated so that you can call the function same function again on the following block(s) of data and get the same result as if it was encrypted in one call. This allows a \char`\"{}streaming\char`\"{} usage. If on the other hand you need to retain the contents of the I\-V, you should either save it manually or use the cipher module instead.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & A\-E\-S context \\
+\hline
+{\em mode} & M\-B\-E\-D\-T\-L\-S\-\_\-\-A\-E\-S\-\_\-\-E\-N\-C\-R\-Y\-P\-T or M\-B\-E\-D\-T\-L\-S\-\_\-\-A\-E\-S\-\_\-\-D\-E\-C\-R\-Y\-P\-T \\
+\hline
+{\em length} & length of the input data \\
+\hline
+{\em iv\-\_\-off} & offset in I\-V (updated after use) \\
+\hline
+{\em iv} & initialization vector (updated after use) \\
+\hline
+{\em input} & buffer holding the input data \\
+\hline
+{\em output} & buffer holding the output data\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful 
+\end{DoxyReturn}
+\hypertarget{aes_8h_a9abf42a70f835ca9d9f62350d497e465}{\index{aes.\-h@{aes.\-h}!mbedtls\-\_\-aes\-\_\-crypt\-\_\-cfb8@{mbedtls\-\_\-aes\-\_\-crypt\-\_\-cfb8}}
+\index{mbedtls\-\_\-aes\-\_\-crypt\-\_\-cfb8@{mbedtls\-\_\-aes\-\_\-crypt\-\_\-cfb8}!aes.h@{aes.\-h}}
+\subsubsection[{mbedtls\-\_\-aes\-\_\-crypt\-\_\-cfb8}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-aes\-\_\-crypt\-\_\-cfb8 (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-aes\-\_\-context} $\ast$}]{ctx, }
+\item[{int}]{mode, }
+\item[{size\-\_\-t}]{length, }
+\item[{unsigned char}]{iv\mbox{[}16\mbox{]}, }
+\item[{const unsigned char $\ast$}]{input, }
+\item[{unsigned char $\ast$}]{output}
+\end{DoxyParamCaption}
+)}}\label{aes_8h_a9abf42a70f835ca9d9f62350d497e465}
+
+
+A\-E\-S-\/\-C\-F\-B8 buffer encryption/decryption. 
+
+Note\-: Due to the nature of C\-F\-B you should use the same key schedule for both encryption and decryption. So a context initialized with \hyperlink{aes_8h_acec17c6592b98876106d035c372b1efa}{mbedtls\-\_\-aes\-\_\-setkey\-\_\-enc()} for both M\-B\-E\-D\-T\-L\-S\-\_\-\-A\-E\-S\-\_\-\-E\-N\-C\-R\-Y\-P\-T and M\-B\-E\-D\-T\-L\-S\-\_\-\-A\-E\-S\-\_\-\-D\-E\-C\-R\-Y\-P\-T.
+
+\begin{DoxyNote}{Note}
+Upon exit, the content of the I\-V is updated so that you can call the function same function again on the following block(s) of data and get the same result as if it was encrypted in one call. This allows a \char`\"{}streaming\char`\"{} usage. If on the other hand you need to retain the contents of the I\-V, you should either save it manually or use the cipher module instead.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & A\-E\-S context \\
+\hline
+{\em mode} & M\-B\-E\-D\-T\-L\-S\-\_\-\-A\-E\-S\-\_\-\-E\-N\-C\-R\-Y\-P\-T or M\-B\-E\-D\-T\-L\-S\-\_\-\-A\-E\-S\-\_\-\-D\-E\-C\-R\-Y\-P\-T \\
+\hline
+{\em length} & length of the input data \\
+\hline
+{\em iv} & initialization vector (updated after use) \\
+\hline
+{\em input} & buffer holding the input data \\
+\hline
+{\em output} & buffer holding the output data\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful 
+\end{DoxyReturn}
+\hypertarget{aes_8h_a375c98cba4c5806d3a39c7d1e1e226da}{\index{aes.\-h@{aes.\-h}!mbedtls\-\_\-aes\-\_\-crypt\-\_\-ctr@{mbedtls\-\_\-aes\-\_\-crypt\-\_\-ctr}}
+\index{mbedtls\-\_\-aes\-\_\-crypt\-\_\-ctr@{mbedtls\-\_\-aes\-\_\-crypt\-\_\-ctr}!aes.h@{aes.\-h}}
+\subsubsection[{mbedtls\-\_\-aes\-\_\-crypt\-\_\-ctr}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-aes\-\_\-crypt\-\_\-ctr (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-aes\-\_\-context} $\ast$}]{ctx, }
+\item[{size\-\_\-t}]{length, }
+\item[{size\-\_\-t $\ast$}]{nc\-\_\-off, }
+\item[{unsigned char}]{nonce\-\_\-counter\mbox{[}16\mbox{]}, }
+\item[{unsigned char}]{stream\-\_\-block\mbox{[}16\mbox{]}, }
+\item[{const unsigned char $\ast$}]{input, }
+\item[{unsigned char $\ast$}]{output}
+\end{DoxyParamCaption}
+)}}\label{aes_8h_a375c98cba4c5806d3a39c7d1e1e226da}
+
+
+A\-E\-S-\/\-C\-T\-R buffer encryption/decryption. 
+
+Warning\-: You have to keep the maximum use of your counter in mind!
+
+Note\-: Due to the nature of C\-T\-R you should use the same key schedule for both encryption and decryption. So a context initialized with \hyperlink{aes_8h_acec17c6592b98876106d035c372b1efa}{mbedtls\-\_\-aes\-\_\-setkey\-\_\-enc()} for both M\-B\-E\-D\-T\-L\-S\-\_\-\-A\-E\-S\-\_\-\-E\-N\-C\-R\-Y\-P\-T and M\-B\-E\-D\-T\-L\-S\-\_\-\-A\-E\-S\-\_\-\-D\-E\-C\-R\-Y\-P\-T.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & A\-E\-S context \\
+\hline
+{\em length} & The length of the data \\
+\hline
+{\em nc\-\_\-off} & The offset in the current stream\-\_\-block (for resuming within current cipher stream). The offset pointer to should be 0 at the start of a stream. \\
+\hline
+{\em nonce\-\_\-counter} & The 128-\/bit nonce and counter. \\
+\hline
+{\em stream\-\_\-block} & The saved stream-\/block for resuming. Is overwritten by the function. \\
+\hline
+{\em input} & The input data stream \\
+\hline
+{\em output} & The output data stream\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful 
+\end{DoxyReturn}
+\hypertarget{aes_8h_a0e59fdda18a145e702984268b9ab291a}{\index{aes.\-h@{aes.\-h}!mbedtls\-\_\-aes\-\_\-crypt\-\_\-ecb@{mbedtls\-\_\-aes\-\_\-crypt\-\_\-ecb}}
+\index{mbedtls\-\_\-aes\-\_\-crypt\-\_\-ecb@{mbedtls\-\_\-aes\-\_\-crypt\-\_\-ecb}!aes.h@{aes.\-h}}
+\subsubsection[{mbedtls\-\_\-aes\-\_\-crypt\-\_\-ecb}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-aes\-\_\-crypt\-\_\-ecb (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-aes\-\_\-context} $\ast$}]{ctx, }
+\item[{int}]{mode, }
+\item[{const unsigned char}]{input\mbox{[}16\mbox{]}, }
+\item[{unsigned char}]{output\mbox{[}16\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{aes_8h_a0e59fdda18a145e702984268b9ab291a}
+
+
+A\-E\-S-\/\-E\-C\-B block encryption/decryption. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & A\-E\-S context \\
+\hline
+{\em mode} & M\-B\-E\-D\-T\-L\-S\-\_\-\-A\-E\-S\-\_\-\-E\-N\-C\-R\-Y\-P\-T or M\-B\-E\-D\-T\-L\-S\-\_\-\-A\-E\-S\-\_\-\-D\-E\-C\-R\-Y\-P\-T \\
+\hline
+{\em input} & 16-\/byte input block \\
+\hline
+{\em output} & 16-\/byte output block\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful 
+\end{DoxyReturn}
+\hypertarget{aes_8h_ae73df41aee0be1ca64cdc171c88db2e5}{\index{aes.\-h@{aes.\-h}!mbedtls\-\_\-aes\-\_\-decrypt@{mbedtls\-\_\-aes\-\_\-decrypt}}
+\index{mbedtls\-\_\-aes\-\_\-decrypt@{mbedtls\-\_\-aes\-\_\-decrypt}!aes.h@{aes.\-h}}
+\subsubsection[{mbedtls\-\_\-aes\-\_\-decrypt}]{\setlength{\rightskip}{0pt plus 5cm}void mbedtls\-\_\-aes\-\_\-decrypt (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-aes\-\_\-context} $\ast$}]{ctx, }
+\item[{const unsigned char}]{input\mbox{[}16\mbox{]}, }
+\item[{unsigned char}]{output\mbox{[}16\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{aes_8h_ae73df41aee0be1ca64cdc171c88db2e5}
+
+
+Internal A\-E\-S block decryption function (Only exposed to allow overriding it, see M\-B\-E\-D\-T\-L\-S\-\_\-\-A\-E\-S\-\_\-\-D\-E\-C\-R\-Y\-P\-T\-\_\-\-A\-L\-T) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & A\-E\-S context \\
+\hline
+{\em input} & Ciphertext block \\
+\hline
+{\em output} & Output (plaintext) block \\
+\hline
+\end{DoxyParams}
+\hypertarget{aes_8h_a4ddac8f03fe94629e8011c84fbf825dc}{\index{aes.\-h@{aes.\-h}!mbedtls\-\_\-aes\-\_\-encrypt@{mbedtls\-\_\-aes\-\_\-encrypt}}
+\index{mbedtls\-\_\-aes\-\_\-encrypt@{mbedtls\-\_\-aes\-\_\-encrypt}!aes.h@{aes.\-h}}
+\subsubsection[{mbedtls\-\_\-aes\-\_\-encrypt}]{\setlength{\rightskip}{0pt plus 5cm}void mbedtls\-\_\-aes\-\_\-encrypt (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-aes\-\_\-context} $\ast$}]{ctx, }
+\item[{const unsigned char}]{input\mbox{[}16\mbox{]}, }
+\item[{unsigned char}]{output\mbox{[}16\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{aes_8h_a4ddac8f03fe94629e8011c84fbf825dc}
+
+
+Internal A\-E\-S block encryption function (Only exposed to allow overriding it, see M\-B\-E\-D\-T\-L\-S\-\_\-\-A\-E\-S\-\_\-\-E\-N\-C\-R\-Y\-P\-T\-\_\-\-A\-L\-T) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & A\-E\-S context \\
+\hline
+{\em input} & Plaintext block \\
+\hline
+{\em output} & Output (ciphertext) block \\
+\hline
+\end{DoxyParams}
+\hypertarget{aes_8h_ad1424ff458ff2ed765d37b620aae4882}{\index{aes.\-h@{aes.\-h}!mbedtls\-\_\-aes\-\_\-free@{mbedtls\-\_\-aes\-\_\-free}}
+\index{mbedtls\-\_\-aes\-\_\-free@{mbedtls\-\_\-aes\-\_\-free}!aes.h@{aes.\-h}}
+\subsubsection[{mbedtls\-\_\-aes\-\_\-free}]{\setlength{\rightskip}{0pt plus 5cm}void mbedtls\-\_\-aes\-\_\-free (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-aes\-\_\-context} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}}\label{aes_8h_ad1424ff458ff2ed765d37b620aae4882}
+
+
+Clear A\-E\-S context. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & A\-E\-S context to be cleared \\
+\hline
+\end{DoxyParams}
+\hypertarget{aes_8h_aa72dac8d698ab861843ef74ce8ebf62c}{\index{aes.\-h@{aes.\-h}!mbedtls\-\_\-aes\-\_\-init@{mbedtls\-\_\-aes\-\_\-init}}
+\index{mbedtls\-\_\-aes\-\_\-init@{mbedtls\-\_\-aes\-\_\-init}!aes.h@{aes.\-h}}
+\subsubsection[{mbedtls\-\_\-aes\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void mbedtls\-\_\-aes\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-aes\-\_\-context} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}}\label{aes_8h_aa72dac8d698ab861843ef74ce8ebf62c}
+
+
+Initialize A\-E\-S context. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & A\-E\-S context to be initialized \\
+\hline
+\end{DoxyParams}
+\hypertarget{aes_8h_a17845a4d1272959f0bb9370e86bfd398}{\index{aes.\-h@{aes.\-h}!mbedtls\-\_\-aes\-\_\-self\-\_\-test@{mbedtls\-\_\-aes\-\_\-self\-\_\-test}}
+\index{mbedtls\-\_\-aes\-\_\-self\-\_\-test@{mbedtls\-\_\-aes\-\_\-self\-\_\-test}!aes.h@{aes.\-h}}
+\subsubsection[{mbedtls\-\_\-aes\-\_\-self\-\_\-test}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-aes\-\_\-self\-\_\-test (
+\begin{DoxyParamCaption}
+\item[{int}]{verbose}
+\end{DoxyParamCaption}
+)}}\label{aes_8h_a17845a4d1272959f0bb9370e86bfd398}
+
+
+Checkup routine. 
+
+\begin{DoxyReturn}{Returns}
+0 if successful, or 1 if the test failed 
+\end{DoxyReturn}
+\hypertarget{aes_8h_a11580b789634605dd57e425eadb56617}{\index{aes.\-h@{aes.\-h}!mbedtls\-\_\-aes\-\_\-setkey\-\_\-dec@{mbedtls\-\_\-aes\-\_\-setkey\-\_\-dec}}
+\index{mbedtls\-\_\-aes\-\_\-setkey\-\_\-dec@{mbedtls\-\_\-aes\-\_\-setkey\-\_\-dec}!aes.h@{aes.\-h}}
+\subsubsection[{mbedtls\-\_\-aes\-\_\-setkey\-\_\-dec}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-aes\-\_\-setkey\-\_\-dec (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-aes\-\_\-context} $\ast$}]{ctx, }
+\item[{const unsigned char $\ast$}]{key, }
+\item[{unsigned int}]{keybits}
+\end{DoxyParamCaption}
+)}}\label{aes_8h_a11580b789634605dd57e425eadb56617}
+
+
+A\-E\-S key schedule (decryption) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & A\-E\-S context to be initialized \\
+\hline
+{\em key} & decryption key \\
+\hline
+{\em keybits} & must be 128, 192 or 256\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, or M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-A\-E\-S\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-K\-E\-Y\-\_\-\-L\-E\-N\-G\-T\-H 
+\end{DoxyReturn}
+\hypertarget{aes_8h_acec17c6592b98876106d035c372b1efa}{\index{aes.\-h@{aes.\-h}!mbedtls\-\_\-aes\-\_\-setkey\-\_\-enc@{mbedtls\-\_\-aes\-\_\-setkey\-\_\-enc}}
+\index{mbedtls\-\_\-aes\-\_\-setkey\-\_\-enc@{mbedtls\-\_\-aes\-\_\-setkey\-\_\-enc}!aes.h@{aes.\-h}}
+\subsubsection[{mbedtls\-\_\-aes\-\_\-setkey\-\_\-enc}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-aes\-\_\-setkey\-\_\-enc (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-aes\-\_\-context} $\ast$}]{ctx, }
+\item[{const unsigned char $\ast$}]{key, }
+\item[{unsigned int}]{keybits}
+\end{DoxyParamCaption}
+)}}\label{aes_8h_acec17c6592b98876106d035c372b1efa}
+
+
+A\-E\-S key schedule (encryption) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & A\-E\-S context to be initialized \\
+\hline
+{\em key} & encryption key \\
+\hline
+{\em keybits} & must be 128, 192 or 256\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, or M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-A\-E\-S\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-K\-E\-Y\-\_\-\-L\-E\-N\-G\-T\-H 
+\end{DoxyReturn}

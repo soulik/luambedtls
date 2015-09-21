@@ -1,0 +1,152 @@
+\hypertarget{ssl__ticket_8h}{\section{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/ssl\-\_\-ticket.h File Reference}
+\label{ssl__ticket_8h}\index{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/ssl\-\_\-ticket.\-h@{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/ssl\-\_\-ticket.\-h}}
+}
+
+
+Internal functions shared by the S\-S\-L modules.  
+
+
+{\ttfamily \#include \char`\"{}ssl.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}cipher.\-h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structmbedtls__ssl__ticket__key}{mbedtls\-\_\-ssl\-\_\-ticket\-\_\-key}
+\begin{DoxyCompactList}\small\item\em Information for session ticket protection. \end{DoxyCompactList}\item 
+struct \hyperlink{structmbedtls__ssl__ticket__context}{mbedtls\-\_\-ssl\-\_\-ticket\-\_\-context}
+\begin{DoxyCompactList}\small\item\em Context for session ticket handling functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{ssl__ticket_8h_a07765b563037998d820dc8a1272e1ee0}{mbedtls\-\_\-ssl\-\_\-ticket\-\_\-init} (\hyperlink{structmbedtls__ssl__ticket__context}{mbedtls\-\_\-ssl\-\_\-ticket\-\_\-context} $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Initialize a ticket context. (Just make it ready for \hyperlink{ssl__ticket_8h_a334f40042825a33295d0843374e1785a}{mbedtls\-\_\-ssl\-\_\-ticket\-\_\-setup()} or \hyperlink{ssl__ticket_8h_a254bccc118c66a617ba6020a2d8cc69c}{mbedtls\-\_\-ssl\-\_\-ticket\-\_\-free()}.) \end{DoxyCompactList}\item 
+int \hyperlink{ssl__ticket_8h_a334f40042825a33295d0843374e1785a}{mbedtls\-\_\-ssl\-\_\-ticket\-\_\-setup} (\hyperlink{structmbedtls__ssl__ticket__context}{mbedtls\-\_\-ssl\-\_\-ticket\-\_\-context} $\ast$ctx, int($\ast$f\-\_\-rng)(void $\ast$, unsigned char $\ast$, size\-\_\-t), void $\ast$p\-\_\-rng, mbedtls\-\_\-cipher\-\_\-type\-\_\-t cipher, uint32\-\_\-t lifetime)
+\begin{DoxyCompactList}\small\item\em Prepare context to be actually used. \end{DoxyCompactList}\item 
+void \hyperlink{ssl__ticket_8h_a254bccc118c66a617ba6020a2d8cc69c}{mbedtls\-\_\-ssl\-\_\-ticket\-\_\-free} (\hyperlink{structmbedtls__ssl__ticket__context}{mbedtls\-\_\-ssl\-\_\-ticket\-\_\-context} $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Free a context's content and zeroize it. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{ssl_8h_a112d1fc2dd4db788592457d14c0c2899}{mbedtls\-\_\-ssl\-\_\-ticket\-\_\-write\-\_\-t} \hyperlink{ssl__ticket_8h_a888e1b0900b517559ba5e89fb0843e0e}{mbedtls\-\_\-ssl\-\_\-ticket\-\_\-write}
+\begin{DoxyCompactList}\small\item\em Implementation of the ticket write callback. \end{DoxyCompactList}\item 
+\hyperlink{ssl_8h_a48aea353b22e86deece00933ef941536}{mbedtls\-\_\-ssl\-\_\-ticket\-\_\-parse\-\_\-t} \hyperlink{ssl__ticket_8h_ab8231bccc4f614d1995abd5984ffcdd8}{mbedtls\-\_\-ssl\-\_\-ticket\-\_\-parse}
+\begin{DoxyCompactList}\small\item\em Implementation of the ticket parse callback. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Internal functions shared by the S\-S\-L modules. T\-L\-S server ticket callbacks implementation.
+
+Copyright (C) 2006-\/2015, A\-R\-M Limited, All Rights Reserved
+
+This file is part of mbed T\-L\-S (\href{https://tls.mbed.org}{\tt https\-://tls.\-mbed.\-org})
+
+This program is free software; you can redistribute it and/or modify it under the terms of the G\-N\-U General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but W\-I\-T\-H\-O\-U\-T A\-N\-Y W\-A\-R\-R\-A\-N\-T\-Y; without even the implied warranty of M\-E\-R\-C\-H\-A\-N\-T\-A\-B\-I\-L\-I\-T\-Y or F\-I\-T\-N\-E\-S\-S F\-O\-R A P\-A\-R\-T\-I\-C\-U\-L\-A\-R P\-U\-R\-P\-O\-S\-E. See the G\-N\-U General Public License for more details.
+
+You should have received a copy of the G\-N\-U General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, M\-A 02110-\/1301 U\-S\-A. 
+
+Definition in file \hyperlink{ssl__ticket_8h_source}{ssl\-\_\-ticket.\-h}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{ssl__ticket_8h_a254bccc118c66a617ba6020a2d8cc69c}{\index{ssl\-\_\-ticket.\-h@{ssl\-\_\-ticket.\-h}!mbedtls\-\_\-ssl\-\_\-ticket\-\_\-free@{mbedtls\-\_\-ssl\-\_\-ticket\-\_\-free}}
+\index{mbedtls\-\_\-ssl\-\_\-ticket\-\_\-free@{mbedtls\-\_\-ssl\-\_\-ticket\-\_\-free}!ssl_ticket.h@{ssl\-\_\-ticket.\-h}}
+\subsubsection[{mbedtls\-\_\-ssl\-\_\-ticket\-\_\-free}]{\setlength{\rightskip}{0pt plus 5cm}void mbedtls\-\_\-ssl\-\_\-ticket\-\_\-free (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-ssl\-\_\-ticket\-\_\-context} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}}\label{ssl__ticket_8h_a254bccc118c66a617ba6020a2d8cc69c}
+
+
+Free a context's content and zeroize it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Context to be cleaned up \\
+\hline
+\end{DoxyParams}
+\hypertarget{ssl__ticket_8h_a07765b563037998d820dc8a1272e1ee0}{\index{ssl\-\_\-ticket.\-h@{ssl\-\_\-ticket.\-h}!mbedtls\-\_\-ssl\-\_\-ticket\-\_\-init@{mbedtls\-\_\-ssl\-\_\-ticket\-\_\-init}}
+\index{mbedtls\-\_\-ssl\-\_\-ticket\-\_\-init@{mbedtls\-\_\-ssl\-\_\-ticket\-\_\-init}!ssl_ticket.h@{ssl\-\_\-ticket.\-h}}
+\subsubsection[{mbedtls\-\_\-ssl\-\_\-ticket\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void mbedtls\-\_\-ssl\-\_\-ticket\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-ssl\-\_\-ticket\-\_\-context} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}}\label{ssl__ticket_8h_a07765b563037998d820dc8a1272e1ee0}
+
+
+Initialize a ticket context. (Just make it ready for \hyperlink{ssl__ticket_8h_a334f40042825a33295d0843374e1785a}{mbedtls\-\_\-ssl\-\_\-ticket\-\_\-setup()} or \hyperlink{ssl__ticket_8h_a254bccc118c66a617ba6020a2d8cc69c}{mbedtls\-\_\-ssl\-\_\-ticket\-\_\-free()}.) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Context to be initialized \\
+\hline
+\end{DoxyParams}
+\hypertarget{ssl__ticket_8h_a334f40042825a33295d0843374e1785a}{\index{ssl\-\_\-ticket.\-h@{ssl\-\_\-ticket.\-h}!mbedtls\-\_\-ssl\-\_\-ticket\-\_\-setup@{mbedtls\-\_\-ssl\-\_\-ticket\-\_\-setup}}
+\index{mbedtls\-\_\-ssl\-\_\-ticket\-\_\-setup@{mbedtls\-\_\-ssl\-\_\-ticket\-\_\-setup}!ssl_ticket.h@{ssl\-\_\-ticket.\-h}}
+\subsubsection[{mbedtls\-\_\-ssl\-\_\-ticket\-\_\-setup}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-ssl\-\_\-ticket\-\_\-setup (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-ssl\-\_\-ticket\-\_\-context} $\ast$}]{ctx, }
+\item[{int($\ast$)(void $\ast$, unsigned char $\ast$, size\-\_\-t)}]{f\-\_\-rng, }
+\item[{void $\ast$}]{p\-\_\-rng, }
+\item[{mbedtls\-\_\-cipher\-\_\-type\-\_\-t}]{cipher, }
+\item[{uint32\-\_\-t}]{lifetime}
+\end{DoxyParamCaption}
+)}}\label{ssl__ticket_8h_a334f40042825a33295d0843374e1785a}
+
+
+Prepare context to be actually used. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Context to be set up \\
+\hline
+{\em f\-\_\-rng} & R\-N\-G callback function \\
+\hline
+{\em p\-\_\-rng} & R\-N\-G callback context \\
+\hline
+{\em cipher} & A\-E\-A\-D cipher to use for ticket protection. Recommended value\-: M\-B\-E\-D\-T\-L\-S\-\_\-\-C\-I\-P\-H\-E\-R\-\_\-\-A\-E\-S\-\_\-256\-\_\-\-G\-C\-M. \\
+\hline
+{\em lifetime} & Tickets lifetime in seconds Recommended value\-: 86400 (one day).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+It is highly recommended to select a cipher that is at least as strong as the the strongest ciphersuite supported. Usually that means a 256-\/bit key.
+
+The lifetime of the keys is twice the lifetime of tickets. It is recommended to pick a reasonnable lifetime so as not to negate the benefits of forward secrecy.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+0 if successful, or a specific M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-X\-X\-X error code 
+\end{DoxyReturn}
+
+
+\subsection{Variable Documentation}
+\hypertarget{ssl__ticket_8h_ab8231bccc4f614d1995abd5984ffcdd8}{\index{ssl\-\_\-ticket.\-h@{ssl\-\_\-ticket.\-h}!mbedtls\-\_\-ssl\-\_\-ticket\-\_\-parse@{mbedtls\-\_\-ssl\-\_\-ticket\-\_\-parse}}
+\index{mbedtls\-\_\-ssl\-\_\-ticket\-\_\-parse@{mbedtls\-\_\-ssl\-\_\-ticket\-\_\-parse}!ssl_ticket.h@{ssl\-\_\-ticket.\-h}}
+\subsubsection[{mbedtls\-\_\-ssl\-\_\-ticket\-\_\-parse}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mbedtls\-\_\-ssl\-\_\-ticket\-\_\-parse\-\_\-t} mbedtls\-\_\-ssl\-\_\-ticket\-\_\-parse}}\label{ssl__ticket_8h_ab8231bccc4f614d1995abd5984ffcdd8}
+
+
+Implementation of the ticket parse callback. 
+
+\begin{DoxyNote}{Note}
+See {\ttfamily mbedlts\-\_\-ssl\-\_\-ticket\-\_\-parse\-\_\-t} for description 
+\end{DoxyNote}
+
+
+Definition at line 123 of file ssl\-\_\-ticket.\-h.
+
+\hypertarget{ssl__ticket_8h_a888e1b0900b517559ba5e89fb0843e0e}{\index{ssl\-\_\-ticket.\-h@{ssl\-\_\-ticket.\-h}!mbedtls\-\_\-ssl\-\_\-ticket\-\_\-write@{mbedtls\-\_\-ssl\-\_\-ticket\-\_\-write}}
+\index{mbedtls\-\_\-ssl\-\_\-ticket\-\_\-write@{mbedtls\-\_\-ssl\-\_\-ticket\-\_\-write}!ssl_ticket.h@{ssl\-\_\-ticket.\-h}}
+\subsubsection[{mbedtls\-\_\-ssl\-\_\-ticket\-\_\-write}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mbedtls\-\_\-ssl\-\_\-ticket\-\_\-write\-\_\-t} mbedtls\-\_\-ssl\-\_\-ticket\-\_\-write}}\label{ssl__ticket_8h_a888e1b0900b517559ba5e89fb0843e0e}
+
+
+Implementation of the ticket write callback. 
+
+\begin{DoxyNote}{Note}
+See {\ttfamily mbedlts\-\_\-ssl\-\_\-ticket\-\_\-write\-\_\-t} for description 
+\end{DoxyNote}
+
+
+Definition at line 116 of file ssl\-\_\-ticket.\-h.
+

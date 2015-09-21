@@ -1,0 +1,34 @@
+\hypertarget{group__encdec__module}{\section{Encryption/decryption module}
+\label{group__encdec__module}\index{Encryption/decryption module@{Encryption/decryption module}}
+}
+The Encryption/decryption module provides encryption/decryption functions. One can differentiate between symmetric and asymmetric algorithms; the symmetric ones are mostly used for message confidentiality and the asymmetric ones for key exchange and message integrity. Some symmetric algorithms provide different block cipher modes, mainly Electronic Code Book (E\-C\-B) which is used for short (64-\/bit) messages and Cipher Block Chaining (C\-B\-C) which provides the structure needed for longer messages. In addition the Cipher Feedback Mode (C\-F\-B-\/128) stream cipher mode, Counter mode (C\-T\-R) and Galois Counter Mode (G\-C\-M) are implemented for specific algorithms.
+
+All symmetric encryption algorithms are accessible via the generic cipher layer (see {\ttfamily \hyperlink{cipher_8h_a009056b59d69abba5843ce78cd9aae1c}{mbedtls\-\_\-cipher\-\_\-setup()}}).
+
+The asymmetric encryptrion algorithms are accessible via the generic public key layer (see {\ttfamily \hyperlink{pk_8h_a999d1160bb30c03d0c4382c3a9b0aa89}{mbedtls\-\_\-pk\-\_\-init()}}).
+
+The following algorithms are provided\-:
+\begin{DoxyItemize}
+\item Symmetric\-:
+\begin{DoxyItemize}
+\item A\-E\-S (see {\ttfamily \hyperlink{aes_8h_a0e59fdda18a145e702984268b9ab291a}{mbedtls\-\_\-aes\-\_\-crypt\-\_\-ecb()}}, {\ttfamily \hyperlink{aes_8h_a321834eafbf0dacb36dac343bfd6b35d}{mbedtls\-\_\-aes\-\_\-crypt\-\_\-cbc()}}, {\ttfamily \hyperlink{aes_8h_a944946adabbc344f2c6cf6e6f51a21e3}{mbedtls\-\_\-aes\-\_\-crypt\-\_\-cfb128()}} and {\ttfamily \hyperlink{aes_8h_a375c98cba4c5806d3a39c7d1e1e226da}{mbedtls\-\_\-aes\-\_\-crypt\-\_\-ctr()}}).
+\item A\-R\-C\-F\-O\-U\-R (see {\ttfamily \hyperlink{arc4_8h_a51d378246f0c277a68352cdac782e8fb}{mbedtls\-\_\-arc4\-\_\-crypt()}}).
+\item Blowfish / B\-F (see {\ttfamily \hyperlink{blowfish_8h_afe15cef6820aa39a999e7268bf6f4c29}{mbedtls\-\_\-blowfish\-\_\-crypt\-\_\-ecb()}}, {\ttfamily \hyperlink{blowfish_8h_a24f95511214b38914090036938cbc045}{mbedtls\-\_\-blowfish\-\_\-crypt\-\_\-cbc()}}, {\ttfamily \hyperlink{blowfish_8h_af3996e5bb50864497b0c7349819ffd12}{mbedtls\-\_\-blowfish\-\_\-crypt\-\_\-cfb64()}} and {\ttfamily \hyperlink{blowfish_8h_a7d1688bf5fb906fdbad101e08bc8bf85}{mbedtls\-\_\-blowfish\-\_\-crypt\-\_\-ctr()}})
+\item Camellia (see {\ttfamily \hyperlink{camellia_8h_a4399c4d56cd27ffb610abeb70d51f8f7}{mbedtls\-\_\-camellia\-\_\-crypt\-\_\-ecb()}}, {\ttfamily \hyperlink{camellia_8h_a6121d988f0fa571adbb3eea80560c545}{mbedtls\-\_\-camellia\-\_\-crypt\-\_\-cbc()}}, {\ttfamily \hyperlink{camellia_8h_afffb8f6eeac954fbdddb3c99ad0f87c6}{mbedtls\-\_\-camellia\-\_\-crypt\-\_\-cfb128()}} and {\ttfamily \hyperlink{camellia_8h_ae90ed9ce4edf59d5219c64a0d2b3d23d}{mbedtls\-\_\-camellia\-\_\-crypt\-\_\-ctr()}}).
+\item D\-E\-S/3\-D\-E\-S (see {\ttfamily \hyperlink{des_8h_aa713501cc3e30c39a763b4568698f5c1}{mbedtls\-\_\-des\-\_\-crypt\-\_\-ecb()}}, {\ttfamily \hyperlink{des_8h_a95353a2f0d2e8d1377f43f71ca12a231}{mbedtls\-\_\-des\-\_\-crypt\-\_\-cbc()}}, {\ttfamily \hyperlink{des_8h_a933b8f629cc201e06f5e89396d065204}{mbedtls\-\_\-des3\-\_\-crypt\-\_\-ecb()}} and {\ttfamily \hyperlink{des_8h_a4f5bb9106306e11c906abfa46fc51b94}{mbedtls\-\_\-des3\-\_\-crypt\-\_\-cbc()}}).
+\item G\-C\-M (A\-E\-S-\/\-G\-C\-M and C\-A\-M\-E\-L\-L\-I\-A-\/\-G\-C\-M) (see {\ttfamily \hyperlink{gcm_8h_ac3f60a663c6b01ef6d977ac06aac57df}{mbedtls\-\_\-gcm\-\_\-init()}})
+\item X\-T\-E\-A (see {\ttfamily \hyperlink{xtea_8h_a73a0ce1ac62aa079107736ef2aa4b21d}{mbedtls\-\_\-xtea\-\_\-crypt\-\_\-ecb()}}).
+\end{DoxyItemize}
+\item Asymmetric\-:
+\begin{DoxyItemize}
+\item Diffie-\/\-Hellman-\/\-Merkle (see {\ttfamily \hyperlink{dhm_8h_a1fe799e776fd0f27eb4080248e547f3d}{mbedtls\-\_\-dhm\-\_\-read\-\_\-public()}}, {\ttfamily \hyperlink{dhm_8h_af49bee438130355e24540f7565e7465f}{mbedtls\-\_\-dhm\-\_\-make\-\_\-public()}} and {\ttfamily \hyperlink{dhm_8h_ac3985de01420d018ed91daec9e7d7969}{mbedtls\-\_\-dhm\-\_\-calc\-\_\-secret()}}).
+\item R\-S\-A (see {\ttfamily \hyperlink{rsa_8h_a9db0f76aff9a6ce179b6fbe329bf5569}{mbedtls\-\_\-rsa\-\_\-public()}} and {\ttfamily \hyperlink{rsa_8h_a3e016741ddaa354916ade4d48e9a0965}{mbedtls\-\_\-rsa\-\_\-private()}}).
+\item Elliptic Curves over G\-F(p) (see {\ttfamily \hyperlink{ecp_8h_ae069f80bc2f9cf2215c34430a9ccd924}{mbedtls\-\_\-ecp\-\_\-point\-\_\-init()}}).
+\item Elliptic Curve Digital Signature Algorithm (E\-C\-D\-S\-A) (see {\ttfamily \hyperlink{ecdsa_8h_aca644ee02921388fdc42eb06377f4b62}{mbedtls\-\_\-ecdsa\-\_\-init()}}).
+\item Elliptic Curve Diffie Hellman (E\-C\-D\-H) (see {\ttfamily \hyperlink{ecdh_8h_a97e787a12f7aae180ab9828303199dca}{mbedtls\-\_\-ecdh\-\_\-init()}}).
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+This module provides encryption/decryption which can be used to provide secrecy.
+
+It also provides asymmetric key functions which can be used for confidentiality, integrity, authentication and non-\/repudiation. 

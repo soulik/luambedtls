@@ -1,0 +1,113 @@
+\hypertarget{pem_8h}{\section{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/pem.h File Reference}
+\label{pem_8h}\index{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/pem.\-h@{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/pem.\-h}}
+}
+
+
+Privacy Enhanced Mail (P\-E\-M) decoding.  
+
+
+{\ttfamily \#include $<$stddef.\-h$>$}\\*
+\subsection*{Macros}
+\begin{Indent}{\bf P\-E\-M Error codes}\par
+{\em These error codes are returned in case of errors reading the P\-E\-M data. }\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{pem_8h_a9fca39bb5d4a6845239221a53685a2dc}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-N\-O\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-F\-O\-O\-T\-E\-R\-\_\-\-P\-R\-E\-S\-E\-N\-T}~-\/0x1080
+\item 
+\#define \hyperlink{pem_8h_a820cf2ffc66f354f3d8f621cac7b4eda}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-D\-A\-T\-A}~-\/0x1100
+\item 
+\#define \hyperlink{pem_8h_a97ca9753a0adeb688b3093506c60a41e}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-A\-L\-L\-O\-C\-\_\-\-F\-A\-I\-L\-E\-D}~-\/0x1180
+\item 
+\#define \hyperlink{pem_8h_a7709c4b0616a4d6ec0184204ace4d4b3}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-E\-N\-C\-\_\-\-I\-V}~-\/0x1200
+\item 
+\#define \hyperlink{pem_8h_a28b7a955389ec2e9a8b7a7d3f13ad746}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-U\-N\-K\-N\-O\-W\-N\-\_\-\-E\-N\-C\-\_\-\-A\-L\-G}~-\/0x1280
+\item 
+\#define \hyperlink{pem_8h_ab883990c7b4a373519ab3b25ec945cd8}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D\-\_\-\-R\-E\-Q\-U\-I\-R\-E\-D}~-\/0x1300
+\item 
+\#define \hyperlink{pem_8h_aea98f44a528310c53398a49c90469861}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D\-\_\-\-M\-I\-S\-M\-A\-T\-C\-H}~-\/0x1380
+\item 
+\#define \hyperlink{pem_8h_a58b1dec72e6a2586a1bda819ea768ad1}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-U\-N\-A\-V\-A\-I\-L\-A\-B\-L\-E}~-\/0x1400
+\item 
+\#define \hyperlink{pem_8h_a5db6f46565c6078d041253c3a00d2ae6}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A}~-\/0x1480
+\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+Privacy Enhanced Mail (P\-E\-M) decoding. Copyright (C) 2006-\/2015, A\-R\-M Limited, All Rights Reserved
+
+This file is part of mbed T\-L\-S (\href{https://tls.mbed.org}{\tt https\-://tls.\-mbed.\-org})
+
+This program is free software; you can redistribute it and/or modify it under the terms of the G\-N\-U General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but W\-I\-T\-H\-O\-U\-T A\-N\-Y W\-A\-R\-R\-A\-N\-T\-Y; without even the implied warranty of M\-E\-R\-C\-H\-A\-N\-T\-A\-B\-I\-L\-I\-T\-Y or F\-I\-T\-N\-E\-S\-S F\-O\-R A P\-A\-R\-T\-I\-C\-U\-L\-A\-R P\-U\-R\-P\-O\-S\-E. See the G\-N\-U General Public License for more details.
+
+You should have received a copy of the G\-N\-U General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, M\-A 02110-\/1301 U\-S\-A. 
+
+Definition in file \hyperlink{pem_8h_source}{pem.\-h}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{pem_8h_a97ca9753a0adeb688b3093506c60a41e}{\index{pem.\-h@{pem.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-A\-L\-L\-O\-C\-\_\-\-F\-A\-I\-L\-E\-D@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-A\-L\-L\-O\-C\-\_\-\-F\-A\-I\-L\-E\-D}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-A\-L\-L\-O\-C\-\_\-\-F\-A\-I\-L\-E\-D@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-A\-L\-L\-O\-C\-\_\-\-F\-A\-I\-L\-E\-D}!pem.h@{pem.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-A\-L\-L\-O\-C\-\_\-\-F\-A\-I\-L\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-A\-L\-L\-O\-C\-\_\-\-F\-A\-I\-L\-E\-D~-\/0x1180}}\label{pem_8h_a97ca9753a0adeb688b3093506c60a41e}
+Failed to allocate memory. 
+
+Definition at line 37 of file pem.\-h.
+
+\hypertarget{pem_8h_a5db6f46565c6078d041253c3a00d2ae6}{\index{pem.\-h@{pem.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A}!pem.h@{pem.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A~-\/0x1480}}\label{pem_8h_a5db6f46565c6078d041253c3a00d2ae6}
+Bad input parameters to function. 
+
+Definition at line 43 of file pem.\-h.
+
+\hypertarget{pem_8h_a58b1dec72e6a2586a1bda819ea768ad1}{\index{pem.\-h@{pem.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-U\-N\-A\-V\-A\-I\-L\-A\-B\-L\-E@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-U\-N\-A\-V\-A\-I\-L\-A\-B\-L\-E}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-U\-N\-A\-V\-A\-I\-L\-A\-B\-L\-E@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-U\-N\-A\-V\-A\-I\-L\-A\-B\-L\-E}!pem.h@{pem.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-U\-N\-A\-V\-A\-I\-L\-A\-B\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-U\-N\-A\-V\-A\-I\-L\-A\-B\-L\-E~-\/0x1400}}\label{pem_8h_a58b1dec72e6a2586a1bda819ea768ad1}
+Unavailable feature, e.\-g. hashing/encryption combination. 
+
+Definition at line 42 of file pem.\-h.
+
+\hypertarget{pem_8h_a820cf2ffc66f354f3d8f621cac7b4eda}{\index{pem.\-h@{pem.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-D\-A\-T\-A@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-D\-A\-T\-A}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-D\-A\-T\-A@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-D\-A\-T\-A}!pem.h@{pem.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-D\-A\-T\-A}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-D\-A\-T\-A~-\/0x1100}}\label{pem_8h_a820cf2ffc66f354f3d8f621cac7b4eda}
+P\-E\-M string is not as expected. 
+
+Definition at line 36 of file pem.\-h.
+
+\hypertarget{pem_8h_a7709c4b0616a4d6ec0184204ace4d4b3}{\index{pem.\-h@{pem.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-E\-N\-C\-\_\-\-I\-V@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-E\-N\-C\-\_\-\-I\-V}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-E\-N\-C\-\_\-\-I\-V@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-E\-N\-C\-\_\-\-I\-V}!pem.h@{pem.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-E\-N\-C\-\_\-\-I\-V}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-E\-N\-C\-\_\-\-I\-V~-\/0x1200}}\label{pem_8h_a7709c4b0616a4d6ec0184204ace4d4b3}
+R\-S\-A I\-V is not in hex-\/format. 
+
+Definition at line 38 of file pem.\-h.
+
+\hypertarget{pem_8h_a9fca39bb5d4a6845239221a53685a2dc}{\index{pem.\-h@{pem.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-N\-O\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-F\-O\-O\-T\-E\-R\-\_\-\-P\-R\-E\-S\-E\-N\-T@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-N\-O\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-F\-O\-O\-T\-E\-R\-\_\-\-P\-R\-E\-S\-E\-N\-T}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-N\-O\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-F\-O\-O\-T\-E\-R\-\_\-\-P\-R\-E\-S\-E\-N\-T@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-N\-O\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-F\-O\-O\-T\-E\-R\-\_\-\-P\-R\-E\-S\-E\-N\-T}!pem.h@{pem.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-N\-O\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-F\-O\-O\-T\-E\-R\-\_\-\-P\-R\-E\-S\-E\-N\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-N\-O\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-F\-O\-O\-T\-E\-R\-\_\-\-P\-R\-E\-S\-E\-N\-T~-\/0x1080}}\label{pem_8h_a9fca39bb5d4a6845239221a53685a2dc}
+No P\-E\-M header or footer found. 
+
+Definition at line 35 of file pem.\-h.
+
+\hypertarget{pem_8h_aea98f44a528310c53398a49c90469861}{\index{pem.\-h@{pem.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D\-\_\-\-M\-I\-S\-M\-A\-T\-C\-H@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D\-\_\-\-M\-I\-S\-M\-A\-T\-C\-H}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D\-\_\-\-M\-I\-S\-M\-A\-T\-C\-H@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D\-\_\-\-M\-I\-S\-M\-A\-T\-C\-H}!pem.h@{pem.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D\-\_\-\-M\-I\-S\-M\-A\-T\-C\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D\-\_\-\-M\-I\-S\-M\-A\-T\-C\-H~-\/0x1380}}\label{pem_8h_aea98f44a528310c53398a49c90469861}
+Given private key password does not allow for correct decryption. 
+
+Definition at line 41 of file pem.\-h.
+
+\hypertarget{pem_8h_ab883990c7b4a373519ab3b25ec945cd8}{\index{pem.\-h@{pem.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D\-\_\-\-R\-E\-Q\-U\-I\-R\-E\-D@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D\-\_\-\-R\-E\-Q\-U\-I\-R\-E\-D}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D\-\_\-\-R\-E\-Q\-U\-I\-R\-E\-D@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D\-\_\-\-R\-E\-Q\-U\-I\-R\-E\-D}!pem.h@{pem.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D\-\_\-\-R\-E\-Q\-U\-I\-R\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D\-\_\-\-R\-E\-Q\-U\-I\-R\-E\-D~-\/0x1300}}\label{pem_8h_ab883990c7b4a373519ab3b25ec945cd8}
+Private key password can't be empty. 
+
+Definition at line 40 of file pem.\-h.
+
+\hypertarget{pem_8h_a28b7a955389ec2e9a8b7a7d3f13ad746}{\index{pem.\-h@{pem.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-U\-N\-K\-N\-O\-W\-N\-\_\-\-E\-N\-C\-\_\-\-A\-L\-G@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-U\-N\-K\-N\-O\-W\-N\-\_\-\-E\-N\-C\-\_\-\-A\-L\-G}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-U\-N\-K\-N\-O\-W\-N\-\_\-\-E\-N\-C\-\_\-\-A\-L\-G@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-U\-N\-K\-N\-O\-W\-N\-\_\-\-E\-N\-C\-\_\-\-A\-L\-G}!pem.h@{pem.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-U\-N\-K\-N\-O\-W\-N\-\_\-\-E\-N\-C\-\_\-\-A\-L\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-E\-M\-\_\-\-U\-N\-K\-N\-O\-W\-N\-\_\-\-E\-N\-C\-\_\-\-A\-L\-G~-\/0x1280}}\label{pem_8h_a28b7a955389ec2e9a8b7a7d3f13ad746}
+Unsupported key encryption algorithm. 
+
+Definition at line 39 of file pem.\-h.
+

@@ -1,0 +1,243 @@
+\hypertarget{pkcs12_8h}{\section{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/pkcs12.h File Reference}
+\label{pkcs12_8h}\index{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/pkcs12.\-h@{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/pkcs12.\-h}}
+}
+
+
+P\-K\-C\-S\#12 Personal Information Exchange Syntax.  
+
+
+{\ttfamily \#include \char`\"{}md.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}cipher.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}asn1.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$stddef.\-h$>$}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{pkcs12_8h_ac856f81d3cbc3baeaa848b33d991209b}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-C\-S12\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A}~-\/0x1\-F80
+\item 
+\#define \hyperlink{pkcs12_8h_ae887e38a4caab392fc5086bcceed7af9}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-C\-S12\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-U\-N\-A\-V\-A\-I\-L\-A\-B\-L\-E}~-\/0x1\-F00
+\item 
+\#define \hyperlink{pkcs12_8h_a92e9101410d452e508c88a7231e23996}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-C\-S12\-\_\-\-P\-B\-E\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-F\-O\-R\-M\-A\-T}~-\/0x1\-E80
+\item 
+\#define \hyperlink{pkcs12_8h_ab3313f9e7321d23b3af93e97a544ffdb}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-C\-S12\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D\-\_\-\-M\-I\-S\-M\-A\-T\-C\-H}~-\/0x1\-E00
+\item 
+\#define \hyperlink{pkcs12_8h_ad9b0f41c74cd6a8e072c84b5d310b331}{M\-B\-E\-D\-T\-L\-S\-\_\-\-P\-K\-C\-S12\-\_\-\-D\-E\-R\-I\-V\-E\-\_\-\-K\-E\-Y}~1
+\item 
+\#define \hyperlink{pkcs12_8h_ad8ac9a220c8d237a9a5bc972daed1c13}{M\-B\-E\-D\-T\-L\-S\-\_\-\-P\-K\-C\-S12\-\_\-\-D\-E\-R\-I\-V\-E\-\_\-\-I\-V}~2
+\item 
+\#define \hyperlink{pkcs12_8h_a91d3d19fb1a5cd18648f363eff8617ec}{M\-B\-E\-D\-T\-L\-S\-\_\-\-P\-K\-C\-S12\-\_\-\-D\-E\-R\-I\-V\-E\-\_\-\-M\-A\-C\-\_\-\-K\-E\-Y}~3
+\item 
+\hypertarget{pkcs12_8h_a41364d57177059b3ffb3167139e741b4}{\#define {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-P\-K\-C\-S12\-\_\-\-P\-B\-E\-\_\-\-D\-E\-C\-R\-Y\-P\-T}~0}\label{pkcs12_8h_a41364d57177059b3ffb3167139e741b4}
+
+\item 
+\hypertarget{pkcs12_8h_ae833899c432600a15030b761d1e34d44}{\#define {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-P\-K\-C\-S12\-\_\-\-P\-B\-E\-\_\-\-E\-N\-C\-R\-Y\-P\-T}~1}\label{pkcs12_8h_ae833899c432600a15030b761d1e34d44}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{pkcs12_8h_af865b866a1e1b6f5513f5904f1fdf2fa}{mbedtls\-\_\-pkcs12\-\_\-pbe\-\_\-sha1\-\_\-rc4\-\_\-128} (\hyperlink{structmbedtls__asn1__buf}{mbedtls\-\_\-asn1\-\_\-buf} $\ast$pbe\-\_\-params, int mode, const unsigned char $\ast$pwd, size\-\_\-t pwdlen, const unsigned char $\ast$input, size\-\_\-t len, unsigned char $\ast$output)
+\begin{DoxyCompactList}\small\item\em P\-K\-C\-S12 Password Based function (encryption / decryption) for pbe\-With\-S\-H\-A\-And128\-Bit\-R\-C4. \end{DoxyCompactList}\item 
+int \hyperlink{pkcs12_8h_aeca4c569f386fd7ece7fcfb4efc95a29}{mbedtls\-\_\-pkcs12\-\_\-pbe} (\hyperlink{structmbedtls__asn1__buf}{mbedtls\-\_\-asn1\-\_\-buf} $\ast$pbe\-\_\-params, int mode, mbedtls\-\_\-cipher\-\_\-type\-\_\-t cipher\-\_\-type, mbedtls\-\_\-md\-\_\-type\-\_\-t md\-\_\-type, const unsigned char $\ast$pwd, size\-\_\-t pwdlen, const unsigned char $\ast$input, size\-\_\-t len, unsigned char $\ast$output)
+\begin{DoxyCompactList}\small\item\em P\-K\-C\-S12 Password Based function (encryption / decryption) for cipher-\/based and mbedtls\-\_\-md-\/based P\-B\-E's. \end{DoxyCompactList}\item 
+int \hyperlink{pkcs12_8h_a5e58a53e1f2194583f1e48fc2ffef627}{mbedtls\-\_\-pkcs12\-\_\-derivation} (unsigned char $\ast$data, size\-\_\-t datalen, const unsigned char $\ast$pwd, size\-\_\-t pwdlen, const unsigned char $\ast$salt, size\-\_\-t saltlen, mbedtls\-\_\-md\-\_\-type\-\_\-t mbedtls\-\_\-md, int id, int iterations)
+\begin{DoxyCompactList}\small\item\em The P\-K\-C\-S\#12 derivation function uses a password and a salt to produce pseudo-\/random bits for a particular \char`\"{}purpose\char`\"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+P\-K\-C\-S\#12 Personal Information Exchange Syntax. Copyright (C) 2006-\/2015, A\-R\-M Limited, All Rights Reserved
+
+This file is part of mbed T\-L\-S (\href{https://tls.mbed.org}{\tt https\-://tls.\-mbed.\-org})
+
+This program is free software; you can redistribute it and/or modify it under the terms of the G\-N\-U General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but W\-I\-T\-H\-O\-U\-T A\-N\-Y W\-A\-R\-R\-A\-N\-T\-Y; without even the implied warranty of M\-E\-R\-C\-H\-A\-N\-T\-A\-B\-I\-L\-I\-T\-Y or F\-I\-T\-N\-E\-S\-S F\-O\-R A P\-A\-R\-T\-I\-C\-U\-L\-A\-R P\-U\-R\-P\-O\-S\-E. See the G\-N\-U General Public License for more details.
+
+You should have received a copy of the G\-N\-U General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, M\-A 02110-\/1301 U\-S\-A. 
+
+Definition in file \hyperlink{pkcs12_8h_source}{pkcs12.\-h}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{pkcs12_8h_ac856f81d3cbc3baeaa848b33d991209b}{\index{pkcs12.\-h@{pkcs12.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-C\-S12\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-C\-S12\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-C\-S12\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-C\-S12\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A}!pkcs12.h@{pkcs12.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-C\-S12\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-C\-S12\-\_\-\-B\-A\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-D\-A\-T\-A~-\/0x1\-F80}}\label{pkcs12_8h_ac856f81d3cbc3baeaa848b33d991209b}
+Bad input parameters to function. 
+
+Definition at line 33 of file pkcs12.\-h.
+
+\hypertarget{pkcs12_8h_ae887e38a4caab392fc5086bcceed7af9}{\index{pkcs12.\-h@{pkcs12.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-C\-S12\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-U\-N\-A\-V\-A\-I\-L\-A\-B\-L\-E@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-C\-S12\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-U\-N\-A\-V\-A\-I\-L\-A\-B\-L\-E}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-C\-S12\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-U\-N\-A\-V\-A\-I\-L\-A\-B\-L\-E@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-C\-S12\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-U\-N\-A\-V\-A\-I\-L\-A\-B\-L\-E}!pkcs12.h@{pkcs12.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-C\-S12\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-U\-N\-A\-V\-A\-I\-L\-A\-B\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-C\-S12\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-U\-N\-A\-V\-A\-I\-L\-A\-B\-L\-E~-\/0x1\-F00}}\label{pkcs12_8h_ae887e38a4caab392fc5086bcceed7af9}
+Feature not available, e.\-g. unsupported encryption scheme. 
+
+Definition at line 34 of file pkcs12.\-h.
+
+\hypertarget{pkcs12_8h_ab3313f9e7321d23b3af93e97a544ffdb}{\index{pkcs12.\-h@{pkcs12.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-C\-S12\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D\-\_\-\-M\-I\-S\-M\-A\-T\-C\-H@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-C\-S12\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D\-\_\-\-M\-I\-S\-M\-A\-T\-C\-H}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-C\-S12\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D\-\_\-\-M\-I\-S\-M\-A\-T\-C\-H@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-C\-S12\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D\-\_\-\-M\-I\-S\-M\-A\-T\-C\-H}!pkcs12.h@{pkcs12.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-C\-S12\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D\-\_\-\-M\-I\-S\-M\-A\-T\-C\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-C\-S12\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D\-\_\-\-M\-I\-S\-M\-A\-T\-C\-H~-\/0x1\-E00}}\label{pkcs12_8h_ab3313f9e7321d23b3af93e97a544ffdb}
+Given private key password does not allow for correct decryption. 
+
+Definition at line 36 of file pkcs12.\-h.
+
+\hypertarget{pkcs12_8h_a92e9101410d452e508c88a7231e23996}{\index{pkcs12.\-h@{pkcs12.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-C\-S12\-\_\-\-P\-B\-E\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-F\-O\-R\-M\-A\-T@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-C\-S12\-\_\-\-P\-B\-E\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-F\-O\-R\-M\-A\-T}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-C\-S12\-\_\-\-P\-B\-E\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-F\-O\-R\-M\-A\-T@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-C\-S12\-\_\-\-P\-B\-E\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-F\-O\-R\-M\-A\-T}!pkcs12.h@{pkcs12.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-C\-S12\-\_\-\-P\-B\-E\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-F\-O\-R\-M\-A\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-P\-K\-C\-S12\-\_\-\-P\-B\-E\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-F\-O\-R\-M\-A\-T~-\/0x1\-E80}}\label{pkcs12_8h_a92e9101410d452e508c88a7231e23996}
+P\-B\-E A\-S\-N.\-1 data not as expected. 
+
+Definition at line 35 of file pkcs12.\-h.
+
+\hypertarget{pkcs12_8h_ad8ac9a220c8d237a9a5bc972daed1c13}{\index{pkcs12.\-h@{pkcs12.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-P\-K\-C\-S12\-\_\-\-D\-E\-R\-I\-V\-E\-\_\-\-I\-V@{M\-B\-E\-D\-T\-L\-S\-\_\-\-P\-K\-C\-S12\-\_\-\-D\-E\-R\-I\-V\-E\-\_\-\-I\-V}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-P\-K\-C\-S12\-\_\-\-D\-E\-R\-I\-V\-E\-\_\-\-I\-V@{M\-B\-E\-D\-T\-L\-S\-\_\-\-P\-K\-C\-S12\-\_\-\-D\-E\-R\-I\-V\-E\-\_\-\-I\-V}!pkcs12.h@{pkcs12.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-P\-K\-C\-S12\-\_\-\-D\-E\-R\-I\-V\-E\-\_\-\-I\-V}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-P\-K\-C\-S12\-\_\-\-D\-E\-R\-I\-V\-E\-\_\-\-I\-V~2}}\label{pkcs12_8h_ad8ac9a220c8d237a9a5bc972daed1c13}
+initialization vector 
+
+Definition at line 39 of file pkcs12.\-h.
+
+\hypertarget{pkcs12_8h_ad9b0f41c74cd6a8e072c84b5d310b331}{\index{pkcs12.\-h@{pkcs12.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-P\-K\-C\-S12\-\_\-\-D\-E\-R\-I\-V\-E\-\_\-\-K\-E\-Y@{M\-B\-E\-D\-T\-L\-S\-\_\-\-P\-K\-C\-S12\-\_\-\-D\-E\-R\-I\-V\-E\-\_\-\-K\-E\-Y}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-P\-K\-C\-S12\-\_\-\-D\-E\-R\-I\-V\-E\-\_\-\-K\-E\-Y@{M\-B\-E\-D\-T\-L\-S\-\_\-\-P\-K\-C\-S12\-\_\-\-D\-E\-R\-I\-V\-E\-\_\-\-K\-E\-Y}!pkcs12.h@{pkcs12.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-P\-K\-C\-S12\-\_\-\-D\-E\-R\-I\-V\-E\-\_\-\-K\-E\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-P\-K\-C\-S12\-\_\-\-D\-E\-R\-I\-V\-E\-\_\-\-K\-E\-Y~1}}\label{pkcs12_8h_ad9b0f41c74cd6a8e072c84b5d310b331}
+encryption/decryption key 
+
+Definition at line 38 of file pkcs12.\-h.
+
+\hypertarget{pkcs12_8h_a91d3d19fb1a5cd18648f363eff8617ec}{\index{pkcs12.\-h@{pkcs12.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-P\-K\-C\-S12\-\_\-\-D\-E\-R\-I\-V\-E\-\_\-\-M\-A\-C\-\_\-\-K\-E\-Y@{M\-B\-E\-D\-T\-L\-S\-\_\-\-P\-K\-C\-S12\-\_\-\-D\-E\-R\-I\-V\-E\-\_\-\-M\-A\-C\-\_\-\-K\-E\-Y}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-P\-K\-C\-S12\-\_\-\-D\-E\-R\-I\-V\-E\-\_\-\-M\-A\-C\-\_\-\-K\-E\-Y@{M\-B\-E\-D\-T\-L\-S\-\_\-\-P\-K\-C\-S12\-\_\-\-D\-E\-R\-I\-V\-E\-\_\-\-M\-A\-C\-\_\-\-K\-E\-Y}!pkcs12.h@{pkcs12.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-P\-K\-C\-S12\-\_\-\-D\-E\-R\-I\-V\-E\-\_\-\-M\-A\-C\-\_\-\-K\-E\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-P\-K\-C\-S12\-\_\-\-D\-E\-R\-I\-V\-E\-\_\-\-M\-A\-C\-\_\-\-K\-E\-Y~3}}\label{pkcs12_8h_a91d3d19fb1a5cd18648f363eff8617ec}
+integrity / M\-A\-C key 
+
+Definition at line 40 of file pkcs12.\-h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{pkcs12_8h_a5e58a53e1f2194583f1e48fc2ffef627}{\index{pkcs12.\-h@{pkcs12.\-h}!mbedtls\-\_\-pkcs12\-\_\-derivation@{mbedtls\-\_\-pkcs12\-\_\-derivation}}
+\index{mbedtls\-\_\-pkcs12\-\_\-derivation@{mbedtls\-\_\-pkcs12\-\_\-derivation}!pkcs12.h@{pkcs12.\-h}}
+\subsubsection[{mbedtls\-\_\-pkcs12\-\_\-derivation}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-pkcs12\-\_\-derivation (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{data, }
+\item[{size\-\_\-t}]{datalen, }
+\item[{const unsigned char $\ast$}]{pwd, }
+\item[{size\-\_\-t}]{pwdlen, }
+\item[{const unsigned char $\ast$}]{salt, }
+\item[{size\-\_\-t}]{saltlen, }
+\item[{mbedtls\-\_\-md\-\_\-type\-\_\-t}]{mbedtls\-\_\-md, }
+\item[{int}]{id, }
+\item[{int}]{iterations}
+\end{DoxyParamCaption}
+)}}\label{pkcs12_8h_a5e58a53e1f2194583f1e48fc2ffef627}
+
+
+The P\-K\-C\-S\#12 derivation function uses a password and a salt to produce pseudo-\/random bits for a particular \char`\"{}purpose\char`\"{}. 
+
+\begin{DoxyVerb}              Depending on the given id, this function can produce an
+              encryption/decryption key, an nitialization vector or an
+              integrity key.
+\end{DoxyVerb}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & buffer to store the derived data in \\
+\hline
+{\em datalen} & length to fill \\
+\hline
+{\em pwd} & password to use (may be N\-U\-L\-L if no password is used) \\
+\hline
+{\em pwdlen} & length of the password (may be 0) \\
+\hline
+{\em salt} & salt buffer to use \\
+\hline
+{\em saltlen} & length of the salt \\
+\hline
+{\em mbedtls\-\_\-md} & mbedtls\-\_\-md type to use during the derivation \\
+\hline
+{\em id} & id that describes the purpose (can be M\-B\-E\-D\-T\-L\-S\-\_\-\-P\-K\-C\-S12\-\_\-\-D\-E\-R\-I\-V\-E\-\_\-\-K\-E\-Y, M\-B\-E\-D\-T\-L\-S\-\_\-\-P\-K\-C\-S12\-\_\-\-D\-E\-R\-I\-V\-E\-\_\-\-I\-V or M\-B\-E\-D\-T\-L\-S\-\_\-\-P\-K\-C\-S12\-\_\-\-D\-E\-R\-I\-V\-E\-\_\-\-M\-A\-C\-\_\-\-K\-E\-Y) \\
+\hline
+{\em iterations} & number of iterations\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, or a M\-D, B\-I\-G\-N\-U\-M type error. 
+\end{DoxyReturn}
+\hypertarget{pkcs12_8h_aeca4c569f386fd7ece7fcfb4efc95a29}{\index{pkcs12.\-h@{pkcs12.\-h}!mbedtls\-\_\-pkcs12\-\_\-pbe@{mbedtls\-\_\-pkcs12\-\_\-pbe}}
+\index{mbedtls\-\_\-pkcs12\-\_\-pbe@{mbedtls\-\_\-pkcs12\-\_\-pbe}!pkcs12.h@{pkcs12.\-h}}
+\subsubsection[{mbedtls\-\_\-pkcs12\-\_\-pbe}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-pkcs12\-\_\-pbe (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-asn1\-\_\-buf} $\ast$}]{pbe\-\_\-params, }
+\item[{int}]{mode, }
+\item[{mbedtls\-\_\-cipher\-\_\-type\-\_\-t}]{cipher\-\_\-type, }
+\item[{mbedtls\-\_\-md\-\_\-type\-\_\-t}]{md\-\_\-type, }
+\item[{const unsigned char $\ast$}]{pwd, }
+\item[{size\-\_\-t}]{pwdlen, }
+\item[{const unsigned char $\ast$}]{input, }
+\item[{size\-\_\-t}]{len, }
+\item[{unsigned char $\ast$}]{output}
+\end{DoxyParamCaption}
+)}}\label{pkcs12_8h_aeca4c569f386fd7ece7fcfb4efc95a29}
+
+
+P\-K\-C\-S12 Password Based function (encryption / decryption) for cipher-\/based and mbedtls\-\_\-md-\/based P\-B\-E's. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pbe\-\_\-params} & an A\-S\-N1 buffer containing the pkcs-\/12\-Pbe\-Params structure \\
+\hline
+{\em mode} & either M\-B\-E\-D\-T\-L\-S\-\_\-\-P\-K\-C\-S12\-\_\-\-P\-B\-E\-\_\-\-E\-N\-C\-R\-Y\-P\-T or M\-B\-E\-D\-T\-L\-S\-\_\-\-P\-K\-C\-S12\-\_\-\-P\-B\-E\-\_\-\-D\-E\-C\-R\-Y\-P\-T \\
+\hline
+{\em cipher\-\_\-type} & the cipher used \\
+\hline
+{\em md\-\_\-type} & the mbedtls\-\_\-md used \\
+\hline
+{\em pwd} & the password used (may be N\-U\-L\-L if no password is used) \\
+\hline
+{\em pwdlen} & length of the password (may be 0) \\
+\hline
+{\em input} & the input data \\
+\hline
+{\em len} & data length \\
+\hline
+{\em output} & the output buffer\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, or a M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-X\-X\-X code 
+\end{DoxyReturn}
+\hypertarget{pkcs12_8h_af865b866a1e1b6f5513f5904f1fdf2fa}{\index{pkcs12.\-h@{pkcs12.\-h}!mbedtls\-\_\-pkcs12\-\_\-pbe\-\_\-sha1\-\_\-rc4\-\_\-128@{mbedtls\-\_\-pkcs12\-\_\-pbe\-\_\-sha1\-\_\-rc4\-\_\-128}}
+\index{mbedtls\-\_\-pkcs12\-\_\-pbe\-\_\-sha1\-\_\-rc4\-\_\-128@{mbedtls\-\_\-pkcs12\-\_\-pbe\-\_\-sha1\-\_\-rc4\-\_\-128}!pkcs12.h@{pkcs12.\-h}}
+\subsubsection[{mbedtls\-\_\-pkcs12\-\_\-pbe\-\_\-sha1\-\_\-rc4\-\_\-128}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-pkcs12\-\_\-pbe\-\_\-sha1\-\_\-rc4\-\_\-128 (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-asn1\-\_\-buf} $\ast$}]{pbe\-\_\-params, }
+\item[{int}]{mode, }
+\item[{const unsigned char $\ast$}]{pwd, }
+\item[{size\-\_\-t}]{pwdlen, }
+\item[{const unsigned char $\ast$}]{input, }
+\item[{size\-\_\-t}]{len, }
+\item[{unsigned char $\ast$}]{output}
+\end{DoxyParamCaption}
+)}}\label{pkcs12_8h_af865b866a1e1b6f5513f5904f1fdf2fa}
+
+
+P\-K\-C\-S12 Password Based function (encryption / decryption) for pbe\-With\-S\-H\-A\-And128\-Bit\-R\-C4. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pbe\-\_\-params} & an A\-S\-N1 buffer containing the pkcs-\/12\-Pbe\-Params structure \\
+\hline
+{\em mode} & either M\-B\-E\-D\-T\-L\-S\-\_\-\-P\-K\-C\-S12\-\_\-\-P\-B\-E\-\_\-\-E\-N\-C\-R\-Y\-P\-T or M\-B\-E\-D\-T\-L\-S\-\_\-\-P\-K\-C\-S12\-\_\-\-P\-B\-E\-\_\-\-D\-E\-C\-R\-Y\-P\-T \\
+\hline
+{\em pwd} & the password used (may be N\-U\-L\-L if no password is used) \\
+\hline
+{\em pwdlen} & length of the password (may be 0) \\
+\hline
+{\em input} & the input data \\
+\hline
+{\em len} & data length \\
+\hline
+{\em output} & the output buffer\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, or a M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-X\-X\-X code 
+\end{DoxyReturn}

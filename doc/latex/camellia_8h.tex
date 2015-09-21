@@ -1,0 +1,329 @@
+\hypertarget{camellia_8h}{\section{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/camellia.h File Reference}
+\label{camellia_8h}\index{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/camellia.\-h@{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/camellia.\-h}}
+}
+
+
+Camellia block cipher.  
+
+
+{\ttfamily \#include \char`\"{}config.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$stddef.\-h$>$}\\*
+{\ttfamily \#include $<$stdint.\-h$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structmbedtls__camellia__context}{mbedtls\-\_\-camellia\-\_\-context}
+\begin{DoxyCompactList}\small\item\em C\-A\-M\-E\-L\-L\-I\-A context structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{camellia_8h_a0bbefeaf56ae351979742a83fb64b763}{\#define {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-C\-A\-M\-E\-L\-L\-I\-A\-\_\-\-E\-N\-C\-R\-Y\-P\-T}~1}\label{camellia_8h_a0bbefeaf56ae351979742a83fb64b763}
+
+\item 
+\hypertarget{camellia_8h_a2106b6b6200c7aa82502edd5d72e973f}{\#define {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-C\-A\-M\-E\-L\-L\-I\-A\-\_\-\-D\-E\-C\-R\-Y\-P\-T}~0}\label{camellia_8h_a2106b6b6200c7aa82502edd5d72e973f}
+
+\item 
+\#define \hyperlink{camellia_8h_a83ded8bd01f48f4946b788166b6e839b}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-C\-A\-M\-E\-L\-L\-I\-A\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-K\-E\-Y\-\_\-\-L\-E\-N\-G\-T\-H}~-\/0x0024
+\item 
+\#define \hyperlink{camellia_8h_a66cfdf3e866ec31afd789eedbd6a6883}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-C\-A\-M\-E\-L\-L\-I\-A\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-L\-E\-N\-G\-T\-H}~-\/0x0026
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{camellia_8h_a690881134930d8c0f9590c6ac1c0af95}{mbedtls\-\_\-camellia\-\_\-init} (\hyperlink{structmbedtls__camellia__context}{mbedtls\-\_\-camellia\-\_\-context} $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Initialize C\-A\-M\-E\-L\-L\-I\-A context. \end{DoxyCompactList}\item 
+void \hyperlink{camellia_8h_aba5133cc77aeaa8e033caec90c2558eb}{mbedtls\-\_\-camellia\-\_\-free} (\hyperlink{structmbedtls__camellia__context}{mbedtls\-\_\-camellia\-\_\-context} $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Clear C\-A\-M\-E\-L\-L\-I\-A context. \end{DoxyCompactList}\item 
+int \hyperlink{camellia_8h_a206655fc2e6cd1a511766d96a0e0f1cd}{mbedtls\-\_\-camellia\-\_\-setkey\-\_\-enc} (\hyperlink{structmbedtls__camellia__context}{mbedtls\-\_\-camellia\-\_\-context} $\ast$ctx, const unsigned char $\ast$key, unsigned int keybits)
+\begin{DoxyCompactList}\small\item\em C\-A\-M\-E\-L\-L\-I\-A key schedule (encryption) \end{DoxyCompactList}\item 
+int \hyperlink{camellia_8h_a4feb62fea75a091ea9af734a8a83f9fc}{mbedtls\-\_\-camellia\-\_\-setkey\-\_\-dec} (\hyperlink{structmbedtls__camellia__context}{mbedtls\-\_\-camellia\-\_\-context} $\ast$ctx, const unsigned char $\ast$key, unsigned int keybits)
+\begin{DoxyCompactList}\small\item\em C\-A\-M\-E\-L\-L\-I\-A key schedule (decryption) \end{DoxyCompactList}\item 
+int \hyperlink{camellia_8h_a4399c4d56cd27ffb610abeb70d51f8f7}{mbedtls\-\_\-camellia\-\_\-crypt\-\_\-ecb} (\hyperlink{structmbedtls__camellia__context}{mbedtls\-\_\-camellia\-\_\-context} $\ast$ctx, int mode, const unsigned char input\mbox{[}16\mbox{]}, unsigned char output\mbox{[}16\mbox{]})
+\begin{DoxyCompactList}\small\item\em C\-A\-M\-E\-L\-L\-I\-A-\/\-E\-C\-B block encryption/decryption. \end{DoxyCompactList}\item 
+int \hyperlink{camellia_8h_a6121d988f0fa571adbb3eea80560c545}{mbedtls\-\_\-camellia\-\_\-crypt\-\_\-cbc} (\hyperlink{structmbedtls__camellia__context}{mbedtls\-\_\-camellia\-\_\-context} $\ast$ctx, int mode, size\-\_\-t length, unsigned char iv\mbox{[}16\mbox{]}, const unsigned char $\ast$input, unsigned char $\ast$output)
+\begin{DoxyCompactList}\small\item\em C\-A\-M\-E\-L\-L\-I\-A-\/\-C\-B\-C buffer encryption/decryption Length should be a multiple of the block size (16 bytes) \end{DoxyCompactList}\item 
+int \hyperlink{camellia_8h_afffb8f6eeac954fbdddb3c99ad0f87c6}{mbedtls\-\_\-camellia\-\_\-crypt\-\_\-cfb128} (\hyperlink{structmbedtls__camellia__context}{mbedtls\-\_\-camellia\-\_\-context} $\ast$ctx, int mode, size\-\_\-t length, size\-\_\-t $\ast$iv\-\_\-off, unsigned char iv\mbox{[}16\mbox{]}, const unsigned char $\ast$input, unsigned char $\ast$output)
+\begin{DoxyCompactList}\small\item\em C\-A\-M\-E\-L\-L\-I\-A-\/\-C\-F\-B128 buffer encryption/decryption. \end{DoxyCompactList}\item 
+int \hyperlink{camellia_8h_ae90ed9ce4edf59d5219c64a0d2b3d23d}{mbedtls\-\_\-camellia\-\_\-crypt\-\_\-ctr} (\hyperlink{structmbedtls__camellia__context}{mbedtls\-\_\-camellia\-\_\-context} $\ast$ctx, size\-\_\-t length, size\-\_\-t $\ast$nc\-\_\-off, unsigned char nonce\-\_\-counter\mbox{[}16\mbox{]}, unsigned char stream\-\_\-block\mbox{[}16\mbox{]}, const unsigned char $\ast$input, unsigned char $\ast$output)
+\begin{DoxyCompactList}\small\item\em C\-A\-M\-E\-L\-L\-I\-A-\/\-C\-T\-R buffer encryption/decryption. \end{DoxyCompactList}\item 
+int \hyperlink{camellia_8h_a138e7a2aaf404d9f55dbc809b99c415e}{mbedtls\-\_\-camellia\-\_\-self\-\_\-test} (int verbose)
+\begin{DoxyCompactList}\small\item\em Checkup routine. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Camellia block cipher. Copyright (C) 2006-\/2015, A\-R\-M Limited, All Rights Reserved
+
+This file is part of mbed T\-L\-S (\href{https://tls.mbed.org}{\tt https\-://tls.\-mbed.\-org})
+
+This program is free software; you can redistribute it and/or modify it under the terms of the G\-N\-U General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but W\-I\-T\-H\-O\-U\-T A\-N\-Y W\-A\-R\-R\-A\-N\-T\-Y; without even the implied warranty of M\-E\-R\-C\-H\-A\-N\-T\-A\-B\-I\-L\-I\-T\-Y or F\-I\-T\-N\-E\-S\-S F\-O\-R A P\-A\-R\-T\-I\-C\-U\-L\-A\-R P\-U\-R\-P\-O\-S\-E. See the G\-N\-U General Public License for more details.
+
+You should have received a copy of the G\-N\-U General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, M\-A 02110-\/1301 U\-S\-A. 
+
+Definition in file \hyperlink{camellia_8h_source}{camellia.\-h}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{camellia_8h_a66cfdf3e866ec31afd789eedbd6a6883}{\index{camellia.\-h@{camellia.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-C\-A\-M\-E\-L\-L\-I\-A\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-L\-E\-N\-G\-T\-H@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-C\-A\-M\-E\-L\-L\-I\-A\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-L\-E\-N\-G\-T\-H}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-C\-A\-M\-E\-L\-L\-I\-A\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-L\-E\-N\-G\-T\-H@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-C\-A\-M\-E\-L\-L\-I\-A\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-L\-E\-N\-G\-T\-H}!camellia.h@{camellia.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-C\-A\-M\-E\-L\-L\-I\-A\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-L\-E\-N\-G\-T\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-C\-A\-M\-E\-L\-L\-I\-A\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-L\-E\-N\-G\-T\-H~-\/0x0026}}\label{camellia_8h_a66cfdf3e866ec31afd789eedbd6a6883}
+Invalid data input length. 
+
+Definition at line 40 of file camellia.\-h.
+
+\hypertarget{camellia_8h_a83ded8bd01f48f4946b788166b6e839b}{\index{camellia.\-h@{camellia.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-C\-A\-M\-E\-L\-L\-I\-A\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-K\-E\-Y\-\_\-\-L\-E\-N\-G\-T\-H@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-C\-A\-M\-E\-L\-L\-I\-A\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-K\-E\-Y\-\_\-\-L\-E\-N\-G\-T\-H}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-C\-A\-M\-E\-L\-L\-I\-A\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-K\-E\-Y\-\_\-\-L\-E\-N\-G\-T\-H@{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-C\-A\-M\-E\-L\-L\-I\-A\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-K\-E\-Y\-\_\-\-L\-E\-N\-G\-T\-H}!camellia.h@{camellia.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-C\-A\-M\-E\-L\-L\-I\-A\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-K\-E\-Y\-\_\-\-L\-E\-N\-G\-T\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-C\-A\-M\-E\-L\-L\-I\-A\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-K\-E\-Y\-\_\-\-L\-E\-N\-G\-T\-H~-\/0x0024}}\label{camellia_8h_a83ded8bd01f48f4946b788166b6e839b}
+Invalid key length. 
+
+Definition at line 39 of file camellia.\-h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{camellia_8h_a6121d988f0fa571adbb3eea80560c545}{\index{camellia.\-h@{camellia.\-h}!mbedtls\-\_\-camellia\-\_\-crypt\-\_\-cbc@{mbedtls\-\_\-camellia\-\_\-crypt\-\_\-cbc}}
+\index{mbedtls\-\_\-camellia\-\_\-crypt\-\_\-cbc@{mbedtls\-\_\-camellia\-\_\-crypt\-\_\-cbc}!camellia.h@{camellia.\-h}}
+\subsubsection[{mbedtls\-\_\-camellia\-\_\-crypt\-\_\-cbc}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-camellia\-\_\-crypt\-\_\-cbc (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-camellia\-\_\-context} $\ast$}]{ctx, }
+\item[{int}]{mode, }
+\item[{size\-\_\-t}]{length, }
+\item[{unsigned char}]{iv\mbox{[}16\mbox{]}, }
+\item[{const unsigned char $\ast$}]{input, }
+\item[{unsigned char $\ast$}]{output}
+\end{DoxyParamCaption}
+)}}\label{camellia_8h_a6121d988f0fa571adbb3eea80560c545}
+
+
+C\-A\-M\-E\-L\-L\-I\-A-\/\-C\-B\-C buffer encryption/decryption Length should be a multiple of the block size (16 bytes) 
+
+\begin{DoxyNote}{Note}
+Upon exit, the content of the I\-V is updated so that you can call the function same function again on the following block(s) of data and get the same result as if it was encrypted in one call. This allows a \char`\"{}streaming\char`\"{} usage. If on the other hand you need to retain the contents of the I\-V, you should either save it manually or use the cipher module instead.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & C\-A\-M\-E\-L\-L\-I\-A context \\
+\hline
+{\em mode} & M\-B\-E\-D\-T\-L\-S\-\_\-\-C\-A\-M\-E\-L\-L\-I\-A\-\_\-\-E\-N\-C\-R\-Y\-P\-T or M\-B\-E\-D\-T\-L\-S\-\_\-\-C\-A\-M\-E\-L\-L\-I\-A\-\_\-\-D\-E\-C\-R\-Y\-P\-T \\
+\hline
+{\em length} & length of the input data \\
+\hline
+{\em iv} & initialization vector (updated after use) \\
+\hline
+{\em input} & buffer holding the input data \\
+\hline
+{\em output} & buffer holding the output data\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, or M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-C\-A\-M\-E\-L\-L\-I\-A\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-L\-E\-N\-G\-T\-H 
+\end{DoxyReturn}
+\hypertarget{camellia_8h_afffb8f6eeac954fbdddb3c99ad0f87c6}{\index{camellia.\-h@{camellia.\-h}!mbedtls\-\_\-camellia\-\_\-crypt\-\_\-cfb128@{mbedtls\-\_\-camellia\-\_\-crypt\-\_\-cfb128}}
+\index{mbedtls\-\_\-camellia\-\_\-crypt\-\_\-cfb128@{mbedtls\-\_\-camellia\-\_\-crypt\-\_\-cfb128}!camellia.h@{camellia.\-h}}
+\subsubsection[{mbedtls\-\_\-camellia\-\_\-crypt\-\_\-cfb128}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-camellia\-\_\-crypt\-\_\-cfb128 (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-camellia\-\_\-context} $\ast$}]{ctx, }
+\item[{int}]{mode, }
+\item[{size\-\_\-t}]{length, }
+\item[{size\-\_\-t $\ast$}]{iv\-\_\-off, }
+\item[{unsigned char}]{iv\mbox{[}16\mbox{]}, }
+\item[{const unsigned char $\ast$}]{input, }
+\item[{unsigned char $\ast$}]{output}
+\end{DoxyParamCaption}
+)}}\label{camellia_8h_afffb8f6eeac954fbdddb3c99ad0f87c6}
+
+
+C\-A\-M\-E\-L\-L\-I\-A-\/\-C\-F\-B128 buffer encryption/decryption. 
+
+Note\-: Due to the nature of C\-F\-B you should use the same key schedule for both encryption and decryption. So a context initialized with \hyperlink{camellia_8h_a206655fc2e6cd1a511766d96a0e0f1cd}{mbedtls\-\_\-camellia\-\_\-setkey\-\_\-enc()} for both M\-B\-E\-D\-T\-L\-S\-\_\-\-C\-A\-M\-E\-L\-L\-I\-A\-\_\-\-E\-N\-C\-R\-Y\-P\-T and C\-A\-M\-E\-L\-L\-I\-E\-\_\-\-D\-E\-C\-R\-Y\-P\-T.
+
+\begin{DoxyNote}{Note}
+Upon exit, the content of the I\-V is updated so that you can call the function same function again on the following block(s) of data and get the same result as if it was encrypted in one call. This allows a \char`\"{}streaming\char`\"{} usage. If on the other hand you need to retain the contents of the I\-V, you should either save it manually or use the cipher module instead.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & C\-A\-M\-E\-L\-L\-I\-A context \\
+\hline
+{\em mode} & M\-B\-E\-D\-T\-L\-S\-\_\-\-C\-A\-M\-E\-L\-L\-I\-A\-\_\-\-E\-N\-C\-R\-Y\-P\-T or M\-B\-E\-D\-T\-L\-S\-\_\-\-C\-A\-M\-E\-L\-L\-I\-A\-\_\-\-D\-E\-C\-R\-Y\-P\-T \\
+\hline
+{\em length} & length of the input data \\
+\hline
+{\em iv\-\_\-off} & offset in I\-V (updated after use) \\
+\hline
+{\em iv} & initialization vector (updated after use) \\
+\hline
+{\em input} & buffer holding the input data \\
+\hline
+{\em output} & buffer holding the output data\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, or M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-C\-A\-M\-E\-L\-L\-I\-A\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-I\-N\-P\-U\-T\-\_\-\-L\-E\-N\-G\-T\-H 
+\end{DoxyReturn}
+\hypertarget{camellia_8h_ae90ed9ce4edf59d5219c64a0d2b3d23d}{\index{camellia.\-h@{camellia.\-h}!mbedtls\-\_\-camellia\-\_\-crypt\-\_\-ctr@{mbedtls\-\_\-camellia\-\_\-crypt\-\_\-ctr}}
+\index{mbedtls\-\_\-camellia\-\_\-crypt\-\_\-ctr@{mbedtls\-\_\-camellia\-\_\-crypt\-\_\-ctr}!camellia.h@{camellia.\-h}}
+\subsubsection[{mbedtls\-\_\-camellia\-\_\-crypt\-\_\-ctr}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-camellia\-\_\-crypt\-\_\-ctr (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-camellia\-\_\-context} $\ast$}]{ctx, }
+\item[{size\-\_\-t}]{length, }
+\item[{size\-\_\-t $\ast$}]{nc\-\_\-off, }
+\item[{unsigned char}]{nonce\-\_\-counter\mbox{[}16\mbox{]}, }
+\item[{unsigned char}]{stream\-\_\-block\mbox{[}16\mbox{]}, }
+\item[{const unsigned char $\ast$}]{input, }
+\item[{unsigned char $\ast$}]{output}
+\end{DoxyParamCaption}
+)}}\label{camellia_8h_ae90ed9ce4edf59d5219c64a0d2b3d23d}
+
+
+C\-A\-M\-E\-L\-L\-I\-A-\/\-C\-T\-R buffer encryption/decryption. 
+
+Warning\-: You have to keep the maximum use of your counter in mind!
+
+Note\-: Due to the nature of C\-T\-R you should use the same key schedule for both encryption and decryption. So a context initialized with \hyperlink{camellia_8h_a206655fc2e6cd1a511766d96a0e0f1cd}{mbedtls\-\_\-camellia\-\_\-setkey\-\_\-enc()} for both M\-B\-E\-D\-T\-L\-S\-\_\-\-C\-A\-M\-E\-L\-L\-I\-A\-\_\-\-E\-N\-C\-R\-Y\-P\-T and M\-B\-E\-D\-T\-L\-S\-\_\-\-C\-A\-M\-E\-L\-L\-I\-A\-\_\-\-D\-E\-C\-R\-Y\-P\-T.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & C\-A\-M\-E\-L\-L\-I\-A context \\
+\hline
+{\em length} & The length of the data \\
+\hline
+{\em nc\-\_\-off} & The offset in the current stream\-\_\-block (for resuming within current cipher stream). The offset pointer to should be 0 at the start of a stream. \\
+\hline
+{\em nonce\-\_\-counter} & The 128-\/bit nonce and counter. \\
+\hline
+{\em stream\-\_\-block} & The saved stream-\/block for resuming. Is overwritten by the function. \\
+\hline
+{\em input} & The input data stream \\
+\hline
+{\em output} & The output data stream\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful 
+\end{DoxyReturn}
+\hypertarget{camellia_8h_a4399c4d56cd27ffb610abeb70d51f8f7}{\index{camellia.\-h@{camellia.\-h}!mbedtls\-\_\-camellia\-\_\-crypt\-\_\-ecb@{mbedtls\-\_\-camellia\-\_\-crypt\-\_\-ecb}}
+\index{mbedtls\-\_\-camellia\-\_\-crypt\-\_\-ecb@{mbedtls\-\_\-camellia\-\_\-crypt\-\_\-ecb}!camellia.h@{camellia.\-h}}
+\subsubsection[{mbedtls\-\_\-camellia\-\_\-crypt\-\_\-ecb}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-camellia\-\_\-crypt\-\_\-ecb (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-camellia\-\_\-context} $\ast$}]{ctx, }
+\item[{int}]{mode, }
+\item[{const unsigned char}]{input\mbox{[}16\mbox{]}, }
+\item[{unsigned char}]{output\mbox{[}16\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{camellia_8h_a4399c4d56cd27ffb610abeb70d51f8f7}
+
+
+C\-A\-M\-E\-L\-L\-I\-A-\/\-E\-C\-B block encryption/decryption. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & C\-A\-M\-E\-L\-L\-I\-A context \\
+\hline
+{\em mode} & M\-B\-E\-D\-T\-L\-S\-\_\-\-C\-A\-M\-E\-L\-L\-I\-A\-\_\-\-E\-N\-C\-R\-Y\-P\-T or M\-B\-E\-D\-T\-L\-S\-\_\-\-C\-A\-M\-E\-L\-L\-I\-A\-\_\-\-D\-E\-C\-R\-Y\-P\-T \\
+\hline
+{\em input} & 16-\/byte input block \\
+\hline
+{\em output} & 16-\/byte output block\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful 
+\end{DoxyReturn}
+\hypertarget{camellia_8h_aba5133cc77aeaa8e033caec90c2558eb}{\index{camellia.\-h@{camellia.\-h}!mbedtls\-\_\-camellia\-\_\-free@{mbedtls\-\_\-camellia\-\_\-free}}
+\index{mbedtls\-\_\-camellia\-\_\-free@{mbedtls\-\_\-camellia\-\_\-free}!camellia.h@{camellia.\-h}}
+\subsubsection[{mbedtls\-\_\-camellia\-\_\-free}]{\setlength{\rightskip}{0pt plus 5cm}void mbedtls\-\_\-camellia\-\_\-free (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-camellia\-\_\-context} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}}\label{camellia_8h_aba5133cc77aeaa8e033caec90c2558eb}
+
+
+Clear C\-A\-M\-E\-L\-L\-I\-A context. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & C\-A\-M\-E\-L\-L\-I\-A context to be cleared \\
+\hline
+\end{DoxyParams}
+\hypertarget{camellia_8h_a690881134930d8c0f9590c6ac1c0af95}{\index{camellia.\-h@{camellia.\-h}!mbedtls\-\_\-camellia\-\_\-init@{mbedtls\-\_\-camellia\-\_\-init}}
+\index{mbedtls\-\_\-camellia\-\_\-init@{mbedtls\-\_\-camellia\-\_\-init}!camellia.h@{camellia.\-h}}
+\subsubsection[{mbedtls\-\_\-camellia\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void mbedtls\-\_\-camellia\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-camellia\-\_\-context} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}}\label{camellia_8h_a690881134930d8c0f9590c6ac1c0af95}
+
+
+Initialize C\-A\-M\-E\-L\-L\-I\-A context. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & C\-A\-M\-E\-L\-L\-I\-A context to be initialized \\
+\hline
+\end{DoxyParams}
+\hypertarget{camellia_8h_a138e7a2aaf404d9f55dbc809b99c415e}{\index{camellia.\-h@{camellia.\-h}!mbedtls\-\_\-camellia\-\_\-self\-\_\-test@{mbedtls\-\_\-camellia\-\_\-self\-\_\-test}}
+\index{mbedtls\-\_\-camellia\-\_\-self\-\_\-test@{mbedtls\-\_\-camellia\-\_\-self\-\_\-test}!camellia.h@{camellia.\-h}}
+\subsubsection[{mbedtls\-\_\-camellia\-\_\-self\-\_\-test}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-camellia\-\_\-self\-\_\-test (
+\begin{DoxyParamCaption}
+\item[{int}]{verbose}
+\end{DoxyParamCaption}
+)}}\label{camellia_8h_a138e7a2aaf404d9f55dbc809b99c415e}
+
+
+Checkup routine. 
+
+\begin{DoxyReturn}{Returns}
+0 if successful, or 1 if the test failed 
+\end{DoxyReturn}
+\hypertarget{camellia_8h_a4feb62fea75a091ea9af734a8a83f9fc}{\index{camellia.\-h@{camellia.\-h}!mbedtls\-\_\-camellia\-\_\-setkey\-\_\-dec@{mbedtls\-\_\-camellia\-\_\-setkey\-\_\-dec}}
+\index{mbedtls\-\_\-camellia\-\_\-setkey\-\_\-dec@{mbedtls\-\_\-camellia\-\_\-setkey\-\_\-dec}!camellia.h@{camellia.\-h}}
+\subsubsection[{mbedtls\-\_\-camellia\-\_\-setkey\-\_\-dec}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-camellia\-\_\-setkey\-\_\-dec (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-camellia\-\_\-context} $\ast$}]{ctx, }
+\item[{const unsigned char $\ast$}]{key, }
+\item[{unsigned int}]{keybits}
+\end{DoxyParamCaption}
+)}}\label{camellia_8h_a4feb62fea75a091ea9af734a8a83f9fc}
+
+
+C\-A\-M\-E\-L\-L\-I\-A key schedule (decryption) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & C\-A\-M\-E\-L\-L\-I\-A context to be initialized \\
+\hline
+{\em key} & decryption key \\
+\hline
+{\em keybits} & must be 128, 192 or 256\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, or M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-C\-A\-M\-E\-L\-L\-I\-A\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-K\-E\-Y\-\_\-\-L\-E\-N\-G\-T\-H 
+\end{DoxyReturn}
+\hypertarget{camellia_8h_a206655fc2e6cd1a511766d96a0e0f1cd}{\index{camellia.\-h@{camellia.\-h}!mbedtls\-\_\-camellia\-\_\-setkey\-\_\-enc@{mbedtls\-\_\-camellia\-\_\-setkey\-\_\-enc}}
+\index{mbedtls\-\_\-camellia\-\_\-setkey\-\_\-enc@{mbedtls\-\_\-camellia\-\_\-setkey\-\_\-enc}!camellia.h@{camellia.\-h}}
+\subsubsection[{mbedtls\-\_\-camellia\-\_\-setkey\-\_\-enc}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-camellia\-\_\-setkey\-\_\-enc (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-camellia\-\_\-context} $\ast$}]{ctx, }
+\item[{const unsigned char $\ast$}]{key, }
+\item[{unsigned int}]{keybits}
+\end{DoxyParamCaption}
+)}}\label{camellia_8h_a206655fc2e6cd1a511766d96a0e0f1cd}
+
+
+C\-A\-M\-E\-L\-L\-I\-A key schedule (encryption) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & C\-A\-M\-E\-L\-L\-I\-A context to be initialized \\
+\hline
+{\em key} & encryption key \\
+\hline
+{\em keybits} & must be 128, 192 or 256\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, or M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-C\-A\-M\-E\-L\-L\-I\-A\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-K\-E\-Y\-\_\-\-L\-E\-N\-G\-T\-H 
+\end{DoxyReturn}

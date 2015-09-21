@@ -1,0 +1,540 @@
+\hypertarget{asn1_8h}{\section{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/asn1.h File Reference}
+\label{asn1_8h}\index{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/asn1.\-h@{C\-:/dev2/luambedtls/dependencies/mbedtls/include/mbedtls/asn1.\-h}}
+}
+
+
+Generic A\-S\-N.\-1 parsing.  
+
+
+{\ttfamily \#include \char`\"{}config.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$stddef.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}bignum.\-h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structmbedtls__asn1__buf}{mbedtls\-\_\-asn1\-\_\-buf}
+\item 
+struct \hyperlink{structmbedtls__asn1__bitstring}{mbedtls\-\_\-asn1\-\_\-bitstring}
+\item 
+struct \hyperlink{structmbedtls__asn1__sequence}{mbedtls\-\_\-asn1\-\_\-sequence}
+\item 
+struct \hyperlink{structmbedtls__asn1__named__data}{mbedtls\-\_\-asn1\-\_\-named\-\_\-data}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{asn1_8h_ac2f2e00874ca486c912c33bb4f7bb16a}{M\-B\-E\-D\-T\-L\-S\-\_\-\-O\-I\-D\-\_\-\-S\-I\-Z\-E}(x)~(sizeof(x) -\/ 1)
+\item 
+\#define \hyperlink{asn1_8h_a0b81f225b3551ec7c4da69b2d183d10b}{M\-B\-E\-D\-T\-L\-S\-\_\-\-O\-I\-D\-\_\-\-C\-M\-P}(oid\-\_\-str, oid\-\_\-buf)
+\end{DoxyCompactItemize}
+\begin{Indent}{\bf A\-S\-N1 Error codes}\par
+{\em These error codes are O\-R'ed to X509 error codes for higher error granularity. A\-S\-N1 is a standard to specify data structures. }\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__asn1__module_ga284c12cf03a4ffeee89a63750f00dfdd}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-A\-S\-N1\-\_\-\-O\-U\-T\-\_\-\-O\-F\-\_\-\-D\-A\-T\-A}~-\/0x0060
+\item 
+\#define \hyperlink{group__asn1__module_gab055945fda47ad0e16dc59f8c5ecb86e}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-A\-S\-N1\-\_\-\-U\-N\-E\-X\-P\-E\-C\-T\-E\-D\-\_\-\-T\-A\-G}~-\/0x0062
+\item 
+\#define \hyperlink{group__asn1__module_ga0ebe8e0a4894533db505303504eea59b}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-A\-S\-N1\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-L\-E\-N\-G\-T\-H}~-\/0x0064
+\item 
+\#define \hyperlink{group__asn1__module_gacf6fad8d80fa050c3463539412674a20}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-A\-S\-N1\-\_\-\-L\-E\-N\-G\-T\-H\-\_\-\-M\-I\-S\-M\-A\-T\-C\-H}~-\/0x0066
+\item 
+\#define \hyperlink{group__asn1__module_ga9ac36bf8c63a9968afe1d35d0569e4d8}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-A\-S\-N1\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-D\-A\-T\-A}~-\/0x0068
+\item 
+\#define \hyperlink{group__asn1__module_gab7d40360e48e414ffa1a4df1961723d2}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-A\-S\-N1\-\_\-\-A\-L\-L\-O\-C\-\_\-\-F\-A\-I\-L\-E\-D}~-\/0x006\-A
+\item 
+\#define \hyperlink{group__asn1__module_gaf9bf64017ed866c846b506e80dc15e94}{M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-A\-S\-N1\-\_\-\-B\-U\-F\-\_\-\-T\-O\-O\-\_\-\-S\-M\-A\-L\-L}~-\/0x006\-C
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf D\-E\-R constants}\par
+{\em These constants comply with D\-E\-R encoded the A\-N\-S1 type tags. D\-E\-R encoding uses hexadecimal representation. An example D\-E\-R sequence is\-:\par
+
+\begin{DoxyItemize}
+\item 0x02 -- tag indicating I\-N\-T\-E\-G\-E\-R
+\item 0x01 -- length in octets
+\item 0x05 -- value Such sequences are typically read into {\ttfamily \hyperlink{group__x509__module_ga4d02c9e8e4e2934555e0d132cd2976dc}{mbedtls\-\_\-x509\-\_\-buf}}. 
+\end{DoxyItemize}}\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__asn1__module_ga1382980a474a765365d8f5c7bd63795a}{\#define {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-A\-S\-N1\-\_\-\-B\-O\-O\-L\-E\-A\-N}~0x01}\label{group__asn1__module_ga1382980a474a765365d8f5c7bd63795a}
+
+\item 
+\hypertarget{group__asn1__module_ga6e8614f8937956c294fe791bc5ac6a7c}{\#define {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-A\-S\-N1\-\_\-\-I\-N\-T\-E\-G\-E\-R}~0x02}\label{group__asn1__module_ga6e8614f8937956c294fe791bc5ac6a7c}
+
+\item 
+\hypertarget{group__asn1__module_gafd5c5ecc822b7e2f4d2e64bf388fc559}{\#define {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-A\-S\-N1\-\_\-\-B\-I\-T\-\_\-\-S\-T\-R\-I\-N\-G}~0x03}\label{group__asn1__module_gafd5c5ecc822b7e2f4d2e64bf388fc559}
+
+\item 
+\hypertarget{group__asn1__module_ga080d1f82b0996a63c561541eb22a7d0f}{\#define {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-A\-S\-N1\-\_\-\-O\-C\-T\-E\-T\-\_\-\-S\-T\-R\-I\-N\-G}~0x04}\label{group__asn1__module_ga080d1f82b0996a63c561541eb22a7d0f}
+
+\item 
+\hypertarget{group__asn1__module_gae26e36d787617e0b2dd067ccc342db0d}{\#define {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-A\-S\-N1\-\_\-\-N\-U\-L\-L}~0x05}\label{group__asn1__module_gae26e36d787617e0b2dd067ccc342db0d}
+
+\item 
+\hypertarget{group__asn1__module_gad87ad0570a31add4ecac6cc3694ca79a}{\#define {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-A\-S\-N1\-\_\-\-O\-I\-D}~0x06}\label{group__asn1__module_gad87ad0570a31add4ecac6cc3694ca79a}
+
+\item 
+\hypertarget{group__asn1__module_gafc28060cb0e9b2be4f0960ad345a2e42}{\#define {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-A\-S\-N1\-\_\-\-U\-T\-F8\-\_\-\-S\-T\-R\-I\-N\-G}~0x0\-C}\label{group__asn1__module_gafc28060cb0e9b2be4f0960ad345a2e42}
+
+\item 
+\hypertarget{group__asn1__module_ga64ce838eb4418e69fe9aa251436203b3}{\#define {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-A\-S\-N1\-\_\-\-S\-E\-Q\-U\-E\-N\-C\-E}~0x10}\label{group__asn1__module_ga64ce838eb4418e69fe9aa251436203b3}
+
+\item 
+\hypertarget{group__asn1__module_ga67afaa83253889dacb9fcb47062162c5}{\#define {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-A\-S\-N1\-\_\-\-S\-E\-T}~0x11}\label{group__asn1__module_ga67afaa83253889dacb9fcb47062162c5}
+
+\item 
+\hypertarget{group__asn1__module_ga57f497984e573597e1ed100afcc3f965}{\#define {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-A\-S\-N1\-\_\-\-P\-R\-I\-N\-T\-A\-B\-L\-E\-\_\-\-S\-T\-R\-I\-N\-G}~0x13}\label{group__asn1__module_ga57f497984e573597e1ed100afcc3f965}
+
+\item 
+\hypertarget{group__asn1__module_gabe4ca1599521c0a3b4c54391906c2083}{\#define {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-A\-S\-N1\-\_\-\-T61\-\_\-\-S\-T\-R\-I\-N\-G}~0x14}\label{group__asn1__module_gabe4ca1599521c0a3b4c54391906c2083}
+
+\item 
+\hypertarget{group__asn1__module_ga30d5d0f805af50deb5820e741a53e481}{\#define {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-A\-S\-N1\-\_\-\-I\-A5\-\_\-\-S\-T\-R\-I\-N\-G}~0x16}\label{group__asn1__module_ga30d5d0f805af50deb5820e741a53e481}
+
+\item 
+\hypertarget{group__asn1__module_gac4e932ef9cdf9fa9b8fb152357c6ec64}{\#define {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-A\-S\-N1\-\_\-\-U\-T\-C\-\_\-\-T\-I\-M\-E}~0x17}\label{group__asn1__module_gac4e932ef9cdf9fa9b8fb152357c6ec64}
+
+\item 
+\hypertarget{group__asn1__module_ga29f746333b11a4d9e0b7624dcd982fdb}{\#define {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-A\-S\-N1\-\_\-\-G\-E\-N\-E\-R\-A\-L\-I\-Z\-E\-D\-\_\-\-T\-I\-M\-E}~0x18}\label{group__asn1__module_ga29f746333b11a4d9e0b7624dcd982fdb}
+
+\item 
+\hypertarget{group__asn1__module_gacdbc7c6bcf1b8eb158a52ed773f3cdf3}{\#define {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-A\-S\-N1\-\_\-\-U\-N\-I\-V\-E\-R\-S\-A\-L\-\_\-\-S\-T\-R\-I\-N\-G}~0x1\-C}\label{group__asn1__module_gacdbc7c6bcf1b8eb158a52ed773f3cdf3}
+
+\item 
+\hypertarget{group__asn1__module_ga577f12d1a059eb52928614c50f2bb0d8}{\#define {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-A\-S\-N1\-\_\-\-B\-M\-P\-\_\-\-S\-T\-R\-I\-N\-G}~0x1\-E}\label{group__asn1__module_ga577f12d1a059eb52928614c50f2bb0d8}
+
+\item 
+\hypertarget{group__asn1__module_ga800aec91d6d124d917bb2707b246c551}{\#define {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-A\-S\-N1\-\_\-\-P\-R\-I\-M\-I\-T\-I\-V\-E}~0x00}\label{group__asn1__module_ga800aec91d6d124d917bb2707b246c551}
+
+\item 
+\hypertarget{group__asn1__module_ga8d855bf93e7f26e7c0c9c70af7f04d8e}{\#define {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-A\-S\-N1\-\_\-\-C\-O\-N\-S\-T\-R\-U\-C\-T\-E\-D}~0x20}\label{group__asn1__module_ga8d855bf93e7f26e7c0c9c70af7f04d8e}
+
+\item 
+\hypertarget{group__asn1__module_ga8d78fbb123ee982c80d8020050bf86e0}{\#define {\bfseries M\-B\-E\-D\-T\-L\-S\-\_\-\-A\-S\-N1\-\_\-\-C\-O\-N\-T\-E\-X\-T\-\_\-\-S\-P\-E\-C\-I\-F\-I\-C}~0x80}\label{group__asn1__module_ga8d78fbb123ee982c80d8020050bf86e0}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Functions to parse A\-S\-N.1 data structures}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structmbedtls__asn1__buf}{mbedtls\-\_\-asn1\-\_\-buf} \hyperlink{asn1_8h_a92008d574dc457ec6c925ef29631545b}{mbedtls\-\_\-asn1\-\_\-buf}
+\item 
+typedef struct \\*
+\hyperlink{structmbedtls__asn1__bitstring}{mbedtls\-\_\-asn1\-\_\-bitstring} \hyperlink{asn1_8h_adfc9b9fed6d69849942d4a63ece7513d}{mbedtls\-\_\-asn1\-\_\-bitstring}
+\item 
+typedef struct \\*
+\hyperlink{structmbedtls__asn1__sequence}{mbedtls\-\_\-asn1\-\_\-sequence} \hyperlink{asn1_8h_a21302e30db75b1b5e3387b16958080bf}{mbedtls\-\_\-asn1\-\_\-sequence}
+\item 
+typedef struct \\*
+\hyperlink{structmbedtls__asn1__named__data}{mbedtls\-\_\-asn1\-\_\-named\-\_\-data} \hyperlink{asn1_8h_a3f3ca4991620a3ab05d747d00a6cb70e}{mbedtls\-\_\-asn1\-\_\-named\-\_\-data}
+\item 
+int \hyperlink{asn1_8h_ad45c1d0ed3694fe903342cb32647bfb1}{mbedtls\-\_\-asn1\-\_\-get\-\_\-len} (unsigned char $\ast$$\ast$p, const unsigned char $\ast$end, size\-\_\-t $\ast$len)
+\begin{DoxyCompactList}\small\item\em Get the length of an A\-S\-N.\-1 element. Updates the pointer to immediately behind the length. \end{DoxyCompactList}\item 
+int \hyperlink{asn1_8h_ae8d7dd42a3b99b61d2ef60bc0c2eaf0d}{mbedtls\-\_\-asn1\-\_\-get\-\_\-tag} (unsigned char $\ast$$\ast$p, const unsigned char $\ast$end, size\-\_\-t $\ast$len, int tag)
+\begin{DoxyCompactList}\small\item\em Get the tag and length of the tag. Check for the requested tag. Updates the pointer to immediately behind the tag and length. \end{DoxyCompactList}\item 
+int \hyperlink{asn1_8h_aec9e4bbd8690a8ab17cabf87893dbd2b}{mbedtls\-\_\-asn1\-\_\-get\-\_\-bool} (unsigned char $\ast$$\ast$p, const unsigned char $\ast$end, int $\ast$val)
+\begin{DoxyCompactList}\small\item\em Retrieve a boolean A\-S\-N.\-1 tag and its value. Updates the pointer to immediately behind the full tag. \end{DoxyCompactList}\item 
+int \hyperlink{asn1_8h_a7f8a8b447c11f2200cc5aa8033801b72}{mbedtls\-\_\-asn1\-\_\-get\-\_\-int} (unsigned char $\ast$$\ast$p, const unsigned char $\ast$end, int $\ast$val)
+\begin{DoxyCompactList}\small\item\em Retrieve an integer A\-S\-N.\-1 tag and its value. Updates the pointer to immediately behind the full tag. \end{DoxyCompactList}\item 
+int \hyperlink{asn1_8h_ae2dcf021cf1326b62e2f23aa3bda69d0}{mbedtls\-\_\-asn1\-\_\-get\-\_\-bitstring} (unsigned char $\ast$$\ast$p, const unsigned char $\ast$end, \hyperlink{structmbedtls__asn1__bitstring}{mbedtls\-\_\-asn1\-\_\-bitstring} $\ast$bs)
+\begin{DoxyCompactList}\small\item\em Retrieve a bitstring A\-S\-N.\-1 tag and its value. Updates the pointer to immediately behind the full tag. \end{DoxyCompactList}\item 
+int \hyperlink{asn1_8h_a0f9d2d846b16d5ce18ad99de6224313b}{mbedtls\-\_\-asn1\-\_\-get\-\_\-bitstring\-\_\-null} (unsigned char $\ast$$\ast$p, const unsigned char $\ast$end, size\-\_\-t $\ast$len)
+\begin{DoxyCompactList}\small\item\em Retrieve a bitstring A\-S\-N.\-1 tag without unused bits and its value. Updates the pointer to the beginning of the bit/octet string. \end{DoxyCompactList}\item 
+int \hyperlink{asn1_8h_a872d62128956b3574bb0e681536c0d6b}{mbedtls\-\_\-asn1\-\_\-get\-\_\-sequence\-\_\-of} (unsigned char $\ast$$\ast$p, const unsigned char $\ast$end, \hyperlink{structmbedtls__asn1__sequence}{mbedtls\-\_\-asn1\-\_\-sequence} $\ast$cur, int tag)
+\begin{DoxyCompactList}\small\item\em Parses and splits an A\-S\-N.\-1 \char`\"{}\-S\-E\-Q\-U\-E\-N\-C\-E O\-F $<$tag$>$\char`\"{} Updated the pointer to immediately behind the full sequence tag. \end{DoxyCompactList}\item 
+int \hyperlink{asn1_8h_a48e235454b64aa67c9472a6579706b05}{mbedtls\-\_\-asn1\-\_\-get\-\_\-mpi} (unsigned char $\ast$$\ast$p, const unsigned char $\ast$end, \hyperlink{structmbedtls__mpi}{mbedtls\-\_\-mpi} $\ast$X)
+\begin{DoxyCompactList}\small\item\em Retrieve a M\-P\-I value from an integer A\-S\-N.\-1 tag. Updates the pointer to immediately behind the full tag. \end{DoxyCompactList}\item 
+int \hyperlink{asn1_8h_add253579640ea717f368d9a0f6085be0}{mbedtls\-\_\-asn1\-\_\-get\-\_\-alg} (unsigned char $\ast$$\ast$p, const unsigned char $\ast$end, \hyperlink{structmbedtls__asn1__buf}{mbedtls\-\_\-asn1\-\_\-buf} $\ast$alg, \hyperlink{structmbedtls__asn1__buf}{mbedtls\-\_\-asn1\-\_\-buf} $\ast$params)
+\begin{DoxyCompactList}\small\item\em Retrieve an Algorithm\-Identifier A\-S\-N.\-1 sequence. Updates the pointer to immediately behind the full Algorithm\-Identifier. \end{DoxyCompactList}\item 
+int \hyperlink{asn1_8h_adad023ecf92a50d47eaf206705efdb0e}{mbedtls\-\_\-asn1\-\_\-get\-\_\-alg\-\_\-null} (unsigned char $\ast$$\ast$p, const unsigned char $\ast$end, \hyperlink{structmbedtls__asn1__buf}{mbedtls\-\_\-asn1\-\_\-buf} $\ast$alg)
+\begin{DoxyCompactList}\small\item\em Retrieve an Algorithm\-Identifier A\-S\-N.\-1 sequence with N\-U\-L\-L or no params. Updates the pointer to immediately behind the full Algorithm\-Identifier. \end{DoxyCompactList}\item 
+\hyperlink{structmbedtls__asn1__named__data}{mbedtls\-\_\-asn1\-\_\-named\-\_\-data} $\ast$ \hyperlink{asn1_8h_aabe93ade4a012da5d20cf668eededa75}{mbedtls\-\_\-asn1\-\_\-find\-\_\-named\-\_\-data} (\hyperlink{structmbedtls__asn1__named__data}{mbedtls\-\_\-asn1\-\_\-named\-\_\-data} $\ast$list, const char $\ast$oid, size\-\_\-t len)
+\begin{DoxyCompactList}\small\item\em Find a specific named\-\_\-data entry in a sequence or list based on the O\-I\-D. \end{DoxyCompactList}\item 
+void \hyperlink{asn1_8h_a46abb857e148f22a616b56b66a781506}{mbedtls\-\_\-asn1\-\_\-free\-\_\-named\-\_\-data} (\hyperlink{structmbedtls__asn1__named__data}{mbedtls\-\_\-asn1\-\_\-named\-\_\-data} $\ast$entry)
+\begin{DoxyCompactList}\small\item\em Free a \hyperlink{structmbedtls__asn1__named__data}{mbedtls\-\_\-asn1\-\_\-named\-\_\-data} entry. \end{DoxyCompactList}\item 
+void \hyperlink{asn1_8h_afd1a084a9285cebcd289bf6df0e6c021}{mbedtls\-\_\-asn1\-\_\-free\-\_\-named\-\_\-data\-\_\-list} (\hyperlink{structmbedtls__asn1__named__data}{mbedtls\-\_\-asn1\-\_\-named\-\_\-data} $\ast$$\ast$head)
+\begin{DoxyCompactList}\small\item\em Free all entries in a \hyperlink{structmbedtls__asn1__named__data}{mbedtls\-\_\-asn1\-\_\-named\-\_\-data} list Head will be set to N\-U\-L\-L. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Generic A\-S\-N.\-1 parsing. Copyright (C) 2006-\/2015, A\-R\-M Limited, All Rights Reserved
+
+This file is part of mbed T\-L\-S (\href{https://tls.mbed.org}{\tt https\-://tls.\-mbed.\-org})
+
+This program is free software; you can redistribute it and/or modify it under the terms of the G\-N\-U General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but W\-I\-T\-H\-O\-U\-T A\-N\-Y W\-A\-R\-R\-A\-N\-T\-Y; without even the implied warranty of M\-E\-R\-C\-H\-A\-N\-T\-A\-B\-I\-L\-I\-T\-Y or F\-I\-T\-N\-E\-S\-S F\-O\-R A P\-A\-R\-T\-I\-C\-U\-L\-A\-R P\-U\-R\-P\-O\-S\-E. See the G\-N\-U General Public License for more details.
+
+You should have received a copy of the G\-N\-U General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, M\-A 02110-\/1301 U\-S\-A. 
+
+Definition in file \hyperlink{asn1_8h_source}{asn1.\-h}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{asn1_8h_a0b81f225b3551ec7c4da69b2d183d10b}{\index{asn1.\-h@{asn1.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-O\-I\-D\-\_\-\-C\-M\-P@{M\-B\-E\-D\-T\-L\-S\-\_\-\-O\-I\-D\-\_\-\-C\-M\-P}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-O\-I\-D\-\_\-\-C\-M\-P@{M\-B\-E\-D\-T\-L\-S\-\_\-\-O\-I\-D\-\_\-\-C\-M\-P}!asn1.h@{asn1.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-O\-I\-D\-\_\-\-C\-M\-P}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-O\-I\-D\-\_\-\-C\-M\-P(
+\begin{DoxyParamCaption}
+\item[{}]{oid\-\_\-str, }
+\item[{}]{oid\-\_\-buf}
+\end{DoxyParamCaption}
+)}}\label{asn1_8h_a0b81f225b3551ec7c4da69b2d183d10b}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+( ( \hyperlink{asn1_8h_ac2f2e00874ca486c912c33bb4f7bb16a}{MBEDTLS\_OID\_SIZE}(oid\_str) != (oid\_buf)->len ) ||                \(\backslash\)
+          memcmp( (oid\_str), (oid\_buf)->p, (oid\_buf)->len) != 0 )
+\end{DoxyCode}
+Compares an \hyperlink{structmbedtls__asn1__buf}{mbedtls\-\_\-asn1\-\_\-buf} structure to a reference O\-I\-D.
+
+Only works for 'defined' oid\-\_\-str values (M\-B\-E\-D\-T\-L\-S\-\_\-\-O\-I\-D\-\_\-\-H\-M\-A\-C\-\_\-\-S\-H\-A1), you cannot use a 'unsigned char $\ast$oid' here! 
+
+Definition at line 103 of file asn1.\-h.
+
+\hypertarget{asn1_8h_ac2f2e00874ca486c912c33bb4f7bb16a}{\index{asn1.\-h@{asn1.\-h}!M\-B\-E\-D\-T\-L\-S\-\_\-\-O\-I\-D\-\_\-\-S\-I\-Z\-E@{M\-B\-E\-D\-T\-L\-S\-\_\-\-O\-I\-D\-\_\-\-S\-I\-Z\-E}}
+\index{M\-B\-E\-D\-T\-L\-S\-\_\-\-O\-I\-D\-\_\-\-S\-I\-Z\-E@{M\-B\-E\-D\-T\-L\-S\-\_\-\-O\-I\-D\-\_\-\-S\-I\-Z\-E}!asn1.h@{asn1.\-h}}
+\subsubsection[{M\-B\-E\-D\-T\-L\-S\-\_\-\-O\-I\-D\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-B\-E\-D\-T\-L\-S\-\_\-\-O\-I\-D\-\_\-\-S\-I\-Z\-E(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~(sizeof(x) -\/ 1)}}\label{asn1_8h_ac2f2e00874ca486c912c33bb4f7bb16a}
+Returns the size of the binary string, without the trailing \textbackslash{}0 
+
+Definition at line 95 of file asn1.\-h.
+
+
+
+\subsection{Typedef Documentation}
+\hypertarget{asn1_8h_adfc9b9fed6d69849942d4a63ece7513d}{\index{asn1.\-h@{asn1.\-h}!mbedtls\-\_\-asn1\-\_\-bitstring@{mbedtls\-\_\-asn1\-\_\-bitstring}}
+\index{mbedtls\-\_\-asn1\-\_\-bitstring@{mbedtls\-\_\-asn1\-\_\-bitstring}!asn1.h@{asn1.\-h}}
+\subsubsection[{mbedtls\-\_\-asn1\-\_\-bitstring}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf mbedtls\-\_\-asn1\-\_\-bitstring}
+ {\bf mbedtls\-\_\-asn1\-\_\-bitstring}}}\label{asn1_8h_adfc9b9fed6d69849942d4a63ece7513d}
+Container for A\-S\-N1 bit strings. \hypertarget{asn1_8h_a92008d574dc457ec6c925ef29631545b}{\index{asn1.\-h@{asn1.\-h}!mbedtls\-\_\-asn1\-\_\-buf@{mbedtls\-\_\-asn1\-\_\-buf}}
+\index{mbedtls\-\_\-asn1\-\_\-buf@{mbedtls\-\_\-asn1\-\_\-buf}!asn1.h@{asn1.\-h}}
+\subsubsection[{mbedtls\-\_\-asn1\-\_\-buf}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf mbedtls\-\_\-asn1\-\_\-buf}
+ {\bf mbedtls\-\_\-asn1\-\_\-buf}}}\label{asn1_8h_a92008d574dc457ec6c925ef29631545b}
+Type-\/length-\/value structure that allows for A\-S\-N1 using D\-E\-R. \hypertarget{asn1_8h_a3f3ca4991620a3ab05d747d00a6cb70e}{\index{asn1.\-h@{asn1.\-h}!mbedtls\-\_\-asn1\-\_\-named\-\_\-data@{mbedtls\-\_\-asn1\-\_\-named\-\_\-data}}
+\index{mbedtls\-\_\-asn1\-\_\-named\-\_\-data@{mbedtls\-\_\-asn1\-\_\-named\-\_\-data}!asn1.h@{asn1.\-h}}
+\subsubsection[{mbedtls\-\_\-asn1\-\_\-named\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf mbedtls\-\_\-asn1\-\_\-named\-\_\-data}
+ {\bf mbedtls\-\_\-asn1\-\_\-named\-\_\-data}}}\label{asn1_8h_a3f3ca4991620a3ab05d747d00a6cb70e}
+Container for a sequence or list of 'named' A\-S\-N.\-1 data items \hypertarget{asn1_8h_a21302e30db75b1b5e3387b16958080bf}{\index{asn1.\-h@{asn1.\-h}!mbedtls\-\_\-asn1\-\_\-sequence@{mbedtls\-\_\-asn1\-\_\-sequence}}
+\index{mbedtls\-\_\-asn1\-\_\-sequence@{mbedtls\-\_\-asn1\-\_\-sequence}!asn1.h@{asn1.\-h}}
+\subsubsection[{mbedtls\-\_\-asn1\-\_\-sequence}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf mbedtls\-\_\-asn1\-\_\-sequence}
+ {\bf mbedtls\-\_\-asn1\-\_\-sequence}}}\label{asn1_8h_a21302e30db75b1b5e3387b16958080bf}
+Container for a sequence of A\-S\-N.\-1 items 
+
+\subsection{Function Documentation}
+\hypertarget{asn1_8h_aabe93ade4a012da5d20cf668eededa75}{\index{asn1.\-h@{asn1.\-h}!mbedtls\-\_\-asn1\-\_\-find\-\_\-named\-\_\-data@{mbedtls\-\_\-asn1\-\_\-find\-\_\-named\-\_\-data}}
+\index{mbedtls\-\_\-asn1\-\_\-find\-\_\-named\-\_\-data@{mbedtls\-\_\-asn1\-\_\-find\-\_\-named\-\_\-data}!asn1.h@{asn1.\-h}}
+\subsubsection[{mbedtls\-\_\-asn1\-\_\-find\-\_\-named\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mbedtls\-\_\-asn1\-\_\-named\-\_\-data}$\ast$ mbedtls\-\_\-asn1\-\_\-find\-\_\-named\-\_\-data (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-asn1\-\_\-named\-\_\-data} $\ast$}]{list, }
+\item[{const char $\ast$}]{oid, }
+\item[{size\-\_\-t}]{len}
+\end{DoxyParamCaption}
+)}}\label{asn1_8h_aabe93ade4a012da5d20cf668eededa75}
+
+
+Find a specific named\-\_\-data entry in a sequence or list based on the O\-I\-D. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & The list to seek through \\
+\hline
+{\em oid} & The O\-I\-D to look for \\
+\hline
+{\em len} & Size of the O\-I\-D\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+N\-U\-L\-L if not found, or a pointer to the existing entry. 
+\end{DoxyReturn}
+\hypertarget{asn1_8h_a46abb857e148f22a616b56b66a781506}{\index{asn1.\-h@{asn1.\-h}!mbedtls\-\_\-asn1\-\_\-free\-\_\-named\-\_\-data@{mbedtls\-\_\-asn1\-\_\-free\-\_\-named\-\_\-data}}
+\index{mbedtls\-\_\-asn1\-\_\-free\-\_\-named\-\_\-data@{mbedtls\-\_\-asn1\-\_\-free\-\_\-named\-\_\-data}!asn1.h@{asn1.\-h}}
+\subsubsection[{mbedtls\-\_\-asn1\-\_\-free\-\_\-named\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}void mbedtls\-\_\-asn1\-\_\-free\-\_\-named\-\_\-data (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-asn1\-\_\-named\-\_\-data} $\ast$}]{entry}
+\end{DoxyParamCaption}
+)}}\label{asn1_8h_a46abb857e148f22a616b56b66a781506}
+
+
+Free a \hyperlink{structmbedtls__asn1__named__data}{mbedtls\-\_\-asn1\-\_\-named\-\_\-data} entry. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entry} & The named data entry to free \\
+\hline
+\end{DoxyParams}
+\hypertarget{asn1_8h_afd1a084a9285cebcd289bf6df0e6c021}{\index{asn1.\-h@{asn1.\-h}!mbedtls\-\_\-asn1\-\_\-free\-\_\-named\-\_\-data\-\_\-list@{mbedtls\-\_\-asn1\-\_\-free\-\_\-named\-\_\-data\-\_\-list}}
+\index{mbedtls\-\_\-asn1\-\_\-free\-\_\-named\-\_\-data\-\_\-list@{mbedtls\-\_\-asn1\-\_\-free\-\_\-named\-\_\-data\-\_\-list}!asn1.h@{asn1.\-h}}
+\subsubsection[{mbedtls\-\_\-asn1\-\_\-free\-\_\-named\-\_\-data\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}void mbedtls\-\_\-asn1\-\_\-free\-\_\-named\-\_\-data\-\_\-list (
+\begin{DoxyParamCaption}
+\item[{{\bf mbedtls\-\_\-asn1\-\_\-named\-\_\-data} $\ast$$\ast$}]{head}
+\end{DoxyParamCaption}
+)}}\label{asn1_8h_afd1a084a9285cebcd289bf6df0e6c021}
+
+
+Free all entries in a \hyperlink{structmbedtls__asn1__named__data}{mbedtls\-\_\-asn1\-\_\-named\-\_\-data} list Head will be set to N\-U\-L\-L. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em head} & Pointer to the head of the list of named data entries to free \\
+\hline
+\end{DoxyParams}
+\hypertarget{asn1_8h_add253579640ea717f368d9a0f6085be0}{\index{asn1.\-h@{asn1.\-h}!mbedtls\-\_\-asn1\-\_\-get\-\_\-alg@{mbedtls\-\_\-asn1\-\_\-get\-\_\-alg}}
+\index{mbedtls\-\_\-asn1\-\_\-get\-\_\-alg@{mbedtls\-\_\-asn1\-\_\-get\-\_\-alg}!asn1.h@{asn1.\-h}}
+\subsubsection[{mbedtls\-\_\-asn1\-\_\-get\-\_\-alg}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-asn1\-\_\-get\-\_\-alg (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$$\ast$}]{p, }
+\item[{const unsigned char $\ast$}]{end, }
+\item[{{\bf mbedtls\-\_\-asn1\-\_\-buf} $\ast$}]{alg, }
+\item[{{\bf mbedtls\-\_\-asn1\-\_\-buf} $\ast$}]{params}
+\end{DoxyParamCaption}
+)}}\label{asn1_8h_add253579640ea717f368d9a0f6085be0}
+
+
+Retrieve an Algorithm\-Identifier A\-S\-N.\-1 sequence. Updates the pointer to immediately behind the full Algorithm\-Identifier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & The position in the A\-S\-N.\-1 data \\
+\hline
+{\em end} & End of data \\
+\hline
+{\em alg} & The buffer to receive the O\-I\-D \\
+\hline
+{\em params} & The buffer to receive the params (if any)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful or a specific A\-S\-N.\-1 or M\-P\-I error code. 
+\end{DoxyReturn}
+\hypertarget{asn1_8h_adad023ecf92a50d47eaf206705efdb0e}{\index{asn1.\-h@{asn1.\-h}!mbedtls\-\_\-asn1\-\_\-get\-\_\-alg\-\_\-null@{mbedtls\-\_\-asn1\-\_\-get\-\_\-alg\-\_\-null}}
+\index{mbedtls\-\_\-asn1\-\_\-get\-\_\-alg\-\_\-null@{mbedtls\-\_\-asn1\-\_\-get\-\_\-alg\-\_\-null}!asn1.h@{asn1.\-h}}
+\subsubsection[{mbedtls\-\_\-asn1\-\_\-get\-\_\-alg\-\_\-null}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-asn1\-\_\-get\-\_\-alg\-\_\-null (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$$\ast$}]{p, }
+\item[{const unsigned char $\ast$}]{end, }
+\item[{{\bf mbedtls\-\_\-asn1\-\_\-buf} $\ast$}]{alg}
+\end{DoxyParamCaption}
+)}}\label{asn1_8h_adad023ecf92a50d47eaf206705efdb0e}
+
+
+Retrieve an Algorithm\-Identifier A\-S\-N.\-1 sequence with N\-U\-L\-L or no params. Updates the pointer to immediately behind the full Algorithm\-Identifier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & The position in the A\-S\-N.\-1 data \\
+\hline
+{\em end} & End of data \\
+\hline
+{\em alg} & The buffer to receive the O\-I\-D\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful or a specific A\-S\-N.\-1 or M\-P\-I error code. 
+\end{DoxyReturn}
+\hypertarget{asn1_8h_ae2dcf021cf1326b62e2f23aa3bda69d0}{\index{asn1.\-h@{asn1.\-h}!mbedtls\-\_\-asn1\-\_\-get\-\_\-bitstring@{mbedtls\-\_\-asn1\-\_\-get\-\_\-bitstring}}
+\index{mbedtls\-\_\-asn1\-\_\-get\-\_\-bitstring@{mbedtls\-\_\-asn1\-\_\-get\-\_\-bitstring}!asn1.h@{asn1.\-h}}
+\subsubsection[{mbedtls\-\_\-asn1\-\_\-get\-\_\-bitstring}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-asn1\-\_\-get\-\_\-bitstring (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$$\ast$}]{p, }
+\item[{const unsigned char $\ast$}]{end, }
+\item[{{\bf mbedtls\-\_\-asn1\-\_\-bitstring} $\ast$}]{bs}
+\end{DoxyParamCaption}
+)}}\label{asn1_8h_ae2dcf021cf1326b62e2f23aa3bda69d0}
+
+
+Retrieve a bitstring A\-S\-N.\-1 tag and its value. Updates the pointer to immediately behind the full tag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & The position in the A\-S\-N.\-1 data \\
+\hline
+{\em end} & End of data \\
+\hline
+{\em bs} & The variable that will receive the value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful or a specific A\-S\-N.\-1 error code. 
+\end{DoxyReturn}
+\hypertarget{asn1_8h_a0f9d2d846b16d5ce18ad99de6224313b}{\index{asn1.\-h@{asn1.\-h}!mbedtls\-\_\-asn1\-\_\-get\-\_\-bitstring\-\_\-null@{mbedtls\-\_\-asn1\-\_\-get\-\_\-bitstring\-\_\-null}}
+\index{mbedtls\-\_\-asn1\-\_\-get\-\_\-bitstring\-\_\-null@{mbedtls\-\_\-asn1\-\_\-get\-\_\-bitstring\-\_\-null}!asn1.h@{asn1.\-h}}
+\subsubsection[{mbedtls\-\_\-asn1\-\_\-get\-\_\-bitstring\-\_\-null}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-asn1\-\_\-get\-\_\-bitstring\-\_\-null (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$$\ast$}]{p, }
+\item[{const unsigned char $\ast$}]{end, }
+\item[{size\-\_\-t $\ast$}]{len}
+\end{DoxyParamCaption}
+)}}\label{asn1_8h_a0f9d2d846b16d5ce18ad99de6224313b}
+
+
+Retrieve a bitstring A\-S\-N.\-1 tag without unused bits and its value. Updates the pointer to the beginning of the bit/octet string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & The position in the A\-S\-N.\-1 data \\
+\hline
+{\em end} & End of data \\
+\hline
+{\em len} & Length of the actual bit/octect string in bytes\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful or a specific A\-S\-N.\-1 error code. 
+\end{DoxyReturn}
+\hypertarget{asn1_8h_aec9e4bbd8690a8ab17cabf87893dbd2b}{\index{asn1.\-h@{asn1.\-h}!mbedtls\-\_\-asn1\-\_\-get\-\_\-bool@{mbedtls\-\_\-asn1\-\_\-get\-\_\-bool}}
+\index{mbedtls\-\_\-asn1\-\_\-get\-\_\-bool@{mbedtls\-\_\-asn1\-\_\-get\-\_\-bool}!asn1.h@{asn1.\-h}}
+\subsubsection[{mbedtls\-\_\-asn1\-\_\-get\-\_\-bool}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-asn1\-\_\-get\-\_\-bool (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$$\ast$}]{p, }
+\item[{const unsigned char $\ast$}]{end, }
+\item[{int $\ast$}]{val}
+\end{DoxyParamCaption}
+)}}\label{asn1_8h_aec9e4bbd8690a8ab17cabf87893dbd2b}
+
+
+Retrieve a boolean A\-S\-N.\-1 tag and its value. Updates the pointer to immediately behind the full tag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & The position in the A\-S\-N.\-1 data \\
+\hline
+{\em end} & End of data \\
+\hline
+{\em val} & The variable that will receive the value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful or a specific A\-S\-N.\-1 error code. 
+\end{DoxyReturn}
+\hypertarget{asn1_8h_a7f8a8b447c11f2200cc5aa8033801b72}{\index{asn1.\-h@{asn1.\-h}!mbedtls\-\_\-asn1\-\_\-get\-\_\-int@{mbedtls\-\_\-asn1\-\_\-get\-\_\-int}}
+\index{mbedtls\-\_\-asn1\-\_\-get\-\_\-int@{mbedtls\-\_\-asn1\-\_\-get\-\_\-int}!asn1.h@{asn1.\-h}}
+\subsubsection[{mbedtls\-\_\-asn1\-\_\-get\-\_\-int}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-asn1\-\_\-get\-\_\-int (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$$\ast$}]{p, }
+\item[{const unsigned char $\ast$}]{end, }
+\item[{int $\ast$}]{val}
+\end{DoxyParamCaption}
+)}}\label{asn1_8h_a7f8a8b447c11f2200cc5aa8033801b72}
+
+
+Retrieve an integer A\-S\-N.\-1 tag and its value. Updates the pointer to immediately behind the full tag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & The position in the A\-S\-N.\-1 data \\
+\hline
+{\em end} & End of data \\
+\hline
+{\em val} & The variable that will receive the value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful or a specific A\-S\-N.\-1 error code. 
+\end{DoxyReturn}
+\hypertarget{asn1_8h_ad45c1d0ed3694fe903342cb32647bfb1}{\index{asn1.\-h@{asn1.\-h}!mbedtls\-\_\-asn1\-\_\-get\-\_\-len@{mbedtls\-\_\-asn1\-\_\-get\-\_\-len}}
+\index{mbedtls\-\_\-asn1\-\_\-get\-\_\-len@{mbedtls\-\_\-asn1\-\_\-get\-\_\-len}!asn1.h@{asn1.\-h}}
+\subsubsection[{mbedtls\-\_\-asn1\-\_\-get\-\_\-len}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-asn1\-\_\-get\-\_\-len (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$$\ast$}]{p, }
+\item[{const unsigned char $\ast$}]{end, }
+\item[{size\-\_\-t $\ast$}]{len}
+\end{DoxyParamCaption}
+)}}\label{asn1_8h_ad45c1d0ed3694fe903342cb32647bfb1}
+
+
+Get the length of an A\-S\-N.\-1 element. Updates the pointer to immediately behind the length. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & The position in the A\-S\-N.\-1 data \\
+\hline
+{\em end} & End of data \\
+\hline
+{\em len} & The variable that will receive the value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-A\-S\-N1\-\_\-\-O\-U\-T\-\_\-\-O\-F\-\_\-\-D\-A\-T\-A on reaching end of data, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-A\-S\-N1\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-L\-E\-N\-G\-T\-H if length is unparseable. 
+\end{DoxyReturn}
+\hypertarget{asn1_8h_a48e235454b64aa67c9472a6579706b05}{\index{asn1.\-h@{asn1.\-h}!mbedtls\-\_\-asn1\-\_\-get\-\_\-mpi@{mbedtls\-\_\-asn1\-\_\-get\-\_\-mpi}}
+\index{mbedtls\-\_\-asn1\-\_\-get\-\_\-mpi@{mbedtls\-\_\-asn1\-\_\-get\-\_\-mpi}!asn1.h@{asn1.\-h}}
+\subsubsection[{mbedtls\-\_\-asn1\-\_\-get\-\_\-mpi}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-asn1\-\_\-get\-\_\-mpi (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$$\ast$}]{p, }
+\item[{const unsigned char $\ast$}]{end, }
+\item[{{\bf mbedtls\-\_\-mpi} $\ast$}]{X}
+\end{DoxyParamCaption}
+)}}\label{asn1_8h_a48e235454b64aa67c9472a6579706b05}
+
+
+Retrieve a M\-P\-I value from an integer A\-S\-N.\-1 tag. Updates the pointer to immediately behind the full tag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & The position in the A\-S\-N.\-1 data \\
+\hline
+{\em end} & End of data \\
+\hline
+{\em X} & The M\-P\-I that will receive the value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful or a specific A\-S\-N.\-1 or M\-P\-I error code. 
+\end{DoxyReturn}
+\hypertarget{asn1_8h_a872d62128956b3574bb0e681536c0d6b}{\index{asn1.\-h@{asn1.\-h}!mbedtls\-\_\-asn1\-\_\-get\-\_\-sequence\-\_\-of@{mbedtls\-\_\-asn1\-\_\-get\-\_\-sequence\-\_\-of}}
+\index{mbedtls\-\_\-asn1\-\_\-get\-\_\-sequence\-\_\-of@{mbedtls\-\_\-asn1\-\_\-get\-\_\-sequence\-\_\-of}!asn1.h@{asn1.\-h}}
+\subsubsection[{mbedtls\-\_\-asn1\-\_\-get\-\_\-sequence\-\_\-of}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-asn1\-\_\-get\-\_\-sequence\-\_\-of (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$$\ast$}]{p, }
+\item[{const unsigned char $\ast$}]{end, }
+\item[{{\bf mbedtls\-\_\-asn1\-\_\-sequence} $\ast$}]{cur, }
+\item[{int}]{tag}
+\end{DoxyParamCaption}
+)}}\label{asn1_8h_a872d62128956b3574bb0e681536c0d6b}
+
+
+Parses and splits an A\-S\-N.\-1 \char`\"{}\-S\-E\-Q\-U\-E\-N\-C\-E O\-F $<$tag$>$\char`\"{} Updated the pointer to immediately behind the full sequence tag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & The position in the A\-S\-N.\-1 data \\
+\hline
+{\em end} & End of data \\
+\hline
+{\em cur} & First variable in the chain to fill \\
+\hline
+{\em tag} & Type of sequence\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful or a specific A\-S\-N.\-1 error code. 
+\end{DoxyReturn}
+\hypertarget{asn1_8h_ae8d7dd42a3b99b61d2ef60bc0c2eaf0d}{\index{asn1.\-h@{asn1.\-h}!mbedtls\-\_\-asn1\-\_\-get\-\_\-tag@{mbedtls\-\_\-asn1\-\_\-get\-\_\-tag}}
+\index{mbedtls\-\_\-asn1\-\_\-get\-\_\-tag@{mbedtls\-\_\-asn1\-\_\-get\-\_\-tag}!asn1.h@{asn1.\-h}}
+\subsubsection[{mbedtls\-\_\-asn1\-\_\-get\-\_\-tag}]{\setlength{\rightskip}{0pt plus 5cm}int mbedtls\-\_\-asn1\-\_\-get\-\_\-tag (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$$\ast$}]{p, }
+\item[{const unsigned char $\ast$}]{end, }
+\item[{size\-\_\-t $\ast$}]{len, }
+\item[{int}]{tag}
+\end{DoxyParamCaption}
+)}}\label{asn1_8h_ae8d7dd42a3b99b61d2ef60bc0c2eaf0d}
+
+
+Get the tag and length of the tag. Check for the requested tag. Updates the pointer to immediately behind the tag and length. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & The position in the A\-S\-N.\-1 data \\
+\hline
+{\em end} & End of data \\
+\hline
+{\em len} & The variable that will receive the length \\
+\hline
+{\em tag} & The expected tag\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, M\-B\-E\-D\-T\-L\-S\-\_\-\-E\-R\-R\-\_\-\-A\-S\-N1\-\_\-\-U\-N\-E\-X\-P\-E\-C\-T\-E\-D\-\_\-\-T\-A\-G if tag did not match requested tag, or another specific A\-S\-N.\-1 error code. 
+\end{DoxyReturn}
