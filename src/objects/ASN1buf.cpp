@@ -38,7 +38,7 @@ namespace luambedtls {
 		int outputLen = 0;
 
 		const size_t bufferSize = 4096;
-		char strBuffer[bufferSize];
+		//char strBuffer[bufferSize];
 
 		switch (buffer->tag){
 		case MBEDTLS_ASN1_BOOLEAN:

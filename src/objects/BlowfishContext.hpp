@@ -7,6 +7,11 @@ namespace luambedtls {
 	class BlowfishContext : public Object<mbedtls_blowfish_context> {
 	public:
 		explicit BlowfishContext(State * state) : Object<mbedtls_blowfish_context>(state){
+			LUTOK_METHOD("setKey", &BlowfishContext::setKey);
+			LUTOK_METHOD("cryptECB", &BlowfishContext::cryptECB);
+			LUTOK_METHOD("cryptCBC", &BlowfishContext::cryptCBC);
+			LUTOK_METHOD("cryptCFB64", &BlowfishContext::cryptCFB64);
+			LUTOK_METHOD("cryptCTR", &BlowfishContext::cryptCTR);
 		}
 
 		mbedtls_blowfish_context * constructor(State & state, bool & managed);

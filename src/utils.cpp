@@ -60,8 +60,13 @@ namespace luambedtls {
 		const mbedtls_asn1_buf * buf = interfaceASN1buf->get(1);
 		if (buf){
 			const char *short_name = NULL;
-			mbedtls_oid_get_attr_short_name(buf, &short_name);
-			stack->push<const std::string &>(short_name);
+			int result = mbedtls_oid_get_attr_short_name(buf, &short_name);
+			if (result == 0){
+				stack->push<const std::string &>(short_name);
+			}
+			else{
+				stack->push<int>(result);
+			}
 			return 1;
 		}
 		else{
@@ -77,8 +82,13 @@ namespace luambedtls {
 		if (buf){
 			const size_t buffersize = 128;
 			char buffer[buffersize];
-			mbedtls_oid_get_numeric_string(buffer, buffersize, buf);
-			stack->push<const std::string &>(buffer);
+			int result = mbedtls_oid_get_numeric_string(buffer, buffersize, buf);
+			if (result == 0){
+				stack->push<const std::string &>(buffer);
+			}
+			else{
+				stack->push<int>(result);
+			}
 			return 1;
 		}
 		else{
@@ -115,6 +125,64 @@ namespace luambedtls {
 		else{
 			return 0;
 		}
+	}
+
+	int base64Encode(State & state){
+		Stack * stack = state.stack;
+		if (stack->is<LUA_TSTRING>(1)){
+			const std::string input = stack->toLString(1);
+			/*
+				Output length approximation
+				source: http://stackoverflow.com/questions/1533113/calculate-the-size-to-a-base-64-encoded-message
+			*/
+			const size_t inputLength = input.length();
+			const size_t outputMaxLength = ((inputLength * 4) / 3) + (inputLength / 96) + 6;
+			size_t outputLength = 0;
+			unsigned char * output = new unsigned char[outputMaxLength];
+			int result = mbedtls_base64_encode(output, outputMaxLength, &outputLength, reinterpret_cast<const unsigned char *>(input.c_str()), inputLength);
+			if (result == 0){
+				stack->pushLString(std::string(reinterpret_cast<char*>(output), outputLength));
+			}
+			else{
+				stack->push<int>(result);
+			}
+			delete[] output;
+			return 1;
+		}
+		return 0;
+	}
+
+	int base64Decode(State & state){
+		Stack * stack = state.stack;
+		if (stack->is<LUA_TSTRING>(1)){
+			const std::string input = stack->toLString(1);
+			const size_t inputLength = input.length();
+			const size_t outputMaxLength = inputLength;
+			size_t outputLength = 0;
+			unsigned char * output = new unsigned char[outputMaxLength];
+			int result = mbedtls_base64_decode(output, outputMaxLength, &outputLength, reinterpret_cast<const unsigned char *>(input.c_str()), inputLength);
+			if (result == 0){
+				stack->pushLString(std::string(reinterpret_cast<char*>(output), outputLength));
+			}
+			else{
+				stack->push<int>(result);
+			}
+			delete[] output;
+			return 1;
+		}
+		return 0;
+	}
+
+	int base64SelfTest(State & state){
+		Stack * stack = state.stack;
+		stack->push<int>(mbedtls_base64_self_test(stack->to<int>(1)));
+		return 1;
+	}
+
+	void initUtils(State * state, Module & module){
+		module["base64Encode"] = base64Encode;
+		module["base64Decode"] = base64Decode;
+		module["base64SelfTest"] = base64SelfTest;
 	}
 
 };

@@ -10,6 +10,7 @@ namespace luambedtls {
 			LUTOK_PROPERTY("oid", &ASN1named::getOID, &ASN1named::nullMethod);
 			LUTOK_PROPERTY("val", &ASN1named::getVal, &ASN1named::nullMethod);
 			LUTOK_PROPERTY("next", &ASN1named::getNext, &ASN1named::nullMethod);
+			LUTOK_PROPERTY("s", &ASN1named::getS, &ASN1named::nullMethod);
 		}
 
 		mbedtls_asn1_named_data * constructor(State & state, bool & managed);
@@ -19,6 +20,7 @@ namespace luambedtls {
 		int getOID(State & state, mbedtls_asn1_named_data * object);
 		int getVal(State & state, mbedtls_asn1_named_data * object);
 		int getNext(State & state, mbedtls_asn1_named_data * object);
+		int getS(State & state, mbedtls_asn1_named_data * object);
 	};
 };
 

@@ -10,6 +10,7 @@ set(luambedtls_h
 )
 
 set(luambedtls_objects_src
+	objects/MPI.cpp
 	objects/ASN1buf.cpp
 	objects/ASN1named.cpp
 
@@ -23,6 +24,10 @@ set(luambedtls_objects_src
 	objects/XTEAContext.cpp
 
 	objects/MDContext.cpp
+	objects/MDinfo.cpp
+
+	objects/PKContext.cpp
+	objects/PKinfo.cpp
 
 	objects/DHMContext.cpp
 	objects/RSAContext.cpp
@@ -30,18 +35,32 @@ set(luambedtls_objects_src
 	objects/CTRDRBGContext.cpp
 	objects/DHMContext.cpp
 	objects/EntropyContext.cpp
-	objects/PKContext.cpp
+
+	objects/ECPCurveInfo.cpp
+	objects/ECPPoint.cpp
+	objects/ECPGroup.cpp
+	objects/ECPKeyPair.cpp
+	objects/ECSDAContext.cpp
+	objects/ECDHContext.cpp
+
 	objects/SSLConfig.cpp
 	objects/SSLContext.cpp
 	objects/SSLSession.cpp
 	objects/x509crt.cpp
 	objects/x509crl.cpp
+	objects/x509crlEntry.cpp
 	objects/x509crtProfile.cpp
 	objects/x509csr.cpp
+	objects/x509writeCert.cpp
+	objects/x509writeCSR.cpp
 	objects/TimingDelayContext.cpp
+
+	objects/CipherContext.cpp
+	objects/CipherInfo.cpp
 )
 
 set(luambedtls_objects_hdr
+	objects/MPI.hpp
 	objects/ASN1buf.hpp
 	objects/ASN1named.hpp
 
@@ -55,22 +74,38 @@ set(luambedtls_objects_hdr
 	objects/XTEAContext.hpp
 
 	objects/MDContext.hpp
+	objects/MDinfo.hpp
+
+	objects/PKContext.hpp
+	objects/PKinfo.hpp
 
 	objects/DHMContext.hpp
 	objects/RSAContext.hpp
 
+	objects/ECPCurveInfo.hpp
+	objects/ECPPoint.hpp
+	objects/ECPGroup.hpp
+	objects/ECPKeyPair.hpp
+	objects/ECSDAContext.hpp
+	objects/ECDHContext.hpp
+
 	objects/CTRDRBGContext.hpp
 	objects/DHMContext.hpp
 	objects/EntropyContext.hpp
-	objects/PKContext.hpp
 	objects/SSLConfig.hpp
 	objects/SSLContext.hpp
 	objects/SSLSession.hpp
 	objects/x509crt.hpp
 	objects/x509crl.hpp
+	objects/x509crlEntry.hpp
 	objects/x509crtProfile.hpp
 	objects/x509csr.hpp
+	objects/x509writeCert.hpp
+	objects/x509writeCSR.hpp
 	objects/TimingDelayContext.hpp
+
+	objects/CipherContext.hpp
+	objects/CipherInfo.hpp
 )
 
 set(luambedtls_sources

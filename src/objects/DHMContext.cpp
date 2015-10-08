@@ -1,7 +1,11 @@
 #include "objects/DHMContext.hpp"
 #include "objects/CTRDRBGContext.hpp"
+#include "objects/MPI.hpp"
 
 namespace luambedtls {
+#define PUSH_MPI(VALUE) Stack * stack = state.stack; MPI * interfaceMPI = OBJECT_IFACE(MPI); interfaceMPI->push(&context->VALUE); return 1
+#define READ_MPI(VALUE) Stack * stack = state.stack; MPI * interfaceMPI = OBJECT_IFACE(MPI); mbedtls_mpi * value = interfaceMPI->get(1); if (value) mbedtls_mpi_copy(&context->VALUE, value); return 0
+
 	mbedtls_dhm_context * DHMContext::constructor(State & state, bool & managed){
 		mbedtls_dhm_context * context = new mbedtls_dhm_context;
 		mbedtls_dhm_init(context);
@@ -133,74 +137,64 @@ namespace luambedtls {
 		return 0;
 	}
 	int DHMContext::getP(State & state, mbedtls_dhm_context * context){
-		return pushMPI(state.stack, &context->P);
+		PUSH_MPI(P);
 	}
 	int DHMContext::setP(State & state, mbedtls_dhm_context * context){
-		readMPI(state.stack, &context->P, 16, 1);
-		return 0;
+		READ_MPI(P);
 	}
 	int DHMContext::getG(State & state, mbedtls_dhm_context * context){
-		return pushMPI(state.stack, &context->G);
+		PUSH_MPI(G);
 	}
 	int DHMContext::setG(State & state, mbedtls_dhm_context * context){
-		readMPI(state.stack, &context->G, 16, 1);
-		return 0;
+		READ_MPI(G);
 	}
 	int DHMContext::getX(State & state, mbedtls_dhm_context * context){
-		return pushMPI(state.stack, &context->X);
+		PUSH_MPI(X);
 	}
 	int DHMContext::setX(State & state, mbedtls_dhm_context * context){
-		readMPI(state.stack, &context->X, 16, 1);
-		return 0;
+		READ_MPI(X);
 	}
 	int DHMContext::getGX(State & state, mbedtls_dhm_context * context){
-		return pushMPI(state.stack, &context->GX);
+		PUSH_MPI(GX);
 	}
 	int DHMContext::setGX(State & state, mbedtls_dhm_context * context){
-		readMPI(state.stack, &context->GX, 16, 1);
-		return 0;
+		READ_MPI(GX);
 	}
 	int DHMContext::getGY(State & state, mbedtls_dhm_context * context){
-		return pushMPI(state.stack, &context->GY);
+		PUSH_MPI(GY);
 	}
 	int DHMContext::setGY(State & state, mbedtls_dhm_context * context){
-		readMPI(state.stack, &context->GY, 16, 1);
-		return 0;
+		READ_MPI(GY);
 	}
 	int DHMContext::getK(State & state, mbedtls_dhm_context * context){
-		return pushMPI(state.stack, &context->K);
+		PUSH_MPI(K);
 	}
 	int DHMContext::setK(State & state, mbedtls_dhm_context * context){
-		readMPI(state.stack, &context->K, 16, 1);
-		return 0;
+		READ_MPI(K);
 	}
 	int DHMContext::getRP(State & state, mbedtls_dhm_context * context){
-		return pushMPI(state.stack, &context->RP);
+		PUSH_MPI(RP);
 	}
 	int DHMContext::setRP(State & state, mbedtls_dhm_context * context){
-		readMPI(state.stack, &context->RP, 16, 1);
-		return 0;
+		READ_MPI(RP);
 	}
 	int DHMContext::getVi(State & state, mbedtls_dhm_context * context){
-		return pushMPI(state.stack, &context->Vi);
+		PUSH_MPI(Vi);
 	}
 	int DHMContext::setVi(State & state, mbedtls_dhm_context * context){
-		readMPI(state.stack, &context->Vi, 16, 1);
-		return 0;
+		READ_MPI(Vi);
 	}
 	int DHMContext::getVf(State & state, mbedtls_dhm_context * context){
-		return pushMPI(state.stack, &context->Vf);
+		PUSH_MPI(Vf);
 	}
 	int DHMContext::setVf(State & state, mbedtls_dhm_context * context){
-		readMPI(state.stack, &context->Vf, 16, 1);
-		return 0;
+		READ_MPI(Vf);
 	}
 	int DHMContext::getpX(State & state, mbedtls_dhm_context * context){
-		return pushMPI(state.stack, &context->pX);
+		PUSH_MPI(pX);
 	}
 	int DHMContext::setpX(State & state, mbedtls_dhm_context * context){
-		readMPI(state.stack, &context->pX, 16, 1);
-		return 0;
+		READ_MPI(pX);
 	}
 
 	int DHMSelfTest(State & state){

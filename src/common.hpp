@@ -57,9 +57,11 @@ using namespace lutok2;
 #include <mbedtls/xtea.h>
 
 #include <mbedtls/md.h>
+#include <mbedtls/md_internal.h>
 
 #include <mbedtls/dhm.h>
 #include <mbedtls/rsa.h>
+#include <mbedtls/ecp.h>
 
 #include <mbedtls/ssl.h>
 #include <mbedtls/entropy.h>
@@ -75,7 +77,13 @@ using namespace lutok2;
 #include <mbedtls/pk.h>
 #include <mbedtls/pk_internal.h>
 
+#include <mbedtls/cipher.h>
+#include <mbedtls/cipher_internal.h>
+
+#include <mbedtls/base64.h>
+
 namespace luambedtls {
+	void initMPI(State * state, Module & module);
 	void initASN1buf(State * state, Module & module);
 	void initASN1named(State * state, Module & module);
 
@@ -92,18 +100,34 @@ namespace luambedtls {
 	void initRSAContext(State * state, Module & module);
 
 	void initMDContext(State * state, Module & module);
+	void initMDinfo(State * state, Module & module);
+
+	void initPKContext(State * state, Module & module);
+	void initPKinfo(State * state, Module & module);
+
+	void initECPCurveInfo(State * state, Module & module);
+	void initECPPoint(State * state, Module & module);
+	void initECPGroup(State * state, Module & module);
+	void initECPKeyPair(State * state, Module & module);
+	void initECDHContext(State * state, Module & module);
+	void initECSDAContext(State * state, Module & module);
 
 	void initEntropyContext(State * state, Module & module);
-	void initPKContext(State * state, Module & module);
 	void initSSLConfig(State * state, Module & module);
 	void initSSLContext(State * state, Module & module);
 	void initSSLSession(State * state, Module & module);
 	void initx509crt(State * state, Module & module);
 	void initx509crl(State * state, Module & module);
+	void initx509crlEntry(State * state, Module & module);
 	void initx509crtProfile(State * state, Module & module);
 	void initx509csr(State * state, Module & module);
+	void initx509writeCert(State * state, Module & module);
+	void initx509writeCSR(State * state, Module & module);
 	void initCTRDRBGContext(State * state, Module & module);
 	void initTimingDelayContext(State * state, Module & module);
+
+	void initCipherContext(State * state, Module & module);
+	void initCipherInfo(State * state, Module & module);
 
 	void initConstants(State * state, Module & module);
 
@@ -111,6 +135,8 @@ namespace luambedtls {
 	int readMPI(Stack * stack, mbedtls_mpi * X, int radix=16, const int index=-1);
 	int MPIlen(State & state);
 	int pushX509time(State & state, mbedtls_x509_time * t);
+
+	void initUtils(State * state, Module & module);
 };
 
 #endif

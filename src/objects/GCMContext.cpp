@@ -76,17 +76,18 @@ namespace luambedtls {
 					delete[] additionalData;
 				}
 
-				stack->push<int>(result);
+				
 				if (result == 0){
 					stack->pushLString(std::string(reinterpret_cast<char*>(output), length));
 					stack->pushLString(std::string(reinterpret_cast<char*>(tag), tagLength));
 					delete[] output;
 					delete[] tag;
-					return 3;
+					return 2;
 				}
 				else{
 					delete[] output;
 					delete[] tag;
+					stack->push<int>(result);
 					return 1;
 				}
 			}
@@ -128,17 +129,16 @@ namespace luambedtls {
 				if (additionalData){
 					delete[] additionalData;
 				}
-
-				stack->push<int>(result);
+	
 				if (result == 0){
 					stack->pushLString(std::string(reinterpret_cast<char*>(output), length));
 					delete[] output;
-					return 2;
 				}
 				else{
 					delete[] output;
-					return 1;
+					stack->push<int>(result);
 				}
+				return 1;
 			}
 		}
 		return 0;
@@ -185,16 +185,16 @@ namespace luambedtls {
 
 			int result = mbedtls_gcm_update(context, length, reinterpret_cast<const unsigned char *>(input.c_str()), output);
 
-			stack->push<int>(result);
+			
 			if (result == 0){
 				stack->pushLString(std::string(reinterpret_cast<char*>(output), length));
 				delete[] output;
-				return 2;
 			}
 			else{
 				delete[] output;
-				return 1;
+				stack->push<int>(result);
 			}
+			return 1;
 		}
 		return 0;
 	}
@@ -208,16 +208,16 @@ namespace luambedtls {
 
 				int result = mbedtls_gcm_finish(context, tag, tagLength);
 
-				stack->push<int>(result);
+				
 				if (result == 0){
 					stack->pushLString(std::string(reinterpret_cast<char*>(tag), tagLength));
 					delete[] tag;
-					return 2;
 				}
 				else{
 					delete[] tag;
-					return 1;
+					stack->push<int>(result);
 				}
+				return 1;
 			}
 		}
 		return 0;

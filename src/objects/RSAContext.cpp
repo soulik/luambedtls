@@ -1,7 +1,12 @@
 #include "objects/RSAContext.hpp"
 #include "objects/CTRDRBGContext.hpp"
+#include "objects/MPI.hpp"
 
 namespace luambedtls {
+
+#define PUSH_MPI(VALUE) Stack * stack = state.stack; MPI * interfaceMPI = OBJECT_IFACE(MPI); interfaceMPI->push(&context->VALUE); return 1
+#define READ_MPI(VALUE) Stack * stack = state.stack; MPI * interfaceMPI = OBJECT_IFACE(MPI); mbedtls_mpi * value = interfaceMPI->get(1); if (value) mbedtls_mpi_copy(&context->VALUE, value); return 0
+
 	mbedtls_rsa_context * RSAContext::constructor(State & state, bool & managed){
 		Stack * stack = state.stack;
 		if (stack->is<LUA_TNUMBER>(1) && stack->is<LUA_TNUMBER>(2)){
@@ -443,98 +448,85 @@ namespace luambedtls {
 	}
 
 	int RSAContext::getN(State & state, mbedtls_rsa_context * context){
-		return pushMPI(state.stack, &context->N);
+		PUSH_MPI(N);
 	}
 	int RSAContext::setN(State & state, mbedtls_rsa_context * context){
-		readMPI(state.stack, &context->N, 16, 1);
-		return 0;
+		READ_MPI(N);
 	}
 	int RSAContext::getE(State & state, mbedtls_rsa_context * context){
-		return pushMPI(state.stack, &context->E);
+		PUSH_MPI(E);
 	}
 	int RSAContext::setE(State & state, mbedtls_rsa_context * context){
-		readMPI(state.stack, &context->E, 16, 1);
-		return 0;
+		READ_MPI(E);
 	}
 
 	int RSAContext::getD(State & state, mbedtls_rsa_context * context){
-		return pushMPI(state.stack, &context->D);
+		PUSH_MPI(D);
 	}
 	int RSAContext::setD(State & state, mbedtls_rsa_context * context){
-		readMPI(state.stack, &context->D, 16, 1);
-		return 0;
+		READ_MPI(D);
 	}
 	int RSAContext::getP(State & state, mbedtls_rsa_context * context){
-		return pushMPI(state.stack, &context->P);
+		PUSH_MPI(P);
 	}
 	int RSAContext::setP(State & state, mbedtls_rsa_context * context){
-		readMPI(state.stack, &context->P, 16, 1);
-		return 0;
+		READ_MPI(P);
 	}
 	int RSAContext::getQ(State & state, mbedtls_rsa_context * context){
-		return pushMPI(state.stack, &context->Q);
+		PUSH_MPI(Q);
 	}
 	int RSAContext::setQ(State & state, mbedtls_rsa_context * context){
-		readMPI(state.stack, &context->Q, 16, 1);
-		return 0;
+		READ_MPI(Q);
 	}
 	int RSAContext::getDP(State & state, mbedtls_rsa_context * context){
-		return pushMPI(state.stack, &context->DP);
+		PUSH_MPI(DP);
 	}
 	int RSAContext::setDP(State & state, mbedtls_rsa_context * context){
-		readMPI(state.stack, &context->DP, 16, 1);
-		return 0;
+		READ_MPI(DP);
 	}
 	int RSAContext::getDQ(State & state, mbedtls_rsa_context * context){
-		return pushMPI(state.stack, &context->DQ);
+		PUSH_MPI(DQ);
 	}
 	int RSAContext::setDQ(State & state, mbedtls_rsa_context * context){
-		readMPI(state.stack, &context->DQ, 16, 1);
-		return 0;
+		READ_MPI(DQ);
 	}
 	int RSAContext::getQP(State & state, mbedtls_rsa_context * context){
-		return pushMPI(state.stack, &context->QP);
+		PUSH_MPI(QP);
 	}
 	int RSAContext::setQP(State & state, mbedtls_rsa_context * context){
-		readMPI(state.stack, &context->QP, 16, 1);
-		return 0;
+		READ_MPI(QP);
 	}
 
 	int RSAContext::getRN(State & state, mbedtls_rsa_context * context){
-		return pushMPI(state.stack, &context->RN);
+		PUSH_MPI(RN);
 	}
 	int RSAContext::setRN(State & state, mbedtls_rsa_context * context){
-		readMPI(state.stack, &context->RN, 16, 1);
-		return 0;
+		READ_MPI(RN);
 	}
 	int RSAContext::getRP(State & state, mbedtls_rsa_context * context){
-		return pushMPI(state.stack, &context->RP);
+		PUSH_MPI(RP);
 	}
 	int RSAContext::setRP(State & state, mbedtls_rsa_context * context){
-		readMPI(state.stack, &context->RP, 16, 1);
-		return 0;
+		READ_MPI(RP);
 	}
 	int RSAContext::getRQ(State & state, mbedtls_rsa_context * context){
-		return pushMPI(state.stack, &context->RQ);
+		PUSH_MPI(RQ);
 	}
 	int RSAContext::setRQ(State & state, mbedtls_rsa_context * context){
-		readMPI(state.stack, &context->RQ, 16, 1);
-		return 0;
+		READ_MPI(RQ);
 	}
 
 	int RSAContext::getVi(State & state, mbedtls_rsa_context * context){
-		return pushMPI(state.stack, &context->Vi);
+		PUSH_MPI(Vi);
 	}
 	int RSAContext::setVi(State & state, mbedtls_rsa_context * context){
-		readMPI(state.stack, &context->Vi, 16, 1);
-		return 0;
+		READ_MPI(Vi);
 	}
 	int RSAContext::getVf(State & state, mbedtls_rsa_context * context){
-		return pushMPI(state.stack, &context->Vf);
+		PUSH_MPI(Vf);
 	}
 	int RSAContext::setVf(State & state, mbedtls_rsa_context * context){
-		readMPI(state.stack, &context->Vf, 16, 1);
-		return 0;
+		READ_MPI(Vf);
 	}
 
 	int RSAContext::getPaddingOnly(State & state, mbedtls_rsa_context * context){

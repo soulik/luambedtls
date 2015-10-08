@@ -12,4 +12,9 @@ tests/*.exe
 tests/*.bin
 tests/*.crt
 tests/*.crl
+tests/*.csr
 tests/*.key
+tests/*.RSA
+tests/*.pem
+tests/*.pub
+tests/*.

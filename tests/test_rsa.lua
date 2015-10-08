@@ -14,7 +14,7 @@ local function keyLength(key)
 	return bit.rshift(tls.MPIlen(key.N, 16) + 7, 3)
 end
 
-local function RSA_assert(...)
+local function TLS_assert(...)
 	local errn = select(1, ...)
 	if type(errn)=='number' and errn ~= 0 then
 		error(tls.strError(errn))
@@ -29,9 +29,9 @@ local function encrypt(input, key)
 	rsa.E = key.E
 
 	rsa.len = keyLength(key)
-	RSA_assert(rsa.checkPubKey())
+	TLS_assert(rsa.checkPubKey())
 
-	return RSA_assert(rsa.encryptPKCS1(CTR_DRBG, tls.RSA_PUBLIC, input))
+	return TLS_assert(rsa.encryptPKCS1(CTR_DRBG, tls.RSA_PUBLIC, input))
 end
 
 local function decrypt(input, key)
@@ -46,9 +46,9 @@ local function decrypt(input, key)
 	rsa.QP = key.QP
 
 	rsa.len = keyLength(key)
-	RSA_assert(rsa.checkPrivKey())
+	TLS_assert(rsa.checkPrivKey())
 
-	return RSA_assert(rsa.decryptPKCS1(CTR_DRBG, tls.RSA_PRIVATE, input, 1024))
+	return TLS_assert(rsa.decryptPKCS1(CTR_DRBG, tls.RSA_PRIVATE, input, 1024))
 end
 
 local function genKey(keySize, exponent)
@@ -57,7 +57,7 @@ local function genKey(keySize, exponent)
 		public = {},
 	}
 	local rsa = tls.RSAContext(tls.RSA_PKCS_V15, 0)
-	RSA_assert(rsa.genKey(CTR_DRBG, keySize, exponent))
+	TLS_assert(rsa.genKey(CTR_DRBG, keySize, exponent))
 	keys.public.N = rsa.N
 	keys.public.E = rsa.E
 
@@ -85,11 +85,11 @@ local function sign(data, key, mdType)
 	rsa.QP = key.QP
 	rsa.len = keyLength(key)
 	
-	RSA_assert(rsa.checkPrivKey())
+	TLS_assert(rsa.checkPrivKey())
 
 	local hash = tls.md(mdType, data)
 
-	return RSA_assert(rsa.signPKCS1(CTR_DRBG, tls.RSA_PRIVATE, mdType, hash))
+	return TLS_assert(rsa.signPKCS1(CTR_DRBG, tls.RSA_PRIVATE, mdType, hash))
 end
 
 local function verify(data, key, sign, mdType)
@@ -99,7 +99,7 @@ local function verify(data, key, sign, mdType)
 	rsa.E = key.E
 	rsa.len = keyLength(key)
 	
-	RSA_assert(rsa.checkPubKey())
+	TLS_assert(rsa.checkPubKey())
 
 	local hash = tls.md(mdType, data)
 

@@ -67,14 +67,13 @@ namespace luambedtls {
 				int mode = stack->to<int>(1);
 
 				int result = mbedtls_aes_crypt_ecb(context, mode, reinterpret_cast<const unsigned char *>(input.c_str()), output);
-				stack->push<int>(result);
 				if (result == 0){
 					stack->pushLString(std::string(reinterpret_cast<char*>(output), 16));
-					return 2;
 				}
 				else{
-					return 1;
+					stack->push<int>(result);
 				}
+				return 1;
 			}
 
 		}
@@ -94,17 +93,21 @@ namespace luambedtls {
 				memcpy(iv, ivStr.c_str(), 16);
 
 				int result = mbedtls_aes_crypt_cbc(context, mode, length, iv, reinterpret_cast<const unsigned char *>(input.c_str()), output);
-				stack->push<int>(result);
 				if (result == 0){
 					stack->pushLString(std::string(reinterpret_cast<char*>(iv), 16));
 					stack->pushLString(std::string(reinterpret_cast<char*>(output), length));
 					delete[] output;
-					return 3;
+					return 2;
 				}
 				else{
+					stack->push<int>(result);
 					delete[] output;
 					return 1;
 				}
+			}
+			else{
+				stack->push<bool>(false);
+				return 1;
 			}
 
 		}
@@ -126,20 +129,23 @@ namespace luambedtls {
 				memcpy(iv, ivStr.c_str(), 16);
 
 				int result = mbedtls_aes_crypt_cfb128(context, mode, length, &ivOff, iv, reinterpret_cast<const unsigned char *>(input.c_str()), output);
-				stack->push<int>(result);
 				if (result == 0){
 					stack->push<int>(ivOff);
 					stack->pushLString(std::string(reinterpret_cast<char*>(iv), 16));
 					stack->pushLString(std::string(reinterpret_cast<char*>(output), length));
 					delete[] output;
-					return 4;
+					return 3;
 				}
 				else{
+					stack->push<int>(result);
 					delete[] output;
 					return 1;
 				}
 			}
-
+			else{
+				stack->push<bool>(false);
+				return 1;
+			}
 		}
 		return 0;
 	}
@@ -157,19 +163,22 @@ namespace luambedtls {
 				memcpy(iv, ivStr.c_str(), 16);
 
 				int result = mbedtls_aes_crypt_cfb8(context, mode, length, iv, reinterpret_cast<const unsigned char *>(input.c_str()), output);
-				stack->push<int>(result);
 				if (result == 0){
 					stack->pushLString(std::string(reinterpret_cast<char*>(iv), 16));
 					stack->pushLString(std::string(reinterpret_cast<char*>(output), length));
 					delete[] output;
-					return 3;
+					return 2;
 				}
 				else{
+					stack->push<int>(result);
 					delete[] output;
 					return 1;
 				}
 			}
-
+			else{
+				stack->push<bool>(false);
+				return 1;
+			}
 		}
 		return 0;
 	}
@@ -189,21 +198,24 @@ namespace luambedtls {
 				memcpy(nonceCounter, nonceStr.c_str(), 16);
 
 				int result = mbedtls_aes_crypt_ctr(context, length, &ncOff, nonceCounter, streamBlock, reinterpret_cast<const unsigned char *>(input.c_str()), output);
-				stack->push<int>(result);
 				if (result == 0){
 					stack->push<int>(ncOff);
 					stack->pushLString(std::string(reinterpret_cast<char*>(nonceCounter), 16));
 					stack->pushLString(std::string(reinterpret_cast<char*>(streamBlock), 16));
 					stack->pushLString(std::string(reinterpret_cast<char*>(output), length));
 					delete[] output;
-					return 5;
+					return 4;
 				}
 				else{
+					stack->push<int>(result);
 					delete[] output;
 					return 1;
 				}
 			}
-
+			else{
+				stack->push<bool>(false);
+				return 1;
+			}
 		}
 		return 0;
 	}
@@ -218,7 +230,10 @@ namespace luambedtls {
 				stack->pushLString(std::string(reinterpret_cast<char*>(output), 16));
 				return 1;
 			}
-
+			else{
+				stack->push<bool>(false);
+				return 1;
+			}
 		}
 		return 0;
 	}
@@ -233,7 +248,10 @@ namespace luambedtls {
 				stack->pushLString(std::string(reinterpret_cast<char*>(output), 16));
 				return 1;
 			}
-
+			else{
+				stack->push<bool>(false);
+				return 1;
+			}
 		}
 		return 0;
 	}

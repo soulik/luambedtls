@@ -44,6 +44,19 @@ namespace luambedtls {
 		}
 		return 1;
 	}
+	int ASN1named::getS(State & state, mbedtls_asn1_named_data * object){
+		Stack * stack = state.stack;
+		const size_t bufferSize = 1024;
+		char buffer[bufferSize];
+		int result = mbedtls_x509_dn_gets(buffer, bufferSize, object);
+		if (result >= 0){
+			stack->pushLString(std::string(buffer, result));
+		}
+		else{
+			stack->push<int>(result);
+		}
+		return 1;
+	}
 
 	void initASN1named(State * state, Module & module){
 		INIT_OBJECT(ASN1named);

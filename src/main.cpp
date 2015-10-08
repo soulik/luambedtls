@@ -59,20 +59,27 @@ namespace luambedtls {
 
 		stack->newTable();
 
+		initMPI(state, luambedtls_module);
 		initASN1buf(state, luambedtls_module);
 		initASN1named(state, luambedtls_module);
+
+		//key-pairs
+		initPKContext(state, luambedtls_module);
+		initPKinfo(state, luambedtls_module);
 
 		initCTRDRBGContext(state, luambedtls_module);
 		initDHMContext(state, luambedtls_module);
 		initEntropyContext(state, luambedtls_module);
-		initPKContext(state, luambedtls_module);
 		initSSLConfig(state, luambedtls_module);
 		initSSLContext(state, luambedtls_module);
 		initSSLSession(state, luambedtls_module);
 		initx509crt(state, luambedtls_module);
 		initx509crl(state, luambedtls_module);
+		initx509crlEntry(state, luambedtls_module);
 		initx509crtProfile(state, luambedtls_module);
 		initx509csr(state, luambedtls_module);
+		initx509writeCert(state, luambedtls_module);
+		initx509writeCSR(state, luambedtls_module);
 		initTimingDelayContext(state, luambedtls_module);
 		initAESContext(state, luambedtls_module);
 
@@ -89,8 +96,24 @@ namespace luambedtls {
 		initDHMContext(state, luambedtls_module);
 		initRSAContext(state, luambedtls_module);
 
-		//hash
+		//EC
+		initECPCurveInfo(state, luambedtls_module);
+		initECPPoint(state, luambedtls_module);
+		initECPGroup(state, luambedtls_module);
+		initECPKeyPair(state, luambedtls_module);
+		initECDHContext(state, luambedtls_module);
+		initECSDAContext(state, luambedtls_module);
+
+		//message-digest
 		initMDContext(state, luambedtls_module);
+		initMDinfo(state, luambedtls_module);
+
+		//cipher
+		initCipherContext(state, luambedtls_module);
+		initCipherInfo(state, luambedtls_module);
+
+		//utils
+		initUtils(state, luambedtls_module);
 
 		luambedtls_module["init"] = init;
 		initConstants(state, luambedtls_module);
