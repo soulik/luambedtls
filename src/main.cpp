@@ -30,6 +30,7 @@
 */
 
 #include "common.hpp"
+#include "init_classes.hpp"
 #include "utils.hpp"
 
 namespace luambedtls {

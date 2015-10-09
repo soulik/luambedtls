@@ -7,6 +7,7 @@ set(luambedtls_src
 set(luambedtls_h
 	common.hpp
 	utils.hpp
+	init_classes.hpp
 )
 
 set(luambedtls_objects_src
