@@ -36,7 +36,7 @@ namespace luambedtls {
 		mbedtls_ecp_group * constructor(State & state, bool & managed);
 
 		void destructor(State & state, mbedtls_ecp_group * group);
-		
+
 		int copy(State & state, mbedtls_ecp_group * group);
 
 		int load(State & state, mbedtls_ecp_group * group);

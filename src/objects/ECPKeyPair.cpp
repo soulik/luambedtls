@@ -35,13 +35,40 @@ namespace luambedtls {
 		interfaceECPPoint->push(&keyPair->Q);
 		return 1;
 	}
+	int ECPKeyPair::setGroup(State & state, mbedtls_ecp_keypair * keyPair){
+		Stack * stack = state.stack;
+		ECPGroup * interfaceECPGroup = OBJECT_IFACE(ECPGroup);
+		mbedtls_ecp_group * group = interfaceECPGroup->get(1);
+		if (group){
+			mbedtls_ecp_group_copy(&keyPair->grp, group);
+		}
+		return 0;
+	}
+	int ECPKeyPair::setd(State & state, mbedtls_ecp_keypair * keyPair){
+		Stack * stack = state.stack;
+		MPI * interfaceMPI = OBJECT_IFACE(MPI);
+		mbedtls_mpi * d = interfaceMPI->get(1);
+		if (d){
+			mbedtls_mpi_copy(&keyPair->d, d);
+		}
+		return 0;
+	}
+	int ECPKeyPair::setQ(State & state, mbedtls_ecp_keypair * keyPair){
+		Stack * stack = state.stack;
+		ECPPoint * interfaceECPPoint = OBJECT_IFACE(ECPPoint);
+		mbedtls_ecp_point * Q = interfaceECPPoint->get(1);
+		if (Q){
+			mbedtls_ecp_copy(&keyPair->Q, Q);
+		}
+		return 0;
+	}
 
 	int ECPKeyPair::genKey(State & state, mbedtls_ecp_keypair * keyPair){
 		Stack * stack = state.stack;
 		CTRDRBGContext * interfaceCTRDRBGContext = OBJECT_IFACE(CTRDRBGContext);
 
 		if (stack->is<LUA_TNUMBER>(1)){
-			mbedtls_ctr_drbg_context * drbg = interfaceCTRDRBGContext->get(1);
+			mbedtls_ctr_drbg_context * drbg = interfaceCTRDRBGContext->get(2);
 
 			if (drbg){
 				stack->push<int>(mbedtls_ecp_gen_key(static_cast<mbedtls_ecp_group_id>(stack->to<int>(1)), keyPair, mbedtls_ctr_drbg_random, drbg));

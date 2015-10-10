@@ -54,8 +54,8 @@ namespace luambedtls {
 	}
 	int MDContext::finish(State & state, mbedtls_md_context_t * context){
 		Stack * stack = state.stack;
-		const size_t hashLength = 64;
-		unsigned char output[hashLength];
+		const size_t hashLength = context->md_info->size;
+		unsigned char * output = new unsigned char[hashLength];
 		int result = mbedtls_md_finish(context, output);
 		if (result == 0){
 			stack->pushLString(std::string(reinterpret_cast<char *>(output), hashLength));
@@ -63,6 +63,7 @@ namespace luambedtls {
 		else{
 			stack->push<int>(result);
 		}
+		delete[] output;
 		return 1;
 	}
 
@@ -88,8 +89,8 @@ namespace luambedtls {
 	}
 	int MDContext::HMACfinish(State & state, mbedtls_md_context_t * context){
 		Stack * stack = state.stack;
-		const size_t hashLength = 64;
-		unsigned char output[hashLength];
+		const size_t hashLength = context->md_info->size;
+		unsigned char * output = new unsigned char[hashLength];
 		int result = mbedtls_md_hmac_finish(context, output);
 		if (result == 0){
 			stack->pushLString(std::string(reinterpret_cast<char *>(output), hashLength));
@@ -97,6 +98,7 @@ namespace luambedtls {
 		else{
 			stack->push<int>(result);
 		}
+		delete[] output;
 		return 1;
 	}
 	int MDContext::HMACreset(State & state, mbedtls_md_context_t * context){
@@ -110,15 +112,19 @@ namespace luambedtls {
 		if (stack->is<LUA_TNUMBER>(1) && stack->is<LUA_TSTRING>(2)){
 			mbedtls_md_type_t mdType = static_cast<mbedtls_md_type_t>(stack->to<int>(1));
 			const std::string input = stack->toLString(2);
-			const size_t hashLength = 64;
-			unsigned char output[hashLength];
-			int result = mbedtls_md(mbedtls_md_info_from_type(mdType), reinterpret_cast<const unsigned char*>(input.c_str()), input.length(), output);
+
+			const mbedtls_md_info_t * info = mbedtls_md_info_from_type(mdType);
+			const size_t hashLength = info->size;
+			unsigned char * output = new unsigned char[hashLength];
+
+			int result = mbedtls_md(info, reinterpret_cast<const unsigned char*>(input.c_str()), input.length(), output);
 			if (result == 0){
 				stack->pushLString(std::string(reinterpret_cast<char*>(output), hashLength));
 			}
 			else{
 				stack->push<int>(result);
 			}
+			delete[] output;
 			return 1;
 		}
 		return 0;
@@ -129,15 +135,18 @@ namespace luambedtls {
 		if (stack->is<LUA_TNUMBER>(1) && stack->is<LUA_TSTRING>(2)){
 			mbedtls_md_type_t mdType = static_cast<mbedtls_md_type_t>(stack->to<int>(1));
 			const std::string inputFile = stack->toLString(2);
-			const size_t hashLength = 64;
-			unsigned char output[hashLength];
-			int result = mbedtls_md_file(mbedtls_md_info_from_type(mdType), inputFile.c_str(), output);
+
+			const mbedtls_md_info_t * info = mbedtls_md_info_from_type(mdType);
+			const size_t hashLength = info->size;
+			unsigned char * output = new unsigned char[hashLength];
+			int result = mbedtls_md_file(info, inputFile.c_str(), output);
 			if (result == 0){
 				stack->pushLString(std::string(reinterpret_cast<char*>(output), hashLength));
 			}
 			else{
 				stack->push<int>(result);
 			}
+			delete[] output;
 			return 1;
 		}
 		return 0;
@@ -160,15 +169,16 @@ namespace luambedtls {
 		MDinfo * interfaceMDinfo = OBJECT_IFACE(MDinfo);
 		if (stack->is<LUA_TNUMBER>(1) || stack->is<LUA_TSTRING>(1)){
 			const mbedtls_md_info_t * info = nullptr;
-			
+
 			if (stack->is<LUA_TNUMBER>(1)){
 				std::string name = stack->to<const std::string>(1);
 				info = mbedtls_md_info_from_type(static_cast<mbedtls_md_type_t>(stack->to<int>(1)));
-			}else
-			if (stack->is<LUA_TSTRING>(1)){
-				std::string name = stack->to<const std::string>(1);
-				info = mbedtls_md_info_from_string(name.c_str());
 			}
+			else
+				if (stack->is<LUA_TSTRING>(1)){
+					std::string name = stack->to<const std::string>(1);
+					info = mbedtls_md_info_from_string(name.c_str());
+				}
 
 			if (info){
 				interfaceMDinfo->push(const_cast<mbedtls_md_info_t *>(info));

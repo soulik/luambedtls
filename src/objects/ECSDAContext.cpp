@@ -6,27 +6,39 @@
 #include "objects/CTRDRBGContext.hpp"
 
 namespace luambedtls {
-	mbedtls_ecdsa_context * ECSDAContext::constructor(State & state, bool & managed){
+	ecsda_wrapper * ECSDAContext::constructor(State & state, bool & managed){
 		Stack * stack = state.stack;
 
-		mbedtls_ecdsa_context * context = new mbedtls_ecdsa_context;
-		mbedtls_ecdsa_init(context);
+		ecsda_wrapper * context = new ecsda_wrapper;
+		context->context = new mbedtls_ecdsa_context;
+		mbedtls_ecdsa_init(context->context);
 		if (stack->getTop() > 0){
 			ECPKeyPair * interfaceECPKeyPair = OBJECT_IFACE(ECPKeyPair);
 			mbedtls_ecp_keypair * keyPair = interfaceECPKeyPair->get(1);
 			if (keyPair){
-				mbedtls_ecdsa_from_keypair(context, keyPair);
+				int result = mbedtls_ecdsa_from_keypair(context->context, keyPair);
+				if (result == 0){
+					return context;
+				}
+				else{
+					delete context->context; delete context;
+					char buffer[1024];
+					mbedtls_strerror(result, buffer, 1024);
+					state.error("%s", buffer);
+					return nullptr;
+				}
 			}
 		}
 		return context;
 	}
 
-	void ECSDAContext::destructor(State & state, mbedtls_ecdsa_context * context){
-		mbedtls_ecdsa_free(context);
+	void ECSDAContext::destructor(State & state, ecsda_wrapper * context){
+		mbedtls_ecdsa_free(context->context);
+		delete context->context;
 		delete context;
 	}
 
-	int ECSDAContext::sign(State & state, mbedtls_ecdsa_context * context){
+	int ECSDAContext::sign(State & state, ecsda_wrapper * context){
 		Stack * stack = state.stack;
 		CTRDRBGContext * interfaceCTRDRBG = OBJECT_IFACE(CTRDRBGContext);
 		ECPGroup * interfaceECPGroup = OBJECT_IFACE(ECPGroup);
@@ -56,7 +68,7 @@ namespace luambedtls {
 		}
 		return 0;
 	}
-	int ECSDAContext::signDet(State & state, mbedtls_ecdsa_context * context){
+	int ECSDAContext::signDet(State & state, ecsda_wrapper * context){
 		Stack * stack = state.stack;
 		ECPGroup * interfaceECPGroup = OBJECT_IFACE(ECPGroup);
 		MPI * interfaceMPI = OBJECT_IFACE(MPI);
@@ -84,7 +96,7 @@ namespace luambedtls {
 		}
 		return 0;
 	}
-	int ECSDAContext::verify(State & state, mbedtls_ecdsa_context * context){
+	int ECSDAContext::verify(State & state, ecsda_wrapper * context){
 		Stack * stack = state.stack;
 		ECPGroup * interfaceECPGroup = OBJECT_IFACE(ECPGroup);
 		ECPPoint * interfaceECPPoint = OBJECT_IFACE(ECPPoint);
@@ -103,7 +115,7 @@ namespace luambedtls {
 
 		return 0;
 	}
-	int ECSDAContext::writeSignature(State & state, mbedtls_ecdsa_context * context){
+	int ECSDAContext::writeSignature(State & state, ecsda_wrapper * context){
 		Stack * stack = state.stack;
 		CTRDRBGContext * interfaceCTRDRBG = OBJECT_IFACE(CTRDRBGContext);
 		mbedtls_ctr_drbg_context * ctrdrbg = interfaceCTRDRBG->get(3);
@@ -112,10 +124,10 @@ namespace luambedtls {
 			mbedtls_md_type_t  md_alg = static_cast<mbedtls_md_type_t>(stack->to<int>(1));
 			const std::string hash = stack->toLString(2);
 
-			size_t outputLen = (context->grp.nbits * 8) * 2 + 9;
+			size_t outputLen = (context->context->grp.nbits * 8) * 2 + 9;
 			unsigned char * sign = new unsigned char[outputLen];
 
-			int result = mbedtls_ecdsa_write_signature(context, md_alg,
+			int result = mbedtls_ecdsa_write_signature(context->context, md_alg,
 				reinterpret_cast<const unsigned char *>(hash.c_str()), hash.length(),
 				sign, &outputLen,
 				mbedtls_ctr_drbg_random, ctrdrbg);
@@ -130,17 +142,17 @@ namespace luambedtls {
 		}
 		return 0;
 	}
-	int ECSDAContext::writeSignatureDet(State & state, mbedtls_ecdsa_context * context){
+	int ECSDAContext::writeSignatureDet(State & state, ecsda_wrapper * context){
 		Stack * stack = state.stack;
 
 		if (stack->is<LUA_TSTRING>(1) && stack->is<LUA_TNUMBER>(2)){
 			const std::string hash = stack->toLString(1);
 			mbedtls_md_type_t  md_alg = static_cast<mbedtls_md_type_t>(stack->to<int>(2));
 
-			size_t outputLen = (context->grp.nbits * 8) * 2 + 9;
+			size_t outputLen = (context->context->grp.nbits * 8) * 2 + 9;
 			unsigned char * sign = new unsigned char[outputLen];
 
-			int result = mbedtls_ecdsa_write_signature_det(context,
+			int result = mbedtls_ecdsa_write_signature_det(context->context,
 				reinterpret_cast<const unsigned char *>(hash.c_str()), hash.length(),
 				sign, &outputLen,
 				md_alg);
@@ -155,37 +167,44 @@ namespace luambedtls {
 		}
 		return 0;
 	}
-	int ECSDAContext::readSignature(State & state, mbedtls_ecdsa_context * context){
+	int ECSDAContext::readSignature(State & state, ecsda_wrapper * context){
 		Stack * stack = state.stack;
 		if (stack->is<LUA_TSTRING>(1) && stack->is<LUA_TSTRING>(2)){
 			const std::string hash = stack->toLString(1);
 			const std::string sig = stack->toLString(2);
-			stack->push<int>(mbedtls_ecdsa_read_signature(context,
+			stack->push<int>(mbedtls_ecdsa_read_signature(context->context,
 				reinterpret_cast<const unsigned char *>(hash.c_str()), hash.length(),
 				reinterpret_cast<const unsigned char *>(sig.c_str()), sig.length()));
 			return 1;
 		}
 		return 0;
 	}
-	int ECSDAContext::genKey(State & state, mbedtls_ecdsa_context * context){
+	int ECSDAContext::genKey(State & state, ecsda_wrapper * context){
 		Stack * stack = state.stack;
 		CTRDRBGContext * interfaceCTRDRBG = OBJECT_IFACE(CTRDRBGContext);
 		mbedtls_ctr_drbg_context * ctrdrbg = interfaceCTRDRBG->get(2);
 		if (ctrdrbg && stack->is<LUA_TNUMBER>(1)){
-			stack->push<int>(mbedtls_ecdsa_genkey(context, static_cast<mbedtls_ecp_group_id>(stack->to<int>(1)), mbedtls_ctr_drbg_random, ctrdrbg));
+			stack->push<int>(mbedtls_ecdsa_genkey(context->context, static_cast<mbedtls_ecp_group_id>(stack->to<int>(1)), mbedtls_ctr_drbg_random, ctrdrbg));
 			return 1;
 		}
 		return 0;
 	}
-	int ECSDAContext::fromKeypair(State & state, mbedtls_ecdsa_context * context){
+	int ECSDAContext::fromKeypair(State & state, ecsda_wrapper * context){
 		Stack * stack = state.stack;
 		ECPKeyPair * interfaceECPKeyPair = OBJECT_IFACE(ECPKeyPair);
 		mbedtls_ecp_keypair * keyPair = interfaceECPKeyPair->get(1);
 		if (keyPair){
-			stack->push<int>(mbedtls_ecdsa_from_keypair(context, keyPair));
+			stack->push<int>(mbedtls_ecdsa_from_keypair(context->context, keyPair));
 			return 1;
 		}
 		return 0;
+	}
+
+	int ECSDAContext::getKeypair(State & state, ecsda_wrapper * context){
+		Stack * stack = state.stack;
+		ECPKeyPair * interfaceECPKeyPair = OBJECT_IFACE(ECPKeyPair);
+		interfaceECPKeyPair->push(context->context);
+		return 1;
 	}
 
 	void initECSDAContext(State * state, Module & module){

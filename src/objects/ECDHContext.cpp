@@ -175,6 +175,125 @@ namespace luambedtls {
 		return 0;
 	}
 
+	int ECDHContext::getGroup(State & state, mbedtls_ecdh_context * context){
+		Stack * stack = state.stack;
+		ECPGroup * interfaceECPGroup = OBJECT_IFACE(ECPGroup);
+		interfaceECPGroup->push(&context->grp);
+		return 1;
+	}
+	int ECDHContext::getd(State & state, mbedtls_ecdh_context * context){
+		Stack * stack = state.stack;
+		MPI * interfaceMPI = OBJECT_IFACE(MPI);
+		interfaceMPI->push(&context->d);
+		return 1;
+	}
+	int ECDHContext::getQ(State & state, mbedtls_ecdh_context * context){
+		Stack * stack = state.stack;
+		ECPPoint * interfaceECPPoint = OBJECT_IFACE(ECPPoint);
+		interfaceECPPoint->push(&context->Q);
+		return 1;
+	}
+	int ECDHContext::getQp(State & state, mbedtls_ecdh_context * context){
+		Stack * stack = state.stack;
+		ECPPoint * interfaceECPPoint = OBJECT_IFACE(ECPPoint);
+		interfaceECPPoint->push(&context->Qp);
+		return 1;
+	}
+	int ECDHContext::getz(State & state, mbedtls_ecdh_context * context){
+		Stack * stack = state.stack;
+		MPI * interfaceMPI = OBJECT_IFACE(MPI);
+		interfaceMPI->push(&context->z);
+		return 1;
+	}
+	int ECDHContext::getPointFormat(State & state, mbedtls_ecdh_context * context){
+		Stack * stack = state.stack;
+		stack->push<int>(context->point_format);
+		return 1;
+	}
+	int ECDHContext::getVi(State & state, mbedtls_ecdh_context * context){
+		Stack * stack = state.stack;
+		ECPPoint * interfaceECPPoint = OBJECT_IFACE(ECPPoint);
+		interfaceECPPoint->push(&context->Vi);
+		return 1;
+	}
+	int ECDHContext::getVf(State & state, mbedtls_ecdh_context * context){
+		Stack * stack = state.stack;
+		ECPPoint * interfaceECPPoint = OBJECT_IFACE(ECPPoint);
+		interfaceECPPoint->push(&context->Vf);
+		return 1;
+	}
+
+	int ECDHContext::setGroup(State & state, mbedtls_ecdh_context * context){
+		Stack * stack = state.stack;
+		ECPGroup * interfaceECPGroup = OBJECT_IFACE(ECPGroup);
+		mbedtls_ecp_group * group = interfaceECPGroup->get(1);
+		if (group){
+			mbedtls_ecp_group_copy(&context->grp, group);
+		}
+		return 0;
+	}
+	int ECDHContext::setd(State & state, mbedtls_ecdh_context * context){
+		Stack * stack = state.stack;
+		MPI * interfaceMPI = OBJECT_IFACE(MPI);
+		mbedtls_mpi * d = interfaceMPI->get(1);
+		if (d){
+			mbedtls_mpi_copy(&context->d, d);
+		}
+		return 0;
+	}
+	int ECDHContext::setQ(State & state, mbedtls_ecdh_context * context){
+		Stack * stack = state.stack;
+		ECPPoint * interfaceECPPoint = OBJECT_IFACE(ECPPoint);
+		mbedtls_ecp_point * Q = interfaceECPPoint->get(1);
+		if (Q){
+			mbedtls_ecp_copy(&context->Q, Q);
+		}
+		return 0;
+	}
+	int ECDHContext::setQp(State & state, mbedtls_ecdh_context * context){
+		Stack * stack = state.stack;
+		ECPPoint * interfaceECPPoint = OBJECT_IFACE(ECPPoint);
+		mbedtls_ecp_point * Qp = interfaceECPPoint->get(1);
+		if (Qp){
+			mbedtls_ecp_copy(&context->Qp, Qp);
+		}
+		return 0;
+	}
+	int ECDHContext::setz(State & state, mbedtls_ecdh_context * context){
+		Stack * stack = state.stack;
+		MPI * interfaceMPI = OBJECT_IFACE(MPI);
+		mbedtls_mpi * z = interfaceMPI->get(1);
+		if (z){
+			mbedtls_mpi_copy(&context->z, z);
+		}
+		return 0;
+	}
+	int ECDHContext::setPointFormat(State & state, mbedtls_ecdh_context * context){
+		Stack * stack = state.stack;
+		if (stack->is<LUA_TNUMBER>(1)){
+			context->point_format = stack->to<int>(1);
+		}
+		return 0;
+	}
+	int ECDHContext::setVi(State & state, mbedtls_ecdh_context * context){
+		Stack * stack = state.stack;
+		ECPPoint * interfaceECPPoint = OBJECT_IFACE(ECPPoint);
+		mbedtls_ecp_point * Vi = interfaceECPPoint->get(1);
+		if (Vi){
+			mbedtls_ecp_copy(&context->Vi, Vi);
+		}
+		return 0;
+	}
+	int ECDHContext::setVf(State & state, mbedtls_ecdh_context * context){
+		Stack * stack = state.stack;
+		ECPPoint * interfaceECPPoint = OBJECT_IFACE(ECPPoint);
+		mbedtls_ecp_point * Vf = interfaceECPPoint->get(1);
+		if (Vf){
+			mbedtls_ecp_copy(&context->Vf, Vf);
+		}
+		return 0;
+	}
+
 	void initECDHContext(State * state, Module & module){
 		INIT_OBJECT(ECDHContext);
 	}

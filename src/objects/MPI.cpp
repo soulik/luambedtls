@@ -484,6 +484,25 @@ namespace luambedtls {
 		return 0;
 	}
 
+	int MPI::operator_tostring(State & state, mbedtls_mpi * mpi){
+		Stack * stack = state.stack;
+		const int radix = 16;
+		size_t length = 0;
+		mbedtls_mpi_write_string(mpi, radix, nullptr, 0, &length); //get minimum buffer length
+
+		char * output = new char[length];
+		int result = mbedtls_mpi_write_string(mpi, radix, output, length, &length);
+		if (result == 0){
+			stack->push<const std::string &>(output);
+		}
+		else{
+			stack->push<int>(result);
+		}
+		delete[] output;
+		return 1;
+	}
+
+
 	int MPISelfTest(State & state){
 		Stack * stack = state.stack;
 		stack->push<int>(mbedtls_mpi_self_test(stack->to<int>(1)));

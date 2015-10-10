@@ -101,6 +101,8 @@ namespace luambedtls {
 		int invMod(State & state, mbedtls_mpi * mpi);
 		int isPrime(State & state, mbedtls_mpi * mpi);
 		int genPrime(State & state, mbedtls_mpi * mpi);
+
+		int operator_tostring(State & state, mbedtls_mpi * mpi);
 	};
 };
 

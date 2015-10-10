@@ -7,9 +7,9 @@ namespace luambedtls {
 	class ECPKeyPair : public Object<mbedtls_ecp_keypair> {
 	public:
 		explicit ECPKeyPair(State * state) : Object<mbedtls_ecp_keypair>(state){
-			LUTOK_PROPERTY("group", &ECPKeyPair::getGroup, &ECPKeyPair::nullMethod);
-			LUTOK_PROPERTY("d", &ECPKeyPair::getd, &ECPKeyPair::nullMethod);
-			LUTOK_PROPERTY("Q", &ECPKeyPair::getQ, &ECPKeyPair::nullMethod);
+			LUTOK_PROPERTY("group", &ECPKeyPair::getGroup, &ECPKeyPair::setGroup);
+			LUTOK_PROPERTY("d", &ECPKeyPair::getd, &ECPKeyPair::setd);
+			LUTOK_PROPERTY("Q", &ECPKeyPair::getQ, &ECPKeyPair::setQ);
 
 			LUTOK_METHOD("genKey", &ECPKeyPair::genKey);
 			LUTOK_METHOD("checkPubPriv", &ECPKeyPair::checkPubPriv);
@@ -25,6 +25,9 @@ namespace luambedtls {
 		int getGroup(State & state, mbedtls_ecp_keypair * keyPair);
 		int getd(State & state, mbedtls_ecp_keypair * keyPair);
 		int getQ(State & state, mbedtls_ecp_keypair * keyPair);
+		int setGroup(State & state, mbedtls_ecp_keypair * keyPair);
+		int setd(State & state, mbedtls_ecp_keypair * keyPair);
+		int setQ(State & state, mbedtls_ecp_keypair * keyPair);
 
 	};
 };

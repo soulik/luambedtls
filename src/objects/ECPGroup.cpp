@@ -192,7 +192,7 @@ namespace luambedtls {
 
 		mbedtls_mpi * d = new mbedtls_mpi;
 		mbedtls_ecp_point * Q = new mbedtls_ecp_point;
-		
+
 		mbedtls_mpi_init(d);
 		mbedtls_ecp_point_init(Q);
 
