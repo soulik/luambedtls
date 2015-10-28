@@ -3,6 +3,7 @@
 #include "objects/x509crtProfile.hpp"
 #include "objects/ASN1buf.hpp"
 #include "objects/ASN1named.hpp"
+#include "objects/ASN1sequence.hpp"
 #include "objects/PKContext.hpp"
 
 namespace luambedtls {
@@ -122,7 +123,6 @@ namespace luambedtls {
 		return 0;
 	}
 
-
 	static int x509VerifyInfo(State & state){
 		Stack * stack = state.stack;
 		if (stack->is<LUA_TSTRING>(2)){
@@ -142,6 +142,42 @@ namespace luambedtls {
 		return 0;
 	}
 
+	static int crt_verify_fn(void *data, mbedtls_x509_crt *crt, int depth, uint32_t *flags){
+		if (data != nullptr){
+			x509crtVerifyData * verifyData = reinterpret_cast<x509crtVerifyData*>(data);
+			State & state = verifyData->state;
+			Stack * stack = state.stack;
+			x509crt * interfaceCrt = OBJECT_IFACE(x509crt);
+
+			stack->regValue(verifyData->fnRef);
+			if (stack->is<LUA_TFUNCTION>(-1)){
+
+				interfaceCrt->push(crt);
+				stack->push<int>(depth);
+
+				if ((*flags) != 0){
+					const size_t bufferSize = 4096;
+					char buffer[bufferSize];
+					mbedtls_x509_crt_verify_info(buffer, bufferSize, "", *flags);
+
+					stack->push<LUA_NUMBER>(*flags);
+					stack->push<const std::string &>(buffer);
+
+					stack->call(4, 1);
+				}
+				else{
+					stack->call(2, 1);
+				}
+
+				int result = stack->to<int>(-1);
+				stack->pop(1);
+				return result;
+			}
+		}
+		return 0;
+	}
+
+
 	static int x509Verify(State & state){
 		Stack * stack = state.stack;
 		x509crt * interfaceCrt = OBJECT_IFACE(x509crt);
@@ -151,19 +187,33 @@ namespace luambedtls {
 		mbedtls_x509_crt * CAcrt = interfaceCrt->get(2);
 		mbedtls_x509_crl * CAcrl = interfaceCrl->get(3);
 
-		uint32_t flags = stack->to<int>(6);
+		uint32_t flags = 0;
 		int result;
 
 		if (crt && CAcrt){
-			if (stack->is<LUA_TSTRING>(5)){
+			x509crtVerifyData fnData = { state, LUA_REFNIL };
+
+			if (stack->is<LUA_TFUNCTION>(5)){
+				stack->pushValue(5);
+				fnData.fnRef = stack->ref();
+			}
+
+			if (stack->is<LUA_TSTRING>(4)){
 				const std::string cn = stack->to<const std::string>(4);
-				result = mbedtls_x509_crt_verify(crt, CAcrt, CAcrl, cn.c_str(), &flags, nullptr, nullptr);
+				result = mbedtls_x509_crt_verify(crt, CAcrt, CAcrl, cn.c_str(), &flags, crt_verify_fn, &fnData);
 			}
 			else{
-				result = mbedtls_x509_crt_verify(crt, CAcrt, CAcrl, nullptr, &flags, nullptr, nullptr);
+				result = mbedtls_x509_crt_verify(crt, CAcrt, CAcrl, nullptr, &flags, crt_verify_fn, &fnData);
 			}
+
+			if (fnData.fnRef != LUA_REFNIL){
+				stack->unref(fnData.fnRef);
+			}
+
 			stack->push<int>(result);
-			return 1;
+			stack->push<LUA_NUMBER>(flags);
+			return 2;
+
 		}
 		return 0;
 	}
@@ -179,19 +229,112 @@ namespace luambedtls {
 		mbedtls_x509_crl * CAcrl = interfaceCrl->get(3);
 		mbedtls_x509_crt_profile * profile = interfaceCrtProfile->get(4);
 
-		uint32_t flags = stack->to<int>(6);
+		uint32_t flags = 0;
 		int result;
 
 		if (crt && CAcrt && profile){
+			x509crtVerifyData fnData = { state, LUA_REFNIL };
+
+			if (stack->is<LUA_TFUNCTION>(6)){
+				stack->pushValue(6);
+				fnData.fnRef = stack->ref();
+			}
+
 			if (stack->is<LUA_TSTRING>(5)){
-				const std::string cn = stack->to<const std::string>(4);
-				result = mbedtls_x509_crt_verify_with_profile(crt, CAcrt, CAcrl, profile, cn.c_str(), &flags, nullptr, nullptr);
+				const std::string cn = stack->to<const std::string>(5);
+				result = mbedtls_x509_crt_verify_with_profile(crt, CAcrt, CAcrl, profile, cn.c_str(), &flags, crt_verify_fn, &fnData);
 			}
 			else{
-				result = mbedtls_x509_crt_verify_with_profile(crt, CAcrt, CAcrl, profile, nullptr, &flags, nullptr, nullptr);
+				result = mbedtls_x509_crt_verify_with_profile(crt, CAcrt, CAcrl, profile, nullptr, &flags, crt_verify_fn, &fnData);
 			}
+
+			if (fnData.fnRef != LUA_REFNIL){
+				stack->unref(fnData.fnRef);
+			}
+
 			stack->push<int>(result);
-			return 1;
+			stack->push<LUA_NUMBER>(flags);
+			return 2;
+
+		}
+		return 0;
+	}
+
+	int x509crt::verify(State & state, mbedtls_x509_crt * x509_crt){
+		Stack * stack = state.stack;
+		x509crt * interfaceCrt = OBJECT_IFACE(x509crt);
+		x509crl * interfaceCrl = OBJECT_IFACE(x509crl);
+
+		mbedtls_x509_crt * CAcrt = interfaceCrt->get(1);
+		mbedtls_x509_crl * CAcrl = interfaceCrl->get(2);
+
+		uint32_t flags = 0;
+		int result;
+
+		if (x509_crt && CAcrt){
+			x509crtVerifyData fnData = { state, LUA_REFNIL };
+
+			if (stack->is<LUA_TFUNCTION>(4)){
+				stack->pushValue(4);
+				fnData.fnRef = stack->ref();
+			}
+
+			if (stack->is<LUA_TSTRING>(3)){
+				const std::string cn = stack->to<const std::string>(3);
+				result = mbedtls_x509_crt_verify(x509_crt, CAcrt, CAcrl, cn.c_str(), &flags, crt_verify_fn, &fnData);
+			}
+			else{
+				result = mbedtls_x509_crt_verify(x509_crt, CAcrt, CAcrl, nullptr, &flags, crt_verify_fn, &fnData);
+			}
+
+			if (fnData.fnRef != LUA_REFNIL){
+				stack->unref(fnData.fnRef);
+			}
+
+			stack->push<int>(result);
+			stack->push<LUA_NUMBER>(flags);
+			return 2;
+
+		}
+		return 0;
+	}
+
+	int x509crt::verifyWithProfile(State & state, mbedtls_x509_crt * x509_crt){
+		Stack * stack = state.stack;
+		x509crt * interfaceCrt = OBJECT_IFACE(x509crt);
+		x509crl * interfaceCrl = OBJECT_IFACE(x509crl);
+		x509crtProfile * interfaceCrtProfile = OBJECT_IFACE(x509crtProfile);
+
+		mbedtls_x509_crt * CAcrt = interfaceCrt->get(1);
+		mbedtls_x509_crl * CAcrl = interfaceCrl->get(2);
+		mbedtls_x509_crt_profile * profile = interfaceCrtProfile->get(3);
+
+		uint32_t flags = 0;
+		int result;
+
+		if (x509_crt && CAcrt && profile){
+			x509crtVerifyData fnData = { state, LUA_REFNIL };
+
+			if (stack->is<LUA_TFUNCTION>(5)){
+				stack->pushValue(5);
+				fnData.fnRef = stack->ref();
+			}
+
+			if (stack->is<LUA_TSTRING>(4)){
+				const std::string cn = stack->to<const std::string>(4);
+				result = mbedtls_x509_crt_verify_with_profile(x509_crt, CAcrt, CAcrl, profile, cn.c_str(), &flags, crt_verify_fn, &fnData);
+			}
+			else{
+				result = mbedtls_x509_crt_verify_with_profile(x509_crt, CAcrt, CAcrl, profile, nullptr, &flags, crt_verify_fn, &fnData);
+			}
+
+			if (fnData.fnRef != LUA_REFNIL){
+				stack->unref(fnData.fnRef);
+			}
+
+			stack->push<int>(result);
+			stack->push<LUA_NUMBER>(flags);
+			return 2;
 		}
 		return 0;
 	}
@@ -211,6 +354,12 @@ namespace luambedtls {
 	int x509crt::getVersion(State & state, mbedtls_x509_crt * x509_crt){
 		Stack * stack = state.stack;
 		stack->push<int>(x509_crt->version);
+		return 1;
+	}
+	int x509crt::getSerial(State & state, mbedtls_x509_crt * x509_crt){
+		Stack * stack = state.stack;
+		ASN1buf * interfaceASN1buf = OBJECT_IFACE(ASN1buf);
+		interfaceASN1buf->pushX509(&x509_crt->serial);
 		return 1;
 	}
 
@@ -264,6 +413,13 @@ namespace luambedtls {
 		Stack * stack = state.stack;
 		ASN1buf * interfaceASN1buf = OBJECT_IFACE(ASN1buf);
 		interfaceASN1buf->pushX509(&x509_crt->v3_ext);
+		return 0;
+	}
+
+	int x509crt::getSubjectAltNames(State & state, mbedtls_x509_crt * x509_crt){
+		Stack * stack = state.stack;
+		ASN1sequence * interfaceASN1sequence = OBJECT_IFACE(ASN1sequence);
+		interfaceASN1sequence->push(&x509_crt->subject_alt_names);
 		return 1;
 	}
 
@@ -289,8 +445,8 @@ namespace luambedtls {
 	}
 	int x509crt::getExtKeyUsage(State & state, mbedtls_x509_crt * x509_crt){
 		Stack * stack = state.stack;
-		ASN1buf * interfaceASN1buf = OBJECT_IFACE(ASN1buf);
-		interfaceASN1buf->pushSequence(&x509_crt->ext_key_usage);
+		ASN1sequence * interfaceASN1sequence = OBJECT_IFACE(ASN1sequence);
+		interfaceASN1sequence->push(&x509_crt->ext_key_usage);
 		return 1;
 	}
 	int x509crt::getNSCertType(State & state, mbedtls_x509_crt * x509_crt){

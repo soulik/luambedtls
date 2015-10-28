@@ -136,7 +136,7 @@ namespace luambedtls {
 		PKContext * interfacePKContext = OBJECT_IFACE(PKContext);
 
 		mbedtls_x509_crt * cert = interfaceCert->get(1);
-		mbedtls_pk_context * PKcontext = interfacePKContext->get(1);
+		mbedtls_pk_context * PKcontext = interfacePKContext->get(2);
 		
 		if (cert && PKcontext){
 			stack->push<int>(mbedtls_ssl_conf_own_cert(ssl_config, cert, PKcontext));

@@ -2,6 +2,7 @@
 	void initMPI(State * state, Module & module);
 	void initASN1buf(State * state, Module & module);
 	void initASN1named(State * state, Module & module);
+	void initASN1sequence(State * state, Module & module);
 
 	void initAESContext(State * state, Module & module);
 	void initARC4Context(State * state, Module & module);
@@ -31,6 +32,7 @@
 	void initEntropyContext(State * state, Module & module);
 	void initSSLConfig(State * state, Module & module);
 	void initSSLContext(State * state, Module & module);
+	void initSSLCookieContext(State * state, Module & module);
 	void initSSLSession(State * state, Module & module);
 	void initx509crt(State * state, Module & module);
 	void initx509crl(State * state, Module & module);

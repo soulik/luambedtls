@@ -38,40 +38,19 @@ local function printOID(name, attribute)
 	print(('%s\t%s'):format(name, table.concat(t, ' ')))
 end
 
-local function getSerial(s)
-	assert(s.tag == tls.ASN1_INTEGER)
-	local bytes = s.value
-	if type(bytes)=='table' then
-		local out = {}
-		for _, b in ipairs(bytes) do
-			table.insert(out, ('%X'):format(b))
-		end
-		return table.concat(out, ':')
-	else
-		return bytes
-	end
-end
-
 
 local crt = tls.x509crt()
-TLS_assert(crt.parseFile("google.crt"))
+TLS_assert(crt.parseFile("subject_signed.crt"))
 print(crt.info())
 
-print('alt names:')
-local currentAltName = crt.subjectAltNames
-
-repeat 
-	print('', currentAltName.buf)
-	currentAltName = currentAltName.next
-until not currentAltName
-
 local CA = tls.x509crt()
-TLS_assert(CA.parseFile("google_ia.crt"))
+TLS_assert(CA.parseFile("CA.crt"))
 local CAcrl = tls.x509crl()
+--print(CA.info())
 
 local result = TLS_assert(crt.verify(CA, CAcrl, nil, function(crt, depth, flags, info)
 	print(("Depth: %d"):format(depth))
-	print(('Serial: %s'):format(getSerial(crt.serial)))
+	print(dump(crt.serial.value, 'Serial'))
 	print(crt.info())
 	if info then
 		print('Verification:')

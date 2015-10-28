@@ -4,6 +4,12 @@
 #include "common.hpp"
 
 namespace luambedtls {
+
+	struct x509crtVerifyData{
+		State & state;
+		int fnRef;
+	};
+
 	class x509crt : public Object<mbedtls_x509_crt> {
 	public:
 		explicit x509crt(State * state) : Object<mbedtls_x509_crt>(state){
@@ -15,10 +21,13 @@ namespace luambedtls {
 			LUTOK_METHOD("checkKeyUsage", &x509crt::checkKeyUsage);
 			LUTOK_METHOD("checkExtendedKeyUsage", &x509crt::checkExtendedKeyUsage);
 			LUTOK_METHOD("isRevoked", &x509crt::isRevoked);
+			LUTOK_METHOD("verify", &x509crt::verify);
+			LUTOK_METHOD("verifyWithProfile", &x509crt::verifyWithProfile);
 
 			LUTOK_PROPERTY("raw", &x509crt::getRaw, &x509crt::nullMethod);
 			LUTOK_PROPERTY("TBS", &x509crt::getTBS, &x509crt::nullMethod);
 			LUTOK_PROPERTY("version", &x509crt::getVersion, &x509crt::nullMethod);
+			LUTOK_PROPERTY("serial", &x509crt::getSerial, &x509crt::nullMethod);
 			LUTOK_PROPERTY("issuer", &x509crt::getIssuer, &x509crt::nullMethod);
 			LUTOK_PROPERTY("subject", &x509crt::getSubject, &x509crt::nullMethod);
 			LUTOK_PROPERTY("issuerRaw", &x509crt::getIssuerRaw, &x509crt::nullMethod);
@@ -27,6 +36,7 @@ namespace luambedtls {
 			LUTOK_PROPERTY("validTo", &x509crt::getValidTo, &x509crt::nullMethod);
 			LUTOK_PROPERTY("issuerID", &x509crt::getIssuerID, &x509crt::nullMethod);
 			LUTOK_PROPERTY("subjectID", &x509crt::getSubjectID, &x509crt::nullMethod);
+			LUTOK_PROPERTY("subjectAltNames", &x509crt::getSubjectAltNames, &x509crt::nullMethod);
 			LUTOK_PROPERTY("v3ext", &x509crt::getV3ext, &x509crt::nullMethod);
 			LUTOK_PROPERTY("extTypes", &x509crt::getExtTypes, &x509crt::nullMethod);
 			LUTOK_PROPERTY("CAisTrue", &x509crt::getCAisTrue, &x509crt::nullMethod);
@@ -55,10 +65,13 @@ namespace luambedtls {
 		int checkKeyUsage(State & state, mbedtls_x509_crt * x509_crt);
 		int checkExtendedKeyUsage(State & state, mbedtls_x509_crt * x509_crt);
 		int isRevoked(State & state, mbedtls_x509_crt * x509_crt);
+		int verify(State & state, mbedtls_x509_crt * x509_crt);
+		int verifyWithProfile(State & state, mbedtls_x509_crt * x509_crt);
 
 		int getRaw(State & state, mbedtls_x509_crt * x509_crt);
 		int getTBS(State & state, mbedtls_x509_crt * x509_crt);
 		int getVersion(State & state, mbedtls_x509_crt * x509_crt);
+		int getSerial(State & state, mbedtls_x509_crt * x509_crt);
 
 		int getIssuer(State & state, mbedtls_x509_crt * x509_crt);
 		int getSubject(State & state, mbedtls_x509_crt * x509_crt);
@@ -70,6 +83,7 @@ namespace luambedtls {
 		int getIssuerID(State & state, mbedtls_x509_crt * x509_crt);
 		int getSubjectID(State & state, mbedtls_x509_crt * x509_crt);
 		int getV3ext(State & state, mbedtls_x509_crt * x509_crt);
+		int getSubjectAltNames(State & state, mbedtls_x509_crt * x509_crt);
 
 		int getExtTypes(State & state, mbedtls_x509_crt * x509_crt);
 		int getCAisTrue(State & state, mbedtls_x509_crt * x509_crt);

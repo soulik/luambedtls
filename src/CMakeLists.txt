@@ -14,6 +14,7 @@ set(luambedtls_objects_src
 	objects/MPI.cpp
 	objects/ASN1buf.cpp
 	objects/ASN1named.cpp
+	objects/ASN1sequence.cpp
 
 	objects/AESContext.cpp
 	objects/ARC4Context.cpp
@@ -46,6 +47,7 @@ set(luambedtls_objects_src
 
 	objects/SSLConfig.cpp
 	objects/SSLContext.cpp
+	objects/SSLCookieContext.cpp
 	objects/SSLSession.cpp
 	objects/x509crt.cpp
 	objects/x509crl.cpp
@@ -64,6 +66,7 @@ set(luambedtls_objects_hdr
 	objects/MPI.hpp
 	objects/ASN1buf.hpp
 	objects/ASN1named.hpp
+	objects/ASN1sequence.hpp
 
 	objects/AESContext.hpp
 	objects/ARC4Context.hpp
@@ -95,6 +98,7 @@ set(luambedtls_objects_hdr
 	objects/EntropyContext.hpp
 	objects/SSLConfig.hpp
 	objects/SSLContext.hpp
+	objects/SSLCookieContext.hpp
 	objects/SSLSession.hpp
 	objects/x509crt.hpp
 	objects/x509crl.hpp
@@ -139,9 +143,9 @@ set_property(TARGET luambedtls PROPERTY CXX_STANDARD_REQUIRED ON)
 
 set_target_properties(luambedtls
     PROPERTIES
-    ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib"
-    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib"
-    RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin"
+    ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/${CMAKE_SYSTEM_PROCESSOR}/lib"
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/${CMAKE_SYSTEM_PROCESSOR}/lib"
+    RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/${CMAKE_SYSTEM_PROCESSOR}/bin"
 )
 
 set(luambedtls_LIBRARIES
@@ -151,7 +155,7 @@ set(luambedtls_LIBRARIES
 )
 
 
-configure_file(mbedtls.lua ${CMAKE_BINARY_DIR}/lib/mbedtls.lua COPYONLY)
+configure_file(mbedtls.lua ${CMAKE_BINARY_DIR}/${CMAKE_SYSTEM_PROCESSOR}/lib/mbedtls.lua COPYONLY)
 
 target_link_libraries (luambedtls
 	${luambedtls_LIBRARIES}

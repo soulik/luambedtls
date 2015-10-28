@@ -101,15 +101,8 @@ namespace luambedtls {
 				stack->setTable(-3);
 			}
 		default:
-			stack->newTable();
-			{
-				stack->push<const std::string &>("p");
-				stack->push<void*>(buffer->p);
-				stack->setTable(-3);
-				stack->push<const std::string &>("len");
-				stack->push<int>(buffer->len);
-				stack->setTable(-3);
-			}
+			stack->pushLString(std::string(reinterpret_cast<char*>(buffer->p), buffer->len));
+			
 		}
 		return 1;
 	}

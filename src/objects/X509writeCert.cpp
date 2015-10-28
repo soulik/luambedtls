@@ -93,7 +93,15 @@ namespace luambedtls {
 	int x509writeCert::setBasicConstraints(State & state, mbedtls_x509write_cert * object){
 		Stack * stack = state.stack;
 		if (stack->is<LUA_TNUMBER>(1) || (stack->is<LUA_TBOOLEAN>(1)) && stack->is<LUA_TNUMBER>(2)){
-			stack->push<int>(mbedtls_x509write_crt_set_basic_constraints(object, stack->to<int>(1), stack->to<int>(2)));
+			int isCA = 0;
+			if (stack->is<LUA_TNUMBER>(1)){
+				isCA = stack->to<int>(1);
+			}
+			else if (stack->is<LUA_TBOOLEAN>(1)){
+				isCA = (stack->to<bool>(1)) ? 1 : 0;
+			}
+			int maxPathLen = stack->to<int>(2);
+			stack->push<int>(mbedtls_x509write_crt_set_basic_constraints(object, isCA, maxPathLen));
 			return 1;
 		}
 		return 0;

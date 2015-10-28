@@ -11,7 +11,7 @@ local CTR_DRBG = tls.CTRDRBGContext()
 CTR_DRBG.seed(entropy, "rsatest")
 
 local function keyLength(key)
-	return bit.rshift(tls.MPIlen(key.N, 16) + 7, 3)
+	return bit.rshift(key.N.bitLen + 7, 3)
 end
 
 local function TLS_assert(...)
