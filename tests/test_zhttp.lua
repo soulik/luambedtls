@@ -27,10 +27,7 @@ for _, uri in ipairs(test_uris) do
 end
 --]==]
 
---local h = zhttp.new('https://wiki.soulik.eu/', {debug = true})
 local h = zhttp.new('https://www.google.com/', {debugSSL = false,})
---local h = zhttp.new('https://192.168.112.1:4433/', {debug = true})
---local h = zhttp.new('https://www.eks.sk', {debugSSL = true ,})
 
 local f = io.open('out.bin', 'wb')
 local n = 0
