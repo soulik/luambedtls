@@ -66,6 +66,7 @@ using namespace lutok2;
 #include <mbedtls/ecdh.h>
 
 #include <mbedtls/ssl.h>
+#include <mbedtls/ssl_cookie.h>
 #include <mbedtls/entropy.h>
 #include <mbedtls/x509.h>
 #include <mbedtls/x509_csr.h>

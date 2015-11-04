@@ -71,19 +71,24 @@ TLS_assert(keyPair.genKey(curveID, CTR_DRBG))
 
 local ECDH = tls.ECDHContext()
 ECDH.group.load(curveID)
-local public = TLS_assert(ECDH.makePublic(1024, CTR_DRBG))
-ECDH.Qp = ECDH.Q
 
 TLS_assert(ECDH.getParams(keyPair, tls.ECDH_OURS))
 local d, Q = TLS_assert(ECDH.genPublic(keyPair.group, CTR_DRBG))
-keyPair.d = d
-keyPair.Q = Q
+ECDH.Qp = ECDH.Q
 
-local z = TLS_assert(ECDH.computeShared(keyPair.group, Q, d, CTR_DRBG))
+local public = TLS_assert(ECDH.makePublic(1024, CTR_DRBG))
 local secret = TLS_assert(ECDH.calcSecret(1024, CTR_DRBG))
-
 local params = TLS_assert(ECDH.makeParams(1024, CTR_DRBG))
 
+params = params .. 'Additional data...'
+
+print(public:hex_dump{prefix = 'Public: '})
 print(secret:hex_dump{prefix = 'Secret: '})
 print(params:hex_dump{prefix = 'Params: '})
+
+TLS_assert(ECDH.readPublic(public))
+local rest = TLS_assert(ECDH.readParams(params))
+local z = TLS_assert(ECDH.computeShared(keyPair.group, Q, d, CTR_DRBG))
+
+print(rest:hex_dump{prefix = 'Rest of data: '})
 

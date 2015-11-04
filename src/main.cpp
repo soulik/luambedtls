@@ -63,6 +63,7 @@ namespace luambedtls {
 		initMPI(state, luambedtls_module);
 		initASN1buf(state, luambedtls_module);
 		initASN1named(state, luambedtls_module);
+		initASN1sequence(state, luambedtls_module);
 
 		//key-pairs
 		initPKContext(state, luambedtls_module);
@@ -73,6 +74,7 @@ namespace luambedtls {
 		initEntropyContext(state, luambedtls_module);
 		initSSLConfig(state, luambedtls_module);
 		initSSLContext(state, luambedtls_module);
+		initSSLCookieContext(state, luambedtls_module);
 		initSSLSession(state, luambedtls_module);
 		initx509crt(state, luambedtls_module);
 		initx509crl(state, luambedtls_module);
