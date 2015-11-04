@@ -104,6 +104,7 @@ namespace luambedtls {
 
 		int operator_tostring(State & state, mbedtls_mpi * mpi);
 	};
+	void initMPI(State*, Module&);
+	int MPISelfTest(State&);
 };
-
 #endif	

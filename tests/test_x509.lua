@@ -1,7 +1,8 @@
-﻿local bit = require 'bit'
+#!/usr/bin/luajit
+
+local bit = require 'bit'
 local tls = require 'luambedtls'
 require 'utils'
-local dump = (require 'utils/dump').dump
 
 local function TLS_assert(...)
 	local errn = select(1, ...)

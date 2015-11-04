@@ -56,6 +56,8 @@ namespace luambedtls {
 		int authEncrypt(State & state, mbedtls_cipher_context_t * context);
 		int authDecrypt(State & state, mbedtls_cipher_context_t * context);
 	};
+	void initCipherContext(State*, Module&);
+	int cipherList(State &);
+	int cipherInfo(State &);
 };
-
 #endif	

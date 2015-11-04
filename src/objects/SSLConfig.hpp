@@ -94,6 +94,6 @@ namespace luambedtls {
 
 		static void debugCallback(void * context, int level, const char * file, int line, const char * str);
 	};
+	void initSSLConfig(State*, Module&);
 };
-
 #endif	

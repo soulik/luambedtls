@@ -13,6 +13,6 @@ namespace luambedtls {
 
 		void destructor(State & state, mbedtls_timing_delay_context * object);
 	};
+	void initTimingDelayContext(State*, Module&);
 };
-
 #endif	

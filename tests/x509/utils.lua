@@ -1,7 +1,7 @@
 function printf(fmt, ...) io.write(fmt:format(...)) end
 
 function io.load(fname)
-	local f = io.open(fname)
+	local f = assert(io.open(fname))
 	if f then
 		local buffer = f:read("*a")
 		f:close()
@@ -12,7 +12,7 @@ function io.load(fname)
 end
 
 function io.save(fname,data)
-	local f = io.open(fname,"w")
+	local f = assert(io.open(fname,"w"))
 	if f then
 		f:write(data)
 		f:close()
@@ -23,7 +23,7 @@ function io.save(fname,data)
 end
 
 function io.saveb(fname,data)
-	local f = io.open(fname,"wb")
+	local f = assert(io.open(fname,"wb"))
 	if f then
 		f:write(data)
 		f:close()

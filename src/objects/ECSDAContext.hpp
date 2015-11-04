@@ -36,6 +36,6 @@ namespace luambedtls {
 		int fromKeypair(State & state, ecsda_wrapper * context);
 		int getKeypair(State & state, ecsda_wrapper * context);
 	};
+	void initECSDAContext(State*, Module&);
 };
-
 #endif	

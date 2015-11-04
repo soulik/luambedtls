@@ -63,6 +63,6 @@ namespace luambedtls {
 		int getT(State & state, mbedtls_ecp_group * group);
 		int getTSize(State & state, mbedtls_ecp_group * group);
 	};
+	void initECPGroup(State*, Module&);
 };
-
 #endif	

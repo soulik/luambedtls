@@ -57,6 +57,6 @@ namespace luambedtls {
 		int setVi(State & state, mbedtls_ecdh_context * context);
 		int setVf(State & state, mbedtls_ecdh_context * context);
 	};
+	void initECDHContext(State*, Module&);
 };
-
 #endif	

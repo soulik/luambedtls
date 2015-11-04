@@ -1,7 +1,8 @@
-﻿local bit = require 'bit'
+#!/usr/bin/luajit
+
+local bit = require 'bit'
 local tls = require 'luambedtls'
 require 'utils'
-local dump = (require 'utils/dump').dump
 
 local function TLS_assert(...)
 	local errn = select(1, ...)
@@ -41,4 +42,4 @@ csr.key = pk
 local csrStr = TLS_assert(csr.writePEM(1024, CTR_DRBG))
 csrStr = csrStr:sub(1,csrStr:find("\0"))
 
-assert(io.open(options.output,'w')):write(csrStr):close()
+io.save(options.output, csrStr)

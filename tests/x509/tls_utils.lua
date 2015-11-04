@@ -1,4 +1,4 @@
-﻿local tls = require 'luambedtls'
+local tls = require 'luambedtls'
 
 local function setupGCdependencies(obj, ...)
 	local mt = getmetatable(obj)

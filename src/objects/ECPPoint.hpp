@@ -46,6 +46,6 @@ namespace luambedtls {
 		int setZ(State & state, mbedtls_ecp_point * point);
 
 	};
+	void initECPPoint(State*, Module&);
 };
-
 #endif	

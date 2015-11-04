@@ -27,6 +27,6 @@ namespace luambedtls {
 		void pushX509(mbedtls_x509_buf  * instance, const bool manage = false);
 		void pushSequence(mbedtls_x509_sequence  * instance, const bool manage = false);
 	};
+	void initASN1buf(State*, Module&);
 };
-
 #endif	

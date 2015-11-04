@@ -26,6 +26,7 @@ namespace luambedtls {
 		int update(State & state, mbedtls_gcm_context * context);
 		int finish(State & state, mbedtls_gcm_context * context);
 	};
+	void initGCMContext(State*, Module&);
+	int GCMSelfTest(State&);
 };
-
 #endif	

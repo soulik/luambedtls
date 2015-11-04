@@ -99,6 +99,6 @@ namespace luambedtls {
 
 		int getNext(State & state, mbedtls_x509_crt * x509_crt);
 	};
+	void initx509crt(State*, Module&);
 };
-
 #endif	

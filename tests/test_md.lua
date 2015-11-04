@@ -1,6 +1,7 @@
-﻿local bit = require 'bit'
+#!/usr/bin/luajit
+
+local bit = require 'bit'
 local tls = require 'luambedtls'
-local dump = (require 'utils/dump').dump
 require 'utils'
 
 local originalText  = [[

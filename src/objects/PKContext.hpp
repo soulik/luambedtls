@@ -63,6 +63,6 @@ namespace luambedtls {
 		int writePublicKey(State & state, mbedtls_pk_context * context);
 		int loadFile(State & state, mbedtls_pk_context * context);
 	};
+	void initPKContext(State*, Module&);
 };
-
 #endif	

@@ -1,4 +1,6 @@
-﻿local bit = require 'bit'
+#!/usr/bin/luajit
+
+local bit = require 'bit'
 local tls = require 'luambedtls'
 require 'utils'
 
@@ -145,6 +147,6 @@ publicKeyPEM = publicKeyPEM:sub(1,publicKeyPEM:find("\0"))
 
 local name = arg[2] or 'subject'
 
-assert(io.open(('%s.key'):format(name),'w')):write(privateKeyPEM):close()
-assert(io.open(('%s.pub'):format(name),'w')):write(publicKeyPEM):close()
+io.save(('%s.key'):format(name), privateKeyPEM)
+io.save(('%s.pub'):format(name), publicKeyPEM)
 

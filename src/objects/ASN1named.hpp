@@ -22,6 +22,6 @@ namespace luambedtls {
 		int getNext(State & state, mbedtls_asn1_named_data * object);
 		int getS(State & state, mbedtls_asn1_named_data * object);
 	};
+	void initASN1named(State*, Module&);
 };
-
 #endif	

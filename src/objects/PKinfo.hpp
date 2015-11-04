@@ -18,6 +18,6 @@ namespace luambedtls {
 		int getType(State & state, mbedtls_pk_info_t * info);
 		int getName(State & state, mbedtls_pk_info_t * info);
 	};
+	void initPKinfo(State*, Module&);
 };
-
 #endif	

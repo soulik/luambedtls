@@ -1,4 +1,6 @@
-﻿local ztcp = require 'ztcp'
+#!/usr/bin/luajit
+
+local ztcp = require 'ztcp'
 local uri = require 'utils/parse/uri'
 local http = require 'utils/parse/http'
 local ssl = require 'ssl_simple'

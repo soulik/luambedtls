@@ -23,6 +23,12 @@ namespace luambedtls {
 		int encryptCBC(State & state, mbedtls_des_context * context);
 
 	};
+	void initDESContext(State*, Module&);
+	int DESSelfTest(State&);
+	
+	int DESSetKey(State &);
+	int DESSetKeyParity(State &);
+	int DESCheckKeyParity(State &);
+	int DESKeyCheckWeak(State &);
 };
-
 #endif	

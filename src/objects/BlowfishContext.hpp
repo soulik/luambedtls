@@ -24,6 +24,6 @@ namespace luambedtls {
 		int cryptCFB64(State & state, mbedtls_blowfish_context * context);
 		int cryptCTR(State & state, mbedtls_blowfish_context * context);
 	};
+	void initBlowfishContext(State*, Module&);
 };
-
 #endif	

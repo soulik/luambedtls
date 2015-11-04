@@ -1,7 +1,8 @@
-﻿local bit = require 'bit'
+#!/usr/bin/luajit
+
+local bit = require 'bit'
 local tls = require 'luambedtls'
 require 'utils'
-local dump = (require 'utils/dump').dump
 
 -- SessionGetUserName() + GetHostName()
 local encodedHex = [[A35C6E5C2C2E392F2F3E292E3B383D323F393A392F287239292C2E392F2F3E292E3B383D323F393A392F287239290434393030336C6D]]

@@ -10,6 +10,7 @@ tests/*.txt
 tests/*.dll
 tests/*.exe
 tests/*.bin
+tests/*.so
 *.crt
 *.crl
 *.csr

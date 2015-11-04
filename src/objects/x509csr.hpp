@@ -44,6 +44,6 @@ namespace luambedtls {
 		int getSigMD(State & state, mbedtls_x509_csr * request);
 		int getSigPK(State & state, mbedtls_x509_csr * request);
 	};
+	void initx509csr(State*, Module&);
 };
-
 #endif	

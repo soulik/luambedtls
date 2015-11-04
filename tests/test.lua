@@ -1,4 +1,6 @@
-﻿local tls = require 'luambedtls'
+#!/usr/bin/luajit
+
+local tls = require 'luambedtls'
 
 local ciphers = tls.ciphersuites()
 

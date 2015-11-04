@@ -22,6 +22,6 @@ namespace luambedtls {
 		int getAllowedCurves(State & state, mbedtls_x509_crt_profile * profile);
 		int getRSAMinBitlen(State & state, mbedtls_x509_crt_profile * profile);
 	};
+	void initx509crtProfile(State*, Module&);
 };
-
 #endif	

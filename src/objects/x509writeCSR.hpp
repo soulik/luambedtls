@@ -30,6 +30,6 @@ namespace luambedtls {
 		int writePEM(State & state, mbedtls_x509write_csr * request);
 		int writeDER(State & state, mbedtls_x509write_csr * request);
 	};
+	void initx509writeCSR(State*, Module&);
 };
-
 #endif	

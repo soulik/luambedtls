@@ -20,6 +20,7 @@ namespace luambedtls {
 		int cryptECB(State & state, mbedtls_xtea_context * context);
 		int cryptCBC(State & state, mbedtls_xtea_context * context);
 	};
+	void initXTEAContext(State*, Module&);
+	int XTEASelfTest(State&);
 };
-
 #endif	

@@ -1,7 +1,6 @@
-﻿local bit = require 'bit'
+local bit = require 'bit'
 local tls = require 'luambedtls'
 require 'utils'
-local dump = (require 'utils/dump').dump
 
 local function getType(o)
 	local mt = getmetatable(o)
@@ -97,7 +96,7 @@ local function create(options)
     local crtStr = TLS_assert(crt.writePEM(2048, CTR_DRBG))
     crtStr = crtStr:sub(1,crtStr:find("\0"))
 
-    assert(io.open(options.output,'w')):write(crtStr):close()
+    io.save(options.output, crtStr)
 end
 
 return {

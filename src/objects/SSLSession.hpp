@@ -38,6 +38,6 @@ namespace luambedtls {
 		int getTruncHMAC(State & state, mbedtls_ssl_session * session);
 		int getEncryptThenMAC(State & state, mbedtls_ssl_session * session);
 	};
+	void initSSLSession(State*, Module&);
 };
-
 #endif	

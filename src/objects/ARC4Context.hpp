@@ -18,6 +18,7 @@ namespace luambedtls {
 		int setup(State & state, mbedtls_arc4_context * context);
 		int crypt(State & state, mbedtls_arc4_context * context);
 	};
+	void initARC4Context(State*, Module&);
+	int ARC4SelfTest(State&);
 };
-
 #endif	

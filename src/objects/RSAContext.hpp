@@ -124,6 +124,7 @@ namespace luambedtls {
 		int getHashID(State & state, mbedtls_rsa_context * context);
 		int setHashID(State & state, mbedtls_rsa_context * context);
 	};
+	void initRSAContext(State*, Module&);
+	int RSASelfTest(State&);
 };
-
 #endif	

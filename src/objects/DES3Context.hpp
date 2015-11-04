@@ -26,6 +26,6 @@ namespace luambedtls {
 		int encryptECB(State & state, mbedtls_des3_context * context);
 		int encryptCBC(State & state, mbedtls_des3_context * context);
 	};
+	void initDES3Context(State*, Module&);
 };
-
 #endif	

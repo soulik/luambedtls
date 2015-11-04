@@ -1,4 +1,6 @@
-﻿local zhttp = require 'zhttp'
+#!/usr/bin/luajit
+
+local zhttp = require 'zhttp'
 
 --[==[
 local uri = require 'utils/parse/uri'

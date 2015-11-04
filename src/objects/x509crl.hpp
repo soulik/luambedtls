@@ -54,6 +54,6 @@ namespace luambedtls {
 		int getSigPK(State & state, mbedtls_x509_crl * certificate);
 		int getNext(State & state, mbedtls_x509_crl * certificate);
 	};
+	void initx509crl(State*, Module&);
 };
-
 #endif	

@@ -26,6 +26,7 @@ namespace luambedtls {
 		int cryptCFB128(State & state, mbedtls_camellia_context * context);
 		int cryptCTR(State & state, mbedtls_camellia_context * context);
 	};
+	void initCamelliaContext(State*, Module&);
+	int CamelliaSelfTest(State&);
 };
-
 #endif	

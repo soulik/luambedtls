@@ -49,6 +49,6 @@ namespace luambedtls {
 		int writePEM(State & state, mbedtls_x509write_cert * object);
 		int writeDER(State & state, mbedtls_x509write_cert * object);
 	};
+	void initx509writeCert(State*, Module&);
 };
-
 #endif	

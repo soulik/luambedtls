@@ -1,4 +1,6 @@
-﻿local tls = require 'luambedtls'
+#!/usr/bin/luajit
+
+local tls = require 'luambedtls'
 local tls_utils = require 'tls_utils'
 require 'utils'
 local ztransport = require 'ztransport'

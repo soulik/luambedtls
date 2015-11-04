@@ -22,6 +22,6 @@ namespace luambedtls {
 		int writeSeedFile(State & state, mbedtls_entropy_context * object);
 		int updateFromSeedFile(State & state, mbedtls_entropy_context * object);
 	};
+	void initEntropyContext(State*, Module&);
 };
-
 #endif	

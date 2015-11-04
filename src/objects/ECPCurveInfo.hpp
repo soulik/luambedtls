@@ -23,6 +23,6 @@ namespace luambedtls {
 		int getName(State & state, mbedtls_ecp_curve_info * info);
 
 	};
+	void initECPCurveInfo(State*, Module&);
 };
-
 #endif	

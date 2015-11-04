@@ -28,6 +28,6 @@ namespace luambedtls {
 		int md(State & state, mbedtls_md_info_t * object);
 		int mdHMAC(State & state, mbedtls_md_info_t * object);
 	};
+	void initMDinfo(State*, Module&);
 };
-
 #endif	

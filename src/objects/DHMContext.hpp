@@ -63,6 +63,7 @@ namespace luambedtls {
 		int getpX(State & state, mbedtls_dhm_context * context);
 		int setpX(State & state, mbedtls_dhm_context * context);
 	};
+	void initDHMContext(State*, Module&);
+	int DHMSelfTest(State&);
 };
-
 #endif	

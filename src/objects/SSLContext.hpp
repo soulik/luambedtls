@@ -84,6 +84,6 @@ namespace luambedtls {
 		static int recvTimeoutCallback(void * ssl_context_data, unsigned char * data, size_t len, uint32_t t);
 		static int sendCallback(void * ssl_context_data, const unsigned char * data, size_t len);
 	};
+	void initSSLContext(State*, Module&);
 };
-
 #endif	

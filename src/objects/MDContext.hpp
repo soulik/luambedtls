@@ -36,6 +36,10 @@ namespace luambedtls {
 		int HMACfinish(State & state, mbedtls_md_context_t * context);
 		int HMACreset(State & state, mbedtls_md_context_t * context);
 	};
+	void initMDContext(State*, Module&);
+	int md(State &);
+	int mdFile(State &);
+	int mdList(State &);
+	int mdInfo(State &);
 };
-
 #endif	

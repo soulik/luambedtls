@@ -23,6 +23,6 @@ namespace luambedtls {
 
 		int setup(State & state, mbedtls_ssl_cookie_ctx * context);
 	};
+	void initSSLCookieContext(State*, Module&);
 };
-
 #endif	

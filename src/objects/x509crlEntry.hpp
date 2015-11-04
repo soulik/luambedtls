@@ -24,6 +24,6 @@ namespace luambedtls {
 		int getEntryExt(State & state, mbedtls_x509_crl_entry * entry);
 		int getNext(State & state, mbedtls_x509_crl_entry * entry);
 	};
+	void initx509crlEntry(State*, Module&);
 };
-
 #endif	

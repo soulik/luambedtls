@@ -30,6 +30,12 @@ namespace luambedtls {
 		int setQ(State & state, mbedtls_ecp_keypair * keyPair);
 
 	};
+	void initECPKeyPair(State*, Module&);
+	
+	int ECPCurveList(State&);
+	int ECPGroupIDList(State&);
+	int ECPCurveInfoFromGroupID(State&);
+	int ECPCurveInfoFromTLSID(State&);
+	int ECPCurveInfoFromName(State&);
 };
-
 #endif	

@@ -18,6 +18,6 @@ namespace luambedtls {
 		int getNext(State & state, mbedtls_asn1_sequence * data);
 		int getBuffer(State & state, mbedtls_asn1_sequence * data);
 	};
+	void initASN1sequence(State*, Module&);
 };
-
 #endif	

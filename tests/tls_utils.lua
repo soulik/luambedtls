@@ -1,4 +1,6 @@
-﻿local tls = require 'luambedtls'
+#!/usr/bin/luajit
+
+local tls = require 'luambedtls'
 
 local function setupGCdependencies(obj, ...)
 	local mt = getmetatable(obj)

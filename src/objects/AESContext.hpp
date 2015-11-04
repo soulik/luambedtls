@@ -32,6 +32,7 @@ namespace luambedtls {
 		int encrypt(State & state, mbedtls_aes_context * context);
 		int decrypt(State & state, mbedtls_aes_context * context);
 	};
+	void initAESContext(State*, Module&);
+	int AESSelfTest(State&);
 };
-
 #endif	

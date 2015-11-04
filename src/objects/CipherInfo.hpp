@@ -30,6 +30,6 @@ namespace luambedtls {
 		int getBlockSize(State & state, mbedtls_cipher_info_t * info);
 		int getBaseCipher(State & state, mbedtls_cipher_info_t * info);
 	};
+	void initCipherInfo(State*, Module&);
 };
-
 #endif	

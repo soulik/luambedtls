@@ -38,6 +38,6 @@ namespace luambedtls {
 		int updateFromSeedFile(State & state, mbedtls_ctr_drbg_context * ctr_drbg_context);
 
 	};
+	void initCTRDRBGContext(State*, Module&);
 };
-
 #endif	

@@ -152,9 +152,9 @@ set_target_properties(luambedtls
 )
 
 set(luambedtls_LIBRARIES
-	mbedtls
-	mbedcrypto
-	mbedx509
+	${mbedtls_static_library}
+	${mbedcrypto_static_library}
+	${mbedx509_static_library}
 )
 
 configure_file(mbedtls.lua ${CMAKE_BINARY_DIR}/${CMAKE_SYSTEM_PROCESSOR}/lib/mbedtls.lua COPYONLY)
