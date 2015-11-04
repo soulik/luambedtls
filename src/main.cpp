@@ -30,6 +30,7 @@
 */
 
 #include "common.hpp"
+#include "main.hpp"
 #include "init_classes.hpp"
 #include "utils.hpp"
 

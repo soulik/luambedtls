@@ -18,3 +18,4 @@ tests/*.bin
 *.pem
 *.pub
 tests/*.
+src/objects/*.lua

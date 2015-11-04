@@ -1,4 +1,5 @@
 #include "objects/DES3Context.hpp"
+#include <string.h>
 
 namespace luambedtls {
 	mbedtls_des3_context * DES3Context::constructor(State & state, bool & managed){

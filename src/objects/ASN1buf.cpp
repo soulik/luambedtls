@@ -42,12 +42,12 @@ namespace luambedtls {
 
 		switch (buffer->tag){
 		case MBEDTLS_ASN1_BOOLEAN:
-			stack->push<bool>(reinterpret_cast<bool>(buffer->p));
+			stack->push<bool>(static_cast<bool>(*buffer->p));
 			break;
 		case MBEDTLS_ASN1_INTEGER:
 			workLen = (workLen <= 32) ? workLen : 28;
 			if (workLen <= 4){
-				stack->push<int>(reinterpret_cast<int>(buffer->p));
+				stack->push<int>(static_cast<int>(*buffer->p));
 			}
 			else{
 				stack->newTable();

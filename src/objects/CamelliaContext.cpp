@@ -1,4 +1,5 @@
 #include "objects/CamelliaContext.hpp"
+#include <string.h>
 
 namespace luambedtls {
 	mbedtls_camellia_context * CamelliaContext::constructor(State & state, bool & managed){

@@ -1,4 +1,5 @@
 #include "objects/XTEAContext.hpp"
+#include <string.h>
 
 namespace luambedtls {
 	mbedtls_xtea_context * XTEAContext::constructor(State & state, bool & managed){

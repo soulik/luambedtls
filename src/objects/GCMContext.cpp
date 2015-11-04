@@ -1,4 +1,5 @@
 #include "objects/GCMContext.hpp"
+#include <string.h>
 
 namespace luambedtls {
 	mbedtls_gcm_context * GCMContext::constructor(State & state, bool & managed){

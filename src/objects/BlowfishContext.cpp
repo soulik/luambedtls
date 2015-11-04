@@ -1,4 +1,5 @@
 #include "objects/BlowfishContext.hpp"
+#include <string.h>
 
 namespace luambedtls {
 	mbedtls_blowfish_context * BlowfishContext::constructor(State & state, bool & managed){

@@ -1,4 +1,5 @@
 #include "common.hpp"
+#include "constants.hpp"
 
 namespace luambedtls {
 	void initConstants(State * state, Module & module) {

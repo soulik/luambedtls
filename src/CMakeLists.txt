@@ -6,6 +6,8 @@ set(luambedtls_src
 
 set(luambedtls_h
 	common.hpp
+	main.hpp
+	constants.hpp
 	utils.hpp
 	init_classes.hpp
 )
@@ -146,6 +148,7 @@ set_target_properties(luambedtls
     ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/${CMAKE_SYSTEM_PROCESSOR}/lib"
     LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/${CMAKE_SYSTEM_PROCESSOR}/lib"
     RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/${CMAKE_SYSTEM_PROCESSOR}/bin"
+    COMPILE_FLAGS "-fPIC"
 )
 
 set(luambedtls_LIBRARIES
@@ -153,7 +156,6 @@ set(luambedtls_LIBRARIES
 	mbedcrypto
 	mbedx509
 )
-
 
 configure_file(mbedtls.lua ${CMAKE_BINARY_DIR}/${CMAKE_SYSTEM_PROCESSOR}/lib/mbedtls.lua COPYONLY)
 

@@ -1,4 +1,5 @@
 #include "objects/AESContext.hpp"
+#include <string.h>
 
 namespace luambedtls {
 	mbedtls_aes_context * AESContext::constructor(State & state, bool & managed){

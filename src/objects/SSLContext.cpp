@@ -6,6 +6,7 @@
 #include "objects/x509crtProfile.hpp"
 #include "objects/PKContext.hpp"
 #include "objects/TimingDelayContext.hpp"
+#include <string.h>
 
 namespace luambedtls {
 	SSLContextData * SSLContext::constructor(State & state, bool & managed){

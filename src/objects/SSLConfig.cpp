@@ -6,6 +6,7 @@
 #include "objects/DHMContext.hpp"
 #include "objects/CTRDRBGContext.hpp"
 #include <vector>
+#include <string.h>
 
 namespace luambedtls {
 	mbedtls_ssl_config * SSLConfig::constructor(State & state, bool & managed){
