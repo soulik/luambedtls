@@ -7,6 +7,7 @@
 #include "objects/CTRDRBGContext.hpp"
 #include <vector>
 #include <string.h>
+#include <stdint.h>
 
 namespace luambedtls {
 	mbedtls_ssl_config * SSLConfig::constructor(State & state, bool & managed){
@@ -341,9 +342,9 @@ namespace luambedtls {
 		Stack * stack = state.stack;
 		
 		unsigned char period[8];
-		unsigned long long * _period = reinterpret_cast<unsigned long long *>(period);
+		uint64_t * _period = reinterpret_cast<unsigned long long *>(period);
 		*_period = stack->to<int>(1) & 0xFFFFFFFF;
-		*_period |= (stack->to<int>(2) & 0xFFFFFFFF) << 32;
+		*_period |= static_cast<uint64_t>((stack->to<int>(2) & 0xFFFFFFFF)) << 32;
 
 		mbedtls_ssl_conf_renegotiation_period(ssl_config, period);
 		return 0;
