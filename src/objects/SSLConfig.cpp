@@ -342,7 +342,7 @@ namespace luambedtls {
 		Stack * stack = state.stack;
 		
 		unsigned char period[8];
-		uint64_t * _period = reinterpret_cast<unsigned long long *>(period);
+		uint64_t * _period = reinterpret_cast<uint64_t *>(period);
 		*_period = stack->to<int>(1) & 0xFFFFFFFF;
 		*_period |= static_cast<uint64_t>((stack->to<int>(2) & 0xFFFFFFFF)) << 32;
 
